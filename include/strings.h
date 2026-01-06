@@ -618,6 +618,9 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ChoiceBandDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_OldSeaMapDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MysticTicketDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_AuroraTicketDesc[];
 
 // Battle Frontier Move Tutors
 extern const u8 BattleFrontier_Lounge7_Text_SoftboiledDesc[];
