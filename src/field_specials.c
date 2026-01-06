@@ -2358,7 +2358,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 10;
+        task->tNumItems = 13;
         task->tLeft = 14;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2500,6 +2500,9 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("KING'S ROCK{CLEAR_TO 0x5E}64BP"),
         COMPOUND_STRING("FOCUS BAND{CLEAR_TO 0x5E}64BP"),
         COMPOUND_STRING("SCOPE LENS{CLEAR_TO 0x5E}64BP"),
+		COMPOUND_STRING("OLD SEA MAP{CLEAR_TO 0x5E}64BP"),
+		COMPOUND_STRING("MYSTIC TICKET{CLEAR_TO 0x5E}64BP"),
+		COMPOUND_STRING("AURORA TICKET{CLEAR_TO 0x5E}64BP"),
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =

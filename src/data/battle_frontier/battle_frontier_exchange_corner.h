@@ -45,6 +45,9 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_KINGS_ROCK,
     ITEM_FOCUS_BAND,
     ITEM_SCOPE_LENS,
+	ITEM_OLD_SEA_MAP,
+	ITEM_MYSTIC_TICKET,
+	ITEM_AURORA_TICKET,
     ITEM_LIST_END
 };
 
@@ -95,5 +98,8 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc,
     BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_OldSeaMapDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_MysticTicketDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_AuroraTicketDesc,
     gText_Exit
 };

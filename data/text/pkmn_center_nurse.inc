@@ -3,7 +3,7 @@ gText_WouldYouLikeToRestYourPkmn::
 	//.string "the POKéMON CENTER.\p"
 	//.string "We restore your tired POKéMON\n"
 	//.string "to full health.\p"
-	//.string "Would you like to rest your POKéMON?$"
+	.string "Would you like to rest your POKéMON?$"
 
 gText_IllTakeYourPkmn::
 	.string "Okay, I'll take your POKéMON\n"
