@@ -47,7 +47,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_MAN_1",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 34,
+      "x": 36,
       "y": 29,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
@@ -74,7 +74,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
-      "x": 26,
+      "x": 28,
       "y": 29,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -88,7 +88,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
-      "x": 31,
+      "x": 33,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -116,7 +116,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_OLD_WOMAN",
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-      "x": 20,
+      "x": 22,
       "y": 37,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -185,7 +185,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 37,
+      "x": 39,
       "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -198,7 +198,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 28,
+      "x": 30,
       "y": 46,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
@@ -264,7 +264,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 30,
+      "x": 32,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -278,7 +278,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_3",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 29,
+      "x": 31,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -317,7 +317,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 34,
+      "x": 36,
       "y": 51,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -371,7 +371,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_4",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 22,
+      "x": 24,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -385,7 +385,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_5",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 23,
+      "x": 25,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -399,7 +399,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_6",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 24,
+      "x": 26,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -413,7 +413,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_7",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 21,
+      "x": 23,
       "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -427,7 +427,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_8",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 20,
+      "x": 22,
       "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -441,7 +441,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_9",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 26,
+      "x": 28,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -454,7 +454,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 28,
+      "x": 30,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -468,7 +468,7 @@
     {
       "local_id": "LOCALID_SLATEPORT_GRUNT_11",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 25,
+      "x": 27,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -509,7 +509,7 @@
   ],
   "warp_events": [
     {
-      "x": 19,
+      "x": 21,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_POKEMON_CENTER_1F",
@@ -517,13 +517,13 @@
     },
     {
       "x": 13,
-      "y": 26,
+      "y": 19,
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_MART",
       "dest_warp_id": "0"
     },
     {
-      "x": 26,
+      "x": 28,
       "y": 38,
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F",
@@ -544,7 +544,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 30,
+      "x": 32,
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
@@ -558,7 +558,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 31,
+      "x": 33,
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
@@ -579,7 +579,7 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 21,
+      "x": 23,
       "y": 44,
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_HOUSE",
@@ -608,7 +608,7 @@
     },
     {
       "type": "sign",
-      "x": 20,
+      "x": 22,
       "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -616,7 +616,7 @@
     },
     {
       "type": "sign",
-      "x": 21,
+      "x": 23,
       "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -625,7 +625,7 @@
     {
       "type": "sign",
       "x": 14,
-      "y": 26,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
@@ -641,7 +641,7 @@
     {
       "type": "sign",
       "x": 15,
-      "y": 26,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
@@ -656,7 +656,7 @@
     },
     {
       "type": "sign",
-      "x": 26,
+      "x": 28,
       "y": 26,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -664,7 +664,7 @@
     },
     {
       "type": "sign",
-      "x": 16,
+      "x": 20,
       "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -688,7 +688,7 @@
     },
     {
       "type": "sign",
-      "x": 23,
+      "x": 25,
       "y": 38,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
