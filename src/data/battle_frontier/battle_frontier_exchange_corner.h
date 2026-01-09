@@ -45,9 +45,18 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_KINGS_ROCK,
     ITEM_FOCUS_BAND,
     ITEM_SCOPE_LENS,
-	ITEM_OLD_SEA_MAP,
-	ITEM_MYSTIC_TICKET,
-	ITEM_AURORA_TICKET,
+};
+
+static const u16 sFrontierExchangeCorner_EvoItems[] =
+{
+	ITEM_MOON_STONE,
+	ITEM_SUN_STONE,
+	ITEM_SHINY_STONE,
+	ITEM_DUSK_STONE,
+	ITEM_DAWN_STONE,
+	ITEM_ICE_STONE,
+	ITEM_DEEP_SEA_SCALE,
+	ITEM_DEEP_SEA_TOOTH,
     ITEM_LIST_END
 };
 
@@ -98,8 +107,18 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc,
     BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc,
-	BattleFrontier_ExchangeServiceCorner_Text_OldSeaMapDesc,
-	BattleFrontier_ExchangeServiceCorner_Text_MysticTicketDesc,
-	BattleFrontier_ExchangeServiceCorner_Text_AuroraTicketDesc,
+    gText_Exit
+};
+
+static const u8 *const sFrontierExchangeCorner_EvoItemsDescriptions[] =
+{
+	BattleFrontier_ExchangeServiceCorner_Text_MoonStoneDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_SunStoneDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_ShinyStoneDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_DuskStoneDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_DawnStoneDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_IceStoneDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_DeepSeaScaleDesc,
+	BattleFrontier_ExchangeServiceCorner_Text_DeepSeaToothDesc,
     gText_Exit
 };

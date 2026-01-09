@@ -2358,7 +2358,17 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 13;
+        task->tNumItems = 10;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 9;
         task->tLeft = 14;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2500,9 +2510,18 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("KING'S ROCK{CLEAR_TO 0x5E}64BP"),
         COMPOUND_STRING("FOCUS BAND{CLEAR_TO 0x5E}64BP"),
         COMPOUND_STRING("SCOPE LENS{CLEAR_TO 0x5E}64BP"),
-		COMPOUND_STRING("OLD SEA MAP{CLEAR_TO 0x5E}64BP"),
-		COMPOUND_STRING("MYSTIC TICKET{CLEAR_TO 0x5E}64BP"),
-		COMPOUND_STRING("AURORA TICKET{CLEAR_TO 0x5E}64BP"),
+        gText_Exit
+    },
+	[SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR] =
+    {
+		COMPOUND_STRING("MOON STONE{CLEAR_TO 0x5E}32BP"),
+		COMPOUND_STRING("SUN STONE{CLEAR_TO 0x5E}32BP"),
+		COMPOUND_STRING("SHINY STONE{CLEAR_TO 0x5E}32BP"),
+		COMPOUND_STRING("DUSK STONE{CLEAR_TO 0x5E}32BP"),
+		COMPOUND_STRING("DAWN STONE{CLEAR_TO 0x5E}32BP"),
+		COMPOUND_STRING("ICE STONE{CLEAR_TO 0x5E}32BP"),
+		COMPOUND_STRING("DEEP SEA SCALE{CLEAR_TO 0x5E}32BP"),
+		COMPOUND_STRING("DEEP SEA TOOTH{CLEAR_TO 0x5E}32BP"),
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
@@ -2996,7 +3015,7 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
 {
     #include "data/battle_frontier/battle_frontier_exchange_corner.h"
 
-    if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR)
+    if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR)
     {
         FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
         switch (menu)
@@ -3035,6 +3054,10 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
             AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
             ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_HoldItems[selection]);
             break;
+		case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_EvoItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_EvoItems[selection]);
+            break;
         }
     }
 }
@@ -3062,6 +3085,7 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
+		case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
             // This makes sure deleting the icon will not clear palettes in use by object events
             FieldEffectFreeGraphicsResources(&gSprites[sScrollableMultichoice_ItemSpriteId]);

@@ -11425,8 +11425,8 @@ const struct Item gItemsInfo[] =
         .price = 10000,
         .description = COMPOUND_STRING(
             "Strikes foe over\n"
-            "and over which to\n"
-            "raise Atk."),
+            "and over which\n"
+            "raises Atk."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11585,7 +11585,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM76] =
     {
         .name = _("TM76"),
-        .price = 5000,
+        .price = 15000,
         .description = COMPOUND_STRING(
             "Struggles against\n"
             "the opponents.\n"
@@ -12671,7 +12671,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MYSTIC_TICKET] =
     {
         .name = _("Mystic Ticket"),
-        .price = 0,
+        .price = 50000,
         .description = COMPOUND_STRING(
             "A ticket required\n"
             "to board the ship\n"
@@ -12687,7 +12687,7 @@ const struct Item gItemsInfo[] =
     [ITEM_AURORA_TICKET] =
     {
         .name = _("Aurora Ticket"),
-        .price = 0,
+        .price = 50000,
         .description = COMPOUND_STRING(
             "A ticket required\n"
             "to board the ship\n"
@@ -12703,7 +12703,7 @@ const struct Item gItemsInfo[] =
     [ITEM_OLD_SEA_MAP] =
     {
         .name = _("Old Sea Map"),
-        .price = 0,
+        .price = 50000,
         .description = COMPOUND_STRING(
             "A faded sea chart\n"
             "that shows the way\n"

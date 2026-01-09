@@ -655,9 +655,9 @@
 #define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           (FLAG_HIDDEN_ITEMS_START + 0x6D)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
-
+//Custom Hidden Items
 #define FLAG_NO_COLLISION  0x264 // NO COLLISION DEBUG
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
+#define FLAG_HIDDEN_ITEM_PETALBURG_CITY_ADAMANT_MINT  0x265 // Unused Flag
 #define FLAG_UNUSED_0x266  0x266 // Unused Flag
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
@@ -1022,11 +1022,11 @@
 #define FLAG_HIDE_LILYCOVE_CITY_RIVAL                               0x3CB
 #define FLAG_HIDE_ROUTE_120_STEVEN                                  0x3CC
 #define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                            0x3CD
-#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1                            0x3CE
-#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2                            0x3CF
-#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3                            0x3D0
-#define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1                      0x3D1
-#define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2                      0x3D2
+#define FLAG_ITEM_NEW_MAUVILLE_MAX_REPEL                            0x3CE //Used to be FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1 
+#define FLAG_ITEM_NEW_MAUVILLE_METAL_COAT                           0x3CF //Used to be FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2 
+#define FLAG_ITEM_NEW_MAUVILLE_LINKING_CORD                         0x3D0 //Used to be FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3 
+#define FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_CRUNCH                        0x3D1 //Used to be FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1
+#define FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_DARK_PULSE                    0x3D2 //Used to be FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2
 #define FLAG_HIDE_OLDALE_TOWN_RIVAL                                 0x3D3
 #define FLAG_HIDE_UNDERWATER_SEA_FLOOR_CAVERN_STOLEN_SUBMARINE      0x3D4
 #define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE_SHADOW                   0x3D5
@@ -1387,7 +1387,7 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
+#define FLAG_POST_GAME_NPC                          (SYSTEM_FLAGS + 0x21) // Used for spawning NPCs after becoming champion
 #define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
 #define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag

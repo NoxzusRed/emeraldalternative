@@ -1163,3 +1163,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/OldaleRuins/scripts.inc"
 
 	.include "data/maps/LavaridgeTow_Cave/scripts.inc"
+
+	.include "data/maps/MauvilleCity_TMShop/scripts.inc"

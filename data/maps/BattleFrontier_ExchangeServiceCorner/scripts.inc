@@ -19,6 +19,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize::
 	goto_if_eq VAR_TEMP_2, EXCHANGE_CORNER_DECOR1_CLERK, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor1
 	goto_if_eq VAR_TEMP_2, EXCHANGE_CORNER_DECOR2_CLERK, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor2
 	goto_if_eq VAR_TEMP_2, EXCHANGE_CORNER_VITAMIN_CLERK, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin
+	goto_if_eq VAR_TEMP_2, EXCHANGE_CORNER_EVO_ITEM_CLERK, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	end
 
@@ -57,6 +58,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_TryGiveItem::
 	playse SE_SHOP
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_HereIsYourPrize, MSGBOX_DEFAULT
 	goto_if_eq VAR_TEMP_2, EXCHANGE_CORNER_VITAMIN_CLERK, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin
+	goto_if_eq VAR_TEMP_2, EXCHANGE_CORNER_EVO_ITEM_CLERK, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	end
 
@@ -336,10 +338,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	case 6, BattleFrontier_ExchangeServiceCorner_EventScript_KingsRock
 	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_FocusBand
 	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_ScopeLens
-	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_OldSeaMap
-	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_MysticTicket
-	case 11, BattleFrontier_ExchangeServiceCorner_EventScript_AuroraTicket
-	case 12, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -415,27 +414,94 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ScopeLens::
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
-BattleFrontier_ExchangeServiceCorner_EventScript_OldSeaMap::
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmOldSeaMap, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 64
-	setvar VAR_0x8009, ITEM_OLD_SEA_MAP
+BattleFrontier_ExchangeServiceCorner_EventScript_EvoItemClerk::
+	lock
+	faceplayer
+	setvar VAR_TEMP_2, EXCHANGE_CORNER_EVO_ITEM_CLERK
+	call BattleFrontier_ExchangeServiceCorner_EventScript_ClerkWelcome
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem::
+	setvar VAR_0x8004, SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR
+	special ShowFrontierExchangeCornerItemIconWindow
+	special ShowScrollableMultichoice
+	waitstate
+	special CloseFrontierExchangeCornerItemIconWindow
+	switch VAR_RESULT
+	case 0, BattleFrontier_ExchangeServiceCorner_EventScript_MoonStone
+	case 1, BattleFrontier_ExchangeServiceCorner_EventScript_SunStone
+	case 2, BattleFrontier_ExchangeServiceCorner_EventScript_ShinyStone
+	case 3, BattleFrontier_ExchangeServiceCorner_EventScript_DuskStone
+	case 4, BattleFrontier_ExchangeServiceCorner_EventScript_DawnStone
+	case 5, BattleFrontier_ExchangeServiceCorner_EventScript_IceStone
+	case 6, BattleFrontier_ExchangeServiceCorner_EventScript_DeepSeaScale
+	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_DeepSeaTooth
+	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_MoonStone::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmMoonStone, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 32
+	setvar VAR_0x8009, ITEM_MOON_STONE
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
-BattleFrontier_ExchangeServiceCorner_EventScript_MysticTicket::
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmMysticTicket, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 64
-	setvar VAR_0x8009, ITEM_MYSTIC_TICKET
+BattleFrontier_ExchangeServiceCorner_EventScript_SunStone::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmSunStone, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 32
+	setvar VAR_0x8009, ITEM_SUN_STONE
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
-BattleFrontier_ExchangeServiceCorner_EventScript_AuroraTicket::
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmAuroraTicket, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 64
-	setvar VAR_0x8009, ITEM_AURORA_TICKET
+BattleFrontier_ExchangeServiceCorner_EventScript_ShinyStone::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmShinyStone, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 32
+	setvar VAR_0x8009, ITEM_SHINY_STONE
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_DuskStone::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmDuskStone, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 32
+	setvar VAR_0x8009, ITEM_DUSK_STONE
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_DawnStone::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmDawnStone, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 32
+	setvar VAR_0x8009, ITEM_DAWN_STONE
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_IceStone::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmIceStone, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 32
+	setvar VAR_0x8009, ITEM_ICE_STONE
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_DeepSeaScale::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmDeepSeaScale, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 32
+	setvar VAR_0x8009, ITEM_DEEP_SEA_SCALE
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_DeepSeaTooth::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmDeepSeaTooth, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 32
+	setvar VAR_0x8009, ITEM_DEEP_SEA_TOOTH
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -751,26 +817,59 @@ BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc::
 	.string "A hold item that raises the\n"
 	.string "critical-hit rate.$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmOldSeaMap::
-	.string "You've chosen the OLD SEA MAP.\n"
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmMoonStone::
+	.string "You've chosen the MOON STONE.\n"
 	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmMysticTicket::
-	.string "You've chosen the MYSTIC TICKET.\n"
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmSunStone::
+	.string "You've chosen the SUN STONE.\n"
 	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmAuroraTicket::
-	.string "You've chosen the AURORA TICKET.\n"
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmShinyStone::
+	.string "You've chosen the SHINY STONE.\n"
 	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_OldSeaMapDesc::
-	.string "A faded sea chart that shows the\n"
-	.string "way to a certain island.$"
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmDuskStone::
+	.string "You've chosen the DUSK STONE.\n"
+	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_MysticTicketDesc::
-	.string "A ticket required to board the\n"
-	.string "ship to Navel Rock.$"
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmDawnStone::
+	.string "You've chosen the DAWN STONE.\n"
+	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_AuroraTicketDesc::
-	.string "A ticket required to board the\n"
-	.string "ship to Birth Island.$"
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmIceStone::
+	.string "You've chosen the ICE STONE.\n"
+	.string "Is that correct?$"
+	
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmDeepSeaScale::
+	.string "You've chosen the DEEP SEA SCALE.\n"
+	.string "Is that correct?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmDeepSeaTooth::
+	.string "You've chosen the DEEP SEA TOOTH.\n"
+	.string "Is that correct?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_MoonStoneDesc::
+	.string "Makes certain species evolve.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_SunStoneDesc::
+	.string "Makes certain species evolve.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_ShinyStoneDesc::
+	.string "Makes certain species evolve.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_DuskStoneDesc::
+	.string "Makes certain species evolve.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_DawnStoneDesc::
+	.string "Makes certain species evolve.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_IceStoneDesc::
+	.string "Makes certain species evolve.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_DeepSeaScaleDesc::
+	.string "A hold item that raises the SP. DEF\n"
+	.string "of CLAMPERL.$"
+BattleFrontier_ExchangeServiceCorner_Text_DeepSeaToothDesc::
+	.string "A hold item that raises the SP. ATK.\n"
+	.string "of CLAMPERL.$"

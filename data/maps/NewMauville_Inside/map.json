@@ -88,9 +88,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewMauville_Inside_EventScript_Voltorb1",
-      "flag": "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1"
+      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REPEL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_NEW_MAUVILLE_MAX_REPEL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -101,9 +101,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewMauville_Inside_EventScript_Voltorb2",
-      "flag": "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2"
+      "trainer_sight_or_berry_tree_id": "ITEM_METAL_COAT",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_NEW_MAUVILLE_METAL_COAT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -114,9 +114,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewMauville_Inside_EventScript_Voltorb3",
-      "flag": "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3"
+      "trainer_sight_or_berry_tree_id": "ITEM_LINKING_CORD",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_NEW_MAUVILLE_LINKING_CORD"
     }
   ],
   "warp_events": [

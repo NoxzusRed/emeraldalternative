@@ -34,12 +34,13 @@
 #define SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2     4
 #define SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR     5
 #define SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR   6
-#define SCROLL_MULTI_BERRY_POWDER_VENDOR                   7
-#define SCROLL_MULTI_BF_RECEPTIONIST                       8
-#define SCROLL_MULTI_BF_MOVE_TUTOR_1                       9
-#define SCROLL_MULTI_BF_MOVE_TUTOR_2                      10
-#define SCROLL_MULTI_SS_TIDAL_DESTINATION                 11
-#define SCROLL_MULTI_BATTLE_TENT_RULES                    12
+#define SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR    7
+#define SCROLL_MULTI_BERRY_POWDER_VENDOR                   8
+#define SCROLL_MULTI_BF_RECEPTIONIST                       9
+#define SCROLL_MULTI_BF_MOVE_TUTOR_1                       10
+#define SCROLL_MULTI_BF_MOVE_TUTOR_2                      11
+#define SCROLL_MULTI_SS_TIDAL_DESTINATION                 12
+#define SCROLL_MULTI_BATTLE_TENT_RULES                    13
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6
 #define MAX_SCROLL_MULTI_LENGTH 16

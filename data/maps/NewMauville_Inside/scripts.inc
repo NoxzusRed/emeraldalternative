@@ -7,34 +7,12 @@ NewMauville_Inside_MapScripts::
 NewMauville_Inside_OnResume:
 	call_if_eq VAR_TEMP_1, 1, NewMauville_Inside_EventScript_SetBarrierStateBlueButton
 	call_if_eq VAR_TEMP_2, 1, NewMauville_Inside_EventScript_SetBarrierStateGreenButton
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NewMauville_Inside_EventScript_TryRemoveVoltorb
 	end
-
-NewMauville_Inside_EventScript_TryRemoveVoltorb::
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
-	removeobject VAR_LAST_TALKED
-	return
 
 NewMauville_Inside_OnTransition:
 	setvar VAR_TEMP_1, 0
 	setvar VAR_TEMP_2, 0
-	call_if_unset FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb1
-	call_if_unset FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb2
-	call_if_unset FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
 	end
-
-NewMauville_Inside_EventScript_ShowVoltorb1::
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1
-	return
-
-NewMauville_Inside_EventScript_ShowVoltorb2::
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2
-	return
-
-NewMauville_Inside_EventScript_ShowVoltorb3::
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3
-	return
 
 NewMauville_Inside_OnLoad:
 	call_if_eq VAR_NEW_MAUVILLE_STATE, 2, NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
@@ -171,78 +149,6 @@ NewMauville_Inside_EventScript_Generator::
 NewMauville_Inside_EventScript_GeneratorOff::
 	msgbox NewMauville_Inside_Text_GeneratorQuietedDown, MSGBOX_DEFAULT
 	releaseall
-	end
-
-NewMauville_Inside_EventScript_Voltorb1::
-	lock
-	faceplayer
-	setwildbattle SPECIES_VOLTORB, 25
-	waitse
-	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedVoltorb1
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_DefeatedVoltorb1
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauville_Inside_EventScript_DefeatedVoltorb1
-	setflag FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE
-	release
-	end
-
-NewMauville_Inside_EventScript_DefeatedVoltorb1::
-	setflag FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE
-	goto Common_EventScript_RemoveStaticPokemon
-	end
-
-NewMauville_Inside_EventScript_Voltorb2::
-	lock
-	faceplayer
-	setwildbattle SPECIES_VOLTORB, 25
-	waitse
-	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedVoltorb2
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_DefeatedVoltorb2
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauville_Inside_EventScript_DefeatedVoltorb2
-	setflag FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE
-	release
-	end
-
-NewMauville_Inside_EventScript_DefeatedVoltorb2::
-	setflag FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE
-	goto Common_EventScript_RemoveStaticPokemon
-	end
-
-NewMauville_Inside_EventScript_Voltorb3::
-	lock
-	faceplayer
-	setwildbattle SPECIES_VOLTORB, 25
-	waitse
-	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedVoltorb3
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_DefeatedVoltorb3
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauville_Inside_EventScript_DefeatedVoltorb3
-	setflag FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE
-	release
-	end
-
-NewMauville_Inside_EventScript_DefeatedVoltorb3::
-	setflag FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE
-	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 NewMauville_Inside_Text_GeneratorRadiatingHeat:

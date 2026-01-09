@@ -34,6 +34,10 @@ MauvilleCity_EventScript_RichBoy::
 	msgbox MauvilleCity_Text_PokemonCanJumpYouOnBike, MSGBOX_NPC
 	end
 
+MauvilleCity_EventScript_CoolTrainer::
+	msgbox MauvilleCity_Text_NewTMShop, MSGBOX_NPC
+	end
+
 MauvilleCity_EventScript_CitySign::
 	msgbox MauvilleCity_Text_CitySign, MSGBOX_SIGN
 	end
@@ -44,6 +48,10 @@ MauvilleCity_EventScript_GymSign::
 
 MauvilleCity_EventScript_BikeShopSign::
 	msgbox MauvilleCity_Text_BikeShopSign, MSGBOX_SIGN
+	end
+
+MauvilleCity_EventScript_TMShopSign::
+	msgbox MauvilleCity_Text_TMShopSign, MSGBOX_SIGN
 	end
 
 MauvilleCity_EventScript_GameCornerSign::
@@ -644,6 +652,9 @@ MauvilleCity_Text_BikeShopSign:
 	.string "soul!”\l"
 	.string "RYDEL'S CYCLES$"
 
+MauvilleCity_Text_TMShopSign:
+	.string "MAUVILLE TM SHOP$"
+
 MauvilleCity_Text_GameCornerSign:
 	.string "“The play spot for all!”\n"
 	.string "MAUVILLE GAME CORNER$"
@@ -662,3 +673,7 @@ MauvilleCity_Text_ExplainTV:
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"
+
+MauvilleCity_Text_NewTMShop:
+	.string "Did you see the new TM shop?\n"
+	.string "They brought TMs from other regions!$"
