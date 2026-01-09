@@ -125,7 +125,7 @@
       "id": "LAYOUT_LAVARIDGE_TOWN",
       "name": "LavaridgeTown_Layout",
       "width": 20,
-      "height": 20,
+      "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/LavaridgeTown/border.bin",
@@ -355,7 +355,7 @@
       "id": "LAYOUT_ROUTE120",
       "name": "Route120_Layout",
       "width": 40,
-      "height": 100,
+      "height": 107,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route120/border.bin",
@@ -365,7 +365,7 @@
       "id": "LAYOUT_ROUTE121",
       "name": "Route121_Layout",
       "width": 80,
-      "height": 20,
+      "height": 25,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/Route121/border.bin",
@@ -4430,6 +4430,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/OldaleRuins/border.bin",
       "blockdata_filepath": "data/layouts/OldaleRuins/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAVARIDGE_TOW_CAVE",
+      "name": "LavaridgeTow_Cave_Layout",
+      "width": 10,
+      "height": 7,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/LavaridgeTow_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/LavaridgeTow_Cave/map.bin"
     }
   ]
 }

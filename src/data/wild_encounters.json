@@ -3838,19 +3838,19 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 5,
-                "max_level": 35,
-                "species": "SPECIES_FINNEON"
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_FRILLISH"
               },
               {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_WINGULL"
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_FRILLISH"
               },
               {
-                "min_level": 15,
-                "max_level": 25,
-                "species": "SPECIES_WINGULL"
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_FRILLISH"
               },
               {
                 "min_level": 25,
@@ -3893,9 +3893,9 @@
                 "species": "SPECIES_WAILMER"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_WAILMER"
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SHARPEDO"
               },
               {
                 "min_level": 30,
@@ -3903,8 +3903,8 @@
                 "species": "SPECIES_WAILMER"
               },
               {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_WAILMER"
               },
               {

@@ -124,7 +124,8 @@
     "LavaridgeTown_House",
     "LavaridgeTown_Mart",
     "LavaridgeTown_PokemonCenter_1F",
-    "LavaridgeTown_PokemonCenter_2F"
+    "LavaridgeTown_PokemonCenter_2F",
+    "LavaridgeTow_Cave"
   ],
   "gMapGroup_IndoorFallarbor": [
     "FallarborTown_Mart",

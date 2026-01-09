@@ -1195,7 +1195,7 @@
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
+#define FLAG_ITEM_ROUTE_119_TM_ACROBATICS                           0x479 //
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
@@ -1222,17 +1222,17 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
+#define FLAG_ITEM_JAGGED_PASS_TM_FLAME_CHARGE                       0x493 //
+#define FLAG_ITEM_MT_CHIMNEY_TM_INCINERATE                          0x494 //
+#define FLAG_ITEM_ROUTE_132_TM_SLUDGE_WAVE                          0x495 //
+#define FLAG_ITEM_ROUTE_123_TM_DAZZLING_GLEAM                       0x496 //
+#define FLAG_ITEM_RUSTBORO_CITY_TM_ECHOED_VOICE                     0x497 //
+#define FLAG_ITEM_LAVARIDGE_TOWN_CAVE_TM_SWORDS_DANCE               0x498 //
+#define FLAG_ITEM_GRANITE_CAVE_B2F_TM_SHADOW_CLAW                   0x499 //
+#define FLAG_ITEM_SKY_PILLAR_4F_TM_DRAGON_PULSE                     0x49A //
+#define FLAG_ITEM_SHOAL_CAVE_LOWER_ROOM_TM_FROST_BREATH             0x49B //
+#define FLAG_ITEM_ROUTE_120_TM_X_SCISSOR                            0x49C //
+#define FLAG_ITEM_ROUTE_121_TM_POISON_JAB                           0x49D //
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag

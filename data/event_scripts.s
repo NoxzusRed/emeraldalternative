@@ -1161,3 +1161,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route103_South/scripts.inc"
 
 	.include "data/maps/OldaleRuins/scripts.inc"
+
+	.include "data/maps/LavaridgeTow_Cave/scripts.inc"
