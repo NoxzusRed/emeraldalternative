@@ -1183,10 +1183,10 @@
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_MT_PYRE_3F_REAPER_CLOTH                           0x46D //
+#define FLAG_ITEM_SAFARI_ZONE_SOUTH_TM_DREAM_EATER                  0x46D //
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_OVAL_STONE                 0x470 //
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_WILD_CHARGE             0x470 //
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_ICE_STONE                     0x472 //
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
@@ -1233,11 +1233,11 @@
 #define FLAG_ITEM_SHOAL_CAVE_LOWER_ROOM_TM_FROST_BREATH             0x49B //
 #define FLAG_ITEM_ROUTE_120_TM_X_SCISSOR                            0x49C //
 #define FLAG_ITEM_ROUTE_121_TM_POISON_JAB                           0x49D //
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
+#define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_TM_ENERGY_BALL             0x49E //
+#define FLAG_ITEM_MAGMA_HIDEOUT_1F_TM_EARTH_POWER                   0x49F // 
+#define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_7_TM_SCALD                   0x4A0 //
+#define FLAG_ITEM_VICTORY_ROAD_1F_TM_NASTY_PLOT                     0x4A1 //
+#define FLAG_ITEM_VICTORY_ROAD_2F_TM_FLASH_CANNON                   0x4A2 //
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
 #define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag

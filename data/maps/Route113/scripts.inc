@@ -22,6 +22,14 @@ Route113_EventScript_CheckSetAshWeather::
 Route113_EventScript_DontSetAshWeather::
 	return
 
+Route113_EventScript_Lady::
+	msgbox Route113_Text_MintShop, MSGBOX_NPC
+	end
+
+Route113_EventScript_Poochyena::
+	msgbox Route113_Text_Bufoh, MSGBOX_SIGN
+	end
+
 Route113_EventScript_Gentleman::
 	msgbox Route113_Text_AshCanBeFashionedIntoGlass, MSGBOX_NPC
 	end
@@ -164,3 +172,9 @@ Route113_Text_GlassWorkshopSign:
 	.string "GLASS WORKSHOP\n"
 	.string "“Turning Volcanic Ash into Glass Items”$"
 
+Route113_Text_MintShop:
+	.string "I'm travelling to Fallarbor Town. I\n"
+	.string "heard they've opened a new Mint Shop.$"
+
+Route113_Text_Bufoh:
+	.string "Bufoh!$"

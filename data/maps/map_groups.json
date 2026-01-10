@@ -135,7 +135,8 @@
     "FallarborTown_PokemonCenter_1F",
     "FallarborTown_PokemonCenter_2F",
     "FallarborTown_CozmosHouse",
-    "FallarborTown_MoveRelearnersHouse"
+    "FallarborTown_MoveRelearnersHouse",
+    "FallarborTown_MintShop"
   ],
   "gMapGroup_IndoorVerdanturf": [
     "VerdanturfTown_BattleTentLobby",
@@ -433,7 +434,8 @@
     "TerraCave_End",
     "AlteringCave",
     "MeteorFalls_StevensCave",
-    "OldaleRuins"
+    "OldaleRuins",
+    "VictoryRoad_2F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

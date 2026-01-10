@@ -1165,3 +1165,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LavaridgeTow_Cave/scripts.inc"
 
 	.include "data/maps/MauvilleCity_TMShop/scripts.inc"
+
+	.include "data/maps/FallarborTown_MintShop/scripts.inc"
+
+	.include "data/maps/VictoryRoad_2F/scripts.inc"

@@ -83,6 +83,7 @@
 	F(SHADOW_CLAW) \
 	F(LOW_SWEEP) \
 	F(GIGA_IMPACT) \
+	F(FOCUS_BLAST) \
 
 #define FOREACH_HM(F) \
     F(CUT) \

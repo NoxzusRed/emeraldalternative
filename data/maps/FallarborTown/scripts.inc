@@ -29,6 +29,18 @@ FallarborTown_EventScript_Gentleman::
 	msgbox FallarborTown_Text_HaveYouChallengedFlannery, MSGBOX_NPC
 	end
 
+FallarborTown_EventScript_MintGirl1::
+	msgbox FallarborTown_Text_FallarborMint, MSGBOX_NPC
+	end
+
+FallarborTown_EventScript_MintGirl2::
+	msgbox FallarborTown_Text_Rolycoly, MSGBOX_NPC
+	end
+
+FallarborTown_EventScript_OldLady::
+	msgbox FallarborTown_Text_OldLadyShop, MSGBOX_NPC
+	end
+
 FallarborTown_EventScript_Azurill::
 	lock
 	faceplayer
@@ -93,3 +105,18 @@ FallarborTown_Text_MoveTutorSign:
 	.string "MOVE TUTOR'S HOUSE\n"
 	.string "“New moves taught to POKéMON.”$"
 
+FallarborTown_Text_FallarborMint:
+	.string "We brought mint from Galar so we could\n"
+	.string "grow it in Fallarbor Town.\p"
+	.string "By growing it here, we can combine the\n"
+	.string "cooling sensation of mint with the heat\p"
+	.string "of Fallarbor soil.$"
+
+FallarborTown_Text_Rolycoly:
+	.string "Rolycolys help us in the fields. They\n"
+	.string "like the mint, too!.$"
+
+FallarborTown_Text_OldLadyShop:
+	.string "I opened the Mint Shop with my\n"
+	.string "granddaughters. You can talk to them in\p"
+	.string "the shop if you wish to buy some.$"

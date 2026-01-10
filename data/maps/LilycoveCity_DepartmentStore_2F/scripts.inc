@@ -62,6 +62,23 @@ LilycoveCity_DepartmentStore_2F_Pokemart2:
 	.2byte ITEM_MECH_MAIL
 	pokemartlistend
 
+LilycoveCity_DepartmentStore_2F_EventScript_LinkingCordClerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LilycoveCity_DepartmentStore_2F_LinkingCordShop
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LilycoveCity_DepartmentStore_2F_LinkingCordShop:
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_ELECTIRIZER
+	.2byte ITEM_MAGMARIZER
+	pokemartlistend
+
 LilycoveCity_DepartmentStore_2F_Text_LearnToUseItemsProperly:
 	.string "Learn to use items properly.\n"
 	.string "That's basic, really.$"
