@@ -45,18 +45,18 @@ Route109_SeashoreHouse_EventScript_AlreadyReceivedSodaPop::
 	end
 
 Route109_SeashoreHouse_EventScript_BuySodaPop::
-	checkmoney 300
+	checkmoney 1800
 	goto_if_eq VAR_RESULT, FALSE, Route109_SeashoreHouse_EventScript_NotEnoughMoney
-	checkitemspace ITEM_SODA_POP
+	checkitemspace ITEM_SODA_POP, 6
 	goto_if_eq VAR_RESULT, FALSE, Route109_SeashoreHouse_EventScript_NotEnoughSpace
 	msgbox Route109_SeashoreHouse_Text_HereYouGo, MSGBOX_DEFAULT
-	removemoney 300
+	removemoney 1800
 	updatemoneybox
 .if OW_SHOW_ITEM_DESCRIPTIONS != OW_ITEM_DESCRIPTIONS_OFF
 	hidemoneybox
-	giveitem ITEM_SODA_POP
+	giveitem ITEM_SODA_POP, 6
 .else
-	giveitem ITEM_SODA_POP
+	giveitem ITEM_SODA_POP, 6
 	hidemoneybox
 .endif
 	release
@@ -130,7 +130,7 @@ Route109_SeashoreHouse_Text_BagFull:
 Route109_SeashoreHouse_Text_WantToBuySodaPop:
 	.string "Want to buy some SODA POP?\n"
 	.string "POKéMON love it!\p"
-	.string "Just ¥300 a bottle!\n"
+	.string "Just ¥1800 a pack of 6!\n"
 	.string "Buy some!$"
 
 Route109_SeashoreHouse_Text_HereYouGo:

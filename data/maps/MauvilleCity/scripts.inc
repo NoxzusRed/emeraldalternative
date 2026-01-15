@@ -487,7 +487,7 @@ MauvilleCity_Text_UncleYourePushingIt:
 
 MauvilleCity_Text_WallyWeCanBeatAnyone:
 	.string "WALLY: I'm not pushing it.\p"
-	.string "If I combine forces with RALTS,\n"
+	.string "If I combine forces with ROSELIA,\n"
 	.string "we can beat anyone!$"
 
 MauvilleCity_Text_WallyWillYouBattleMe:
@@ -653,7 +653,7 @@ MauvilleCity_Text_BikeShopSign:
 	.string "RYDEL'S CYCLES$"
 
 MauvilleCity_Text_TMShopSign:
-	.string "MAUVILLE TM SHOP$"
+	.string "TM SHOP$"
 
 MauvilleCity_Text_GameCornerSign:
 	.string "“The play spot for all!”\n"

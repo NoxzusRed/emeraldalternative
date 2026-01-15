@@ -42,17 +42,17 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
-
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
+//Custom Scripts
+#define FLAG_RECEIVED_EVIOLITE				0x20 //
+#define FLAG_RECEIVED_ROCKY_HELMET			0x21 //
+#define FLAG_RECEIVED_RED_SHARD				0x22 //
+#define FLAG_RECEIVED_YELLOW_SHARD          0x23 //
+#define FLAG_RECEIVED_GREEN_SHARD			0x24 //
+#define FLAG_RECEIVED_BLUE_SHARD			0x25 //
+#define FLAG_RECEIVED_TM_POISON_JAB			0x26 //
+#define FLAG_CAUGHT_JIRACHI					0x27 //
+#define FLAG_HIDE_JIRACHI					0x28 //
+#define FLAG_DEFEATED_JIRACHI				0x29 //
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
@@ -1107,7 +1107,7 @@
 #define FLAG_ITEM_GRANITE_CAVE_B2F_RARE_CANDY                       0x41E
 #define FLAG_ITEM_PETALBURG_WOODS_X_ATTACK                          0x41F
 #define FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL                        0x420
-#define FLAG_ITEM_ROUTE_104_POKE_BALL                               0x421
+#define FLAG_ITEM_ROUTE_104_ULTRA_BALL                              0x421
 #define FLAG_ITEM_PETALBURG_WOODS_ETHER                             0x422
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_3R_ECAPE_ROPE                    0x423
 #define FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_ORANGE_MAIL                  0x424
@@ -1221,7 +1221,7 @@
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
-
+//Custom Items
 #define FLAG_ITEM_JAGGED_PASS_TM_FLAME_CHARGE                       0x493 //
 #define FLAG_ITEM_MT_CHIMNEY_TM_INCINERATE                          0x494 //
 #define FLAG_ITEM_ROUTE_132_TM_SLUDGE_WAVE                          0x495 //
@@ -1232,19 +1232,19 @@
 #define FLAG_ITEM_SKY_PILLAR_4F_TM_DRAGON_PULSE                     0x49A //
 #define FLAG_ITEM_SHOAL_CAVE_LOWER_ROOM_TM_FROST_BREATH             0x49B //
 #define FLAG_ITEM_ROUTE_120_TM_X_SCISSOR                            0x49C //
-#define FLAG_ITEM_ROUTE_121_TM_POISON_JAB                           0x49D //
+#define FLAG_ITEM_ROUTE_121_TM_CROSS_POISON                         0x49D //
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_TM_ENERGY_BALL             0x49E //
 #define FLAG_ITEM_MAGMA_HIDEOUT_1F_TM_EARTH_POWER                   0x49F // 
 #define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_7_TM_SCALD                   0x4A0 //
 #define FLAG_ITEM_VICTORY_ROAD_1F_TM_NASTY_PLOT                     0x4A1 //
 #define FLAG_ITEM_VICTORY_ROAD_2F_TM_FLASH_CANNON                   0x4A2 //
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
+#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_1                  0x4A3 //
+#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_2                  0x4A4 //
+#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_3                  0x4A5 //
+#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_4                  0x4A6 //
+#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_BIG_PEARL_1               0x4A7 //
+#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_BIG_PEARL_2               0x4A8 //
+#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_BIG_PEARL_3               0x4A9 //
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag

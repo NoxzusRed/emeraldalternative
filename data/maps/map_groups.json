@@ -93,7 +93,8 @@
     "Underwater_Route129",
     "Underwater_Route105",
     "Underwater_Route125",
-    "Route103_South"
+    "Route103_South",
+    "RustboroCity_East"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -156,7 +157,8 @@
     "PacifidlogTown_House2",
     "PacifidlogTown_House3",
     "PacifidlogTown_House4",
-    "PacifidlogTown_House5"
+    "PacifidlogTown_House5",
+    "PacifidlogTown_House6"
   ],
   "gMapGroup_IndoorPetalburg": [
     "PetalburgCity_WallysHouse",
@@ -211,7 +213,9 @@
     "RustboroCity_Flat2_1F",
     "RustboroCity_Flat2_2F",
     "RustboroCity_Flat2_3F",
-    "RustboroCity_House3"
+    "RustboroCity_House3",
+    "RustboroCity_East_AbilityShop",
+    "RustboroCity_East_House"
   ],
   "gMapGroup_IndoorFortree": [
     "FortreeCity_House1",
@@ -223,7 +227,8 @@
     "FortreeCity_House3",
     "FortreeCity_House4",
     "FortreeCity_House5",
-    "FortreeCity_DecorationShop"
+    "FortreeCity_DecorationShop",
+    "FortreeCity_House6"
   ],
   "gMapGroup_IndoorLilycove": [
     "LilycoveCity_CoveLilyMotel_1F",
@@ -280,7 +285,8 @@
     "SootopolisCity_House7",
     "SootopolisCity_LotadAndSeedotHouse",
     "SootopolisCity_MysteryEventsHouse_1F",
-    "SootopolisCity_MysteryEventsHouse_B1F"
+    "SootopolisCity_MysteryEventsHouse_B1F",
+    "SootopolisCity_OrbShop"
   ],
   "gMapGroup_IndoorEverGrande": [
     "EverGrandeCity_SidneysRoom",
@@ -435,7 +441,8 @@
     "AlteringCave",
     "MeteorFalls_StevensCave",
     "OldaleRuins",
-    "VictoryRoad_2F"
+    "VictoryRoad_2F",
+    "OldaleRuins_Underwater"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -617,7 +624,8 @@
     "Route113_GlassWorkshop"
   ],
   "gMapGroup_IndoorRoute123": [
-    "Route123_BerryMastersHouse"
+    "Route123_BerryMastersHouse",
+    "Route123_House"
   ],
   "gMapGroup_IndoorRoute119": [
     "Route119_WeatherInstitute_1F",

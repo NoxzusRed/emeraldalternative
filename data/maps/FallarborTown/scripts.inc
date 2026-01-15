@@ -63,6 +63,10 @@ FallarborTown_EventScript_MoveTutorSign::
 	msgbox FallarborTown_Text_MoveTutorSign, MSGBOX_SIGN
 	end
 
+FallarborTown_EventScript_MintShopSign::
+	msgbox FallarborTown_Text_MintShopSign, MSGBOX_SIGN
+	end
+
 FallarborTown_Text_ShadyCharactersCozmosHome:
 	.string "Something's happening,\n"
 	.string "and I don't like it!\p"
@@ -104,6 +108,10 @@ FallarborTown_Text_TownSign:
 FallarborTown_Text_MoveTutorSign:
 	.string "MOVE TUTOR'S HOUSE\n"
 	.string "“New moves taught to POKéMON.”$"
+
+FallarborTown_Text_MintShopSign:
+	.string "MINT SHOP$"
+
 
 FallarborTown_Text_FallarborMint:
 	.string "We brought mint from Galar so we could\n"

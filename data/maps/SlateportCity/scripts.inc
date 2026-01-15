@@ -17,13 +17,13 @@ SlateportCity_EventScript_EnterSlateport::
 	return
 
 SlateportCity_EventScript_MovePeopleForSternInterview::
-	setobjectxyperm LOCALID_SLATEPORT_CAPT_STERN, 28, 13
-	setobjectxyperm LOCALID_SLATEPORT_OLD_WOMAN, 25, 13
-	setobjectxyperm LOCALID_SLATEPORT_RICH_BOY, 25, 14
-	setobjectxyperm LOCALID_SLATEPORT_COOK, 27, 16
-	setobjectxyperm LOCALID_SLATEPORT_GIRL, 28, 16
-	setobjectxyperm LOCALID_SLATEPORT_FAT_MAN, 29, 16
-	setobjectxyperm LOCALID_SLATEPORT_MAN_1, 31, 14
+	setobjectxyperm LOCALID_SLATEPORT_CAPT_STERN, 30, 13
+	setobjectxyperm LOCALID_SLATEPORT_OLD_WOMAN, 27, 13
+	setobjectxyperm LOCALID_SLATEPORT_RICH_BOY, 27, 14
+	setobjectxyperm LOCALID_SLATEPORT_COOK, 29, 16
+	setobjectxyperm LOCALID_SLATEPORT_GIRL, 31, 16
+	setobjectxyperm LOCALID_SLATEPORT_FAT_MAN, 31, 16
+	setobjectxyperm LOCALID_SLATEPORT_MAN_1, 33, 14
 	setobjectmovementtype LOCALID_SLATEPORT_CAPT_STERN, MOVEMENT_TYPE_FACE_DOWN
 	setobjectmovementtype LOCALID_SLATEPORT_OLD_WOMAN, MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT
 	setobjectmovementtype LOCALID_SLATEPORT_RICH_BOY, MOVEMENT_TYPE_FACE_UP_AND_RIGHT
@@ -37,12 +37,12 @@ SlateportCity_EventScript_SetReadyForScottScene::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	getplayerxy VAR_0x8004, VAR_0x8005
 	goto_if_eq VAR_0x8004, 30, SlateportCity_EventScript_MoveScottLeft
-	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 23, 27
+	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 24, 27
 	setobjectmovementtype LOCALID_SLATEPORT_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 SlateportCity_EventScript_MoveScottLeft::
-	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 22, 27
+	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 24, 27
 	setobjectmovementtype LOCALID_SLATEPORT_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
@@ -539,6 +539,7 @@ SlateportCity_EventScript_PowerTMClerk::
 SlateportCity_Pokemart_PowerTMs:
 	.2byte ITEM_TM76
 	.2byte ITEM_TM77
+	.2byte ITEM_TM84
 	pokemartlistend
 
 @ Scene with Capt Sterns interview and Team Aqua announcing plans to steal Submarine

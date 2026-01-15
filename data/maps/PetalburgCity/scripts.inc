@@ -698,6 +698,23 @@ PetalburgCity_EventScript_GymBoy::
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC
 	end
 
+PetalburgCity_EventScript_Clerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart PetalburgCity_Clerk
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+PetalburgCity_Clerk:
+	.2byte ITEM_ROCKY_HELMET
+	.2byte ITEM_LOADED_DICE
+	.2byte ITEM_SAFETY_GOGGLES
+	pokemartlistend
+
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
 	.string "We have to leave for VERDANTURF TOWN\n"

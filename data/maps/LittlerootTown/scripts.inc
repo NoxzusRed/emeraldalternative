@@ -69,6 +69,9 @@ LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent::
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 5
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 5
 	clearflag FLAG_POST_GAME_NPC
+	clearflag FLAG_DEFEATED_JIRACHI
+	clearflag FLAG_CAUGHT_JIRACHI
+	clearflag FLAG_HIDE_JIRACHI
 	return
 
 LittlerootTown_EventScript_MoveMomToMaysDoor::
@@ -115,6 +118,9 @@ LittlerootTown_EventScript_StepOffTruckMale::
 	call LittlerootTown_EventScript_GoInsideWithMom
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
 	setflag FLAG_POST_GAME_NPC
+	setflag FLAG_DEFEATED_JIRACHI
+	setflag FLAG_HIDE_JIRACHI
+	setflag FLAG_CAUGHT_JIRACHI
 	warpsilent MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 8, 8
 	waitstate
 	releaseall

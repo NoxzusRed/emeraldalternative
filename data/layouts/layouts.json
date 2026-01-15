@@ -45,7 +45,7 @@
       "id": "LAYOUT_FORTREE_CITY",
       "name": "FortreeCity_Layout",
       "width": 40,
-      "height": 20,
+      "height": 31,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/FortreeCity/border.bin",
@@ -155,7 +155,7 @@
       "id": "LAYOUT_PACIFIDLOG_TOWN",
       "name": "PacifidlogTown_Layout",
       "width": 20,
-      "height": 40,
+      "height": 44,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/PacifidlogTown/border.bin",
@@ -1344,8 +1344,8 @@
     {
       "id": "LAYOUT_PETALBURG_WOODS",
       "name": "PetalburgWoods_Layout",
-      "width": 48,
-      "height": 44,
+      "width": 62,
+      "height": 60,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/PetalburgWoods/border.bin",
@@ -1565,7 +1565,7 @@
       "id": "LAYOUT_CAVE_OF_ORIGIN_ENTRANCE",
       "name": "CaveOfOrigin_Entrance_Layout",
       "width": 19,
-      "height": 26,
+      "height": 27,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/CaveOfOrigin_Entrance/border.bin",
@@ -1615,7 +1615,7 @@
       "id": "LAYOUT_CAVE_OF_ORIGIN_B1F",
       "name": "CaveOfOrigin_B1F_Layout",
       "width": 19,
-      "height": 19,
+      "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/CaveOfOrigin_B1F/border.bin",
@@ -2825,7 +2825,7 @@
       "id": "LAYOUT_UNDERWATER_SEALED_CHAMBER",
       "name": "Underwater_SealedChamber_Layout",
       "width": 22,
-      "height": 48,
+      "height": 49,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Underwater",
       "border_filepath": "data/layouts/Underwater_SealedChamber/border.bin",
@@ -4424,7 +4424,7 @@
     {
       "id": "LAYOUT_OLDALE_RUINS",
       "name": "OldaleRuins_Layout",
-      "width": 9,
+      "width": 15,
       "height": 13,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
@@ -4470,6 +4470,86 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/VictoryRoad_2F/border.bin",
       "blockdata_filepath": "data/layouts/VictoryRoad_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTBORO_CITY_EAST",
+      "name": "RustboroCity_East_Layout",
+      "width": 24,
+      "height": 38,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/RustboroCity_East/border.bin",
+      "blockdata_filepath": "data/layouts/RustboroCity_East/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTBORO_CITY_EAST_ABILITY_SHOP",
+      "name": "RustboroCity_East_AbilityShop_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/RustboroCity_East_AbilityShop/border.bin",
+      "blockdata_filepath": "data/layouts/RustboroCity_East_AbilityShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTBORO_CITY_EAST_HOUSE",
+      "name": "RustboroCity_East_House_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/RustboroCity_East_House/border.bin",
+      "blockdata_filepath": "data/layouts/RustboroCity_East_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_CITY_HOUSE6",
+      "name": "FortreeCity_House6_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FortreeCity_House6/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeCity_House6/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE123_HOUSE",
+      "name": "Route123_House_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route123_House/border.bin",
+      "blockdata_filepath": "data/layouts/Route123_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOOTOPOLIS_CITY_ORB_SHOP",
+      "name": "SootopolisCity_OrbShop_Layout",
+      "width": 8,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SootopolisCity_OrbShop/border.bin",
+      "blockdata_filepath": "data/layouts/SootopolisCity_OrbShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_PACIFIDLOG_TOWN_HOUSE6",
+      "name": "PacifidlogTown_House6_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PacifidlogTown_House6/border.bin",
+      "blockdata_filepath": "data/layouts/PacifidlogTown_House6/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_RUINS_UNDERWATER",
+      "name": "OldaleRuins_Underwater_Layout",
+      "width": 21,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/OldaleRuins_Underwater/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleRuins_Underwater/map.bin"
     }
   ]
 }

@@ -426,10 +426,10 @@ static void DoBattlePyramidTrainerHillBattle(void)
     TryUpdateGymLeaderRematchFromTrainer();
 }
 
-// Initiates battle where Wally catches Ralts
+// Initiates battle where Wally catches Budew
 void StartWallyTutorialBattle(void)
 {
-    CreateMaleMon(&gEnemyParty[0], SPECIES_RALTS, 5);
+    CreateMaleMon(&gEnemyParty[0], SPECIES_BUDEW, 5);
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     gBattleTypeFlags = BATTLE_TYPE_WALLY_TUTORIAL;
@@ -506,6 +506,23 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;
+	//Custom
+	case SPECIES_SUICUNE:
+	case SPECIES_RAIKOU:
+	case SPECIES_ENTEI:
+		CreateBattleStartTask(B_TRANSITION_BLUR, MUS_C_VS_LEGEND_BEAST);
+		break;
+	case SPECIES_ARTICUNO:
+	case SPECIES_ZAPDOS:
+	case SPECIES_MOLTRES:
+		CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+		break;
+	case SPECIES_MEWTWO:
+		CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_MEWTWO);
+		break;
+	case SPECIES_JIRACHI:
+		CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
+		break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

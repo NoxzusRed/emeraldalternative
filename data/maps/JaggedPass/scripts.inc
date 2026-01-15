@@ -147,6 +147,25 @@ JaggedPass_EventScript_Autumn::
 	msgbox JaggedPass_Text_AutumnPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+JaggedPass_EventScript_Torkoal::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_ROCKY_HELMET, JaggedPass_EventScript_ReceivedRockyHelmet
+	msgbox JaggedPass_Text_Torkoal, MSGBOX_DEFAULT
+	giveitem ITEM_ROCKY_HELMET
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_ROCKY_HELMET
+	release
+	end
+
+JaggedPass_EventScript_ReceivedRockyHelmet::
+	msgbox JaggedPass_Text_Torkoal, MSGBOX_DEFAULT
+	release
+	end
+
+JaggedPass_Text_Torkoal:
+	.string "Fsssshhhh!$"
+
 JaggedPass_Text_EricIntro:
 	.string "MT. CHIMNEY's JAGGED PASS…\p"
 	.string "Now this is what I've always wanted\n"

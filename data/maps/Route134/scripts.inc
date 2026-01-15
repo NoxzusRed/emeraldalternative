@@ -51,3 +51,25 @@ Route134_EventScript_Kelvin::
 	msgbox Route134_Text_KelvinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route134_EventScript_AquaMember::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM_POISON_JAB, Route134_EventScript_ReceivedPoisonJab
+	msgbox Route134_Text_AquaMember, MSGBOX_DEFAULT
+	giveitem ITEM_TM83
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_TM_POISON_JAB
+	release
+	end
+
+Route134_EventScript_ReceivedPoisonJab::
+	msgbox Route134_Text_AquaMember2, MSGBOX_DEFAULT
+	release
+	end
+
+Route134_Text_AquaMember:
+	.string "I was told to watch over this route.\n"
+	.string "Take this and leave!$"
+
+Route134_Text_AquaMember2:
+	.string "I told you to leave me alone.$"

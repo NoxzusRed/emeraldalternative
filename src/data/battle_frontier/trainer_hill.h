@@ -73,9 +73,9 @@ static const struct TrainerHillFloor sFloors_JPDefault[] = {
                         .friendship = MAX_FRIENDSHIP
                     },
                     [2] = {
-                        .species = SPECIES_SANDSHREW,
+                        .species = SPECIES_DRILBUR,
                         .heldItem = ITEM_QUICK_CLAW,
-                        .moves = { MOVE_SCRATCH, MOVE_POISON_STING, MOVE_SAND_ATTACK, MOVE_SWIFT },
+                        .moves = { MOVE_SCRATCH, MOVE_METAL_CLAW, MOVE_HONE_CLAWS, MOVE_ROCK_TOMB },
                         .hpEV = 110,
                         .attackEV = 100,
                         .defenseEV = 100,
@@ -217,9 +217,9 @@ static const struct TrainerHillFloor sFloors_JPDefault[] = {
                         .friendship = MAX_FRIENDSHIP
                     },
                     [1] = {
-                        .species = SPECIES_CORPHISH,
+                        .species = SPECIES_SKRELP,
                         .heldItem = ITEM_QUICK_CLAW,
-                        .moves = { MOVE_KNOCK_OFF, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_PROTECT },
+                        .moves = { MOVE_WATER_GUN, MOVE_ACID_SPRAY, MOVE_TOXIC_SPIKES, MOVE_PROTECT },
                         .hpEV = 100,
                         .attackEV = 110,
                         .defenseEV = 100,
@@ -297,9 +297,9 @@ static const struct TrainerHillFloor sFloors_JPDefault[] = {
                         .friendship = MAX_FRIENDSHIP
                     },
                     [4] = {
-                        .species = SPECIES_SPOINK,
+                        .species = SPECIES_SOLOSIS,
                         .heldItem = ITEM_PERSIM_BERRY,
-                        .moves = { MOVE_PSYWAVE, MOVE_FUTURE_SIGHT, MOVE_CONFUSE_RAY, MOVE_MAGIC_COAT },
+                        .moves = { MOVE_PSYBEAM, MOVE_FUTURE_SIGHT, MOVE_CONFUSE_RAY, MOVE_PSYCHIC_TERRAIN },
                         .hpEV = 100,
                         .defenseEV = 100,
                         .speedEV = 100,
@@ -441,9 +441,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_WEEZING,
+                        .species = SPECIES_FROSLASS,
                         .heldItem = ITEM_SALAC_BERRY,
-                        .moves = {MOVE_SLUDGE_BOMB, MOVE_SHADOW_BALL, MOVE_FRUSTRATION, MOVE_DESTINY_BOND},
+                        .moves = {MOVE_ICE_FANG, MOVE_POLTERGEIST, MOVE_FRUSTRATION, MOVE_DESTINY_BOND},
                         .hpEV = 110,
                         .attackEV = 200,
                         .spDefenseEV = 200,
@@ -456,7 +456,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 24,
                         .abilityNum = 0,
                         .personality = 0x80,
-                        .nickname = _("WEEZING"),
+                        .nickname = _("FROSLASS"),
                         .friendship = 0,
                     },
                     [4] =
@@ -609,9 +609,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_PINSIR,
+                        .species = SPECIES_LEAVANNY,
                         .heldItem = ITEM_QUICK_CLAW,
-                        .moves = {MOVE_GUILLOTINE, MOVE_BRICK_BREAK, MOVE_SWAGGER, MOVE_FEINT_ATTACK},
+                        .moves = {MOVE_GUILLOTINE, MOVE_X_SCISSOR, MOVE_LEAF_BLADE, MOVE_SHADOW_CLAW},
                         .hpEV = 200,
                         .defenseEV = 155,
                         .spDefenseEV = 155,
@@ -624,7 +624,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0x85,
-                        .nickname = _("PINSIR"),
+                        .nickname = _("LEAVANNY"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                 },
@@ -656,7 +656,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_MEDITITE,
+                        .species = SPECIES_MIENFOO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_PROTECT, MOVE_NONE, MOVE_NONE},
                         .hpEV = 252,
@@ -671,12 +671,12 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 20,
                         .abilityNum = 0,
                         .personality = 0x80,
-                        .nickname = _("MEDITITE"),
+                        .nickname = _("MIENFOO"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [1] =
                     {
-                        .species = SPECIES_HERACROSS,
+                        .species = SPECIES_LILLIGANT_HISUI,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_PROTECT, MOVE_NONE, MOVE_NONE},
                         .hpEV = 252,
@@ -691,7 +691,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 20,
                         .abilityNum = 1,
                         .personality = 0x80,
-                        .nickname = _("HERACROSS"),
+                        .nickname = _("LILLIGANT"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [2] =
@@ -736,7 +736,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_PINSIR,
+                        .species = SPECIES_DUSCLOPS,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_REVENGE, MOVE_NONE, MOVE_NONE},
                         .hpEV = 252,
@@ -751,7 +751,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 20,
                         .abilityNum = 0,
                         .personality = 0x80,
-                        .nickname = _("PINSIR"),
+                        .nickname = _("DUSCLOPS"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [5] =
@@ -788,9 +788,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_VULPIX,
+                        .species = SPECIES_ZORUA_HISUI,
                         .heldItem = ITEM_LUM_BERRY,
-                        .moves = {MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY, MOVE_TAIL_WHIP, MOVE_OVERHEAT},
+                        .moves = {MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY, MOVE_LEER, MOVE_SHADOW_BALL},
                         .hpEV = 252,
                         .defenseEV = 252,
                         .spDefenseEV = 6,
@@ -803,14 +803,14 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0xF,
-                        .nickname = _("VULPIX"),
+                        .nickname = _("ZORUA"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [1] =
                     {
-                        .species = SPECIES_MINUN,
+                        .species = SPECIES_JOLTIK,
                         .heldItem = ITEM_FOCUS_BAND,
-                        .moves = {MOVE_THUNDER_WAVE, MOVE_CHARM, MOVE_ENCORE, MOVE_SPARK},
+                        .moves = {MOVE_THUNDER_WAVE, MOVE_ELECTROWEB, MOVE_PROTECT, MOVE_BUG_BITE},
                         .hpEV = 252,
                         .defenseEV = 252,
                         .spAttackEV = 6,
@@ -823,7 +823,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0x8C,
-                        .nickname = _("MINUN"),
+                        .nickname = _("JOLTIK"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [2] =
@@ -848,9 +848,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_MR_MIME,
+                        .species = SPECIES_CHIMECHO,
                         .heldItem = ITEM_SITRUS_BERRY,
-                        .moves = {MOVE_SAFEGUARD, MOVE_REFLECT, MOVE_LIGHT_SCREEN, MOVE_PSYCHIC},
+                        .moves = {MOVE_SAFEGUARD, MOVE_REFLECT, MOVE_LIGHT_SCREEN, MOVE_EXTRASENSORY},
                         .hpEV = 252,
                         .defenseEV = 252,
                         .spDefenseEV = 6,
@@ -863,14 +863,14 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0x82,
-                        .nickname = _("MR. MIME"),
+                        .nickname = _("CHIMECHO"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [4] =
                     {
-                        .species = SPECIES_PLUSLE,
+                        .species = SPECIES_ELEKID,
                         .heldItem = ITEM_SITRUS_BERRY,
-                        .moves = {MOVE_RAIN_DANCE, MOVE_LIGHT_SCREEN, MOVE_HELPING_HAND, MOVE_THUNDER},
+                        .moves = {MOVE_RAIN_DANCE, MOVE_LIGHT_SCREEN, MOVE_PROTECT, MOVE_THUNDER},
                         .hpEV = 252,
                         .defenseEV = 252,
                         .spDefenseEV = 6,
@@ -883,7 +883,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0x5,
-                        .nickname = _("PLUSLE"),
+                        .nickname = _("ELEKID"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [5] =
@@ -955,9 +955,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_DODRIO,
+                        .species = SPECIES_HONCHKROW,
                         .heldItem = ITEM_KINGS_ROCK,
-                        .moves = {MOVE_HAZE, MOVE_TRI_ATTACK, MOVE_TAUNT, MOVE_TORMENT},
+                        .moves = {MOVE_HAZE, MOVE_DARK_PULSE, MOVE_NASTY_PLOT, MOVE_CONFUSE_RAY},
                         .hpEV = 252,
                         .speedEV = 252,
                         .spDefenseEV = 6,
@@ -970,7 +970,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 1,
                         .personality = 0x8A,
-                        .nickname = _("DODRIO"),
+                        .nickname = _("HONCHKROW"),
                         .friendship = 0,
                     },
                     [2] =
@@ -995,9 +995,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_LICKITUNG,
+                        .species = SPECIES_HELIOLISK,
                         .heldItem = ITEM_CHESTO_BERRY,
-                        .moves = {MOVE_BELLY_DRUM, MOVE_REST, MOVE_MUD_SLAP, MOVE_SWAGGER},
+                        .moves = {MOVE_CHARGE, MOVE_THUNDERBOLT, MOVE_MORNING_SUN, MOVE_SHED_TAIL},
                         .hpEV = 250,
                         .defenseEV = 130,
                         .spDefenseEV = 130,
@@ -1010,14 +1010,14 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0x8,
-                        .nickname = _("LICKITUNG"),
+                        .nickname = _("HELIOLISK"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [4] =
                     {
-                        .species = SPECIES_SLOWBRO,
+                        .species = SPECIES_FARIGIRAF,
                         .heldItem = ITEM_LEFTOVERS,
-                        .moves = {MOVE_BELLY_DRUM, MOVE_MUD_SLAP, MOVE_SWAGGER, MOVE_AMNESIA},
+                        .moves = {MOVE_TWIN_BEAM, MOVE_DOUBLE_HIT, MOVE_NASTY_PLOT, MOVE_AMNESIA},
                         .hpEV = 250,
                         .defenseEV = 130,
                         .spDefenseEV = 130,
@@ -1030,7 +1030,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 1,
                         .personality = 0x94,
-                        .nickname = _("SLOWBRO"),
+                        .nickname = _("FARIGIRAF"),
                         .friendship = 0,
                     },
                     [5] =
@@ -1067,9 +1067,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_SKITTY,
+                        .species = SPECIES_SPRIGATITO,
                         .heldItem = ITEM_FOCUS_BAND,
-                        .moves = {MOVE_PSYCH_UP, MOVE_DOUBLE_EDGE, MOVE_SHADOW_BALL, MOVE_IRON_TAIL},
+                        .moves = {MOVE_PSYCH_UP, MOVE_ENERGY_BALL, MOVE_PLAY_ROUGH, MOVE_IRON_TAIL},
                         .attackEV = 252,
                         .speedEV = 252,
                         .otId = TRAINER_HILL_OTID,
@@ -1081,7 +1081,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = MAX_PER_STAT_IVS,
                         .abilityNum = 0,
                         .personality = 0xCB,
-                        .nickname = _("SKITTY"),
+                        .nickname = _("SPRIGATITO"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [1] =
@@ -1106,9 +1106,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_STANTLER,
+                        .species = SPECIES_WYRDEER,
                         .heldItem = ITEM_SHELL_BELL,
-                        .moves = {MOVE_PSYCH_UP, MOVE_RETURN, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL},
+                        .moves = {MOVE_HYPNOSIS, MOVE_RETURN, MOVE_EARTHQUAKE, MOVE_PSYSHIELD_BASH},
                         .hpEV = 252,
                         .attackEV = 252,
                         .speedEV = 6,
@@ -1121,14 +1121,14 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0x3,
-                        .nickname = _("STANTLER"),
+                        .nickname = _("WYRDEER"),
                         .friendship = 0,
                     },
                     [3] =
                     {
                         .species = SPECIES_NIDOQUEEN,
                         .heldItem = ITEM_SALAC_BERRY,
-                        .moves = {MOVE_SUPERPOWER, MOVE_BITE, MOVE_CHARM, MOVE_FLATTER},
+                        .moves = {MOVE_SUPERPOWER, MOVE_CRUNCH, MOVE_CHARM, MOVE_FLATTER},
                         .hpEV = 252,
                         .attackEV = 252,
                         .spDefenseEV = 6,
@@ -1146,9 +1146,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_NINETALES,
+                        .species = SPECIES_ZOROARK_HISUI,
                         .heldItem = ITEM_SALAC_BERRY,
-                        .moves = {MOVE_OVERHEAT, MOVE_QUICK_ATTACK, MOVE_SPITE, MOVE_TAIL_WHIP},
+                        .moves = {MOVE_BITTER_MALICE, MOVE_HYPER_VOICE, MOVE_SPITE, MOVE_NASTY_PLOT},
                         .hpEV = 6,
                         .speedEV = 252,
                         .spAttackEV = 252,
@@ -1161,7 +1161,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0xD7,
-                        .nickname = _("NINETALES"),
+                        .nickname = _("ZOROARK"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [5] =
@@ -1213,11 +1213,11 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_ALAKAZAM,
+                        .species = SPECIES_REUNICLUS,
                         .heldItem = ITEM_PETAYA_BERRY,
                         .moves = {MOVE_SKILL_SWAP, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_REFLECT},
                         .speedEV = 255,
-                        .spAttackEV = 255,
+                        .attackEV = 255,
                         .otId = TRAINER_HILL_OTID,
                         .hpIV = 5,
                         .attackIV = 5,
@@ -1227,7 +1227,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 5,
                         .abilityNum = 0,
                         .personality = 0x41,
-                        .nickname = _("ALAKAZAM"),
+                        .nickname = _("REUNICLUS"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [1] =
@@ -1252,9 +1252,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_GRUMPIG,
+                        .species = SPECIES_SIGILYPH,
                         .heldItem = ITEM_TWISTED_SPOON,
-                        .moves = {MOVE_SKILL_SWAP, MOVE_PSYCHIC, MOVE_CONFUSE_RAY, MOVE_REST},
+                        .moves = {MOVE_SKILL_SWAP, MOVE_PSYCHIC, MOVE_HYPNOSIS, MOVE_TAILWIND},
                         .hpEV = 110,
                         .defenseEV = 200,
                         .spAttackEV = 200,
@@ -1267,7 +1267,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 5,
                         .abilityNum = 0,
                         .personality = 0x8C,
-                        .nickname = _("GRUMPIG"),
+                        .nickname = _("SIGYLIPH"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [3] =
@@ -1341,9 +1341,9 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_WEEZING,
+                        .species = SPECIES_FLORGES,
                         .heldItem = ITEM_POISON_BARB,
-                        .moves = {MOVE_TOXIC, MOVE_SLUDGE_BOMB, MOVE_SMOKESCREEN, MOVE_HAZE},
+                        .moves = {MOVE_GRASSY_TERRAIN, MOVE_MOONBLAST, MOVE_PETAL_DANCE, MOVE_SAFEGUARD},
                         .hpEV = 255,
                         .attackEV = 255,
                         .otId = TRAINER_HILL_OTID,
@@ -1355,14 +1355,14 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0x3,
-                        .nickname = _("WEEZING"),
+                        .nickname = _("FLORGES"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [1] =
                     {
-                        .species = SPECIES_GLOOM,
+                        .species = SPECIES_WHIMSICOTT,
                         .heldItem = ITEM_MIRACLE_SEED,
-                        .moves = {MOVE_PETAL_DANCE, MOVE_SYNTHESIS, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM},
+                        .moves = {MOVE_COTTON_GUARD, MOVE_SYNTHESIS, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM},
                         .speedEV = 255,
                         .spAttackEV = 255,
                         .otId = TRAINER_HILL_OTID,
@@ -1374,14 +1374,14 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0x8C,
-                        .nickname = _("GLOOM"),
+                        .nickname = _("WHIMSICOTT"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [2] =
                     {
-                        .species = SPECIES_MUK,
+                        .species = SPECIES_VENUSAUR,
                         .heldItem = ITEM_BRIGHT_POWDER,
-                        .moves = {MOVE_SCREECH, MOVE_DISABLE, MOVE_SLUDGE_BOMB, MOVE_ACID_ARMOR},
+                        .moves = {MOVE_POISON_POWDER, MOVE_AMNESIA, MOVE_SLUDGE_BOMB, MOVE_ENERGY_BALL},
                         .hpEV = 255,
                         .attackEV = 255,
                         .otId = TRAINER_HILL_OTID,
@@ -1393,7 +1393,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                         .spDefenseIV = 15,
                         .abilityNum = 0,
                         .personality = 0x3,
-                        .nickname = _("MUK"),
+                        .nickname = _("VENUSAUR"),
                         .friendship = MAX_FRIENDSHIP,
                     },
                     [3] =
@@ -1621,9 +1621,9 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_WIGGLYTUFF,
+                                            .species = SPECIES_SHIINOTIC,
                                             .heldItem = ITEM_SILK_SCARF,
-                                            .moves = {MOVE_ROLLOUT, MOVE_DEFENSE_CURL, MOVE_SING, MOVE_DREAM_EATER},
+                                            .moves = {MOVE_MOONBLAST, MOVE_INGRAIN, MOVE_MOONLIGHT, MOVE_GIGA_DRAIN},
                                             .hpEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -1635,7 +1635,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                             .spDefenseIV = 5,
                                             .abilityNum = 0,
                                             .personality = 0xC1,
-                                            .nickname = _("WIGGLYTUFF"),
+                                            .nickname = _("SHIINOTIC"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [1] =
@@ -1659,9 +1659,9 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_GRUMPIG,
+                                            .species = SPECIES_FROSMOTH,
                                             .heldItem = ITEM_SILK_SCARF,
-                                            .moves = {MOVE_PSYBEAM, MOVE_MAGIC_COAT, MOVE_BOUNCE, MOVE_FUTURE_SIGHT},
+                                            .moves = {MOVE_AURORA_BEAM, MOVE_STRUGGLE_BUG, MOVE_WIDE_GUARD, MOVE_QUIVER_DANCE},
                                             .hpEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -1673,14 +1673,14 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                             .spDefenseIV = 5,
                                             .abilityNum = 0,
                                             .personality = 0xA,
-                                            .nickname = _("GRUMPIG"),
+                                            .nickname = _("FROSMOTH"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_CORSOLA,
+                                            .species = SPECIES_RELICANTH,
                                             .heldItem = ITEM_SILK_SCARF,
-                                            .moves = {MOVE_BUBBLE_BEAM, MOVE_ROCK_BLAST, MOVE_REFLECT, MOVE_LIGHT_SCREEN},
+                                            .moves = {MOVE_DIVE, MOVE_ROCK_TOMB, MOVE_PROTECT, MOVE_REST},
                                             .hpEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -1692,7 +1692,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                             .spDefenseIV = 5,
                                             .abilityNum = 0,
                                             .personality = 0x12,
-                                            .nickname = _("CORSOLA"),
+                                            .nickname = _("RELICANTH"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [4] =
@@ -1716,9 +1716,9 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_STARMIE,
+                                            .species = SPECIES_JELLICENT,
                                             .heldItem = ITEM_SILK_SCARF,
-                                            .moves = {MOVE_DIVE, MOVE_ICY_WIND, MOVE_SWIFT, MOVE_SKILL_SWAP},
+                                            .moves = {MOVE_SHADOW_BALL, MOVE_BRINE, MOVE_ACID_ARMOR, MOVE_RECOVER},
                                             .hpEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -1730,7 +1730,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                             .spDefenseIV = 5,
                                             .abilityNum = 0,
                                             .personality = 0xA,
-                                            .nickname = _("STARMIE"),
+                                            .nickname = _("JELLICENT"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                 },
@@ -1762,14 +1762,13 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_JIGGLYPUFF,
+                                            .species = SPECIES_LILLIGANT_HISUI,
                                             .heldItem = ITEM_BRIGHT_POWDER,
-                                            .moves = {MOVE_SING, MOVE_HYPER_VOICE, MOVE_ATTRACT, MOVE_NONE},
+                                            .moves = {MOVE_VICTORY_DANCE, MOVE_TEETER_DANCE, MOVE_ALLURING_VOICE, MOVE_ATTRACT},
                                             .hpEV = 85,
-                                            .attackEV = 85,
                                             .defenseEV = 85,
                                             .speedEV = 85,
-                                            .spAttackEV = 85,
+                                            .spAttackEV = 170,
                                             .spDefenseEV = 85,
                                             .otId = TRAINER_HILL_OTID,
                                             .hpIV = 5,
@@ -1780,7 +1779,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                             .spDefenseIV = 5,
                                             .abilityNum = 0,
                                             .personality = 0x0,
-                                            .nickname = _("JIGGLYPUFF"),
+                                            .nickname = _("LILLIGANT"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [1] =
@@ -1833,7 +1832,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         {
                                             .species = SPECIES_ABSOL,
                                             .heldItem = ITEM_BRIGHT_POWDER,
-                                            .moves = {MOVE_SWORDS_DANCE, MOVE_SLASH, MOVE_ATTRACT, MOVE_NONE},
+                                            .moves = {MOVE_SWORDS_DANCE, MOVE_NIGHT_SLASH, MOVE_ATTRACT, MOVE_NONE},
                                             .hpEV = 85,
                                             .attackEV = 85,
                                             .defenseEV = 85,
@@ -2637,7 +2636,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_TANGELA,
+                                            .species = SPECIES_TANGROWTH,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_GIGA_DRAIN, MOVE_SLEEP_POWDER, MOVE_AMNESIA, MOVE_SUNNY_DAY},
                                             .hpEV = 255,
@@ -2651,7 +2650,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                             .spDefenseIV = 15,
                                             .abilityNum = 0,
                                             .personality = 0x91,
-                                            .nickname = _("TANGELA"),
+                                            .nickname = _("TANGROWTH"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [2] =
@@ -2680,7 +2679,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_LANTURN,
                                             .heldItem = ITEM_PERSIM_BERRY,
-                                            .moves = {MOVE_SPARK, MOVE_WATER_PULSE, MOVE_CONFUSE_RAY, MOVE_RAIN_DANCE},
+                                            .moves = {MOVE_DISCHARGE, MOVE_SURF, MOVE_CONFUSE_RAY, MOVE_RAIN_DANCE},
                                             .speedEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -2699,7 +2698,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_MANECTRIC,
                                             .heldItem = ITEM_FOCUS_BAND,
-                                            .moves = {MOVE_THUNDERBOLT, MOVE_HEADBUTT, MOVE_BITE, MOVE_RAIN_DANCE},
+                                            .moves = {MOVE_THUNDER, MOVE_EERIE_IMPULSE, MOVE_CRUNCH, MOVE_RAIN_DANCE},
                                             .speedEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -2721,6 +2720,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                             .moves = {MOVE_THUNDER, MOVE_CRUNCH, MOVE_ROAR, MOVE_RAIN_DANCE},
                                             .speedEV = 255,
                                             .spAttackEV = 255,
+                                            .attackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
                                             .hpIV = 15,
                                             .attackIV = 15,
@@ -2749,7 +2749,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_RELICANTH,
                                             .heldItem = ITEM_QUICK_CLAW,
-                                            .moves = {MOVE_ANCIENT_POWER, MOVE_WATER_PULSE, MOVE_MUD_SPORT, MOVE_RAIN_DANCE},
+                                            .moves = {MOVE_HEAD_SMASH, MOVE_AQUA_TAIL, MOVE_MUD_SPORT, MOVE_RAIN_DANCE},
                                             .hpEV = 155,
                                             .defenseEV = 100,
                                             .spDefenseEV = 255,
@@ -2767,9 +2767,9 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_GOLDUCK,
+                                            .species = SPECIES_CLAWITZER,
                                             .heldItem = ITEM_LAX_INCENSE,
-                                            .moves = {MOVE_SURF, MOVE_PSYBEAM, MOVE_BRICK_BREAK, MOVE_RAIN_DANCE},
+                                            .moves = {MOVE_MUDDY_WATER, MOVE_AURA_SPHERE, MOVE_DRAGON_PULSE, MOVE_RAIN_DANCE},
                                             .speedEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -2781,14 +2781,14 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                             .spDefenseIV = 15,
                                             .abilityNum = 0,
                                             .personality = 0xF,
-                                            .nickname = _("GOLDUCK"),
+                                            .nickname = _("CLAWITZER"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [2] =
                                         {
                                             .species = SPECIES_BLASTOISE,
                                             .heldItem = ITEM_SHELL_BELL,
-                                            .moves = {MOVE_HYDRO_PUMP, MOVE_BITE, MOVE_MIRROR_COAT, MOVE_RAIN_DANCE},
+                                            .moves = {MOVE_HYDRO_PUMP, MOVE_FLASH_CANNON, MOVE_IRON_DEFENSE, MOVE_RAIN_DANCE},
                                             .speedEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -2807,7 +2807,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_MAGCARGO,
                                             .heldItem = ITEM_QUICK_CLAW,
-                                            .moves = {MOVE_HEAT_WAVE, MOVE_ROCK_SLIDE, MOVE_PROTECT, MOVE_SUNNY_DAY},
+                                            .moves = {MOVE_HEAT_WAVE, MOVE_ANCIENT_POWER, MOVE_PROTECT, MOVE_SUNNY_DAY},
                                             .hpEV = 255,
                                             .spDefenseEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -2826,9 +2826,9 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_RAPIDASH,
                                             .heldItem = ITEM_KINGS_ROCK,
-                                            .moves = {MOVE_FIRE_BLAST, MOVE_BOUNCE, MOVE_QUICK_ATTACK, MOVE_SUNNY_DAY},
+                                            .moves = {MOVE_FLARE_BLITZ, MOVE_SMART_STRIKE, MOVE_STOMP, MOVE_SUNNY_DAY},
                                             .speedEV = 255,
-                                            .spAttackEV = 255,
+                                            .attackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
                                             .hpIV = 15,
                                             .attackIV = 15,
@@ -2845,7 +2845,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_MOLTRES,
                                             .heldItem = ITEM_BRIGHT_POWDER,
-                                            .moves = {MOVE_SKY_ATTACK, MOVE_AERIAL_ACE, MOVE_ROAR, MOVE_SUNNY_DAY},
+                                            .moves = {MOVE_HURRICANE, MOVE_HEAT_WAVE, MOVE_ROOST, MOVE_SUNNY_DAY},
                                             .speedEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -3021,9 +3021,9 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_STARYU,
+                                            .species = SPECIES_SHELLDER,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_CAMOUFLAGE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
+                                            .moves = {MOVE_RAZOR_SHELL, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .hpEV = 252,
                                             .speedEV = 252,
                                             .spAttackEV = 6,
@@ -3036,7 +3036,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                             .spDefenseIV = 5,
                                             .abilityNum = 1,
                                             .personality = 0xA,
-                                            .nickname = _("STARYU"),
+                                            .nickname = _("SHELLDER"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [1] =
@@ -3169,7 +3169,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_CHARMELEON,
                                             .heldItem = ITEM_CHARCOAL,
-                                            .moves = {MOVE_FIRE_SPIN, MOVE_DRAGON_RAGE, MOVE_FLAMETHROWER, MOVE_SLASH},
+                                            .moves = {MOVE_SLASH, MOVE_DRAGON_RAGE, MOVE_FLAMETHROWER, MOVE_NONE},
                                             .hpEV = 252,
                                             .speedEV = 252,
                                             .spAttackEV = 6,
@@ -3268,7 +3268,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_QUILAVA,
                                             .heldItem = ITEM_CHARCOAL,
-                                            .moves = {MOVE_QUICK_ATTACK, MOVE_FLAMETHROWER, MOVE_FLAME_WHEEL, MOVE_SWIFT},
+                                            .moves = {MOVE_TAKE_DOWN, MOVE_FLAMETHROWER, MOVE_NONE, MOVE_NONE},
                                             .hpEV = 6,
                                             .speedEV = 252,
                                             .spAttackEV = 252,
@@ -3486,7 +3486,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_ENTEI,
                                             .heldItem = ITEM_PETAYA_BERRY,
-                                            .moves = {MOVE_FLAMETHROWER, MOVE_CALM_MIND, MOVE_FIRE_SPIN, MOVE_ROAR},
+                                            .moves = {MOVE_FLAMETHROWER, MOVE_CALM_MIND, MOVE_ROAR, MOVE_NONE},
                                             .speedEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -3591,9 +3591,9 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_PORYGON2,
+                                            .species = SPECIES_PORYGON_Z,
                                             .heldItem = ITEM_SCOPE_LENS,
-                                            .moves = {MOVE_LOCK_ON, MOVE_BLIZZARD, MOVE_CONVERSION_2, MOVE_PSYCHIC},
+                                            .moves = {MOVE_LOCK_ON, MOVE_BLIZZARD, MOVE_CONVERSION_2, MOVE_TRI_ATTACK},
                                             .hpEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -3605,7 +3605,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                             .spDefenseIV = 15,
                                             .abilityNum = 0,
                                             .personality = 0xF,
-                                            .nickname = _("PORYGON2"),
+                                            .nickname = _("PORYGONZ"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [2] =
@@ -3631,7 +3631,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_HOUNDOOM,
                                             .heldItem = ITEM_QUICK_CLAW,
-                                            .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_ROAR, MOVE_WILL_O_WISP},
+                                            .moves = {MOVE_FLAMETHROWER, MOVE_DARK_PULSE, MOVE_ROAR, MOVE_WILL_O_WISP},
                                             .speedEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -3648,9 +3648,9 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_STANTLER,
+                                            .species = SPECIES_WYRDEER,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_CONFUSE_RAY, MOVE_SWAGGER, MOVE_PSYCH_UP, MOVE_TAKE_DOWN},
+                                            .moves = {MOVE_CONFUSE_RAY, MOVE_SWAGGER, MOVE_ROLE_PLAY, MOVE_PSYSHIELD_BASH},
                                             .attackEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -3662,14 +3662,14 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                             .spDefenseIV = 15,
                                             .abilityNum = 0,
                                             .personality = 0x3,
-                                            .nickname = _("STANTLER"),
+                                            .nickname = _("WYRDEER"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [5] =
                                         {
                                             .species = SPECIES_ARTICUNO,
                                             .heldItem = ITEM_NEVER_MELT_ICE,
-                                            .moves = {MOVE_BLIZZARD, MOVE_SHEER_COLD, MOVE_MIST, MOVE_AERIAL_ACE},
+                                            .moves = {MOVE_BLIZZARD, MOVE_SHEER_COLD, MOVE_MIST, MOVE_HURRICANE},
                                             .hpEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -3726,7 +3726,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_SNORLAX,
                                             .heldItem = ITEM_QUICK_CLAW,
-                                            .moves = {MOVE_MEGA_KICK, MOVE_SHADOW_BALL, MOVE_BRICK_BREAK, MOVE_EARTHQUAKE},
+                                            .moves = {MOVE_BODY_SLAM, MOVE_CRUNCH, MOVE_BRICK_BREAK, MOVE_EARTHQUAKE},
                                             .hpEV = 6,
                                             .attackEV = 252,
                                             .defenseEV = 252,
@@ -3746,7 +3746,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_MILTANK,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_DOUBLE_EDGE, MOVE_SHADOW_BALL, MOVE_ATTRACT, MOVE_MILK_DRINK},
+                                            .moves = {MOVE_DOUBLE_EDGE, MOVE_PLAY_ROUGH, MOVE_ATTRACT, MOVE_MILK_DRINK},
                                             .hpEV = 6,
                                             .attackEV = 252,
                                             .speedEV = 252,
@@ -3764,9 +3764,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_URSARING,
+                                            .species = SPECIES_URSALUNA,
                                             .heldItem = ITEM_QUICK_CLAW,
-                                            .moves = {MOVE_DOUBLE_EDGE, MOVE_CRUNCH, MOVE_BRICK_BREAK, MOVE_AERIAL_ACE},
+                                            .moves = {MOVE_DOUBLE_EDGE, MOVE_CRUNCH, MOVE_BRICK_BREAK, MOVE_HIGH_HORSEPOWER},
                                             .hpEV = 252,
                                             .attackEV = 252,
                                             .spAttackEV = 6,
@@ -3779,14 +3779,14 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x7F,
-                                            .nickname = _("URSARING"),
+                                            .nickname = _("URSALUNA"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [3] =
                                         {
                                             .species = SPECIES_SLAKING,
                                             .heldItem = ITEM_CHESTO_BERRY,
-                                            .moves = {MOVE_HYPER_BEAM, MOVE_SHADOW_BALL, MOVE_BRICK_BREAK, MOVE_REST},
+                                            .moves = {MOVE_MEGA_KICK, MOVE_THROAT_CHOP, MOVE_HAMMER_ARM, MOVE_REST},
                                             .hpEV = 6,
                                             .attackEV = 252,
                                             .spDefenseEV = 252,
@@ -3806,7 +3806,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_KANGASKHAN,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_MEGA_KICK, MOVE_SHADOW_BALL, MOVE_ATTRACT, MOVE_FAKE_OUT},
+                                            .moves = {MOVE_MEGA_KICK, MOVE_AERIAL_ACE, MOVE_ATTRACT, MOVE_FAKE_OUT},
                                             .hpEV = 6,
                                             .attackEV = 252,
                                             .speedEV = 252,
@@ -3826,7 +3826,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_ZANGOOSE,
                                             .heldItem = ITEM_SCOPE_LENS,
-                                            .moves = {MOVE_CRUSH_CLAW, MOVE_SHADOW_BALL, MOVE_BRICK_BREAK, MOVE_ROAR},
+                                            .moves = {MOVE_CRUSH_CLAW, MOVE_SHADOW_CLAW, MOVE_BRICK_BREAK, MOVE_SWORDS_DANCE},
                                             .hpEV = 6,
                                             .attackEV = 252,
                                             .speedEV = 252,
@@ -3878,7 +3878,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_ESPEON,
                                             .heldItem = ITEM_LUM_BERRY,
-                                            .moves = {MOVE_PSYCHIC, MOVE_BITE, MOVE_CALM_MIND, MOVE_REFLECT},
+                                            .moves = {MOVE_PSYCHIC, MOVE_DAZZLING_GLEAM, MOVE_CALM_MIND, MOVE_REFLECT},
                                             .hpEV = 6,
                                             .speedEV = 252,
                                             .spAttackEV = 252,
@@ -3896,9 +3896,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_STARMIE,
+                                            .species = SPECIES_MISMAGIUS,
                                             .heldItem = ITEM_SHELL_BELL,
-                                            .moves = {MOVE_PSYCHIC, MOVE_SURF, MOVE_THUNDERBOLT, MOVE_ICE_BEAM},
+                                            .moves = {MOVE_SHADOW_BALL, MOVE_DARK_PULSE, MOVE_THUNDERBOLT, MOVE_NASTY_PLOT},
                                             .hpEV = 6,
                                             .speedEV = 252,
                                             .spAttackEV = 252,
@@ -3911,14 +3911,14 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 1,
                                             .personality = 0xF,
-                                            .nickname = _("STARMIE"),
+                                            .nickname = _("MISMAGIUS"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [3] =
                                         {
                                             .species = SPECIES_GENGAR,
                                             .heldItem = ITEM_LUM_BERRY,
-                                            .moves = {MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH},
+                                            .moves = {MOVE_SHADOW_BALL, MOVE_THUNDERBOLT, MOVE_HYPNOSIS, MOVE_DREAM_EATER},
                                             .hpEV = 6,
                                             .speedEV = 252,
                                             .spAttackEV = 252,
@@ -3938,7 +3938,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_GARDEVOIR,
                                             .heldItem = ITEM_SALAC_BERRY,
-                                            .moves = {MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_MAGICAL_LEAF, MOVE_DESTINY_BOND},
+                                            .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_MAGICAL_LEAF, MOVE_DESTINY_BOND},
                                             .hpEV = 6,
                                             .speedEV = 252,
                                             .spAttackEV = 252,
@@ -4003,9 +4003,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SWELLOW,
+                                            .species = SPECIES_HONCHKROW,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_AERIAL_ACE, MOVE_AGILITY, MOVE_FACADE, MOVE_ATTRACT},
+                                            .moves = {MOVE_AERIAL_ACE, MOVE_LASH_OUT, MOVE_CONFUSE_RAY, MOVE_ATTRACT},
                                             .hpEV = 252,
                                             .attackEV = 252,
                                             .spDefenseEV = 6,
@@ -4018,14 +4018,14 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x3,
-                                            .nickname = _("SWELLOW"),
+                                            .nickname = _("HONCHKROW"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [1] =
                                         {
                                             .species = SPECIES_MACHAMP,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_LOW_KICK, MOVE_ROCK_SLIDE, MOVE_FACADE, MOVE_ATTRACT},
+                                            .moves = {MOVE_DYNAMIC_PUNCH, MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_ATTRACT},
                                             .hpEV = 252,
                                             .attackEV = 252,
                                             .spDefenseEV = 6,
@@ -4043,9 +4043,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_URSARING,
+                                            .species = SPECIES_URSALUNA,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_PROTECT, MOVE_ROCK_SLIDE, MOVE_FACADE, MOVE_ATTRACT},
+                                            .moves = {MOVE_HEADLONG_RUSH, MOVE_DOUBLE_EDGE, MOVE_SHADOW_CLAW, MOVE_ATTRACT},
                                             .hpEV = 252,
                                             .attackEV = 252,
                                             .spDefenseEV = 6,
@@ -4058,14 +4058,14 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x3,
-                                            .nickname = _("URSARING"),
+                                            .nickname = _("URSALUNA"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_KINGLER,
+                                            .species = SPECIES_SAMUROTT,
                                             .heldItem = ITEM_PERSIM_BERRY,
-                                            .moves = {MOVE_RETURN, MOVE_PROTECT, MOVE_CRABHAMMER, MOVE_ATTRACT},
+                                            .moves = {MOVE_AQUA_TAIL, MOVE_MEGAHORN, MOVE_AERIAL_ACE, MOVE_BRICK_BREAK},
                                             .hpEV = 252,
                                             .attackEV = 252,
                                             .spDefenseEV = 6,
@@ -4078,14 +4078,14 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x80,
-                                            .nickname = _("KINGLER"),
+                                            .nickname = _("SAMUROTT"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [4] =
                                         {
                                             .species = SPECIES_TYRANITAR,
                                             .heldItem = ITEM_PERSIM_BERRY,
-                                            .moves = {MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_ATTRACT},
+                                            .moves = {MOVE_STONE_EDGE, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_ATTRACT},
                                             .hpEV = 252,
                                             .attackEV = 252,
                                             .defenseEV = 6,
@@ -4105,7 +4105,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_DRAGONITE,
                                             .heldItem = ITEM_PERSIM_BERRY,
-                                            .moves = {MOVE_BODY_SLAM, MOVE_THUNDER_WAVE, MOVE_EARTHQUAKE, MOVE_ATTRACT},
+                                            .moves = {MOVE_BODY_SLAM, MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_ATTRACT},
                                             .hpEV = 252,
                                             .attackEV = 252,
                                             .spDefenseEV = 6,
@@ -4157,7 +4157,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_ALAKAZAM,
                                             .heldItem = ITEM_KINGS_ROCK,
-                                            .moves = {MOVE_PSYCHIC, MOVE_ICE_PUNCH, MOVE_ATTRACT, MOVE_SWAGGER},
+                                            .moves = {MOVE_PSYCHIC, MOVE_RECOVER, MOVE_ATTRACT, MOVE_DAZZLING_GLEAM},
                                             .hpEV = 6,
                                             .speedEV = 252,
                                             .spAttackEV = 252,
@@ -4195,9 +4195,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_DUSCLOPS,
+                                            .species = SPECIES_DUSKNOIR,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_PURSUIT, MOVE_PROTECT, MOVE_ATTRACT, MOVE_WILL_O_WISP},
+                                            .moves = {MOVE_SHADOW_PUNCH, MOVE_PROTECT, MOVE_ATTRACT, MOVE_WILL_O_WISP},
                                             .hpEV = 252,
                                             .defenseEV = 252,
                                             .spDefenseEV = 6,
@@ -4210,7 +4210,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x82,
-                                            .nickname = _("DUSCLOPS"),
+                                            .nickname = _("DUSKNOIR"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [4] =
@@ -4237,7 +4237,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_BANETTE,
                                             .heldItem = ITEM_FOCUS_BAND,
-                                            .moves = {MOVE_SHADOW_BALL, MOVE_FEINT_ATTACK, MOVE_ATTRACT, MOVE_WILL_O_WISP},
+                                            .moves = {MOVE_SHADOW_CLAW, MOVE_FEINT_ATTACK, MOVE_ATTRACT, MOVE_WILL_O_WISP},
                                             .hpEV = 252,
                                             .defenseEV = 252,
                                             .spDefenseEV = 6,
@@ -4304,7 +4304,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_EXPLOUD,
                                             .heldItem = ITEM_CHESTO_BERRY,
-                                            .moves = {MOVE_HYPER_VOICE, MOVE_COUNTER, MOVE_REST, MOVE_ROCK_SLIDE},
+                                            .moves = {MOVE_BOOMBURST, MOVE_CRUNCH, MOVE_REST, MOVE_NONE},
                                             .hpEV = 250,
                                             .defenseEV = 130,
                                             .spDefenseEV = 130,
@@ -4324,7 +4324,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_CROBAT,
                                             .heldItem = ITEM_KINGS_ROCK,
-                                            .moves = {MOVE_MEAN_LOOK, MOVE_CONFUSE_RAY, MOVE_AERIAL_ACE, MOVE_TOXIC},
+                                            .moves = {MOVE_POISON_FANG, MOVE_CONFUSE_RAY, MOVE_AERIAL_ACE, MOVE_TOXIC},
                                             .hpEV = 250,
                                             .defenseEV = 130,
                                             .spDefenseEV = 130,
@@ -4342,9 +4342,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_DUGTRIO,
+                                            .species = SPECIES_EXCADRILL,
                                             .heldItem = ITEM_BRIGHT_POWDER,
-                                            .moves = {MOVE_DOUBLE_TEAM, MOVE_PROTECT, MOVE_RETURN, MOVE_SLUDGE_BOMB},
+                                            .moves = {MOVE_EARTHQUAKE, MOVE_IRON_HEAD, MOVE_SWORDS_DANCE, MOVE_HORN_DRILL},
                                             .hpEV = 6,
                                             .attackEV = 252,
                                             .speedEV = 252,
@@ -4357,17 +4357,17 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 1,
                                             .personality = 0xD,
-                                            .nickname = _("DUGTRIO"),
+                                            .nickname = _("EXCADRILL"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_ELECTRODE,
+                                            .species = SPECIES_EELEKTROSS,
                                             .heldItem = ITEM_PETAYA_BERRY,
-                                            .moves = {MOVE_TORMENT, MOVE_MIRROR_COAT, MOVE_THUNDERBOLT, MOVE_LIGHT_SCREEN},
+                                            .moves = {MOVE_WILD_CHARGE, MOVE_COIL, MOVE_CRUSH_CLAW, MOVE_NONE},
                                             .hpEV = 252,
                                             .defenseEV = 252,
-                                            .spAttackEV = 6,
+                                            .attackEV = 6,
                                             .otId = TRAINER_HILL_OTID,
                                             .hpIV = MAX_PER_STAT_IVS,
                                             .attackIV = MAX_PER_STAT_IVS,
@@ -4377,14 +4377,14 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x5,
-                                            .nickname = _("ELECTRODE"),
+                                            .nickname = _("EELEKTROSS"),
                                             .friendship = 0,
                                         },
                                     [5] =
                                         {
                                             .species = SPECIES_GENGAR,
                                             .heldItem = ITEM_FOCUS_BAND,
-                                            .moves = {MOVE_CONFUSE_RAY, MOVE_MEAN_LOOK, MOVE_GIGA_DRAIN, MOVE_WILL_O_WISP},
+                                            .moves = {MOVE_SHADOW_BALL, MOVE_MEAN_LOOK, MOVE_SLUDGE_BOMB, MOVE_WILL_O_WISP},
                                             .hpEV = 252,
                                             .speedEV = 252,
                                             .spDefenseEV = 6,
@@ -4436,7 +4436,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_ABSOL,
                                             .heldItem = ITEM_FOCUS_BAND,
-                                            .moves = {MOVE_PERISH_SONG, MOVE_DOUBLE_EDGE, MOVE_PROTECT, MOVE_TORMENT},
+                                            .moves = {MOVE_PERISH_SONG, MOVE_NIGHT_SLASH, MOVE_PROTECT, MOVE_TORMENT},
                                             .hpEV = 252,
                                             .defenseEV = 6,
                                             .speedEV = 252,
@@ -4456,7 +4456,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_ALTARIA,
                                             .heldItem = ITEM_KINGS_ROCK,
-                                            .moves = {MOVE_PERISH_SONG, MOVE_PROTECT, MOVE_DRAGON_CLAW, MOVE_FIRE_BLAST},
+                                            .moves = {MOVE_PERISH_SONG, MOVE_PROTECT, MOVE_DRAGON_PULSE, MOVE_FIRE_BLAST},
                                             .hpEV = 252,
                                             .spAttackEV = 6,
                                             .spDefenseEV = 252,
@@ -4476,7 +4476,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_DEWGONG,
                                             .heldItem = ITEM_CHESTO_BERRY,
-                                            .moves = {MOVE_ICE_BEAM, MOVE_SIGNAL_BEAM, MOVE_REST, MOVE_PERISH_SONG},
+                                            .moves = {MOVE_ICE_BEAM, MOVE_AQUA_TAIL, MOVE_REST, MOVE_PERISH_SONG},
                                             .hpEV = 252,
                                             .speedEV = 252,
                                             .spAttackEV = 6,
@@ -4581,9 +4581,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_ELECTRODE,
+                                            .species = SPECIES_ZEBSTRIKA,
                                             .heldItem = ITEM_SALAC_BERRY,
-                                            .moves = {MOVE_EXPLOSION, MOVE_THUNDERBOLT, MOVE_SWIFT, MOVE_LIGHT_SCREEN},
+                                            .moves = {MOVE_THRASH, MOVE_WILD_CHARGE, MOVE_HIGH_HORSEPOWER, MOVE_PROTECT},
                                             .attackEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -4595,7 +4595,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 1,
                                             .personality = 0xC,
-                                            .nickname = _("ELECTRODE"),
+                                            .nickname = _("ZEBSTRIKA"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [2] =
@@ -4619,9 +4619,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_DUSCLOPS,
+                                            .species = SPECIES_DUSKNOIR,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_IMPRISON, MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_EARTHQUAKE},
+                                            .moves = {MOVE_POLTERGEIST, MOVE_PROTECT, MOVE_ICE_PUNCH, MOVE_EARTHQUAKE},
                                             .hpEV = 110,
                                             .defenseEV = 200,
                                             .spDefenseEV = 200,
@@ -4634,7 +4634,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x93,
-                                            .nickname = _("DUSCLOPS"),
+                                            .nickname = _("DUSKNOIR"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [4] =
@@ -4660,9 +4660,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_BANETTE,
                                             .heldItem = ITEM_BRIGHT_POWDER,
-                                            .moves = {MOVE_IMPRISON, MOVE_PROTECT, MOVE_THUNDERBOLT, MOVE_THUNDER},
+                                            .moves = {MOVE_DESTINY_BOND, MOVE_PROTECT, MOVE_SHADOW_CLAW, MOVE_NONE},
                                             .hpEV = 255,
-                                            .spAttackEV = 255,
+                                            .attackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
                                             .hpIV = MAX_PER_STAT_IVS,
                                             .attackIV = MAX_PER_STAT_IVS,
@@ -4691,7 +4691,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_SALAMENCE,
                                             .heldItem = ITEM_SHELL_BELL,
-                                            .moves = {MOVE_ROCK_SLIDE, MOVE_FLAMETHROWER, MOVE_DRAGON_CLAW, MOVE_AERIAL_ACE},
+                                            .moves = {MOVE_DRAGON_DANCE, MOVE_FLAMETHROWER, MOVE_DRAGON_CLAW, MOVE_AERIAL_ACE},
                                             .attackEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -4708,9 +4708,9 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_CHANDELURE,
                                             .heldItem = ITEM_LUM_BERRY,
-                                            .moves = {MOVE_PSYCHIC, MOVE_GIGA_DRAIN, MOVE_WILL_O_WISP, MOVE_DESTINY_BOND},
+                                            .moves = {MOVE_SHADOW_BALL, MOVE_FLAMETHROWER, MOVE_WILL_O_WISP, MOVE_SMOKESCREEN},
                                             .speedEV = 255,
                                             .spAttackEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -4722,14 +4722,14 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x8C,
-                                            .nickname = _("GENGAR"),
+                                            .nickname = _("CHANDELURE"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [2] =
                                         {
                                             .species = SPECIES_GYARADOS,
                                             .heldItem = ITEM_BRIGHT_POWDER,
-                                            .moves = {MOVE_DRAGON_DANCE, MOVE_HYPER_BEAM, MOVE_BITE, MOVE_EARTHQUAKE},
+                                            .moves = {MOVE_DRAGON_DANCE, MOVE_CRUNCH, MOVE_WATERFALL, MOVE_EARTHQUAKE},
                                             .attackEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -4746,10 +4746,10 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_ZOROARK_HISUI,
                                             .heldItem = ITEM_SALAC_BERRY,
-                                            .moves = {MOVE_EXPLOSION, MOVE_MEAN_LOOK, MOVE_SHADOW_BALL, MOVE_CONFUSE_RAY},
-                                            .attackEV = 255,
+                                            .moves = {MOVE_SHADOW_BALL, MOVE_NASTY_PLOT, MOVE_HYPER_VOICE, MOVE_CONFUSE_RAY},
+                                            .spAttackEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,
                                             .hpIV = MAX_PER_STAT_IVS,
@@ -4760,14 +4760,14 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x3,
-                                            .nickname = _("GENGAR"),
+                                            .nickname = _("ZOROARK"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_DUSCLOPS,
+                                            .species = SPECIES_DUSKNOIR,
                                             .heldItem = ITEM_LEFTOVERS,
-                                            .moves = {MOVE_MEAN_LOOK, MOVE_CONFUSE_RAY, MOVE_WILL_O_WISP, MOVE_SHADOW_BALL},
+                                            .moves = {MOVE_SHADOW_PUNCH, MOVE_FIRE_PUNCH, MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH},
                                             .hpEV = 110,
                                             .defenseEV = 200,
                                             .spDefenseEV = 200,
@@ -4780,14 +4780,14 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x14,
-                                            .nickname = _("DUSCLOPS"),
+                                            .nickname = _("DUSKNOIR"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_MISDREAVUS,
+                                            .species = SPECIES_MISMAGIUS,
                                             .heldItem = ITEM_FOCUS_BAND,
-                                            .moves = {MOVE_MEAN_LOOK, MOVE_CONFUSE_RAY, MOVE_PERISH_SONG, MOVE_SHADOW_BALL},
+                                            .moves = {MOVE_SHADOW_BALL, MOVE_CONFUSE_RAY, MOVE_PERISH_SONG, MOVE_NONE},
                                             .hpEV = 180,
                                             .defenseEV = 180,
                                             .spDefenseEV = 150,
@@ -4800,7 +4800,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                             .spDefenseIV = MAX_PER_STAT_IVS,
                                             .abilityNum = 0,
                                             .personality = 0x85,
-                                            .nickname = _("MISDREAVUS"),
+                                            .nickname = _("MISMAGIUS"),
                                             .friendship = MAX_FRIENDSHIP,
                                         },
                                 },

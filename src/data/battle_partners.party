@@ -18,7 +18,7 @@ Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Def / 6 SpA
 - Light Screen
-- Psychic
+- Zen Headbutt
 - Reflect
 - Metal Claw
 
@@ -37,7 +37,7 @@ Adamant Nature
 Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 SpA / 6 SpD
-- Thunder
+- Rock Slide
 - Protect
-- Solar Beam
+- Iron Head
 - Dragon Claw

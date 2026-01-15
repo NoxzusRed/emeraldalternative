@@ -84,6 +84,8 @@
 	F(LOW_SWEEP) \
 	F(GIGA_IMPACT) \
 	F(FOCUS_BLAST) \
+	F(CROSS_POISON) \
+	F(DUAL_WINGBEAT) \
 
 #define FOREACH_HM(F) \
     F(CUT) \

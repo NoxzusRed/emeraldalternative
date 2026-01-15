@@ -75,6 +75,21 @@ LilycoveCity_DepartmentStore_2F_EventScript_LinkingCordClerk::
 	.align 2
 LilycoveCity_DepartmentStore_2F_LinkingCordShop:
 	.2byte ITEM_LINKING_CORD
+	pokemartlistend
+
+LilycoveCity_DepartmentStore_2F_EventScript_LinkingCordClerkPostGame::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LilycoveCity_DepartmentStore_2F_LinkingCordShopPostGame
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LilycoveCity_DepartmentStore_2F_LinkingCordShopPostGame:
+	.2byte ITEM_LINKING_CORD
 	.2byte ITEM_ELECTIRIZER
 	.2byte ITEM_MAGMARIZER
 	pokemartlistend

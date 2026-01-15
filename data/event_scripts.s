@@ -1169,3 +1169,19 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/FallarborTown_MintShop/scripts.inc"
 
 	.include "data/maps/VictoryRoad_2F/scripts.inc"
+
+	.include "data/maps/RustboroCity_East/scripts.inc"
+
+	.include "data/maps/RustboroCity_East_AbilityShop/scripts.inc"
+
+	.include "data/maps/RustboroCity_East_House/scripts.inc"
+
+	.include "data/maps/FortreeCity_House6/scripts.inc"
+
+	.include "data/maps/Route123_House/scripts.inc"
+
+	.include "data/maps/SootopolisCity_OrbShop/scripts.inc"
+
+	.include "data/maps/PacifidlogTown_House6/scripts.inc"
+
+	.include "data/maps/OldaleRuins_Underwater/scripts.inc"

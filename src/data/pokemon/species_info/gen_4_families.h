@@ -1814,7 +1814,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseSpAttack  = 29,
         .baseSpDefense = 45,
         .types = MON_TYPES(TYPE_BUG),
-        .catchRate = 120,
+        .catchRate = 200,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 45 : 61,
         .evYield_SpDefense = 1,
         .genderRatio = PERCENT_FEMALE(50),

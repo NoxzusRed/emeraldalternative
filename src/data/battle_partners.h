@@ -54,7 +54,7 @@
             .moves = {
 #line 20
                 MOVE_LIGHT_SCREEN,
-                MOVE_PSYCHIC,
+                MOVE_ZEN_HEADBUTT,
                 MOVE_REFLECT,
                 MOVE_METAL_CLAW,
             },
@@ -95,9 +95,9 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 40
-                MOVE_THUNDER,
+                MOVE_ROCK_SLIDE,
                 MOVE_PROTECT,
-                MOVE_SOLAR_BEAM,
+                MOVE_IRON_HEAD,
                 MOVE_DRAGON_CLAW,
             },
             },

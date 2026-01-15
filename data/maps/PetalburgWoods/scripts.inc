@@ -1,5 +1,61 @@
 PetalburgWoods_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, PetalburgWoods_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, PetalburgWoods_OnLoad
 	.byte 0
+
+PetalburgWoods_OnResume:
+	setstepcallback STEP_CB_ASH
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, PetalburgWoods_EventScript_TryRemoveJirachi
+	end
+
+PetalburgWoods_EventScript_TryRemoveJirachi::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+PetalburgWoods_OnLoad:
+	call_if_set FLAG_CAUGHT_JIRACHI, PetalburgWoods_EventScript_HideJirachi
+	call_if_unset FLAG_CAUGHT_JIRACHI, PetalburgWoods_EventScript_TryShowJirachi
+	end
+PetalburgWoods_EventScript_HideJirachi::
+	setflag FLAG_HIDE_JIRACHI
+	return
+
+PetalburgWoods_EventScript_TryShowJirachi::
+	goto_if_set FLAG_DEFEATED_JIRACHI, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_JIRACHI
+	return
+
+PetalburgWoods_EventScript_Jirachi::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
+	delay 20
+	waitmoncry
+	setwildbattle SPECIES_JIRACHI, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PetalburgWoods_EventScript_DefeatedJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PetalburgWoods_EventScript_RanFromJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PetalburgWoods_EventScript_RanFromJirachi
+	setflag FLAG_DEFEATED_JIRACHI
+	release
+	end
+
+PetalburgWoods_EventScript_DefeatedJirachi::
+	setflag FLAG_DEFEATED_JIRACHI
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+PetalburgWoods_EventScript_RanFromJirachi::
+	setvar VAR_0x8004, SPECIES_JIRACHI
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
 PetalburgWoods_EventScript_DevonResearcherLeft::
 	lockall
@@ -315,13 +371,55 @@ PetalburgWoods_EventScript_JamesRematch::
 	msgbox PetalburgWoods_Text_IveBeenTrainingHard, MSGBOX_AUTOCLOSE
 	end
 
+PetalburgWoods_EventScript_CoolTrainer::
+	msgbox PetalburgWoods_Text_Jirachi, MSGBOX_NPC
+	end
+
+PetalburgWoods_EventScript_TiredGirl::
+	lock
+	faceplayer
+	msgbox PetalburgWoods_Text_RestUpHere, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PetalburgWoods_EventScript_Rest
+	goto_if_eq VAR_RESULT, NO, PetalburgWoods_EventScript_DeclineRest
+	end
+
+PetalburgWoods_EventScript_Rest::
+	msgbox PetalburgWoods_Text_TakeYourTimeRestUp, MSGBOX_DEFAULT
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	end
+
+PetalburgWoods_EventScript_DeclineRest::
+	msgbox PetalburgWoods_Text_GoodLuck, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_Text_RestUpHere:
+	.string "Oh my! This forest is bigger than I\n"
+	.string "remembered it.\p"
+	.string "I'm giving some snacks to my Pokémon.\n"
+	.string "Do you want some?.$"
+
+PetalburgWoods_Text_TakeYourTimeRestUp:
+	.string "Here, take some.$"
+
+PetalburgWoods_Text_GoodLuck:
+	.string "Good luck, then!$"
+
+PetalburgWoods_Text_Jirachi:
+	.string "Have you heard about the mythical\n"
+	.string "Pokémon Jirachi?\p"
+	.string "It's said that it shows itself to\n"
+	.string "powerful trainers in this forest...\p"
+	.string "Then why can't I find it?!$"
+
 PetalburgWoods_Text_NotAOneToBeFound:
 	.string "Hmmm…\n"
 	.string "Not a one to be found…$"
 
 PetalburgWoods_Text_HaveYouSeenShroomish:
 	.string "Hello, have you seen any POKéMON\n"
-	.string "called SHROOMISH around here?\p"
+	.string "called BUDEW around here?\p"
 	.string "I really love that POKéMON.$"
 
 PetalburgWoods_Text_IWasGoingToAmbushYou:

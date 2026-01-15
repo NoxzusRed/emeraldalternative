@@ -11691,24 +11691,30 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM83"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+			"Slashing poison.\n"
+            "Critical hits land\n"
+            "more easily."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_CROSS_POISON,
     },
 
     [ITEM_TM84] =
     {
         .name = _("TM84"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 5000,
+        .description = COMPOUND_STRING(
+			"Slams the target\n"
+            "with its wings\n"
+            "twice in a row."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_DUAL_WINGBEAT,
     },
 
     [ITEM_TM85] =

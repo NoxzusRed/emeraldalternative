@@ -868,6 +868,10 @@ SootopolisCity_EventScript_GymSign::
 	msgbox SootopolisCity_Text_GymSign, MSGBOX_SIGN
 	end
 
+SootopolisCity_EventScript_OrbShopSign::
+	msgbox SootopolisCity_Text_OrbShopSign, MSGBOX_SIGN
+	end
+
 SootopolisCity_EventScript_CitySign::
 	msgbox SootopolisCity_Text_CitySign, MSGBOX_SIGN
 	end
@@ -1707,3 +1711,6 @@ SootopolisCity_Text_DazzledByMentor:
 	.string "WALLACE: I'm sure that you will be\n"
 	.string "dazzled by my mentor's breathtakingly\l"
 	.string "elegant battle style.$"
+
+SootopolisCity_Text_OrbShopSign:
+	.string "ORB SHOP$"

@@ -12,11 +12,17 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": [
+    {
+      "map": "MAP_OLDALE_RUINS_UNDERWATER",
+      "offset": 0,
+      "direction": "dive"
+    }
+  ],
   "object_events": [],
   "warp_events": [
     {
-      "x": 4,
+      "x": 10,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_ROUTE103_SOUTH",

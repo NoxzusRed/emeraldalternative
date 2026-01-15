@@ -767,6 +767,20 @@
       "y": 75,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
+    },
+    {
+      "type": "weather",
+      "x": 0,
+      "y": 28,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_RAIN"
+    },
+    {
+      "type": "weather",
+      "x": 0,
+      "y": 29,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_RAIN"
     }
   ],
   "bg_events": [
