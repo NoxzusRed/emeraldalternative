@@ -61,6 +61,14 @@ VerdanturfTown_EventScript_RusturfTunnelSign::
 	msgbox VerdanturfTown_Text_RusturfTunnelSign, MSGBOX_SIGN
 	end
 
+VerdanturfTown_EventScript_Roselia::
+	playmoncry SPECIES_ROSELIA, CRY_MODE_NORMAL
+	msgbox VerdanturfTown_Text_SeLiaaa, MSGBOX_SIGN
+	end
+
+VerdanturfTown_Text_SeLiaaa:
+	.string "Se-liaaa!$"
+
 VerdanturfTown_Text_ManTryingToDigTunnel:
 	.string "My papa told me.\p"
 	.string "He says this tunnel is full of\n"

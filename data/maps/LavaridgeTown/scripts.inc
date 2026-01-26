@@ -242,7 +242,7 @@ LavaridgeTown_EventScript_EggWoman::
 	playfanfare MUS_OBTAIN_ITEM
 	message LavaridgeTown_Text_ReceivedTheEgg
 	waitfanfare
-	giveegg SPECIES_HAPPINY
+	giveegg SPECIES_TOXEL
 	release
 	end
 

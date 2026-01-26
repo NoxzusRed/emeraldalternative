@@ -53,14 +53,13 @@
 #define FLAG_CAUGHT_JIRACHI					0x27 //
 #define FLAG_HIDE_JIRACHI					0x28 //
 #define FLAG_DEFEATED_JIRACHI				0x29 //
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_RECEIVED_TM_FLAMETHROWER		0x2A //
+#define FLAG_CAUGHT_WAILORD					0x2B //
+#define FLAG_HIDE_WAILORD					0x2C //
+#define FLAG_DEFEATED_WAILORD				0x2D //
+#define FLAG_SPRIGATITO_TRADE_COMPLETED		0x2E //
+#define FLAG_FENNEKIN_TRADE_COMPLETED		0x2F //
+#define FLAG_MUDKIP_TRADE_COMPLETED			0x30 //
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
@@ -1175,7 +1174,7 @@
 #define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
 #define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
-#define FLAG_ITEM_ROUTE_102_PEAT_BLOCK                              0x465 //
+#define FLAG_ITEM_VICTORY_ROAD_B1F_PEAT_BLOCK                       0x465 //
 #define FLAG_ITEM_SOOTOPOLIS_CITY_DAWN_STONE                        0x466 //
 #define FLAG_ITEM_SKY_PILLAR_2F_DRAGON_SCALE                        0x467 //
 #define FLAG_ITEM_ROUTE_111_DUSK_STONE                              0x468 //
@@ -1241,19 +1240,19 @@
 #define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_1                  0x4A3 //
 #define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_2                  0x4A4 //
 #define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_3                  0x4A5 //
-#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_4                  0x4A6 //
+#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_TM_IRON_HEAD              0x4A6 //
 #define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_BIG_PEARL_1               0x4A7 //
-#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_BIG_PEARL_2               0x4A8 //
+#define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_TM_ZEN_HEADBUTT           0x4A8 //
 #define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_BIG_PEARL_3               0x4A9 //
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
+#define FLAG_ITEM_ROUTE_102_PP_MAX                                  0x4AA //
+#define FLAG_ITEM_ROUTE_120_TM_AIR_CUTTER                           0x4AB //
+#define FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE                           0x4AC //
+#define FLAG_ITEM_FALLARBOR_MINE_B1F_RARE_CANDY                     0x4AD //
+#define FLAG_ITEM_FALLARBOR_MINE_B1F_TM_SNARL                       0x4AE //
+#define FLAG_ITEM_FALLARBOR_MINE_B1F_CARBOS                         0x4AF //
+#define FLAG_ITEM_ROUTE_116_TM_POISON_FANG                          0x4B0 //
+#define FLAG_ITEM_ROUTE_115_TM_SMART_STRIKE                         0x4B1 //
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_POWER_GEM                   0x4B2 // Unused Flag
 #define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
 #define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag

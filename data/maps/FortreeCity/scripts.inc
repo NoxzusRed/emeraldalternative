@@ -91,6 +91,15 @@ FortreeCity_Movement_KecleonFlee:
 	walk_right
 	step_end
 
+FortreeCity_EventScript_Mightyena::
+	playmoncry SPECIES_MIGHTYENA, CRY_MODE_NORMAL
+	msgbox FortreeCity_Text_Grawwrrr, MSGBOX_SIGN
+	end
+
+FortreeCity_EventScript_Tamer::
+	msgbox FortreeCity_Text_FriendlyMightyenas, MSGBOX_SIGN
+	end
+
 FortreeCity_Text_SawGiganticPokemonInSky:
 	.string "No one believes me, but I saw this\n"
 	.string "gigantic POKéMON in the sky.\p"
@@ -160,3 +169,10 @@ FortreeCity_Text_GymSign:
 
 FortreeCity_Text_ChoseToRun:
 	.string "I chose to run and now I can't stop!$"
+
+FortreeCity_Text_Grawwrrr:
+	.string "Graw-wrrr...$"
+
+FortreeCity_Text_FriendlyMightyenas:
+	.string "Don't worry, these Mightyenas are very\n"
+	.string "friendly.$"

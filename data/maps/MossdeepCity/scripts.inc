@@ -303,6 +303,46 @@ MossdeepCity_Movement_ScottExitEast:
 	walk_left
 	step_end
 
+MossdeepCity_EventScript_Reuniclus::
+	playmoncry SPECIES_REUNICLUS, CRY_MODE_NORMAL
+	msgbox MossdeepCity_Text_Whililicluu, MSGBOX_SIGN
+	end
+
+MossdeepCity_EventScript_Gothitelle::
+	playmoncry SPECIES_GOTHITELLE, CRY_MODE_NORMAL
+	msgbox MossdeepCity_Text_Gothitelle, MSGBOX_SIGN
+	end
+
+MossdeepCity_EventScript_Gothita::
+	playmoncry SPECIES_GOTHITA, CRY_MODE_NORMAL
+	msgbox MossdeepCity_Text_Prita, MSGBOX_SIGN
+	end
+
+MossdeepCity_EventScript_Lunatone::
+	playmoncry SPECIES_LUNATONE, CRY_MODE_NORMAL
+	msgbox MossdeepCity_Text_Luna, MSGBOX_SIGN
+	end
+
+MossdeepCity_EventScript_Solrock::
+	playmoncry SPECIES_SOLROCK, CRY_MODE_NORMAL
+	msgbox MossdeepCity_Text_KriZaSha, MSGBOX_SIGN
+	end
+
+MossdeepCity_Text_Whililicluu:
+	.string "Whi-li-li-cluu!$"
+
+MossdeepCity_Text_Gothitelle:
+	.string "Goth-i-telle!$"
+
+MossdeepCity_Text_Prita:
+	.string "Priii-ta!$"
+
+MossdeepCity_Text_Luna:
+	.string "Luuu-naaa...$"
+
+MossdeepCity_Text_KriZaSha:
+	.string "Krii-zaaa-shaa!$"
+
 MossdeepCity_Text_WantKingsRockStevenGaveMe:
 	.string "I got this from STEVEN, but I don't\n"
 	.string "know what it's good for.\p"

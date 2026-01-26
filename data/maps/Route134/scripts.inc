@@ -56,7 +56,7 @@ Route134_EventScript_AquaMember::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM_POISON_JAB, Route134_EventScript_ReceivedPoisonJab
 	msgbox Route134_Text_AquaMember, MSGBOX_DEFAULT
-	giveitem ITEM_TM83
+	giveitem ITEM_TM72
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_POISON_JAB
 	release

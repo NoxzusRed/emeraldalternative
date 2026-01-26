@@ -128,6 +128,71 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FortreeCity_EventScript_BlackBelt",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIGHTYENA)",
+      "x": 19,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FortreeCity_EventScript_Mightyena",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIGHTYENA)",
+      "x": 22,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FortreeCity_EventScript_Mightyena",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIGHTYENA)",
+      "x": 9,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_LEFT_UP",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FortreeCity_EventScript_Mightyena",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIGHTYENA)",
+      "x": 15,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FortreeCity_EventScript_Mightyena",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 10,
+      "y": 28,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FortreeCity_EventScript_Tamer",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -200,13 +265,41 @@
       "elevation": 0,
       "dest_map": "MAP_FORTREE_CITY_HOUSE6",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_CITY_HOUSE7",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_CITY_HOUSE8",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 33,
+      "y": 50,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_CITY",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 18,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_CITY",
+      "dest_warp_id": "12"
     }
   ],
   "coord_events": [
     {
       "type": "weather",
       "x": 39,
-      "y": 28,
+      "y": 30,
       "elevation": 5,
       "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
     },

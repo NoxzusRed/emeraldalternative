@@ -42,9 +42,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_NUGGET",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM95",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_4"
+      "flag": "FLAG_ITEM_OLDALE_RUINS_UNDERWATER_TM_IRON_HEAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -55,9 +55,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_BIG_PEARL",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM96",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_OLDALE_RUINS_UNDERWATER_BIG_PEARL_2"
+      "flag": "FLAG_ITEM_OLDALE_RUINS_UNDERWATER_TM_ZEN_HEADBUTT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -110,6 +110,58 @@
       "trainer_sight_or_berry_tree_id": "ITEM_NUGGET",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RELICANTH)",
+      "x": 6,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleRuins_Underwater_EventScript_Relicanth",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RELICANTH)",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleRuins_Underwater_EventScript_Relicanth",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RELICANTH)",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleRuins_Underwater_EventScript_Relicanth",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RELICANTH)",
+      "x": 18,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleRuins_Underwater_EventScript_Relicanth",
+      "flag": "0"
     }
   ],
   "warp_events": [],

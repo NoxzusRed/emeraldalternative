@@ -5,6 +5,7 @@ Route123_House_EventScript_Dusclops::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_EVIOLITE, Route123_House_EventScript_ReceivedEviolite
+	playmoncry SPECIES_DUSCLOPS, CRY_MODE_NORMAL
 	msgbox Route123_House_Text_Dusclops, MSGBOX_DEFAULT
 	giveitem ITEM_EVIOLITE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
@@ -13,6 +14,7 @@ Route123_House_EventScript_Dusclops::
 	end
 
 Route123_House_EventScript_ReceivedEviolite::
+	playmoncry SPECIES_DUSCLOPS, CRY_MODE_NORMAL
 	msgbox Route123_House_Text_Dusclops, MSGBOX_DEFAULT
 	release
 	end

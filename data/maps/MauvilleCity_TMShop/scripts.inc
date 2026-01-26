@@ -27,6 +27,7 @@ MauvilleCity_TMShop_Clerk:
 	.2byte ITEM_TM71
 	.2byte ITEM_TM73
 	.2byte ITEM_TM80
+	.2byte ITEM_TM85
 	pokemartlistend
 
 MauvilleCity_TMShop_Text_MauvilleIsGrowing:

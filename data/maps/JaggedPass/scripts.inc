@@ -151,6 +151,7 @@ JaggedPass_EventScript_Torkoal::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_ROCKY_HELMET, JaggedPass_EventScript_ReceivedRockyHelmet
+	playmoncry SPECIES_TORKOAL, CRY_MODE_NORMAL
 	msgbox JaggedPass_Text_Torkoal, MSGBOX_DEFAULT
 	giveitem ITEM_ROCKY_HELMET
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
@@ -159,6 +160,7 @@ JaggedPass_EventScript_Torkoal::
 	end
 
 JaggedPass_EventScript_ReceivedRockyHelmet::
+	playmoncry SPECIES_TORKOAL, CRY_MODE_NORMAL
 	msgbox JaggedPass_Text_Torkoal, MSGBOX_DEFAULT
 	release
 	end

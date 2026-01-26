@@ -339,6 +339,15 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	walk_left
 	step_end
 
+OldaleTown_EventScript_Budew::
+	playmoncry SPECIES_BUDEW, CRY_MODE_NORMAL
+	msgbox OldaleTown_Text_DewDew, MSGBOX_SIGN
+	end
+
+OldaleTown_Text_DewDew:
+	.string "Dew-dew!$"
+
+
 OldaleTown_Text_SavingMyProgress:
 	.string "I want to take a rest, so I'm saving my\n"
 	.string "progress.$"

@@ -1044,7 +1044,7 @@ static bool32 UpdateMatchCallMinutesCounter(void)
     int curMinutes;
     RtcCalcLocalTime();
     curMinutes = GetCurrentTotalMinutes(&gLocalTime);
-    if (sMatchCallState.minutes > curMinutes || curMinutes - sMatchCallState.minutes > 9)
+    if (sMatchCallState.minutes > curMinutes || curMinutes - sMatchCallState.minutes > 14)
     {
         sMatchCallState.minutes = curMinutes;
         return TRUE;
@@ -1085,7 +1085,7 @@ static bool32 MapAllowsMatchCall(void)
 
 static bool32 UpdateMatchCallStepCounter(void)
 {
-    if (++sMatchCallState.stepCounter >= 10)
+    if (++sMatchCallState.stepCounter >= 40)
     {
         sMatchCallState.stepCounter = 0;
         return TRUE;

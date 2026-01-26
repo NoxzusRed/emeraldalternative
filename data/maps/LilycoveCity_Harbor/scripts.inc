@@ -536,6 +536,24 @@ LilycoveCity_Harbor_Movement_SailorBoardWithBrineyEast:
 	set_invisible
 	step_end
 
+LilycoveCity_Harbor_EventScript_TicketClerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LilycoveCity_Harbor_Pokemart_Tickets
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LilycoveCity_Harbor_Pokemart_Tickets:
+	.2byte ITEM_MYSTIC_TICKET
+	.2byte ITEM_AURORA_TICKET
+	.2byte ITEM_EON_TICKET
+	.2byte ITEM_OLD_SEA_MAP
+	pokemartlistend
+
 LilycoveCity_Harbor_Text_FerryUnavailable:
 	.string "I beg your pardon?\n"
 	.string "You're looking for a ship?\p"

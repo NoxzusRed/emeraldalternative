@@ -1014,6 +1014,23 @@ RustboroCity_EventScript_Boy1::
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
 
+RustboroCity_EventScript_Loudred::
+	playmoncry SPECIES_LOUDRED, CRY_MODE_NORMAL
+	msgbox RustboroCity_Text_Bam, MSGBOX_SIGN
+	end
+
+RustboroCity_EventScript_Gothorita::
+	playmoncry SPECIES_GOTHORITA, CRY_MODE_NORMAL
+	msgbox RustboroCity_Text_RiiTaTa, MSGBOX_SIGN
+	end
+
+RustboroCity_Text_RiiTaTa:
+	.string "Rii-ta-ta!$"
+
+RustboroCity_Text_Bam:
+	.string "BA-BA-BA-BAAAM!$"
+
+
 RustboroCity_Text_WeShortenItToDevon:
 	.string "The DEVON CORPORATION…\n"
 	.string "We all just shorten it to DEVON.\p"

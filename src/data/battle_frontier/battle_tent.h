@@ -896,7 +896,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     [SLATEPORT_TENT_MON_LINOONE] = {
         .species = SPECIES_LINOONE,
         .moves = {MOVE_HEADBUTT, MOVE_TICKLE, MOVE_TAIL_WHIP, MOVE_REST},
-        .heldItem = ITEM_MENTAL_HERB,
+        .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 0, 170),
         .nature = NATURE_JOLLY
     },
@@ -966,7 +966,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     [SLATEPORT_TENT_MON_GOLBAT_1] = {
         .species = SPECIES_GOLBAT,
         .moves = {MOVE_ABSORB, MOVE_GUST, MOVE_MEAN_LOOK, MOVE_CONFUSE_RAY},
-        .heldItem = ITEM_SPELL_TAG,
+        .heldItem = ITEM_MIRACLE_SEED,
         .ev = TRAINER_PARTY_EVS(0, 0, 170, 170, 0, 170),
         .nature = NATURE_TIMID
     },

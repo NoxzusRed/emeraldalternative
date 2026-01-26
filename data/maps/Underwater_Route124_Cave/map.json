@@ -1,0 +1,42 @@
+{
+  "id": "MAP_UNDERWATER_ROUTE124_CAVE",
+  "name": "Underwater_Route124_Cave",
+  "layout": "LAYOUT_UNDERWATER_ROUTE124_CAVE",
+  "music": "MUS_UNDERWATER",
+  "region_map_section": "MAPSEC_UNDERWATER_124",
+  "requires_flash": false,
+  "weather": "WEATHER_UNDERWATER",
+  "map_type": "MAP_TYPE_UNDERWATER",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WAILORD)",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Underwater_Route124_Cave_EventScript_Wailord",
+      "flag": "FLAG_HIDE_WAILORD"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_ROUTE124",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

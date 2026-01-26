@@ -27,6 +27,7 @@ Route113_EventScript_Lady::
 	end
 
 Route113_EventScript_Poochyena::
+	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
 	msgbox Route113_Text_Bufoh, MSGBOX_SIGN
 	end
 

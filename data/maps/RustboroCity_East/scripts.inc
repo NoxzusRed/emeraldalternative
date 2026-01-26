@@ -37,6 +37,22 @@ RustboroCity_East_EventScript_Psychic::
 	msgbox RustboroCity_East_Text_NewAbilityShop, MSGBOX_NPC
 	end
 
+RustboroCity_East_EventScript_Wooper::
+	playmoncry SPECIES_WOOPER, CRY_MODE_NORMAL
+	msgbox RustboroCity_East_Text_Paaah, MSGBOX_SIGN
+	end
+
+RustboroCity_East_EventScript_Jumpluff::
+	playmoncry SPECIES_JUMPLUFF, CRY_MODE_NORMAL
+	msgbox RustboroCity_East_Text_PluffPluff, MSGBOX_SIGN
+	end
+
+RustboroCity_East_Text_Paaah:
+	.string "Paaah!$"
+
+RustboroCity_East_Text_PluffPluff:
+	.string "Pluff-Pluff!$"
+
 RustboroCity_East_Text_AbilityShop:
 	.string "ABILITY SHOP$"
 

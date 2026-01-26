@@ -67,6 +67,22 @@ FallarborTown_EventScript_MintShopSign::
 	msgbox FallarborTown_Text_MintShopSign, MSGBOX_SIGN
 	end
 
+FallarborTown_EventScript_Rolycoly::
+	playmoncry SPECIES_ROLYCOLY, CRY_MODE_NORMAL
+	msgbox FallarborTown_Text_Roly, MSGBOX_SIGN
+	end
+
+FallarborTown_EventScript_Heatmor::
+	playmoncry SPECIES_HEATMOR, CRY_MODE_NORMAL
+	msgbox FallarborTown_Text_FshhhMor, MSGBOX_SIGN
+	end
+
+FallarborTown_Text_Roly:
+	.string "Roly-roly-roly!$"
+
+FallarborTown_Text_FshhhMor:
+	.string "Fshhh-MOR!$"
+
 FallarborTown_Text_ShadyCharactersCozmosHome:
 	.string "Something's happening,\n"
 	.string "and I don't like it!\p"
@@ -111,7 +127,6 @@ FallarborTown_Text_MoveTutorSign:
 
 FallarborTown_Text_MintShopSign:
 	.string "MINT SHOP$"
-
 
 FallarborTown_Text_FallarborMint:
 	.string "We brought mint from Galar so we could\n"

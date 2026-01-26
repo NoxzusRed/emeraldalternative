@@ -4,6 +4,7 @@ Underwater_Route124_MapScripts::
 Underwater_Route124_EventScript_Skrelp::
 	lock
 	faceplayer
+	playmoncry SPECIES_SKRELP, CRY_MODE_NORMAL
 	goto_if_set FLAG_RECEIVED_RED_SHARD, Underwater_Route124_EventScript_ReceivedRedShard
 	msgbox Underwater_Route124_Text_Skrelp, MSGBOX_DEFAULT
 	giveitem ITEM_RED_SHARD
@@ -20,6 +21,7 @@ Underwater_Route124_EventScript_ReceivedRedShard::
 Underwater_Route124_EventScript_Chinchou::
 	lock
 	faceplayer
+	playmoncry SPECIES_CHINCHOU, CRY_MODE_NORMAL
 	goto_if_set FLAG_RECEIVED_YELLOW_SHARD, Underwater_Route124_EventScript_ReceivedYellowShard
 	msgbox Underwater_Route124_Text_Chinchou, MSGBOX_DEFAULT
 	giveitem ITEM_YELLOW_SHARD

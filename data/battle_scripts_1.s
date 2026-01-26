@@ -8366,8 +8366,8 @@ BattleScript_RoughSkinActivates::
 BattleScript_RockyHelmetActivates::
 	@ don't play the animation for a fainted mon
 	jumpifabsent BS_TARGET, BattleScript_RockyHelmetActivatesDmg
-	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT
-	waitanimation
+	@playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT
+	@waitanimation
 BattleScript_RockyHelmetActivatesDmg:
 	call BattleScript_HurtAttacker
 	return
@@ -8757,8 +8757,9 @@ BattleScript_ItemHurtEnd2::
 
 BattleScript_ItemHealHP_Ret::
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT
-	printstring STRINGID_PKMNSITEMRESTOREDHPALITTLE
-	waitmessage B_WAIT_TIME_SHORTEST
+	waitanimation
+	@printstring STRINGID_PKMNSITEMRESTOREDHPALITTLE
+	@waitmessage B_WAIT_TIME_SHORTEST
 	orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE | HITMARKER_PASSIVE_DAMAGE
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER

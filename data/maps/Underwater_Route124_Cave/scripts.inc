@@ -1,0 +1,58 @@
+Underwater_Route124_Cave_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, Underwater_Route124_Cave_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Underwater_Route124_Cave_OnLoad
+	.byte 0
+
+Underwater_Route124_Cave_OnResume:
+	setstepcallback STEP_CB_ASH
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Underwater_Route124_Cave_EventScript_TryRemoveWailord
+	end
+
+Underwater_Route124_Cave_EventScript_TryRemoveWailord::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+Underwater_Route124_Cave_OnLoad:
+	call_if_set FLAG_CAUGHT_WAILORD, Underwater_Route124_Cave_EventScript_HideWailord
+	call_if_unset FLAG_CAUGHT_WAILORD, Underwater_Route124_Cave_EventScript_TryShowWailord
+	end
+Underwater_Route124_Cave_EventScript_HideWailord::
+	setflag FLAG_HIDE_WAILORD
+	return
+
+Underwater_Route124_Cave_EventScript_TryShowWailord::
+	goto_if_set FLAG_DEFEATED_WAILORD, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_WAILORD
+	return
+
+Underwater_Route124_Cave_EventScript_Wailord::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_WAILORD, CRY_MODE_ENCOUNTER
+	delay 20
+	waitmoncry
+	setwildbattle SPECIES_WAILORD, 50
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Underwater_Route124_Cave_EventScript_DefeatedWailord
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Underwater_Route124_Cave_EventScript_RanFromWailord
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Underwater_Route124_Cave_EventScript_RanFromWailord
+	setflag FLAG_DEFEATED_WAILORD
+	release
+	end
+
+Underwater_Route124_Cave_EventScript_DefeatedWailord::
+	setflag FLAG_DEFEATED_WAILORD
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+Underwater_Route124_Cave_EventScript_RanFromWailord::
+	setvar VAR_0x8004, SPECIES_WAILORD
+	goto Common_EventScript_LegendaryFlewAway
+	end

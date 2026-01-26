@@ -31,6 +31,14 @@ PacifidlogTown_EventScript_TrainingShopSign::
 	msgbox PacifidlogTown_Text_TrainingShopSign, MSGBOX_SIGN
 	end
 
+PacifidlogTown_EventScript_Chinchou::
+	playmoncry SPECIES_CHINCHOU, CRY_MODE_NORMAL
+	msgbox PacifidlogTown_Text_Bzzzt, MSGBOX_SIGN
+	end
+
+PacifidlogTown_Text_Bzzzt:
+	.string "Bzzzt...!$"
+
 PacifidlogTown_Text_FastRunningCurrent:
 	.string "The sea between PACIFIDLOG and\n"
 	.string "SLATEPORT has a fast-running tide.\p"

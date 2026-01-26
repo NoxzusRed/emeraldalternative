@@ -4,6 +4,7 @@ Underwater_Route126_MapScripts::
 Underwater_Route126_EventScript_Relicanth::
 	lock
 	faceplayer
+	playmoncry SPECIES_RELICANTH, CRY_MODE_NORMAL
 	goto_if_set FLAG_RECEIVED_GREEN_SHARD, Underwater_Route126_EventScript_ReceivedGreenShard
 	msgbox Underwater_Route126_Text_Relicanth, MSGBOX_DEFAULT
 	giveitem ITEM_GREEN_SHARD
@@ -20,6 +21,7 @@ Underwater_Route126_EventScript_ReceivedGreenShard::
 Underwater_Route126_EventScript_Clamperl::
 	lock
 	faceplayer
+	playmoncry SPECIES_CLAMPERL, CRY_MODE_NORMAL
 	goto_if_set FLAG_RECEIVED_BLUE_SHARD, Underwater_Route126_EventScript_ReceivedBlueShard
 	msgbox Underwater_Route126_Text_Clamperl, MSGBOX_DEFAULT
 	giveitem ITEM_BLUE_SHARD

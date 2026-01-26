@@ -94,14 +94,17 @@
     "Underwater_Route105",
     "Underwater_Route125",
     "Route103_South",
-    "RustboroCity_East"
+    "RustboroCity_East",
+    "FallarborTown_East",
+    "Route121_North"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
     "LittlerootTown_BrendansHouse_2F",
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
-    "LittlerootTown_ProfessorBirchsLab"
+    "LittlerootTown_ProfessorBirchsLab",
+    "LittlerootTown_StartersHouse"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
@@ -137,7 +140,9 @@
     "FallarborTown_PokemonCenter_2F",
     "FallarborTown_CozmosHouse",
     "FallarborTown_MoveRelearnersHouse",
-    "FallarborTown_MintShop"
+    "FallarborTown_MintShop",
+    "FallarborTown_AbandonedHouse",
+    "FallarborTown_East_BikeStop"
   ],
   "gMapGroup_IndoorVerdanturf": [
     "VerdanturfTown_BattleTentLobby",
@@ -228,7 +233,9 @@
     "FortreeCity_House4",
     "FortreeCity_House5",
     "FortreeCity_DecorationShop",
-    "FortreeCity_House6"
+    "FortreeCity_House6",
+    "FortreeCity_House7",
+    "FortreeCity_House8"
   ],
   "gMapGroup_IndoorLilycove": [
     "LilycoveCity_CoveLilyMotel_1F",
@@ -329,7 +336,8 @@
     "Route117_PokemonDayCare"
   ],
   "gMapGroup_IndoorRoute121": [
-    "Route121_SafariZoneEntrance"
+    "Route121_SafariZoneEntrance",
+    "Route121_North_BikeStop"
   ],
   "gMapGroup_Dungeons": [
     "MeteorFalls_1F_1R",
@@ -442,7 +450,13 @@
     "MeteorFalls_StevensCave",
     "OldaleRuins",
     "VictoryRoad_2F",
-    "OldaleRuins_Underwater"
+    "OldaleRuins_Underwater",
+    "MagmaHideout_Stairs",
+    "MtChimney_North",
+    "FallarborMine_1F",
+    "FallarborMines_B1F",
+    "Underwater_Route124_Cave",
+    "Route127_Cave"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

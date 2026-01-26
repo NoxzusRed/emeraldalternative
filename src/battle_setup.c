@@ -523,6 +523,9 @@ void BattleSetup_StartLegendaryBattle(void)
 	case SPECIES_JIRACHI:
 		CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
 		break;
+	case SPECIES_WAILORD:
+		CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_WILD);
+		break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

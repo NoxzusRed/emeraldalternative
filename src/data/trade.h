@@ -988,7 +988,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("MIMI"),
         .species = SPECIES_SHROOMISH,
-        .ivs = {5, 4, 5, 4, 4, 4},
+        .ivs = {15, 15, 15, 15, 15, 15},
         .abilityNum = 1,
         .otId = 38726,
         .conditions = {30, 5, 5, 5, 5},
@@ -996,7 +996,7 @@ static const struct InGameTrade sIngameTrades[] =
         .heldItem = ITEM_CHESTO_BERRY,
         .mailNum = -1,
         .otName = _("KOBE"),
-        .otGender = MALE,
+        .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_CHINGLING
     },
@@ -1004,7 +1004,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("INVINCIBLE"),
         .species = SPECIES_SKRELP,
-        .ivs = {4, 4, 4, 5, 5, 4},
+        .ivs = {15, 15, 15, 15, 15, 15},
         .abilityNum = 0,
         .otId = 73996,
         .conditions = {5, 5, 30, 5, 5},
@@ -1020,7 +1020,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("SEASOR"),
         .species = SPECIES_HORSEA,
-        .ivs = {5, 4, 4, 4, 5, 4},
+        .ivs = {15, 15, 15, 15, 15, 15},
         .abilityNum = 0,
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
@@ -1036,7 +1036,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("ALEJO"),
         .species = SPECIES_RALTS,
-        .ivs = {4, 5, 4, 5, 4, 4},
+        .ivs = {15, 15, 15, 15, 15, 15},
         .abilityNum = 0,
         .otId = 91481,
         .conditions = {5, 5, 5, 30, 5},
@@ -1047,6 +1047,54 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_GOTHITA
+    },
+	[INGAME_TRADE_SPRIGATITO] =
+    {
+        .nickname = _("Gatsby"),
+        .species = SPECIES_SPRIGATITO,
+        .ivs = {15, 15, 15, 15, 15, 15},
+        .abilityNum = 1,
+        .otId = 38726,
+        .conditions = {30, 5, 5, 5, 5},
+        .personality = 0x84,
+        .heldItem = ITEM_CHESTO_BERRY,
+        .mailNum = -1,
+        .otName = _("LISSANDRA"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MUDKIP
+    },
+	[INGAME_TRADE_FENNEKIN] =
+    {
+        .nickname = _("Don Diego"),
+        .species = SPECIES_FENNEKIN,
+        .ivs = {15, 15, 15, 15, 15, 15},
+        .abilityNum = 1,
+        .otId = 38726,
+        .conditions = {30, 5, 5, 5, 5},
+        .personality = 0x84,
+        .heldItem = ITEM_CHESTO_BERRY,
+        .mailNum = -1,
+        .otName = _("FIORA"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_SPRIGATITO
+    },
+	[INGAME_TRADE_MUDKIP] =
+    {
+        .nickname = _("Seismitoad"),
+        .species = SPECIES_MUDKIP,
+        .ivs = {15, 15, 15, 15, 15, 15},
+        .abilityNum = 1,
+        .otId = 38726,
+        .conditions = {30, 5, 5, 5, 5},
+        .personality = 0x84,
+        .heldItem = ITEM_CHESTO_BERRY,
+        .mailNum = -1,
+        .otName = _("SORAKA"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_FENNEKIN
     }
 };
 

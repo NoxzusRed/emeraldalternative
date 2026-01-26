@@ -32,6 +32,7 @@ LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 	.2byte ITEM_TM78
 	.2byte ITEM_TM_HYPER_BEAM
 	.2byte ITEM_TM81
+	.2byte ITEM_TM87
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_4F_EventScript_ClerkRight::

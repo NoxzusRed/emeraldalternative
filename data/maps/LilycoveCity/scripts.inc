@@ -409,22 +409,45 @@ LilycoveCity_EventScript_DontKnowAboutBerryBlender::
 	msgbox LilycoveCity_Text_ExplainBerryBlender, MSGBOX_DEFAULT
 	return
 
-LilycoveCity_EventScript_TicketClerk::
-	lock
-	faceplayer
-	message gText_HowMayIServeYou
-	waitmessage
-	pokemart LilycoveCity_Pokemart_Tickets
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
+Lilycove_EventScript_Girafarig::
+	playmoncry SPECIES_GIRAFARIG, CRY_MODE_NORMAL
+	msgbox Lilycove_Text_Farig, MSGBOX_SIGN
 	end
 
-	.align 2
-LilycoveCity_Pokemart_Tickets:
-	.2byte ITEM_MYSTIC_TICKET
-	.2byte ITEM_AURORA_TICKET
-	.2byte ITEM_OLD_SEA_MAP
-	pokemartlistend
+Lilycove_EventScript_Farigiraf::
+	playmoncry SPECIES_FARIGIRAF, CRY_MODE_NORMAL
+	msgbox Lilycove_Text_Giraf, MSGBOX_SIGN
+	end
+
+Lilycove_EventScript_Manectric::
+	playmoncry SPECIES_MANECTRIC, CRY_MODE_NORMAL
+	msgbox Lilycove_Text_Nectric, MSGBOX_SIGN
+	end
+
+Lilycove_EventScript_Gothitelle::
+	playmoncry SPECIES_GOTHITELLE, CRY_MODE_NORMAL
+	msgbox Lilycove_Text_Gothitelle, MSGBOX_SIGN
+	end
+
+Lilycove_EventScript_Absol::
+	playmoncry SPECIES_ABSOL, CRY_MODE_NORMAL
+	msgbox Lilycove_Text_Shaaaaou, MSGBOX_SIGN
+	end
+
+Lilycove_Text_Farig:
+	.string "Farig!$"
+
+Lilycove_Text_Giraf:
+	.string "Giraf!$"
+
+Lilycove_Text_Nectric:
+	.string "Neeec-tric!$"
+
+Lilycove_Text_Gothitelle:
+	.string "Goth-i-telle!$"
+
+Lilycove_Text_Shaaaaou:
+	.string "Shaaaa-ou!$"
 
 LilycoveCity_Text_MayShoppingLetsBattle:
 	.string "MAY: Oh, hey?\n"

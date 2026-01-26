@@ -54,7 +54,7 @@ MtChimney_EventScript_Maxie::
 	removeobject LOCALID_MT_CHIMNEY_MAGMA_GRUNT_2
 	setflag FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
 	fadescreenswapbuffers FADE_FROM_BLACK
-	setobjectxyperm LOCALID_MT_CHIMNEY_ARCHIE, 10, 12
+	setobjectxyperm LOCALID_MT_CHIMNEY_ARCHIE, 10, 25
 	addobject LOCALID_MT_CHIMNEY_ARCHIE
 	call_if_eq VAR_FACING, DIR_EAST, MtChimney_EventScript_ArchieApproachPlayerEast
 	call_if_eq VAR_FACING, DIR_NORTH, MtChimney_EventScript_ArchieApproachPlayerNorth
@@ -99,13 +99,13 @@ MtChimney_EventScript_LavaCookieLady::
 	showmoneybox 0, 0
 	msgbox MtChimney_Text_LavaCookiesJust200, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MtChimney_EventScript_DeclineLavaCookie
-	checkmoney 200
+	checkmoney 1200
 	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_NotEnoughMoney
 	msgbox MtChimney_Text_ThankYouDear, MSGBOX_DEFAULT
-	checkitemspace ITEM_LAVA_COOKIE
+	checkitemspace ITEM_LAVA_COOKIE, 6
 	call_if_eq VAR_RESULT, TRUE, MtChimney_EventScript_RemoveMoney
 .if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_OFF
-	giveitem ITEM_LAVA_COOKIE
+	giveitem ITEM_LAVA_COOKIE, 6
 	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_BagIsFull
 	hidemoneybox
 	release
@@ -118,7 +118,7 @@ MtChimney_EventScript_BagIsFull::
 	end
 .else
 	hidemoneybox
-	giveitem ITEM_LAVA_COOKIE
+	giveitem ITEM_LAVA_COOKIE, 6
 	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_BagIsFull
 	release
 	end
@@ -131,7 +131,7 @@ MtChimney_EventScript_BagIsFull::
 
 
 MtChimney_EventScript_RemoveMoney::
-	removemoney 200
+	removemoney 1200
 	updatemoneybox
 	return
 
@@ -440,11 +440,23 @@ MtChimney_EventScript_BusyMagmaGrunt6::
 	end
 
 MtChimney_EventScript_MagmaPoochyena::
+	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
 	msgbox MtChimney_Text_Bufoh, MSGBOX_SIGN
 	end
 
+MtChimney_EventScript_MagmaNumel::
+	playmoncry SPECIES_NUMEL, CRY_MODE_NORMAL
+	msgbox MtChimney_Text_Muuhrr, MSGBOX_SIGN
+	end
+
 MtChimney_EventScript_AquaPoochyena::
+	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
 	msgbox MtChimney_Text_Bushaa, MSGBOX_SIGN
+	end
+
+MtChimney_EventScript_AquaMightyena::
+	playmoncry SPECIES_MIGHTYENA, CRY_MODE_NORMAL
+	msgbox MtChimney_Text_Grawwrrr, MSGBOX_SIGN
 	end
 
 MtChimney_EventScript_MeteoriteMachine::
@@ -714,7 +726,7 @@ MtChimney_Text_Bushaa:
 MtChimney_Text_LavaCookiesJust200:
 	.string "LAVA COOKIES are MT. CHIMNEY's local\n"
 	.string "specialty.\p"
-	.string "Try one. It's just ¥200.$"
+	.string "Try a few. It's just 6 for ¥1200.$"
 
 MtChimney_Text_ThankYouDear:
 	.string "Thank you, dear!$"
@@ -852,3 +864,8 @@ MtChimney_Text_SawyerPostRematch:
 	.string "Actually, it really is hot here.\n"
 	.string "I'm overdressed for these parts.$"
 
+MtChimney_Text_Grawwrrr:
+	.string "Graw-wrrr...$"
+
+MtChimney_Text_Muuhrr:
+	.string "Muuuuu... hrr!$"	

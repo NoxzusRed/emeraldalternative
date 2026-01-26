@@ -713,7 +713,16 @@ PetalburgCity_Clerk:
 	.2byte ITEM_ROCKY_HELMET
 	.2byte ITEM_LOADED_DICE
 	.2byte ITEM_SAFETY_GOGGLES
+	.2byte ITEM_TWISTED_SPOON
 	pokemartlistend
+
+PetalburgCity_EventScript_Vaporeon::
+	playmoncry SPECIES_VAPOREON, CRY_MODE_NORMAL
+	msgbox PetalburgCity_Text_VaPurr, MSGBOX_SIGN
+	end
+
+PetalburgCity_Text_VaPurr:
+	.string "Vaa-purr!$"
 
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"

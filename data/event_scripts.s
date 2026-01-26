@@ -1185,3 +1185,31 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PacifidlogTown_House6/scripts.inc"
 
 	.include "data/maps/OldaleRuins_Underwater/scripts.inc"
+
+	.include "data/maps/MagmaHideout_Stairs/scripts.inc"
+
+	.include "data/maps/MtChimney_North/scripts.inc"
+
+	.include "data/maps/FallarborTown_AbandonedHouse/scripts.inc"
+
+	.include "data/maps/FallarborMine_1F/scripts.inc"
+
+	.include "data/maps/FallarborMines_B1F/scripts.inc"
+
+	.include "data/maps/Underwater_Route124_Cave/scripts.inc"
+
+	.include "data/maps/FortreeCity_House7/scripts.inc"
+
+	.include "data/maps/FortreeCity_House8/scripts.inc"
+
+	.include "data/maps/Route127_Cave/scripts.inc"
+
+	.include "data/maps/FallarborTown_East/scripts.inc"
+
+	.include "data/maps/FallarborTown_East_BikeStop/scripts.inc"
+
+	.include "data/maps/Route121_North/scripts.inc"
+
+	.include "data/maps/Route121_North_BikeStop/scripts.inc"
+
+	.include "data/maps/LittlerootTown_StartersHouse/scripts.inc"

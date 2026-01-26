@@ -45,7 +45,7 @@
       "id": "LAYOUT_FORTREE_CITY",
       "name": "FortreeCity_Layout",
       "width": 40,
-      "height": 31,
+      "height": 58,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/FortreeCity/border.bin",
@@ -94,7 +94,7 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN",
       "name": "LittlerootTown_Layout",
-      "width": 32,
+      "width": 34,
       "height": 27,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -1355,7 +1355,7 @@
       "id": "LAYOUT_MT_CHIMNEY",
       "name": "MtChimney_Layout",
       "width": 40,
-      "height": 47,
+      "height": 60,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/MtChimney/border.bin",
@@ -3375,7 +3375,7 @@
       "id": "LAYOUT_MAGMA_HIDEOUT_2F_2R",
       "name": "MagmaHideout_2F_2R_Layout",
       "width": 49,
-      "height": 28,
+      "height": 29,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/MagmaHideout_2F_2R/border.bin",
@@ -4550,6 +4550,146 @@
       "secondary_tileset": "gTileset_Underwater",
       "border_filepath": "data/layouts/OldaleRuins_Underwater/border.bin",
       "blockdata_filepath": "data/layouts/OldaleRuins_Underwater/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAGMA_HIDEOUT_STAIRS",
+      "name": "MagmaHideout_Stairs_Layout",
+      "width": 24,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/MagmaHideout_Stairs/border.bin",
+      "blockdata_filepath": "data/layouts/MagmaHideout_Stairs/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CHIMNEY_NORTH",
+      "name": "MtChimney_North_Layout",
+      "width": 40,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/MtChimney_North/border.bin",
+      "blockdata_filepath": "data/layouts/MtChimney_North/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALLARBOR_TOWN_ABANDONED_HOUSE",
+      "name": "FallarborTown_AbandonedHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FallarborTown_AbandonedHouse/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborTown_AbandonedHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALLARBOR_MINE_1F",
+      "name": "FallarborMine_1F_Layout",
+      "width": 8,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/FallarborMine_1F/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborMine_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALLARBOR_MINES_B1F",
+      "name": "FallarborMines_B1F_Layout",
+      "width": 29,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/FallarborMines_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborMines_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_ROUTE124_CAVE",
+      "name": "Underwater_Route124_Cave_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_Route124_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_Route124_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_CITY_HOUSE7",
+      "name": "FortreeCity_House7_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FortreeCity_House7/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeCity_House7/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_CITY_HOUSE8",
+      "name": "FortreeCity_House8_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FortreeCity_House8/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeCity_House8/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE127_CAVE",
+      "name": "Route127_Cave_Layout",
+      "width": 11,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route127_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/Route127_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALLARBOR_TOWN_EAST",
+      "name": "FallarborTown_East_Layout",
+      "width": 10,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/FallarborTown_East/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborTown_East/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALLARBOR_TOWN_EAST_BIKE_STOP",
+      "name": "FallarborTown_East_BikeStop_Layout",
+      "width": 8,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/FallarborTown_East_BikeStop/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborTown_East_BikeStop/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE121_NORTH",
+      "name": "Route121_North_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/Route121_North/border.bin",
+      "blockdata_filepath": "data/layouts/Route121_North/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE121_NORTH_BIKE_STOP",
+      "name": "Route121_North_BikeStop_Layout",
+      "width": 8,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/Route121_North_BikeStop/border.bin",
+      "blockdata_filepath": "data/layouts/Route121_North_BikeStop/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_TOWN_STARTERS_HOUSE",
+      "name": "LittlerootTown_StartersHouse_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/LittlerootTown_StartersHouse/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_StartersHouse/map.bin"
     }
   ]
 }
