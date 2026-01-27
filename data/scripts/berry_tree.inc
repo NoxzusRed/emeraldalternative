@@ -3,12 +3,18 @@ BerryTreeScript::
 	switch VAR_0x8004
 	case BERRY_STAGE_SPARKLING, BerryTree_EventScript_Sparkling
 	case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_CheckSoil
-	case BERRY_STAGE_PLANTED, BerryTree_EventScript_CheckBerryStage1
-	case BERRY_STAGE_SPROUTED, BerryTree_EventScript_CheckBerryStage2
-	case BERRY_STAGE_TALLER, BerryTree_EventScript_CheckBerryStage3
-	case BERRY_STAGE_TRUNK, BerryTree_EventScript_CheckBerryStageTrunk
-	case BERRY_STAGE_BUDDING, BerryTree_EventScript_CheckBerryStageBudding
-	case BERRY_STAGE_FLOWERING, BerryTree_EventScript_CheckBerryStage4
+	@case BERRY_STAGE_PLANTED, BerryTree_EventScript_CheckBerryStage1
+	@case BERRY_STAGE_SPROUTED, BerryTree_EventScript_CheckBerryStage2
+	@case BERRY_STAGE_TALLER, BerryTree_EventScript_CheckBerryStage3
+	@case BERRY_STAGE_TRUNK, BerryTree_EventScript_CheckBerryStageTrunk
+	@case BERRY_STAGE_BUDDING, BerryTree_EventScript_CheckBerryStageBudding
+	@case BERRY_STAGE_FLOWERING, BerryTree_EventScript_CheckBerryStage4
+	case BERRY_STAGE_PLANTED, BerryTree_EventScript_WantToWater
+	case BERRY_STAGE_SPROUTED, BerryTree_EventScript_WantToWater
+	case BERRY_STAGE_TALLER, BerryTree_EventScript_WantToWater
+	case BERRY_STAGE_TRUNK, BerryTree_EventScript_WantToWater
+	case BERRY_STAGE_BUDDING, BerryTree_EventScript_WantToWater
+	case BERRY_STAGE_FLOWERING, BerryTree_EventScript_WantToWater
 	case BERRY_STAGE_BERRIES, BerryTree_EventScript_CheckBerryFullyGrown
 	end
 
@@ -36,9 +42,10 @@ BerryTree_EventScript_CheckSoil::
 BerryTree_EventScript_WantToPlant::
 	specialvar VAR_RESULT, PlayerHasMulch
 	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToPlantMulch
-	msgbox BerryTree_Text_WantToPlant, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, BerryTree_EventScript_ChooseBerryToPlant
-	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPlanting
+	@msgbox BerryTree_Text_WantToPlant, MSGBOX_YESNO
+	@goto_if_eq VAR_RESULT, YES, BerryTree_EventScript_ChooseBerryToPlant
+	@goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPlanting
+	goto BerryTree_EventScript_ChooseBerryToPlant
 	end
 
 BerryTree_EventScript_WantToMulch::
@@ -157,9 +164,10 @@ BerryTree_EventScript_CheckBerryFullyGrown::
 .if OW_BERRY_MUTATIONS == TRUE
 	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_CheckBerryFullyGrown_Mutation
 .endif
-	msgbox BerryTree_Text_WantToPick, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, BerryTree_EventScript_PickBerry
-	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPickingBerry
+	@msgbox BerryTree_Text_WantToPick, MSGBOX_YESNO
+	@goto_if_eq VAR_RESULT, YES, BerryTree_EventScript_PickBerry
+	@goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPickingBerry
+	goto BerryTree_EventScript_PickBerry
 
 .set BERRY_NORMAL_BAG_FULL, 0
 .set BERRY_NORMAL_SPACE_IN_BAG, 1
@@ -176,15 +184,15 @@ BerryTree_EventScript_PickBerry::
 	special IncrementDailyPickedBerries
 	special ObjectEventInteractionRemoveBerryTree
 	message BerryTree_Text_PickedTheBerry
-	delay 10
+	@delay 10
 	showberrydescription
 	playfanfare MUS_OBTAIN_BERRY
 	waitmessage
 	waitfanfare
 	waitbuttonpress
-	message BerryTree_Text_PutAwayBerry
-	waitmessage
-	waitbuttonpress
+	@message BerryTree_Text_PutAwayBerry
+	@waitmessage
+	@waitbuttonpress
 	hideitemdescription
 	release
 	end
@@ -222,9 +230,10 @@ BerryTree_EventScript_WantToWater::
 	specialvar VAR_RESULT, CanWaterBerryPlot
 	goto_if_eq VAR_RESULT, FALSE, BerryTree_EventScript_DontWater
 	special ObjectEventInteractionGetBerryName
-	msgbox BerryTree_Text_WantToWater, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, BerryTree_EventScript_WaterBerry
-	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_DontWater
+	@msgbox BerryTree_Text_WantToWater, MSGBOX_YESNO
+	@goto_if_eq VAR_RESULT, YES, BerryTree_EventScript_WaterBerry
+	@goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_DontWater
+	goto BerryTree_EventScript_WaterBerry
 
 BerryTree_EventScript_DontWater::
 	releaseall
@@ -234,15 +243,15 @@ BerryTree_EventScript_ItemUseWailmerPail::
 	special ObjectEventInteractionGetBerryTreeData
 	lockall
 BerryTree_EventScript_WaterBerry::
-	special ObjectEventInteractionGetBerryName
-	message BerryTree_Text_WateredTheBerry
-	waitmessage
+	@special ObjectEventInteractionGetBerryName
+	@message BerryTree_Text_WateredTheBerry
+	@waitmessage
 	special ObjectEventInteractionWaterBerryTree
 	special DoWateringBerryTreeAnim
 	waitstate
-	message BerryTree_Text_PlantIsDelighted
-	waitmessage
-	waitbuttonpress
+	@message BerryTree_Text_PlantIsDelighted
+	@waitmessage
+	@waitbuttonpress
 	releaseall
 	end
 
@@ -251,9 +260,9 @@ BerryTree_EventScript_PlantBerry::
 	incrementgamestat GAME_STAT_PLANTED_BERRIES
 	special IncrementDailyPlantedBerries
 	special ObjectEventInteractionGetBerryCountString
-	message BerryTree_Text_PlantedOneBerry
-	waitmessage
-	waitbuttonpress
+	@message BerryTree_Text_PlantedOneBerry
+	@waitmessage
+	@waitbuttonpress
 	return
 
 BerryTree_Text_ItsSoftLoamySoil:
