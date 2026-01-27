@@ -2592,7 +2592,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Roserade @ Nugget
-Level: 45
+Level: 58
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CINDY_3 ===
@@ -2960,7 +2960,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Azumarill @ Nugget
-Level: 45
+Level: 58
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WINSTON_2 ===
@@ -4998,11 +4998,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Manectric
-Level: 44
+Level: 55
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Manectric
-Level: 44
+Level: 55
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_THOMAS ===
@@ -5015,7 +5015,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Swalot
-Level: 45
+Level: 58
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WALTER_2 ===
@@ -6204,28 +6204,28 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Phanpy @ Oran Berry
-Level: 12
+Phanpy @ Sitrus Berry
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Phanpy @ Oran Berry
-Level: 22
+Phanpy @ Sitrus Berry
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Phanpy @ Oran Berry
-Level: 30
+Phanpy @ Sitrus Berry
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Phanpy @ Oran Berry
-Level: 36
+Phanpy @ Sitrus Berry
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Phanpy @ Oran Berry
-Level: 40
+Phanpy @ Sitrus Berry
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Donphan @ Oran Berry
-Level: 42
+Donphan @ Sitrus Berry
+Level: 56
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MIGUEL_2 ===
@@ -6962,7 +6962,7 @@ EVs: 252 HP / 252 Spe / 126 Def
 - Rain Dance
 
 Milotic @ Sitrus Berry
-Level: 63
+Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 126 SpA / 252 Def / 126 Spe
 - Recover
@@ -9896,11 +9896,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Overqwil
-Level: 44
+Level: 55
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Machamp
-Level: 44
+Level: 55
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LEONARD ===
@@ -9912,16 +9912,16 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Machoke
-Level: 43
+Grapploct
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pelipper
-Level: 43
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Machamp
-Level: 43
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DUNCAN ===
@@ -12959,12 +12959,12 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Luvdisc
-Level: 45
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 SpA / 252 Spe
 
 Luvdisc
-Level: 45
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 SpA / 252 Spe
 
