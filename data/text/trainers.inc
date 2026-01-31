@@ -2030,16 +2030,16 @@ Route115_Text_TimothyPostRematch:
 
 Route115_Text_KoichiIntro:
 	.string "You!\p"
-	.string "My MACHOP!\p"
+	.string "My Machoke!\p"
 	.string "Demand a battle!$"
 
 Route115_Text_KoichiDefeat:
 	.string "Ouch, ouch, ouch!$"
 
 Route115_Text_KoichiPostBattle:
-	.string "My MACHOP crew!\p"
-	.string "So long as they seek power, I will\n"
-	.string "grow strong with them!$"
+	.string "My Machoke!\p"
+	.string "So long as he seeks power, I will\n"
+	.string "grow strong with him!$"
 
 Route115_Text_NobIntro:
 	.string "My strongest skill is busting bricks\n"

@@ -5197,64 +5197,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 30,
-                "max_level": 30,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 35,
-                "max_level": 35,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 25,
-                "max_level": 25,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 20,
-                "max_level": 20,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 45,
-                "max_level": 45,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 15,
-                "max_level": 15,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 50,
-                "max_level": 50,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_CHINGLING"
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CHIKORITA"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_CHINGLING"
+                "species": "SPECIES_CYNDAQUIL"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHINGLING"
+                "species": "SPECIES_TOTODILE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TOTODILE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CHIKORITA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CYNDAQUIL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TOTODILE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TOTODILE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CHIKORITA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CYNDAQUIL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TOTODILE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TOTODILE"
               }
             ]
           },
@@ -7058,27 +7058,27 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_FLABEBE"
+                "species": "SPECIES_FLABEBE_RED"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_FLABEBE"
+                "species": "SPECIES_FLABEBE_ORANGE"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_FLABEBE"
+                "species": "SPECIES_FLABEBE_YELLOW"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_FLABEBE"
+                "species": "SPECIES_FLABEBE_WHITE"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_FLABEBE"
+                "species": "SPECIES_FLABEBE_BLUE"
               }
             ]
           },
@@ -10952,42 +10952,42 @@
               {
                 "min_level": 45,
                 "max_level": 50,
-                "species": "SPECIES_GRAFAIAI"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 45,
                 "max_level": 50,
-                "species": "SPECIES_MALAMAR"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 45,
                 "max_level": 50,
-                "species": "SPECIES_GRAFAIAI"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 45,
                 "max_level": 50,
-                "species": "SPECIES_MALAMAR"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 45,
                 "max_level": 50,
-                "species": "SPECIES_GRAFAIAI"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 45,
                 "max_level": 50,
-                "species": "SPECIES_MALAMAR"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 45,
                 "max_level": 50,
-                "species": "SPECIES_GRAFAIAI"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 45,
                 "max_level": 50,
-                "species": "SPECIES_MALAMAR"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 45,

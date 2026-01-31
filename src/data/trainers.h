@@ -9092,7 +9092,8 @@ F_TRAINER_FEMALE |
             {
 #line 3687
             .species = SPECIES_MACHOKE,
-            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 3687
+            .gender = TRAINER_MON_MALE,
 #line 3689
             .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
 #line 3688
