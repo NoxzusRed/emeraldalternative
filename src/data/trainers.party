@@ -7975,15 +7975,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Noibat
-Level: 37
+Level: 46
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Altaria
-Level: 37
+Level: 44
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Altaria
-Level: 37
+Level: 44
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_NICOLAS_2 ===
@@ -7995,17 +7995,20 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Noibat
-Level: 41
+Altaria
+Level: 48
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+EVs: 252 HP
 
 Altaria
-Level: 41
+Level: 48
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+EVs: 252 HP
 
-Altaria
-Level: 41
+Noivern
+Level: 50
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+EVs: 252 HP
 
 === TRAINER_NICOLAS_3 ===
 Name: NICOLAS
@@ -8016,17 +8019,20 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Noibat
-Level: 44
+Altaria
+Level: 52
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+EVs: 252 HP
 
 Altaria
-Level: 44
+Level: 52
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+EVs: 252 HP
 
-Altaria
-Level: 44
+Noivern
+Level: 54
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+EVs: 252 HP
 
 === TRAINER_NICOLAS_4 ===
 Name: NICOLAS
@@ -8037,21 +8043,25 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Noibat
-Level: 46
+Salamence
+Level: 56
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-
-Bagon
-Level: 46
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 252 HP
 
 Altaria
-Level: 46
+Level: 56
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 252 HP
 
 Altaria
-Level: 46
+Level: 56
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 252 HP
+
+Noivern
+Level: 58
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 252 HP
 
 === TRAINER_NICOLAS_5 ===
 Name: NICOLAS
@@ -8062,21 +8072,30 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
+Salamence @ Dragon Fang
+Level: 60
+IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+EVs: 252 HP
+
+Altaria
+Level: 60
+IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+EVs: 252 HP
+
+Flygon
+Level: 60
+IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+EVs: 252 HP
+
+Altaria
+Level: 60
+IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+EVs: 252 HP
+
 Noivern
-Level: 49
+Level: 62
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
-
-Altaria
-Level: 49
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
-
-Altaria
-Level: 49
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
-
-Shelgon @ Dragon Fang
-Level: 49
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+EVs: 252 HP
 
 === TRAINER_AARON ===
 Name: AARON
@@ -13990,12 +14009,14 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Rapidash
-Level: 39
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP
 
 Zebstrika
-Level: 39
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP
 
 === TRAINER_JOHN_AND_JAY_2 ===
 Name: JOHN & JAY
@@ -14007,12 +14028,14 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Rapidash
-Level: 43
+Level: 48
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 252 HP
 
 Zebstrika
-Level: 43
+Level: 48
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 252 HP
 
 === TRAINER_JOHN_AND_JAY_3 ===
 Name: JOHN & JAY
@@ -14024,12 +14047,14 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Rapidash
-Level: 46
+Level: 52
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 HP
 
 Zebstrika
-Level: 46
+Level: 52
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 HP
 
 === TRAINER_JOHN_AND_JAY_4 ===
 Name: JOHN & JAY
@@ -14041,12 +14066,14 @@ Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Rapidash
-Level: 49
+Level: 56
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+EVs: 252 HP
 
 Zebstrika
-Level: 49
+Level: 56
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+EVs: 252 HP
 
 === TRAINER_JOHN_AND_JAY_5 ===
 Name: JOHN & JAY
@@ -14058,12 +14085,14 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Rapidash
-Level: 52
+Level: 60
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 252 HP
 
 Zebstrika
-Level: 52
+Level: 60
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 252 HP
 
 === TRAINER_RELI_AND_IAN ===
 Name: RELI & IAN
