@@ -28,6 +28,7 @@
 extern const u8 EventScript_SprayWoreOff[];
 
 #define MAX_ENCOUNTER_RATE 2880
+#define SURF_ENCOUNTER_RATE_PERCENT 80
 
 #define NUM_FEEBAS_SPOTS 6
 
@@ -757,15 +758,19 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
         {
             timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
 
-            if (AreLegendariesInSootopolisPreventingEncounters() == TRUE)
-                return FALSE;
-            else if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo == NULL)
-                return FALSE;
-            else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
-                return FALSE;
-            else if (WildEncounterCheck(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo->encounterRate, FALSE) != TRUE)
-                return FALSE;
+			if (AreLegendariesInSootopolisPreventingEncounters() == TRUE)
+				return FALSE;
+			else if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo == NULL)
+				return FALSE;
+			else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
+				return FALSE;
+			else if (WildEncounterCheck(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo->encounterRate, FALSE) != TRUE)
+				return FALSE;
 
+			// Reduce los encuentros salvajes mientras usamos Surf.
+			if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)
+				&& Random() % 100 >= SURF_ENCOUNTER_RATE_PERCENT)
+				return FALSE;
             if (TryStartRoamerEncounter())
             {
                 roamer = &gSaveBlock1Ptr->roamer[gEncounteredRoamerIndex];
