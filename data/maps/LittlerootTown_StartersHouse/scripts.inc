@@ -1,15 +1,15 @@
 LittlerootTown_StartersHouse_MapScripts::
 	.byte 0
 
-LittlerootTown_StartersHouse_EventScript_SprigatitoTrader::
+LittlerootTown_StartersHouse_EventScript_SnivyTrader::
 	lock
 	faceplayer
-	goto_if_set FLAG_SPRIGATITO_TRADE_COMPLETED, LittlerootTown_StartersHouse_EventScript_SprigatitoTradeCompleted
-	setvar VAR_0x8008, INGAME_TRADE_SPRIGATITO
+	goto_if_set FLAG_SNIVY_TRADE_COMPLETED, LittlerootTown_StartersHouse_EventScript_SnivyTradeCompleted
+	setvar VAR_0x8008, INGAME_TRADE_SNIVY
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT
-	msgbox LittlerootTown_StartersHouse_Text_WillingToTradeSprigatito, MSGBOX_YESNO
+	msgbox LittlerootTown_StartersHouse_Text_WillingToTradeSnivy, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_StartersHouse_EventScript_DeclineTrade
 	special ChoosePartyMon
 	waitstate
@@ -26,7 +26,7 @@ LittlerootTown_StartersHouse_EventScript_SprigatitoTrader::
 	waitstate
 	bufferspeciesname STR_VAR_1, VAR_0x8009
 	msgbox LittlerootTown_StartersHouse_Text_BeatFennekin, MSGBOX_DEFAULT
-	setflag FLAG_SPRIGATITO_TRADE_COMPLETED
+	setflag FLAG_SNIVY_TRADE_COMPLETED
 	release
 	end
 
@@ -83,7 +83,7 @@ LittlerootTown_StartersHouse_EventScript_MudkipTrader::
 	special DoInGameTradeScene
 	waitstate
 	bufferspeciesname STR_VAR_1, VAR_0x8009
-	msgbox LittlerootTown_StartersHouse_Text_BeatSprigatito, MSGBOX_DEFAULT
+	msgbox LittlerootTown_StartersHouse_Text_BeatSnivy, MSGBOX_DEFAULT
 	setflag FLAG_MUDKIP_TRADE_COMPLETED
 	release
 	end
@@ -99,7 +99,7 @@ LittlerootTown_StartersHouse_EventScript_NotRequestedMon::
 	release
 	end
 
-LittlerootTown_StartersHouse_EventScript_SprigatitoTradeCompleted::
+LittlerootTown_StartersHouse_EventScript_SnivyTradeCompleted::
 	msgbox LittlerootTown_StartersHouse_Text_BeatFennekin, MSGBOX_DEFAULT
 	release
 	end
@@ -110,11 +110,11 @@ LittlerootTown_StartersHouse_EventScript_FennekinTradeCompleted::
 	end
 
 LittlerootTown_StartersHouse_EventScript_MudkipTradeCompleted::
-	msgbox LittlerootTown_StartersHouse_Text_BeatSprigatito, MSGBOX_DEFAULT
+	msgbox LittlerootTown_StartersHouse_Text_BeatSnivy, MSGBOX_DEFAULT
 	release
 	end
 
-LittlerootTown_StartersHouse_Text_WillingToTradeSprigatito:
+LittlerootTown_StartersHouse_Text_WillingToTradeSnivy:
 	.string "I like {STR_VAR_2} but I can't beat\n"
 	.string "Fennekin.\p"
 	.string "If you like {STR_VAR_2} as well I can\n"
@@ -134,12 +134,12 @@ LittlerootTown_StartersHouse_Text_BeatMudkip:
 
 LittlerootTown_StartersHouse_Text_WillingToTradeMudkip:
 	.string "I like {STR_VAR_2} but I can't beat\n"
-	.string "Sprigatito.\p"
+	.string "Snivy.\p"
 	.string "If you like {STR_VAR_2} as well I can\n"
 	.string "trade it for a {STR_VAR_1}.$"
 
-LittlerootTown_StartersHouse_Text_BeatSprigatito:
-	.string "Thank you! Now I can beat Sprigatito!$"
+LittlerootTown_StartersHouse_Text_BeatSnivy:
+	.string "Thank you! Now I can beat Snivy!$"
 
 LittlerootTown_StartersHouse_Text_NeedMon:
 	.string "No, no, no! I need a {STR_VAR_1}!$"

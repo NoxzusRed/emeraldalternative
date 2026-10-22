@@ -26191,7 +26191,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 10479
-            .species = SPECIES_SPRIGATITO,
+            .species = SPECIES_SNIVY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10481
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26201,8 +26201,8 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 10482
-                MOVE_SCRATCH,
-                MOVE_TAIL_WHIP,
+                MOVE_TACKLE,
+                MOVE_LEER,
             },
             },
         },
@@ -26254,7 +26254,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10504
-            .species = SPECIES_FLORAGATO,
+            .species = SPECIES_SERVINE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10507
             .ev = TRAINER_PARTY_EVS(126, 0, 0, 0, 0, 0),
@@ -26329,7 +26329,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10534
-            .species = SPECIES_MEOWSCARADA,
+            .species = SPECIES_SERPERIOR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10537
             .ev = TRAINER_PARTY_EVS(252, 0, 126, 0, 0, 126),
@@ -26716,7 +26716,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 10690
-            .species = SPECIES_SPRIGATITO,
+            .species = SPECIES_SNIVY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10692
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26726,8 +26726,8 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 10693
-                MOVE_SCRATCH,
-                MOVE_TAIL_WHIP,
+                MOVE_TACKLE,
+                MOVE_LEER,
             },
             },
         },
@@ -26781,7 +26781,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10715
-            .species = SPECIES_FLORAGATO,
+            .species = SPECIES_SERVINE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10718
             .ev = TRAINER_PARTY_EVS(126, 0, 0, 0, 0, 0),
@@ -26858,7 +26858,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10745
-            .species = SPECIES_MEOWSCARADA,
+            .species = SPECIES_SERPERIOR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10748
             .ev = TRAINER_PARTY_EVS(252, 0, 126, 0, 0, 126),
@@ -30159,7 +30159,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12030
-            .species = SPECIES_SPRIGATITO,
+            .species = SPECIES_SNIVY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12032
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -30528,7 +30528,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12177
-            .species = SPECIES_SPRIGATITO,
+            .species = SPECIES_SNIVY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12179
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -33930,10 +33930,10 @@ F_TRAINER_FEMALE |
             },
             {
 #line 13538
-            .species = SPECIES_MEOWSCARADA,
+            .species = SPECIES_SERPERIOR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 13541
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 126, 252, 0, 126, 252),
 #line 13540
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
 #line 13539
@@ -34196,10 +34196,10 @@ F_TRAINER_FEMALE |
             },
             {
 #line 13643
-            .species = SPECIES_MEOWSCARADA,
+            .species = SPECIES_SERPERIOR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 13646
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 126, 252, 0, 126, 252),
 #line 13645
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
 #line 13644

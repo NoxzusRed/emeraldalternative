@@ -1048,10 +1048,10 @@ static const struct InGameTrade sIngameTrades[] =
         .sheen = 10,
         .requestedSpecies = SPECIES_GOTHITA
     },
-	[INGAME_TRADE_SPRIGATITO] =
+	[INGAME_TRADE_SNIVY] =
     {
-        .nickname = _("Gatsby"),
-        .species = SPECIES_SPRIGATITO,
+        .nickname = _("Claudio"),
+        .species = SPECIES_SNIVY,
         .ivs = {15, 15, 15, 15, 15, 15},
         .abilityNum = 1,
         .otId = 38726,
@@ -1078,7 +1078,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("FIORA"),
         .otGender = FEMALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_SPRIGATITO
+        .requestedSpecies = SPECIES_SNIVY
     },
 	[INGAME_TRADE_MUDKIP] =
     {

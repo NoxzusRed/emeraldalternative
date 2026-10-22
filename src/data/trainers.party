@@ -10476,11 +10476,11 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Sprigatito
+Snivy
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scratch
-- Tail Whip
+- Tackle
+- Leer
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN
@@ -10501,7 +10501,7 @@ Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 252 HP
 
-Floragato
+Servine
 Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 126 HP
@@ -10531,7 +10531,7 @@ Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
-Meowscarada
+Serperior
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
@@ -10687,11 +10687,11 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Sprigatito
+Snivy
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scratch
-- Tail Whip
+- Tackle
+- Leer
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
 Name: MAY
@@ -10712,7 +10712,7 @@ Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 126 HP
 
-Floragato
+Servine
 Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 126 HP
@@ -10742,7 +10742,7 @@ Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
-Meowscarada
+Serperior
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
@@ -12027,7 +12027,7 @@ Level: 13
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 EVs: 252 HP
 
-Sprigatito
+Snivy
 Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -12174,7 +12174,7 @@ Level: 13
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 EVs: 252 HP
 
-Sprigatito
+Snivy
 Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -13535,10 +13535,10 @@ Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
 
-Meowscarada
+Serperior
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
 
 === TRAINER_BRENDAN_LILYCOVE_TREECKO ===
 Name: BRENDAN
@@ -13640,10 +13640,10 @@ Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
 
-Meowscarada
+Serperior
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
 
 === TRAINER_MAY_LILYCOVE_TREECKO ===
 Name: MAY

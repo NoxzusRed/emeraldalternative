@@ -70,7 +70,7 @@ PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
 	.string "a battle could be easy or hard.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
-	.string "For example, your SPRIGATITO\n"
+	.string "For example, your SNIVY\n"
 	.string "is a GRASS type.\p"
 	.string "It's strong against the WATER and\n"
 	.string "GROUND types.\p"
