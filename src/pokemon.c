@@ -121,9 +121,9 @@ static const struct CombinedMove sCombinedMoves[2] =
 // Assigns all Hoenn Dex Indexes to a National Dex Index
 static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
 {
-    HOENN_TO_NATIONAL(SPRIGATITO),
-    HOENN_TO_NATIONAL(FLORAGATO),
-    HOENN_TO_NATIONAL(MEOWSCARADA),
+    HOENN_TO_NATIONAL(SNIVY),
+    HOENN_TO_NATIONAL(SERVINE),
+    HOENN_TO_NATIONAL(SERPERIOR),
     HOENN_TO_NATIONAL(FENNEKIN),
     HOENN_TO_NATIONAL(BRAIXEN),
     HOENN_TO_NATIONAL(DELPHOX),
