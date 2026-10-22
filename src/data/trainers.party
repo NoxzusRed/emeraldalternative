@@ -3233,7 +3233,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Pelipper
 Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+IVs: 1 HP / 1 Atk / 1 Def / 200 SpA / 1 SpD / 150 Spe
+- Water Pulse
+- Air Slash
+- Roost
 
 Finneon
 Level: 24
