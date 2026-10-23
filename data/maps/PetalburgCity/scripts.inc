@@ -714,6 +714,7 @@ PetalburgCity_Clerk:
 	.2byte ITEM_LOADED_DICE
 	.2byte ITEM_SAFETY_GOGGLES
 	.2byte ITEM_TWISTED_SPOON
+	.2byte ITEM_SCOPE_LENS
 	pokemartlistend
 
 PetalburgCity_EventScript_Vaporeon::
