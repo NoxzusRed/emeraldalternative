@@ -15772,41 +15772,42 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Machamp @ Sitrus Berry
-Level: 33
+Hariyama @ Sitrus Berry
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD
-- Brick Break
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Fake Out
+- Close Combat
+- Knock Off
 - Rock Slide
-- Bulldoze
-- Bulk Up
 
 Medicham
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Zen Headbutt
-- Light Screen
-- Reflect
-- Brick Break
-
-Hitmontop
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Dig
-- Sucker Punch
-- Protect
-- Triple Kick
-
-Grapploct @ Sitrus Berry
-Level: 37
+Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Zen Headbutt
+- Drain Punch
+- Ice Punch
+- Protect
+
+Machamp @ Sitrus Berry
+Ability: No Guard
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Dynamic Punch
+- Rock Slide
+- Bullet Punch
+- Protect
+
+Grapploct @ Sitrus Berry
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
 - Topsy-Turvy
 - Brick Break
-- Bullet Punch
 - Liquidation
+- Protect
 
 === TRAINER_BRAWLY_3 ===
 Name: BRAWLY
@@ -15818,41 +15819,51 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Machamp @ Sitrus Berry
-Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Brick Break
-- Rock Slide
-- Bulldoze
-- Bulk Up
-
-Medicham
-Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Zen Headbutt
-- Light Screen
-- Reflect
-- Brick Break
-
-Hitmontop
-Level: 40
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Dig
-- Sucker Punch
-- Protect
-- Triple Kick
-
-Grapploct @ Sitrus Berry
-Level: 42
+Heracross
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Megahorn
+- Close Combat
+- Rock Slide
+- Protect
+
+Hariyama @ Sitrus Berry
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Fake Out
+- Close Combat
+- Knock Off
+- Rock Slide
+
+Medicham
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Zen Headbutt
+- Drain Punch
+- Ice Punch
+- Protect
+
+Machamp @ Sitrus Berry
+Ability: No Guard
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Dynamic Punch
+- Rock Slide
+- Bullet Punch
+- Protect
+
+Grapploct @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
 - Topsy-Turvy
 - Brick Break
-- Bullet Punch
 - Liquidation
+- Protect
 
 === TRAINER_BRAWLY_4 ===
 Name: BRAWLY
@@ -15864,50 +15875,50 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Hitmonchan
-Level: 40
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpD / 252 Spe
-- Sky Uppercut
-- Protect
-- Fire Punch
-- Ice Punch
-
-Machamp @ Sitrus Berry
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Brick Break
-- Rock Slide
-- Bulldoze
-- Bulk Up
-
-Medicham
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Zen Headbutt
-- Light Screen
-- Reflect
-- Brick Break
-
-Hitmontop
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Dig
-- Sucker Punch
-- Protect
-- Triple Kick
-
-Grapploct @ Sitrus Berry
-Level: 47
+Hawlucha
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Flying Press
+- Acrobatics
+- Swords Dance
+- Protect
+
+Heracross
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Megahorn
+- Close Combat
+- Rock Slide
+- Protect
+
+Medicham
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Zen Headbutt
+- Drain Punch
+- Ice Punch
+- Protect
+
+Lucario @ Sitrus Berry
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Aura Sphere
+- Flash Cannon
+- Extreme Speed
+- Protect
+
+Grapploct @ Sitrus Berry
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
 - Topsy-Turvy
 - Brick Break
-- Bullet Punch
 - Liquidation
+- Protect
 
 === TRAINER_BRAWLY_5 ===
 Name: BRAWLY
@@ -15919,59 +15930,60 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Hitmonlee
-Level: 46
+Hawlucha
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Mega Kick
-- Axe Kick
-- Earthquake
-- Bulk Up
-
-Hitmonchan
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpD / 252 Spe
-- Sky Uppercut
+- Flying Press
+- Acrobatics
+- Swords Dance
 - Protect
-- Fire Punch
-- Ice Punch
+
+Heracross
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Megahorn
+- Close Combat
+- Rock Slide
+- Protect
 
 Machamp @ Sitrus Berry
-Level: 48
+Ability: No Guard
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Brick Break
+- Dynamic Punch
 - Rock Slide
-- Bulldoze
-- Bulk Up
+- Bullet Punch
+- Protect
 
 Medicham
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Zen Headbutt
-- Light Screen
-- Reflect
-- Brick Break
-
-Hitmontop
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
-- Dig
-- Sucker Punch
-- Protect
-- Triple Kick
-
-Grapploct @ Sitrus Berry
-Level: 52
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Zen Headbutt
+- Drain Punch
+- Ice Punch
+- Protect
+
+Lucario @ Sitrus Berry
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Aura Sphere
+- Flash Cannon
+- Extreme Speed
+- Protect
+
+Grapploct @ Sitrus Berry
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
 - Topsy-Turvy
 - Brick Break
-- Bullet Punch
 - Liquidation
+- Protect
 
 === TRAINER_WATTSON_2 ===
 Name: WATTSON
@@ -15984,39 +15996,39 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Ampharos
-Level: 36
+Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Thunderbolt
-- Protect
+- Dazzling Gleam
 - Thunder Wave
 - Cotton Guard
 
 Galvantula
-Level: 36
+Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Discharge
+- Thunder
 - Bug Buzz
 - Sticky Web
 - Rain Dance
 
 Magnezone @ Sitrus Berry
-Level: 38
+Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Flash Cannon
-- Protect
 - Thunder
+- Protect
 - Rain Dance
 
 Manectric @ Sitrus Berry
-Level: 40
+Level: 61
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Crunch
-- Thunder Wave
 - Thunder
+- Snarl
+- Thunder Wave
 - Protect
 
 === TRAINER_WATTSON_3 ===
@@ -16030,48 +16042,48 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Zebstrika
-Level: 39
+Level: 61
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Wild Charge
-- Stomp
-- Rain Dance
+- Flame Charge
 - Thunder Wave
+- Protect
 
 Ampharos
-Level: 41
+Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Thunder
-- Protect
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Thunderbolt
+- Dazzling Gleam
 - Thunder Wave
 - Cotton Guard
 
 Galvantula
-Level: 41
+Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Discharge
+- Thunder
 - Bug Buzz
 - Sticky Web
 - Rain Dance
 
 Magnezone @ Sitrus Berry
-Level: 43
+Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Flash Cannon
-- Protect
 - Thunder
+- Protect
 - Rain Dance
 
 Manectric @ Sitrus Berry
-Level: 45
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Crunch
-- Thunder Wave
 - Thunder
+- Snarl
+- Thunder Wave
 - Protect
 
 === TRAINER_WATTSON_4 ===
@@ -16084,49 +16096,49 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
+Eelektross
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Thunder Punch
+- Drain Punch
+- Crunch
+- Coil
+
 Zebstrika
-Level: 44
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Wild Charge
-- Stomp
-- Rain Dance
+- Flame Charge
 - Thunder Wave
+- Protect
 
-Ampharos
-Level: 46
+Galvantula
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
 - Thunder
-- Protect
-- Thunder Wave
-- Cotton Guard
-
-Galvantula
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Discharge
 - Bug Buzz
 - Sticky Web
 - Rain Dance
 
 Magnezone @ Sitrus Berry
-Level: 48
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Flash Cannon
-- Protect
 - Thunder
+- Protect
 - Rain Dance
 
 Manectric @ Sitrus Berry
-Level: 50
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Crunch
-- Thunder Wave
 - Thunder
+- Snarl
+- Thunder Wave
 - Protect
 
 === TRAINER_WATTSON_5 ===
@@ -16140,56 +16152,57 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Electivire
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 Atk / 31 SpD / 31 Spe
-- Supercell Slam
-- Brick Break
-- Thunder Punch
-- Rain Dance
-
-Zebstrika
-Level: 51
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Wild Charge
-- Stomp
-- Rain Dance
-- Thunder Wave
+- Thunder Punch
+- Ice Punch
+- Earthquake
+- Protect
 
-Ampharos
-Level: 51
+Eelektross
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Thunder Punch
+- Drain Punch
+- Crunch
+- Coil
+
+Toxtricity
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Overdrive
+- Sludge Bomb
+- Snarl
+- Protect
+
+Galvantula
+Level: 74
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
 - Thunder
-- Protect
-- Thunder Wave
-- Cotton Guard
-
-Galvantula
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Discharge
 - Bug Buzz
 - Sticky Web
 - Rain Dance
 
 Magnezone @ Sitrus Berry
-Level: 53
+Level: 74
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Flash Cannon
-- Protect
 - Thunder
+- Protect
 - Rain Dance
 
 Manectric @ Sitrus Berry
-Level: 55
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Crunch
-- Thunder Wave
 - Thunder
+- Snarl
+- Thunder Wave
 - Protect
 
 === TRAINER_FLANNERY_2 ===
@@ -16202,41 +16215,41 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Coalossal @ White Herb
-Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
-- Overheat
-- Stone Edge
-- Smokescreen
-- Sunny Day
-
 Rapidash
-Level: 36
+Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Flare Blitz
 - Smart Strike
 - Megahorn
-- Sunny Day
+- Protect
 
 Camerupt @ White Herb
-Level: 38
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
-- Lava Plume
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Overheat
+- Earth Power
+- Rock Slide
 - Sunny Day
-- Earthquake
-- Amnesia
+
+Coalossal @ White Herb
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Overheat
+- Stone Edge
+- Sunny Day
+- Protect
 
 Torkoal @ White Herb
-Level: 40
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Overheat
 - Sunny Day
-- Body Slam
-- Curse
+- Solar Beam
+- Protect
 
 === TRAINER_FLANNERY_3 ===
 Name: FLANNERY
@@ -16248,50 +16261,50 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Arcanine
-Level: 41
+Arcanine @ Sitrus Berry
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Flare Blitz
 - Extreme Speed
-- Flamethrower
 - Play Rough
-- Sunny Day
-
-Coalossal @ White Herb
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
-- Overheat
-- Stone Edge
-- Smokescreen
-- Sunny Day
+- Protect
 
 Rapidash
-Level: 41
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Flare Blitz
 - Smart Strike
 - Megahorn
-- Sunny Day
+- Protect
 
 Camerupt @ White Herb
-Level: 43
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
-- Lava Plume
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Overheat
+- Earth Power
+- Rock Slide
 - Sunny Day
-- Earthquake
-- Amnesia
+
+Coalossal @ White Herb
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Overheat
+- Stone Edge
+- Sunny Day
+- Protect
 
 Torkoal @ White Herb
-Level: 45
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Overheat
 - Sunny Day
-- Body Slam
-- Curse
+- Solar Beam
+- Protect
 
 === TRAINER_FLANNERY_4 ===
 Name: FLANNERY
@@ -16304,58 +16317,49 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Houndoom
-Level: 46
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
 - Flamethrower
 - Dark Pulse
-- Shadow Ball
-- Sunny Day
+- Nasty Plot
+- Protect
 
-Arcanine
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Extreme Speed
-- Flamethrower
-- Play Rough
-- Sunny Day
-
-Coalossal @ White Herb
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
-- Overheat
-- Stone Edge
-- Smokescreen
-- Sunny Day
-
-Rapidash
-Level: 46
+Arcanine @ Sitrus Berry
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Flare Blitz
-- Smart Strike
-- Megahorn
-- Sunny Day
+- Extreme Speed
+- Play Rough
+- Protect
+
+Salazzle
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Sludge Bomb
+- Flamethrower
+- Nasty Plot
+- Protect
 
 Camerupt @ White Herb
-Level: 48
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
-- Lava Plume
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Overheat
+- Earth Power
+- Rock Slide
 - Sunny Day
-- Earthquake
-- Amnesia
 
 Torkoal @ White Herb
-Level: 50
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Overheat
 - Sunny Day
-- Body Slam
-- Curse
+- Solar Beam
+- Protect
 
 === TRAINER_FLANNERY_5 ===
 Name: FLANNERY
@@ -16367,59 +16371,59 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Arcanine
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Extreme Speed
-- Flamethrower
-- Play Rough
-- Sunny Day
-
-Coalossal @ White Herb
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
-- Overheat
-- Stone Edge
-- Smokescreen
-- Sunny Day
-
-Houndoom
-Level: 51
+Delphox
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Psychic
 - Flamethrower
-- Dark Pulse
-- Shadow Ball
-- Sunny Day
+- Calm Mind
+- Protect
 
-Rapidash
-Level: 51
+Arcanine @ Sitrus Berry
+Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Flare Blitz
-- Smart Strike
-- Megahorn
-- Sunny Day
+- Extreme Speed
+- Play Rough
+- Protect
+
+Chandelure
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Heat Wave
+- Shadow Ball
+- Energy Ball
+- Protect
+
+Salazzle
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Sludge Bomb
+- Flamethrower
+- Nasty Plot
+- Protect
 
 Camerupt @ White Herb
-Level: 53
+Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
-- Lava Plume
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Overheat
+- Earth Power
+- Rock Slide
 - Sunny Day
-- Earthquake
-- Amnesia
 
 Torkoal @ White Herb
-Level: 55
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Overheat
 - Sunny Day
-- Body Slam
-- Curse
+- Solar Beam
+- Protect
 
 === TRAINER_NORMAN_2 ===
 Name: NORMAN
@@ -16431,43 +16435,41 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Blissey
-Bold Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
-- Light Screen
-- Sing
-- Hyper Voice
-- Soft Boiled
-
-Slaking @ Sitrus Berry
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD
-- Mega Kick
-- Hammer Arm
-- Poison Jab
-- Earthquake
-
-Exploud
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk / 252 Spe
-- Boomburst
-- Crunch
-- Shadow Ball
-- Fire Fang
-
-Kangaskhan @ Sitrus Berry
-Adamant Nature
-Level: 45
+Linoone
+Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Dynamic Punch
-- Crunch
-- Double Edge
+- Belly Drum
+- Extreme Speed
+- Shadow Claw
+- Protect
+
+Blissey @ Leftovers
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+- Light Screen
+- Soft Boiled
+- Hyper Voice
+- Protect
+
+Exploud
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Hyper Voice
+- Flamethrower
+- Shadow Ball
+- Protect
+
+Kangaskhan @ Sitrus Berry
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Fake Out
+- Double Edge
+- Crunch
+- Brick Break
 
 === TRAINER_NORMAN_3 ===
 Name: NORMAN
@@ -16479,52 +16481,51 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Slaking @ Sitrus Berry
-Level: 47
+Kecleon
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Shadow Sneak
+- Sucker Punch
+- Drain Punch
+- Protect
+
+Blissey @ Leftovers
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Mega Kick
-- Hammer Arm
-- Poison Jab
-- Earthquake
-
-Blissey
-Bold Nature
-Level: 47
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Light Screen
-- Sing
-- Hyper Voice
 - Soft Boiled
+- Hyper Voice
+- Protect
 
-Linoone
-Level: 45
+Ursaring @ Flame Orb
+Ability: Guts
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Fake Out
-- Belly Drum
-- Attract
-- Extreme Speed
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Facade
+- Close Combat
+- Crunch
+- Protect
 
 Exploud
-Level: 48
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk / 252 Spe
-- Boomburst
-- Crunch
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Hyper Voice
+- Flamethrower
 - Shadow Ball
-- Fire Fang
+- Protect
 
 Kangaskhan @ Sitrus Berry
-Adamant Nature
-Level: 50
+Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Dynamic Punch
-- Crunch
-- Double Edge
 - Fake Out
+- Double Edge
+- Crunch
+- Brick Break
 
 === TRAINER_NORMAN_4 ===
 Name: NORMAN
@@ -16536,52 +16537,51 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Slaking @ Sitrus Berry
-Level: 52
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD
-- Mega Kick
-- Hammer Arm
-- Poison Jab
-- Earthquake
-
-Blissey
-Bold Nature
-Level: 52
+Farigiraf
+Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
-- Light Screen
-- Sing
+- Twin Beam
+- Psychic
 - Hyper Voice
-- Soft Boiled
+- Protect
 
-Linoone
-Level: 50
+Blissey @ Leftovers
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Fake Out
-- Belly Drum
-- Attract
-- Extreme Speed
+EVs: 252 HP / 252 Def / 252 SpD
+- Light Screen
+- Soft Boiled
+- Hyper Voice
+- Protect
+
+Ursaring @ Flame Orb
+Ability: Guts
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Facade
+- Close Combat
+- Crunch
+- Protect
 
 Exploud
-Level: 53
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk / 252 Spe
-- Boomburst
-- Crunch
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Hyper Voice
+- Flamethrower
 - Shadow Ball
-- Fire Fang
+- Protect
 
 Kangaskhan @ Sitrus Berry
-Adamant Nature
-Level: 55
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Dynamic Punch
-- Crunch
-- Double Edge
 - Fake Out
+- Double Edge
+- Crunch
+- Brick Break
 
 === TRAINER_NORMAN_5 ===
 Name: NORMAN
@@ -16593,61 +16593,60 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Slaking @ Sitrus Berry
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD
-- Mega Kick
-- Hammer Arm
-- Poison Jab
-- Earthquake
-
-Blissey
-Bold Nature
-Level: 57
+Farigiraf
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
-- Light Screen
-- Sing
+- Twin Beam
+- Psychic
 - Hyper Voice
+- Protect
+
+Ursaluna @ Flame Orb
+Ability: Guts
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Headlong Rush
+- Facade
+- Ice Punch
+- Protect
+
+Blissey @ Leftovers
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+- Light Screen
 - Soft Boiled
+- Hyper Voice
+- Protect
 
 Linoone
-Level: 55
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Fake Out
 - Belly Drum
-- Attract
 - Extreme Speed
-
-Tauros
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk / 252 Spe
-- Take Down
+- Shadow Claw
 - Protect
-- Fire Blast
-- Earthquake
 
 Exploud
-Level: 58
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk / 252 Spe
-- Boomburst
-- Crunch
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Hyper Voice
+- Flamethrower
 - Shadow Ball
-- Fire Fang
+- Protect
 
 Kangaskhan @ Sitrus Berry
-Adamant Nature
-Level: 60
+Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Dynamic Punch
-- Crunch
-- Double Edge
 - Fake Out
+- Double Edge
+- Crunch
+- Brick Break
 
 === TRAINER_WINONA_2 ===
 Name: WINONA
@@ -16659,50 +16658,41 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Dragonair @ Sitrus Berry
-Level: 44
+Noctowl
+Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Thunder Wave
-- Thunderbolt
-- Protect
-- Ice Beam
-
-Tropius
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Earthquake
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Air Slash
+- Psychic
+- Hypnosis
+- Roost
 
 Pelipper
-Level: 45
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Surf
-- Supersonic
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Hurricane
+- Hydro Pump
+- Tailwind
 - Protect
-- Aerial Ace
 
 Skarmory
-Level: 47
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
-- Whirlwind
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Brave Bird
+- Iron Head
 - Spikes
-- Steel Wing
-- Aerial Ace
+- Roost
 
 Altaria @ Chesto Berry
-Level: 49
+Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Aerial Ace
-- Rest
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Dragon Dance
+- Aerial Ace
 - Earthquake
+- Rest
 
 === TRAINER_WINONA_3 ===
 Name: WINONA
@@ -16714,59 +16704,50 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Noctowl
-Level: 47
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Hypnosis
-- Psychic
-- Reflect
-- Dream Eater
-
 Tropius
-Level: 47
+Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Earthquake
-
-Dragonair @ Sitrus Berry
-Level: 49
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Thunder Wave
-- Thunderbolt
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Giga Drain
+- Air Slash
+- Leech Seed
 - Protect
-- Ice Beam
+
+Noctowl
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Air Slash
+- Psychic
+- Hypnosis
+- Roost
 
 Pelipper
-Level: 50
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Surf
-- Supersonic
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Hurricane
+- Hydro Pump
+- Tailwind
 - Protect
-- Aerial Ace
 
 Skarmory
-Level: 52
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
-- Whirlwind
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Brave Bird
+- Iron Head
 - Spikes
-- Steel Wing
-- Aerial Ace
+- Roost
 
 Altaria @ Chesto Berry
-Level: 54
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Aerial Ace
-- Rest
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Dragon Dance
+- Aerial Ace
 - Earthquake
+- Rest
 
 === TRAINER_WINONA_4 ===
 Name: WINONA
@@ -16778,59 +16759,50 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Noctowl
-Level: 52
+Talonflame
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Hypnosis
-- Psychic
-- Reflect
-- Dream Eater
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Brave Bird
+- Flare Blitz
+- Tailwind
+- Protect
 
-Tropius
-Level: 53
+Drifblim
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Earthquake
-
-Dragonair @ Sitrus Berry
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Shadow Ball
+- Air Cutter
 - Thunder Wave
-- Thunderbolt
 - Protect
-- Ice Beam
 
-Pelipper
-Level: 55
+Noivern
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Surf
-- Supersonic
-- Protect
-- Aerial Ace
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Hurricane
+- Dragon Pulse
+- Flamethrower
+- Tailwind
 
 Skarmory
-Level: 57
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
-- Whirlwind
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Brave Bird
+- Iron Head
 - Spikes
-- Steel Wing
-- Aerial Ace
+- Roost
 
 Altaria @ Chesto Berry
-Level: 59
+Level: 74
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Aerial Ace
-- Rest
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Dragon Dance
+- Aerial Ace
 - Earthquake
+- Rest
 
 === TRAINER_WINONA_5 ===
 Name: WINONA
@@ -16842,59 +16814,59 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Noctowl
-Level: 57
+Hawlucha
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Flying Press
+- Acrobatics
+- Swords Dance
+- Protect
+
+Togekiss
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Dazzling Gleam
+- Air Slash
+- Thunder Wave
+- Roost
+
+Noivern
+Level: 74
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Hypnosis
-- Psychic
-- Reflect
-- Dream Eater
-
-Tropius
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Earthquake
-
-Pelipper
-Level: 59
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Surf
-- Supersonic
-- Protect
-- Aerial Ace
+- Hurricane
+- Dragon Pulse
+- Flamethrower
+- Tailwind
 
 Dragonite @ Sitrus Berry
-Level: 59
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hyper Beam
-- Thunderbolt
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Dragon Claw
 - Earthquake
-- Ice Beam
+- Thunder Punch
+- Dragon Dance
 
 Skarmory
-Level: 62
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
-- Whirlwind
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Brave Bird
+- Iron Head
 - Spikes
-- Steel Wing
-- Aerial Ace
+- Roost
 
 Altaria @ Chesto Berry
-Level: 64
+Level: 79
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Sky Attack
-- Rest
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Dragon Dance
+- Aerial Ace
 - Earthquake
+- Rest
 
 === TRAINER_TATE_AND_LIZA_2 ===
 Name: TATE&LIZA
@@ -16906,50 +16878,41 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Slowpoke
-Level: 52
+Reuniclus
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Yawn
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
-- Calm Mind
+- Focus Blast
+- Recover
 - Protect
 
 Claydol
-Level: 53
+Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Earthquake
-- Ancient Power
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
+- Earth Power
 - Light Screen
-
-Xatu @ Chesto Berry
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+- Protect
 
 Lunatone @ Chesto Berry
-Level: 54
+Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Earthquake
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
+- Moonblast
+- Power Gem
 - Rest
-- Calm Mind
 
 Solrock @ Sitrus Berry
-Level: 54
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Sunny Day
-- Solar Beam
-- Psychic
-- Flamethrower
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Zen Headbutt
+- Rock Slide
+- Flare Blitz
+- Protect
 
 === TRAINER_TATE_AND_LIZA_3 ===
 Name: TATE&LIZA
@@ -16961,59 +16924,50 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Drowzee
-Level: 57
+Gothitelle
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hypnosis
-- Dream Eater
-- Headbutt
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Psychic
+- Thunderbolt
+- Calm Mind
 - Protect
 
-Slowpoke
-Level: 57
+Reuniclus
+Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Yawn
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
-- Calm Mind
+- Focus Blast
+- Recover
 - Protect
 
 Claydol
-Level: 57
+Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Earthquake
-- Explosion
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
+- Earth Power
 - Light Screen
-
-Xatu @ Chesto Berry
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+- Protect
 
 Lunatone @ Chesto Berry
-Level: 59
+Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Earthquake
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
+- Moonblast
+- Power Gem
 - Rest
-- Calm Mind
 
 Solrock @ Sitrus Berry
-Level: 59
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Sunny Day
-- Solar Beam
-- Psychic
-- Flamethrower
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Zen Headbutt
+- Rock Slide
+- Flare Blitz
+- Protect
 
 === TRAINER_TATE_AND_LIZA_4 ===
 Name: TATE&LIZA
@@ -17025,59 +16979,50 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Hypno
-Level: 62
+Sigilyph
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hypnosis
-- Dream Eater
-- Headbutt
-- Protect
-
-Claydol
-Level: 63
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Earthquake
-- Explosion
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
 - Psychic
-- Light Screen
+- Air Slash
+- Cosmic Power
+- Roost
 
-Slowpoke
-Level: 64
+Gardevoir
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Yawn
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
+- Moonblast
 - Calm Mind
 - Protect
 
-Xatu @ Chesto Berry
-Level: 63
+Metagross
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Meteor Mash
+- Zen Headbutt
+- Bullet Punch
+- Protect
 
 Lunatone @ Chesto Berry
-Level: 64
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Earthquake
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
+- Moonblast
+- Power Gem
 - Rest
-- Calm Mind
 
 Solrock @ Sitrus Berry
-Level: 64
+Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Sunny Day
-- Solar Beam
-- Psychic
-- Flamethrower
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Zen Headbutt
+- Rock Slide
+- Flare Blitz
+- Protect
 
 === TRAINER_TATE_AND_LIZA_5 ===
 Name: TATE&LIZA
@@ -17089,59 +17034,59 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Hypno
-Level: 67
+Farigiraf
+Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hypnosis
-- Dream Eater
-- Headbutt
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Twin Beam
+- Psychic
+- Hyper Voice
 - Protect
 
-Claydol
-Level: 67
+Bronzong
+Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Earthquake
-- Explosion
+EVs: 252 HP / 252 Def / 252 SpD
 - Psychic
+- Gyro Ball
+- Reflect
 - Light Screen
 
-Slowking
-Level: 67
+Reuniclus
+Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Yawn
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
-- Calm Mind
+- Focus Blast
+- Recover
 - Protect
 
-Xatu @ Chesto Berry
-Level: 68
+Metagross
+Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Meteor Mash
+- Zen Headbutt
+- Bullet Punch
+- Protect
 
 Lunatone @ Chesto Berry
-Level: 69
+Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Earthquake
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
+- Moonblast
+- Power Gem
 - Rest
-- Calm Mind
 
 Solrock @ Sitrus Berry
-Level: 69
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Sunny Day
-- Solar Beam
-- Psychic
-- Flamethrower
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Zen Headbutt
+- Rock Slide
+- Flare Blitz
+- Protect
 
 === TRAINER_JUAN_2 ===
 Name: JUAN
@@ -17153,50 +17098,42 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Poliwag
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hypnosis
-- Rain Dance
-- Protect
-- Hydro Pump
-
-Whiscash
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
-
-Walrein
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Water Pulse
-- Body Slam
-- Protect
-- Ice Beam
-
-Crawdaunt @ Chesto Berry
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Rest
-- Crabhammer
-- Taunt
-- Double Team
-
-Kingdra @ Chesto Berry
+Lanturn
 Level: 61
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Water Pulse
-- Double Team
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Thunderbolt
+- Scald
 - Ice Beam
+- Protect
+
+Jellicent
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Scald
+- Shadow Ball
+- Recover
+- Will-O-Wisp
+
+Walrein @ Chesto Berry
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Ice Beam
+- Scald
 - Rest
+- Protect
+
+Kingdra @ Sitrus Berry
+Ability: Swift Swim
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Hydro Pump
+- Dragon Pulse
+- Ice Beam
+- Rain Dance
 
 === TRAINER_JUAN_3 ===
 Name: JUAN
@@ -17208,50 +17145,51 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Poliwhirl
-Level: 60
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hypnosis
-- Rain Dance
-- Protect
-- Hydro Pump
-
-Whiscash
-Level: 61
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
-
-Walrein
-Level: 63
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Water Pulse
-- Body Slam
-- Protect
-- Ice Beam
-
-Crawdaunt @ Chesto Berry
-Level: 63
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Rest
-- Guillotine
-- Taunt
-- Double Team
-
-Kingdra @ Chesto Berry
+Sharpedo
 Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Water Pulse
-- Double Team
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Crunch
+- Liquidation
+- Ice Fang
+- Protect
+
+Lanturn
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Thunderbolt
+- Scald
 - Ice Beam
+- Protect
+
+Jellicent
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Scald
+- Shadow Ball
+- Recover
+- Will-O-Wisp
+
+Walrein @ Chesto Berry
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Ice Beam
+- Scald
 - Rest
+- Protect
+
+Kingdra @ Sitrus Berry
+Ability: Swift Swim
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Hydro Pump
+- Dragon Pulse
+- Ice Beam
+- Rain Dance
 
 === TRAINER_JUAN_4 ===
 Name: JUAN
@@ -17263,59 +17201,51 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Lapras
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hydro Pump
-- Perish Song
-- Ice Beam
-- Confuse Ray
-
-Whiscash
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
-
-Poliwhirl
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hypnosis
-- Rain Dance
-- Protect
-- Hydro Pump
-
-Walrein
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Water Pulse
-- Body Slam
-- Protect
-- Ice Beam
-
-Crawdaunt @ Chesto Berry
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Rest
-- Guillotine
-- Taunt
-- Double Team
-
-Kingdra @ Chesto Berry
+Primarina @ Sitrus Berry
 Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Water Pulse
-- Double Team
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Sparkling Aria
+- Moonblast
 - Ice Beam
+- Protect
+
+Milotic
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Scald
+- Ice Beam
+- Recover
+- Protect
+
+Lanturn
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Thunderbolt
+- Scald
+- Ice Beam
+- Protect
+
+Walrein @ Chesto Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Ice Beam
+- Scald
 - Rest
+- Protect
+
+Kingdra @ Sitrus Berry
+Ability: Swift Swim
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Hydro Pump
+- Dragon Pulse
+- Ice Beam
+- Rain Dance
 
 === TRAINER_JUAN_5 ===
 Name: JUAN
@@ -17327,59 +17257,60 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Lapras
-Level: 71
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hydro Pump
-- Perish Song
-- Ice Beam
-- Confuse Ray
-
-Whiscash
-Level: 73
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
-
-Politoed
-Level: 71
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Hypnosis
-- Rain Dance
-- Hydro Pump
-- Perish Song
-
-Walrein
-Level: 73
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Water Pulse
-- Body Slam
-- Protect
-- Sheer Cold
-
-Crawdaunt @ Chesto Berry
-Level: 73
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Rest
-- Guillotine
-- Taunt
-- Double Team
-
-Kingdra @ Chesto Berry
+Dhelmise
 Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe / 252 Atk
-- Water Pulse
-- Double Team
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Power Whip
+- Anchor Shot
+- Shadow Claw
+- Protect
+
+Primarina @ Sitrus Berry
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Sparkling Aria
+- Moonblast
 - Ice Beam
+- Protect
+
+Milotic
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Scald
+- Ice Beam
+- Recover
+- Protect
+
+Jellicent
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Scald
+- Shadow Ball
+- Recover
+- Will-O-Wisp
+
+Walrein @ Chesto Berry
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Ice Beam
+- Scald
 - Rest
+- Protect
+
+Kingdra @ Sitrus Berry
+Ability: Swift Swim
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Hydro Pump
+- Dragon Pulse
+- Ice Beam
+- Rain Dance
 
 === TRAINER_ANGELO ===
 Name: ANGELO
