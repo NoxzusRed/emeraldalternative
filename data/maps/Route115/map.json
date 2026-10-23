@@ -468,7 +468,35 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 72,
+      "elevation": 0,
+      "var": "VAR_RIOLU_QUEST_CAMERA_STATE",
+      "var_value": "1",
+      "script": "Route115_EventScript_RioluQuestCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 72,
+      "elevation": 0,
+      "var": "VAR_RIOLU_QUEST_CAMERA_STATE",
+      "var_value": "1",
+      "script": "Route115_EventScript_RioluQuestCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 72,
+      "elevation": 0,
+      "var": "VAR_RIOLU_QUEST_CAMERA_STATE",
+      "var_value": "1",
+      "script": "Route115_EventScript_RioluQuestCamera"
+    }
+  ],
   "bg_events": [
     {
       "type": "secret_base",

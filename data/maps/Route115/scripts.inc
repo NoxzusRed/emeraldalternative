@@ -10,15 +10,16 @@ Route115_OnLoad:
 	end
 
 Route115_OnTransition:
-	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_StartGroudonWeather
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_StartGroudonWeather
-	call Route115_EventScript_UpdateRioluQuestObjects
-	end
+    call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
+    call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_StartGroudonWeather
+    call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_StartGroudonWeather
+    call Route115_EventScript_UpdateRioluQuestObjects
+    call Route115_EventScript_PrepareRioluQuestCamera
+    end
 
 Route115_OnFrame:
-	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
-	.2byte 0
+    map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
+    .2byte 0
 
 Route115_EventScript_Woman::
 	msgbox Route115_Text_NeverKnowWhenCavePokemonWillAppear, MSGBOX_NPC
@@ -177,6 +178,68 @@ Route115_EventScript_RioluQuestLucario::
     playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
     msgbox Route115_Text_RioluQuestLucario, MSGBOX_SIGN
     end
+
+@ ==================================================
+@ RIOLU QUEST - CAMERA CUTSCENE
+@ ==================================================
+
+@ Preparar la escena solamente si la mision esta activa.
+Route115_EventScript_PrepareRioluQuestCamera::
+    goto_if_ne VAR_RIOLU_QUEST_STATE, 1, Route115_EventScript_PrepareRioluQuestCameraEnd
+    goto_if_ne VAR_RIOLU_QUEST_CAMERA_STATE, 0, Route115_EventScript_PrepareRioluQuestCameraEnd
+    setvar VAR_RIOLU_QUEST_CAMERA_STATE, 1
+
+Route115_EventScript_PrepareRioluQuestCameraEnd::
+    return
+
+@ Escena de presentacion de Lucario y los reclutas.
+Route115_EventScript_RioluQuestCamera::
+    lockall
+
+    @ Marcar la escena como vista.
+    setvar VAR_RIOLU_QUEST_CAMERA_STATE, 2
+
+    delay 20
+
+    @ Separar la camara del jugador.
+    special SpawnCameraObject
+
+    @ Desplazar la camara hacia los reclutas.
+    applymovement LOCALID_CAMERA, Route115_Movement_CameraToGrunts
+    waitmovement 0
+
+    @ Mantener el enfoque brevemente.
+    delay 60
+
+    @ Volver a la posicion original.
+    applymovement LOCALID_CAMERA, Route115_Movement_CameraReturn
+    waitmovement 0
+
+    @ Hacer que la camara vuelva a seguir al jugador.
+    special RemoveCameraObject
+
+    releaseall
+    end
+
+@ Camara hacia los reclutas y Lucario
+Route115_Movement_CameraToGrunts:
+    walk_slow_diag_northwest
+    walk_slow_diag_northwest
+    walk_slow_diag_northwest
+    walk_slow_diag_northwest
+    walk_slow_diag_northwest
+    walk_slow_diag_northwest
+    step_end
+
+@ Camara de regreso al jugador
+Route115_Movement_CameraReturn:
+    walk_slow_diag_southeast
+    walk_slow_diag_southeast
+    walk_slow_diag_southeast
+    walk_slow_diag_southeast
+    walk_slow_diag_southeast
+    walk_slow_diag_southeast
+    step_end
 
 Route115_Text_RioluQuestAquaIntro:
     .string "TEAM AQUA: Hey! Stay out of our\n"
