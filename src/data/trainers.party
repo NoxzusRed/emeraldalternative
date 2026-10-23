@@ -15554,7 +15554,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Gigalith
-Level: 32
+Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Protect
@@ -15562,26 +15562,26 @@ EVs: 252 HP / 252 Def / 252 SpD
 - Bulldoze
 - Iron Defense
 
-Kabutops @ Sitrus Berry
-Level: 35
+Crustle @ Sitrus Berry
+Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Swords Dance
-- Leech Life
-- Liquidation
+- Shell Smash
+- X-Scissor
+- Heavy Slam
 - Rock Slide
 
-Steelix
-Level: 35
+Garganacl
+Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Iron Tail
-- Bulldoze
-- Roar
-- Rock Slide
+- Iron Defense
+- Recover
+- Headbutt
+- Stone Edge
 
 Probopass @ Sitrus Berry
-Level: 37
+Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Double Team
@@ -15599,17 +15599,17 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Omanyte
-Level: 37
+Cradily
+Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Protect
-- Ice Beam
+- Ingrain
 - Ancient Power
-- Surf
+- Giga Drain
 
 Gigalith
-Level: 37
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Protect
@@ -15617,26 +15617,26 @@ EVs: 252 HP / 252 Def / 252 SpD
 - Earthquake
 - Iron Defense
 
-Kabutops @ Sitrus Berry
-Level: 40
+Crustle @ Sitrus Berry
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Swords Dance
-- Leech Life
-- Liquidation
+- Shell Smash
+- X-Scissor
+- Heavy Slam
 - Stone Edge
 
-Steelix
-Level: 40
+Garganacl
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Iron Tail
+- Iron Defense
+- Recover
 - Earthquake
-- Roar
 - Stone Edge
 
 Probopass @ Sitrus Berry
-Level: 42
+Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Double Team
@@ -15654,17 +15654,17 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Omastar
-Level: 42
+Cradily
+Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Protect
-- Ice Beam
+- Ingrain
 - Ancient Power
-- Surf
+- Giga Drain
 
 Gigalith
-Level: 42
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Protect
@@ -15672,26 +15672,26 @@ EVs: 252 HP / 252 Def / 252 SpD
 - Earthquake
 - Iron Defense
 
-Kabutops @ Sitrus Berry
-Level: 45
+Crustle @ Sitrus Berry
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Swords Dance
-- Leech Life
-- Liquidation
+- Shell Smash
+- X-Scissor
+- Heavy Slam
 - Stone Edge
 
-Steelix
-Level: 45
+Garganacl
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Iron Tail
+- Iron Defense
+- Recover
 - Earthquake
-- Roar
 - Stone Edge
 
 Probopass @ Sitrus Berry
-Level: 47
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Double Team
@@ -15709,17 +15709,16 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Aerodactyl
-Level: 47
+Aggron
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Stone Edge
-- Dragon Claw
+- Head Smash
 - Iron Head
 - Protect
 
 Gigalith
-Level: 47
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Protect
@@ -15727,35 +15726,35 @@ EVs: 252 HP / 252 Def / 252 SpD
 - Earthquake
 - Iron Defense
 
-Omastar
-Level: 47
+Cradily
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Protect
-- Ice Beam
+- Ingrain
 - Ancient Power
-- Surf
+- Giga Drain
 
-Kabutops @ Sitrus Berry
-Level: 50
+Crustle @ Sitrus Berry
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Swords Dance
-- Leech Life
-- Liquidation
+- Shell Smash
+- X-Scissor
+- Heavy Slam
 - Stone Edge
 
-Steelix
-Level: 50
+Garganacl
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
-- Iron Tail
+- Iron Defense
+- Recover
 - Earthquake
-- Roar
 - Stone Edge
 
 Probopass @ Sitrus Berry
-Level: 52
+Level: 74
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Double Team
