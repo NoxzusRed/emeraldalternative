@@ -146,12 +146,12 @@ Route115_EventScript_ShowRioluQuestObjects::
 Route115_EventScript_RioluQuestAquaBattle::
     lock
     faceplayer
-    applymovement LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO, Common_Movement_WalkInPlaceFasterRight
-    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2, Common_Movement_ExclamationMark
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1, Common_Movement_ExclamationMark
+    msgbox Route115_Text_RioluQuestAquaIntro, MSGBOX_DEFAULT
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO, Common_Movement_WalkInPlaceFasterLeft
     waitmovement 0
     playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
     waitmoncry
-    msgbox Route115_Text_RioluQuestAquaIntro, MSGBOX_DEFAULT
     trainerbattle_no_intro TRAINER_GRUNT_ROUTE115_RIOLU_QUEST, Route115_Text_RioluQuestAquaDefeat
     msgbox Route115_Text_RioluQuestAquaRetreat, MSGBOX_DEFAULT
     setflag FLAG_HIDE_ROUTE115_AQUA_1
@@ -170,6 +170,7 @@ Route115_EventScript_RioluQuestAquaBattle::
 
 Route115_EventScript_RioluQuestAqua2::
     msgbox Route115_Text_RioluQuestAqua2, MSGBOX_NPC
+	applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2, Common_Movement_FaceRight
     end
 
 Route115_EventScript_RioluQuestLucario::
@@ -179,7 +180,7 @@ Route115_EventScript_RioluQuestLucario::
 
 Route115_Text_RioluQuestAquaIntro:
     .string "TEAM AQUA: Hey! Stay out of our\n"
-    .string "business!\p"
+    .string "business!$"
 
 Route115_Text_RioluQuestAquaDefeat:
     .string "What?! How did I lose?!$"
