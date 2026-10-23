@@ -133,21 +133,29 @@ Route115_EventScript_Marlene::
 
 Route115_EventScript_UpdateRioluQuestObjects::
     goto_if_eq VAR_RIOLU_QUEST_STATE, 1, Route115_EventScript_ShowRioluQuestObjects
-    setflag FLAG_HIDE_ROUTE115_AQUA_1
+	setflag FLAG_HIDE_ROUTE115_AQUA_1
     setflag FLAG_HIDE_ROUTE115_AQUA_2
     setflag FLAG_HIDE_ROUTE115_LUCARIO
+    setflag FLAG_HIDE_ROUTE115_SHARPEDO_1
+    setflag FLAG_HIDE_ROUTE115_SHARPEDO_2
+    clearflag FLAG_HIDE_ROUTE115_GREEN_NPC
     return
 
 Route115_EventScript_ShowRioluQuestObjects::
     clearflag FLAG_HIDE_ROUTE115_AQUA_1
     clearflag FLAG_HIDE_ROUTE115_AQUA_2
     clearflag FLAG_HIDE_ROUTE115_LUCARIO
+    clearflag FLAG_HIDE_ROUTE115_SHARPEDO_1
+    clearflag FLAG_HIDE_ROUTE115_SHARPEDO_2
+    setflag FLAG_HIDE_ROUTE115_GREEN_NPC
     return
+
 
 Route115_EventScript_RioluQuestAquaBattle::
     lock
     faceplayer
     applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1, Common_Movement_ExclamationMark
+    waitmovement 0
     msgbox Route115_Text_RioluQuestAquaIntro, MSGBOX_DEFAULT
     applymovement LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO, Common_Movement_WalkInPlaceFasterLeft
     waitmovement 0
@@ -155,19 +163,34 @@ Route115_EventScript_RioluQuestAquaBattle::
     waitmoncry
     trainerbattle_no_intro TRAINER_GRUNT_ROUTE115_RIOLU_QUEST, Route115_Text_RioluQuestAquaDefeat
     msgbox Route115_Text_RioluQuestAquaRetreat, MSGBOX_DEFAULT
+    delay 20
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1, Route115_Movement_Aqua1Retreat
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2, Route115_Movement_Aqua2Retreat
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_1, Route115_Movement_Sharpedo1Retreat
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_2, Route115_Movement_Sharpedo2Retreat
+    waitmovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1
+    waitmovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2
+    waitmovement LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_1
+    waitmovement LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_2
+    msgbox Route115_Text_RioluQuestLucarioSafe, MSGBOX_DEFAULT
+	playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
+    waitmoncry
+	applymovement LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO, Route115_Movement_LucarioRetreat
+	waitmovement LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO
     setflag FLAG_HIDE_ROUTE115_AQUA_1
     setflag FLAG_HIDE_ROUTE115_AQUA_2
     setflag FLAG_HIDE_ROUTE115_LUCARIO
+    setflag FLAG_HIDE_ROUTE115_SHARPEDO_1
+    setflag FLAG_HIDE_ROUTE115_SHARPEDO_2
     removeobject LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1
     removeobject LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2
-    delay 20
-    playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
-    waitmoncry
-    msgbox Route115_Text_RioluQuestLucarioSafe, MSGBOX_DEFAULT
     removeobject LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO
+    removeobject LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_1
+    removeobject LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_2
     setvar VAR_RIOLU_QUEST_STATE, 2
-    release
+	release
     end
+
 
 Route115_EventScript_RioluQuestAqua2::
     msgbox Route115_Text_RioluQuestAqua2, MSGBOX_NPC
@@ -176,14 +199,81 @@ Route115_EventScript_RioluQuestAqua2::
 
 Route115_EventScript_RioluQuestLucario::
     playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
-    msgbox Route115_Text_RioluQuestLucario, MSGBOX_SIGN
+    msgbox Route115_Text_RioluQuestLucario, MSGBOX_DEFAULT
     end
+
+Route115_EventScript_Sharpedo::
+	playmoncry SPECIES_SHARPEDO, CRY_MODE_NORMAL
+    msgbox Route115_Text_Sharpedo, MSGBOX_DEFAULT
+    end
+
+Route115_Movement_Aqua1Retreat:
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+	walk_left
+	walk_left
+    walk_down
+	walk_down
+    step_end
+
+Route115_Movement_Aqua2Retreat:
+    walk_left
+    walk_left
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+	walk_down
+	walk_left
+	walk_down
+	walk_down
+    step_end
+
+Route115_Movement_LucarioRetreat:
+    walk_right
+    walk_right
+    walk_right
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_right
+    walk_right
+	walk_right
+	walk_right
+	walk_right
+    step_end
+
+Route115_Movement_Sharpedo1Retreat:
+    walk_faster_down
+    walk_faster_down
+    walk_faster_down
+    walk_faster_down
+    walk_faster_down
+	walk_faster_down
+    step_end
+
+Route115_Movement_Sharpedo2Retreat:
+    walk_faster_down
+    walk_faster_down
+    walk_faster_down
+    walk_faster_down
+    walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+    step_end
 
 @ ==================================================
 @ RIOLU QUEST - CAMERA CUTSCENE
 @ ==================================================
 
-@ Preparar la escena solamente si la mision esta activa.
 Route115_EventScript_PrepareRioluQuestCamera::
     goto_if_ne VAR_RIOLU_QUEST_STATE, 1, Route115_EventScript_PrepareRioluQuestCameraEnd
     goto_if_ne VAR_RIOLU_QUEST_CAMERA_STATE, 0, Route115_EventScript_PrepareRioluQuestCameraEnd
@@ -192,36 +282,20 @@ Route115_EventScript_PrepareRioluQuestCamera::
 Route115_EventScript_PrepareRioluQuestCameraEnd::
     return
 
-@ Escena de presentacion de Lucario y los reclutas.
 Route115_EventScript_RioluQuestCamera::
     lockall
-
-    @ Marcar la escena como vista.
     setvar VAR_RIOLU_QUEST_CAMERA_STATE, 2
-
     delay 20
-
-    @ Separar la camara del jugador.
     special SpawnCameraObject
-
-    @ Desplazar la camara hacia los reclutas.
     applymovement LOCALID_CAMERA, Route115_Movement_CameraToGrunts
     waitmovement 0
-
-    @ Mantener el enfoque brevemente.
     delay 60
-
-    @ Volver a la posicion original.
     applymovement LOCALID_CAMERA, Route115_Movement_CameraReturn
     waitmovement 0
-
-    @ Hacer que la camara vuelva a seguir al jugador.
     special RemoveCameraObject
-
     releaseall
     end
 
-@ Camara hacia los reclutas y Lucario
 Route115_Movement_CameraToGrunts:
     walk_slow_diag_northwest
     walk_slow_diag_northwest
@@ -231,7 +305,6 @@ Route115_Movement_CameraToGrunts:
     walk_slow_diag_northwest
     step_end
 
-@ Camara de regreso al jugador
 Route115_Movement_CameraReturn:
     walk_slow_diag_southeast
     walk_slow_diag_southeast
@@ -277,3 +350,5 @@ Route115_Text_MeteorFallsSign:
 	.string "METEOR FALLS\n"
 	.string "FALLARBOR TOWN THROUGH HERE$"
 
+Route115_Text_Sharpedo:
+    .string "Shriiiink-grrr!$"
