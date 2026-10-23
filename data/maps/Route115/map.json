@@ -401,6 +401,48 @@
       "trainer_sight_or_berry_tree_id": "ITEM_TM94",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_115_TM_SMART_STRIKE"
+    },
+    {
+      "local_id": "LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUCARIO)",
+      "x": 13,
+      "y": 65,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route115_EventScript_RioluQuestLucario",
+      "flag": "FLAG_HIDE_ROUTE115_LUCARIO"
+    },
+    {
+      "local_id": "LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "x": 11,
+      "y": 67,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route115_EventScript_RioluQuestAquaBattle",
+      "flag": "FLAG_HIDE_ROUTE115_AQUA_1"
+    },
+    {
+      "local_id": "LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+      "x": 12,
+      "y": 65,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route115_EventScript_RioluQuestAqua2",
+      "flag": "FLAG_HIDE_ROUTE115_AQUA_2"
     }
   ],
   "warp_events": [

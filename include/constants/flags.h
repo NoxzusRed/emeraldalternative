@@ -60,10 +60,10 @@
 #define FLAG_SNIVY_TRADE_COMPLETED			0x2E //
 #define FLAG_FENNEKIN_TRADE_COMPLETED		0x2F //
 #define FLAG_MUDKIP_TRADE_COMPLETED			0x30 //
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define FLAG_HIDE_RUSTBORO_EAST_LUCARIO     0x32 //
+#define FLAG_HIDE_ROUTE115_AQUA_1           0x33 //
+#define FLAG_HIDE_ROUTE115_AQUA_2     	    0x34 //
+#define FLAG_HIDE_ROUTE115_LUCARIO    		0x35 //
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag

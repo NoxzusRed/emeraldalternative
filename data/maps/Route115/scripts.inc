@@ -13,6 +13,7 @@ Route115_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_StartGroudonWeather
+	call Route115_EventScript_UpdateRioluQuestObjects
 	end
 
 Route115_OnFrame:
@@ -128,6 +129,75 @@ Route115_EventScript_Marlene::
 	trainerbattle_single TRAINER_MARLENE, Route115_Text_MarleneIntro, Route115_Text_MarleneDefeat
 	msgbox Route115_Text_MarlenePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route115_EventScript_UpdateRioluQuestObjects::
+    goto_if_eq VAR_RIOLU_QUEST_STATE, 1, Route115_EventScript_ShowRioluQuestObjects
+    setflag FLAG_HIDE_ROUTE115_AQUA_1
+    setflag FLAG_HIDE_ROUTE115_AQUA_2
+    setflag FLAG_HIDE_ROUTE115_LUCARIO
+    return
+
+Route115_EventScript_ShowRioluQuestObjects::
+    clearflag FLAG_HIDE_ROUTE115_AQUA_1
+    clearflag FLAG_HIDE_ROUTE115_AQUA_2
+    clearflag FLAG_HIDE_ROUTE115_LUCARIO
+    return
+
+Route115_EventScript_RioluQuestAquaBattle::
+    lock
+    faceplayer
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO, Common_Movement_WalkInPlaceFasterRight
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2, Common_Movement_ExclamationMark
+    waitmovement 0
+    playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
+    waitmoncry
+    msgbox Route115_Text_RioluQuestAquaIntro, MSGBOX_DEFAULT
+    trainerbattle_no_intro TRAINER_GRUNT_ROUTE115_RIOLU_QUEST, Route115_Text_RioluQuestAquaDefeat
+    msgbox Route115_Text_RioluQuestAquaRetreat, MSGBOX_DEFAULT
+    setflag FLAG_HIDE_ROUTE115_AQUA_1
+    setflag FLAG_HIDE_ROUTE115_AQUA_2
+    setflag FLAG_HIDE_ROUTE115_LUCARIO
+    removeobject LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1
+    removeobject LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2
+    delay 20
+    playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
+    waitmoncry
+    msgbox Route115_Text_RioluQuestLucarioSafe, MSGBOX_DEFAULT
+    removeobject LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO
+    setvar VAR_RIOLU_QUEST_STATE, 2
+    release
+    end
+
+Route115_EventScript_RioluQuestAqua2::
+    msgbox Route115_Text_RioluQuestAqua2, MSGBOX_NPC
+    end
+
+Route115_EventScript_RioluQuestLucario::
+    playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
+    msgbox Route115_Text_RioluQuestLucario, MSGBOX_SIGN
+    end
+
+Route115_Text_RioluQuestAquaIntro:
+    .string "TEAM AQUA: Hey! Stay out of our\n"
+    .string "business!\p"
+
+Route115_Text_RioluQuestAquaDefeat:
+    .string "What?! How did I lose?!$"
+
+Route115_Text_RioluQuestAquaRetreat:
+    .string "TEAM AQUA: This isn't worth it!\n"
+    .string "We're getting out of here!$"
+
+Route115_Text_RioluQuestAqua2:
+    .string "TEAM AQUA: Back off!\n"
+    .string "You're not stopping us!$"
+
+Route115_Text_RioluQuestLucario:
+    .string "Luca!$"
+
+Route115_Text_RioluQuestLucarioSafe:
+    .string "LUCARIO seems relieved!\p"
+    .string "It runs back toward RUSTBORO!$"
 
 Route115_Text_NeverKnowWhenCavePokemonWillAppear:
 	.string "Exploring a cave isn't like walking\n"

@@ -712,9 +712,9 @@ F_TRAINER_FEMALE |
 #line 359
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 0),
 #line 358
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 0, 0, 0, 0, 0),
 #line 357
-            .lvl = 14,
+            .lvl = 16,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
@@ -46072,6 +46072,53 @@ F_TRAINER_FEMALE |
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 18478
             .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },
+#line 18481
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_ROUTE115_RIOLU_QUEST] =
+    {
+#line 18482
+        .trainerName = _("GRUNT"),
+#line 18483
+        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
+#line 18484
+        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
+        .encounterMusic_gender =
+#line 18485
+F_TRAINER_FEMALE | 
+#line 18486
+            TRAINER_ENCOUNTER_MUSIC_AQUA,
+#line 18487
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 18488
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = 2,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 18490
+            .species = SPECIES_POOCHYENA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 18493
+            .ev = TRAINER_PARTY_EVS(126, 0, 0, 0, 0, 0),
+#line 18492
+            .iv = TRAINER_PARTY_IVS(31, 6, 6, 6, 6, 6),
+#line 18491
+            .lvl = 17,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 18495
+            .species = SPECIES_MURKROW,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 18497
+            .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+#line 18496
+            .lvl = 18,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },

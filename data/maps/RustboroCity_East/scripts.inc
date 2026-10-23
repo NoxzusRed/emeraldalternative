@@ -1,5 +1,15 @@
 RustboroCity_East_MapScripts::
-	.byte 0
+    map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_East_OnTransition
+    .byte 0
+
+RustboroCity_East_OnTransition:
+    goto_if_ge VAR_RIOLU_QUEST_STATE, 2, RustboroCity_East_EventScript_ShowQuestLucario
+    setflag FLAG_HIDE_RUSTBORO_EAST_LUCARIO
+    end
+
+RustboroCity_East_EventScript_ShowQuestLucario::
+    clearflag FLAG_HIDE_RUSTBORO_EAST_LUCARIO
+    end
 
 RustboroCity_East_EventScript_SootheBellWoman::
 	lock
@@ -46,6 +56,88 @@ RustboroCity_East_EventScript_Jumpluff::
 	playmoncry SPECIES_JUMPLUFF, CRY_MODE_NORMAL
 	msgbox RustboroCity_East_Text_PluffPluff, MSGBOX_SIGN
 	end
+
+RustboroCity_East_EventScript_Lucario::
+    lock
+    faceplayer
+	playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
+	msgbox RustboroCity_East_Text_Lucario, MSGBOX_DEFAULT
+    waitmoncry
+    release
+	end
+
+RustboroCity_East_EventScript_RioluQuestNPC::
+    lock
+    faceplayer
+    goto_if_eq VAR_RIOLU_QUEST_STATE, 0, RustboroCity_East_EventScript_RioluQuestStart
+    goto_if_eq VAR_RIOLU_QUEST_STATE, 1, RustboroCity_East_EventScript_RioluQuestWaiting
+    goto_if_eq VAR_RIOLU_QUEST_STATE, 2, RustboroCity_East_EventScript_RioluQuestReward
+    goto RustboroCity_East_EventScript_RioluQuestDone
+    end
+
+RustboroCity_East_EventScript_RioluQuestStart::
+    msgbox RustboroCity_East_Text_RioluQuestStart, MSGBOX_DEFAULT
+    setvar VAR_RIOLU_QUEST_STATE, 1
+    release
+    end
+
+RustboroCity_East_EventScript_RioluQuestWaiting::
+    msgbox RustboroCity_East_Text_RioluQuestWaiting, MSGBOX_DEFAULT
+    release
+    end
+
+RustboroCity_East_EventScript_RioluQuestReward::
+    getpartysize
+    goto_if_eq VAR_RESULT, PARTY_SIZE, RustboroCity_East_EventScript_RioluQuestPartyFull
+    msgbox RustboroCity_East_Text_RioluQuestThanks, MSGBOX_DEFAULT
+    playfanfare MUS_OBTAIN_ITEM
+    message RustboroCity_East_Text_RioluQuestReceivedEgg
+    waitfanfare
+    giveegg SPECIES_RIOLU
+    setvar VAR_RIOLU_QUEST_STATE, 3
+    release
+    end
+
+RustboroCity_East_EventScript_RioluQuestPartyFull::
+    msgbox RustboroCity_East_Text_RioluQuestPartyFull, MSGBOX_DEFAULT
+    release
+    end
+
+RustboroCity_East_EventScript_RioluQuestDone::
+    msgbox RustboroCity_East_Text_RioluQuestDone, MSGBOX_DEFAULT
+    release
+    end
+
+RustboroCity_East_Text_RioluQuestStart:
+    .string "Lucario went on guard duty, but he\n"
+    .string "hasn't returned yet.\p"
+    .string "He was supposed to watch over Routes\n"
+    .string "104, 115 and 116.\p"
+    .string "Could you look for him?$"
+
+RustboroCity_East_Text_RioluQuestWaiting:
+    .string "Have you seen Lucario?\p"
+    .string "He was supposed to watch over Routes\n"
+    .string "104, 115 and 116.$"
+
+RustboroCity_East_Text_RioluQuestThanks:
+    .string "LUCARIO made it back safely!\n"
+    .string "Thank you for helping it!\p"
+    .string "Please accept this as a reward!$"
+
+RustboroCity_East_Text_RioluQuestReceivedEgg:
+    .string "{PLAYER} received an EGG!$"
+
+RustboroCity_East_Text_RioluQuestPartyFull:
+    .string "Your party is full.\n"
+    .string "Make room for the EGG first.$"
+
+RustboroCity_East_Text_RioluQuestDone:
+    .string "Thank you again!\p"
+    .string "Please raise that Pokemon with care.$"
+
+RustboroCity_East_Text_Lucario:
+	.string "Rrrio!$"
 
 RustboroCity_East_Text_Paaah:
 	.string "Paaah!$"

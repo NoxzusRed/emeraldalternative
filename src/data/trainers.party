@@ -354,8 +354,8 @@ Double Battle: No
 AI: Check Bad Move
 
 Poochyena
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 16
+IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 252 HP
 
 === TRAINER_GRUNT_WEATHER_INST_1 ===
@@ -18477,3 +18477,21 @@ Double Battle: No
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_GRUNT_ROUTE115_RIOLU_QUEST ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Poochyena
+Level: 17
+IVs: 31 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP
+
+Murkrow
+Level: 18
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
