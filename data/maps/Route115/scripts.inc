@@ -133,20 +133,12 @@ Route115_EventScript_Marlene::
 
 Route115_EventScript_UpdateRioluQuestObjects::
     goto_if_eq VAR_RIOLU_QUEST_STATE, 1, Route115_EventScript_ShowRioluQuestObjects
-	setflag FLAG_HIDE_ROUTE115_AQUA_1
-    setflag FLAG_HIDE_ROUTE115_AQUA_2
-    setflag FLAG_HIDE_ROUTE115_LUCARIO
-    setflag FLAG_HIDE_ROUTE115_SHARPEDO_1
-    setflag FLAG_HIDE_ROUTE115_SHARPEDO_2
+	setflag FLAG_HIDE_ROUTE115_AQUA
     clearflag FLAG_HIDE_ROUTE115_GREEN_NPC
     return
 
 Route115_EventScript_ShowRioluQuestObjects::
-    clearflag FLAG_HIDE_ROUTE115_AQUA_1
-    clearflag FLAG_HIDE_ROUTE115_AQUA_2
-    clearflag FLAG_HIDE_ROUTE115_LUCARIO
-    clearflag FLAG_HIDE_ROUTE115_SHARPEDO_1
-    clearflag FLAG_HIDE_ROUTE115_SHARPEDO_2
+    clearflag FLAG_HIDE_ROUTE115_AQUA
     setflag FLAG_HIDE_ROUTE115_GREEN_NPC
     return
 
@@ -178,11 +170,7 @@ Route115_EventScript_RioluQuestAquaBattle::
     waitmoncry
 	applymovement LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO, Route115_Movement_LucarioRetreat
 	waitmovement LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO
-    setflag FLAG_HIDE_ROUTE115_AQUA_1
-    setflag FLAG_HIDE_ROUTE115_AQUA_2
-    setflag FLAG_HIDE_ROUTE115_LUCARIO
-    setflag FLAG_HIDE_ROUTE115_SHARPEDO_1
-    setflag FLAG_HIDE_ROUTE115_SHARPEDO_2
+    setflag FLAG_HIDE_ROUTE115_AQUA
     removeobject LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1
     removeobject LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2
     removeobject LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO
@@ -199,13 +187,19 @@ Route115_EventScript_RioluQuestAqua2::
     end
 
 Route115_EventScript_RioluQuestLucario::
+    lock
     playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
     msgbox Route115_Text_RioluQuestLucario, MSGBOX_DEFAULT
+	waitmoncry
+    release
     end
 
 Route115_EventScript_Sharpedo::
+	lock
 	playmoncry SPECIES_SHARPEDO, CRY_MODE_NORMAL
     msgbox Route115_Text_Sharpedo, MSGBOX_DEFAULT
+	waitmoncry
+	release
     end
 
 Route115_EventScript_SelectAqua1Retreat::

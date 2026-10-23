@@ -414,7 +414,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route115_EventScript_RioluQuestLucario",
-      "flag": "FLAG_HIDE_ROUTE115_LUCARIO"
+      "flag": "FLAG_HIDE_ROUTE115_AQUA"
     },
     {
       "local_id": "LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1",
@@ -428,7 +428,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route115_EventScript_RioluQuestAquaBattle",
-      "flag": "FLAG_HIDE_ROUTE115_AQUA_1"
+      "flag": "FLAG_HIDE_ROUTE115_AQUA"
     },
     {
       "local_id": "LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2",
@@ -442,7 +442,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route115_EventScript_RioluQuestAqua2",
-      "flag": "FLAG_HIDE_ROUTE115_AQUA_2"
+      "flag": "FLAG_HIDE_ROUTE115_AQUA"
     },
     {
       "local_id": "LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_1",
@@ -456,7 +456,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route115_EventScript_Sharpedo",
-      "flag": "FLAG_HIDE_ROUTE115_SHARPEDO_2"
+      "flag": "FLAG_HIDE_ROUTE115_AQUA"
     },
     {
       "local_id": "LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_2",
@@ -470,7 +470,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route115_EventScript_Sharpedo",
-      "flag": "FLAG_HIDE_ROUTE115_SHARPEDO_1"
+      "flag": "FLAG_HIDE_ROUTE115_AQUA"
     }
   ],
   "warp_events": [
