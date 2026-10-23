@@ -721,6 +721,39 @@ PetalburgCity_EventScript_Vaporeon::
 	msgbox PetalburgCity_Text_VaPurr, MSGBOX_SIGN
 	end
 
+PetalburgCity_EventScript_Zigzagoon::
+	lock
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+    msgbox PetalburgCity_Text_Zigzagoon, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+PetalburgCity_EventScript_Hoppip::
+	lock
+	playmoncry SPECIES_HOPPIP, CRY_MODE_NORMAL
+    msgbox PetalburgCity_Text_Hoppip, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+PetalburgCity_EventScript_Kangaskhan::
+	lock
+	playmoncry SPECIES_KANGASKHAN, CRY_MODE_NORMAL
+    msgbox PetalburgCity_Text_Kangaskhan, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+PetalburgCity_Text_Kangaskhan:
+	.string "Gwaaa-rooor!$"
+
+PetalburgCity_Text_Hoppip:
+	.string "Pip...$"
+
+PetalburgCity_Text_Zigzagoon:
+	.string "Zig-zag!$"
+
 PetalburgCity_Text_VaPurr:
 	.string "Vaa-purr!$"
 

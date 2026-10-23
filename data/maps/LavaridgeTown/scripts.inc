@@ -273,6 +273,28 @@ LavaridgeTown_EventScript_HerbShopSign::
 	msgbox LavaridgeTown_Text_HerbShopSign, MSGBOX_SIGN
 	end
 
+LavaridgeTown_EventScript_Camerupt::
+	lock
+	playmoncry SPECIES_CAMERUPT, CRY_MODE_NORMAL
+    msgbox LavaridgeTown_Text_Camerupt, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+LavaridgeTown_EventScript_Houndour::
+	lock
+	playmoncry SPECIES_HOUNDOUR, CRY_MODE_NORMAL
+    msgbox LavaridgeTown_Text_Houndour, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+LavaridgeTown_Text_Houndour:
+	.string "Grrr-haf!$"
+
+LavaridgeTown_Text_Camerupt:
+	.string "Gwooo-rummm!$"
+
 LavaridgeTown_Text_MayNiceBadgesTakeThis:
 	.string "MAY: {PLAYER}{KUN}! Long time no see!\p"
 	.string "Oh? While I visited the hot springs,\n"

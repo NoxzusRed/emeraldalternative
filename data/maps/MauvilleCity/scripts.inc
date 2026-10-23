@@ -467,6 +467,28 @@ MauvilleCity_EventScript_RegisterWallyCall::
 	releaseall
 	end
 
+MauvilleCity_EventScript_Elektrike::
+	lock
+	playmoncry SPECIES_ELECTRIKE, CRY_MODE_NORMAL
+    msgbox MauvilleCity_Text_Elektrike, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+MauvilleCity_EventScript_Magneton::
+	lock
+	playmoncry SPECIES_MAGNETON, CRY_MODE_NORMAL
+    msgbox MauvilleCity_Text_Magneton, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+MauvilleCity_Text_Magneton:
+	.string "Zzz-ton-ton!$"
+
+MauvilleCity_Text_Elektrike:
+	.string "Bzz-vuff!$"
+
 MauvilleCity_Text_UncleHesTooPeppy:
 	.string "UNCLE: It's because of POKéMON that\n"
 	.string "this boy's got more pep, I suppose…\l"

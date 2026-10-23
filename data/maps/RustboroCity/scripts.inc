@@ -1015,14 +1015,49 @@ RustboroCity_EventScript_Boy1::
 	end
 
 RustboroCity_EventScript_Loudred::
+	lock
 	playmoncry SPECIES_LOUDRED, CRY_MODE_NORMAL
 	msgbox RustboroCity_Text_Bam, MSGBOX_SIGN
+	waitmoncry
+	release
 	end
 
 RustboroCity_EventScript_Gothorita::
+	lock
 	playmoncry SPECIES_GOTHORITA, CRY_MODE_NORMAL
 	msgbox RustboroCity_Text_RiiTaTa, MSGBOX_SIGN
+	waitmoncry
+	release
 	end
+
+RustboroCity_EventScript_Trevenant::
+	lock
+	playmoncry SPECIES_TREVENANT, CRY_MODE_NORMAL
+    msgbox RustboroCity_Text_Trevenant, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	applymovement VAR_LAST_TALKED, RustboroCity_Movement_TrevenantRunLeft
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+RustboroCity_Movement_TrevenantRunLeft:
+	walk_left
+	walk_left
+	walk_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	step_end
+
+RustboroCity_Text_Trevenant:
+	.string "Crrreeek...!$"
 
 RustboroCity_Text_RiiTaTa:
 	.string "Rii-ta-ta!$"
