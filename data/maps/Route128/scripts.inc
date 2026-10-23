@@ -1,11 +1,35 @@
 Route128_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route128_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route128_OnResume
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route128_OnFrame
 	.byte 0
 
 Route128_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
+
+Route128_OnResume:
+    call_if_set FLAG_TEMP_5, Route128_RemovePopplio1
+    call_if_set FLAG_TEMP_6, Route128_RemovePopplio2
+    call_if_set FLAG_TEMP_7, Route128_RemovePopplio3
+    call_if_set FLAG_TEMP_8, Route128_RemovePrimarina
+    end
+
+Route128_RemovePopplio1::
+    removeobject LOCALID_ROUTE128_POPPLIO_1
+    return
+
+Route128_RemovePopplio2::
+    removeobject LOCALID_ROUTE128_POPPLIO_2
+    return
+
+Route128_RemovePopplio3::
+    removeobject LOCALID_ROUTE128_POPPLIO_3
+    return
+
+Route128_RemovePrimarina::
+    removeobject LOCALID_ROUTE128_PRIMARINA
+    return
 
 Route128_OnFrame:
 	map_script_2 VAR_ROUTE128_STATE, 1, Route128_EventScript_KyogreAwakenedScene
@@ -240,6 +264,50 @@ Route128_EventScript_Carlee::
 	trainerbattle_single TRAINER_CARLEE, Route128_Text_CarleeIntro, Route128_Text_CarleeDefeat
 	msgbox Route128_Text_CarleePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route128_EventScript_Popplio5::
+    lock
+    faceplayer
+    playmoncry SPECIES_POPPLIO, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_5
+    setwildbattle SPECIES_POPPLIO, 5
+    dowildbattle
+    release
+    end
+
+Route128_EventScript_Popplio7::
+    lock
+    faceplayer
+    playmoncry SPECIES_POPPLIO, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_6
+    setwildbattle SPECIES_POPPLIO, 7
+    dowildbattle
+    release
+    end
+
+Route128_EventScript_Popplio9::
+    lock
+    faceplayer
+    playmoncry SPECIES_POPPLIO, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_7
+    setwildbattle SPECIES_POPPLIO, 9
+    dowildbattle
+    release
+    end
+
+Route128_EventScript_Primarina38::
+    lock
+    faceplayer
+    playmoncry SPECIES_PRIMARINA, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_8
+    setwildbattle SPECIES_PRIMARINA, 38
+    dowildbattle
+    release
+    end
 
 Route128_Text_ArchieWhatHappened:
 	.string "ARCHIE: What happened…\n"
