@@ -164,8 +164,9 @@ Route115_EventScript_RioluQuestAquaBattle::
     trainerbattle_no_intro TRAINER_GRUNT_ROUTE115_RIOLU_QUEST, Route115_Text_RioluQuestAquaDefeat
     msgbox Route115_Text_RioluQuestAquaRetreat, MSGBOX_DEFAULT
     delay 20
-    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1, Route115_Movement_Aqua1Retreat
-    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2, Route115_Movement_Aqua2Retreat
+    special StorePlayerCoordsInVars
+    call Route115_EventScript_SelectAqua1Retreat
+    call Route115_EventScript_SelectAqua2Retreat
     applymovement LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_1, Route115_Movement_Sharpedo1Retreat
     applymovement LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_2, Route115_Movement_Sharpedo2Retreat
     waitmovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1
@@ -207,6 +208,26 @@ Route115_EventScript_Sharpedo::
     msgbox Route115_Text_Sharpedo, MSGBOX_DEFAULT
     end
 
+Route115_EventScript_SelectAqua1Retreat::
+    goto_if_ne VAR_0x8004, 11, Route115_EventScript_Aqua1RetreatDefault
+    goto_if_ne VAR_0x8005, 68, Route115_EventScript_Aqua1RetreatDefault
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1, Route115_Movement_Aqua1Retreat_Below
+    return
+
+Route115_EventScript_Aqua1RetreatDefault::
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_1, Route115_Movement_Aqua1Retreat
+    return
+
+Route115_EventScript_SelectAqua2Retreat::
+    goto_if_ne VAR_0x8004, 10, Route115_EventScript_Aqua2RetreatDefault
+    goto_if_ne VAR_0x8005, 67, Route115_EventScript_Aqua2RetreatDefault
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2, Route115_Movement_Aqua2Retreat_Left
+    return
+
+Route115_EventScript_Aqua2RetreatDefault::
+    applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2, Route115_Movement_Aqua2Retreat
+    return
+
 Route115_Movement_Aqua1Retreat:
     walk_down
     walk_down
@@ -232,6 +253,33 @@ Route115_Movement_Aqua2Retreat:
 	walk_left
 	walk_down
 	walk_down
+    step_end
+
+Route115_Movement_Aqua1Retreat_Below:
+    walk_left
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_left
+    walk_down
+    walk_down
+    step_end
+
+Route115_Movement_Aqua2Retreat_Left:
+	walk_left
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_left
+    walk_left
+    walk_down
+    walk_down
     step_end
 
 Route115_Movement_LucarioRetreat:
