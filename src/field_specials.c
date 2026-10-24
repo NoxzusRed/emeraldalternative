@@ -72,6 +72,9 @@
 #include "palette.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "bike.h"
+#include "follower_npc.h"
+#include "item.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -194,6 +197,34 @@ u16 GetPlayerAvatarBike(void)
         return 2;
     return 0;
 }
+
+u16 GetOrMountCyclingRoadBike(void)
+{
+    u16 bike = GetPlayerAvatarBike();
+    // Si el jugador ya esta montado, no cambiar nada.
+    if (bike != 0)
+        return bike;
+    // Si tiene la bicicleta acrobatica, montarla.
+    if (CheckBagHasItem(ITEM_ACRO_BIKE, 1))
+    {
+        GetOnOffBike(PLAYER_AVATAR_FLAG_ACRO_BIKE);
+    }
+    // Si tiene la bicicleta de carrera, montarla.
+    else if (CheckBagHasItem(ITEM_MACH_BIKE, 1))
+    {
+        GetOnOffBike(PLAYER_AVATAR_FLAG_MACH_BIKE);
+    }
+    // Si no tiene ninguna bicicleta, mantener el caso original.
+    else
+    {
+        return 0;
+    }
+    // Actualizar el estado del Pokemon/NPC acompañante.
+    FollowerNPC_HandleBike();
+    // Devolver el tipo de bicicleta que esta utilizando.
+    return GetPlayerAvatarBike();
+}
+
 
 static void DetermineCyclingRoadResults(u32 numFrames, u8 numBikeCollisions)
 {
