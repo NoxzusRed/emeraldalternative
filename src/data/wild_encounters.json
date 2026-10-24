@@ -2809,7 +2809,7 @@
               {
                 "min_level": 20,
                 "max_level": 20,
-                "species": "SPECIES_SEWADDLE"
+                "species": "SPECIES_MURKROW"
               },
               {
                 "min_level": 20,
@@ -2819,7 +2819,7 @@
               {
                 "min_level": 21,
                 "max_level": 21,
-                "species": "SPECIES_SEWADDLE"
+                "species": "SPECIES_MURKROW"
               },
               {
                 "min_level": 22,
@@ -2834,7 +2834,7 @@
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_SWADLOON"
+                "species": "SPECIES_MURKROW"
               },
               {
                 "min_level": 22,
@@ -2844,7 +2844,7 @@
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_SWADLOON"
+                "species": "SPECIES_MURKROW"
               }
             ]
           }
@@ -3512,7 +3512,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PETILIL"
+                "species": "SPECIES_SWADLOON"
               },
               {
                 "min_level": 27,
@@ -3522,12 +3522,12 @@
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_PETILIL"
+                "species": "SPECIES_SWADLOON"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_PETILIL"
+                "species": "SPECIES_SWADLOON"
               },
               {
                 "min_level": 24,
