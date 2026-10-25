@@ -12284,6 +12284,40 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_UNDERWATER_DEWFORD",
+          "base_label": "gUnderwater_Dewford",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_DHELMISE"
+              }
+            ]
+          }
         }
       ]
     },

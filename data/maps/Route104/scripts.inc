@@ -389,7 +389,7 @@ Route104_EventScript_ArriveInDewford::
 	showobjectat LOCALID_PLAYER, MAP_DEWFORD_TOWN
 	applymovement LOCALID_PLAYER, Route104_Movement_PlayerMoveForBriney
 	waitmovement 0
-	setobjectxyperm LOCALID_DEWFORD_BRINEY, 32, 8
+	setobjectxyperm LOCALID_DEWFORD_BRINEY, 34, 8
 	addobject LOCALID_DEWFORD_BRINEY
 	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
 	clearflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN

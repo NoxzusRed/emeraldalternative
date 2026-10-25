@@ -114,7 +114,7 @@
     {
       "id": "LAYOUT_DEWFORD_TOWN",
       "name": "DewfordTown_Layout",
-      "width": 40,
+      "width": 42,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
@@ -4700,6 +4700,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/DewfordCave/border.bin",
       "blockdata_filepath": "data/layouts/DewfordCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_DEWFORD",
+      "name": "Underwater_Dewford_Layout",
+      "width": 42,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_Dewford/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_Dewford/map.bin"
     }
   ]
 }

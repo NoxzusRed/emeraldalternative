@@ -457,7 +457,8 @@
     "FallarborMines_B1F",
     "Underwater_Route124_Cave",
     "Route127_Cave",
-    "DewfordCave"
+    "DewfordCave",
+    "Underwater_Dewford"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

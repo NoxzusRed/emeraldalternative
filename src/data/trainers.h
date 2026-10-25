@@ -13443,22 +13443,22 @@ F_TRAINER_FEMALE |
             },
             {
 #line 5435
-            .species = SPECIES_CLOBBOPUS,
+            .species = SPECIES_MEDITITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5438
             .ev = TRAINER_PARTY_EVS(126, 0, 0, 0, 0, 0),
 #line 5437
-            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 0, 12),
 #line 5436
             .lvl = 17,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 5439
-                MOVE_ROCK_SMASH,
-                MOVE_BULLET_PUNCH,
+                MOVE_AURA_SPHERE,
+                MOVE_PSYBEAM,
                 MOVE_DETECT,
-                MOVE_BULK_UP,
+                MOVE_CALM_MIND,
             },
             },
             {

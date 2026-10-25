@@ -1214,3 +1214,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LittlerootTown_StartersHouse/scripts.inc"
 
 	.include "data/maps/DewfordCave/scripts.inc"
+
+	.include "data/maps/Underwater_Dewford/scripts.inc"

@@ -1254,8 +1254,8 @@
 #define FLAG_ITEM_ROUTE_115_TM_SMART_STRIKE                         0x4B1 //
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_POWER_GEM                   0x4B2 //
 #define FLAG_ITEM_DEWFORD_CAVE_FOCUS_BAND                           0x4B3 //
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
+#define FLAG_ITEM_DEWFORD_UNDERWATER_PP_MAX                         0x4B4 //
+#define FLAG_ITEM_DEWFORD_UNDERWATER_FULL_RESTORE                   0x4B5 //
 #define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
 #define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
 #define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
