@@ -114,7 +114,7 @@
     {
       "id": "LAYOUT_DEWFORD_TOWN",
       "name": "DewfordTown_Layout",
-      "width": 20,
+      "width": 40,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
@@ -4690,6 +4690,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/LittlerootTown_StartersHouse/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_StartersHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_CAVE",
+      "name": "DewfordCave_Layout",
+      "width": 20,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DewfordCave/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordCave/map.bin"
     }
   ]
 }

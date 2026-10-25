@@ -1212,3 +1212,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route121_North_BikeStop/scripts.inc"
 
 	.include "data/maps/LittlerootTown_StartersHouse/scripts.inc"
+
+	.include "data/maps/DewfordCave/scripts.inc"

@@ -627,6 +627,17 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 	release
 	end
 
+DewfordTown_EventScript_Crustle::
+	lock
+	playmoncry SPECIES_CRUSTLE, CRY_MODE_NORMAL
+    msgbox DewfordTown_Text_Crustle, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+DewfordTown_Text_Crustle:
+	.string "Crsss... *clack* *clack*!$"
+
 DewfordTown_Text_TinyIslandCommunity:
 	.string "DEWFORD is a tiny island community.\n"
 	.string "If something gets trendy here,\l"

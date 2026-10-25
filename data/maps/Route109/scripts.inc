@@ -48,7 +48,7 @@ Route109_EventScript_DoSailToDewford::
 	waitmovement 0
 	addobject LOCALID_DEWFORD_BOAT
 	clearflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	setobjectxyperm LOCALID_DEWFORD_BRINEY, 12, 8
+	setobjectxyperm LOCALID_DEWFORD_BRINEY, 32, 8
 	addobject LOCALID_DEWFORD_BRINEY
 	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
 	applymovement LOCALID_DEWFORD_BRINEY, Route109_Movement_BrineyExitBoat

@@ -5432,14 +5432,14 @@ EVs: 126 HP
 - Detect
 - Bulk Up
 
-Clobbopus
+Meditite
 Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
-- Rock Smash
-- Bullet Punch
+IVs: 12 HP / 12 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
+EVs: 126 HP 126 SpA
+- Vacuum Wave
+- Psybeam
 - Detect
-- Bulk Up
+- Calm Mind
 
 Mienfoo @ Sitrus Berry
 Level: 20
