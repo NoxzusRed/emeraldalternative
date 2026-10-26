@@ -920,6 +920,38 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 	releaseall
 	end
 
+SlateportCity_EventScript_Machoke::
+	lock
+	playmoncry SPECIES_MACHOKE, CRY_MODE_NORMAL
+	msgbox SlateportCity_Text_Machoke, MSGBOX_SIGN
+	waitmoncry
+	release
+	end
+
+SlateportCity_EventScript_Glalie::
+	lock
+	playmoncry SPECIES_GLALIE, CRY_MODE_NORMAL
+	msgbox SlateportCity_Text_Glalie, MSGBOX_SIGN
+	waitmoncry
+	release
+	end
+
+SlateportCity_EventScript_PokeballShopOwner::
+	msgbox SlateportCity_Text_NewPokeballShop, MSGBOX_NPC
+	end
+
+SlateportCity_Text_NewPokeballShop:
+	.string "I came to Slateport to build my own\n"
+	.string "Pokeball Shop.\p"
+	.string "You should come back in the future and\n"
+	.string "check it out yourself!$"
+
+SlateportCity_Text_Glalie:
+	.string "Shhh-krrr...!$"
+
+SlateportCity_Text_Machoke:
+	.string "Goooh-rah!$"
+
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the ENERGY GURU! I'll go for it and\n"
 	.string "sell you what you need!$"
