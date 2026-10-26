@@ -4,6 +4,7 @@ DewfordTown_MapScripts::
 
 DewfordTown_OnTransition:
 	setflag FLAG_VISITED_DEWFORD_TOWN
+	call Common_EventScript_KeepMrBrineyEverywhere
 	end
 
 DewfordTown_EventScript_Briney::

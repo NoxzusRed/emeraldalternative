@@ -16,6 +16,7 @@ Route104_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call Route104_EventScript_TrySetRivalPos
 	call Route104_EventScript_ShowOrHideWhiteHerbFlorist
+	call Common_EventScript_KeepMrBrineyEverywhere
 	end
 
 Route104_EventScript_ShowOrHideWhiteHerbFlorist::

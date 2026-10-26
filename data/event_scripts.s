@@ -721,8 +721,37 @@ Common_EventScript_BufferTrendyPhrase::
 	return
 
 EventScript_BackupMrBrineyLocation::
+	@ Guardar el estado anterior.
 	copyvar VAR_0x8008, VAR_BRINEY_LOCATION
-	setvar VAR_BRINEY_LOCATION, 0
+	@ 4 indica que Briney esta viajando en barco.
+	setvar VAR_BRINEY_LOCATION, 4
+	@ Ocultar temporalmente los destinos.
+	setflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
+	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
+	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY
+	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
+	return
+
+Common_EventScript_KeepMrBrineyEverywhere::
+	@ No mostrar antes de rescatar a Peeko.
+	goto_if_eq VAR_BRINEY_HOUSE_STATE, 0, Common_EventScript_NopReturn
+	@ No mostrar anticipadamente durante un viaje en barco.
+	goto_if_eq VAR_BRINEY_LOCATION, 4, Common_EventScript_NopReturn
+	@ No interferir con el embarque desde su casa.
+	goto_if_eq VAR_BOARD_BRINEY_BOAT_STATE, 1, Common_EventScript_NopReturn
+	@ Casa de Briney.
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	@ Ruta 104.
+	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
+	@ Dewford.
+	clearflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
+	clearflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
+	@ Ruta 109 (Slateport).
+	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY
+	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
+	@ Reservar el Briney exterior para el embarque.
+	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY
 	return
 
 	.include "data/scripts/surf.inc"
