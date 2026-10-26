@@ -141,6 +141,62 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
       "flag": "FLAG_TEMP_14"
+    },
+    {
+      "local_id": "LOCALID_ROUTE106_POPPLIO_2",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POPPLIO)",
+      "x": 21,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route106_EventScript_Popplio7",
+      "flag": "FLAG_TEMP_6"
+    },
+    {
+      "local_id": "LOCALID_ROUTE106_BRIONNE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BRIONNE)",
+      "x": 13,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route106_EventScript_Brionne24",
+      "flag": "FLAG_TEMP_8"
+    },
+    {
+      "local_id": "LOCALID_ROUTE106_POPPLIO_1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POPPLIO)",
+      "x": 15,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route106_EventScript_Popplio5",
+      "flag": "FLAG_TEMP_5"
+    },
+    {
+      "local_id": "LOCALID_ROUTE106_POPPLIO_3",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POPPLIO)",
+      "x": 17,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route106_EventScript_Popplio9",
+      "flag": "FLAG_TEMP_7"
     }
   ],
   "warp_events": [

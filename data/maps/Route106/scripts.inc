@@ -1,5 +1,73 @@
 Route106_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, Route106_OnResume
 	.byte 0
+
+Route106_OnResume:
+    call_if_set FLAG_TEMP_5, Route106_RemovePopplio1
+    call_if_set FLAG_TEMP_6, Route106_RemovePopplio2
+    call_if_set FLAG_TEMP_7, Route106_RemovePopplio3
+    call_if_set FLAG_TEMP_8, Route106_RemoveBrionne
+    end
+
+Route106_RemovePopplio1::
+    removeobject LOCALID_ROUTE106_POPPLIO_1
+    return
+
+Route106_RemovePopplio2::
+    removeobject LOCALID_ROUTE106_POPPLIO_2
+    return
+
+Route106_RemovePopplio3::
+    removeobject LOCALID_ROUTE106_POPPLIO_3
+    return
+
+Route106_RemoveBrionne::
+    removeobject LOCALID_ROUTE106_BRIONNE
+    return
+
+Route106_EventScript_Popplio5::
+    lock
+    faceplayer
+    playmoncry SPECIES_POPPLIO, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_5
+    setwildbattle SPECIES_POPPLIO, 5
+    dowildbattle
+    release
+    end
+
+Route106_EventScript_Popplio7::
+    lock
+    faceplayer
+    playmoncry SPECIES_POPPLIO, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_6
+    setwildbattle SPECIES_POPPLIO, 7
+    dowildbattle
+    release
+    end
+
+Route106_EventScript_Popplio9::
+    lock
+    faceplayer
+    playmoncry SPECIES_POPPLIO, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_7
+    setwildbattle SPECIES_POPPLIO, 9
+    dowildbattle
+    release
+    end
+
+Route106_EventScript_Brionne24::
+    lock
+    faceplayer
+    playmoncry SPECIES_BRIONNE, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_8
+    setwildbattle SPECIES_BRIONNE, 24
+    dowildbattle
+    release
+    end
 
 Route106_EventScript_TrainerTipsSign::
 	msgbox Route106_Text_TrainerTips, MSGBOX_SIGN
