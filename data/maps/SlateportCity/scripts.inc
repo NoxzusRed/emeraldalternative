@@ -4,11 +4,16 @@ SlateportCity_MapScripts::
 	.byte 0
 
 SlateportCity_OnTransition:
-	setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
-	call SlateportCity_EventScript_EnterSlateport
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
-	call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
-	end
+    call_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_EventScript_UsePostLeagueLayout
+    setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
+    call SlateportCity_EventScript_EnterSlateport
+    call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
+    call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
+    end
+
+SlateportCity_EventScript_UsePostLeagueLayout::
+    setmaplayoutindex LAYOUT_SLATEPORT_CITY_POST_LEAGUE
+    return
 
 SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_VISITED_SLATEPORT_CITY
@@ -939,6 +944,17 @@ SlateportCity_EventScript_Glalie::
 SlateportCity_EventScript_PokeballShopOwner::
 	msgbox SlateportCity_Text_NewPokeballShop, MSGBOX_NPC
 	end
+
+SlateportCity_EventScript_PokeballShopSign::
+    goto_if_unset FLAG_SYS_GAME_CLEAR, SlateportCity_EventScript_PokeballShopSign_Hidden
+    msgbox SlateportCity_Text_PokeballShopSign, MSGBOX_SIGN
+    end
+
+SlateportCity_EventScript_PokeballShopSign_Hidden::
+    end
+
+SlateportCity_Text_PokeballShopSign:
+    .string "SLATEPORT POKEBALL MART$"
 
 SlateportCity_Text_NewPokeballShop:
 	.string "I came to Slateport to build my own\n"

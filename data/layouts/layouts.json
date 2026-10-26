@@ -4710,6 +4710,26 @@
       "secondary_tileset": "gTileset_Underwater",
       "border_filepath": "data/layouts/Underwater_Dewford/border.bin",
       "blockdata_filepath": "data/layouts/Underwater_Dewford/map.bin"
+    },
+    {
+      "id": "LAYOUT_SLATEPORT_CITY_POST_LEAGUE",
+      "name": "SlateportCity_PostLeague_Layout",
+      "width": 42,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/SlateportCity_PostLeague/border.bin",
+      "blockdata_filepath": "data/layouts/SlateportCity_PostLeague/map.bin"
+    },
+    {
+      "id": "LAYOUT_SLATEPORT_CITY_POKEBALL_SHOP",
+      "name": "SlateportCity_PokeballShop_Layout",
+      "width": 19,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/SlateportCity_PokeballShop/border.bin",
+      "blockdata_filepath": "data/layouts/SlateportCity_PokeballShop/map.bin"
     }
   ]
 }

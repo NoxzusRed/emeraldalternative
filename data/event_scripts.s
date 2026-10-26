@@ -1245,3 +1245,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DewfordCave/scripts.inc"
 
 	.include "data/maps/Underwater_Dewford/scripts.inc"
+
+	.include "data/maps/SlateportCity_PostLeague/scripts.inc"
+
+	.include "data/maps/SlateportCity_PokeballShop/scripts.inc"

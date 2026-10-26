@@ -96,7 +96,8 @@
     "Route103_South",
     "RustboroCity_East",
     "FallarborTown_East",
-    "Route121_North"
+    "Route121_North",
+    "SlateportCity_PostLeague"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -188,7 +189,8 @@
     "SlateportCity_House",
     "SlateportCity_PokemonCenter_1F",
     "SlateportCity_PokemonCenter_2F",
-    "SlateportCity_Mart"
+    "SlateportCity_Mart",
+    "SlateportCity_PokeballShop"
   ],
   "gMapGroup_IndoorMauville": [
     "MauvilleCity_Gym",
