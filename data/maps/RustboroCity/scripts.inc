@@ -1056,6 +1056,17 @@ RustboroCity_Movement_TrevenantRunLeft:
 	walk_faster_left
 	step_end
 
+RustboroCity_EventScript_Poochyena::
+	lock
+	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
+	msgbox RustboroCity_Text_Poochyena, MSGBOX_SIGN
+	waitmoncry
+	release
+	end
+
+RustboroCity_Text_Poochyena:
+	.string "Grrr-waf!$"
+
 RustboroCity_Text_Trevenant:
 	.string "Crrreeek...!$"
 
@@ -1064,7 +1075,6 @@ RustboroCity_Text_RiiTaTa:
 
 RustboroCity_Text_Bam:
 	.string "BA-BA-BA-BAAAM!$"
-
 
 RustboroCity_Text_WeShortenItToDevon:
 	.string "The DEVON CORPORATION…\n"
