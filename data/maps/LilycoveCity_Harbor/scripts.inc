@@ -9,7 +9,7 @@ LilycoveCity_Harbor_OnTransition:
 LilycoveCity_Harbor_EventScript_FerryAttendant::
 	lock
 	faceplayer
-	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_FerryUnavailable
+	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_RegionalFerry
 	call LilycoveCity_Harbor_EventScript_GetEonTicketState
 	call LilycoveCity_Harbor_EventScript_GetAuroraTicketState
 	call LilycoveCity_Harbor_EventScript_GetOldSeaMapState
@@ -553,6 +553,43 @@ LilycoveCity_Harbor_Pokemart_Tickets:
 	.2byte ITEM_EON_TICKET
 	.2byte ITEM_OLD_SEA_MAP
 	pokemartlistend
+
+LilycoveCity_Harbor_EventScript_RegionalFerry::
+    goto_if_unset FLAG_VISITED_LILYCOVE_CITY, LilycoveCity_Harbor_EventScript_FerryUnavailable
+
+    @ Confirmar viaje
+    msgbox LilycoveCity_Harbor_Text_RegionalFerry, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_ExitSailSelect
+
+    @ Comprobar que tiene 200
+    checkmoney 200
+    goto_if_eq VAR_RESULT, FALSE, LilycoveCity_Harbor_EventScript_RegionalFerryNoMoney
+
+	@ Cobrar el viaje
+    removemoney 200
+    @ Reproducir sonido de compra
+    playse SE_SHOP
+    waitse
+    closemessage
+
+    @ Llegar afuera del puerto de Slateport
+    warp MAP_SLATEPORT_CITY, 30, 13
+    waitstate
+    release
+    end
+
+LilycoveCity_Harbor_EventScript_RegionalFerryNoMoney::
+    msgbox LilycoveCity_Harbor_Text_RegionalFerryNoMoney, MSGBOX_DEFAULT
+    release
+    end
+
+LilycoveCity_Harbor_Text_RegionalFerry:
+    .string "Ferry to SLATEPORT CITY: ¥200.\p"
+    .string "Would you like to travel?$"
+
+LilycoveCity_Harbor_Text_RegionalFerryNoMoney:
+    .string "Sorry, you don't have enough\n"
+    .string "money for the ferry.$"
 
 LilycoveCity_Harbor_Text_FerryUnavailable:
 	.string "I beg your pardon?\n"

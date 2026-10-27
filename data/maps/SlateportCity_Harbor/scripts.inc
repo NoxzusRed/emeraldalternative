@@ -3,11 +3,23 @@ SlateportCity_Harbor_MapScripts::
 	.byte 0
 
 SlateportCity_Harbor_OnTransition:
-	setescapewarp MAP_SLATEPORT_CITY, 28, 13
-	setvar VAR_TEMP_1, 0
-	call_if_eq VAR_SLATEPORT_HARBOR_STATE, 1, SlateportCity_Harbor_EventScript_ReadyAquaEscapeScene
-	call_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_ShowSSTidal
-	end
+    setescapewarp MAP_SLATEPORT_CITY, 28, 13
+    setvar VAR_TEMP_1, 0
+    call_if_eq VAR_SLATEPORT_HARBOR_STATE, 1, SlateportCity_Harbor_EventScript_ReadyAquaEscapeScene
+    @ Habilitar personal del ferry regional
+    call_if_set FLAG_VISITED_LILYCOVE_CITY, SlateportCity_Harbor_EventScript_EnableRegionalFerry
+    @ El S.S. Tidal sigue siendo postgame
+    call_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_ShowSSTidal
+    end
+
+SlateportCity_Harbor_EventScript_EnableRegionalFerry::
+    @ No interferir con el robo del submarino
+    goto_if_eq VAR_SLATEPORT_HARBOR_STATE, 1, SlateportCity_Harbor_EventScript_EndEnableRegionalFerry
+
+    clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
+
+SlateportCity_Harbor_EventScript_EndEnableRegionalFerry::
+    return
 
 SlateportCity_Harbor_EventScript_ShowSSTidal::
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL
@@ -155,12 +167,16 @@ SlateportCity_Harbor_Movement_PlayerWalkUp:
 	step_end
 
 SlateportCity_Harbor_EventScript_FerryAttendant::
-	lock
-	faceplayer
-	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_AskForTicket
-	msgbox SlateportCity_Harbor_Text_FerryServiceUnavailable, MSGBOX_DEFAULT
-	release
-	end
+    lock
+    faceplayer
+    @ Despues de la Liga: crucero original
+    goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_AskForTicket
+    @ Antes de la Liga: viaje rapido
+    goto_if_set FLAG_VISITED_LILYCOVE_CITY, SlateportCity_Harbor_EventScript_RegionalFerry
+    @ Todavia no visito Lilycove
+    msgbox SlateportCity_Harbor_Text_FerryServiceUnavailable, MSGBOX_DEFAULT
+    release
+    end
 
 SlateportCity_Harbor_EventScript_AskForTicket::
 	msgbox SlateportCity_Harbor_Text_MayISeeYourTicket, MSGBOX_DEFAULT
@@ -379,6 +395,41 @@ SlateportCity_Harbor_EventScript_TradedScanner::
 	msgbox SlateportCity_Harbor_Text_ThisWillHelpResearch, MSGBOX_DEFAULT
 	release
 	end
+
+SlateportCity_Harbor_EventScript_RegionalFerry::
+    @ Confirmar viaje
+    msgbox SlateportCity_Harbor_Text_RegionalFerry, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_CancelDestinationSelect
+
+    @ Comprobar que tiene 200
+    checkmoney 200
+    goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_RegionalFerryNoMoney
+
+    @ Cobrar el viaje
+    removemoney 200
+    @ Reproducir sonido de compra
+    playse SE_SHOP
+    waitse
+	closemessage
+
+    @ Llegar afuera del puerto de Lilycove
+    warp MAP_LILYCOVE_CITY, 12, 33
+    waitstate
+    release
+    end
+
+SlateportCity_Harbor_EventScript_RegionalFerryNoMoney::
+    msgbox SlateportCity_Harbor_Text_RegionalFerryNoMoney, MSGBOX_DEFAULT
+    release
+    end
+
+SlateportCity_Harbor_Text_RegionalFerry:
+    .string "Ferry to LILYCOVE CITY: ¥200.\p"
+    .string "Would you like to travel?$"
+
+SlateportCity_Harbor_Text_RegionalFerryNoMoney:
+    .string "Sorry, you don't have enough\n"
+    .string "money for the ferry.$"
 
 SlateportCity_Harbor_Text_FerryServiceUnavailable:
 	.string "I beg your pardon?\n"
