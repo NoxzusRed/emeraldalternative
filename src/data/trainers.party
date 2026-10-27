@@ -1012,16 +1012,25 @@ Double Battle: No
 AI: Check Bad Move
 
 Drilbur
-Level: 25
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP
 - Dig
 - Slash
 
 Skorupi
-Level: 25
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP
 - Dig
 - Bug Bite
+
+Sandile
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP
+- Dig
+- Bite
 
 === TRAINER_CHIP ===
 Name: CHIP
@@ -1081,17 +1090,26 @@ Double Battle: No
 AI: Check Bad Move
 
 Drilbur
-Level: 27
-IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+Level: 30
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+EVs: 126 HP
 - Dig
 - Slash
 
 Skorupi
-Level: 27
-IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+Level: 30
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+EVs: 126 HP
 - Dig
 - Bug Bite
 - Cross Poison
+
+Krokorok
+Level: 30
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+EVs: 126 HP
+- Dig
+- Crunch
 
 === TRAINER_DUSTY_3 ===
 Name: DUSTY
@@ -1103,18 +1121,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Excadrill
-Level: 31
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Level: 33
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+EVs: 126 HP
 - Dig
 - Slash
 - Metal Claw
 
 Skorupi
-Level: 31
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Level: 33
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+EVs: 252 HP
 - Dig
 - Bug Bite
 - Cross Poison
+
+Krokorok
+Level: 33
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+EVs: 126 HP
+- Dig
+- Crunch
 
 === TRAINER_DUSTY_4 ===
 Name: DUSTY
@@ -1126,18 +1153,28 @@ Double Battle: No
 AI: Check Bad Move
 
 Excadrill
-Level: 33
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Level: 36
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP
 - Dig
 - Slash
 - Metal Claw
 
 Skorupi
-Level: 33
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Level: 36
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Atk / 252 Spe
 - Dig
 - Bug Bite
 - Cross Poison
+- Crunch
+
+Krokorok
+Level: 36
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP
+- Dig
+- Crunch
 
 === TRAINER_DUSTY_5 ===
 Name: DUSTY
@@ -1149,20 +1186,32 @@ Double Battle: No
 AI: Check Bad Move
 
 Excadrill
-Level: 36
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 HP / 126 Spe
 - Earthquake
 - Slash
 - Metal Claw
 - X-Scissor
 
 Drapion
-Level: 36
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 HP / 126 Spe
 - Earthquake
 - X-Scissor
 - Cross Poison
 - Crunch
+
+Krookodile
+Level: 40
+Ability: Moxie
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 HP / 126 Spe
+- Earthquake
+- Crunch
+- Outrage
+- Ice Fang
 
 === TRAINER_GABBY_AND_TY_1 ===
 Name: GABBY & TY
@@ -4222,14 +4271,20 @@ AI: Check Bad Move
 
 Drilbur
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 Spe / 126 HP
 - Dig
 - Slash
 - Metal Claw
 
 Carkol
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Nature: Jolly
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 31 Spe
+EVs: 252 Spe
+- Flame Charge
+- Rock Blast
+- Take Down
 
 === TRAINER_BEAU ===
 Name: BEAU
@@ -4242,7 +4297,7 @@ AI: Check Bad Move
 
 Baltoy
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rapid Spin
 - Mud Slap
 - Psybeam
@@ -4250,15 +4305,23 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Helioptile
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP
+- Volt Switch
+- Swift
+- Thunder Wave
+- Morning Sun
 
-Baltoy
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rapid Spin
-- Mud Slap
-- Psybeam
-- Rock Tomb
+Cacnea
+Level: 25
+Nature: Relaxed
+Ability: Sand Veil
+IVs: 24 HP / 0 Atk / 24 Def / 0 SpA / 24 SpD / 0 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+- Ingrain
+- Leech Seed
+- Giga Drain
+- Drain Punch
 
 === TRAINER_LARRY ===
 Name: LARRY
@@ -9442,12 +9505,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Skorupi
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 26
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 Atk / 252 HP
+- Cross Poison
+- Bug Bite
+- Night Slash
 
 Baltoy
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 26
+IVs: 31 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP
 - Rapid Spin
 - Mud Slap
 - Psybeam
@@ -9464,7 +9532,8 @@ AI: Check Bad Move
 
 Skorupi
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 31 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP
 - Sand Attack
 - Poison Sting
 - Slash
@@ -9472,7 +9541,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Azumarill
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 12 Atk / 24 Def / 12 SpA / 24 SpD / 12 Spe
+EVs: 126 HP / 126 Def / 126 SpD
 - Rollout
 - Bubble Beam
 - Tail Whip
@@ -9489,11 +9559,11 @@ AI: Check Bad Move
 
 Hoothoot
 Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Skiploom
 Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_NANCY ===
 Name: NANCY
@@ -15119,12 +15189,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Azumarill
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 25
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP
 
 Skiploom
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 25
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP
 
 === TRAINER_BRYAN ===
 Name: BRYAN
@@ -15137,15 +15209,16 @@ AI: Check Bad Move
 
 Skorupi
 Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Drilbur
 Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Yamask
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 26
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP
 
 === TRAINER_BRANDEN ===
 Name: BRANDEN
@@ -15157,12 +15230,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 25
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP
 
 Petilil
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 25
+Nature: Adamant
+IVs: 24 HP / 31 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 126 HP
+- Bullet Seed
+- Bulk Up
 
 === TRAINER_BRYANT ===
 Name: BRYANT
@@ -18458,3 +18536,31 @@ EVs: 126 HP
 Murkrow
 Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+=== TRAINER_HEX_MANIAC_ROUTE111_EAST ===
+Name: ALMA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move
+
+Phantump
+Level: 29
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 252 Atk
+- Horn Leech
+- Shadow Claw
+- Poison Jab
+
+Sableye
+Level: 29
+Nature: Modest
+IVs: 31 HP / 12 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 252 SpA
+- Shadow Ball
+- Dark Pulse
+- Power Gem
+- Thunder Wave
