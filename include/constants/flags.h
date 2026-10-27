@@ -1258,7 +1258,7 @@
 #define FLAG_ITEM_DEWFORD_UNDERWATER_FULL_RESTORE                   0x4B5 //
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_STARDUST                       0x4B6 // 
 #define FLAG_ITEM_ROUTE_111_EAST_SOFT_SAND                          0x4B7 //
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
+#define FLAG_ITEM_RUSTURF_TUNNEL_HIGH_SUN_STONE                     0x4B8 //
 #define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
 #define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
 #define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag

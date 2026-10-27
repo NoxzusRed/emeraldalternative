@@ -171,6 +171,13 @@
       "elevation": 3,
       "dest_map": "MAP_ROUTE116",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 37,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTURF_TUNNEL_HIGH",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

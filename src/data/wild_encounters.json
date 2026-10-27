@@ -12456,6 +12456,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_RUSTURF_TUNNEL_HIGH",
+          "base_label": "gRusturfTunnel_High",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_NOIBAT"
+              },
+              {
+                "min_level": 20,
+                "max_level": 21,
+                "species": "SPECIES_LOUDRED"
+              },
+              {
+                "min_level": 20,
+                "max_level": 21,
+                "species": "SPECIES_LOUDRED"
+              },
+              {
+                "min_level": 20,
+                "max_level": 21,
+                "species": "SPECIES_LOUDRED"
+              },
+              {
+                "min_level": 20,
+                "max_level": 21,
+                "species": "SPECIES_LOUDRED"
+              },
+              {
+                "min_level": 20,
+                "max_level": 21,
+                "species": "SPECIES_LOUDRED"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_CHIMECHO"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_CHIMECHO"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_WHISMUR"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_WHISMUR"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_WHISMUR"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_WHISMUR"
+              }
+            ]
+          }
         }
       ]
     },

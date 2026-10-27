@@ -462,7 +462,8 @@
     "Route127_Cave",
     "DewfordCave",
     "Underwater_Dewford",
-    "Route111_Cave"
+    "Route111_Cave",
+    "RusturfTunnel_High"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

@@ -1284,7 +1284,7 @@
     {
       "id": "LAYOUT_RUSTURF_TUNNEL",
       "name": "RusturfTunnel_Layout",
-      "width": 36,
+      "width": 42,
       "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_RusturfTunnel",
@@ -4750,6 +4750,16 @@
       "secondary_tileset": "gTileset_MirageTower",
       "border_filepath": "data/layouts/Route111_Cave/border.bin",
       "blockdata_filepath": "data/layouts/Route111_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTURF_TUNNEL_HIGH",
+      "name": "RusturfTunnel_High_Layout",
+      "width": 19,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RusturfTunnel",
+      "border_filepath": "data/layouts/RusturfTunnel_High/border.bin",
+      "blockdata_filepath": "data/layouts/RusturfTunnel_High/map.bin"
     }
   ]
 }
