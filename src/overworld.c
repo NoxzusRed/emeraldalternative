@@ -841,9 +841,51 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
     return SetDiveWarp(CONNECTION_DIVE, x, y);
 }
 
+static bool8 IsRoute111DesertCrossingFromEast(void)
+{
+    // Comprobar que venimos de Route111_East.
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111_EAST)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_ROUTE111_EAST))
+        return FALSE;
+    // Comprobar que estamos entrando a Route111.
+    if (sWarpDestination.mapGroup != MAP_GROUP(MAP_ROUTE111)
+     || sWarpDestination.mapNum != MAP_NUM(MAP_ROUTE111))
+        return FALSE;
+    // Verificar que cruzamos por el paso del desierto.
+    if (gSaveBlock1Ptr->pos.y < 57
+     || gSaveBlock1Ptr->pos.y > 59)
+        return FALSE;
+    // Solo conservar los efectos si hay tormenta.
+    return GetSavedWeather() == WEATHER_SANDSTORM;
+}
+
+static bool8 IsRoute111UpperCrossingToEast(void)
+{
+    // Comprobar que venimos de Route111
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_ROUTE111))
+        return FALSE;
+    // Comprobar que entramos a Route111_East
+    if (sWarpDestination.mapGroup != MAP_GROUP(MAP_ROUTE111_EAST)
+     || sWarpDestination.mapNum != MAP_NUM(MAP_ROUTE111_EAST))
+        return FALSE;
+    // Comprobar que cruzamos por la entrada superior
+    if (gSaveBlock1Ptr->pos.y < 16
+     || gSaveBlock1Ptr->pos.y > 19)
+        return FALSE;
+    return TRUE;
+}
+
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
+    bool8 preserveDesertWeather;
+
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
+
+    // Detectar el cruce antes de cambiar de mapa.
+    preserveDesertWeather =
+        IsRoute111DesertCrossingFromEast() ||
+        IsRoute111UpperCrossingToEast();
 
     // Dont transition map music between BF Outside West/East
     if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
@@ -865,7 +907,10 @@ if (I_VS_SEEKER_CHARGING != 0)
     MapResetTrainerRematches(mapGroup, mapNum);
 
     DoTimeBasedEvents();
-    SetSavedWeatherFromCurrMapHeader();
+    // Mantener la tormenta al cruzar entre las
+    // dos partes del desierto.
+    if (!preserveDesertWeather)
+        SetSavedWeatherFromCurrMapHeader();
     ChooseAmbientCrySpecies();
     SetDefaultFlashLevel();
     Overworld_ClearSavedMusic();
@@ -1219,6 +1264,15 @@ u16 GetCurrLocationDefaultMusic(void)
 u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
+
+    // Mantener MUS_DESERT al cruzar desde
+    // Route111_East hacia el desierto de Route111.
+    if (IsRoute111DesertCrossingFromEast())
+        return MUS_DESERT;
+    // Mantener la musica de Route111
+    // al entrar a Route111_East por arriba
+    if (IsRoute111UpperCrossingToEast())
+        return MUS_ROUTE110;
     if (music != MUS_ROUTE118)
     {
         return music;
