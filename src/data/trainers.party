@@ -586,7 +586,7 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Mienfoo
+Hariyama
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -653,7 +653,7 @@ Croagunk
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Mienfoo
+Meditite
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2944,8 +2944,8 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 252 HP
 
-Mienfoo
-Level: 36
+Medicham
+Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
@@ -3826,8 +3826,8 @@ AI: Check Bad Move
 
 Mienfoo
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 Atk
+IVs: 31 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 Atk / 252 HP / 126 Def / 126 SpD
 - Thunder Punch
 - Fake Out
 
@@ -5560,7 +5560,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Loudred
-Level: 32
+Level: 33
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 252 Atk / 126 Def / 126 SpD
 - Uproar
@@ -5586,7 +5586,7 @@ EVs: 252 HP / 252 Spe / 50 Def / 50 SpD
 - Rest
 
 Ursaring @ Flame Orb
-Level: 33
+Level: 34
 Ability: Guts
 IVs: 24 HP / 8 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Facade
@@ -5616,7 +5616,7 @@ AI: Basic Trainer / Risky
 Noctowl
 Level: 39
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-EVs: 252 HP / 126 SpA / 252 Def / 126 SpD / 126 Spe
+EVs: 252 HP / 200 SpA / 252 Def / 126 SpD / 126 Spe
 - Air Slash
 - Moonblast
 - Extrasensory
@@ -6495,11 +6495,12 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Mienfoo
+Meditite
 Level: 20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- U-turn
-- Drain Punch
+IVs: 24 HP / 31 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 Atk / 252 HP
+- Bullet Punch
+- Force Palm
 - Fake Out
 - Detect
 
@@ -6521,12 +6522,12 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Mienfoo
+Riolu
 Level: 23
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- U-turn
+- Metal Claw
 - Force Palm
-- Fake Out
+- Quick Attack
 - Detect
 
 Machop
@@ -6542,9 +6543,13 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Mienfoo
+Riolu
 Level: 30
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Metal Claw
+- Force Palm
+- Quick Attack
+- Detect
 
 Machoke
 Level: 30
@@ -6559,9 +6564,13 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Mienfoo
+Lucario
 Level: 33
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Meteor Mash
+- Force Palm
+- Extreme Speed
+- Detect
 
 Machoke
 Level: 33
@@ -6576,9 +6585,13 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Mienfoo
+Lucario
 Level: 36
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+- Meteor Mash
+- Force Palm
+- Extreme Speed
+- Detect
 
 Machamp
 Level: 36
@@ -6592,6 +6605,14 @@ Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
+
+Lucario
+Level: 39
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+- Meteor Mash
+- Force Palm
+- Extreme Speed
+- Detect
 
 Mienshao
 Level: 39
@@ -8654,11 +8675,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Mienfoo
+Makuhita
 Level: 13
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Force Palm
-- Aerial Ace
+- Thunder Punch
 - Detect
 - Fake Out
 
@@ -8692,11 +8713,12 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Mienfoo
+Lucario
 Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Drain Punch
-- Aerial Ace
+IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 Atk / 126 HP
+- Bone Rush
+- Metal Claw
 - Bulk Up
 - Fake Out
 
@@ -8785,7 +8807,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Mienfoo
+Mienshao
 Level: 35
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -10202,15 +10224,23 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Mienfoo
+Medicham
 Level: 36
+Ability: Pure Power
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 252 HP
+- Bullet Punch
+- Zen Headbutt
+- Force Palm
+- Detect
 
 SPECIES_LILLIGANT_HISUI
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP
+EVs: 252 HP / 126 Def / 126 SpD
+- Leaf Blade
+- High Jump Kick
+- Bulk Up
 
 === TRAINER_HUDSON ===
 Name: HUDSON
@@ -12042,12 +12072,12 @@ AI: Basic Trainer
 
 Noctowl
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 252 HP
 
 Breloom
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 252 HP
 
 === TRAINER_ISABELLA ===
@@ -13116,7 +13146,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Mienfoo
+Riolu
 Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunder Punch
@@ -15228,15 +15258,18 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Mienfoo
+Breloom
 Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ice Punch
+Ability: Technician
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mach Punch
+- Bulldoze
+- Bullet Seed
 - Fake Out
 
 Machoke
 Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MARLENE ===
 Name: MARLENE
@@ -15772,14 +15805,14 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Hariyama @ Sitrus Berry
+Mienshao @ Sitrus Berry
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Fake Out
-- Close Combat
-- Knock Off
-- Rock Slide
+- Aura Sphere
+- Dark Pulse
+- Calm Mind
 
 Medicham
 Level: 58
@@ -15828,14 +15861,14 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Rock Slide
 - Protect
 
-Hariyama @ Sitrus Berry
+Mienshao @ Sitrus Berry
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Fake Out
-- Close Combat
-- Knock Off
-- Rock Slide
+- Aura Sphere
+- Dark Pulse
+- Calm Mind
 
 Medicham
 Level: 63
@@ -15875,14 +15908,14 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Hawlucha
+Mienshao
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Flying Press
-- Acrobatics
-- Swords Dance
-- Protect
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Fake Out
+- Aura Sphere
+- Dark Pulse
+- Calm Mind
 
 Heracross
 Level: 68
@@ -15930,14 +15963,14 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Hawlucha
+Mienshao
 Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Flying Press
-- Acrobatics
-- Swords Dance
-- Protect
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Fake Out
+- Aura Sphere
+- Dark Pulse
+- Calm Mind
 
 Heracross
 Level: 73
@@ -16814,14 +16847,14 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Hawlucha
+Honchkrow
 Level: 74
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Flying Press
-- Acrobatics
-- Swords Dance
-- Protect
+- Night Slash
+- Fly
+- Confuse Ray
+- Thunder Wave
 
 Togekiss
 Level: 77
