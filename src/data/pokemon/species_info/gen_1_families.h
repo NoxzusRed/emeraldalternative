@@ -10609,8 +10609,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sMagnetonLevelUpLearnset,
         .teachableLearnset = sMagnetonTeachableLearnset,
-        .evolutions = EVOLUTION(//{EVO_LEVEL, 0, SPECIES_MAGNEZONE, CONDITIONS({IF_IN_MAPSEC, MAPSEC_NEW_MAUVILLE})},
+		.evolutions = EVOLUTION({EVO_LEVEL, 48, SPECIES_MAGNEZONE}),
+        /*
+		.evolutions = EVOLUTION(//{EVO_LEVEL, 0, SPECIES_MAGNEZONE, CONDITIONS({IF_IN_MAPSEC, MAPSEC_NEW_MAUVILLE})},
                                 {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_MAGNEZONE}),
+		*/
+								
     },
 
 #if P_GEN_4_CROSS_EVOS
