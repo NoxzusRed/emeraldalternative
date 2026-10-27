@@ -80,6 +80,7 @@
 #include "item.h"
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "pokemon.h"
 
 STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
@@ -1095,6 +1096,32 @@ bool32 Overworld_IsBikingAllowed(void)
         return TRUE;
 }
 
+static bool8 CanLearnFlashInParty(void)
+{
+    u8 i;
+    // Revisar todos los Pokemon del equipo
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = &gPlayerParty[i];
+        // Terminar al llegar al ultimo Pokemon
+        if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE)
+            break;
+        // Ignorar huevos
+        if (GetMonData(mon, MON_DATA_IS_EGG))
+            continue;
+
+        // Comprobar si puede aprender Flash
+        if (CanLearnTeachableMove(
+                GetMonData(mon, MON_DATA_SPECIES),
+                MOVE_FLASH))
+        {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
 /*static bool8 CanLearnFlashInParty(void)
 {
     u8 i;
@@ -1114,12 +1141,36 @@ bool32 Overworld_IsBikingAllowed(void)
 // Flash level of 8 is fully black
 void SetDefaultFlashLevel(void)
 {
+    // Reiniciar el estado de Flash al cargar un mapa.
+    FlagClear(FLAG_SYS_USE_FLASH);
     if (!gMapHeader.cave)
+    {
+        // Ubicacion que no necesita Flash.
         gSaveBlock1Ptr->flashLevel = 0;
-    else if (FlagGet(FLAG_SYS_USE_FLASH))
-        gSaveBlock1Ptr->flashLevel = 1;
+    }
     else
+    {
+        // La cueva comienza oscura.
+        // La iluminacion se activara despues de entrar.
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
+    }
+}
+
+static void Task_AutoUseFlash(u8 taskId)
+{
+    // Esperar a que termine la transicion de entrada
+    // y el jugador quede libre de otros eventos.
+    if (!IsWeatherNotFadingIn() ||
+        ArePlayerFieldControlsLocked())
+    {
+        return;
+    }
+    // Activar Flash utilizando la animacion original.
+    FlagSet(FLAG_SYS_USE_FLASH);
+    PlaySE(SE_M_REFLECT);
+    ScriptContext_SetupScript(EventScript_UseFlash);
+    // La tarea ya no es necesaria.
+    DestroyTask(taskId);
 }
 
 void SetFlashLevel(s32 flashLevel)
@@ -2505,6 +2556,15 @@ static void InitObjectEventsLocal(void)
     FollowerNPC_HandleSprite();
     UpdateFollowingPokemon();
     TryRunOnWarpIntoMapScript();
+
+    // Ejecutar Flash automaticamente en cuevas oscuras
+    // cuando se cumplen ambas condiciones.
+    if (gMapHeader.cave &&
+        FlagGet(FLAG_BADGE02_GET) &&
+        CanLearnFlashInParty())
+    {
+        CreateTask(Task_AutoUseFlash, 80);
+    }
 }
 
 static void InitObjectEventsReturnToField(void)
