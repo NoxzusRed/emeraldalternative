@@ -51,7 +51,17 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 25,
+      "elevation": 3,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "AncientTomb_EventScript_AutoRegisteelPuzzle"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

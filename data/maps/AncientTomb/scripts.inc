@@ -36,6 +36,49 @@ AncientTomb_EventScript_HideRegiEntrance::
 	setmetatile 9, 20, METATILE_Cave_SealedChamberBraille_Mid, TRUE
 	return
 
+AncientTomb_EventScript_AutoRegisteelPuzzle::
+    @ No repetir si ya esta abierto
+    goto_if_set FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED, AncientTomb_EventScript_AutoRegisteelPuzzleEnd
+
+    @ Requiere segunda medalla
+    goto_if_unset FLAG_BADGE02_GET, AncientTomb_EventScript_AutoRegisteelPuzzleEnd
+
+    @ Requiere un Pokemon compatible con Flash
+    checkpartymove MOVE_FLASH
+    goto_if_eq VAR_RESULT, PARTY_SIZE, AncientTomb_EventScript_AutoRegisteelPuzzleEnd
+
+    @ Iniciar apertura
+    lockall
+    delay 16
+
+    @ Sonido de Flash
+    playse SE_M_REFLECT
+    waitse
+
+    @ Abrir la pared
+    setmetatile 7, 19, METATILE_Cave_SealedChamberEntrance_TopLeft, TRUE
+    setmetatile 8, 19, METATILE_Cave_SealedChamberEntrance_TopMid, TRUE
+    setmetatile 9, 19, METATILE_Cave_SealedChamberEntrance_TopRight, TRUE
+    setmetatile 7, 20, METATILE_Cave_SealedChamberEntrance_BottomLeft, TRUE
+    setmetatile 8, 20, METATILE_Cave_SealedChamberEntrance_BottomMid, FALSE
+    setmetatile 9, 20, METATILE_Cave_SealedChamberEntrance_BottomRight, TRUE
+
+    @ Actualizar mapa
+    special DrawWholeMapView
+
+    @ Sonido de apertura
+    playse SE_BANG
+
+    @ Guardar que el puzzle fue completado
+    setflag FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED
+
+    waitse
+    releaseall
+    end
+
+AncientTomb_EventScript_AutoRegisteelPuzzleEnd::
+    end
+
 AncientTomb_EventScript_CaveEntranceMiddle::
 	lockall
 	goto_if_set FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED, AncientTomb_EventScript_BigHoleInWall
