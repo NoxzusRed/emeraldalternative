@@ -435,11 +435,23 @@ Lilycove_EventScript_Absol::
 	end
 
 LilycoveCity_EventScript_Medicham::
-	lock
 	playmoncry SPECIES_MEDICHAM, CRY_MODE_NORMAL
 	msgbox LilycoveCity_Text_Medicham, MSGBOX_SIGN
-	waitmoncry
-	release
+	end
+
+LilycoveCity_EventScript_Lairon::
+	playmoncry SPECIES_LAIRON, CRY_MODE_NORMAL
+	msgbox LilycoveCity_Text_Lairon, MSGBOX_SIGN
+	end
+
+LilycoveCity_EventScript_Carkol::
+	playmoncry SPECIES_CARKOL, CRY_MODE_NORMAL
+	msgbox LilycoveCity_Text_Carkol, MSGBOX_SIGN
+	end
+
+LilycoveCity_EventScript_Drifblim::
+	playmoncry SPECIES_DRIFBLIM, CRY_MODE_NORMAL
+	msgbox LilycoveCity_Text_Drifblim, MSGBOX_SIGN
 	end
 
 @ ==================================================
@@ -477,6 +489,10 @@ LilycoveCity_EventScript_FerryWelcome::
     end
 
 LilycoveCity_EventScript_FerryWelcomeEnd::
+    end
+
+LilycoveCity_EventScript_FerrySailor::
+    msgbox LilycoveCity_Text_FerrySailor, MSGBOX_NPC
     end
 
 @ ==================================================
@@ -549,11 +565,25 @@ LilycoveCity_Movement_FerryReturnRight:
 LilycoveCity_Text_FerryWelcome:
     .string "Is this your first time visiting\n"
     .string "Lilycove?\p"
-    .string "You should know we just opened a\n"
-    .string "ferry service so you can travel\l"
-    .string "across Hoenn much easier and\l"
-    .string "faster.\p"
+    .string "You should know we just opened a ferry\n"
+    .string "service so you can travel across Hoenn\l"
+    .string "much easier and faster.\l"
     .string "We hope to see you soon!$"
+
+LilycoveCity_Text_FerrySailor:
+    .string "You should know we just opened a ferry\n"
+    .string "service so you can travel across Hoenn\l"
+    .string "much easier and faster.\l"
+    .string "We hope to see you soon!$"
+
+LilycoveCity_Text_Lairon:
+	.string "Kreee-gohhh!$"
+
+LilycoveCity_Text_Carkol:
+	.string "Fsssh-klak-klak!$"
+
+LilycoveCity_Text_Drifblim:
+	.string "Sssss-vuuu...!$"
 
 LilycoveCity_Text_Medicham:
 	.string "Kyo-hooo...!$"
