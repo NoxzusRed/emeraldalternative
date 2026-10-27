@@ -460,7 +460,7 @@
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GIRAFARIG)",
       "x": 48,
       "y": 22,
-      "elevation": 0,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -473,7 +473,7 @@
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(FARIGIRAF)",
       "x": 50,
       "y": 22,
-      "elevation": 0,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -486,7 +486,7 @@
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MANECTRIC)",
       "x": 43,
       "y": 15,
-      "elevation": 0,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -499,7 +499,7 @@
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GOTHITELLE)",
       "x": 15,
       "y": 21,
-      "elevation": 0,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -512,7 +512,7 @@
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ABSOL)",
       "x": 54,
       "y": 5,
-      "elevation": 0,
+      "elevation": 5,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -548,16 +548,30 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_LILYCOVE_FERRY_SAILOR",
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 9,
       "y": 15,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
+      "flag": "FLAG_LILYCOVE_FERRY_WELCOME_DONE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEDICHAM)",
+      "x": 6,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LilycoveCity_EventScript_Medicham",
       "flag": "0"
     }
   ],
@@ -661,7 +675,35 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 16,
+      "elevation": 3,
+      "var": "FLAG_LILYCOVE_FERRY_WELCOME_DONE",
+      "var_value": "0",
+      "script": "LilycoveCity_EventScript_FerryWelcome"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 17,
+      "elevation": 3,
+      "var": "FLAG_LILYCOVE_FERRY_WELCOME_DONE",
+      "var_value": "0",
+      "script": "LilycoveCity_EventScript_FerryWelcome"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 18,
+      "elevation": 3,
+      "var": "FLAG_LILYCOVE_FERRY_WELCOME_DONE",
+      "var_value": "0",
+      "script": "LilycoveCity_EventScript_FerryWelcome"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

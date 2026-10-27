@@ -434,6 +434,130 @@ Lilycove_EventScript_Absol::
 	msgbox Lilycove_Text_Shaaaaou, MSGBOX_SIGN
 	end
 
+LilycoveCity_EventScript_Medicham::
+	lock
+	playmoncry SPECIES_MEDICHAM, CRY_MODE_NORMAL
+	msgbox LilycoveCity_Text_Medicham, MSGBOX_SIGN
+	waitmoncry
+	release
+	end
+
+@ ==================================================
+@ LILYCOVE - FERRY WELCOME EVENT
+@ ==================================================
+
+LilycoveCity_EventScript_FerryWelcome::
+    @ Evitar repetir el evento
+    goto_if_set FLAG_LILYCOVE_FERRY_WELCOME_DONE, LilycoveCity_EventScript_FerryWelcomeEnd
+    lockall
+    @ Guardar coordenadas del jugador
+    getplayerxy VAR_TEMP_2, VAR_TEMP_3
+    @ Signo de exclamacion
+    playse SE_PIN
+    applymovement LOCALID_LILYCOVE_FERRY_SAILOR, Common_Movement_ExclamationMark
+    waitmovement 0
+    delay 12
+    @ Acercarse dependiendo de la casilla
+    call_if_eq VAR_TEMP_3, 16, LilycoveCity_EventScript_FerryApproachLeft
+    call_if_eq VAR_TEMP_3, 17, LilycoveCity_EventScript_FerryApproachCenter
+    call_if_eq VAR_TEMP_3, 18, LilycoveCity_EventScript_FerryApproachRight
+    @ Jugador mira al marinero
+    applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+    waitmovement 0
+    @ Dialogo
+    msgbox LilycoveCity_Text_FerryWelcome, MSGBOX_DEFAULT
+    closemessage
+    @ Volver a la posicion original
+    call_if_eq VAR_TEMP_3, 16, LilycoveCity_EventScript_FerryReturnLeft
+    call_if_eq VAR_TEMP_3, 17, LilycoveCity_EventScript_FerryReturnCenter
+    call_if_eq VAR_TEMP_3, 18, LilycoveCity_EventScript_FerryReturnRight
+    @ Registrar evento completado
+    setflag FLAG_LILYCOVE_FERRY_WELCOME_DONE
+    releaseall
+    end
+
+LilycoveCity_EventScript_FerryWelcomeEnd::
+    end
+
+@ ==================================================
+@ MOVIMIENTOS DE ACERCAMIENTO
+@ ==================================================
+
+@ Jugador en (9,16)
+LilycoveCity_EventScript_FerryApproachLeft::
+    applymovement LOCALID_LILYCOVE_FERRY_SAILOR, LilycoveCity_Movement_FerryApproachLeft
+    waitmovement 0
+    return
+
+@ Jugador en (9,17)
+LilycoveCity_EventScript_FerryApproachCenter::
+    applymovement LOCALID_LILYCOVE_FERRY_SAILOR, LilycoveCity_Movement_FerryApproachCenter
+    waitmovement 0
+    return
+
+@ Jugador en (9,18)
+LilycoveCity_EventScript_FerryApproachRight::
+    applymovement LOCALID_LILYCOVE_FERRY_SAILOR, LilycoveCity_Movement_FerryApproachRight
+    waitmovement 0
+    return
+
+LilycoveCity_Movement_FerryApproachLeft:
+    step_end
+
+LilycoveCity_Movement_FerryApproachCenter:
+    walk_down
+    step_end
+
+LilycoveCity_Movement_FerryApproachRight:
+    walk_down
+    walk_down
+    step_end
+
+@ ==================================================
+@ MOVIMIENTOS DE REGRESO
+@ ==================================================
+
+LilycoveCity_EventScript_FerryReturnLeft::
+    applymovement LOCALID_LILYCOVE_FERRY_SAILOR, LilycoveCity_Movement_FerryReturnLeft
+    waitmovement 0
+    return
+
+LilycoveCity_EventScript_FerryReturnCenter::
+    applymovement LOCALID_LILYCOVE_FERRY_SAILOR, LilycoveCity_Movement_FerryReturnCenter
+    waitmovement 0
+    return
+
+LilycoveCity_EventScript_FerryReturnRight::
+    applymovement LOCALID_LILYCOVE_FERRY_SAILOR, LilycoveCity_Movement_FerryReturnRight
+    waitmovement 0
+    return
+
+LilycoveCity_Movement_FerryReturnLeft:
+    step_end
+
+LilycoveCity_Movement_FerryReturnCenter:
+	walk_up
+	face_down
+	step_end
+
+LilycoveCity_Movement_FerryReturnRight:
+    walk_up
+	walk_up
+    face_down
+    step_end
+
+LilycoveCity_Text_FerryWelcome:
+    .string "Is this your first time visiting\n"
+    .string "Lilycove?\p"
+    .string "You should know we just opened a\n"
+    .string "ferry service so you can travel\l"
+    .string "across Hoenn much easier and\l"
+    .string "faster.\p"
+    .string "We hope to see you soon!$"
+
+LilycoveCity_Text_Medicham:
+	.string "Kyo-hooo...!$"
+
 Lilycove_Text_Farig:
 	.string "Farig!$"
 
