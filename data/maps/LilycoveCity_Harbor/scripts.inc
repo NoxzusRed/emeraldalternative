@@ -14,9 +14,18 @@ LilycoveCity_Harbor_EventScript_ShowRegionalFerry::
     return
 
 LilycoveCity_Harbor_EventScript_FerryAttendant::
-	lock
-	faceplayer
-	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_RegionalFerry
+    lock
+    faceplayer
+
+    @ Antes de la Liga: ferry regional
+    goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_RegionalFerry
+
+    @ Despues de la Liga: elegir servicio
+    goto LilycoveCity_Harbor_EventScript_SelectFerryService
+    end
+
+@ Sistema original del S.S. Tidal
+LilycoveCity_Harbor_EventScript_SSTidalService::
 	call LilycoveCity_Harbor_EventScript_GetEonTicketState
 	call LilycoveCity_Harbor_EventScript_GetAuroraTicketState
 	call LilycoveCity_Harbor_EventScript_GetOldSeaMapState
@@ -560,6 +569,28 @@ LilycoveCity_Harbor_Pokemart_Tickets:
 	.2byte ITEM_EON_TICKET
 	.2byte ITEM_OLD_SEA_MAP
 	pokemartlistend
+
+@ ============================================
+@ LILYCOVE - SELECCION POSTGAME
+@ ============================================
+
+LilycoveCity_Harbor_EventScript_SelectFerryService::
+    message LilycoveCity_Harbor_Text_SelectFerryService
+    waitmessage
+
+    multichoice 13, 6, MULTI_FERRY_SERVICE_TYPE, FALSE
+
+    switch VAR_RESULT
+    case 0, LilycoveCity_Harbor_EventScript_RegionalFerry
+    case 1, LilycoveCity_Harbor_EventScript_SSTidalService
+    case 2, LilycoveCity_Harbor_EventScript_ExitSailSelect
+    case MULTI_B_PRESSED, LilycoveCity_Harbor_EventScript_ExitSailSelect
+    end
+
+LilycoveCity_Harbor_Text_SelectFerryService:
+    .string "Which ferry service would you\n"
+    .string "like to use?$"
+
 
 LilycoveCity_Harbor_EventScript_RegionalFerry::
     goto_if_unset FLAG_VISITED_LILYCOVE_CITY, LilycoveCity_Harbor_EventScript_FerryUnavailable

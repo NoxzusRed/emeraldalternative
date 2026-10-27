@@ -16,7 +16,11 @@ SlateportCity_Harbor_EventScript_EnableRegionalFerry::
     @ No interferir con el robo del submarino
     goto_if_eq VAR_SLATEPORT_HARBOR_STATE, 1, SlateportCity_Harbor_EventScript_EndEnableRegionalFerry
 
+    @ Mostrar personal del ferry
     clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
+
+    @ Mostrar barco antes de ganar la Liga
+    clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL
 
 SlateportCity_Harbor_EventScript_EndEnableRegionalFerry::
     return
@@ -170,7 +174,7 @@ SlateportCity_Harbor_EventScript_FerryAttendant::
     lock
     faceplayer
     @ Despues de la Liga: crucero original
-    goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_AskForTicket
+	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_SelectFerryService
     @ Antes de la Liga: viaje rapido
     goto_if_set FLAG_VISITED_LILYCOVE_CITY, SlateportCity_Harbor_EventScript_RegionalFerry
     @ Todavia no visito Lilycove
@@ -395,6 +399,27 @@ SlateportCity_Harbor_EventScript_TradedScanner::
 	msgbox SlateportCity_Harbor_Text_ThisWillHelpResearch, MSGBOX_DEFAULT
 	release
 	end
+
+@ ============================================
+@ SLATEPORT - SELECCION POSTGAME
+@ ============================================
+
+SlateportCity_Harbor_EventScript_SelectFerryService::
+    message SlateportCity_Harbor_Text_SelectFerryService
+    waitmessage
+
+    multichoice 13, 6, MULTI_FERRY_SERVICE_TYPE, FALSE
+
+    switch VAR_RESULT
+    case 0, SlateportCity_Harbor_EventScript_RegionalFerry
+    case 1, SlateportCity_Harbor_EventScript_AskForTicket
+    case 2, SlateportCity_Harbor_EventScript_CancelDestinationSelect
+    case MULTI_B_PRESSED, SlateportCity_Harbor_EventScript_CancelDestinationSelect
+    end
+
+SlateportCity_Harbor_Text_SelectFerryService:
+    .string "Which ferry service would you\n"
+    .string "like to use?$"
 
 SlateportCity_Harbor_EventScript_RegionalFerry::
     @ Si todavia no visito Mossdeep, usar viaje original
