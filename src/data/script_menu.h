@@ -779,6 +779,27 @@ static const struct MenuAction MultichoiceList_Exit[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_RegionalFerrySlateport[] =
+{
+    {COMPOUND_STRING("LILYCOVE")},
+    {COMPOUND_STRING("MOSSDEEP")},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_RegionalFerryLilycove[] =
+{
+    {COMPOUND_STRING("SLATEPORT")},
+    {COMPOUND_STRING("MOSSDEEP")},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_RegionalFerryMossdeep[] =
+{
+    {COMPOUND_STRING("SLATEPORT")},
+    {COMPOUND_STRING("LILYCOVE")},
+    {gText_Exit},
+};
+
 struct MultichoiceListStruct
 {
     const struct MenuAction *list;
@@ -902,6 +923,9 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
+    [MULTI_REGIONAL_FERRY_SLATEPORT] = MULTICHOICE(MultichoiceList_RegionalFerrySlateport),
+    [MULTI_REGIONAL_FERRY_LILYCOVE] = MULTICHOICE(MultichoiceList_RegionalFerryLilycove),
+    [MULTI_REGIONAL_FERRY_MOSSDEEP] = MULTICHOICE(MultichoiceList_RegionalFerryMossdeep),
 };
 
 const u8 *const gStdStrings[] =

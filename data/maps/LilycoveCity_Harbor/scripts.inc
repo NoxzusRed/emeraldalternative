@@ -3,8 +3,15 @@ LilycoveCity_Harbor_MapScripts::
 	.byte 0
 
 LilycoveCity_Harbor_OnTransition:
-	setescapewarp MAP_LILYCOVE_CITY, 12, 33
-	end
+    setescapewarp MAP_LILYCOVE_CITY, 12, 33
+
+    @ Mostrar el barco al haber visitado Lilycove
+    call_if_set FLAG_VISITED_LILYCOVE_CITY, LilycoveCity_Harbor_EventScript_ShowRegionalFerry
+    end
+
+LilycoveCity_Harbor_EventScript_ShowRegionalFerry::
+    clearflag FLAG_HIDE_LILYCOVE_HARBOR_SSTIDAL
+    return
 
 LilycoveCity_Harbor_EventScript_FerryAttendant::
 	lock
@@ -557,23 +564,49 @@ LilycoveCity_Harbor_Pokemart_Tickets:
 LilycoveCity_Harbor_EventScript_RegionalFerry::
     goto_if_unset FLAG_VISITED_LILYCOVE_CITY, LilycoveCity_Harbor_EventScript_FerryUnavailable
 
-    @ Confirmar viaje
+    @ Solo mostrar Mossdeep si ya fue visitada
+    goto_if_unset FLAG_VISITED_MOSSDEEP_CITY, LilycoveCity_Harbor_EventScript_RegionalFerrySlateport
+
+    message LilycoveCity_Harbor_Text_RegionalFerryDestinations
+    waitmessage
+    multichoice 17, 6, MULTI_REGIONAL_FERRY_LILYCOVE, FALSE
+    switch VAR_RESULT
+    case 0, LilycoveCity_Harbor_EventScript_RegionalFerrySlateport
+    case 1, LilycoveCity_Harbor_EventScript_RegionalFerryMossdeep
+    case 2, LilycoveCity_Harbor_EventScript_ExitSailSelect
+    case MULTI_B_PRESSED, LilycoveCity_Harbor_EventScript_ExitSailSelect
+    end
+
+LilycoveCity_Harbor_EventScript_RegionalFerrySlateport::
     msgbox LilycoveCity_Harbor_Text_RegionalFerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_ExitSailSelect
 
-    @ Comprobar que tiene 200
     checkmoney 200
     goto_if_eq VAR_RESULT, FALSE, LilycoveCity_Harbor_EventScript_RegionalFerryNoMoney
 
-	@ Cobrar el viaje
     removemoney 200
-    @ Reproducir sonido de compra
     playse SE_SHOP
     waitse
     closemessage
 
-    @ Llegar afuera del puerto de Slateport
     warp MAP_SLATEPORT_CITY, 30, 13
+    waitstate
+    release
+    end
+
+LilycoveCity_Harbor_EventScript_RegionalFerryMossdeep::
+    msgbox LilycoveCity_Harbor_Text_RegionalFerryMossdeep, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_ExitSailSelect
+
+    checkmoney 200
+    goto_if_eq VAR_RESULT, FALSE, LilycoveCity_Harbor_EventScript_RegionalFerryNoMoney
+
+    removemoney 200
+    playse SE_SHOP
+    waitse
+    closemessage
+
+    warp MAP_MOSSDEEP_CITY, 61, 36
     waitstate
     release
     end
@@ -582,6 +615,14 @@ LilycoveCity_Harbor_EventScript_RegionalFerryNoMoney::
     msgbox LilycoveCity_Harbor_Text_RegionalFerryNoMoney, MSGBOX_DEFAULT
     release
     end
+
+LilycoveCity_Harbor_Text_RegionalFerryDestinations:
+    .string "Regional ferry - ¥200 per trip.\p"
+    .string "Where would you like to go?$"
+
+LilycoveCity_Harbor_Text_RegionalFerryMossdeep:
+    .string "Ferry to MOSSDEEP CITY: ¥200.\p"
+    .string "Would you like to travel?$"
 
 LilycoveCity_Harbor_Text_RegionalFerry:
     .string "Ferry to SLATEPORT CITY: ¥200.\p"

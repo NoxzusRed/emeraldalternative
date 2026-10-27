@@ -3,6 +3,7 @@ MossdeepCity_MapScripts::
 	.byte 0
 
 MossdeepCity_OnTransition:
+    setflag FLAG_VISITED_MOSSDEEP_CITY
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
@@ -327,6 +328,94 @@ MossdeepCity_EventScript_Solrock::
 	playmoncry SPECIES_SOLROCK, CRY_MODE_NORMAL
 	msgbox MossdeepCity_Text_KriZaSha, MSGBOX_SIGN
 	end
+
+MossdeepCity_EventScript_RegionalFerry::
+    lock
+    faceplayer
+
+    goto_if_unset FLAG_VISITED_LILYCOVE_CITY, MossdeepCity_EventScript_RegionalFerryUnavailable
+
+    message MossdeepCity_Text_RegionalFerryDestinations
+    waitmessage
+    multichoice 17, 6, MULTI_REGIONAL_FERRY_MOSSDEEP, FALSE
+    switch VAR_RESULT
+    case 0, MossdeepCity_EventScript_RegionalFerrySlateport
+    case 1, MossdeepCity_EventScript_RegionalFerryLilycove
+    case 2, MossdeepCity_EventScript_RegionalFerryCancel
+    case MULTI_B_PRESSED, MossdeepCity_EventScript_RegionalFerryCancel
+    end
+
+MossdeepCity_EventScript_RegionalFerrySlateport::
+    msgbox MossdeepCity_Text_RegionalFerrySlateport, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, MossdeepCity_EventScript_RegionalFerryCancel
+
+    checkmoney 200
+    goto_if_eq VAR_RESULT, FALSE, MossdeepCity_EventScript_RegionalFerryNoMoney
+
+    removemoney 200
+    playse SE_SHOP
+    waitse
+    closemessage
+
+    warp MAP_SLATEPORT_CITY, 30, 13
+    waitstate
+    release
+    end
+
+MossdeepCity_EventScript_RegionalFerryLilycove::
+    msgbox MossdeepCity_Text_RegionalFerryLilycove, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, MossdeepCity_EventScript_RegionalFerryCancel
+
+    checkmoney 200
+    goto_if_eq VAR_RESULT, FALSE, MossdeepCity_EventScript_RegionalFerryNoMoney
+
+    removemoney 200
+    playse SE_SHOP
+    waitse
+    closemessage
+
+    warp MAP_LILYCOVE_CITY, 12, 33
+    waitstate
+    release
+    end
+
+MossdeepCity_EventScript_RegionalFerryNoMoney::
+    msgbox MossdeepCity_Text_RegionalFerryNoMoney, MSGBOX_DEFAULT
+    release
+    end
+
+MossdeepCity_EventScript_RegionalFerryUnavailable::
+    msgbox MossdeepCity_Text_RegionalFerryUnavailable, MSGBOX_DEFAULT
+    release
+    end
+
+MossdeepCity_EventScript_RegionalFerryCancel::
+    msgbox MossdeepCity_Text_RegionalFerryCancel, MSGBOX_DEFAULT
+    release
+    end
+
+MossdeepCity_Text_RegionalFerryDestinations:
+    .string "Regional ferry - ¥200 per trip.\p"
+    .string "Where would you like to go?$"
+
+MossdeepCity_Text_RegionalFerrySlateport:
+    .string "Ferry to SLATEPORT CITY: ¥200.\p"
+    .string "Would you like to travel?$"
+
+MossdeepCity_Text_RegionalFerryLilycove:
+    .string "Ferry to LILYCOVE CITY: ¥200.\p"
+    .string "Would you like to travel?$"
+
+MossdeepCity_Text_RegionalFerryNoMoney:
+    .string "Sorry, you don't have enough\n"
+    .string "money for the ferry.$"
+
+MossdeepCity_Text_RegionalFerryUnavailable:
+    .string "The regional ferry service isn't\n"
+    .string "available yet.$"
+
+MossdeepCity_Text_RegionalFerryCancel:
+    .string "Please sail with us another time!$"
 
 MossdeepCity_Text_Whililicluu:
 	.string "Whi-li-li-cluu!$"

@@ -397,23 +397,50 @@ SlateportCity_Harbor_EventScript_TradedScanner::
 	end
 
 SlateportCity_Harbor_EventScript_RegionalFerry::
-    @ Confirmar viaje
+    @ Si todavia no visito Mossdeep, usar viaje original
+    goto_if_unset FLAG_VISITED_MOSSDEEP_CITY, SlateportCity_Harbor_EventScript_RegionalFerryLilycove
+
+    @ Dos destinos disponibles
+    message SlateportCity_Harbor_Text_RegionalFerryDestinations
+    waitmessage
+    multichoice 17, 6, MULTI_REGIONAL_FERRY_SLATEPORT, FALSE
+    switch VAR_RESULT
+    case 0, SlateportCity_Harbor_EventScript_RegionalFerryLilycove
+    case 1, SlateportCity_Harbor_EventScript_RegionalFerryMossdeep
+    case 2, SlateportCity_Harbor_EventScript_CancelDestinationSelect
+    case MULTI_B_PRESSED, SlateportCity_Harbor_EventScript_CancelDestinationSelect
+    end
+
+SlateportCity_Harbor_EventScript_RegionalFerryLilycove::
     msgbox SlateportCity_Harbor_Text_RegionalFerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_CancelDestinationSelect
 
-    @ Comprobar que tiene 200
     checkmoney 200
     goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_RegionalFerryNoMoney
 
-    @ Cobrar el viaje
     removemoney 200
-    @ Reproducir sonido de compra
     playse SE_SHOP
     waitse
-	closemessage
+    closemessage
 
-    @ Llegar afuera del puerto de Lilycove
     warp MAP_LILYCOVE_CITY, 12, 33
+    waitstate
+    release
+    end
+
+SlateportCity_Harbor_EventScript_RegionalFerryMossdeep::
+    msgbox SlateportCity_Harbor_Text_RegionalFerryMossdeep, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_CancelDestinationSelect
+
+    checkmoney 200
+    goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_RegionalFerryNoMoney
+
+    removemoney 200
+    playse SE_SHOP
+    waitse
+    closemessage
+
+    warp MAP_MOSSDEEP_CITY, 61, 36
     waitstate
     release
     end
@@ -425,6 +452,14 @@ SlateportCity_Harbor_EventScript_RegionalFerryNoMoney::
 
 SlateportCity_Harbor_Text_RegionalFerry:
     .string "Ferry to LILYCOVE CITY: ¥200.\p"
+    .string "Would you like to travel?$"
+
+SlateportCity_Harbor_Text_RegionalFerryDestinations:
+    .string "Regional ferry - ¥200 per trip.\p"
+    .string "Where would you like to go?$"
+
+SlateportCity_Harbor_Text_RegionalFerryMossdeep:
+    .string "Ferry to MOSSDEEP CITY: ¥200.\p"
     .string "Would you like to travel?$"
 
 SlateportCity_Harbor_Text_RegionalFerryNoMoney:
