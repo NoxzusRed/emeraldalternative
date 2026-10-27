@@ -5634,6 +5634,7 @@ EVs: 252 HP / 252 Atk / 126 Def / 126 SpD
 Kangaskhan
 Level: 32
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 64 HP
 - Headbutt
 - Roar
 - Bulldoze
@@ -5642,7 +5643,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Linoone @ Chesto Berry
 Level: 33
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Spe / 50 Def / 50 SpD
+EVs: 252 HP / 252 Spe / 64 Def / 64 SpD
 - Slash
 - Belly Drum
 - Night Slash
@@ -5652,6 +5653,7 @@ Ursaring @ Flame Orb
 Level: 34
 Ability: Guts
 IVs: 24 HP / 8 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 64 HP
 - Facade
 - Lick
 - Rest
@@ -18564,3 +18566,35 @@ EVs: 252 HP / 252 SpA
 - Dark Pulse
 - Power Gem
 - Thunder Wave
+
+=== TRAINER_RUIN_MANIAC_ROUTE111_CAVE ===
+Name: RUIN
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+
+Yamask
+Level: 28
+IVs: 12 HP / 12 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 126 SpA
+- Shadow Ball
+- Psyshock
+- Dark Pulse
+
+Baltoy
+Level: 30
+Nature: Brave
+IVs: 31 HP / 31 Atk / 31 Def / 12 SpA / 31 SpD / 0 Spe
+EVs: 252 Atk
+- Self-Destruct
+
+Sandile
+Level: 28
+Ability: Intimidate
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP
+- Bulldoze
+- Bite

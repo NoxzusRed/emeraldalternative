@@ -46277,3 +46277,81 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 18568
+    [DIFFICULTY_NORMAL][TRAINER_RUIN_MANIAC_ROUTE111_CAVE] =
+    {
+#line 18569
+        .trainerName = _("RUIN"),
+#line 18570
+        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
+#line 18571
+        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .encounterMusic_gender =
+#line 18573
+            TRAINER_ENCOUNTER_MUSIC_HIKER,
+#line 18574
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 18575
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = 3,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 18577
+            .species = SPECIES_YAMASK,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 18580
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 126, 0),
+#line 18579
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 31, 12),
+#line 18578
+            .lvl = 28,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 18581
+                MOVE_SHADOW_BALL,
+                MOVE_PSYSHOCK,
+                MOVE_DARK_PULSE,
+            },
+            },
+            {
+#line 18585
+            .species = SPECIES_BALTOY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 18589
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 0),
+#line 18588
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 12, 31),
+#line 18586
+            .lvl = 30,
+#line 18587
+            .nature = NATURE_BRAVE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 18590
+                MOVE_SELF_DESTRUCT,
+            },
+            },
+            {
+#line 18592
+            .species = SPECIES_SANDILE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 18596
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 0),
+#line 18595
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+#line 18594
+            .ability = ABILITY_INTIMIDATE,
+#line 18593
+            .lvl = 28,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 18597
+                MOVE_BULLDOZE,
+                MOVE_BITE,
+            },
+            },
+        },
+    },
