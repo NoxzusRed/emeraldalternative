@@ -58,12 +58,9 @@ RustboroCity_East_EventScript_Jumpluff::
 	end
 
 RustboroCity_East_EventScript_Lucario::
-    lock
     faceplayer
 	playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
 	msgbox RustboroCity_East_Text_Lucario, MSGBOX_DEFAULT
-    waitmoncry
-    release
 	end
 
 RustboroCity_East_EventScript_RioluQuestNPC::

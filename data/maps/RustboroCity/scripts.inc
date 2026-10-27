@@ -1015,19 +1015,13 @@ RustboroCity_EventScript_Boy1::
 	end
 
 RustboroCity_EventScript_Loudred::
-	lock
 	playmoncry SPECIES_LOUDRED, CRY_MODE_NORMAL
 	msgbox RustboroCity_Text_Bam, MSGBOX_SIGN
-	waitmoncry
-	release
 	end
 
 RustboroCity_EventScript_Gothorita::
-	lock
 	playmoncry SPECIES_GOTHORITA, CRY_MODE_NORMAL
 	msgbox RustboroCity_Text_RiiTaTa, MSGBOX_SIGN
-	waitmoncry
-	release
 	end
 
 RustboroCity_EventScript_Trevenant::

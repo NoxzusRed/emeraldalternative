@@ -187,19 +187,13 @@ Route115_EventScript_RioluQuestAqua2::
     end
 
 Route115_EventScript_RioluQuestLucario::
-    lock
     playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
     msgbox Route115_Text_RioluQuestLucario, MSGBOX_DEFAULT
-	waitmoncry
-    release
     end
 
 Route115_EventScript_Sharpedo::
-	lock
 	playmoncry SPECIES_SHARPEDO, CRY_MODE_NORMAL
     msgbox Route115_Text_Sharpedo, MSGBOX_DEFAULT
-	waitmoncry
-	release
     end
 
 Route115_EventScript_SelectAqua1Retreat::

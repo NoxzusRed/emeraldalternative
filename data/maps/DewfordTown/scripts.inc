@@ -629,43 +629,28 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 	end
 
 DewfordTown_EventScript_Crustle::
-	lock
 	playmoncry SPECIES_CRUSTLE, CRY_MODE_NORMAL
     msgbox DewfordTown_Text_Crustle, MSGBOX_DEFAULT
-	waitmoncry
-	release
     end
 
 DewfordTown_EventScript_Nosepass::
-	lock
 	playmoncry SPECIES_NOSEPASS, CRY_MODE_NORMAL
     msgbox DewfordTown_Text_Nosepass, MSGBOX_DEFAULT
-	waitmoncry
-	release
     end
 
 DewfordTown_EventScript_Mienfoo::
-	lock
 	playmoncry SPECIES_MIENFOO, CRY_MODE_NORMAL
     msgbox DewfordTown_Text_Mienfoo, MSGBOX_DEFAULT
-	waitmoncry
-	release
     end
 
 DewfordTown_EventScript_Roggenrola::
-	lock
 	playmoncry SPECIES_ROGGENROLA, CRY_MODE_NORMAL
     msgbox DewfordTown_Text_Roggenrola, MSGBOX_DEFAULT
-	waitmoncry
-	release
     end
 
 DewfordTown_EventScript_Dwebble::
-	lock
 	playmoncry SPECIES_DWEBBLE, CRY_MODE_NORMAL
     msgbox DewfordTown_Text_Dwebble, MSGBOX_DEFAULT
-	waitmoncry
-	release
     end
 
 DewfordTown_Text_Dwebble:

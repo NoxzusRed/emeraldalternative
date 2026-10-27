@@ -162,7 +162,6 @@ JaggedPass_EventScript_Torkoal::
 JaggedPass_EventScript_ReceivedRockyHelmet::
 	playmoncry SPECIES_TORKOAL, CRY_MODE_NORMAL
 	msgbox JaggedPass_Text_Torkoal, MSGBOX_DEFAULT
-	release
 	end
 
 JaggedPass_Text_Torkoal:
