@@ -2878,19 +2878,25 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             {
                 //AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
-                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM_FLY, 1)){
-                    // If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
-                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM_FLASH, 1)){ 
-                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                    }
-                }
+				if (sFieldMoves[j] != MOVE_FLY && (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM_FLASH, 1)))
+				{
+					AppendToList(sPartyMenuInternal->actions,&sPartyMenuInternal->numActions,j + MENU_FIELD_MOVES);
+				}
                 break;
             }
         }
     }
-    // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
-    if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG), MOVE_FLY) && CheckBagHasItem(ITEM_HM_FLY, 1)) 
-    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
+	// Mostrar FLY si el Pokemon puede aprenderlo
+	// o si ya conoce el movimiento.
+	// No necesita tener HM02 ni aprender FLY.
+	if (sPartyMenuInternal->numActions < 5 && (CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG), MOVE_FLY) || MonKnowsMove(&mons[slotId], MOVE_FLY)))
+	{
+		AppendToList(
+			sPartyMenuInternal->actions,
+			&sPartyMenuInternal->numActions,
+			FIELD_MOVE_FLY + MENU_FIELD_MOVES
+		);
+}
     // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
     if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG), MOVE_FLASH) && CheckBagHasItem(ITEM_HM_FLASH, 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
@@ -4004,8 +4010,21 @@ static void CursorCb_FieldMove(u8 taskId)
     }
     else
     {
-        // All field moves before WATERFALL are HMs.
-        if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
+        // FLY requiere haber ganado la Liga Pokemon.
+        if (fieldMove == FIELD_MOVE_FLY &&
+            !FlagGet(FLAG_SYS_GAME_CLEAR))
+        {
+            static const u8 sText_FlyRequiresLeague[] =
+                _("You can't use FLY until you\n"
+                  "beat the POKéMON LEAGUE.{PAUSE_UNTIL_PRESS}");
+
+            DisplayPartyMenuMessage(sText_FlyRequiresLeague, TRUE);
+            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        }
+        // Las demas MO mantienen su requisito de medalla.
+        else if (fieldMove <= FIELD_MOVE_WATERFALL &&
+                 fieldMove != FIELD_MOVE_FLY &&
+                 !FlagGet(FLAG_BADGE01_GET + fieldMove))
         {
             DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
