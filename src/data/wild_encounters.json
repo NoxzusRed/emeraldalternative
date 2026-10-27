@@ -12318,6 +12318,144 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ROUTE111_EAST",
+          "base_label": "gRoute111_East",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_TRAPINCH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_TRAPINCH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_TRAPINCH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_HELIOPTILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_HELIOPTILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_HELIOPTILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_HELIOPTILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_HELIOPTILE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE111_CAVE",
+          "base_label": "gRoute111_Cave",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_YAMASK"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_YAMASK"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_YAMASK"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_YAMASK"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_BALTOY"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_BALTOY"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_BALTOY"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_BALTOY"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_SANDILE"
+              }
+            ]
+          }
         }
       ]
     },

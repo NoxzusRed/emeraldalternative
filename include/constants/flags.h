@@ -1177,7 +1177,7 @@
 #define FLAG_ITEM_VICTORY_ROAD_B1F_PEAT_BLOCK                       0x465 //
 #define FLAG_ITEM_SOOTOPOLIS_CITY_DAWN_STONE                        0x466 //
 #define FLAG_ITEM_SKY_PILLAR_2F_DRAGON_SCALE                        0x467 //
-#define FLAG_ITEM_ROUTE_111_DUSK_STONE                              0x468 //
+#define FLAG_ITEM_ROUTE_111_EAST_DUSK_STONE                         0x468 //
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
@@ -1252,12 +1252,12 @@
 #define FLAG_ITEM_FALLARBOR_MINE_B1F_CARBOS                         0x4AF //
 #define FLAG_ITEM_ROUTE_116_TM_POISON_FANG                          0x4B0 //
 #define FLAG_ITEM_ROUTE_115_TM_SMART_STRIKE                         0x4B1 //
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_POWER_GEM                   0x4B2 //
+#define FLAG_ITEM_ROUTE_111_EAST_TM_POWER_GEM                       0x4B2 //
 #define FLAG_ITEM_DEWFORD_CAVE_FOCUS_BAND                           0x4B3 //
 #define FLAG_ITEM_DEWFORD_UNDERWATER_PP_MAX                         0x4B4 //
 #define FLAG_ITEM_DEWFORD_UNDERWATER_FULL_RESTORE                   0x4B5 //
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_STARDUST                       0x4B6 // 
+#define FLAG_ITEM_ROUTE_111_EAST_SOFT_SAND                          0x4B7 //
 #define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
 #define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
 #define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag

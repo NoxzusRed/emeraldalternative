@@ -1249,3 +1249,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SlateportCity_PostLeague/scripts.inc"
 
 	.include "data/maps/SlateportCity_PokeballShop/scripts.inc"
+
+	.include "data/maps/Route111_East/scripts.inc"
+
+	.include "data/maps/Route111_Cave/scripts.inc"

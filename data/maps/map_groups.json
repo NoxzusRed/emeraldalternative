@@ -97,7 +97,8 @@
     "RustboroCity_East",
     "FallarborTown_East",
     "Route121_North",
-    "SlateportCity_PostLeague"
+    "SlateportCity_PostLeague",
+    "Route111_East"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -460,7 +461,8 @@
     "Underwater_Route124_Cave",
     "Route127_Cave",
     "DewfordCave",
-    "Underwater_Dewford"
+    "Underwater_Dewford",
+    "Route111_Cave"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
