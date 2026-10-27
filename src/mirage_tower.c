@@ -80,6 +80,12 @@ static const u8 sFossil_Gfx[] = INCBIN_U8("graphics/object_events/pics/misc/foss
 static const u8 sMirageTowerCrumbles_Gfx[] = INCBIN_U8("graphics/misc/mirage_tower_crumbles.4bpp");
 static const u16 sMirageTowerCrumbles_Palette[] = INCBIN_U16("graphics/misc/mirage_tower_crumbles.gbapal");
 
+static const struct SpritePalette sCeilingCrumbleSpritePalette =
+{
+    .data = sMirageTowerCrumbles_Palette,
+    .tag = TAG_CEILING_CRUMBLE,
+};
+
 static const s16 sCeilingCrumblePositions[][3] =
 {
     {  0,  10,  65},
@@ -202,7 +208,7 @@ static const struct OamData sOamData_CeilingCrumbleSmall =
 static const struct SpriteTemplate sSpriteTemplate_CeilingCrumbleSmall =
 {
     .tileTag = TAG_CEILING_CRUMBLE,
-    .paletteTag = TAG_NONE,
+    .paletteTag = TAG_CEILING_CRUMBLE,
     .oam = &sOamData_CeilingCrumbleSmall,
     .anims = sAnims_CeilingCrumbleSmall,
     .images = NULL,
@@ -241,7 +247,7 @@ static const struct OamData sOamData_CeilingCrumbleLarge =
 static const struct SpriteTemplate sSpriteTemplate_CeilingCrumbleLarge =
 {
     .tileTag = TAG_CEILING_CRUMBLE,
-    .paletteTag = TAG_NONE,
+    .paletteTag = TAG_CEILING_CRUMBLE,
     .oam = &sOamData_CeilingCrumbleLarge,
     .anims = sAnims_CeilingCrumbleLarge,
     .images = NULL,
@@ -421,6 +427,7 @@ static void IncrementCeilingCrumbleFinishedCount(void)
 void DoMirageTowerCeilingCrumble(void)
 {
     LoadSpriteSheets(sCeilingCrumbleSpriteSheets);
+    LoadSpritePalette(&sCeilingCrumbleSpritePalette);
     CreateCeilingCrumbleSprites();
     CreateTask(WaitCeilingCrumble, 8);
     StartScreenShake(2, 1, 16, 3);
@@ -438,6 +445,7 @@ static void WaitCeilingCrumble(u8 taskId)
 static void FinishCeilingCrumbleTask(u8 taskId)
 {
     FreeSpriteTilesByTag(TAG_CEILING_CRUMBLE);
+    FreeSpritePaletteByTag(TAG_CEILING_CRUMBLE);
     DestroyTask(taskId);
     ScriptContext_Enable();
 }
@@ -452,19 +460,19 @@ static void CreateCeilingCrumbleSprites(void)
 
     for (i = 0; i < ARRAY_COUNT(sCeilingCrumblePositions); i++)
     {
-        spriteId = CreateSprite(&sSpriteTemplate_CeilingCrumbleLarge, sCeilingCrumblePositions[i][0] + 120, sCeilingCrumblePositions[i][1], 8);
+        spriteId = CreateSprite(&sSpriteTemplate_CeilingCrumbleLarge,
+                                sCeilingCrumblePositions[i][0] + 120,
+                                sCeilingCrumblePositions[i][1], 8);
         gSprites[spriteId].oam.priority = 0;
-        // These sprites use color index 11 from the player's sprite palette. This probably wasn't intentional.
-        // The palettes for Brendan and May have different shades of green at this index, so the color of these sprites changes
-        // depending on the player's gender (and neither shade of green particularly fits a crumbling yellow/brown ceiling).
-        gSprites[spriteId].oam.paletteNum = PALSLOT_PLAYER;
         gSprites[spriteId].sIndex = i;
     }
+
     for (i = 0; i < ARRAY_COUNT(sCeilingCrumblePositions); i++)
     {
-        spriteId = CreateSprite(&sSpriteTemplate_CeilingCrumbleSmall, sCeilingCrumblePositions[i][0] + 115, sCeilingCrumblePositions[i][1] - 3, 8);
+        spriteId = CreateSprite(&sSpriteTemplate_CeilingCrumbleSmall,
+                                sCeilingCrumblePositions[i][0] + 115,
+                                sCeilingCrumblePositions[i][1] - 3, 8);
         gSprites[spriteId].oam.priority = 0;
-        gSprites[spriteId].oam.paletteNum = PALSLOT_PLAYER;
         gSprites[spriteId].sIndex = i;
     }
 }
