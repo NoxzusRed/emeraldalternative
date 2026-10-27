@@ -9,6 +9,73 @@ Route109_OnTransition:
 	call Common_EventScript_KeepMrBrineyEverywhere
 	end
 
+Route109_OnResume:
+    call_if_set FLAG_TEMP_5, Route109_RemovePopplio1
+    call_if_set FLAG_TEMP_6, Route109_RemovePopplio2
+    call_if_set FLAG_TEMP_7, Route109_RemovePopplio3
+    call_if_set FLAG_TEMP_8, Route109_RemoveBrionne
+    end
+
+Route109_RemovePopplio1::
+    removeobject LOCALID_ROUTE109_POPPLIO_1
+    return
+
+Route109_RemovePopplio2::
+    removeobject LOCALID_ROUTE109_POPPLIO_2
+    return
+
+Route109_RemovePopplio3::
+    removeobject LOCALID_ROUTE109_POPPLIO_3
+    return
+
+Route109_RemoveBrionne::
+    removeobject LOCALID_ROUTE109_BRIONNE
+    return
+
+Route109_EventScript_Popplio5::
+    lock
+    faceplayer
+    playmoncry SPECIES_POPPLIO, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_5
+    setwildbattle SPECIES_POPPLIO, 5
+    dowildbattle
+    release
+    end
+
+Route109_EventScript_Popplio7::
+    lock
+    faceplayer
+    playmoncry SPECIES_POPPLIO, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_6
+    setwildbattle SPECIES_POPPLIO, 7
+    dowildbattle
+    release
+    end
+
+Route109_EventScript_Popplio9::
+    lock
+    faceplayer
+    playmoncry SPECIES_POPPLIO, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_7
+    setwildbattle SPECIES_POPPLIO, 9
+    dowildbattle
+    release
+    end
+
+Route109_EventScript_Brionne24::
+    lock
+    faceplayer
+    playmoncry SPECIES_BRIONNE, CRY_MODE_NORMAL
+    waitmoncry
+    setflag FLAG_TEMP_8
+    setwildbattle SPECIES_BRIONNE, 24
+    dowildbattle
+    release
+    end
+
 Route109_EventScript_StartDepartForDewford::
 	call EventScript_BackupMrBrineyLocation
 	setobjectsubpriority LOCALID_ROUTE109_BRINEY, MAP_ROUTE109, 0
