@@ -23,6 +23,46 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 	setvar VAR_TEMP_1, 1
 	end
 
+EverGrandeCity_EventScript_Mienshao::
+	playmoncry SPECIES_MIENSHAO, CRY_MODE_NORMAL
+	msgbox EverGrandeCity_Text_Mienshao, MSGBOX_SIGN
+	end
+
+EverGrandeCity_EventScript_Flygon::
+	playmoncry SPECIES_FLYGON, CRY_MODE_NORMAL
+	msgbox EverGrandeCity_Text_Flygon, MSGBOX_SIGN
+	end
+
+EverGrandeCity_EventScript_Zebstrika::
+	playmoncry SPECIES_ZEBSTRIKA, CRY_MODE_NORMAL
+	msgbox EverGrandeCity_Text_Zebstrika, MSGBOX_SIGN
+	end
+
+EverGrandeCity_EventScript_Rapidash::
+	playmoncry SPECIES_RAPIDASH, CRY_MODE_NORMAL
+	msgbox EverGrandeCity_Text_Rapidash, MSGBOX_SIGN
+	end
+
+EverGrandeCity_EventScript_Klinklang::
+	playmoncry SPECIES_KLINKLANG, CRY_MODE_NORMAL
+	msgbox EverGrandeCity_Text_Klinklang, MSGBOX_SIGN
+	end
+
+EverGrandeCity_Text_Klinklang:
+	.string "Ggggr-t-t-t-t...!$"
+
+EverGrandeCity_Text_Rapidash:
+	.string "Klak-klak-hiiiigh!$"
+
+EverGrandeCity_Text_Zebstrika:
+	.string "Vzt-brrrrzt!$"
+
+EverGrandeCity_Text_Flygon:
+	.string "Kryyy-rrrr...$"
+
+EverGrandeCity_Text_Mienshao:
+	.string "Fwww-tsuu!$"
+
 EverGrandeCity_Text_EnteringVictoryRoad:
 	.string "ENTERING VICTORY ROAD$"
 

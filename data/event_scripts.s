@@ -1257,3 +1257,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/RusturfTunnel_High/scripts.inc"
 
 	.include "data/maps/Route120_HeracrossNest/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_Mart/scripts.inc"

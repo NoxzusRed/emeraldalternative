@@ -84,7 +84,7 @@
     {
       "id": "LAYOUT_EVER_GRANDE_CITY",
       "name": "EverGrandeCity_Layout",
-      "width": 40,
+      "width": 50,
       "height": 80,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_EverGrande",
@@ -4770,6 +4770,16 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route120_HeracrossNest/border.bin",
       "blockdata_filepath": "data/layouts/Route120_HeracrossNest/map.bin"
+    },
+    {
+      "id": "LAYOUT_EVER_GRANDE_CITY_MART",
+      "name": "EverGrandeCity_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/EverGrandeCity_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/EverGrandeCity_Mart/map.bin"
     }
   ]
 }
