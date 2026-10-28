@@ -4898,13 +4898,18 @@ static void ShakeGlow_Blend(struct Sprite *sprite)
 {
     static const u16 sColors[] =
     {
-        [SHAKEGLOW_RED]   = RGB_RED,
-        [SHAKEGLOW_GREEN] = RGB_GREEN,
-        [SHAKEGLOW_BLUE]  = RGB_BLUE,
-        [SHAKEGLOW_BLACK] = RGB_BLACK,
-        [SHAKEGLOW_WHITE] = RGB_WHITE,
+        [SHAKEGLOW_RED]    = RGB_RED,
+        [SHAKEGLOW_GREEN]  = RGB_GREEN,
+        [SHAKEGLOW_BLUE]   = RGB_BLUE,
+        [SHAKEGLOW_BLACK]  = RGB_BLACK,
+        [SHAKEGLOW_WHITE]  = RGB_WHITE,
         [SHAKEGLOW_PURPLE] = RGB_PURPLE
     };
+
+    // Do not overwrite sprite palettes during a screen fade.
+    // This allows the battle fade out to darken the sprite normally.
+    if (gPaletteFade.active)
+        return;
 
     if (sprite->data[2] > 127)
     {
