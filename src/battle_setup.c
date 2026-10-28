@@ -1777,6 +1777,11 @@ static u32 GetTrainerMatchCallFlag(u32 trainerId)
 
 static void RegisterTrainerInMatchCall(void)
 {
+    // Do not register the Champion in Match Call.
+    // Steven already has his own PokeNav contact.
+    if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_WALLACE)
+        return;
+
     if (FlagGet(FLAG_HAS_MATCH_CALL))
     {
         u32 matchCallFlagId = GetTrainerMatchCallFlag(TRAINER_BATTLE_PARAM.opponentA);

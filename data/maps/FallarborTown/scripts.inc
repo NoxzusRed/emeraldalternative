@@ -77,6 +77,14 @@ FallarborTown_EventScript_Heatmor::
 	msgbox FallarborTown_Text_FshhhMor, MSGBOX_SIGN
 	end
 
+FallarborTown_EventScript_Cyndaquil::
+	playmoncry SPECIES_CYNDAQUIL, CRY_MODE_NORMAL
+	msgbox FallarborTown_Text_Cyndaquil, MSGBOX_SIGN
+	end
+
+FallarborTown_Text_Cyndaquil:
+	.string "Kyu-kyuuu!$"
+
 FallarborTown_Text_Roly:
 	.string "Roly-roly-roly!$"
 
