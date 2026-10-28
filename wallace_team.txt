@@ -1,0 +1,64 @@
+=== TRAINER_WALLACE ===
+Name: WALLACE
+Class: Champion
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Yellow
+
+Wailord
+Level: 59
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+- Rain Dance
+- Water Spout
+- Double Edge
+- Heavy Slam
+
+Lanturn
+Level: 59
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 252 Spe / 126 Def / 126 SpD
+- Discharge
+- Hydro Pump
+- Rain Dance
+- Thunder Wave
+
+Huntail
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Spe / 126 Atk / 126 SpD
+- Dive
+- Ice Fang
+- Crunch
+- Coil
+
+Gorebyss
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Spe / 126 SpA / 126 SpD
+- Surf
+- Draining Kiss
+- Psychic
+- Amnesia
+
+Basculegion (M)
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Spe / 126 Def
+- Liquidation
+- Last Respects
+- Psychic Fangs
+- Rain Dance
+
+Milotic @ Sitrus Berry
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 126 SpA / 252 Def / 126 Spe
+- Recover
+- Surf
+- Ice Beam
+- Mud Shot
