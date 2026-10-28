@@ -5495,6 +5495,15 @@ EVs: 126 HP
 - Detect
 - Bulk Up
 
+Riolu
+Level: 16
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP
+- Force Palm
+- Bullet Punch
+- Bulk Up
+- Bulldoze
+
 Meditite
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 0 SpA / 12 SpD / 12 Spe
@@ -5569,12 +5578,12 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Ponyta @ Charcoal
+Quilava @ Charcoal
 Level: 29
 IVs: 24 HP / 30 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Atk / 50 Def / 50 SpD
-- Flame Charge
-- Bounce
+- Lava Plume
+- Dig
 - Sunny Day
 
 Heatmor
@@ -5817,14 +5826,14 @@ EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
 - Draining Kiss
 
-Quagsire
+Primarina
 Jolly Nature
 Level: 51
 IVs: 31 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Spe / 126 Def
 - Rain Dance
-- Aqua Tail
-- Bulldoze
+- Scald
+- Moonblast
 - Toxic
 
 Jellicent
@@ -15258,11 +15267,11 @@ AI: Check Bad Move
 
 Numel
 Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Rolycoly
+Quilava
 Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SHAYLA ===
 Name: SHAYLA
@@ -16331,6 +16340,15 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
+Typhlosion
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Lava Plume
+- Shadow Ball
+- Sunny Day
+- Scorching Sands
+
 Rapidash
 Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -16338,7 +16356,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Flare Blitz
 - Smart Strike
 - Megahorn
-- Protect
+- Sunny Day
 
 Camerupt @ White Herb
 Level: 60
@@ -16377,14 +16395,14 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Arcanine @ Sitrus Berry
+Typhlosion
 Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
-- Flare Blitz
-- Extreme Speed
-- Play Rough
-- Protect
+- Lava Plume
+- Shadow Ball
+- Sunny Day
+- Scorching Sands
 
 Rapidash
 Level: 65
@@ -16432,14 +16450,14 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Houndoom
+Typhlosion
 Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
-- Flamethrower
-- Dark Pulse
-- Nasty Plot
-- Protect
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Lava Plume
+- Shadow Ball
+- Sunny Day
+- Scorching Sands
 
 Arcanine @ Sitrus Berry
 Level: 70
@@ -17213,6 +17231,15 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+
+Primarina
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Moonblast
+- Surf
+- Rain Dance
+- Toxic
 
 Lanturn
 Level: 61
@@ -18644,3 +18671,27 @@ EVs: 252 HP / 252 Def / 252 SpD / 64 Atk
 - Poison Fang
 - Bite
 - Screech
+
+=== TRAINER_KINDLER_FALLARBOR_MINES ===
+Name: DANTE
+Class: Kindler
+Pic: Kindler
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+
+Flareon
+Level: 22
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP
+- Fire Fang
+- Bite
+- Baby-Doll Eyes
+
+Quilava
+Level: 22
+IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 126 Atk
+- Flame Wheel
+- Dig
