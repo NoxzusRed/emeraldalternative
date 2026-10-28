@@ -1742,6 +1742,7 @@ static void CB2_HandleStartMultiBattle(void)
     }
 }
 
+/*
 void BattleMainCB2(void)
 {
     AnimateSprites();
@@ -1749,6 +1750,63 @@ void BattleMainCB2(void)
     RunTextPrinters();
     UpdatePaletteFade();
     RunTasks();
+
+    if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
+    {
+        // Player pressed B during recorded battle playback, end battle
+        gSpecialVar_Result = gBattleOutcome = B_OUTCOME_PLAYER_TELEPORTED;
+        ResetPaletteFadeControl();
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        SetMainCallback2(CB2_QuitRecordedBattle);
+    }
+}
+*/
+
+void BattleMainCB2(void)
+{
+#if B_MOVE_ANIM_SPEED > 100
+    static u8 sMoveAnimSpeedCounter = 0;
+#endif
+
+    // Actualizaciones normales del combate
+    AnimateSprites();
+    BuildOamBuffer();
+    RunTextPrinters();
+    UpdatePaletteFade();
+    RunTasks();
+
+#if B_MOVE_ANIM_SPEED > 100
+
+    // Acelerar solo las animaciones de movimientos
+    // No acelerar combates link ni reproducciones grabadas
+    if (gAnimScriptActive
+     && gAnimMoveIndex != MOVE_NONE
+     && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+     && !gTestRunnerEnabled)
+    {
+        sMoveAnimSpeedCounter += B_MOVE_ANIM_SPEED - 100;
+
+        if (sMoveAnimSpeedCounter >= 100)
+        {
+            sMoveAnimSpeedCounter -= 100;
+
+            // Avanzar el script de animacion
+            gAnimScriptCallback();
+
+            // Avanzar sprites y tareas visuales
+            AnimateSprites();
+            RunTasks();
+
+            // Actualizar los graficos del fotograma adicional
+            BuildOamBuffer();
+        }
+    }
+    else
+    {
+        sMoveAnimSpeedCounter = 0;
+    }
+
+#endif
 
     if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
     {
@@ -2629,6 +2687,7 @@ void SpriteCB_WildMon(struct Sprite *sprite)
     }
 }
 
+/*
 static void SpriteCB_MoveWildMonToRight(struct Sprite *sprite)
 {
     if ((gIntroSlideFlags & 1) == 0)
@@ -2637,6 +2696,32 @@ static void SpriteCB_MoveWildMonToRight(struct Sprite *sprite)
             sprite->x2 += INTRO_SLIDE_SPEED;
         else
             sprite->x2 = 0;
+
+        if (sprite->x2 == 0)
+        {
+            sprite->callback = SpriteCB_WildMonShowHealthbox;
+        }
+    }
+}
+*/
+
+static void SpriteCB_MoveWildMonToRight(struct Sprite *sprite)
+{
+    if ((gIntroSlideFlags & 1) == 0)
+    {
+        if (B_FAST_INTRO_NO_SLIDE == FALSE && !gTestRunnerHeadless)
+        {
+            // Acelerar el deslizamiento del Pokemon salvaje
+            sprite->x2 += INTRO_SLIDE_SPEED;
+
+            // Evitar sobrepasar la posicion final
+            if (sprite->x2 > 0)
+                sprite->x2 = 0;
+        }
+        else
+        {
+            sprite->x2 = 0;
+        }
 
         if (sprite->x2 == 0)
         {

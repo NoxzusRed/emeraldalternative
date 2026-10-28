@@ -2281,8 +2281,10 @@ static void Controller_DoMoveAnimation(u32 battler)
         }
         break;
     case 2:
-        gAnimScriptCallback();
-        if (!gAnimScriptActive)
+		if (gAnimScriptActive)
+			gAnimScriptCallback();
+
+		if (!gAnimScriptActive)
         {
             u8 multihit = gBattleResources->bufferA[battler][11];
 

@@ -421,11 +421,36 @@ static void UNUSED UnusedDoBattleSpriteAffineAnim(struct Sprite *sprite, bool8 p
 
 #define sSpeedX data[0]
 
+/*
 void SpriteCB_TrainerSlideIn(struct Sprite *sprite)
 {
     if (!(gIntroSlideFlags & 1))
     {
         sprite->x2 += sprite->sSpeedX;
+        if (sprite->x2 == 0)
+        {
+            if (sprite->y2 != 0)
+                sprite->callback = SpriteCB_TrainerSlideVertical;
+            else
+                sprite->callback = SpriteCallbackDummy;
+        }
+    }
+}
+*/
+
+void SpriteCB_TrainerSlideIn(struct Sprite *sprite)
+{
+    if (!(gIntroSlideFlags & 1))
+    {
+        sprite->x2 += sprite->sSpeedX;
+
+        // Evitar sobrepasar la posicion final
+        if ((sprite->sSpeedX > 0 && sprite->x2 >= 0) ||
+            (sprite->sSpeedX < 0 && sprite->x2 <= 0))
+        {
+            sprite->x2 = 0;
+        }
+
         if (sprite->x2 == 0)
         {
             if (sprite->y2 != 0)

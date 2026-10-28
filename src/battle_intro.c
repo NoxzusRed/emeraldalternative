@@ -233,7 +233,7 @@ static void BattleIntroSlide1(u8 taskId)
         }
         break;
     case 2:
-        gBattle_WIN0V -= 0xFF;
+        gBattle_WIN0V -= 0x1FE;
         if ((gBattle_WIN0V & 0xFF00) == 0x3000)
         {
             gTasks[taskId].tState++;
@@ -262,7 +262,7 @@ static void BattleIntroSlide1(u8 taskId)
         }
 
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x3FC;
+            gBattle_WIN0V -= 0x7F8;
 
         if (gTasks[taskId].data[2])
             gTasks[taskId].data[2] -= INTRO_SLIDE_SPEED;
@@ -343,7 +343,7 @@ static void BattleIntroSlide2(u8 taskId)
         }
         break;
     case 2:
-        gBattle_WIN0V -= 0xFF;
+        gBattle_WIN0V -= 0x1FE;
         if ((gBattle_WIN0V & 0xFF00) == 0x3000)
         {
             gTasks[taskId].tState++;
@@ -373,7 +373,7 @@ static void BattleIntroSlide2(u8 taskId)
         }
 
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x3FC;
+            gBattle_WIN0V -= 0x7F8;
 
         if (gTasks[taskId].data[2])
             gTasks[taskId].data[2] -= INTRO_SLIDE_SPEED;
@@ -438,7 +438,7 @@ static void BattleIntroSlide3(u8 taskId)
         }
         break;
     case 2:
-        gBattle_WIN0V -= 0xFF;
+        gBattle_WIN0V -= 0x1FE;
         if ((gBattle_WIN0V & 0xFF00) == 0x3000)
         {
             gTasks[taskId].tState++;
@@ -463,7 +463,7 @@ static void BattleIntroSlide3(u8 taskId)
         }
 
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x3FC;
+            gBattle_WIN0V -= 0x7F8;
 
         if (gTasks[taskId].data[2])
             gTasks[taskId].data[2] -= INTRO_SLIDE_SPEED;

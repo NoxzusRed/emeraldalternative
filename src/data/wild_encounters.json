@@ -3426,64 +3426,64 @@
             "encounter_rate": 10,
             "mons": [
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 19,
+                "max_level": 21,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
-                "species": "SPECIES_MAGNETON"
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
-                "species": "SPECIES_MAGNETON"
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_MAGNEMITE"
               }
             ]
           }
@@ -6952,64 +6952,133 @@
             "encounter_rate": 10,
             "mons": [
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_KLINK"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_KLINK"
+                "min_level": 12,
+                "max_level": 14,
+                "species": "SPECIES_MAGNEMITE"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_MAGNEMITE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_NEW_MAUVILLE_ENTRANCE",
+          "base_label": "gNewMauville_Entrance_2",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
               }
             ]
           }

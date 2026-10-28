@@ -279,6 +279,8 @@
 #define B_SHOW_USELESS_Z_MOVE_INFO  FALSE // If set to TRUE, Z-moves without additional effects like newer gen status moves will say "no additional effect"
 #define B_ANIMATE_MON_AFTER_KO      TRUE // If set to TRUE, if a Pokémon on the opposite site faints, the non-fainted Pokemon will display a victory animation.
 #define B_SHOW_DYNAMAX_MESSAGE      FALSE // If set to TRUE, an additional battle message is shown after completing Dynamaxing/Gigantamaxing.
+#define B_MOVE_ANIM_SPEED 			180 // Battle move animation speed | 100 = Normal | 125 = 1.25x | 150 = 1.50x | 200 = 2.00x
+#define B_BATTLE_TRANSITION_SPEED   200 // Battle transition animation speed | 100 = Normal | 125 = 1.25x | 150 = 1.50x
 
 // Catching settings
 #define B_SEMI_INVULNERABLE_CATCH       GEN_LATEST // In Gen4+, you cannot throw a ball against a Pokemon that is in a semi-invulnerable state (dig/fly/etc)
