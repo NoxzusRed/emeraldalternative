@@ -17514,78 +17514,81 @@ Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_STEVEN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
+Name: WALLACE
+Class: Champion
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
 
-Skarmory
-Careful Nature
-Level: 79
-Ability: Weak Armor
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 SpD / 252 Spe
-- Toxic
-- Drill Peck
-- Spikes
-- Steel Wing
-
-Claydol
-Relaxed Nature
+Wailord @ Sitrus Berry
 Level: 77
+Nature: Relaxed
+Ability: Water Veil
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 SpA
+- Rain Dance
+- Water Spout
+- Double Edge
+- Heavy Slam
+
+Lanturn @ Sitrus Berry
+Level: 78
+Nature: Modest
+Ability: Volt Absorb
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA
-- Reflect
-- Light Screen
+EVs: 252 HP / 252 SpA / 252 Spe / 252 Def / 252 SpD
+- Discharge
+- Hydro Pump
+- Rain Dance
+- Thunder Wave
+
+Huntail @ Sitrus Berry
+Level: 78
+Nature: Adamant
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Spe / 252 Atk / 252 SpD
+- Dive
+- Ice Fang
+- Crunch
+- Coil
+
+Gorebyss @ Sitrus Berry
+Level: 78
+Nature: Modest
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Spe / 126 SpA / 126 SpD
+- Surf
+- Draining Kiss
 - Psychic
-- Earthquake
+- Amnesia
 
-Aggron
-Careful Nature
-Level: 78
-Ability: Rock Head
+Basculegion (M) @ Sitrus Berry
+Level: 79
+Nature: Jolly
+Ability: Adaptability
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpD
-- Iron Tail
-- Head Smash
-- Earthquake
-- Power-Up Punch
+EVs: 252 HP / 252 Spe / 126 Def
+- Liquidation
+- Last Respects
+- Psychic Fangs
+- Rain Dance
 
-Cradily
-Bold Nature
-Level: 78
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 252 Def / 252 SpD
-- Giga Drain
-- Ancient Power
-- Ingrain
-- Leech Seed
-
-Armaldo
-Careful Nature
-Level: 78
-Ability: Battle Armor
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpD
-- X-Scissor
-- Stone Edge
-- Cross Poison
-- Earthquake
-
-Metagross @ Sitrus Berry
-Adamant Nature
+Milotic @ Flame Orb
 Level: 80
-Ability: Clear Body
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpD / 252 Spe
-- Earthquake
-- Zen Headbutt
-- Meteor Mash
-- Bullet Punch
+Nature: Bold
+Ability: Marvel Scale
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 126 SpA / 252 Def / 252 Spe / 252 SpD
+- Recover
+- Surf
+- Ice Beam
+- Mud Shot
 
 === TRAINER_ANABEL ===
 Name: ANABEL
