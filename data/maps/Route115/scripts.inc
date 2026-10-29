@@ -350,6 +350,16 @@ Route115_Movement_CameraReturn:
     walk_slow_diag_southeast
     step_end
 
+Route115_EventScript_Excadrill::
+	playmoncry SPECIES_EXCADRILL, CRY_MODE_NORMAL
+    msgbox Route115_Text_Excadrill, MSGBOX_DEFAULT
+    end
+
+Route115_EventScript_Krokorok::
+	playmoncry SPECIES_KROKOROK, CRY_MODE_NORMAL
+    msgbox Route115_Text_Krokorok, MSGBOX_DEFAULT
+    end
+
 Route115_Text_RioluQuestAquaIntro:
     .string "TEAM AQUA: Hey! Stay out of our\n"
     .string "business!$"
@@ -388,3 +398,9 @@ Route115_Text_MeteorFallsSign:
 
 Route115_Text_Sharpedo:
     .string "Shriiiink-grrr!$"
+
+Route115_Text_Excadrill:
+    .string "D-d-drrrr-shhhk!$"
+
+Route115_Text_Krokorok:
+    .string "Shhh-kraaa...!$"
