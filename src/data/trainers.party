@@ -18846,7 +18846,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
 - Protect
 - Roost
 
-Mawile @ Sitrus Berry
+Mawile @ Assault Vest
 Level: 79
 Nature: Adamant
 Ability: Sheer Force
@@ -18989,7 +18989,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
 - Dazzling Gleam
 - Bounce
 
-Mawile @ Sitrus Berry
+Mawile @ Assault Vest
 Level: 79
 Nature: Adamant
 Ability: Sheer Force
@@ -19133,7 +19133,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
 - Dazzling Gleam
 - Bounce
 
-Mawile @ Sitrus Berry
+Mawile @ Assault Vest
 Level: 79
 Nature: Adamant
 Ability: Sheer Force
@@ -19236,8 +19236,36 @@ Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
-Carvanha
-Level: 5
+Mightyena @ Sitrus Berry
+Level: 77
+Nature: Adamant
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Crunch
+- Ice Fang
+- Thunder Fang
+- Fire Fang
+
+Cloyster @ Sitrus Berry
+Level: 78
+Ability: Shell Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk / 252 SpA
+- Ice Beam
+- Razor Shell
+- Iron Defense
+- Protect
+
+Crobat @ Assault Vest
+Level: 79
+Nature: Modest
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 252 Def / 252 SpD / 252 Spe
+- Sludge Bomb
+- Air Slash
+- Leech Life
 
 === TRAINER_ARENA_SHELLY ===
 Name: SHELLY
@@ -19248,8 +19276,37 @@ Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
-Carvanha
-Level: 5
+Sharpedo @ Sitrus Berry
+Level: 78
+Nature: Modest
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 252 Def / 252 SpD / 252 Spe
+- Dark Pulse
+- Scald
+- Ice Beam
+
+Basculegion (F) @ Sitrus Berry
+Level: 78
+Nature: Modest
+Ability: Adaptability
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 252 Def / 252 SpD
+- Muddy Water
+- Shadow Ball
+- Mud Shot
+- Ice Beam
+
+Dragalge @ Loaded Dice
+Level: 80
+Nature: Adamant
+Ability: Adaptability
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Spe / 252 Def / 252 SpD
+- Poison Jab
+- Scale Shot
+- Liquidation
+- Dragon Dance
 
 === TRAINER_ARENA_TABITHA ===
 Name: TABITHA
@@ -19260,8 +19317,37 @@ Music: Magma
 Double Battle: No
 AI: Basic Trainer
 
-Numel
-Level: 5
+Camerupt @ Sitrus Berry
+Level: 78
+Nature: Sassy
+Ability: Solid Rock
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 Spe
+- Earth Power
+- Flamethrower
+- Rock Slide
+- Amnesia
+
+Mightyena @ Sitrus Berry
+Level: 78
+Nature: Modest
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Dark Pulse
+- Shadow Ball
+- Hyper Voice
+- Nasty Plot
+
+Crobat @ Assault Vest
+Level: 78
+Nature: Adamant
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Cross Poison
+- Brave Bird
+- X-Scissor
 
 === TRAINER_ARENA_COURTNEY ===
 Name: COURTNEY
@@ -19272,5 +19358,31 @@ Music: Magma
 Double Battle: No
 AI: Basic Trainer
 
-Numel
-Level: 5
+Houndoom @ Assault Vest
+Level: 77
+Nature: Bold
+Ability: Early Bird
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
+- Flamethrower
+- Dark Pulse
+- Shadow Ball
+
+Coalossal @ Choice Scarf
+Level: 79
+Nature: Timid
+Ability: Steam Engine
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Heat Crash
+- Stone Edge
+
+Typhlosion @ Wide Lens
+Level: 80
+Nature: Modest
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
+- Inferno
+- Scorching Sands
+- Shadow Ball
