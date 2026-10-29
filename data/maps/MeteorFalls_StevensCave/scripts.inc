@@ -16,6 +16,7 @@ MeteorFalls_StevensCave_EventScript_Steven::
 	trainerbattle_no_intro TRAINER_STEVEN, MeteorFalls_StevensCave_Text_StevenDefeat
 	msgbox MeteorFalls_StevensCave_Text_MyPredictionCameTrue, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_METEOR_FALLS_STEVEN
+	setflag FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY
 	release
 	end
 

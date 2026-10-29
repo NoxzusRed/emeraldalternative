@@ -468,7 +468,7 @@ LilycoveCity_EventScript_FerryWelcome::
     playse SE_PIN
     applymovement LOCALID_LILYCOVE_FERRY_SAILOR, Common_Movement_ExclamationMark
     waitmovement 0
-    delay 12
+    waitfieldeffect FLDEFF_EXCLAMATION_MARK_ICON
     @ Acercarse dependiendo de la casilla
     call_if_eq VAR_TEMP_3, 16, LilycoveCity_EventScript_FerryApproachLeft
     call_if_eq VAR_TEMP_3, 17, LilycoveCity_EventScript_FerryApproachCenter

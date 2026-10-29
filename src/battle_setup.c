@@ -1580,7 +1580,7 @@ static inline bool32 IsRematchForbidden(s32 rematchTableId)
     if (rematchTableId >= REMATCH_ELITE_FOUR_ENTRIES)
         return TRUE;
     else if (rematchTableId == REMATCH_WALLY_VR)
-        return !FlagGet(FLAG_DEFEATED_WALLY_VICTORY_ROAD);
+        return !FlagGet(FLAG_DEFEATED_WALLY_VICTORY_ROAD) || FlagGet(FLAG_DEFEATED_METEOR_FALLS_STEVEN);
     else
         return FALSE;
 }

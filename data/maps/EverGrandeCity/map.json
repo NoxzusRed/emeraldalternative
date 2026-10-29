@@ -21,19 +21,6 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_RED_TRAINER_F",
-      "x": 39,
-      "y": 52,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KLINKLANG)",
       "x": 34,
       "y": 45,
@@ -44,32 +31,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_EventScript_Klinklang",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIENSHAO)",
-      "x": 28,
-      "y": 53,
-      "elevation": 5,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EverGrandeCity_EventScript_Mienshao",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 28,
-      "y": 55,
-      "elevation": 5,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EverGrandeCity_EventScript_BlackBelt",
       "flag": "0"
     },
     {
@@ -163,7 +124,119 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_EventScript_ArenaWallace",
       "flag": "FLAG_TEMP_5"
-    }
+    },
+	{
+	  "local_id": "LOCALID_EVER_GRANDE_CITY_ARENA_MAY",
+	  "graphics_id": "OBJ_EVENT_GFX_RIVAL_MAY_NORMAL",
+	  "x": 36,
+	  "y": 54,
+	  "elevation": 3,
+	  "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+	  "movement_range_x": 0,
+	  "movement_range_y": 0,
+	  "trainer_type": "TRAINER_TYPE_NONE",
+	  "trainer_sight_or_berry_tree_id": "0",
+	  "script": "EverGrandeCity_EventScript_ArenaOpponentPreview",
+	  "flag": "FLAG_TEMP_6"
+	},
+	{
+	  "local_id": "LOCALID_EVER_GRANDE_CITY_ARENA_BRENDAN",
+	  "graphics_id": "OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL",
+	  "x": 36,
+	  "y": 54,
+	  "elevation": 3,
+	  "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+	  "movement_range_x": 0,
+	  "movement_range_y": 0,
+	  "trainer_type": "TRAINER_TYPE_NONE",
+	  "trainer_sight_or_berry_tree_id": "0",
+	  "script": "EverGrandeCity_EventScript_ArenaOpponentPreview",
+	  "flag": "FLAG_TEMP_7"
+	},
+	{
+	  "local_id": "LOCALID_EVER_GRANDE_CITY_ARENA_WALLY",
+	  "graphics_id": "OBJ_EVENT_GFX_WALLY",
+	  "x": 36,
+	  "y": 54,
+	  "elevation": 3,
+	  "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+	  "movement_range_x": 0,
+	  "movement_range_y": 0,
+	  "trainer_type": "TRAINER_TYPE_NONE",
+	  "trainer_sight_or_berry_tree_id": "0",
+	  "script": "EverGrandeCity_EventScript_ArenaOpponentPreview",
+	  "flag": "FLAG_TEMP_8"
+	},
+	{
+	  "local_id": "LOCALID_EVER_GRANDE_CITY_ARENA_TABITHA",
+	  "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+	  "x": 36,
+	  "y": 54,
+	  "elevation": 3,
+	  "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+	  "movement_range_x": 0,
+	  "movement_range_y": 0,
+	  "trainer_type": "TRAINER_TYPE_NONE",
+	  "trainer_sight_or_berry_tree_id": "0",
+	  "script": "EverGrandeCity_EventScript_ArenaOpponentPreview",
+	  "flag": "FLAG_TEMP_9"
+	},
+	{
+	  "local_id": "LOCALID_EVER_GRANDE_CITY_ARENA_COURTNEY",
+	  "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
+	  "x": 36,
+	  "y": 55,
+	  "elevation": 3,
+	  "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+	  "movement_range_x": 0,
+	  "movement_range_y": 0,
+	  "trainer_type": "TRAINER_TYPE_NONE",
+	  "trainer_sight_or_berry_tree_id": "0",
+	  "script": "EverGrandeCity_EventScript_ArenaOpponentPreview",
+	  "flag": "FLAG_TEMP_A"
+	},
+	{
+	  "local_id": "LOCALID_EVER_GRANDE_CITY_ARENA_WALLACE_OPPONENT",
+	  "graphics_id": "OBJ_EVENT_GFX_WALLACE",
+	  "x": 36,
+	  "y": 54,
+	  "elevation": 3,
+	  "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+	  "movement_range_x": 0,
+	  "movement_range_y": 0,
+	  "trainer_type": "TRAINER_TYPE_NONE",
+	  "trainer_sight_or_berry_tree_id": "0",
+	  "script": "EverGrandeCity_EventScript_ArenaOpponentPreview",
+	  "flag": "FLAG_TEMP_B"
+	},
+	{
+	  "local_id": "LOCALID_EVER_GRANDE_CITY_ARENA_MATT",
+	  "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+	  "x": 36,
+	  "y": 54,
+	  "elevation": 3,
+	  "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+	  "movement_range_x": 0,
+	  "movement_range_y": 0,
+	  "trainer_type": "TRAINER_TYPE_NONE",
+	  "trainer_sight_or_berry_tree_id": "0",
+	  "script": "EverGrandeCity_EventScript_ArenaOpponentPreview",
+	  "flag": "FLAG_TEMP_C"
+	},
+	{
+	  "local_id": "LOCALID_EVER_GRANDE_CITY_ARENA_SHELLY",
+	  "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+	  "x": 36,
+	  "y": 55,
+	  "elevation": 3,
+	  "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+	  "movement_range_x": 0,
+	  "movement_range_y": 0,
+	  "trainer_type": "TRAINER_TYPE_NONE",
+	  "trainer_sight_or_berry_tree_id": "0",
+	  "script": "EverGrandeCity_EventScript_ArenaOpponentPreview",
+	  "flag": "FLAG_TEMP_D"
+	}
   ],
   "warp_events": [
     {

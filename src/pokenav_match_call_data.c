@@ -822,11 +822,15 @@ static u8 MatchCall_GetMapSec_Wally(match_call_t matchCall)
 {
     s32 i;
 
+    if (FlagGet(FLAG_DEFEATED_METEOR_FALLS_STEVEN))
+        return MAPSEC_EVER_GRANDE_CITY;
+
     for (i = 0; matchCall.wally->locationData[i].flag != 0xFFFF; i++)
     {
         if (!FlagGet(matchCall.wally->locationData[i].flag))
             break;
     }
+
     return matchCall.wally->locationData[i].mapSec;
 }
 
@@ -870,11 +874,14 @@ static bool32 MatchCall_IsRematchable_Trainer(match_call_t matchCall)
 
 static bool32 MatchCall_IsRematchable_Wally(match_call_t matchCall)
 {
+    if (FlagGet(FLAG_DEFEATED_METEOR_FALLS_STEVEN))
+        return FALSE;
+
 #if FREE_MATCH_CALL == FALSE
     return gSaveBlock1Ptr->trainerRematches[matchCall.wally->rematchTableIdx] ? TRUE : FALSE;
 #else
     return FALSE;
-#endif //FREE_MATCH_CALL
+#endif
 }
 
 static bool32 MatchCall_IsRematchable_Rival(match_call_t matchCall)

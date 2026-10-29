@@ -3,9 +3,14 @@ VictoryRoad_1F_MapScripts::
 	.byte 0
 
 VictoryRoad_1F_OnTransition:
-	call_if_eq VAR_VICTORY_ROAD_1F_STATE, 1, VictoryRoad_1F_EventScript_SetEntranceWallyPos1
-	call_if_eq VAR_VICTORY_ROAD_1F_STATE, 2, VictoryRoad_1F_EventScript_SetEntranceWallyPos2
-	end
+    call_if_eq VAR_VICTORY_ROAD_1F_STATE, 1, VictoryRoad_1F_EventScript_SetEntranceWallyPos1
+    call_if_eq VAR_VICTORY_ROAD_1F_STATE, 2, VictoryRoad_1F_EventScript_SetEntranceWallyPos2
+    call_if_set FLAG_DEFEATED_METEOR_FALLS_STEVEN, VictoryRoad_1F_EventScript_HideArenaWally
+    end
+
+VictoryRoad_1F_EventScript_HideArenaWally::
+    setflag FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY
+    return
 
 VictoryRoad_1F_EventScript_SetEntranceWallyPos1::
 	setobjectxyperm LOCALID_VICTORY_ROAD_ENTRANCE_WALLY, 2, 24
