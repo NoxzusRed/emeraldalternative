@@ -18726,36 +18726,74 @@ EVs: 252 HP / 252 Def / 252 SpD
 
 === TRAINER_ARENA_BRENDAN_MUDKIP ===
 Name: BRENDAN
-Class: RS Protag
-Pic: RS Brendan
+Class: Rival
+Pic: Brendan
 Gender: Male
 Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
+AI: Basic Trainer
 
-Tropius
-Level: 42
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Tropius @ Sitrus Berry
+Level: 77
+Nature: Impish
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Petal Blizzard
+- Fly
+- Curse
+- Synthesis
 
-Rapidash
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Rapidash @ Sitrus Berry
+Level: 78
+Nature: Jolly
+Ability: Flame Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Flare Blitz
+- Smart Strike
+- Flame Charge
 
-Galvantula
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Galvantula @ Wide Lens
+Level: 78
+Nature: Timid
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Thunder
+- Bug Buzz
+- Sticky Web
+- Thunder Wave
 
-Pelipper
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+Pelipper @ Sitrus Berry
+Level: 78
+Nature: Calm
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Hurricane
+- Surf
+- Protect
+- Roost
 
-Serperior
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
+Sableye @ Sitrus Berry
+Level: 79
+Nature: Adamant
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Phantom Force
+- Parting Shot
+- Confuse Ray
+
+Serperior @ Choice Specs
+Level: 80
+Nature: Timid
+Ability: Contrary
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Leaf Storm
 
 === TRAINER_ARENA_MAY_MUDKIP ===
 Name: MAY
@@ -18765,30 +18803,66 @@ Gender: Female
 Music: Male
 Double Battle: No
 
-Tropius
-Level: 42
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Tropius @ Sitrus Berry
+Level: 77
+Nature: Impish
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Petal Blizzard
+- Fly
+- Curse
+- Synthesis
 
-Rapidash
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Rapidash @ Sitrus Berry
+Level: 78
+Nature: Jolly
+Ability: Flame Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Flare Blitz
+- Smart Strike
+- Flame Charge
 
-Galvantula
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Galvantula @ Wide Lens
+Level: 78
+Nature: Timid
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Thunder
+- Bug Buzz
+- Sticky Web
+- Thunder Wave
 
-Pelipper
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+Pelipper @ Sitrus Berry
+Level: 78
+Nature: Calm
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Hurricane
+- Surf
+- Protect
+- Roost
 
-Serperior
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
+Mawile @ Sitrus Berry
+Level: 79
+Nature: Adamant
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Crunch
+- Play Rough
+- Iron Head
+
+Serperior @ Choice Specs
+Level: 80
+Nature: Timid
+Ability: Contrary
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Leaf Storm
 
 === TRAINER_ARENA_BRENDAN_SNIVY ===
 Name: BRENDAN
@@ -18798,30 +18872,70 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-Tropius
-Level: 42
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Tropius @ Sitrus Berry
+Level: 77
+Nature: Impish
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Petal Blizzard
+- Fly
+- Curse
+- Synthesis
 
-Galvantula
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Galvantula @ Wide Lens
+Level: 78
+Nature: Timid
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Thunder
+- Bug Buzz
+- Sticky Web
+- Thunder Wave
 
-Pelipper
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+Pelipper @ Sitrus Berry
+Level: 78
+Nature: Calm
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Hurricane
+- Surf
+- Protect
+- Roost
 
-Jumpluff
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Jumpluff @ Sitrus Berry
+Level: 78
+Nature: Naive
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
+- Sunny Day
+- Solar Beam
+- Dazzling Gleam
+- Bounce
+
+Sableye @ Sitrus Berry
+Level: 79
+Nature: Adamant
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Phantom Force
+- Parting Shot
+- Confuse Ray
 
 Delphox
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+Level: 80
+Nature: Modest
+Ability: Blaze
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Psychic
+- Flamethrower
+- Shadow Ball
+- Light Screen
 
 === TRAINER_ARENA_MAY_SNIVY ===
 Name: MAY
@@ -18831,30 +18945,70 @@ Gender: Female
 Music: Male
 Double Battle: No
 
-Tropius
-Level: 42
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Tropius @ Sitrus Berry
+Level: 77
+Nature: Impish
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Petal Blizzard
+- Fly
+- Curse
+- Synthesis
 
-Pelipper
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+Galvantula @ Wide Lens
+Level: 78
+Nature: Timid
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Thunder
+- Bug Buzz
+- Sticky Web
+- Thunder Wave
 
-Galvantula
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Pelipper @ Sitrus Berry
+Level: 78
+Nature: Calm
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Hurricane
+- Surf
+- Protect
+- Roost
 
-Jumpluff
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Jumpluff @ Sitrus Berry
+Level: 78
+Nature: Naive
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
+- Sunny Day
+- Solar Beam
+- Dazzling Gleam
+- Bounce
+
+Mawile @ Sitrus Berry
+Level: 79
+Nature: Adamant
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Crunch
+- Play Rough
+- Iron Head
 
 Delphox
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+Level: 80
+Nature: Modest
+Ability: Blaze
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Psychic
+- Flamethrower
+- Shadow Ball
+- Light Screen
 
 === TRAINER_ARENA_BRENDAN_FENNEKIN ===
 Name: BRENDAN
@@ -18864,30 +19018,69 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-Tropius
-Level: 42
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Tropius @ Sitrus Berry
+Level: 77
+Nature: Impish
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Petal Blizzard
+- Fly
+- Curse
+- Synthesis
 
-Jumpluff
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Rapidash @ Sitrus Berry
+Level: 78
+Nature: Jolly
+Ability: Flame Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Flare Blitz
+- Smart Strike
+- Flame Charge
 
-Galvantula
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Galvantula @ Wide Lens
+Level: 78
+Nature: Timid
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Thunder
+- Bug Buzz
+- Sticky Web
+- Thunder Wave
 
-Rapidash
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Jumpluff @ Sitrus Berry
+Level: 78
+Nature: Naive
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
+- Sunny Day
+- Solar Beam
+- Dazzling Gleam
+- Bounce
+
+Sableye @ Sitrus Berry
+Level: 79
+Nature: Adamant
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Phantom Force
+- Parting Shot
+- Confuse Ray
 
 Swampert
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+Level: 80
+Nature: Careful
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Rain Dance
+- Liquidation
+- Earthquake
+- Ice Punch
 
 === TRAINER_ARENA_MAY_FENNEKIN ===
 Name: MAY
@@ -18897,30 +19090,69 @@ Gender: Female
 Music: Male
 Double Battle: No
 
-Tropius
-Level: 42
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Tropius @ Sitrus Berry
+Level: 77
+Nature: Impish
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Petal Blizzard
+- Fly
+- Curse
+- Synthesis
 
-Jumpluff
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+Rapidash @ Sitrus Berry
+Level: 78
+Nature: Jolly
+Ability: Flame Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Flare Blitz
+- Smart Strike
+- Flame Charge
 
-Rapidash
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Galvantula @ Wide Lens
+Level: 78
+Nature: Timid
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+- Thunder
+- Bug Buzz
+- Sticky Web
+- Thunder Wave
 
-Galvantula
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+Jumpluff @ Sitrus Berry
+Level: 78
+Nature: Naive
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
+- Sunny Day
+- Solar Beam
+- Dazzling Gleam
+- Bounce
+
+Mawile @ Sitrus Berry
+Level: 79
+Nature: Adamant
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Crunch
+- Play Rough
+- Iron Head
 
 Swampert
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+Level: 80
+Nature: Careful
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+- Rain Dance
+- Liquidation
+- Earthquake
+- Ice Punch
 
 === TRAINER_ARENA_WALLY ===
 Name: WALLY
@@ -18931,8 +19163,69 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Ralts
-Level: 5
+Altaria @ Sitrus Berry
+Level: 77
+Nature: Relaxed
+Ability: Cloud Nine
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+- Aerial Ace
+- Safeguard
+- Dragon Pulse
+- Dragon Dance
+
+Ursaluna @ Flame Orb
+Level: 78
+Nature: Careful
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk
+- Headlong Rush
+- Thrash
+- Rest
+- Shadow Claw
+
+Roserade @ Sitrus Berry
+Level: 78
+Nature: Bold
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 SpA / 252 Spe
+- Magical Leaf
+- Acid Spray
+
+Gigalith @ Leftovers
+Level: 78
+Nature: Careful
+Ability: Sand Stream
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
+- Stone Edge
+- Amnesia
+- Iron Defense
+- Protect
+
+Magnezone @ Wide Lens
+Level: 79
+Nature: Sassy
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+- Flash Cannon
+- Thunderbolt
+- Metal Sound
+- Zap Cannon
+
+Gardevoir @ Wide Lens
+Level: 80
+Nature: Bold
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
+- Hypnosis
+- Calm Mind
+- Dream Eater
+- Moonblast
 
 === TRAINER_ARENA_MATT ===
 Name: MATT
