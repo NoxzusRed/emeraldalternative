@@ -46692,7 +46692,7 @@ F_TRAINER_FEMALE |
 #line 18737
             .heldItem = ITEM_SITRUS_BERRY,
 #line 18742
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 68, 252, 252, 0, 252),
 #line 18741
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18740
@@ -46838,9 +46838,9 @@ F_TRAINER_FEMALE |
 #line 18799
         .trainerName = _("MAY"),
 #line 18800
-        .trainerClass = TRAINER_CLASS_RS_PROTAG,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 18801
-        .trainerPic = TRAINER_PIC_RS_MAY,
+        .trainerPic = TRAINER_PIC_MAY,
         .encounterMusic_gender =
 #line 18802
 F_TRAINER_FEMALE | 
@@ -46858,7 +46858,7 @@ F_TRAINER_FEMALE |
 #line 18806
             .heldItem = ITEM_SITRUS_BERRY,
 #line 18811
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 68, 252, 252, 0, 252),
 #line 18810
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18809
@@ -47004,9 +47004,9 @@ F_TRAINER_FEMALE |
 #line 18868
         .trainerName = _("BRENDAN"),
 #line 18869
-        .trainerClass = TRAINER_CLASS_RS_PROTAG,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 18870
-        .trainerPic = TRAINER_PIC_RS_BRENDAN,
+        .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
 #line 18872
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -47022,7 +47022,7 @@ F_TRAINER_FEMALE |
 #line 18875
             .heldItem = ITEM_SITRUS_BERRY,
 #line 18880
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 68, 252, 252, 0, 252),
 #line 18879
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18878
@@ -47170,9 +47170,9 @@ F_TRAINER_FEMALE |
 #line 18941
         .trainerName = _("MAY"),
 #line 18942
-        .trainerClass = TRAINER_CLASS_RS_PROTAG,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 18943
-        .trainerPic = TRAINER_PIC_RS_MAY,
+        .trainerPic = TRAINER_PIC_MAY,
         .encounterMusic_gender =
 #line 18944
 F_TRAINER_FEMALE | 
@@ -47190,7 +47190,7 @@ F_TRAINER_FEMALE |
 #line 18948
             .heldItem = ITEM_SITRUS_BERRY,
 #line 18953
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 68, 252, 252, 0, 252),
 #line 18952
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18951
@@ -47338,9 +47338,9 @@ F_TRAINER_FEMALE |
 #line 19014
         .trainerName = _("BRENDAN"),
 #line 19015
-        .trainerClass = TRAINER_CLASS_RS_PROTAG,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 19016
-        .trainerPic = TRAINER_PIC_RS_BRENDAN,
+        .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
 #line 19018
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -47356,7 +47356,7 @@ F_TRAINER_FEMALE |
 #line 19021
             .heldItem = ITEM_SITRUS_BERRY,
 #line 19026
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 68, 252, 252, 0, 252),
 #line 19025
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 19024
@@ -47503,9 +47503,9 @@ F_TRAINER_FEMALE |
 #line 19086
         .trainerName = _("MAY"),
 #line 19087
-        .trainerClass = TRAINER_CLASS_RS_PROTAG,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 19088
-        .trainerPic = TRAINER_PIC_RS_MAY,
+        .trainerPic = TRAINER_PIC_MAY,
         .encounterMusic_gender =
 #line 19089
 F_TRAINER_FEMALE | 
@@ -47523,7 +47523,7 @@ F_TRAINER_FEMALE |
 #line 19093
             .heldItem = ITEM_SITRUS_BERRY,
 #line 19098
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 68, 252, 252, 0, 252),
 #line 19097
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 19096
@@ -48127,7 +48127,7 @@ F_TRAINER_FEMALE |
 #line 19354
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
 #line 19355
-        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
+        .trainerPic = TRAINER_PIC_MAGMA_ADMIN_F,
         .encounterMusic_gender =
 #line 19356
 F_TRAINER_FEMALE | 

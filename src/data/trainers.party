@@ -606,7 +606,7 @@ AI: Basic Trainer
 
 Mightyena
 Level: 44
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Spe
 - Crunch
 - Ice Fang
@@ -615,7 +615,7 @@ EVs: 252 HP / 126 Spe
 
 Cloyster
 Level: 44
-IVs: 6 HP / 6 Atk / 31 Def / 6 SpA / 31 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 SpA
 - Aurora Beam
 - Razor Shell
@@ -624,7 +624,7 @@ EVs: 252 HP / 126 SpA
 
 Crobat
 Level: 45
-IVs: 6 HP / 6 Atk / 6 Def / 18 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 SpA / 126 Spe
 - Sludge Bomb
 - Air Slash
@@ -633,7 +633,7 @@ EVs: 252 HP / 126 SpA / 126 Spe
 
 Sharpedo
 Level: 46
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Spe
 - Crunch
 - Waterfall
@@ -668,7 +668,7 @@ AI: Basic Trainer
 
 Skrelp
 Level: 38
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 18 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 18 Spe
 EVs: 252 HP / 126 SpA
 - Water Pulse
 - Venoshock
@@ -677,7 +677,7 @@ EVs: 252 HP / 126 SpA
 Mightyena
 Modest Nature
 Level: 37
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Spe / 126 SpA
 - Dark Pulse
 - Shadow Ball
@@ -687,7 +687,7 @@ EVs: 252 HP / 126 Spe / 126 SpA
 Sharpedo
 Modest Nature
 Level: 37
-IVs: 6 HP / 6 Atk / 6 Def / 18 SpA / 6 SpD / 6 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 18 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Spe / 126 SpA
 - Dark Pulse
 - Scald
@@ -695,7 +695,7 @@ EVs: 252 HP / 126 Spe / 126 SpA
 
 Basculegion (F)
 Level: 38
-IVs: 6 HP / 6 Atk / 6 Def / 12 SpA / 6 SpD / 6 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 18 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Muddy Water
 - Shadow Ball
@@ -713,7 +713,7 @@ AI: Basic Trainer
 Sharpedo
 Modest Nature
 Level: 47
-IVs: 12 HP / 12 Atk / 12 Def / 18 SpA / 12 SpD / 12 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Spe / 126 SpA
 - Dark Pulse
 - Scald
@@ -722,7 +722,7 @@ EVs: 252 HP / 126 Spe / 126 SpA
 Basculegion (F)
 Modest Nature
 Level: 49
-IVs: 12 HP / 12 Atk / 12 Def / 18 SpA / 12 SpD / 12 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Muddy Water
 - Shadow Ball
@@ -731,7 +731,7 @@ EVs: 252 HP / 126 Def / 126 SpD
 Mightyena
 Modest Nature
 Level: 49
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 SpA / 252 Spe
 - Dark Pulse
 - Shadow Ball
@@ -750,7 +750,7 @@ AI: Basic Trainer
 
 Mightyena
 Level: 50
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 252 HP / 126 Atk / 126 Spe
 - Crunch
 - Thunder Fang
@@ -759,7 +759,7 @@ EVs: 252 HP / 126 Atk / 126 Spe
 
 Crobat
 Level: 50
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 252 HP / 252 Atk / 126 Spe
 - Cross Poison
 - X-Scissor
@@ -767,7 +767,7 @@ EVs: 252 HP / 252 Atk / 126 Spe
 
 Sharpedo
 Level: 51
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 252 HP / 252 Spe
 - Waterfall
 - Crunch
@@ -775,7 +775,7 @@ EVs: 252 HP / 252 Spe
 
 Basculegion (M)
 Level: 52
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Wave Crash
 - Psychic Fangs
@@ -784,7 +784,7 @@ EVs: 252 HP / 126 Def / 126 SpD
 
 Dragalge
 Level: 53
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Dragon Pulse
 - Sludge Bomb
@@ -2977,7 +2977,7 @@ AI: Check Bad Move
 
 Eevee @ Nugget
 Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MOLLIE ===
 Name: MOLLIE
@@ -2990,7 +2990,7 @@ AI: Check Bad Move
 
 Quagsire
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
 Medicham
@@ -3010,7 +3010,7 @@ AI: Check Bad Move
 
 Azumarill @ Nugget
 Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_WINSTON_2 ===
 Name: WINSTON
@@ -3024,11 +3024,11 @@ AI: Check Bad Move
 
 Flareon @ Nugget
 Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Eevee @ Nugget
 Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_WINSTON_3 ===
 Name: WINSTON
@@ -3042,15 +3042,15 @@ AI: Check Bad Move
 
 Flareon @ Nugget
 Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Umbreon @ Nugget
 Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Eevee @ Nugget
 Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_WINSTON_4 ===
 Name: WINSTON
@@ -3064,15 +3064,15 @@ AI: Check Bad Move
 
 Flareon @ Nugget
 Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Umbreon @ Nugget
 Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Jolteon @ Nugget
 Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_WINSTON_5 ===
 Name: WINSTON
@@ -3086,15 +3086,15 @@ AI: Check Bad Move
 
 Flareon @ Nugget
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Umbreon @ Nugget
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Jolteon @ Nugget
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_STEVE_1 ===
 Name: STEVE
@@ -3107,7 +3107,7 @@ AI: Check Bad Move
 
 Aron
 Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_THALIA_1 ===
 Name: THALIA
@@ -3140,25 +3140,38 @@ Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_1 ===
-Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt F
+Name: COURTNEY
+Class: Magma Admin
+Pic: Magma Admin F
 Gender: Female
 Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
 Carkol
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP
+- Smack Down
+- Flame Charge
+- Smokescreen
 
 Quilava
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 23
+IVs: 6 HP / 12 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP / 68 Atk
+- Flame Wheel
+- Rollout
+- Smokescreen
 
 Houndour
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 24
+IVs: 6 HP / 12 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP / 68 Atk
+- Bite
+- Incinerate
+- Roar
+- Smog
 
 === TRAINER_STEVE_2 ===
 Name: STEVE
@@ -3171,7 +3184,7 @@ AI: Check Bad Move
 
 Lairon
 Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_STEVE_3 ===
 Name: STEVE
@@ -3184,11 +3197,11 @@ AI: Check Bad Move
 
 Lairon
 Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Kangaskhan
 Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_STEVE_4 ===
 Name: STEVE
@@ -3201,11 +3214,11 @@ AI: Check Bad Move
 
 Lairon
 Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Kangaskhan
 Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_STEVE_5 ===
 Name: STEVE
@@ -3218,11 +3231,11 @@ AI: Check Bad Move
 
 Aggron
 Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Kangaskhan
 Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LUIS ===
 Name: LUIS
@@ -3235,7 +3248,7 @@ AI: Check Bad Move
 
 Carvanha
 Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_DOMINIK ===
 Name: DOMINIK
@@ -3248,7 +3261,7 @@ AI: Check Bad Move
 
 Finneon
 Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_DOUGLAS ===
 Name: DOUGLAS
@@ -3261,11 +3274,11 @@ AI: Check Bad Move
 
 SPECIES_QWILFISH_HISUI
 Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 SPECIES_QWILFISH_HISUI
 Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_DARRIN ===
 Name: DARRIN
@@ -3278,11 +3291,11 @@ AI: Check Bad Move
 
 SPECIES_QWILFISH_HISUI
 Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Pelipper
 Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 15 SpA / 1 SpD / 20 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 15 SpA / 6 SpD / 20 Spe
 EVs: 200 SpA / 150 Spe
 - Water Pulse
 - Air Slash
@@ -3290,7 +3303,7 @@ EVs: 200 SpA / 150 Spe
 
 Finneon
 Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_TONY_1 ===
 Name: TONY
@@ -3303,7 +3316,7 @@ AI: Check Bad Move
 
 Carvanha
 Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_JEROME ===
 Name: JEROME
@@ -3316,7 +3329,7 @@ AI: Check Bad Move
 
 Overqwil
 Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MATTHEW ===
 Name: MATTHEW
@@ -3329,7 +3342,7 @@ AI: Check Bad Move
 
 Carvanha
 Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_DAVID ===
 Name: DAVID
@@ -3342,11 +3355,11 @@ AI: Check Bad Move
 
 SPECIES_QWILFISH_HISUI
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Carvanha
+Dhelmise
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_SPENCER ===
 Name: SPENCER
@@ -10418,7 +10431,7 @@ AI: Check Bad Move
 
 Camerupt
 Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Earth Power
 - Flamethrower
@@ -10427,7 +10440,7 @@ EVs: 252 HP / 126 Def / 126 SpD
 
 Mightyena
 Level: 47
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Spe
 - Crunch
 - Fire Fang
@@ -10436,7 +10449,7 @@ EVs: 252 HP / 126 Spe
 
 Crobat
 Level: 50
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Cross Poison
 - Brave Bird
@@ -12222,20 +12235,25 @@ AI: Basic Trainer
 Houndour
 Level: 23
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Incinerate
+EVs: 126 HP / 68 Atk
 - Bite
+- Fire Fang
+- Poison Fang
 - Roar
 
 Mightyena
 Level: 24
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP
 - Bite
 - Fire Fang
+- Poison Fang
 - Roar
 
 Numel
 Level: 25
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP
 - Magnitude
 - Incinerate
 - Curse
@@ -12243,6 +12261,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Golbat
 Level: 25
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP
 - Wing Attack
 - Poison Fang
 - Confuse Ray
@@ -14986,7 +15005,7 @@ AI: Check Bad Move
 
 Houndoom
 Level: 41
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def
 - Incinerate
 - Dark Pulse
@@ -14994,7 +15013,7 @@ EVs: 252 HP / 126 Def
 
 Mightyena
 Level: 41
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Spe
 - Crunch
 - Fire Fang
@@ -15003,7 +15022,7 @@ EVs: 252 HP / 126 Spe
 
 Crobat
 Level: 42
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP
 - Cross Poison
 - X-Scissor
@@ -15012,7 +15031,7 @@ EVs: 252 HP
 
 Camerupt
 Level: 44
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Earthquake
 - Rock Slide
 - Lava Plume
@@ -18739,7 +18758,7 @@ Level: 77
 Nature: Impish
 Ability: Harvest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 68 Atk / 252 Spe
 - Petal Blizzard
 - Fly
 - Curse
@@ -18797,8 +18816,8 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 
 === TRAINER_ARENA_MAY_MUDKIP ===
 Name: MAY
-Class: RS Protag
-Pic: RS May
+Class: Rival
+Pic: May
 Gender: Female
 Music: Male
 Double Battle: No
@@ -18808,7 +18827,7 @@ Level: 77
 Nature: Impish
 Ability: Harvest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 68 Atk / 252 Spe
 - Petal Blizzard
 - Fly
 - Curse
@@ -18866,8 +18885,8 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 
 === TRAINER_ARENA_BRENDAN_SNIVY ===
 Name: BRENDAN
-Class: RS Protag
-Pic: RS Brendan
+Class: Rival
+Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
@@ -18877,7 +18896,7 @@ Level: 77
 Nature: Impish
 Ability: Harvest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 68 Atk / 252 Spe
 - Petal Blizzard
 - Fly
 - Curse
@@ -18939,8 +18958,8 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 
 === TRAINER_ARENA_MAY_SNIVY ===
 Name: MAY
-Class: RS Protag
-Pic: RS May
+Class: Rival
+Pic: May
 Gender: Female
 Music: Male
 Double Battle: No
@@ -18950,7 +18969,7 @@ Level: 77
 Nature: Impish
 Ability: Harvest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 68 Atk / 252 Spe
 - Petal Blizzard
 - Fly
 - Curse
@@ -19012,8 +19031,8 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 
 === TRAINER_ARENA_BRENDAN_FENNEKIN ===
 Name: BRENDAN
-Class: RS Protag
-Pic: RS Brendan
+Class: Rival
+Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
@@ -19023,7 +19042,7 @@ Level: 77
 Nature: Impish
 Ability: Harvest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 68 Atk / 252 Spe
 - Petal Blizzard
 - Fly
 - Curse
@@ -19084,8 +19103,8 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 
 === TRAINER_ARENA_MAY_FENNEKIN ===
 Name: MAY
-Class: RS Protag
-Pic: RS May
+Class: Rival
+Pic: May
 Gender: Female
 Music: Male
 Double Battle: No
@@ -19095,7 +19114,7 @@ Level: 77
 Nature: Impish
 Ability: Harvest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 68 Atk / 252 Spe
 - Petal Blizzard
 - Fly
 - Curse
