@@ -25,6 +25,11 @@ MossdeepCity_House3_EventScript_DeclineSuperRod::
 	release
 	end
 
+MossdeepCity_House3_EventScript_FishermanBrother::
+	msgbox MossdeepCity_House3_Text_SuperRodBrother, MSGBOX_DEFAULT
+	release
+	end
+
 MossdeepCity_House3_Text_YouWantSuperRod:
 	.string "Hey there, TRAINER!\n"
 	.string "A SUPER ROD really is super!\p"
@@ -49,3 +54,7 @@ MossdeepCity_House3_Text_GoAfterSeafloorPokemon:
 	.string "Go after the seafloor POKéMON with\n"
 	.string "your SUPER ROD.$"
 
+MossdeepCity_House3_Text_SuperRodBrother:
+	.string "My brother is giving Super Rods away in\n"
+	.string "Lilycove. You should pay him a visit, he\l"
+	.string "is always fishing by the lighthouse.$"

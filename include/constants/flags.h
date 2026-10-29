@@ -57,14 +57,14 @@
 #define FLAG_CAUGHT_WAILORD					0x2B //
 #define FLAG_HIDE_WAILORD					0x2C //
 #define FLAG_DEFEATED_WAILORD				0x2D //
-#define FLAG_RECEIVED_SNIVY_EGG			0x2E //
-#define FLAG_RECEIVED_FENNEKIN_EGG		0x2F //
+#define FLAG_RECEIVED_SNIVY_EGG				0x2E //
+#define FLAG_RECEIVED_FENNEKIN_EGG			0x2F //
 #define FLAG_RECEIVED_MUDKIP_EGG			0x30 //
 #define FLAG_HIDE_RUSTBORO_EAST_LUCARIO		0x32 //
 #define FLAG_HIDE_ROUTE115_AQUA				0x33 //
 #define FLAG_LILYCOVE_FERRY_WELCOME_DONE    0x34 //
-#define FLAG_UNUSED2    					0x35 // Unused Flag
-#define FLAG_UNUSED3   						0x36 // Unused Flag
+#define FLAG_HIDE_LITTLEROOT_TREE_1    		0x35 //
+#define FLAG_HIDE_LITTLEROOT_TREE_2   		0x36 //
 #define FLAG_UNUSED4   						0x37 // Unused Flag
 #define FLAG_HIDE_ROUTE115_GREEN_NPC    	0x38 //
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
