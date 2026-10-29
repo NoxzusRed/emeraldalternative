@@ -571,7 +571,7 @@
 #define TRAINER_CATHERINE_5                 565
 #define TRAINER_JULIO                       566
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_5     567
-#define TRAINER_GRUNT_UNUSED                568
+#define TRAINER_GRUNT_UNUSED                568 // Unused
 #define TRAINER_GRUNT_MT_PYRE_4             569
 #define TRAINER_GRUNT_JAGGED_PASS           570
 #define TRAINER_MARC                        571
@@ -856,8 +856,8 @@
 #define TRAINER_EVERETT                     850
 #define TRAINER_RED                         851
 #define TRAINER_LEAF                        852
-#define TRAINER_ARENA_BRENDAN               853
-#define TRAINER_ARENA_MAY                   854
+#define TRAINER_ARENA_BRENDAN               853 // Custom Ever Grande Arena Trainer
+#define TRAINER_ARENA_MAY                   854 // Custom Ever Grande Arena Trainer
 
 //Custom Trainers
 #define TRAINER_GRUNT_ROUTE115_RIOLU_QUEST 	855
@@ -869,13 +869,16 @@
 #define TRAINER_COOLTRAINER_VICTORY_ROAD_2F 861
 #define TRAINER_ARENA_MATT                  862
 #define TRAINER_ARENA_SHELLY                863
+#define TRAINER_ARENA_WALLY      			864
+#define TRAINER_ARENA_TABITHA    			865
+#define TRAINER_ARENA_COURTNEY   			866
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      864
-#define MAX_TRAINERS_COUNT                  864
+#define TRAINERS_COUNT                      867
+#define MAX_TRAINERS_COUNT                  900
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
