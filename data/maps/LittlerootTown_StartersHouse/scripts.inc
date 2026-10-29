@@ -7,7 +7,6 @@ LittlerootTown_StartersHouse_MapScripts::
 LittlerootTown_StartersHouse_EventScript_SnivyEggGift::
     lock
     faceplayer
-    goto_if_unset FLAG_SYS_POKEMON_GET, LittlerootTown_StartersHouse_EventScript_NoStarter
     goto_if_eq VAR_STARTER_MON, 0, LittlerootTown_StartersHouse_EventScript_AlreadyChoseThisStarter
     goto_if_set FLAG_RECEIVED_SNIVY_EGG, LittlerootTown_StartersHouse_EventScript_AlreadyReceivedEgg
     msgbox LittlerootTown_StartersHouse_Text_OfferSnivyEgg, MSGBOX_YESNO
@@ -22,7 +21,6 @@ LittlerootTown_StartersHouse_EventScript_SnivyEggGift::
 LittlerootTown_StartersHouse_EventScript_FennekinEggGift::
     lock
     faceplayer
-    goto_if_unset FLAG_SYS_POKEMON_GET, LittlerootTown_StartersHouse_EventScript_NoStarter
     goto_if_eq VAR_STARTER_MON, 1, LittlerootTown_StartersHouse_EventScript_AlreadyChoseThisStarter
     goto_if_set FLAG_RECEIVED_FENNEKIN_EGG, LittlerootTown_StartersHouse_EventScript_AlreadyReceivedEgg
     msgbox LittlerootTown_StartersHouse_Text_OfferFennekinEgg, MSGBOX_YESNO
@@ -37,7 +35,6 @@ LittlerootTown_StartersHouse_EventScript_FennekinEggGift::
 LittlerootTown_StartersHouse_EventScript_MudkipEggGift::
     lock
     faceplayer
-    goto_if_unset FLAG_SYS_POKEMON_GET, LittlerootTown_StartersHouse_EventScript_NoStarter
     goto_if_eq VAR_STARTER_MON, 2, LittlerootTown_StartersHouse_EventScript_AlreadyChoseThisStarter
     goto_if_set FLAG_RECEIVED_MUDKIP_EGG, LittlerootTown_StartersHouse_EventScript_AlreadyReceivedEgg
     msgbox LittlerootTown_StartersHouse_Text_OfferMudkipEgg, MSGBOX_YESNO
@@ -55,11 +52,6 @@ LittlerootTown_StartersHouse_EventScript_ReceivedEgg::
     waitfanfare
     waitmessage
     waitbuttonpress
-    release
-    end
-
-LittlerootTown_StartersHouse_EventScript_NoStarter::
-    msgbox LittlerootTown_StartersHouse_Text_NoStarter, MSGBOX_DEFAULT
     release
     end
 
@@ -100,12 +92,6 @@ LittlerootTown_StartersHouse_Text_OfferMudkipEgg:
 
 LittlerootTown_StartersHouse_Text_ReceivedEgg:
     .string "{PLAYER} received the EGG!$"
-
-LittlerootTown_StartersHouse_Text_NoStarter:
-    .string "You haven't chosen your first\n"
-    .string "POKéMON yet?\p"
-    .string "Come back after meeting\n"
-    .string "PROF. BIRCH!$"
 
 LittlerootTown_StartersHouse_Text_AlreadyChoseThisStarter:
     .string "You already chose this POKéMON\n"
