@@ -2592,7 +2592,7 @@ Mightyena
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Mightyena
+Typhlosion
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3152,7 +3152,7 @@ Carkol
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
+Quilava
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7033,7 +7033,7 @@ Claydol
 Relaxed Nature
 Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA
+EVs: 252 HP / 126 Atk / 252 Def / 252 SpA
 - Reflect
 - Light Screen
 - Psychic
@@ -7054,7 +7054,7 @@ Cradily
 Bold Nature
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 252 Def / 252 SpD
+EVs: 252 HP / 126 SpA / 252 Def / 252 SpD
 - Giga Drain
 - Ancient Power
 - Ingrain
@@ -7065,7 +7065,7 @@ Careful Nature
 Level: 62
 Ability: Battle Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD
-EVs: 252 HP / 126 Atk / 252 Def / 252 SpD
+EVs: 252 HP / 252 Def / 252 SpD
 - X-Scissor
 - Stone Edge
 - Cross Poison
@@ -12022,7 +12022,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Golbat
+Typhlosion
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12081,7 +12081,7 @@ Mightyena
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Houndoom
+Typhlosion
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14821,7 +14821,7 @@ Mightyena
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Coalossal
+Typhlosion
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14864,7 +14864,7 @@ Golbat
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Baltoy
+Quilava
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14941,7 +14941,7 @@ Mightyena
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Golbat
+Quilava
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14958,7 +14958,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Camerupt
+Typhlosion
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -17529,7 +17529,7 @@ Level: 77
 Nature: Relaxed
 Ability: Water Veil
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
 - Rain Dance
 - Water Spout
 - Double Edge
@@ -17551,7 +17551,7 @@ Level: 78
 Nature: Adamant
 Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 252 Atk / 252 SpD
+EVs: 252 HP / 252 Spe / 252 SpD
 - Dive
 - Ice Fang
 - Crunch
@@ -17562,7 +17562,7 @@ Level: 78
 Nature: Modest
 Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 126 SpA / 126 SpD
+EVs: 252 HP / 252 Spe / 126 SpD
 - Surf
 - Draining Kiss
 - Psychic
@@ -17584,7 +17584,7 @@ Level: 80
 Nature: Bold
 Ability: Marvel Scale
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 SpA / 252 Def / 252 Spe / 252 SpD
+EVs: 252 HP / 68 SpA / 252 Def / 252 Spe / 252 SpD
 - Recover
 - Surf
 - Ice Beam
@@ -18750,7 +18750,7 @@ Level: 78
 Nature: Jolly
 Ability: Flame Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 252 Spe
 - Flare Blitz
 - Smart Strike
 - Flame Charge
@@ -18760,7 +18760,7 @@ Level: 78
 Nature: Timid
 Ability: Compound Eyes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Thunder
 - Bug Buzz
 - Sticky Web
@@ -18771,7 +18771,7 @@ Level: 78
 Nature: Calm
 Ability: Drizzle
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 - Hurricane
 - Surf
 - Protect
@@ -18792,7 +18792,7 @@ Level: 80
 Nature: Timid
 Ability: Contrary
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 - Leaf Storm
 
 === TRAINER_ARENA_MAY_MUDKIP ===
@@ -18819,7 +18819,7 @@ Level: 78
 Nature: Jolly
 Ability: Flame Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 252 Spe
 - Flare Blitz
 - Smart Strike
 - Flame Charge
@@ -18829,7 +18829,7 @@ Level: 78
 Nature: Timid
 Ability: Compound Eyes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Thunder
 - Bug Buzz
 - Sticky Web
@@ -18840,7 +18840,7 @@ Level: 78
 Nature: Calm
 Ability: Drizzle
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 - Hurricane
 - Surf
 - Protect
@@ -18861,7 +18861,7 @@ Level: 80
 Nature: Timid
 Ability: Contrary
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 - Leaf Storm
 
 === TRAINER_ARENA_BRENDAN_SNIVY ===
@@ -18888,7 +18888,7 @@ Level: 78
 Nature: Timid
 Ability: Compound Eyes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Thunder
 - Bug Buzz
 - Sticky Web
@@ -18899,7 +18899,7 @@ Level: 78
 Nature: Calm
 Ability: Drizzle
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 - Hurricane
 - Surf
 - Protect
@@ -18910,7 +18910,7 @@ Level: 78
 Nature: Naive
 Ability: Chlorophyll
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA / 126 Atk
 - Sunny Day
 - Solar Beam
 - Dazzling Gleam
@@ -18931,7 +18931,7 @@ Level: 80
 Nature: Modest
 Ability: Blaze
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Psychic
 - Flamethrower
 - Shadow Ball
@@ -18961,7 +18961,7 @@ Level: 78
 Nature: Timid
 Ability: Compound Eyes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Thunder
 - Bug Buzz
 - Sticky Web
@@ -18972,7 +18972,7 @@ Level: 78
 Nature: Calm
 Ability: Drizzle
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 - Hurricane
 - Surf
 - Protect
@@ -18983,7 +18983,7 @@ Level: 78
 Nature: Naive
 Ability: Chlorophyll
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA / 126 Atk
 - Sunny Day
 - Solar Beam
 - Dazzling Gleam
@@ -19004,7 +19004,7 @@ Level: 80
 Nature: Modest
 Ability: Blaze
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Psychic
 - Flamethrower
 - Shadow Ball
@@ -19034,7 +19034,7 @@ Level: 78
 Nature: Jolly
 Ability: Flame Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 252 Spe
 - Flare Blitz
 - Smart Strike
 - Flame Charge
@@ -19044,7 +19044,7 @@ Level: 78
 Nature: Timid
 Ability: Compound Eyes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Thunder
 - Bug Buzz
 - Sticky Web
@@ -19055,7 +19055,7 @@ Level: 78
 Nature: Naive
 Ability: Chlorophyll
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA / 126 Atk
 - Sunny Day
 - Solar Beam
 - Dazzling Gleam
@@ -19076,7 +19076,7 @@ Level: 80
 Nature: Careful
 Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Rain Dance
 - Liquidation
 - Earthquake
@@ -19106,7 +19106,7 @@ Level: 78
 Nature: Jolly
 Ability: Flame Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 252 Spe
 - Flare Blitz
 - Smart Strike
 - Flame Charge
@@ -19116,7 +19116,7 @@ Level: 78
 Nature: Timid
 Ability: Compound Eyes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Thunder
 - Bug Buzz
 - Sticky Web
@@ -19127,7 +19127,7 @@ Level: 78
 Nature: Naive
 Ability: Chlorophyll
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA / 126 Atk
 - Sunny Day
 - Solar Beam
 - Dazzling Gleam
@@ -19148,7 +19148,7 @@ Level: 80
 Nature: Careful
 Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Rain Dance
 - Liquidation
 - Earthquake
@@ -19179,7 +19179,7 @@ Level: 78
 Nature: Careful
 Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk
+EVs: 252 HP / 252 Def / 252 SpD
 - Headlong Rush
 - Thrash
 - Rest
@@ -19190,7 +19190,7 @@ Level: 78
 Nature: Bold
 Ability: Technician
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 SpA / 252 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Magical Leaf
 - Acid Spray
 
@@ -19241,7 +19241,7 @@ Level: 77
 Nature: Adamant
 Ability: Moxie
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 Atk
 - Crunch
 - Ice Fang
 - Thunder Fang
@@ -19251,7 +19251,7 @@ Cloyster @ Sitrus Berry
 Level: 78
 Ability: Shell Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 Atk / 126 SpA
 - Ice Beam
 - Razor Shell
 - Iron Defense
@@ -19262,7 +19262,7 @@ Level: 79
 Nature: Modest
 Ability: Inner Focus
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 252 Def / 252 SpD / 252 Spe
+EVs: 252 HP / 126 SpA / 252 Def / 252 SpD / 252 Spe
 - Sludge Bomb
 - Air Slash
 - Leech Life
@@ -19281,7 +19281,7 @@ Level: 78
 Nature: Modest
 Ability: Speed Boost
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 252 Def / 252 SpD / 252 Spe
+EVs: 252 HP / 68 SpA / 252 Def / 252 SpD / 252 Spe
 - Dark Pulse
 - Scald
 - Ice Beam
@@ -19291,7 +19291,7 @@ Level: 78
 Nature: Modest
 Ability: Adaptability
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 252 Def / 252 SpD
+EVs: 252 HP / 252 Def / 252 SpD
 - Muddy Water
 - Shadow Ball
 - Mud Shot
@@ -19302,7 +19302,7 @@ Level: 80
 Nature: Adamant
 Ability: Adaptability
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Spe / 252 Def / 252 SpD
+EVs: 252 HP / 126 Atk / 252 Spe / 252 Def / 252 SpD
 - Poison Jab
 - Scale Shot
 - Liquidation
@@ -19333,7 +19333,7 @@ Level: 78
 Nature: Modest
 Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 - Dark Pulse
 - Shadow Ball
 - Hyper Voice
@@ -19344,7 +19344,7 @@ Level: 78
 Nature: Adamant
 Ability: Inner Focus
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Cross Poison
 - Brave Bird
 - X-Scissor
@@ -19363,7 +19363,7 @@ Level: 77
 Nature: Bold
 Ability: Early Bird
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Flamethrower
 - Dark Pulse
 - Shadow Ball
@@ -19373,7 +19373,7 @@ Level: 79
 Nature: Timid
 Ability: Steam Engine
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 Atk
 - Heat Crash
 - Stone Edge
 
@@ -19382,7 +19382,7 @@ Level: 80
 Nature: Modest
 Ability: Blaze
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Inferno
 - Scorching Sands
 - Shadow Ball

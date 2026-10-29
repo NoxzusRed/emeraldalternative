@@ -1,7 +1,8 @@
 EverGrandeCity_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_OnTransition
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EverGrandeCity_OnWarp
-	.byte 0
+    map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_OnTransition
+    map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EverGrandeCity_OnWarp
+    map_script MAP_SCRIPT_ON_FRAME_TABLE, EverGrandeCity_OnFrame
+    .byte 0
 
 EverGrandeCity_OnTransition:
     call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
@@ -29,6 +30,15 @@ EverGrandeCity_OnWarp:
     map_script_2 VAR_EVER_GRANDE_ARENA_OPPONENT, 4, EverGrandeCity_EventScript_ArenaFacePlayer
     map_script_2 VAR_EVER_GRANDE_ARENA_OPPONENT, 5, EverGrandeCity_EventScript_ArenaFacePlayer
     map_script_2 VAR_EVER_GRANDE_ARENA_OPPONENT, 6, EverGrandeCity_EventScript_ArenaFacePlayer
+    .2byte 0
+
+EverGrandeCity_OnFrame:
+    map_script_2 VAR_EVER_GRANDE_ARENA_OPPONENT, 1, EverGrandeCity_EventScript_ArenaOpponentPreview
+    map_script_2 VAR_EVER_GRANDE_ARENA_OPPONENT, 2, EverGrandeCity_EventScript_ArenaOpponentPreview
+    map_script_2 VAR_EVER_GRANDE_ARENA_OPPONENT, 3, EverGrandeCity_EventScript_ArenaOpponentPreview
+    map_script_2 VAR_EVER_GRANDE_ARENA_OPPONENT, 4, EverGrandeCity_EventScript_ArenaOpponentPreview
+    map_script_2 VAR_EVER_GRANDE_ARENA_OPPONENT, 5, EverGrandeCity_EventScript_ArenaOpponentPreview
+    map_script_2 VAR_EVER_GRANDE_ARENA_OPPONENT, 6, EverGrandeCity_EventScript_ArenaOpponentPreview
     .2byte 0
 
 EverGrandeCity_EventScript_ArenaFacePlayer::
@@ -329,17 +339,129 @@ EverGrandeCity_EventScript_ArenaWallace::
     end
 
 @----------------------------------------------
+@ EVER GRANDE ARENA
+@----------------------------------------------
 
 EverGrandeCity_EventScript_ArenaOpponentPreview::
-    lock
-    faceplayer
-    msgbox EverGrandeCity_Text_ArenaOpponentPreview, MSGBOX_DEFAULT
+    lockall
+    switch VAR_EVER_GRANDE_ARENA_OPPONENT
+    case 1, EverGrandeCity_EventScript_ArenaFightMay
+    case 2, EverGrandeCity_EventScript_ArenaFightBrendan
+    case 3, EverGrandeCity_EventScript_ArenaFightWally
+    case 4, EverGrandeCity_EventScript_ArenaFightMagma
+    case 5, EverGrandeCity_EventScript_ArenaFightWallace
+    case 6, EverGrandeCity_EventScript_ArenaFightAqua
+    goto EverGrandeCity_EventScript_ArenaReturn
+
+@----------------------------------------------
+@ MAY
+@----------------------------------------------
+
+EverGrandeCity_EventScript_ArenaFightMay::
+    setvar VAR_LAST_TALKED, LOCALID_EVER_GRANDE_CITY_ARENA_MAY
+    msgbox EverGrandeCity_Text_ArenaMayIntro, MSGBOX_DEFAULT
     closemessage
-    msgbox EverGrandeCity_Text_ArenaReturnQuestion, MSGBOX_YESNO
-    goto_if_eq VAR_RESULT, YES, EverGrandeCity_EventScript_ArenaReturn
+    setvar VAR_EVER_GRANDE_ARENA_OPPONENT, 0
+    switch VAR_STARTER_MON
+    case 0, EverGrandeCity_EventScript_ArenaMaySnivy
+    case 1, EverGrandeCity_EventScript_ArenaMayFennekin
+    case 2, EverGrandeCity_EventScript_ArenaMayMudkip
+    goto EverGrandeCity_EventScript_ArenaMayMudkip
+
+EverGrandeCity_EventScript_ArenaMaySnivy::
+    trainerbattle_no_intro TRAINER_ARENA_MAY_SNIVY, EverGrandeCity_Text_ArenaMayDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+EverGrandeCity_EventScript_ArenaMayFennekin::
+    trainerbattle_no_intro TRAINER_ARENA_MAY_FENNEKIN, EverGrandeCity_Text_ArenaMayDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+EverGrandeCity_EventScript_ArenaMayMudkip::
+    trainerbattle_no_intro TRAINER_ARENA_MAY_MUDKIP, EverGrandeCity_Text_ArenaMayDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+@----------------------------------------------
+@ BRENDAN
+@----------------------------------------------
+
+EverGrandeCity_EventScript_ArenaFightBrendan::
+    setvar VAR_LAST_TALKED, LOCALID_EVER_GRANDE_CITY_ARENA_BRENDAN
+    msgbox EverGrandeCity_Text_ArenaBrendanIntro, MSGBOX_DEFAULT
     closemessage
-    release
-    end
+    setvar VAR_EVER_GRANDE_ARENA_OPPONENT, 0
+    switch VAR_STARTER_MON
+    case 0, EverGrandeCity_EventScript_ArenaBrendanSnivy
+    case 1, EverGrandeCity_EventScript_ArenaBrendanFennekin
+    case 2, EverGrandeCity_EventScript_ArenaBrendanMudkip
+    goto EverGrandeCity_EventScript_ArenaBrendanMudkip
+
+EverGrandeCity_EventScript_ArenaBrendanSnivy::
+    trainerbattle_no_intro TRAINER_ARENA_BRENDAN_SNIVY, EverGrandeCity_Text_ArenaBrendanDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+EverGrandeCity_EventScript_ArenaBrendanFennekin::
+    trainerbattle_no_intro TRAINER_ARENA_BRENDAN_FENNEKIN, EverGrandeCity_Text_ArenaBrendanDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+EverGrandeCity_EventScript_ArenaBrendanMudkip::
+    trainerbattle_no_intro TRAINER_ARENA_BRENDAN_MUDKIP, EverGrandeCity_Text_ArenaBrendanDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+@----------------------------------------------
+@ WALLY
+@----------------------------------------------
+
+EverGrandeCity_EventScript_ArenaFightWally::
+    setvar VAR_LAST_TALKED, LOCALID_EVER_GRANDE_CITY_ARENA_WALLY
+    msgbox EverGrandeCity_Text_ArenaWallyIntro, MSGBOX_DEFAULT
+    closemessage
+    setvar VAR_EVER_GRANDE_ARENA_OPPONENT, 0
+    trainerbattle_no_intro TRAINER_ARENA_WALLY, EverGrandeCity_Text_ArenaWallyDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+@----------------------------------------------
+@ TEAM MAGMA
+@----------------------------------------------
+
+EverGrandeCity_EventScript_ArenaFightMagma::
+    setvar VAR_LAST_TALKED, LOCALID_EVER_GRANDE_CITY_ARENA_TABITHA
+    msgbox EverGrandeCity_Text_ArenaMagmaIntro, MSGBOX_DEFAULT
+    closemessage
+    setvar VAR_EVER_GRANDE_ARENA_OPPONENT, 0
+    trainerbattle_two_trainers TRAINER_ARENA_TABITHA, EverGrandeCity_Text_ArenaTabithaDefeat, TRAINER_ARENA_COURTNEY, EverGrandeCity_Text_ArenaCourtneyDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+@----------------------------------------------
+@ WALLACE
+@----------------------------------------------
+
+EverGrandeCity_EventScript_ArenaFightWallace::
+    setvar VAR_LAST_TALKED, LOCALID_EVER_GRANDE_CITY_ARENA_WALLACE_OPPONENT
+    msgbox EverGrandeCity_Text_ArenaWallaceBattleIntro, MSGBOX_DEFAULT
+    closemessage
+    setvar VAR_EVER_GRANDE_ARENA_OPPONENT, 0
+    trainerbattle_no_intro TRAINER_STEVEN, EverGrandeCity_Text_ArenaWallaceDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+@----------------------------------------------
+@ TEAM AQUA
+@----------------------------------------------
+
+EverGrandeCity_EventScript_ArenaFightAqua::
+    setvar VAR_LAST_TALKED, LOCALID_EVER_GRANDE_CITY_ARENA_MATT
+    msgbox EverGrandeCity_Text_ArenaAquaIntro, MSGBOX_DEFAULT
+    closemessage
+    setvar VAR_EVER_GRANDE_ARENA_OPPONENT, 0
+    trainerbattle_two_trainers TRAINER_ARENA_MATT, EverGrandeCity_Text_ArenaMattDefeat, TRAINER_ARENA_SHELLY, EverGrandeCity_Text_ArenaShellyDefeat
+    goto EverGrandeCity_EventScript_ArenaBattleWon
+
+@----------------------------------------------
+@ POST BATTLE
+@----------------------------------------------
+
+EverGrandeCity_EventScript_ArenaBattleWon::
+    msgbox EverGrandeCity_Text_ArenaBattleWon, MSGBOX_DEFAULT
+    goto EverGrandeCity_EventScript_ArenaReturn
 
 EverGrandeCity_EventScript_ArenaReturn::
     closemessage
@@ -348,15 +470,61 @@ EverGrandeCity_EventScript_ArenaReturn::
     waitstate
     end
 
-EverGrandeCity_Text_ArenaOpponentPreview:
-    .string "The challenger is ready!\p"
-    .string "This battle will be available\n"
-    .string "soon.$"
-
-EverGrandeCity_Text_ArenaReturnQuestion:
-    .string "Return to WALLACE?$"
-
 @----------------------------------------------
+@ DIALOGUES
+@----------------------------------------------
+
+EverGrandeCity_Text_ArenaMayIntro:
+    .string "MAY: I've been looking forward\n"
+    .string "to battling you again!$"
+
+EverGrandeCity_Text_ArenaMayDefeat:
+    .string "Wow! You've really improved!$"
+
+EverGrandeCity_Text_ArenaBrendanIntro:
+    .string "BRENDAN: Let's see how much\n"
+    .string "we've both learned!$"
+
+EverGrandeCity_Text_ArenaBrendanDefeat:
+    .string "I still have a lot to learn!$"
+
+EverGrandeCity_Text_ArenaWallyIntro:
+    .string "WALLY: I won't hold back\n"
+    .string "this time!$"
+
+EverGrandeCity_Text_ArenaWallyDefeat:
+    .string "You're still one step ahead!$"
+
+EverGrandeCity_Text_ArenaMagmaIntro:
+    .string "TABITHA: This time, you'll\n"
+    .string "face both of us together!$"
+
+EverGrandeCity_Text_ArenaTabithaDefeat:
+    .string "Impossible!$"
+
+EverGrandeCity_Text_ArenaCourtneyDefeat:
+    .string "I...lost?$"
+
+EverGrandeCity_Text_ArenaWallaceBattleIntro:
+    .string "WALLACE: Show me how much\n"
+    .string "stronger you've become!$"
+
+EverGrandeCity_Text_ArenaWallaceDefeat:
+    .string "Magnificent! You've surpassed\n"
+    .string "my expectations!$"
+
+EverGrandeCity_Text_ArenaAquaIntro:
+    .string "MATT: Let's see if you can\n"
+    .string "handle the two of us!$"
+
+EverGrandeCity_Text_ArenaMattDefeat:
+    .string "You're too strong!$"
+
+EverGrandeCity_Text_ArenaShellyDefeat:
+    .string "We need to train harder!$"
+
+EverGrandeCity_Text_ArenaBattleWon:
+    .string "You won the challenge!$"
 
 EverGrandeCity_Text_ArenaOptionMay:
     .string "MAY$"
