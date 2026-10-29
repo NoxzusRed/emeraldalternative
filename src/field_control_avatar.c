@@ -23,7 +23,9 @@
 #include "match_call.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
+#include "party_menu.h"
 #include "pokemon.h"
+#include "region_map.h"
 #include "safari_zone.h"
 #include "script.h"
 #include "secret_base.h"
@@ -38,6 +40,7 @@
 #include "constants/field_poison.h"
 #include "constants/map_types.h"
 #include "constants/metatile_behaviors.h"
+#include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/items.h"
@@ -95,6 +98,7 @@ void FieldClearPlayerInput(struct FieldInput *input)
     input->tookStep = FALSE;
     input->pressedBButton = FALSE;
     input->pressedRButton = FALSE;
+    input->pressedLButton = FALSE;
     input->input_field_1_1 = FALSE;
     input->input_field_1_2 = FALSE;
     input->input_field_1_3 = FALSE;
@@ -121,6 +125,8 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
                 input->pressedBButton = TRUE;
             if (newKeys & R_BUTTON && !FlagGet(DN_FLAG_SEARCHING))
                 input->pressedRButton = TRUE;
+            if ((newKeys & L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode != OPTIONS_BUTTON_MODE_L_EQUALS_A)
+                input->pressedLButton = TRUE;
         }
 
         if (heldKeys & (DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT))
@@ -155,6 +161,38 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
             input->DEBUG_OVERWORLD_TRIGGER_EVENT = FALSE;
         }
     }
+}
+
+// Open Fly from the field without visiting the party menu.
+// Keep the League, location and follower checks used by the normal Fly action.
+static bool8 TryOpenFlyMapShortcut(void)
+{
+    u8 i;
+
+    if (!FlagGet(FLAG_SYS_GAME_CLEAR)
+     || !Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType)
+     || !CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_LEAVE_ROUTE))
+        return FALSE;
+
+    // The ROM permits Fly when a Pokemon can learn the move or already knows it.
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        if (species == SPECIES_NONE || species == SPECIES_EGG)
+            continue;
+
+        if (CanLearnTeachableMove(species, MOVE_FLY)
+         || MonKnowsMove(&gPlayerParty[i], MOVE_FLY))
+        {
+            // Fly's field animation reads the selected party slot via this variable.
+            gPartyMenu.slotId = i;
+            OpenFlyMapFromField();
+            return TRUE;
+        }
+    }
+
+    return FALSE;
 }
 
 int ProcessPlayerFieldInput(struct FieldInput *input)
@@ -221,6 +259,10 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     }
     if (input->pressedAButton && TrySetupDiveDownScript() == TRUE)
         return TRUE;
+
+    if (input->pressedLButton && TryOpenFlyMapShortcut())
+        return TRUE;
+
     if (input->pressedStartButton)
     {
         PlaySE(SE_WIN_OPEN);

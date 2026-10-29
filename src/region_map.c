@@ -17,6 +17,7 @@
 #include "constants/songs.h"
 #include "m4a.h"
 #include "field_effect.h"
+#include "field_screen_effect.h"
 #include "field_specials.h"
 #include "fldeff.h"
 #include "region_map.h"
@@ -80,6 +81,7 @@ static EWRAM_DATA struct {
 } *sFlyMap = NULL;
 
 static bool32 sDrawFlyDestTextWindow;
+static EWRAM_DATA bool8 sFlyMapOpenedWithL = FALSE;
 
 static u8 ProcessRegionMapInput_Full(void);
 static u8 MoveRegionMapCursor_Full(void);
@@ -1652,6 +1654,12 @@ bool32 IsEventIslandMapSecId(u8 mapSecId)
     return FALSE;
 }
 
+void OpenFlyMapFromField(void)
+{
+    sFlyMapOpenedWithL = TRUE;
+    SetMainCallback2(CB2_OpenFlyMap);
+}
+
 void CB2_OpenFlyMap(void)
 {
     switch (gMain.state)
@@ -1670,7 +1678,16 @@ void CB2_OpenFlyMap(void)
         sFlyMap = Alloc(sizeof(*sFlyMap));
         if (sFlyMap == NULL)
         {
-            SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+            if (sFlyMapOpenedWithL)
+            {
+                sFlyMapOpenedWithL = FALSE;
+                gFieldCallback = FieldCB_ReturnToFieldNoScriptCheckMusic;
+                SetMainCallback2(CB2_ReturnToField);
+            }
+            else
+            {
+                SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+            }
         }
         else
         {
@@ -2002,8 +2019,15 @@ static void CB_ExitFlyMap(void)
             {
                 struct RegionMap* tempRegionMap = &sFlyMap->regionMap;
 
+                sFlyMapOpenedWithL = FALSE;
                 SetFlyDestination(tempRegionMap);
                 ReturnToFieldFromFlyMapSelect();
+            }
+            else if (sFlyMapOpenedWithL)
+            {
+                sFlyMapOpenedWithL = FALSE;
+                gFieldCallback = FieldCB_ReturnToFieldNoScriptCheckMusic;
+                SetMainCallback2(CB2_ReturnToField);
             }
             else
             {
