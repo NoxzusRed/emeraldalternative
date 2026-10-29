@@ -22,12 +22,22 @@
 #include "graphics.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "random.h"
 
 enum {
     TAG_VERSION = 1000,
     TAG_PRESS_START_COPYRIGHT,
     TAG_LOGO_SHINE,
 };
+
+enum
+{
+    TITLE_BG_GROUDON,
+    TITLE_BG_KYOGRE,
+    TITLE_BG_RAYQUAZA,
+};
+
+static u8 sTitleBackground;
 
 #define VERSION_BANNER_RIGHT_TILEOFFSET 64
 #define VERSION_BANNER_LEFT_X 98
@@ -60,11 +70,23 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 // const rom data
 static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.gbapal");
 
+// RAYQUAZA - EMERALD
 static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.lz");
 static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.lz");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.lz");
 static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
 
+// GROUDON - RUBY
+static const u32 sTitleGroudonGfx[] = INCBIN_U32("graphics/title_screen/rs/groudon.4bpp.lz");
+static const u32 sTitleGroudonMap[] = INCBIN_U32("graphics/title_screen/rs/groudon_map.bin.lz");
+static const u32 sTitleLavaMap[] = INCBIN_U32("graphics/title_screen/rs/lava_map.bin.lz");
+static const u16 sTitleGroudonPal[] =INCBIN_U16("graphics/title_screen/rs/groudon_dark.gbapal", "graphics/title_screen/rs/groudon_glow.gbapal");
+
+// KYOGRE - SAPPHIRE
+static const u32 sTitleKyogreGfx[] = INCBIN_U32("graphics/title_screen/rs/kyogre.4bpp.lz");
+static const u32 sTitleKyogreMap[] = INCBIN_U32("graphics/title_screen/rs/kyogre_map.bin.lz");
+static const u32 sTitleWaterMap[] = INCBIN_U32("graphics/title_screen/rs/water_map.bin.lz");
+static const u16 sTitleKyogrePal[] = INCBIN_U16("graphics/title_screen/rs/kyogre_dark.gbapal", "graphics/title_screen/rs/kyogre_glow.gbapal");
 
 
 // Used to blend "Emerald Version" as it passes over over the Pokémon banner.
@@ -573,6 +595,7 @@ void CB2_InitTitleScreen(void)
     {
     default:
     case 0:
+		sTitleBackground = Random() % 3;
         SetVBlankCallback(NULL);
         SetGpuReg(REG_OFFSET_BLDCNT, 0);
         SetGpuReg(REG_OFFSET_BLDALPHA, 0);
@@ -600,11 +623,38 @@ void CB2_InitTitleScreen(void)
         LZ77UnCompVram(gTitleScreenPokemonLogoTilemap, (void *)(BG_SCREEN_ADDR(9)));
         LoadPalette(gTitleScreenBgPalettes, BG_PLTT_ID(0), 15 * PLTT_SIZE_4BPP);
         // bg3
-        LZ77UnCompVram(sTitleScreenRayquazaGfx, (void *)(BG_CHAR_ADDR(2)));
-        LZ77UnCompVram(sTitleScreenRayquazaTilemap, (void *)(BG_SCREEN_ADDR(26)));
+        //LZ77UnCompVram(sTitleScreenRayquazaGfx, (void *)(BG_CHAR_ADDR(2)));
+        //LZ77UnCompVram(sTitleScreenRayquazaTilemap, (void *)(BG_SCREEN_ADDR(26)));
         // bg1
-        LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
-        LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
+        //LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
+        //LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
+		
+		switch (sTitleBackground)
+		{
+		case TITLE_BG_GROUDON:
+		// Groudon y escenario de lava.
+			LZ77UnCompVram(sTitleGroudonGfx, (void *)BG_CHAR_ADDR(2));
+			LZ77UnCompVram(sTitleGroudonMap, (void *)BG_SCREEN_ADDR(24));
+			LZ77UnCompVram(sTitleLavaMap, (void *)BG_SCREEN_ADDR(25));
+			LoadPalette(sTitleGroudonPal, BG_PLTT_ID(14), sizeof(sTitleGroudonPal));
+			break;
+		case TITLE_BG_KYOGRE:
+		// Kyogre y escenario de agua.
+			LZ77UnCompVram(sTitleKyogreGfx, (void *)BG_CHAR_ADDR(2));
+			LZ77UnCompVram(sTitleKyogreMap, (void *)BG_SCREEN_ADDR(24));
+			LZ77UnCompVram(sTitleWaterMap, (void *)BG_SCREEN_ADDR(25));
+			LoadPalette(sTitleKyogrePal, BG_PLTT_ID(14), sizeof(sTitleKyogrePal));
+			break;
+		case TITLE_BG_RAYQUAZA:
+		default:
+		// Pantalla original de Esmeralda.
+			LZ77UnCompVram(sTitleScreenRayquazaGfx, (void *)BG_CHAR_ADDR(2));
+			LZ77UnCompVram(sTitleScreenRayquazaTilemap, (void *)BG_SCREEN_ADDR(26));
+			LZ77UnCompVram(sTitleScreenCloudsGfx,(void *)BG_CHAR_ADDR(3));
+			LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)BG_SCREEN_ADDR(27));
+			break;
+		}
+		
         ScanlineEffect_Stop();
         ResetTasks();
         ResetSpriteData();
@@ -648,8 +698,22 @@ void CB2_InitTitleScreen(void)
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_LIGHTEN);
         SetGpuReg(REG_OFFSET_BLDALPHA, 0);
         SetGpuReg(REG_OFFSET_BLDY, 12);
-        SetGpuReg(REG_OFFSET_BG0CNT, BGCNT_PRIORITY(3) | BGCNT_CHARBASE(2) | BGCNT_SCREENBASE(26) | BGCNT_16COLOR | BGCNT_TXT256x256);
-        SetGpuReg(REG_OFFSET_BG1CNT, BGCNT_PRIORITY(2) | BGCNT_CHARBASE(3) | BGCNT_SCREENBASE(27) | BGCNT_16COLOR | BGCNT_TXT256x256);
+        //SetGpuReg(REG_OFFSET_BG0CNT, BGCNT_PRIORITY(3) | BGCNT_CHARBASE(2) | BGCNT_SCREENBASE(26) | BGCNT_16COLOR | BGCNT_TXT256x256);
+        //SetGpuReg(REG_OFFSET_BG1CNT, BGCNT_PRIORITY(2) | BGCNT_CHARBASE(3) | BGCNT_SCREENBASE(27) | BGCNT_16COLOR | BGCNT_TXT256x256);
+		
+		if (sTitleBackground == TITLE_BG_RAYQUAZA)
+		{
+		// Capas originales de Esmeralda.
+			SetGpuReg(REG_OFFSET_BG0CNT, BGCNT_PRIORITY(3) | BGCNT_CHARBASE(2) | BGCNT_SCREENBASE(26) | BGCNT_16COLOR | BGCNT_TXT256x256);
+			SetGpuReg(REG_OFFSET_BG1CNT, BGCNT_PRIORITY(2) | BGCNT_CHARBASE(3) | BGCNT_SCREENBASE(27) | BGCNT_16COLOR | BGCNT_TXT256x256);
+		}
+		else
+		{
+		// Capas originales de Rubi y Zafiro.
+			SetGpuReg(REG_OFFSET_BG0CNT, BGCNT_PRIORITY(3) | BGCNT_CHARBASE(2) | BGCNT_SCREENBASE(24) | BGCNT_16COLOR | BGCNT_TXT256x256);
+			SetGpuReg(REG_OFFSET_BG1CNT, BGCNT_PRIORITY(2) | BGCNT_CHARBASE(2) | BGCNT_SCREENBASE(25) | BGCNT_16COLOR | BGCNT_TXT256x256);
+		}
+		
         SetGpuReg(REG_OFFSET_BG2CNT, BGCNT_PRIORITY(1) | BGCNT_CHARBASE(0) | BGCNT_SCREENBASE(9) | BGCNT_256COLOR | BGCNT_AFF256x256);
         EnableInterrupts(INTR_FLAG_VBLANK);
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_1
@@ -779,14 +843,28 @@ static void Task_TitleScreenPhase2(u8 taskId)
 // Show Rayquaza silhouette and process main title screen input
 static void Task_TitleScreenPhase3(u8 taskId)
 {
-    if (JOY_NEW(A_BUTTON) || JOY_NEW(START_BUTTON))
-    {
-        FadeOutBGM(4);
+	if (JOY_NEW(A_BUTTON) || JOY_NEW(START_BUTTON))
+	{
+		FadeOutBGM(4);
 		if (CRY_AFTER_TITLE)
-			PlayCry_Normal(SPECIES_RAYQUAZA, 0);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
-        SetMainCallback2(CB2_GoToMainMenu);
-    }
+		{
+			switch (sTitleBackground)
+			{
+			case TITLE_BG_GROUDON:
+				PlayCry_Normal(SPECIES_GROUDON, 0);
+				break;
+			case TITLE_BG_KYOGRE:
+				PlayCry_Normal(SPECIES_KYOGRE, 0);
+				break;
+			case TITLE_BG_RAYQUAZA:
+			default:
+				PlayCry_Normal(SPECIES_RAYQUAZA, 0);
+				break;
+			}
+		}
+		BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
+		SetMainCallback2(CB2_GoToMainMenu);
+	}
     else if (JOY_HELD(CLEAR_SAVE_BUTTON_COMBO) == CLEAR_SAVE_BUTTON_COMBO)
     {
         SetMainCallback2(CB2_GoToClearSaveDataScreen);
@@ -811,7 +889,8 @@ static void Task_TitleScreenPhase3(u8 taskId)
         if (++gTasks[taskId].tCounter & 1)
         {
             gTasks[taskId].tBg1Y++;
-            gBattle_BG1_Y = gTasks[taskId].tBg1Y / 2;
+            //gBattle_BG1_Y = gTasks[taskId].tBg1Y / 2;
+			gBattle_BG1_Y = (sTitleBackground == TITLE_BG_RAYQUAZA) ? gTasks[taskId].tBg1Y / 2 : gTasks[taskId].tBg1Y;
             gBattle_BG1_X = 0;
         }
         UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
@@ -856,6 +935,7 @@ static void CB2_GoToBerryFixScreen(void)
     }
 }
 
+/*
 static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
     if ((frameNum % 4) == 0) // Change color every 4th frame
@@ -868,4 +948,32 @@ static void UpdateLegendaryMarkingColor(u8 frameNum)
         u16 color = RGB(r, g, b);
         LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
    }
+}
+*/
+
+static void UpdateLegendaryMarkingColor(u8 frameNum)
+{
+    u16 color;
+	if ((frameNum % 4) != 0)
+        return;
+    if (sTitleBackground == TITLE_BG_RAYQUAZA)
+    {
+        // Colores originales de Esmeralda.
+        s32 intensity = Cos(frameNum, 128) + 128;
+        s32 r = 31 - ((intensity * 32 - intensity) / 256);
+        s32 g = 31 - (intensity * 22 / 256);
+        color = RGB(r, g, 12);
+    }
+    else
+    {
+        // Colores originales de Rubi y Zafiro.
+        u8 intensity = (frameNum >> 2) & 31;
+        if ((frameNum >> 2) & 32)
+            intensity = 31 - intensity;
+        if (sTitleBackground == TITLE_BG_GROUDON)
+            color = RGB(0, 0, intensity);
+        else
+            color = RGB(intensity, 0, 0);
+    }
+    LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
 }
