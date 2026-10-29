@@ -48,6 +48,46 @@ EverGrandeCity_EventScript_Klinklang::
 	msgbox EverGrandeCity_Text_Klinklang, MSGBOX_SIGN
 	end
 
+EverGrandeCity_EventScript_CoolTrainerF::
+	msgbox EverGrandeCity_Text_CoolTrainerF, MSGBOX_NPC
+	end
+
+EverGrandeCity_EventScript_Expert::
+	msgbox EverGrandeCity_Text_Expert, MSGBOX_NPC
+	end
+
+EverGrandeCity_EventScript_BlackBelt::
+	msgbox EverGrandeCity_Text_BlackBelt, MSGBOX_NPC
+	end
+
+EverGrandeCity_EventScript_Scientist::
+	msgbox EverGrandeCity_Text_Scientist, MSGBOX_NPC
+	end
+
+EverGrandeCity_Text_Scientist:
+	.string "A trainer called DANTE beat my\n"
+	.string "Klinklang with his own Klinklang.\p"
+	.string "WE WANT REVENGE!!!$"
+
+EverGrandeCity_Text_BlackBelt:
+	.string "I'm not here to challenge the Pokémon\n"
+	.string "League, nor to defeat the Victory Road.\p"
+	.string "I came to fight in the Ever Grande\n"
+	.string "Arena. Powerful trainers come here to\l"
+	.string "test their skills.$"
+
+EverGrandeCity_Text_Expert:
+	.string "I caught Flygon when I was young. He\n"
+	.string "was just a Trapinch at the time.\p"
+	.string "Now, we've decided to challenge the\n"
+	.string "League. I know we are not enough, but\l"
+	.string "we wanted to have our last adventure\l"
+	.string "together...$"
+
+EverGrandeCity_Text_CoolTrainerF:
+	.string "I'm going to let them run around and\n"
+	.string "play for a while before going inside.$"
+
 EverGrandeCity_Text_Klinklang:
 	.string "Ggggr-t-t-t-t...!$"
 
