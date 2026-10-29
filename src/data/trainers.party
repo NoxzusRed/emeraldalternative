@@ -18544,30 +18544,6 @@ Bulbasaur
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BRENDAN_PLACEHOLDER ===
-Name: BRENDAN
-Class: RS Protag
-Pic: RS Brendan
-Gender: Male
-Music: Male
-Double Battle: No
-
-Groudon
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_MAY_PLACEHOLDER ===
-Name: MAY
-Class: RS Protag
-Pic: RS May
-Gender: Female
-Music: Male
-Double Battle: No
-
-Kyogre
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 === TRAINER_GRUNT_ROUTE115_RIOLU_QUEST ===
 Name: GRUNT
 Class: Team Aqua
@@ -18747,3 +18723,261 @@ IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Flash Cannon
 - Iron Defense
+
+=== TRAINER_ARENA_BRENDAN_MUDKIP ===
+Name: BRENDAN
+Class: RS Protag
+Pic: RS Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+
+Tropius
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Rapidash
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Galvantula
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Pelipper
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+
+Serperior
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
+
+=== TRAINER_ARENA_MAY_MUDKIP ===
+Name: MAY
+Class: RS Protag
+Pic: RS May
+Gender: Female
+Music: Male
+Double Battle: No
+
+Tropius
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Rapidash
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Galvantula
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Pelipper
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+
+Serperior
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
+
+=== TRAINER_ARENA_BRENDAN_SNIVY ===
+Name: BRENDAN
+Class: RS Protag
+Pic: RS Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+
+Tropius
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Galvantula
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Pelipper
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+
+Jumpluff
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Delphox
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+
+=== TRAINER_ARENA_MAY_SNIVY ===
+Name: MAY
+Class: RS Protag
+Pic: RS May
+Gender: Female
+Music: Male
+Double Battle: No
+
+Tropius
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Pelipper
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+
+Galvantula
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Jumpluff
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Delphox
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+
+=== TRAINER_ARENA_BRENDAN_FENNEKIN ===
+Name: BRENDAN
+Class: RS Protag
+Pic: RS Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+
+Tropius
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Jumpluff
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Galvantula
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Rapidash
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Swampert
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+
+=== TRAINER_ARENA_MAY_FENNEKIN ===
+Name: MAY
+Class: RS Protag
+Pic: RS May
+Gender: Female
+Music: Male
+Double Battle: No
+
+Tropius
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Jumpluff
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Rapidash
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Galvantula
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Swampert
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+
+=== TRAINER_ARENA_WALLY ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Ralts
+Level: 5
+
+=== TRAINER_ARENA_MATT ===
+Name: MATT
+Class: Aqua Admin
+Pic: Aqua Admin M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+
+Carvanha
+Level: 5
+
+=== TRAINER_ARENA_SHELLY ===
+Name: SHELLY
+Class: Aqua Admin
+Pic: Aqua Admin F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+
+Carvanha
+Level: 5
+
+=== TRAINER_ARENA_TABITHA ===
+Name: TABITHA
+Class: Magma Admin
+Pic: Magma Admin
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer
+
+Numel
+Level: 5
+
+=== TRAINER_ARENA_COURTNEY ===
+Name: COURTNEY
+Class: Magma Admin
+Pic: Magma Grunt F
+Gender: Female
+Music: Magma
+Double Battle: No
+AI: Basic Trainer
+
+Numel
+Level: 5
