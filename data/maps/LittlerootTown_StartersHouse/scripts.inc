@@ -1,148 +1,127 @@
 LittlerootTown_StartersHouse_MapScripts::
-	.byte 0
+    .byte 0
 
-LittlerootTown_StartersHouse_EventScript_SnivyTrader::
-	lock
-	faceplayer
-	goto_if_set FLAG_SNIVY_TRADE_COMPLETED, LittlerootTown_StartersHouse_EventScript_SnivyTradeCompleted
-	setvar VAR_0x8008, INGAME_TRADE_SNIVY
-	copyvar VAR_0x8004, VAR_0x8008
-	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
-	copyvar VAR_0x8009, VAR_RESULT
-	msgbox LittlerootTown_StartersHouse_Text_WillingToTradeSnivy, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_StartersHouse_EventScript_DeclineTrade
-	special ChoosePartyMon
-	waitstate
-	copyvar VAR_0x800A, VAR_0x8004
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, LittlerootTown_StartersHouse_EventScript_DeclineTrade
-	copyvar VAR_0x8005, VAR_0x800A
-	specialvar VAR_RESULT, GetTradeSpecies
-	copyvar VAR_0x800B, VAR_RESULT
-	goto_if_ne VAR_RESULT, VAR_0x8009, LittlerootTown_StartersHouse_EventScript_NotRequestedMon
-	copyvar VAR_0x8004, VAR_0x8008
-	copyvar VAR_0x8005, VAR_0x800A
-	special CreateInGameTradePokemon
-	special DoInGameTradeScene
-	waitstate
-	bufferspeciesname STR_VAR_1, VAR_0x8009
-	msgbox LittlerootTown_StartersHouse_Text_BeatFennekin, MSGBOX_DEFAULT
-	setflag FLAG_SNIVY_TRADE_COMPLETED
-	release
-	end
+@ Offer one Egg for each starter that the player did not choose.
+@ Keep the old trade flag numbers for existing save file progress.
 
-LittlerootTown_StartersHouse_EventScript_FennekinTrader::
-	lock
-	faceplayer
-	goto_if_set FLAG_FENNEKIN_TRADE_COMPLETED, LittlerootTown_StartersHouse_EventScript_FennekinTradeCompleted
-	setvar VAR_0x8008, INGAME_TRADE_FENNEKIN
-	copyvar VAR_0x8004, VAR_0x8008
-	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
-	copyvar VAR_0x8009, VAR_RESULT
-	msgbox LittlerootTown_StartersHouse_Text_WillingToTradeFennekin, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_StartersHouse_EventScript_DeclineTrade
-	special ChoosePartyMon
-	waitstate
-	copyvar VAR_0x800A, VAR_0x8004
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, LittlerootTown_StartersHouse_EventScript_DeclineTrade
-	copyvar VAR_0x8005, VAR_0x800A
-	specialvar VAR_RESULT, GetTradeSpecies
-	copyvar VAR_0x800B, VAR_RESULT
-	goto_if_ne VAR_RESULT, VAR_0x8009, LittlerootTown_StartersHouse_EventScript_NotRequestedMon
-	copyvar VAR_0x8004, VAR_0x8008
-	copyvar VAR_0x8005, VAR_0x800A
-	special CreateInGameTradePokemon
-	special DoInGameTradeScene
-	waitstate
-	bufferspeciesname STR_VAR_1, VAR_0x8009
-	msgbox LittlerootTown_StartersHouse_Text_BeatMudkip, MSGBOX_DEFAULT
-	setflag FLAG_FENNEKIN_TRADE_COMPLETED
-	release
-	end
+LittlerootTown_StartersHouse_EventScript_SnivyEggGift::
+    lock
+    faceplayer
+    goto_if_unset FLAG_SYS_POKEMON_GET, LittlerootTown_StartersHouse_EventScript_NoStarter
+    goto_if_eq VAR_STARTER_MON, 0, LittlerootTown_StartersHouse_EventScript_AlreadyChoseThisStarter
+    goto_if_set FLAG_RECEIVED_SNIVY_EGG, LittlerootTown_StartersHouse_EventScript_AlreadyReceivedEgg
+    msgbox LittlerootTown_StartersHouse_Text_OfferSnivyEgg, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, LittlerootTown_StartersHouse_EventScript_DeclineEgg
+    getpartysize
+    goto_if_eq VAR_RESULT, PARTY_SIZE, LittlerootTown_StartersHouse_EventScript_PartyFull
+    giveegg SPECIES_SNIVY
+    goto_if_ne VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_StartersHouse_EventScript_PartyFull
+    setflag FLAG_RECEIVED_SNIVY_EGG
+    goto LittlerootTown_StartersHouse_EventScript_ReceivedEgg
 
-LittlerootTown_StartersHouse_EventScript_MudkipTrader::
-	lock
-	faceplayer
-	goto_if_set FLAG_MUDKIP_TRADE_COMPLETED, LittlerootTown_StartersHouse_EventScript_MudkipTradeCompleted
-	setvar VAR_0x8008, INGAME_TRADE_MUDKIP
-	copyvar VAR_0x8004, VAR_0x8008
-	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
-	copyvar VAR_0x8009, VAR_RESULT
-	msgbox LittlerootTown_StartersHouse_Text_WillingToTradeMudkip, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_StartersHouse_EventScript_DeclineTrade
-	special ChoosePartyMon
-	waitstate
-	copyvar VAR_0x800A, VAR_0x8004
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, LittlerootTown_StartersHouse_EventScript_DeclineTrade
-	copyvar VAR_0x8005, VAR_0x800A
-	specialvar VAR_RESULT, GetTradeSpecies
-	copyvar VAR_0x800B, VAR_RESULT
-	goto_if_ne VAR_RESULT, VAR_0x8009, LittlerootTown_StartersHouse_EventScript_NotRequestedMon
-	copyvar VAR_0x8004, VAR_0x8008
-	copyvar VAR_0x8005, VAR_0x800A
-	special CreateInGameTradePokemon
-	special DoInGameTradeScene
-	waitstate
-	bufferspeciesname STR_VAR_1, VAR_0x8009
-	msgbox LittlerootTown_StartersHouse_Text_BeatSnivy, MSGBOX_DEFAULT
-	setflag FLAG_MUDKIP_TRADE_COMPLETED
-	release
-	end
+LittlerootTown_StartersHouse_EventScript_FennekinEggGift::
+    lock
+    faceplayer
+    goto_if_unset FLAG_SYS_POKEMON_GET, LittlerootTown_StartersHouse_EventScript_NoStarter
+    goto_if_eq VAR_STARTER_MON, 1, LittlerootTown_StartersHouse_EventScript_AlreadyChoseThisStarter
+    goto_if_set FLAG_RECEIVED_FENNEKIN_EGG, LittlerootTown_StartersHouse_EventScript_AlreadyReceivedEgg
+    msgbox LittlerootTown_StartersHouse_Text_OfferFennekinEgg, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, LittlerootTown_StartersHouse_EventScript_DeclineEgg
+    getpartysize
+    goto_if_eq VAR_RESULT, PARTY_SIZE, LittlerootTown_StartersHouse_EventScript_PartyFull
+    giveegg SPECIES_FENNEKIN
+    goto_if_ne VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_StartersHouse_EventScript_PartyFull
+    setflag FLAG_RECEIVED_FENNEKIN_EGG
+    goto LittlerootTown_StartersHouse_EventScript_ReceivedEgg
 
-LittlerootTown_StartersHouse_EventScript_DeclineTrade::
-	msgbox LittlerootTown_StartersHouse_Text_ItsOkay, MSGBOX_DEFAULT
-	release
-	end
+LittlerootTown_StartersHouse_EventScript_MudkipEggGift::
+    lock
+    faceplayer
+    goto_if_unset FLAG_SYS_POKEMON_GET, LittlerootTown_StartersHouse_EventScript_NoStarter
+    goto_if_eq VAR_STARTER_MON, 2, LittlerootTown_StartersHouse_EventScript_AlreadyChoseThisStarter
+    goto_if_set FLAG_RECEIVED_MUDKIP_EGG, LittlerootTown_StartersHouse_EventScript_AlreadyReceivedEgg
+    msgbox LittlerootTown_StartersHouse_Text_OfferMudkipEgg, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, LittlerootTown_StartersHouse_EventScript_DeclineEgg
+    getpartysize
+    goto_if_eq VAR_RESULT, PARTY_SIZE, LittlerootTown_StartersHouse_EventScript_PartyFull
+    giveegg SPECIES_MUDKIP
+    goto_if_ne VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_StartersHouse_EventScript_PartyFull
+    setflag FLAG_RECEIVED_MUDKIP_EGG
+    goto LittlerootTown_StartersHouse_EventScript_ReceivedEgg
 
-LittlerootTown_StartersHouse_EventScript_NotRequestedMon::
-	bufferspeciesname STR_VAR_1, VAR_0x8009
-	msgbox LittlerootTown_StartersHouse_Text_NeedMon, MSGBOX_DEFAULT
-	release
-	end
+LittlerootTown_StartersHouse_EventScript_ReceivedEgg::
+    playfanfare MUS_OBTAIN_ITEM
+    message LittlerootTown_StartersHouse_Text_ReceivedEgg
+    waitfanfare
+    waitmessage
+    waitbuttonpress
+    release
+    end
 
-LittlerootTown_StartersHouse_EventScript_SnivyTradeCompleted::
-	msgbox LittlerootTown_StartersHouse_Text_BeatFennekin, MSGBOX_DEFAULT
-	release
-	end
+LittlerootTown_StartersHouse_EventScript_NoStarter::
+    msgbox LittlerootTown_StartersHouse_Text_NoStarter, MSGBOX_DEFAULT
+    release
+    end
 
-LittlerootTown_StartersHouse_EventScript_FennekinTradeCompleted::
-	msgbox LittlerootTown_StartersHouse_Text_BeatMudkip, MSGBOX_DEFAULT
-	release
-	end
+LittlerootTown_StartersHouse_EventScript_AlreadyChoseThisStarter::
+    msgbox LittlerootTown_StartersHouse_Text_AlreadyChoseThisStarter, MSGBOX_DEFAULT
+    release
+    end
 
-LittlerootTown_StartersHouse_EventScript_MudkipTradeCompleted::
-	msgbox LittlerootTown_StartersHouse_Text_BeatSnivy, MSGBOX_DEFAULT
-	release
-	end
+LittlerootTown_StartersHouse_EventScript_AlreadyReceivedEgg::
+    msgbox LittlerootTown_StartersHouse_Text_AlreadyReceivedEgg, MSGBOX_DEFAULT
+    release
+    end
 
-LittlerootTown_StartersHouse_Text_WillingToTradeSnivy:
-	.string "I like {STR_VAR_2} but I can't beat\n"
-	.string "Fennekin.\p"
-	.string "If you like {STR_VAR_2} as well I can\n"
-	.string "trade it for a {STR_VAR_1}.$"
+LittlerootTown_StartersHouse_EventScript_DeclineEgg::
+    msgbox LittlerootTown_StartersHouse_Text_DeclineEgg, MSGBOX_DEFAULT
+    release
+    end
 
-LittlerootTown_StartersHouse_Text_BeatFennekin:
-	.string "Thank you! Now I can beat Fennekin!$"
+LittlerootTown_StartersHouse_EventScript_PartyFull::
+    msgbox LittlerootTown_StartersHouse_Text_PartyFull, MSGBOX_DEFAULT
+    release
+    end
 
-LittlerootTown_StartersHouse_Text_WillingToTradeFennekin:
-	.string "I like {STR_VAR_2} but I can't beat\n"
-	.string "Mudkip.\p"
-	.string "If you like {STR_VAR_2} as well I can\n"
-	.string "trade it for a {STR_VAR_1}.$"
+LittlerootTown_StartersHouse_Text_OfferSnivyEgg:
+    .string "I've got an EGG that will hatch\n"
+    .string "into a SNIVY.\p"
+    .string "Would you like to raise it?$"
 
-LittlerootTown_StartersHouse_Text_BeatMudkip:
-	.string "Thank you! Now I can beat Mudkip!$"
+LittlerootTown_StartersHouse_Text_OfferFennekinEgg:
+    .string "I've got an EGG that will hatch\n"
+    .string "into a FENNEKIN.\p"
+    .string "Would you like to raise it?$"
 
-LittlerootTown_StartersHouse_Text_WillingToTradeMudkip:
-	.string "I like {STR_VAR_2} but I can't beat\n"
-	.string "Snivy.\p"
-	.string "If you like {STR_VAR_2} as well I can\n"
-	.string "trade it for a {STR_VAR_1}.$"
+LittlerootTown_StartersHouse_Text_OfferMudkipEgg:
+    .string "I've got an EGG that will hatch\n"
+    .string "into a MUDKIP.\p"
+    .string "Would you like to raise it?$"
 
-LittlerootTown_StartersHouse_Text_BeatSnivy:
-	.string "Thank you! Now I can beat Snivy!$"
+LittlerootTown_StartersHouse_Text_ReceivedEgg:
+    .string "{PLAYER} received the EGG!$"
 
-LittlerootTown_StartersHouse_Text_NeedMon:
-	.string "No, no, no! I need a {STR_VAR_1}!$"
+LittlerootTown_StartersHouse_Text_NoStarter:
+    .string "You haven't chosen your first\n"
+    .string "POKéMON yet?\p"
+    .string "Come back after meeting\n"
+    .string "PROF. BIRCH!$"
 
-LittlerootTown_StartersHouse_Text_ItsOkay:
-	.string "It's okay. I'll just keep losing...$"
+LittlerootTown_StartersHouse_Text_AlreadyChoseThisStarter:
+    .string "You already chose this POKéMON\n"
+    .string "as your first partner!\p"
+    .string "I'll save this EGG for another\n"
+    .string "TRAINER.$"
+
+LittlerootTown_StartersHouse_Text_AlreadyReceivedEgg:
+    .string "I hope the EGG I gave you\n"
+    .string "hatches into a strong POKéMON!$"
+
+LittlerootTown_StartersHouse_Text_DeclineEgg:
+    .string "No problem! Come back if you\n"
+    .string "change your mind.$"
+
+LittlerootTown_StartersHouse_Text_PartyFull:
+    .string "Your party is full!\p"
+    .string "Come back with room for\n"
+    .string "the EGG.$"
