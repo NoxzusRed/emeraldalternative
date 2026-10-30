@@ -17,7 +17,7 @@ RustboroCity_East_EventScript_SootheBellWoman::
 	goto_if_set FLAG_RECEIVED_SOOTHE_BELL, RustboroCity_East_EventScript_ReceivedSootheBell
 	msgbox RustboroCity_East_Text_ShowMePokemonThatLoveYou, MSGBOX_DEFAULT
 	specialvar VAR_RESULT, GetLeadMonFriendshipScore
-	goto_if_ge VAR_RESULT, FRIENDSHIP_1_TO_49, RustboroCity_East_EventScript_GiveSootheBell
+	goto_if_ge VAR_RESULT, FRIENDSHIP_150_TO_199, RustboroCity_East_EventScript_GiveSootheBell
 	release
 	end
 
