@@ -394,6 +394,39 @@ PetalburgWoods_EventScript_DeclineRest::
 	release
 	end
 
+PetalburgWoods_EventScript_AromaLadyFlora::
+    trainerbattle_single TRAINER_FLORA, PetalburgWoods_Text_FloraIntro, PetalburgWoods_Text_FloraDefeat
+    msgbox PetalburgWoods_Text_FloraAfterBattle, MSGBOX_AUTOCLOSE
+    end
+
+PetalburgWoods_EventScript_SchoolKidEmma::
+    trainerbattle_single TRAINER_EMMA, PetalburgWoods_Text_EmmaIntro, PetalburgWoods_Text_EmmaDefeat
+    msgbox PetalburgWoods_Text_EmmaAfterBattle, MSGBOX_AUTOCLOSE
+    end
+
+PetalburgWoods_Text_FloraIntro:
+    .string "Can you smell the sweet flowers?\n"
+    .string "My POKéMON love this forest!$"
+
+PetalburgWoods_Text_FloraDefeat:
+    .string "Oh! I guess I got distracted\n"
+    .string "by the lovely scent...$"
+
+PetalburgWoods_Text_FloraAfterBattle:
+    .string "Even in the darkest woods,\n"
+    .string "flowers can find a way to bloom.$"
+
+PetalburgWoods_Text_EmmaIntro:
+    .string "My teacher says the best way to\n"
+    .string "learn is through POKéMON battles!$"
+
+PetalburgWoods_Text_EmmaDefeat:
+    .string "Oh no! I got that answer wrong!$"
+
+PetalburgWoods_Text_EmmaAfterBattle:
+    .string "I'll write down what I learned\n"
+    .string "from our battle!$"
+
 PetalburgWoods_Text_RestUpHere:
 	.string "Oh my! This forest is bigger than I\n"
 	.string "remembered it.\p"

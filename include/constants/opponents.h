@@ -571,7 +571,7 @@
 #define TRAINER_CATHERINE_5                 565
 #define TRAINER_JULIO                       566
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_5     567
-#define TRAINER_GRUNT_UNUSED                568 // Unused
+#define TRAINER_FLORA						568 //
 #define TRAINER_GRUNT_MT_PYRE_4             569
 #define TRAINER_GRUNT_JAGGED_PASS           570
 #define TRAINER_MARC                        571
@@ -867,21 +867,22 @@
 #define TRAINER_GENTLEMAN_RUSTURF_HIGH      859
 #define TRAINER_KINDLER_FALLARBOR_MINES     860
 #define TRAINER_COOLTRAINER_VICTORY_ROAD_2F 861
-#define TRAINER_ARENA_TABITHA               862
-#define TRAINER_ARENA_COURTNEY              863
-#define TRAINER_ARENA_WALLY      			864
-#define TRAINER_ARENA_BRENDAN_MUDKIP    	865
-#define TRAINER_ARENA_MAY_MUDKIP	   		866
-#define TRAINER_ARENA_BRENDAN_SNIVY	    	867
-#define TRAINER_ARENA_MAY_SNIVY		   		868
-#define TRAINER_ARENA_BRENDAN_FENNEKIN    	869
-#define TRAINER_ARENA_MAY_FENNEKIN   		870
+#define TRAINER_ARENA_TABITHA               862 // Custom Ever Grande Arena Trainer
+#define TRAINER_ARENA_COURTNEY              863 // Custom Ever Grande Arena Trainer
+#define TRAINER_ARENA_WALLY      			864 // Custom Ever Grande Arena Trainer
+#define TRAINER_ARENA_BRENDAN_MUDKIP    	865 // Custom Ever Grande Arena Trainer
+#define TRAINER_ARENA_MAY_MUDKIP	   		866 // Custom Ever Grande Arena Trainer
+#define TRAINER_ARENA_BRENDAN_SNIVY	    	867 // Custom Ever Grande Arena Trainer
+#define TRAINER_ARENA_MAY_SNIVY		   		868 // Custom Ever Grande Arena Trainer
+#define TRAINER_ARENA_BRENDAN_FENNEKIN    	869 // Custom Ever Grande Arena Trainer
+#define TRAINER_ARENA_MAY_FENNEKIN   		870 // Custom Ever Grande Arena Trainer
+#define TRAINER_EMMA						871
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      871
+#define TRAINERS_COUNT                      872
 #define MAX_TRAINERS_COUNT                  900
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 
