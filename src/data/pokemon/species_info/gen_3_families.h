@@ -4552,11 +4552,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_SABLEYE] =
     {
         .baseHP        = 50,
-        .baseAttack    = 75,
-        .baseDefense   = 75,
-        .baseSpeed     = 50,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 65,
+        .baseAttack    = 85,
+        .baseDefense   = 125,
+        .baseSpeed     = 20,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_DARK, TYPE_GHOST),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 133 : 98,
@@ -4569,7 +4569,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_STALL, ABILITY_PRANKSTER },
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_MAGIC_BOUNCE, ABILITY_PRANKSTER },
     #else
         .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_PRANKSTER },
     #endif
@@ -4709,11 +4709,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_MAWILE] =
     {
         .baseHP        = 50,
-        .baseAttack    = 85,
-        .baseDefense   = 85,
+        .baseAttack    = 105,
+        .baseDefense   = 125,
         .baseSpeed     = 50,
         .baseSpAttack  = 55,
-        .baseSpDefense = 55,
+        .baseSpDefense = 95,
         .types = MAWILE_TYPES,
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 133 : 98,
@@ -4725,7 +4725,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_HYPER_CUTTER, ABILITY_INTIMIDATE, ABILITY_SHEER_FORCE },
+        .abilities = { ABILITY_SHEER_FORCE, ABILITY_INTIMIDATE, ABILITY_HUGE_POWER },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Mawile"),
         .cryId = CRY_MAWILE,
