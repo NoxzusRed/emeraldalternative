@@ -357,6 +357,9 @@ Poochyena
 Level: 16
 IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 252 HP
+- Bite
+- Tackle
+- Sand Attack
 
 === TRAINER_GRUNT_WEATHER_INST_1 ===
 Name: GRUNT
@@ -3612,7 +3615,7 @@ Pelipper
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Popplio
+Brionne
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9167,7 +9170,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Popplio
+Brionne
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9188,7 +9191,7 @@ Pelipper
 Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Popplio
+Brionne
 Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9404,7 +9407,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Popplio
+Brionne
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
