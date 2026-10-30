@@ -65,7 +65,7 @@
 #define FLAG_LILYCOVE_FERRY_WELCOME_DONE    0x34 //
 #define FLAG_HIDE_LITTLEROOT_TREE_1    		0x35 //
 #define FLAG_HIDE_LITTLEROOT_TREE_2   		0x36 //
-#define FLAG_UNUSED4   						0x37 // Unused Flag
+#define FLAG_ROUTE115_SHORTCUT_OPEN   		0x37 //
 #define FLAG_HIDE_ROUTE115_GREEN_NPC    	0x38 //
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag

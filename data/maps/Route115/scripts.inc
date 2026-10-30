@@ -5,9 +5,14 @@ Route115_MapScripts::
 	.byte 0
 
 Route115_OnLoad:
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_EventScript_PlaceTilesRoute115West
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_EventScript_PlaceTilesRoute115East
-	end
+    call_if_set FLAG_ROUTE115_SHORTCUT_OPEN, Route115_EventScript_ApplyShortcutTiles
+    call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_EventScript_PlaceTilesRoute115West
+    call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_EventScript_PlaceTilesRoute115East
+    end
+
+Route115_EventScript_SetShortcutTile::
+    setmetatile 24, 69, 0x0D6, TRUE
+    return
 
 Route115_OnTransition:
     call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
@@ -15,6 +20,12 @@ Route115_OnTransition:
     call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_StartGroudonWeather
     call Route115_EventScript_UpdateRioluQuestObjects
     call Route115_EventScript_PrepareRioluQuestCamera
+    setflag FLAG_TEMP_17
+    goto_if_unset FLAG_MET_ARCHIE_METEOR_FALLS, Route115_OnTransition_End
+    goto_if_set FLAG_ROUTE115_SHORTCUT_OPEN, Route115_OnTransition_End
+    clearflag FLAG_TEMP_17
+
+Route115_OnTransition_End:
     end
 
 Route115_OnFrame:
@@ -184,16 +195,19 @@ Route115_EventScript_RioluQuestAquaBattle::
 Route115_EventScript_RioluQuestAqua2::
     msgbox Route115_Text_RioluQuestAqua2, MSGBOX_NPC
 	applymovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2, Common_Movement_FaceRight
+	release
     end
 
 Route115_EventScript_RioluQuestLucario::
     playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
     msgbox Route115_Text_RioluQuestLucario, MSGBOX_DEFAULT
+	release
     end
 
 Route115_EventScript_Sharpedo::
 	playmoncry SPECIES_SHARPEDO, CRY_MODE_NORMAL
     msgbox Route115_Text_Sharpedo, MSGBOX_DEFAULT
+	release
     end
 
 Route115_EventScript_SelectAqua1Retreat::
@@ -351,14 +365,46 @@ Route115_Movement_CameraReturn:
     step_end
 
 Route115_EventScript_Excadrill::
-	playmoncry SPECIES_EXCADRILL, CRY_MODE_NORMAL
+    playmoncry SPECIES_EXCADRILL, CRY_MODE_NORMAL
     msgbox Route115_Text_Excadrill, MSGBOX_DEFAULT
+    release
     end
 
 Route115_EventScript_Krokorok::
-	playmoncry SPECIES_KROKOROK, CRY_MODE_NORMAL
+    playmoncry SPECIES_KROKOROK, CRY_MODE_NORMAL
     msgbox Route115_Text_Krokorok, MSGBOX_DEFAULT
+    release
     end
+
+Route115_EventScript_DevonEmployeeShortcut::
+    lock
+    faceplayer
+    msgbox Route115_Text_DevonEmployeeShortcut, MSGBOX_DEFAULT
+    closemessage
+    special StorePlayerCoordsInVars
+    setflag FLAG_ROUTE115_SHORTCUT_OPEN
+    warpsilent MAP_ROUTE115, VAR_0x8004, VAR_0x8005
+    waitstate
+    end
+
+Route115_EventScript_ApplyShortcutTiles::
+    @ Acantilados y apertura
+    setmetatile 24, 69, 0x0D6, TRUE
+    setmetatile 25, 69, 0x001, FALSE
+    setmetatile 26, 69, 0x118, FALSE
+    setmetatile 27, 69, 0x11A, FALSE
+    setmetatile 28, 69, 0x0D5, TRUE
+    setmetatile 25, 70, 0x118, FALSE
+    setmetatile 26, 70, 0x121, FALSE
+    setmetatile 27, 70, 0x12A, FALSE
+    setmetatile 25, 71, 0x128, FALSE
+    setmetatile 26, 71, 0x12A, FALSE
+    return
+
+Route115_Text_DevonEmployeeShortcut:
+    .string "DEVON EMPLOYEE: We're ready to\n"
+    .string "open the new passage!\p"
+    .string "Please stand back!$"
 
 Route115_Text_RioluQuestAquaIntro:
     .string "TEAM AQUA: Hey! Stay out of our\n"
