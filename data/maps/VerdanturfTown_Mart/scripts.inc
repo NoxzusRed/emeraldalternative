@@ -22,6 +22,8 @@ VerdanturfTown_Mart_Pokemart:
 	.2byte ITEM_BURN_HEAL
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_REPEL
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFENSE
 	.2byte ITEM_X_SP_ATK
 	.2byte ITEM_X_SP_DEF
 	.2byte ITEM_FLUFFY_TAIL
