@@ -6775,11 +6775,13 @@ Double Battle: No
 AI: Check Bad Move
 
 Dwebble
-Level: 10
+Level: 8
+Ability: Shell Armor
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
-Roggenrola
+Aron
 Level: 10
+Ability: Rock Head
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_JOEY ===
@@ -11806,12 +11808,13 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Dwebble
+Roggenrola
 Level: 8
+Ability: Weak Armor
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Dwebble
-Level: 8
+Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_BRENDEN ===
