@@ -28,9 +28,12 @@
 #include "constants/songs.h"
 #include "pokemon_animation.h"
 #include "constants/trainers.h"
+#include "constants/battle_string_ids.h"
 
 static EWRAM_DATA u8 sLinkSendTaskId = 0;
 static EWRAM_DATA u8 sLinkReceiveTaskId = 0;
+static bool8 sParallelHitActive[MAX_BATTLERS_COUNT];
+static bool8 sHealthBarFinished[MAX_BATTLERS_COUNT];
 
 COMMON_DATA void (*gBattlerControllerFuncs[MAX_BATTLERS_COUNT])(u32 battler) = {0};
 COMMON_DATA u8 gBattleControllerData[MAX_BATTLERS_COUNT] = {0}; // Used by the battle controllers to store misc sprite/task IDs for each battler
@@ -48,6 +51,8 @@ static void SpriteCB_FreeOpponentSprite(struct Sprite *sprite);
 static u32 ReturnAnimIdForBattler(bool32 isPlayerSide, u32 specificBattler);
 static void LaunchKOAnimation(u32 battlerId, u16 animId, bool32 isFront);
 static void AnimateMonAfterKnockout(u32 battler);
+static u8 sAttackTextBuffer[sizeof(gDisplayedStringBattle)];
+static bool8 sAttackTextPrinting = FALSE;
 
 void HandleLinkBattleSetup(void)
 {
@@ -77,7 +82,10 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     }
 
     HandleLinkBattleSetup();
+	memset(sParallelHitActive, 0, sizeof(sParallelHitActive));
+	memset(sHealthBarFinished, 0, sizeof(sHealthBarFinished));
     gBattleControllerExecFlags = 0;
+	sAttackTextPrinting = FALSE;
     ClearBattleAnimationVars();
     BattleAI_SetupItems();
     BattleAI_SetupFlags();
@@ -2323,17 +2331,42 @@ static void Controller_HandleTrainerSlideBack(u32 battler)
 
 void Controller_WaitForHealthBar(u32 battler)
 {
-    s16 hpValue = MoveBattleBar(battler, gHealthboxSpriteIds[battler], HEALTH_BAR, 0);
+    if (!sHealthBarFinished[battler])
+    {
+        s16 hpValue = MoveBattleBar(
+            battler,
+            gHealthboxSpriteIds[battler],
+            HEALTH_BAR,
+            0);
 
-    SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
-    if (hpValue != -1)
-    {
-        UpdateHpTextInHealthbox(gHealthboxSpriteIds[battler], HP_CURRENT, hpValue, gBattleMons[battler].maxHP);
+        SetHealthboxSpriteVisible(
+            gHealthboxSpriteIds[battler]);
+
+        if (hpValue != -1)
+        {
+            UpdateHpTextInHealthbox(
+                gHealthboxSpriteIds[battler],
+                HP_CURRENT,
+                hpValue,
+                gBattleMons[battler].maxHP);
+        }
+        else
+        {
+            sHealthBarFinished[battler] = TRUE;
+
+            if (IsOnPlayerSide(battler))
+                HandleLowHpMusicChange(
+                    GetBattlerMon(battler),
+                    battler);
+        }
     }
-    else
+
+    // Continuar solamente cuando hayan terminado
+    // tanto la barra de PS como la animacion de impacto.
+    if (sHealthBarFinished[battler] &&
+        !sParallelHitActive[battler])
     {
-        if (IsOnPlayerSide(battler))
-            HandleLowHpMusicChange(GetBattlerMon(battler), battler);
+        sHealthBarFinished[battler] = FALSE;
         BattleControllerComplete(battler);
     }
 }
@@ -2377,6 +2410,44 @@ static void Controller_WaitForPartyStatusSummary(u32 battler)
     }
 }
 
+static bool8 AnyParallelHitActive(void)
+{
+    u32 i;
+
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        if (sParallelHitActive[i])
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+static void Task_ParallelHitBlink(u8 taskId)
+{
+    u8 battler = gTasks[taskId].data[0];
+    u8 spriteId = gBattlerSpriteIds[battler];
+
+    // Mantener la duracion original del impacto.
+    if (gTasks[taskId].data[1] >= 32)
+    {
+        gSprites[spriteId].invisible = FALSE;
+        sParallelHitActive[battler] = FALSE;
+
+        if (!AnyParallelHitActive())
+            gDoingBattleAnim = FALSE;
+
+        DestroyTask(taskId);
+        return;
+    }
+
+    // Parpadeo original cada 4 fotogramas.
+    if ((gTasks[taskId].data[1] % 4) == 0)
+        gSprites[spriteId].invisible ^= 1;
+
+    gTasks[taskId].data[1]++;
+}
+
 static void Controller_HitAnimation(u32 battler)
 {
     u32 spriteId = gBattlerSpriteIds[battler];
@@ -2385,7 +2456,8 @@ static void Controller_HitAnimation(u32 battler)
     {
         gSprites[spriteId].data[1] = 0;
         gSprites[spriteId].invisible = FALSE;
-        gDoingBattleAnim = FALSE;
+        if (!AnyParallelHitActive())
+			gDoingBattleAnim = FALSE;
         BattleControllerComplete(battler);
     }
     else
@@ -2736,18 +2808,34 @@ void BtlController_HandleMoveAnimation(u32 battler, bool32 updateTvData)
     }
 }
 
+
 void BtlController_HandlePrintString(u32 battler, bool32 updateTvData, bool32 arenaPtsDeduct)
 {
     u16 *stringId;
+    bool8 parallelAttackText;
+    const u8 *text = gDisplayedStringBattle;
+
+    // No reemplazar un mensaje de ataque
+    // mientras todavia se esta escribiendo.
+    if (sAttackTextPrinting)
+    {
+        if (IsTextPrinterActive(B_WIN_MSG))
+            return;
+
+        sAttackTextPrinting = FALSE;
+    }
 
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
+
     stringId = (u16 *)(&gBattleResources->bufferA[battler][2]);
+
     BufferStringBattle(*stringId, battler);
 
     if (gTestRunnerEnabled)
     {
         TestRunner_Battle_RecordMessage(gDisplayedStringBattle);
+
         if (gTestRunnerHeadless)
         {
             BattleControllerComplete(battler);
@@ -2755,13 +2843,46 @@ void BtlController_HandlePrintString(u32 battler, bool32 updateTvData, bool32 ar
         }
     }
 
-    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
-    gBattlerControllerFuncs[battler] = Controller_WaitForString;
+    // Aplicar solamente al mensaje de uso de ataque
+    // en combates normales.
+    parallelAttackText =
+        (*stringId == STRINGID_USEDMOVE) &&
+        !(gBattleTypeFlags &
+          (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)) &&
+        !gTestRunnerEnabled;
+
+    if (parallelAttackText)
+    {
+        // Conservar una copia independiente del texto.
+        StringCopy(sAttackTextBuffer, gDisplayedStringBattle);
+        text = sAttackTextBuffer;
+        sAttackTextPrinting = TRUE;
+    }
+
+    BattlePutTextOnWindow(text, B_WIN_MSG);
+
     if (updateTvData)
         BattleTv_SetDataBasedOnString(*stringId);
+
     if (arenaPtsDeduct)
         BattleArena_DeductSkillPoints(battler, *stringId);
+
+    if (parallelAttackText)
+    {
+        // No esperar a que termine el texto.
+        // Permitir que avance el combate y comience
+        // la animacion del movimiento.
+        BattleControllerComplete(battler);
+    }
+    else
+    {
+        // Conservar el comportamiento original
+        // para todos los demas mensajes.
+        gBattlerControllerFuncs[battler] =
+            Controller_WaitForString;
+    }
 }
+
 
 void BtlController_HandleHealthBarUpdate(u32 battler, bool32 updateHpText)
 {
@@ -2769,7 +2890,8 @@ void BtlController_HandleHealthBarUpdate(u32 battler, bool32 updateHpText)
     s16 hpVal;
     struct Pokemon *mon = GetBattlerMon(battler);
 
-    LoadBattleBarGfx(0);
+    sHealthBarFinished[battler] = FALSE;
+	LoadBattleBarGfx(0);
     hpVal = gBattleResources->bufferA[battler][2] | (gBattleResources->bufferA[battler][3] << 8);
     maxHP = GetMonData(mon, MON_DATA_MAX_HP);
     curHP = GetMonData(mon, MON_DATA_HP);
@@ -2819,17 +2941,48 @@ void BtlController_HandleStatusAnimation(u32 battler)
 
 void BtlController_HandleHitAnimation(u32 battler)
 {
-    if (gSprites[gBattlerSpriteIds[battler]].invisible == TRUE)
+    u8 spriteId = gBattlerSpriteIds[battler];
+
+    if (gSprites[spriteId].invisible == TRUE)
     {
         BattleControllerComplete(battler);
+        return;
     }
-    else
+
+    gDoingBattleAnim = TRUE;
+    gSprites[spriteId].data[1] = 0;
+
+    // Conservar el efecto visual original.
+    DoHitAnimHealthboxEffect(battler);
+
+    // Paralelizar solamente impactos con daño real
+    // en combates locales normales.
+    if (!gTestRunnerEnabled &&
+        !(gBattleTypeFlags &
+          (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)) &&
+        gBattleStruct != NULL &&
+        gBattleStruct->moveDamage[battler] > 0 &&
+        !gBattleSpritesDataPtr->battlerData[battler].behindSubstitute &&
+        !sParallelHitActive[battler])
     {
-        gDoingBattleAnim = TRUE;
-        gSprites[gBattlerSpriteIds[battler]].data[1] = 0;
-        DoHitAnimHealthboxEffect(battler);
-        gBattlerControllerFuncs[battler] = Controller_HitAnimation;
+        u8 taskId = CreateTask(Task_ParallelHitBlink, 8);
+
+        if (taskId != TASK_NONE)
+        {
+            gTasks[taskId].data[0] = battler;
+            gTasks[taskId].data[1] = 0;
+
+            sParallelHitActive[battler] = TRUE;
+
+            // Liberar el controlador para que pueda
+            // comenzar la reduccion de PS.
+            BattleControllerComplete(battler);
+            return;
+        }
     }
+
+    // Comportamiento original para los demas casos.
+    gBattlerControllerFuncs[battler] = Controller_HitAnimation;
 }
 
 void BtlController_HandlePlaySE(u32 battler)

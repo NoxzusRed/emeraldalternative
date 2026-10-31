@@ -2549,13 +2549,20 @@ static void Cmd_attackanimation(void)
     }
 }
 
+
 static void Cmd_waitanimation(void)
 {
     CMD_ARGS();
 
-    if (gBattleControllerExecFlags == 0)
+    // Continuar solo cuando la animacion
+    // y el texto hayan terminado.
+    if (gBattleControllerExecFlags == 0 &&
+        !IsTextPrinterActive(B_WIN_MSG))
+    {
         gBattlescriptCurrInstr = cmd->nextInstr;
+    }
 }
+
 
 static void DoublesHPBarReduction(void)
 {
