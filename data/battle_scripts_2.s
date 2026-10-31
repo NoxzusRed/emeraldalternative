@@ -48,13 +48,13 @@ BattleScript_UseItemMessage:
 	return
 
 BattleScript_ItemRestoreHPRet:
-	clearmoveresultflags MOVE_RESULT_NO_EFFECT
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
-	healthbarupdate BS_SCRIPTING
-	datahpupdate BS_SCRIPTING
-	printstring STRINGID_ITEMRESTOREDSPECIESHEALTH
-	waitmessage B_WAIT_TIME_SHORTEST
-	return
+    clearmoveresultflags MOVE_RESULT_NO_EFFECT
+    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+    printstring STRINGID_ITEMRESTOREDSPECIESHEALTH
+    healthbarupdate BS_SCRIPTING
+    datahpupdate BS_SCRIPTING
+    waitmessage B_WAIT_TIME_SHORTEST
+    return
 
 BattleScript_ItemRestoreHP::
 	call BattleScript_UseItemMessage

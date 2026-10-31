@@ -66,6 +66,39 @@
 #include "constants/pokemon.h"
 #include "config/battle.h"
 #include "data/battle_move_effects.h"
+#include "battle_gfx_sfx_util.h"
+
+EWRAM_DATA static u8 sParallelBerryAnimBattler;
+
+static bool8 IsParallelBerryAnimActive(void)
+{
+    u8 battler;
+
+    // 0 significa que no hay animacion activa.
+    if (sParallelBerryAnimBattler == 0)
+        return FALSE;
+
+    // Guardamos battler + 1 para reservar el 0.
+    battler = sParallelBerryAnimBattler - 1;
+
+    if (gBattleSpritesDataPtr == NULL ||
+        battler >= gBattlersCount)
+    {
+        sParallelBerryAnimBattler = 0;
+        return FALSE;
+    }
+
+    if (gBattleSpritesDataPtr
+            ->healthBoxesData[battler]
+            .animFromTableActive)
+    {
+        return TRUE;
+    }
+
+    // La animacion termino.
+    sParallelBerryAnimBattler = 0;
+    return FALSE;
+}
 
 // table to avoid ugly powing on gba (courtesy of doesnt)
 // this returns (i^2.5)/4
@@ -2556,8 +2589,7 @@ static void Cmd_waitanimation(void)
 
     // Continuar solo cuando la animacion
     // y el texto hayan terminado.
-    if (gBattleControllerExecFlags == 0 &&
-        !IsTextPrinterActive(B_WIN_MSG))
+    if (gBattleControllerExecFlags == 0 && !IsTextPrinterActive(B_WIN_MSG) && !IsParallelBerryAnimActive())
     {
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
@@ -3055,7 +3087,7 @@ static void Cmd_waitmessage(void)
 {
     CMD_ARGS(u16 time);
 
-    if (gBattleControllerExecFlags == 0)
+    if (gBattleControllerExecFlags == 0 && !IsParallelBerryAnimActive())
     {
         if (!gBattleCommunication[MSG_DISPLAY])
         {
@@ -3066,7 +3098,7 @@ static void Cmd_waitmessage(void)
             u16 toWait = cmd->time;
             if (gTestRunnerHeadless)
                 gPauseCounterBattle = toWait;
-            if (++gPauseCounterBattle >= toWait)
+            if (++gPauseCounterBattle >= toWait &&!IsTextPrinterActive(B_WIN_MSG))
             {
                 gPauseCounterBattle = 0;
                 gBattlescriptCurrInstr = cmd->nextInstr;
@@ -5851,6 +5883,40 @@ static void Cmd_endselectionscript(void)
 
 static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *nextInstr)
 {
+    // No iniciar otra animacion general mientras
+    // la animacion de una baya sigue ejecutandose.
+    if (IsParallelBerryAnimActive())
+        return;
+
+    // Iniciar la animacion de la baya en segundo plano
+    // cuando el siguiente comando muestra su mensaje.
+    if (animId == B_ANIM_HELD_ITEM_EFFECT &&
+        GetItemPocket(gLastUsedItem) == POCKET_BERRIES &&
+        (nextInstr[0] == 0x10 || nextInstr[0] == 0x13) &&
+        !(gBattleTypeFlags &
+          (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)) &&
+        !gTestRunnerEnabled &&
+        !(gHitMarker &
+          (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
+    {
+        if (gAnimScriptActive)
+            return;
+
+        gAnimDisableStructPtr = &gDisableStructs[battler];
+
+        if (!TryHandleLaunchBattleTableAnimation(
+                battler,
+                battler,
+                battler,
+                animId,
+                argPtr != NULL ? *argPtr : 0))
+        {
+            sParallelBerryAnimBattler = battler + 1;
+        }
+
+        gBattlescriptCurrInstr = nextInstr;
+        return;
+    }
     if (B_TERRAIN_BG_CHANGE == FALSE && animId == B_ANIM_RESTORE_BG)
     {
         // workaround for .if not working

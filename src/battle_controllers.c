@@ -2845,11 +2845,23 @@ void BtlController_HandlePrintString(u32 battler, bool32 updateTvData, bool32 ar
 
     // Aplicar solamente al mensaje de uso de ataque
     // en combates normales.
-    parallelAttackText =
-        (*stringId == STRINGID_USEDMOVE) &&
-        !(gBattleTypeFlags &
-          (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)) &&
-        !gTestRunnerEnabled;
+	parallelAttackText =
+		(
+			*stringId == STRINGID_USEDMOVE ||
+			*stringId == STRINGID_PKMNSITEMRESTOREDHEALTH ||
+			*stringId == STRINGID_PKMNREGAINEDHEALTH ||
+			*stringId == STRINGID_ITEMRESTOREDSPECIESHEALTH ||
+			*stringId == STRINGID_PKMNSXRESTOREDHPALITTLE2 ||
+			*stringId == STRINGID_PKMNRESTOREDHPUSING ||
+			*stringId == STRINGID_AQUARINGHEAL ||
+			*stringId == STRINGID_GRASSYTERRAINHEALS ||
+			*stringId == STRINGID_POISONHEALHPUP ||
+			*stringId == STRINGID_HOSPITALITYRESTORATION ||
+			*stringId == STRINGID_HEALINGWISHHEALED
+		) &&
+		!(gBattleTypeFlags &
+		  (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)) &&
+		!gTestRunnerEnabled;
 
     if (parallelAttackText)
     {

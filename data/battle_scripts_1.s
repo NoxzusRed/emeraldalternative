@@ -2309,10 +2309,10 @@ BattleScript_EffectHealPulse::
 	tryhealpulse BattleScript_AlreadyAtFullHp
 	attackanimation
 	waitanimation
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
-	printstring STRINGID_PKMNREGAINEDHEALTH
-	waitmessage B_WAIT_TIME_SHORTEST
+    printstring STRINGID_PKMNREGAINEDHEALTH
+    healthbarupdate BS_TARGET
+    datahpupdate BS_TARGET
+    waitmessage B_WAIT_TIME_SHORTEST
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectEntrainment::
@@ -3275,12 +3275,12 @@ BattleScript_EffectRestoreHp::
 	attackanimation
 	waitanimation
 BattleScript_RestoreHp:
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
-	healthbarupdate BS_ATTACKER
-	datahpupdate BS_ATTACKER
-	printstring STRINGID_PKMNREGAINEDHEALTH
-	waitmessage B_WAIT_TIME_SHORTEST
-	goto BattleScript_MoveEnd
+    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+    printstring STRINGID_PKMNREGAINEDHEALTH
+    healthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    waitmessage B_WAIT_TIME_SHORTEST
+    goto BattleScript_MoveEnd
 
 BattleScript_AlreadyPoisoned::
 	setalreadystatusedmoveattempt BS_ATTACKER
@@ -6481,15 +6481,15 @@ BattleScript_SelectingNotAllowedCurrentMoveInPalace::
 	goto BattleScript_SelectingUnusableMoveInPalace
 
 BattleScript_WishComesTrue::
-	playanimation BS_TARGET, B_ANIM_WISH_HEAL
-	printstring STRINGID_PKMNWISHCAMETRUE
-	waitmessage B_WAIT_TIME_SHORTEST
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
-	printstring STRINGID_PKMNREGAINEDHEALTH
-	waitmessage B_WAIT_TIME_SHORTEST
-	end2
+    playanimation BS_TARGET, B_ANIM_WISH_HEAL
+    printstring STRINGID_PKMNWISHCAMETRUE
+    waitmessage B_WAIT_TIME_SHORTEST
+    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE
+    printstring STRINGID_PKMNREGAINEDHEALTH
+    healthbarupdate BS_TARGET
+    datahpupdate BS_TARGET
+    waitmessage B_WAIT_TIME_SHORTEST
+    end2
 
 BattleScript_WishButFullHp::
 	printstring STRINGID_PKMNWISHCAMETRUE
@@ -7467,13 +7467,13 @@ BattleScript_ReceiverActivates::
 	return
 
 BattleScript_AbilityHpHeal:
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_PKMNSXRESTOREDHPALITTLE2
-	waitmessage B_WAIT_TIME_SHORTEST
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
-	healthbarupdate BS_ATTACKER
-	datahpupdate BS_ATTACKER
-	return
+    call BattleScript_AbilityPopUp
+    printstring STRINGID_PKMNSXRESTOREDHPALITTLE2
+    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+    healthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    waitmessage B_WAIT_TIME_SHORTEST
+    return
 
 BattleScript_RainDishActivates::
 	call BattleScript_AbilityHpHeal
@@ -7833,14 +7833,14 @@ BattleScript_CommanderEnd:
 	end3
 
 BattleScript_HospitalityActivates::
-	pause B_WAIT_TIME_SHORTEST
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_HOSPITALITYRESTORATION
-	waitmessage B_WAIT_TIME_SHORTEST
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
-	end3
+    pause B_WAIT_TIME_SHORTEST
+    call BattleScript_AbilityPopUp
+    printstring STRINGID_HOSPITALITYRESTORATION
+    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+    healthbarupdate BS_TARGET
+    datahpupdate BS_TARGET
+    waitmessage B_WAIT_TIME_SHORTEST
+    end3
 
 BattleScript_AttackWeakenedByStrongWinds::
 	pause B_WAIT_TIME_SHORTEST
@@ -8115,13 +8115,13 @@ BattleScript_MoveUsedPsychicTerrainPrevents::
 	goto BattleScript_MoveEnd
 
 BattleScript_GrassyTerrainHeals::
-	printstring STRINGID_GRASSYTERRAINHEALS
-	waitmessage B_WAIT_TIME_SHORTEST
-	orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
-	healthbarupdate BS_ATTACKER
-	datahpupdate BS_ATTACKER
-	bicword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
-	end2
+    printstring STRINGID_GRASSYTERRAINHEALS
+    orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+    healthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    waitmessage B_WAIT_TIME_SHORTEST
+    bicword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+    end2
 
 BattleScript_AbilityNoSpecificStatLoss::
 	pause B_WAIT_TIME_SHORTEST
@@ -8633,9 +8633,8 @@ BattleScript_GemActivates::
 	return
 
 BattleScript_BerryReduceDmg::
-	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
-	waitanimation
 	setlastuseditem BS_SCRIPTING
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
 	printstring STRINGID_BERRYDMGREDUCES
 	waitmessage B_WAIT_TIME_SHORTEST
 	removeitem BS_SCRIPTING
@@ -8696,10 +8695,10 @@ BattleScript_ItemHealHP_RemoveItemRet_AbilityPopUp:
 BattleScript_ItemHealHP_RemoveItemRet_Anim:
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
 	printstring STRINGID_PKMNSITEMRESTOREDHEALTH
-	waitmessage B_WAIT_TIME_SHORTEST
 	orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	healthbarupdate BS_SCRIPTING
 	datahpupdate BS_SCRIPTING
+	waitmessage B_WAIT_TIME_SHORTEST
 	removeitem BS_SCRIPTING
 	return
 
@@ -8711,10 +8710,10 @@ BattleScript_ItemHealHP_RemoveItemEnd2_AbilityPopUp:
 BattleScript_ItemHealHP_RemoveItemEnd2_Anim:
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT
 	printstring STRINGID_PKMNSITEMRESTOREDHEALTH
-	waitmessage B_WAIT_TIME_SHORTEST
 	orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
+	waitmessage B_WAIT_TIME_SHORTEST
 	removeitem BS_ATTACKER
 	end2
 
@@ -8823,11 +8822,11 @@ BattleScript_BerryConfuseHealEnd2_AbilityPopup:
 BattleScript_BerryConfuseHealEnd2_Anim:
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
 	printstring STRINGID_PKMNSITEMRESTOREDHEALTH
-	waitmessage B_WAIT_TIME_SHORTEST
 	orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	healthbarupdate BS_SCRIPTING
 	datahpupdate BS_SCRIPTING
 	seteffectprimary MOVE_EFFECT_CONFUSION | MOVE_EFFECT_AFFECTS_USER
+	waitmessage B_WAIT_TIME_SHORTEST
 	removeitem BS_SCRIPTING
 	end2
 
@@ -8839,11 +8838,11 @@ BattleScript_BerryConfuseHealRet_AbilityPopup:
 BattleScript_BerryConfuseHealRet_Anim:
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
 	printstring STRINGID_PKMNSITEMRESTOREDHEALTH
-	waitmessage B_WAIT_TIME_SHORTEST
 	orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	healthbarupdate BS_SCRIPTING
 	datahpupdate BS_SCRIPTING
 	seteffectprimary MOVE_EFFECT_CONFUSION | MOVE_EFFECT_CERTAIN
+	waitmessage B_WAIT_TIME_SHORTEST
 	removeitem BS_TARGET
 	return
 
