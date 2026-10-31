@@ -5050,10 +5050,10 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2115
-                MOVE_BATON_PASS,
-                MOVE_FEINT_ATTACK,
+                MOVE_PSYCHIC_FANGS,
+                MOVE_POISON_FANG,
+                MOVE_CRUNCH,
                 MOVE_FAKE_TEARS,
-                MOVE_BITE,
             },
             },
             {
@@ -13121,7 +13121,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SABLEYE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5299
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 68, 0),
 #line 5298
             .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
 #line 5297
@@ -46828,7 +46828,7 @@ F_TRAINER_FEMALE |
 #line 18801
             .heldItem = ITEM_SITRUS_BERRY,
 #line 18806
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 68, 0, 252, 0, 68),
 #line 18805
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18804
@@ -46994,15 +46994,15 @@ F_TRAINER_FEMALE |
 #line 18870
             .heldItem = ITEM_ASSAULT_VEST,
 #line 18875
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 0),
 #line 18874
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
 #line 18873
-            .ability = ABILITY_SHEER_FORCE,
+            .ability = ABILITY_HUGE_POWER,
 #line 18871
             .lvl = 79,
 #line 18872
-            .nature = NATURE_ADAMANT,
+            .nature = NATURE_SASSY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 18876
@@ -47159,7 +47159,7 @@ F_TRAINER_FEMALE |
 #line 18940
             .heldItem = ITEM_SITRUS_BERRY,
 #line 18945
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 68, 0, 252, 0, 68),
 #line 18944
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18943
@@ -47327,15 +47327,15 @@ F_TRAINER_FEMALE |
 #line 19013
             .heldItem = ITEM_ASSAULT_VEST,
 #line 19018
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 0),
 #line 19017
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
 #line 19016
-            .ability = ABILITY_SHEER_FORCE,
+            .ability = ABILITY_HUGE_POWER,
 #line 19014
             .lvl = 79,
 #line 19015
-            .nature = NATURE_ADAMANT,
+            .nature = NATURE_SASSY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 19019
@@ -47492,7 +47492,7 @@ F_TRAINER_FEMALE |
 #line 19085
             .heldItem = ITEM_SITRUS_BERRY,
 #line 19090
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 68, 0, 252, 0, 68),
 #line 19089
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 19088
@@ -47659,15 +47659,15 @@ F_TRAINER_FEMALE |
 #line 19157
             .heldItem = ITEM_ASSAULT_VEST,
 #line 19162
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 0),
 #line 19161
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
 #line 19160
-            .ability = ABILITY_SHEER_FORCE,
+            .ability = ABILITY_HUGE_POWER,
 #line 19158
             .lvl = 79,
 #line 19159
-            .nature = NATURE_ADAMANT,
+            .nature = NATURE_SASSY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 19163
