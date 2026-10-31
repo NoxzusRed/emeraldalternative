@@ -166,6 +166,7 @@ Route115_EventScript_RioluQuestAquaBattle::
     waitmoncry
     trainerbattle_no_intro TRAINER_GRUNT_ROUTE115_RIOLU_QUEST, Route115_Text_RioluQuestAquaDefeat
     msgbox Route115_Text_RioluQuestAquaRetreat, MSGBOX_DEFAULT
+	closemessage
     delay 20
     special StorePlayerCoordsInVars
     call Route115_EventScript_SelectAqua1Retreat
@@ -176,7 +177,8 @@ Route115_EventScript_RioluQuestAquaBattle::
     waitmovement LOCALID_ROUTE115_RIOLU_QUEST_AQUA_2
     waitmovement LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_1
     waitmovement LOCALID_ROUTE115_RIOLU_QUEST_SHARPEDO_2
-    msgbox Route115_Text_RioluQuestLucarioSafe, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
 	playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
     waitmoncry
 	applymovement LOCALID_ROUTE115_RIOLU_QUEST_LUCARIO, Route115_Movement_LucarioRetreat

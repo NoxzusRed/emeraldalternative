@@ -60,7 +60,7 @@ RustboroCity_East_EventScript_Jumpluff::
 RustboroCity_East_EventScript_Lucario::
     faceplayer
 	playmoncry SPECIES_LUCARIO, CRY_MODE_NORMAL
-	msgbox RustboroCity_East_Text_Lucario, MSGBOX_DEFAULT
+	msgbox RustboroCity_East_Text_Lucario, MSGBOX_SIGN
 	end
 
 RustboroCity_East_EventScript_RioluQuestNPC::
