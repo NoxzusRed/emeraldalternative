@@ -69,23 +69,26 @@
 #include "battle_gfx_sfx_util.h"
 
 EWRAM_DATA static u8 sParallelBerryAnimBattler;
+EWRAM_DATA static u8 sParallelBerryHealBattler;
 const u16 gParallelDrainHealMarker = 0;
 
 static bool8 IsParallelBerryAnimActive(void)
 {
     u8 battler;
 
-    // 0 significa que no hay animacion activa.
     if (sParallelBerryAnimBattler == 0)
+    {
+        sParallelBerryHealBattler = 0;
         return FALSE;
+    }
 
-    // Guardamos battler + 1 para reservar el 0.
     battler = sParallelBerryAnimBattler - 1;
 
     if (gBattleSpritesDataPtr == NULL ||
         battler >= gBattlersCount)
     {
         sParallelBerryAnimBattler = 0;
+        sParallelBerryHealBattler = 0;
         return FALSE;
     }
 
@@ -96,8 +99,8 @@ static bool8 IsParallelBerryAnimActive(void)
         return TRUE;
     }
 
-    // La animacion termino.
     sParallelBerryAnimBattler = 0;
+    sParallelBerryHealBattler = 0;
     return FALSE;
 }
 
@@ -2631,6 +2634,16 @@ static void Cmd_healthbarupdate(void)
 
     if (gBattleControllerExecFlags)
         return;
+
+	// Esperar a que el Pokemon termine
+	// de comer la berry antes de curarse.
+	if (sParallelBerryHealBattler == battler + 1
+		&& gBattleStruct->moveDamage[battler] < 0
+		&& IsParallelBerryAnimActive()
+		&& gBattleAnimArgs[7] != 1)
+	{
+		return;
+	}
 
     if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
     {
@@ -5975,15 +5988,16 @@ gAnimDisableStructPtr = &gDisableStructs[battler];
 
         gAnimDisableStructPtr = &gDisableStructs[battler];
 
-        if (!TryHandleLaunchBattleTableAnimation(
-                battler,
-                battler,
-                battler,
-                animId,
-                argPtr != NULL ? *argPtr : 0))
-        {
-            sParallelBerryAnimBattler = battler + 1;
-        }
+		if (!TryHandleLaunchBattleTableAnimation(
+				battler,
+				battler,
+				battler,
+				animId,
+				argPtr != NULL ? *argPtr : 0))
+		{
+			sParallelBerryAnimBattler = battler + 1;
+			sParallelBerryHealBattler = battler + 1;
+		}
 
         gBattlescriptCurrInstr = nextInstr;
         return;
@@ -9089,7 +9103,23 @@ static void Cmd_drawpartystatussummary(void)
         }
     }
 
-    BtlController_EmitDrawPartyStatusSummary(battler, B_COMM_TO_CONTROLLER, hpStatuses, 1);
+    u8 flags = 1;
+
+    // Si el jugador eligio NO al cambio,
+    // mostrar el indicador sin la pausa de 94 frames.
+    if (gBattleScripting.shiftSwitched == 2)
+    {
+        flags |= PARTY_SUMM_SKIP_DRAW_DELAY;
+        gBattleScripting.shiftSwitched = 0;
+    }
+
+    BtlController_EmitDrawPartyStatusSummary(
+        battler,
+        B_COMM_TO_CONTROLLER,
+        hpStatuses,
+        flags
+    );
+
     MarkBattlerForControllerExec(battler);
 
     gBattlescriptCurrInstr = cmd->nextInstr;

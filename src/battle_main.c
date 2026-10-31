@@ -42,6 +42,7 @@
 #include "pokeball.h"
 #include "pokedex.h"
 #include "pokemon.h"
+#include "pokemon_animation.h"
 #include "random.h"
 #include "recorded_battle.h"
 #include "roamer.h"
@@ -3491,6 +3492,219 @@ const u8* FaintClearSetData(u32 battler)
     return result;
 }
 
+
+static bool8 UseDirectWildBattleIntro(void)
+{
+    // Solo encuentros salvajes normales.
+    // Mantener las introducciones especiales.
+    if (gBattleTypeFlags & (
+        BATTLE_TYPE_TRAINER
+        | BATTLE_TYPE_SAFARI
+        | BATTLE_TYPE_WALLY_TUTORIAL
+        | BATTLE_TYPE_FIRST_BATTLE
+        | BATTLE_TYPE_LINK
+        | BATTLE_TYPE_RECORDED
+        | BATTLE_TYPE_RAID
+        | BATTLE_TYPE_FRONTIER))
+    {
+        return FALSE;
+    }
+
+    if (gTestRunnerHeadless)
+        return FALSE;
+
+    return TRUE;
+}
+
+static void CreateDirectWildBattleSprite(u32 battler)
+{
+    struct Pokemon *mon = GetBattlerMon(battler);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    u8 spriteId;
+
+    if (species == SPECIES_NONE || !IsBattlerAlive(battler))
+        return;
+
+    BattleLoadMonSpriteGfx(mon, battler);
+
+    SetMultiuseSpriteTemplateToPokemon(
+        species,
+        GetBattlerPosition(battler)
+    );
+
+    spriteId = CreateSprite(
+        &gMultiuseSpriteTemplate,
+        GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2),
+        GetBattlerSpriteDefault_Y(battler),
+        GetBattlerSpriteSubpriority(battler)
+    );
+
+    gBattlerSpriteIds[battler] = spriteId;
+
+    gSprites[spriteId].data[0] = battler;
+    gSprites[spriteId].data[2] = species;
+    gSprites[spriteId].oam.paletteNum = battler;
+
+    // Entrar desde los costados usando la posicion X real.
+    // x2 queda disponible para las animaciones individuales.
+    gSprites[spriteId].x +=
+        IsOnPlayerSide(battler) ? DISPLAY_WIDTH : -DISPLAY_WIDTH;
+
+    gSprites[spriteId].x2 = 0;
+    gSprites[spriteId].y2 = 0;
+    gSprites[spriteId].invisible = FALSE;
+
+    StartSpriteAnim(&gSprites[spriteId], 0);
+    gSprites[spriteId].callback = SpriteCallbackDummy;
+
+    // Mantener las sombras de los Pokemon rivales.
+    if (!IsOnPlayerSide(battler))
+        SetBattlerShadowSpriteCallback(battler, species);
+}
+
+
+static void Task_DirectWildIntroEffects(u8 taskId)
+{
+    u32 battler;
+    bool8 shinyDone = TRUE;
+
+    // Movimiento y animaciones independientes.
+    if (!(gIntroSlideFlags & 1))
+    {
+        for (battler = 0; battler < gBattlersCount; battler++)
+        {
+            struct Sprite *sprite;
+            s16 targetX;
+            u16 species;
+
+            if (!IsBattlerAlive(battler))
+                continue;
+
+            sprite = &gSprites[gBattlerSpriteIds[battler]];
+            targetX = GetBattlerSpriteCoord(
+                battler, BATTLER_COORD_X_2);
+
+            // Deslizamiento hacia la posicion final.
+            if (IsOnPlayerSide(battler))
+            {
+                if (sprite->x > targetX)
+                {
+                    sprite->x -= INTRO_SLIDE_SPEED;
+                    if (sprite->x < targetX)
+                        sprite->x = targetX;
+                }
+            }
+            else if (sprite->x < targetX)
+            {
+                sprite->x += INTRO_SLIDE_SPEED;
+                if (sprite->x > targetX)
+                    sprite->x = targetX;
+            }
+
+            // Iniciar la animacion a mitad del recorrido.
+            if (!(gTasks[taskId].data[1] & (1 << battler))
+                && ((IsOnPlayerSide(battler)
+                     && sprite->x - targetX <= DISPLAY_WIDTH / 2)
+                 || (!IsOnPlayerSide(battler)
+                     && targetX - sprite->x <= DISPLAY_WIDTH / 2)))
+            {
+                gTasks[taskId].data[1] |= 1 << battler;
+                species = sprite->data[2];
+
+                if (IsOnPlayerSide(battler))
+                {
+                    BattleAnimateBackSprite(sprite, species);
+                }
+                else if (!(gHitMarker & HITMARKER_NO_ANIMATIONS))
+                {
+                    if (HasTwoFramesAnimation(species))
+                        StartSpriteAnim(sprite, 1);
+
+                    LaunchAnimationTaskForFrontSprite(
+                        sprite,
+                        gSpeciesInfo[species].frontAnimId
+                    );
+                }
+
+                TryShinyAnimation(
+                    battler, GetBattlerMon(battler));
+            }
+        }
+    }
+
+    // Gritos independientes del movimiento.
+    battler = gTasks[taskId].data[0];
+
+    while (battler < gBattlersCount
+           && !IsBattlerAlive(battler))
+        battler++;
+
+    gTasks[taskId].data[0] = battler;
+
+    if (battler < gBattlersCount
+        && (gTasks[taskId].data[1] & (1 << battler))
+        && !IsCryPlayingOrClearCrySongs())
+    {
+        PlayCry_ByMode(
+            gBattleMons[battler].species,
+            IsOnPlayerSide(battler) ? -25 : 25,
+            CRY_MODE_NORMAL
+        );
+
+        gTasks[taskId].data[0] = battler + 1;
+    }
+
+    // Limpiar recursos shiny cuando terminen.
+    if (!gTasks[taskId].data[2])
+    {
+        for (battler = 0; battler < gBattlersCount; battler++)
+        {
+            if (!IsBattlerAlive(battler))
+                continue;
+
+            if (!(gTasks[taskId].data[1] & (1 << battler))
+                || !gBattleSpritesDataPtr
+                        ->healthBoxesData[battler]
+                        .finishedShinyMonAnim)
+            {
+                shinyDone = FALSE;
+                break;
+            }
+        }
+
+        if (shinyDone)
+        {
+            if (GetSpriteTileStartByTag(
+                    ANIM_TAG_GOLD_STARS) != 0xFFFF)
+            {
+                FreeSpriteTilesByTag(ANIM_TAG_GOLD_STARS);
+                FreeSpritePaletteByTag(ANIM_TAG_GOLD_STARS);
+            }
+
+            for (battler = 0; battler < gBattlersCount; battler++)
+            {
+                if (!IsBattlerAlive(battler))
+                    continue;
+
+                gBattleSpritesDataPtr
+                    ->healthBoxesData[battler]
+                    .triedShinyMonAnim = FALSE;
+
+                gBattleSpritesDataPtr
+                    ->healthBoxesData[battler]
+                    .finishedShinyMonAnim = FALSE;
+            }
+
+            gTasks[taskId].data[2] = 1;
+        }
+    }
+
+    if (gTasks[taskId].data[0] >= gBattlersCount
+        && gTasks[taskId].data[2])
+        DestroyTask(taskId);
+}
+
+
 static void DoBattleIntro(void)
 {
     s32 i;
@@ -3557,6 +3771,26 @@ static void DoBattleIntro(void)
                 #endif
             }
 
+            // Entrada directa para combates salvajes.
+            if (UseDirectWildBattleIntro())
+            {
+                if (IsBattlerAlive(battler))
+                {
+                    CreateDirectWildBattleSprite(battler);
+
+                    if (!IsOnPlayerSide(battler))
+                    {
+                        gBattleResults.lastOpponentSpecies =
+                            GetMonData(
+                                GetBattlerMon(battler),
+                                MON_DATA_SPECIES
+                            );
+                    }
+                }
+
+                continue;
+            }
+
             // Draw sprite.
             switch (GetBattlerPosition(battler))
             {
@@ -3605,11 +3839,27 @@ static void DoBattleIntro(void)
             if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
                 BattleArena_InitPoints();
         }
+        if (UseDirectWildBattleIntro())
+        {
+            u8 taskId = CreateTask(
+                Task_DirectWildIntroEffects, 5);
 
-        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+            gTasks[taskId].data[0] = 0;
+            gTasks[taskId].data[1] = 0;
+            gTasks[taskId].data[2] = 0;
+
+            gBattleStruct->introState =
+                BATTLE_INTRO_STATE_WILD_WAIT_SPRITES;
+        }
+        else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+        {
             gBattleStruct->introState++;
-        else // Skip party summary since it is a wild battle.
-            gBattleStruct->introState = BATTLE_INTRO_STATE_INTRO_TEXT;
+        }
+        else
+        {
+            gBattleStruct->introState =
+                BATTLE_INTRO_STATE_INTRO_TEXT;
+        }
         break;
     case BATTLE_INTRO_STATE_DRAW_PARTY_SUMMARY:
         if (!gBattleControllerExecFlags)
@@ -3813,6 +4063,69 @@ static void DoBattleIntro(void)
             }
             gBattleMainFunc = TryDoEventsBeforeFirstTurn;
         }
+        break;
+    case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
+        if (gBattleControllerExecFlags)
+            break;
+
+        for (battler = 0; battler < gBattlersCount; battler++)
+        {
+            if (!IsBattlerAlive(battler))
+                continue;
+
+            if (gSprites[gBattlerSpriteIds[battler]].x !=
+                GetBattlerSpriteCoord(
+                    battler, BATTLER_COORD_X_2))
+            {
+                break;
+            }
+        }
+
+        if (battler == gBattlersCount)
+        {
+            gBattleStruct->introState =
+                BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES;
+        }
+        break;
+    case BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES:
+        // Mostrar las barras de PS de los Pokemon activos.
+        for (battler = 0;
+             battler < gBattlersCount;
+             battler++)
+        {
+            if (!IsBattlerAlive(battler))
+                continue;
+            UpdateHealthboxAttribute(
+                gHealthboxSpriteIds[battler],
+                GetBattlerMon(battler),
+                HEALTHBOX_ALL
+            );
+
+            StartHealthboxSlideIn(battler);
+            SetHealthboxSpriteVisible(
+                gHealthboxSpriteIds[battler]
+            );
+        }
+        gBattleStruct->introState =
+            BATTLE_INTRO_STATE_WILD_WAIT_HEALTHBOXES;
+        break;
+    case BATTLE_INTRO_STATE_WILD_WAIT_HEALTHBOXES:
+        // Esperar a que las barras terminen de entrar.
+        for (battler = 0;
+             battler < gBattlersCount;
+             battler++)
+        {
+            if (!IsBattlerAlive(battler))
+                continue;
+            if (gSprites[gHealthboxSpriteIds[battler]].callback
+                != SpriteCallbackDummy)
+            {
+                return;
+            }
+        }
+        // Continuar con la inicializacion normal del turno.
+        gBattleStruct->introState =
+            BATTLE_INTRO_STATE_SET_DEX_AND_BATTLE_VARS;
         break;
     }
 }

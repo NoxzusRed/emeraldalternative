@@ -5272,7 +5272,7 @@ BattleScript_FaintedMonTryChoose:
 	printstring STRINGID_ENEMYABOUTTOSWITCHPKMN
 	setbyte gBattleCommunication, 0
 	yesnobox
-	jumpifbyte CMP_EQUAL, gBattleCommunication + 1, 1, BattleScript_FaintedMonSendOutNew
+	jumpifbyte CMP_EQUAL, gBattleCommunication + 1, 1, BattleScript_FaintedMonSendOutNew_No
 @ Player said yes, go to party screen (note optional flag, player may exit the menu instead)
 	setatktoplayer0
 	openpartyscreen BS_ATTACKER | PARTY_SCREEN_OPTIONAL, BattleScript_FaintedMonSendOutNew
@@ -5297,9 +5297,12 @@ BattleScript_FaintedMonTryChoose:
 	hidepartystatussummary BS_ATTACKER
 	switchinanim BS_ATTACKER, FALSE, FALSE
 	waitstate
-	setbyte sSHIFT_SWITCHED, 1
+    setbyte sSHIFT_SWITCHED, 1
+    goto BattleScript_FaintedMonSendOutNew
+BattleScript_FaintedMonSendOutNew_No:
+    setbyte sSHIFT_SWITCHED, 2
 BattleScript_FaintedMonSendOutNew:
-	drawpartystatussummary BS_FAINTED
+    drawpartystatussummary BS_FAINTED
 	getswitchedmondata BS_FAINTED
 	switchindataupdate BS_FAINTED
 	hpthresholds BS_FAINTED
