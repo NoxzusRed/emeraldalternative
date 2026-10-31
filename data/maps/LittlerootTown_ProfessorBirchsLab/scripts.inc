@@ -154,6 +154,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
+	setvar VAR_LITTLEROOT_TOWN_STATE, 3
 	releaseall
 	end
 
@@ -530,8 +531,13 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	setvar VAR_OLDALE_TOWN_STATE, 1
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 4
 	setvar VAR_LITTLEROOT_TOWN_STATE, 3
+	 call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_ProfessorBirchsLab_EventScript_KeepRunningShoesState
 	releaseall
 	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_KeepRunningShoesState::
+    setvar VAR_LITTLEROOT_TOWN_STATE, 4
+    return
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
