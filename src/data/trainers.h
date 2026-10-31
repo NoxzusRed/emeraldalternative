@@ -16786,7 +16786,7 @@ F_TRAINER_FEMALE |
 #line 6779
             .ability = ABILITY_SHELL_ARMOR,
 #line 6778
-            .lvl = 8,
+            .lvl = 10,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
@@ -16799,7 +16799,7 @@ F_TRAINER_FEMALE |
 #line 6784
             .ability = ABILITY_ROCK_HEAD,
 #line 6783
-            .lvl = 10,
+            .lvl = 12,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
@@ -17483,12 +17483,14 @@ F_TRAINER_FEMALE |
 #line 7066
             .species = SPECIES_AGGRON,
             .gender = TRAINER_MON_RANDOM_GENDER,
+#line 7066
+            .heldItem = ITEM_LEFTOVERS,
 #line 7071
             .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 252),
 #line 7070
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 7069
-            .ability = ABILITY_ROCK_HEAD,
+            .ability = ABILITY_FILTER,
 #line 7068
             .lvl = 60,
 #line 7067
@@ -29556,7 +29558,7 @@ F_TRAINER_FEMALE |
 #line 11813
             .ability = ABILITY_WEAK_ARMOR,
 #line 11812
-            .lvl = 8,
+            .lvl = 10,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
@@ -29567,7 +29569,7 @@ F_TRAINER_FEMALE |
 #line 11818
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
 #line 11817
-            .lvl = 10,
+            .lvl = 11,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },

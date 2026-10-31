@@ -6775,12 +6775,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Dwebble
-Level: 8
+Level: 10
 Ability: Shell Armor
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 Aron
-Level: 10
+Level: 12
 Ability: Rock Head
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -7063,10 +7063,10 @@ EVs: 252 HP / 126 Atk / 252 Def / 252 SpA
 - Psychic
 - Earthquake
 
-Aggron
+Aggron @ Leftovers
 Careful Nature
 Level: 60
-Ability: Rock Head
+Ability: Filter
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Iron Tail
@@ -11809,12 +11809,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Roggenrola
-Level: 8
+Level: 10
 Ability: Weak Armor
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Dwebble
-Level: 10
+Level: 11
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_BRENDEN ===
