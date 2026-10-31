@@ -4615,9 +4615,24 @@ bool16 HasAllHoennMons(void)
     for (i = 0; i < HOENN_DEX_COUNT - 1; i++)
     {
         j = HoennToNationalOrder(i + 1);
-        if (!(gSpeciesInfo[j].isMythical && !gSpeciesInfo[j].dexForceRequired) && !GetSetPokedexFlag(j, FLAG_GET_CAUGHT))
+
+        // Exclude Birch's gift starters and their evolutions
+        if (j == NATIONAL_DEX_CHIKORITA
+         || j == NATIONAL_DEX_BAYLEEF
+         || j == NATIONAL_DEX_MEGANIUM
+         || j == NATIONAL_DEX_LITTEN
+         || j == NATIONAL_DEX_TORRACAT
+         || j == NATIONAL_DEX_INCINEROAR
+         || j == NATIONAL_DEX_TOTODILE
+         || j == NATIONAL_DEX_CROCONAW
+         || j == NATIONAL_DEX_FERALIGATR)
+            continue;
+
+        if (!(gSpeciesInfo[j].isMythical && !gSpeciesInfo[j].dexForceRequired)
+         && !GetSetPokedexFlag(j, FLAG_GET_CAUGHT))
             return FALSE;
     }
+
     return TRUE;
 }
 
