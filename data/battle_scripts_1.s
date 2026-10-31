@@ -1204,9 +1204,11 @@ BattleScript_StrengthSapManipulateDmg:
 	manipulatedamage DMG_BIG_ROOT
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
 	jumpifability BS_TARGET, ABILITY_LIQUID_OOZE, BattleScript_StrengthSapLiquidOoze
-	healthbarupdate BS_ATTACKER
-	datahpupdate BS_ATTACKER
-	printstring STRINGID_PKMNENERGYDRAINED
+    playanimation BS_ATTACKER, B_ANIM_SIMPLE_HEAL, gParallelDrainHealMarker
+    healthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    waitanimation
+    printstring STRINGID_PKMNENERGYDRAINED
 	waitmessage B_WAIT_TIME_SHORTEST
 	goto BattleScript_MoveEnd
 BattleScript_StrengthSapLiquidOoze:
@@ -2976,11 +2978,13 @@ BattleScript_EffectAbsorbLiquidOoze::
 	goto BattleScript_EffectAbsorb
 
 BattleScript_EffectAbsorb::
-	absorbhealthbarupdate BS_ATTACKER
-	datahpupdate BS_ATTACKER
-	tryfaintmon BS_ATTACKER
-	bicword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE | HITMARKER_PASSIVE_DAMAGE
-	return
+    playanimation BS_ATTACKER, B_ANIM_SIMPLE_HEAL, gParallelDrainHealMarker
+    absorbhealthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    waitanimation
+    tryfaintmon BS_ATTACKER
+    bicword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE | HITMARKER_PASSIVE_DAMAGE
+    return
 
 BattleScript_EffectExplosion::
 	attackcanceler
@@ -3033,11 +3037,13 @@ BattleScript_DreamEaterWorked:
 	resultmessage
 	waitmessage B_WAIT_TIME_SHORTEST
 	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_DreamEaterTryFaintEnd
-	setdrainedhp
-	manipulatedamage DMG_BIG_ROOT
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
-	healthbarupdate BS_ATTACKER
-	datahpupdate BS_ATTACKER
+    setdrainedhp
+    manipulatedamage DMG_BIG_ROOT
+    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+    playanimation BS_ATTACKER, B_ANIM_SIMPLE_HEAL, gParallelDrainHealMarker
+    healthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    waitanimation
 	jumpifmovehadnoeffect BattleScript_DreamEaterTryFaintEnd
 	printstring STRINGID_PKMNENERGYDRAINED
 	waitmessage B_WAIT_TIME_SHORTEST
@@ -5756,10 +5762,12 @@ BattleScript_LeechSeedTurnDrainHealBlock::
 BattleScript_LeechSeedTurnDrainRecovery::
 	call BattleScript_LeechSeedTurnDrain
 BattleScript_LeechSeedTurnDrainGainHp:
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
-	tryfaintmon BS_TARGET
-	end2
+    playanimation BS_TARGET, B_ANIM_SIMPLE_HEAL, gParallelDrainHealMarker
+    healthbarupdate BS_TARGET
+    datahpupdate BS_TARGET
+    waitanimation
+    tryfaintmon BS_TARGET
+    end2
 
 BattleScript_LeechSeedTurnDrain:
 	playanimation BS_ATTACKER, B_ANIM_LEECH_SEED_DRAIN, sB_ANIM_ARG1

@@ -1613,9 +1613,6 @@ gBattleAnimMove_DrainPunch::
 	delay 20
 	call MegaDrainAbsorbEffect
 	waitforvisualfinish
-	delay 15
-	call HealingEffect
-	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	end
@@ -5891,8 +5888,6 @@ gBattleAnimMove_HornLeech::
 	playsewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET
 	call GigaDrainAbsorbEffect
 	waitforvisualfinish
-	call HealingEffect
-	waitforvisualfinish
 	end
 
 gBattleAnimMove_SacredSword::
@@ -7750,7 +7745,6 @@ ParabolicChargeHeal:
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	clearmonbg ANIM_ATTACKER
 	waitforvisualfinish
-	call HealingEffect
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 6, 0, RGB(18, 16, 3)
 	waitforvisualfinish
 	blendoff
@@ -7970,9 +7964,6 @@ gBattleAnimMove_DrainingKiss::
 	waitforvisualfinish
 	delay 3
 	call AbsorbEffect
-	waitforvisualfinish
-	delay 15
-	call HealingEffect
 	waitforvisualfinish
 	end
 
@@ -9234,8 +9225,6 @@ gBattleAnimMove_OblivionWing::
 	call OblivionWingBeam
 	delay 15
 	visible ANIM_ATTACKER
-	call HealingEffect
-	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_BG, 0x1, 0xE, 0x0, 0x0   @From black
 	waitforvisualfinish
 	end
@@ -12773,9 +12762,6 @@ gBattleAnimMove_BouncyBubble::
 	call WaterBubblesEffectLong
 	call GigaDrainAbsorbEffect
 	waitforvisualfinish
-	delay 15
-	call HealingEffect
-	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 12, 0, RGB(13, 12, 31)
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
@@ -16254,9 +16240,6 @@ gBattleAnimMove_BitterBlade::
 	waitforvisualfinish
 	delay 3
 	call GigaDrainAbsorbEffect
-	waitforvisualfinish
-	delay 15
-	call HealingEffect
 	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 0, F_PAL_BG, 3, 12, 0, RGB(14, 6, 24)
 	waitforvisualfinish
@@ -23564,9 +23547,6 @@ gBattleAnimMove_Absorb::
 	delay 3
 	call AbsorbEffect
 	waitforvisualfinish
-	delay 15
-	call HealingEffect
-	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 4, 0, RGB(13, 31, 12)
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
@@ -23616,9 +23596,6 @@ gBattleAnimMove_MegaDrain::
 	waitforvisualfinish
 	delay 3
 	call MegaDrainAbsorbEffect
-	waitforvisualfinish
-	delay 15
-	call HealingEffect
 	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 8, 0, RGB(13, 31, 12)
 	waitforvisualfinish
@@ -23677,9 +23654,6 @@ gBattleAnimMove_GigaDrain::
 	waitforvisualfinish
 	delay 3
 	call GigaDrainAbsorbEffect
-	waitforvisualfinish
-	delay 15
-	call HealingEffect
 	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 12, 0, RGB(13, 31, 12)
 	waitforvisualfinish
@@ -23750,9 +23724,6 @@ gBattleAnimMove_LeechLife::
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 7, RGB_BLACK
 	waitforvisualfinish
 	call AbsorbEffect
-	waitforvisualfinish
-	delay 15
-	call HealingEffect
 	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 7, 0, RGB_BLACK
 	waitforvisualfinish
@@ -24876,9 +24847,6 @@ gBattleAnimMove_DreamEater::
 	setalpha 12, 8
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 2, 25, 1
 	call DreamEaterAbsorb
-	waitforvisualfinish
-	delay 15
-	call HealingEffect
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff

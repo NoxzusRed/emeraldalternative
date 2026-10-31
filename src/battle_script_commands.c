@@ -69,6 +69,7 @@
 #include "battle_gfx_sfx_util.h"
 
 EWRAM_DATA static u8 sParallelBerryAnimBattler;
+const u16 gParallelDrainHealMarker = 0;
 
 static bool8 IsParallelBerryAnimActive(void)
 {
@@ -5887,6 +5888,73 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
     // la animacion de una baya sigue ejecutandose.
     if (IsParallelBerryAnimActive())
         return;
+
+    // Curacion de movimientos que absorben energia.
+    // Iniciar los brillos y permitir que la barra
+    // de PS se mueva al mismo tiempo.
+    if (animId == B_ANIM_SIMPLE_HEAL &&
+        argPtr == &gParallelDrainHealMarker)
+    {
+        // No mostrar curacion si el efecto inflige
+        // dano, el Pokemon tiene PS completos o
+        // las animaciones estan desactivadas.
+        if (gBattleStruct->moveDamage[battler] >= 0 ||
+            gBattleMons[battler].hp == 0 ||
+            gBattleMons[battler].hp >= gBattleMons[battler].maxHP ||
+            (gHitMarker &
+             (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
+        {
+            gBattlescriptCurrInstr = nextInstr;
+            return;
+        }
+
+        // No ejecutar animaciones adicionales
+        // durante las pruebas automatizadas.
+        if (gTestRunnerEnabled)
+        {
+            gBattlescriptCurrInstr = nextInstr;
+            return;
+        }
+
+        // En combates link o grabados, mantener
+        // el sistema secuencial para evitar
+        // problemas de sincronizacion.
+        if (gBattleTypeFlags &
+            (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+        {
+            BtlController_EmitBattleAnimation(
+                battler,
+                B_COMM_TO_CONTROLLER,
+                animId,
+                &gDisableStructs[battler],
+                0);
+
+            MarkBattlerForControllerExec(battler);
+        }
+        else
+        {
+            // Esperar si ya hay otra animacion en curso.
+            if (gAnimScriptActive)
+                return;
+
+            gAnimDisableStructPtr = &gDisableStructs[battler];
+
+            // Ejecutar los brillos sin bloquear
+            // el controlador de la barra de PS.
+            if (!TryHandleLaunchBattleTableAnimation(
+                    battler,
+                    battler,
+                    battler,
+                    animId,
+                    0))
+            {
+                sParallelBerryAnimBattler = battler + 1;
+            }
+        }
+
+        gBattlescriptCurrInstr = nextInstr;
+        return;
+    }
 
     // Iniciar la animacion de la baya en segundo plano
     // cuando el siguiente comando muestra su mensaje.
