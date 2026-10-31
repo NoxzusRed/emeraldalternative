@@ -5933,9 +5933,12 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
         }
         else
         {
-            // Esperar si ya hay otra animacion en curso.
-            if (gAnimScriptActive)
-                return;
+		// Esperar a que termine la animacion anterior
+		// y cualquier sonido que siga reproduciendose.
+		if (gAnimScriptActive || IsBattleSEPlaying(battler))
+			return;
+
+gAnimDisableStructPtr = &gDisableStructs[battler];
 
             gAnimDisableStructPtr = &gDisableStructs[battler];
 
