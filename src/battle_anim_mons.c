@@ -817,8 +817,14 @@ bool8 IsBattlerSpritePresent(u8 battler)
         if (GetBattlerPosition(battler) == 0xff)
             return FALSE;
 
+        // Fix from pokeemerald-expansion #8894:
+        // Ignore absent battlers in double battles.
+        if (gAbsentBattlerFlags & (1u << battler))
+            return FALSE;
+
         if (!gBattleStruct->spriteIgnore0Hp && GetMonData(GetBattlerMon(battler), MON_DATA_HP) == 0)
             return FALSE;
+
         return TRUE;
     }
 }
