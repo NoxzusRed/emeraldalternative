@@ -1259,7 +1259,7 @@
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_STARDUST                       0x4B6 // 
 #define FLAG_ITEM_ROUTE_111_EAST_SOFT_SAND                          0x4B7 //
 #define FLAG_ITEM_RUSTURF_TUNNEL_HIGH_SUN_STONE                     0x4B8 //
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
+#define FLAG_JOHTO_STARTERS_INITIALIZED                             0x4B9 //
 #define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
 #define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
