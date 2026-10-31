@@ -2112,10 +2112,10 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 Mawile
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Baton Pass
-- Feint Attack
+- Psychic Fangs
+- Poison Fangs
+- Crunch
 - Fake Tears
-- Bite
 
 Roserade
 Level: 33
@@ -5296,7 +5296,7 @@ EVs: 252 HP / 126 Atk / 252 Def / 252 SpD
 Sableye
 Level: 54
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+EVs: 252 HP / 68 SpA
 - Shadow Ball
 - Double Team
 - Dark Pulse
@@ -18803,7 +18803,7 @@ Level: 79
 Nature: Adamant
 Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+EVs: 252 HP / 68 SpD / 252 Spe / 68 Atk
 - Phantom Force
 - Parting Shot
 - Confuse Ray
@@ -18869,10 +18869,10 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 
 Mawile @ Assault Vest
 Level: 79
-Nature: Adamant
-Ability: Sheer Force
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+Nature: Sassy
+Ability: Huge Power
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP
 - Crunch
 - Play Rough
 - Iron Head
@@ -18942,7 +18942,7 @@ Level: 79
 Nature: Adamant
 Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+EVs: 252 HP / 68 SpD / 252 Spe / 68 Atk
 - Phantom Force
 - Parting Shot
 - Confuse Ray
@@ -19012,10 +19012,10 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA / 126 Atk
 
 Mawile @ Assault Vest
 Level: 79
-Nature: Adamant
-Ability: Sheer Force
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+Nature: Sassy
+Ability: Huge Power
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP
 - Crunch
 - Play Rough
 - Iron Head
@@ -19087,7 +19087,7 @@ Level: 79
 Nature: Adamant
 Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+EVs: 252 HP / 68 SpD / 252 Spe / 68 Atk
 - Phantom Force
 - Parting Shot
 - Confuse Ray
@@ -19156,10 +19156,10 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA / 126 Atk
 
 Mawile @ Assault Vest
 Level: 79
-Nature: Adamant
-Ability: Sheer Force
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 252 Atk
+Nature: Sassy
+Ability: Huge Power
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP
 - Crunch
 - Play Rough
 - Iron Head
