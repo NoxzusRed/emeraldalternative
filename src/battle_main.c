@@ -4090,12 +4090,11 @@ case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
     break;
     case BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES:
         // Mostrar las barras de PS de los Pokemon activos.
-        for (battler = 0;
-             battler < gBattlersCount;
-             battler++)
+        for (battler = 0; battler < gBattlersCount; battler++)
         {
             if (!IsBattlerAlive(battler))
                 continue;
+
             UpdateHealthboxAttribute(
                 gHealthboxSpriteIds[battler],
                 GetBattlerMon(battler),
@@ -4103,10 +4102,12 @@ case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
             );
 
             StartHealthboxSlideIn(battler);
-            SetHealthboxSpriteVisible(
-                gHealthboxSpriteIds[battler]
-            );
+            SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
         }
+
+        // Iniciar el cuadro de captura junto con las barras de vida.
+        TryAddLastUsedBallItemSprites();
+
         gBattleStruct->introState =
             BATTLE_INTRO_STATE_WILD_WAIT_HEALTHBOXES;
         break;
