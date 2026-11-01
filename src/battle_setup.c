@@ -1803,20 +1803,9 @@ static bool8 WasSecondRematchWon(const struct RematchTrainer *table, u16 firstBa
 }
 
 #if FREE_MATCH_CALL == FALSE
-static bool32 HasAtLeastFiveBadges(void)
+static bool32 HasFourthBadge(void)
 {
-    s32 i, count;
-
-    for (count = 0, i = 0; i < ARRAY_COUNT(gBadgeFlags); i++)
-    {
-        if (FlagGet(gBadgeFlags[i]) == TRUE)
-        {
-            if (++count >= 5)
-                return TRUE;
-        }
-    }
-
-    return FALSE;
+    return FlagGet(FLAG_BADGE04_GET);
 }
 #endif //FREE_MATCH_CALL
 
@@ -1825,7 +1814,7 @@ static bool32 HasAtLeastFiveBadges(void)
 void IncrementRematchStepCounter(void)
 {
 #if FREE_MATCH_CALL == FALSE
-    if (!HasAtLeastFiveBadges())
+    if (!HasFourthBadge())
         return;
 
     if (IsVsSeekerEnabled())
@@ -1841,7 +1830,7 @@ void IncrementRematchStepCounter(void)
 #if FREE_MATCH_CALL == FALSE
 static bool32 IsRematchStepCounterMaxed(void)
 {
-    if (HasAtLeastFiveBadges() && gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
+    if (HasFourthBadge() && gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
         return TRUE;
     else
         return FALSE;
