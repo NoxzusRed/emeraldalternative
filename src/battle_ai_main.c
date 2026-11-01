@@ -31,6 +31,95 @@
 #define AI_ACTION_FLEE          (1 << 1)
 #define AI_ACTION_WATCH         (1 << 2)
 #define AI_ACTION_DO_NOT_ATTACK (1 << 3)
+#define AI_MAX_CONSECUTIVE_STAT_BOOSTS 2
+
+static bool32 IsAiStatBoostingMove(u32 battler, u32 move)
+{
+    enum BattleMoveEffects effect;
+
+    if (move == MOVE_NONE || move == MOVE_UNAVAILABLE
+        || !IsBattleMoveStatus(move))
+        return FALSE;
+
+    effect = GetMoveEffect(move);
+
+    if (IsStatRaisingEffect(effect))
+        return TRUE;
+
+    if (effect == EFFECT_CURSE)
+        return !IS_BATTLER_OF_TYPE(battler, TYPE_GHOST);
+
+    switch (effect)
+    {
+    case EFFECT_ATTACK_UP_USER_ALLY:
+    case EFFECT_AUTOTOMIZE:
+    case EFFECT_BELLY_DRUM:
+    case EFFECT_FILLET_AWAY:
+    case EFFECT_NO_RETREAT:
+    case EFFECT_CLANGOROUS_SOUL:
+    case EFFECT_EXTREME_EVOBOOST:
+    case EFFECT_TIDY_UP:
+    case EFFECT_TAKE_HEART:
+    case EFFECT_COACHING:
+    case EFFECT_DECORATE:
+    case EFFECT_STUFF_CHEEKS:
+    case EFFECT_GEAR_UP:
+    case EFFECT_MAGNETIC_FLUX:
+    case EFFECT_AROMATIC_MIST:
+    case EFFECT_FLOWER_SHIELD:
+    case EFFECT_ROTOTILLER:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+static void LimitAiConsecutiveStatBoosts(u32 battler)
+{
+    u32 i, last, previous;
+    bool32 hasAlternative = FALSE;
+
+    if (!BattlerHasAi(battler))
+        return;
+
+    last = gBattleHistory->moveHistoryIndex[battler];
+    previous = (last + AI_MOVE_HISTORY_COUNT - 1)
+               % AI_MOVE_HISTORY_COUNT;
+
+    if (!IsAiStatBoostingMove(
+            battler, gBattleHistory->moveHistory[battler][last])
+        || !IsAiStatBoostingMove(
+            battler, gBattleHistory->moveHistory[battler][previous]))
+        return;
+
+    // Verificar que exista otra opcion utilizable.
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        u32 move = gBattleMons[battler].moves[i];
+
+        if (move != MOVE_NONE
+            && gBattleMons[battler].pp[i] > 0
+            && gAiThinkingStruct->score[i] > 0
+            && !IsAiStatBoostingMove(battler, move))
+        {
+            hasAlternative = TRUE;
+            break;
+        }
+    }
+
+    if (!hasAlternative && !(gAiLogicData->moveLimitations[battler] & (1u << i)))
+        return;
+
+    // Descartar temporalmente los aumentos de stats.
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (IsAiStatBoostingMove(
+                battler, gBattleMons[battler].moves[i]))
+        {
+            SET_SCORE(battler, i, 0);
+        }
+    }
+}
 
 static u32 ChooseMoveOrAction_Singles(u32 battler);
 static u32 ChooseMoveOrAction_Doubles(u32 battler);
@@ -501,6 +590,10 @@ void Ai_UpdateSwitchInData(u32 battler)
         ClearBattlerItemEffectHistory(battler);
         CopyBattlerDataToAIParty(GetBattlerPosition(battler), side);
     }
+    // Reiniciar la secuencia de movimientos al cambiar.
+    memset(gBattleHistory->moveHistory[battler], 0,
+           sizeof(gBattleHistory->moveHistory[battler]));
+    gBattleHistory->moveHistoryIndex[battler] = 0;
 }
 
 void Ai_UpdateFaintData(u32 battler)
@@ -692,7 +785,8 @@ static u32 ChooseMoveOrAction_Singles(u32 battler)
         flags >>= (u64)1;
         gAiThinkingStruct->aiLogicId++;
     }
-
+	
+	LimitAiConsecutiveStatBoosts(battler);
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         gAiBattleData->finalScore[battler][opposingBattler][i] = gAiThinkingStruct->score[i];
@@ -770,6 +864,7 @@ static u32 ChooseMoveOrAction_Doubles(u32 battler)
                 gAiThinkingStruct->aiLogicId++;
             }
 
+			LimitAiConsecutiveStatBoosts(battler);
             mostViableMovesScores[0] = gAiThinkingStruct->score[0];
             mostViableMovesIndices[0] = 0;
             mostViableMovesNo = 1;
