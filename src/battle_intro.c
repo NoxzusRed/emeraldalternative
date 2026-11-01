@@ -382,8 +382,11 @@ static void BattleIntroSlide2(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
+        // Wait for the opening and water/sand blend to finish before clearing.
         if (gTasks[taskId].data[2] == 0
-            && (gBattle_WIN0V & 0xFF00) == 0)
+            && (gBattle_WIN0V & 0xFF00) == 0
+            && gTasks[taskId].data[3] == 0
+            && (gTasks[taskId].data[4] & 0x1F) == 0)
         {
             gScanlineEffect.state = 3;
             gTasks[taskId].tState++;
@@ -473,8 +476,11 @@ static void BattleIntroSlide3(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
+        // Wait for the opening and building/plain blend to finish before clearing.
         if (gTasks[taskId].data[2] == 0
-            && (gBattle_WIN0V & 0xFF00) == 0)
+            && (gBattle_WIN0V & 0xFF00) == 0
+            && gTasks[taskId].data[3] == 0
+            && (gTasks[taskId].data[4] & 0xF) == 0)
         {
             gScanlineEffect.state = 3;
             gTasks[taskId].tState++;
@@ -556,7 +562,9 @@ static void BattleIntroSlideLink(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
-        if (gTasks[taskId].data[2] == 0)
+        // Wait for the vertical opening to finish before clearing the Link slide.
+        if (gTasks[taskId].data[2] == 0
+            && (gBattle_WIN0V & 0xFF00) == 0)
         {
             gScanlineEffect.state = 3;
             gTasks[taskId].tState++;
