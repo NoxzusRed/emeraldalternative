@@ -226,7 +226,7 @@ SlateportCity_PokemonFanClub_EventScript_Skitty::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
 	msgbox SlateportCity_PokemonFanClub_Text_Skitty, MSGBOX_DEFAULT
 	waitmoncry
 	release
@@ -390,7 +390,7 @@ SlateportCity_PokemonFanClub_Text_MonEnjoyedProtein:
 	.string "it some PROTEIN.$"
 
 SlateportCity_PokemonFanClub_Text_Skitty:
-	.string "SKITTY: Fffnyaaaah…$"
+	.string "EEVEE: Puu-piiit!$"
 
 SlateportCity_PokemonFanClub_Text_Zigzagoon:
 	.string "ZIGZAGOON: Kyuuu…$"
