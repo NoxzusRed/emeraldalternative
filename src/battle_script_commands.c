@@ -71,6 +71,14 @@
 EWRAM_DATA static u8 sParallelBerryAnimBattler;
 EWRAM_DATA static u8 sParallelBerryHealBattler;
 EWRAM_DATA static u8 sParallelStatAnimBattler;
+EWRAM_DATA static u8 sMultiStatMessagesRemaining;
+EWRAM_DATA static bool8 sHoldMultiStatMessage;
+
+// Each stat name gets at least 0.8 seconds in multi-stat moves.
+#define MULTI_STAT_MESSAGE_MIN_FRAMES 48
+
+extern const u16 gStatDownStringIds[];
+
 const u16 gParallelDrainHealMarker = 0;
 
 static bool8 IsParallelBerryAnimActive(void)
@@ -3107,6 +3115,8 @@ static void Cmd_printstring(void)
     {
         u16 id = (cmd->id == 0 ? gBattleScripting.savedStringId : cmd->id);
 
+        // Only stat-table messages should receive the multi-stat pause.
+        sHoldMultiStatMessage = FALSE;
         gBattlescriptCurrInstr = cmd->nextInstr;
         PrepareStringBattle(id, gBattlerAttacker);
         gBattleCommunication[MSG_DISPLAY] = 1;
@@ -3132,15 +3142,30 @@ static void Cmd_waitmessage(void)
     {
         if (!gBattleCommunication[MSG_DISPLAY])
         {
+            sHoldMultiStatMessage = FALSE;
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         else
         {
             u16 toWait = cmd->time;
+
+            // B_WAIT_TIME_MULTIPLIER is zero in this hack.
+            // Keep each of several stat-change messages readable.
+            if (sHoldMultiStatMessage
+                && toWait < MULTI_STAT_MESSAGE_MIN_FRAMES)
+                toWait = MULTI_STAT_MESSAGE_MIN_FRAMES;
+
             if (gTestRunnerHeadless)
                 gPauseCounterBattle = toWait;
-            if (++gPauseCounterBattle >= toWait &&!IsTextPrinterActive(B_WIN_MSG))
+            if (++gPauseCounterBattle >= toWait && !IsTextPrinterActive(B_WIN_MSG))
             {
+                if (sHoldMultiStatMessage)
+                {
+                    if (sMultiStatMessagesRemaining != 0)
+                        sMultiStatMessagesRemaining--;
+                    sHoldMultiStatMessage = FALSE;
+                }
+
                 gPauseCounterBattle = 0;
                 gBattlescriptCurrInstr = cmd->nextInstr;
                 gBattleCommunication[MSG_DISPLAY] = 0;
@@ -3156,6 +3181,11 @@ static void Cmd_printfromtable(void)
     if (gBattleControllerExecFlags == 0)
     {
         const u16 *ptr = cmd->ptr;
+
+        // Slow only actual stat-up/down messages after a multi-stat animation.
+        sHoldMultiStatMessage = sMultiStatMessagesRemaining != 0
+            && (ptr == gStatUpStringIds || ptr == gStatDownStringIds);
+
         ptr += gBattleCommunication[MULTISTRING_CHOOSER];
 
         gBattlescriptCurrInstr = cmd->nextInstr;
@@ -5862,6 +5892,9 @@ static void Cmd_end(void)
     if (IsParallelStatAnimActive())
         return;
 
+    sMultiStatMessagesRemaining = 0;
+    sHoldMultiStatMessage = FALSE;
+
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
         BattleArena_AddSkillPoints(gBattlerAttacker);
 
@@ -5875,6 +5908,8 @@ static void Cmd_end2(void)
     if (IsParallelStatAnimActive())
         return;
 
+    sMultiStatMessagesRemaining = 0;
+    sHoldMultiStatMessage = FALSE;
     gCurrentActionFuncId = B_ACTION_TRY_FINISH;
 }
 
@@ -5886,6 +5921,8 @@ static void Cmd_end3(void)
     if (IsParallelStatAnimActive())
         return;
 
+    sMultiStatMessagesRemaining = 0;
+    sHoldMultiStatMessage = FALSE;
     BattleScriptPop();
     if (gBattleResources->battleCallbackStack->size != 0)
         gBattleResources->battleCallbackStack->size--;
@@ -6315,6 +6352,11 @@ static void Cmd_playstatchangeanimation(void)
 
         if (flags & STAT_CHANGE_MULTIPLE_STATS && changeableStatsCount > 1)
             gBattleScripting.statAnimPlayed = TRUE;
+
+        // The following stat messages must each stay on-screen long enough.
+        if (changeableStatsCount > 1)
+            sMultiStatMessagesRemaining = changeableStatsCount;
+
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
     else
@@ -6600,6 +6642,9 @@ static void Cmd_moveend(void)
     // Finish the stat visual before processing the next move effect.
     if (IsParallelStatAnimActive())
         return;
+
+    sMultiStatMessagesRemaining = 0;
+    sHoldMultiStatMessage = FALSE;
 
     do
     {
