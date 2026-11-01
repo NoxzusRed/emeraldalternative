@@ -4064,29 +4064,30 @@ static void DoBattleIntro(void)
             gBattleMainFunc = TryDoEventsBeforeFirstTurn;
         }
         break;
-    case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
-        if (gBattleControllerExecFlags)
-            break;
-
-        for (battler = 0; battler < gBattlersCount; battler++)
-        {
-            if (!IsBattlerAlive(battler))
-                continue;
-
-            if (gSprites[gBattlerSpriteIds[battler]].x !=
-                GetBattlerSpriteCoord(
-                    battler, BATTLER_COORD_X_2))
-            {
-                break;
-            }
-        }
-
-        if (battler == gBattlersCount)
-        {
-            gBattleStruct->introState =
-                BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES;
-        }
+case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
+    if (gBattleControllerExecFlags)
         break;
+    for (battler = 0; battler < gBattlersCount; battler++)
+    {
+        struct Sprite *sprite;
+        if (!IsBattlerAlive(battler))
+            continue;
+        sprite = &gSprites[gBattlerSpriteIds[battler]];
+        // Esperar a que llegue a su posicion y
+        // termine su animacion de entrada.
+        if (sprite->x != GetBattlerSpriteCoord(
+                battler, BATTLER_COORD_X_2)
+            || sprite->callback != SpriteCallbackDummy)
+        {
+            break;
+        }
+    }
+    if (battler == gBattlersCount)
+    {
+        gBattleStruct->introState =
+            BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES;
+    }
+    break;
     case BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES:
         // Mostrar las barras de PS de los Pokemon activos.
         for (battler = 0;
