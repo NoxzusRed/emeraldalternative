@@ -70,6 +70,7 @@
 
 EWRAM_DATA static u8 sParallelBerryAnimBattler;
 EWRAM_DATA static u8 sParallelBerryHealBattler;
+EWRAM_DATA static u8 sParallelStatAnimBattler;
 const u16 gParallelDrainHealMarker = 0;
 
 static bool8 IsParallelBerryAnimActive(void)
@@ -101,6 +102,27 @@ static bool8 IsParallelBerryAnimActive(void)
 
     sParallelBerryAnimBattler = 0;
     sParallelBerryHealBattler = 0;
+    return FALSE;
+}
+
+// Track stat visuals launched outside the normal controller command queue.
+static bool8 IsParallelStatAnimActive(void)
+{
+    u8 battler;
+
+    if (sParallelStatAnimBattler == 0)
+        return FALSE;
+
+    battler = sParallelStatAnimBattler - 1;
+
+    if (gBattleSpritesDataPtr != NULL
+        && battler < gBattlersCount
+        && gBattleSpritesDataPtr->healthBoxesData[battler].animFromTableActive)
+    {
+        return TRUE;
+    }
+
+    sParallelStatAnimBattler = 0;
     return FALSE;
 }
 
@@ -2503,7 +2525,9 @@ static void Cmd_attackanimation(void)
 {
     CMD_ARGS();
 
-    if (gBattleControllerExecFlags || ProcessPreAttackAnimationFuncs())
+    if (IsParallelStatAnimActive()
+        || gBattleControllerExecFlags
+        || ProcessPreAttackAnimationFuncs())
         return;
 
     u32 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove);
@@ -2593,7 +2617,10 @@ static void Cmd_waitanimation(void)
 
     // Continuar solo cuando la animacion
     // y el texto hayan terminado.
-    if (gBattleControllerExecFlags == 0 && !IsTextPrinterActive(B_WIN_MSG) && !IsParallelBerryAnimActive())
+    if (gBattleControllerExecFlags == 0
+        && !IsTextPrinterActive(B_WIN_MSG)
+        && !IsParallelBerryAnimActive()
+        && !IsParallelStatAnimActive())
     {
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
@@ -5798,7 +5825,8 @@ static void Cmd_waitstate(void)
 {
     CMD_ARGS();
 
-    if (gBattleControllerExecFlags == 0)
+    if (gBattleControllerExecFlags == 0
+        && !IsParallelStatAnimActive())
         gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -5821,12 +5849,18 @@ static void Cmd_absorb(void)
 
 static void Cmd_return(void)
 {
+    if (IsParallelStatAnimActive())
+        return;
+
     BattleScriptPop();
 }
 
 static void Cmd_end(void)
 {
     CMD_ARGS();
+
+    if (IsParallelStatAnimActive())
+        return;
 
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
         BattleArena_AddSkillPoints(gBattlerAttacker);
@@ -5838,6 +5872,9 @@ static void Cmd_end2(void)
 {
     CMD_ARGS();
 
+    if (IsParallelStatAnimActive())
+        return;
+
     gCurrentActionFuncId = B_ACTION_TRY_FINISH;
 }
 
@@ -5845,6 +5882,9 @@ static void Cmd_end2(void)
 static void Cmd_end3(void)
 {
     CMD_ARGS();
+
+    if (IsParallelStatAnimActive())
+        return;
 
     BattleScriptPop();
     if (gBattleResources->battleCallbackStack->size != 0)
@@ -5899,7 +5939,7 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
 {
     // No iniciar otra animacion general mientras
     // la animacion de una baya sigue ejecutandose.
-    if (IsParallelBerryAnimActive())
+    if (IsParallelBerryAnimActive() || IsParallelStatAnimActive())
         return;
 
     // Curacion de movimientos que absorben energia.
@@ -6002,6 +6042,34 @@ gAnimDisableStructPtr = &gDisableStructs[battler];
         gBattlescriptCurrInstr = nextInstr;
         return;
     }
+    // Launch stat animation while the following stat message starts printing.
+    // Keep the standard controller path for link, recorded and test battles.
+    if (animId == B_ANIM_STATS_CHANGE
+        && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+        && !gTestRunnerEnabled
+        && !(gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
+    {
+        if (gBattleControllerExecFlags
+            || gAnimScriptActive
+            || IsBattleSEPlaying(battler))
+            return;
+
+        gAnimDisableStructPtr = &gDisableStructs[battler];
+
+        if (!TryHandleLaunchBattleTableAnimation(
+                battler,
+                battler,
+                battler,
+                animId,
+                argPtr != NULL ? *argPtr : 0))
+        {
+            sParallelStatAnimBattler = battler + 1;
+        }
+
+        gBattlescriptCurrInstr = nextInstr;
+        return;
+    }
+
     if (B_TERRAIN_BG_CHANGE == FALSE && animId == B_ANIM_RESTORE_BG)
     {
         // workaround for .if not working
@@ -6211,8 +6279,40 @@ static void Cmd_playstatchangeanimation(void)
     }
     else if (changeableStatsCount != 0 && !gBattleScripting.statAnimPlayed)
     {
-        BtlController_EmitBattleAnimation(battler, B_COMM_TO_CONTROLLER, B_ANIM_STATS_CHANGE, &gDisableStructs[battler], statAnimId);
-        MarkBattlerForControllerExec(battler);
+        if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+            && !gTestRunnerEnabled
+            && !(gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
+        {
+            if (gBattleControllerExecFlags
+                || gAnimScriptActive
+                || IsParallelBerryAnimActive()
+                || IsParallelStatAnimActive()
+                || IsBattleSEPlaying(battler))
+                return;
+
+            gAnimDisableStructPtr = &gDisableStructs[battler];
+
+            if (!TryHandleLaunchBattleTableAnimation(
+                    battler,
+                    battler,
+                    battler,
+                    B_ANIM_STATS_CHANGE,
+                    statAnimId))
+            {
+                sParallelStatAnimBattler = battler + 1;
+            }
+        }
+        else
+        {
+            BtlController_EmitBattleAnimation(
+                battler,
+                B_COMM_TO_CONTROLLER,
+                B_ANIM_STATS_CHANGE,
+                &gDisableStructs[battler],
+                statAnimId);
+            MarkBattlerForControllerExec(battler);
+        }
+
         if (flags & STAT_CHANGE_MULTIPLE_STATS && changeableStatsCount > 1)
             gBattleScripting.statAnimPlayed = TRUE;
         gBattlescriptCurrInstr = cmd->nextInstr;
@@ -6496,6 +6596,10 @@ static void Cmd_moveend(void)
     moveType = GetBattleMoveType(gCurrentMove);
 
     enum BattleMoveEffects moveEffect = GetMoveEffect(gCurrentMove);
+
+    // Finish the stat visual before processing the next move effect.
+    if (IsParallelStatAnimActive())
+        return;
 
     do
     {
