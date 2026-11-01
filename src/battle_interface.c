@@ -2982,6 +2982,8 @@ static const struct SpriteSheet sSpriteSheet_MoveInfoWindow =
 
 #define LAST_USED_BALL_X_F    14
 #define LAST_USED_BALL_X_0    -14
+#define LAST_USED_BALL_ENTRY_SPEED 10
+#define LAST_USED_BALL_ENTRY_X (LAST_USED_BALL_X_F - 120)
 #define LAST_USED_BALL_Y      ((IsDoubleBattle()) ? 78 : 68)
 #define LAST_USED_BALL_Y_BNC  ((IsDoubleBattle()) ? 76 : 66)
 
@@ -3036,7 +3038,7 @@ void TryAddLastUsedBallItemSprites(void)
     if (gBattleStruct->ballSpriteIds[0] == MAX_SPRITES)
     {
         gBattleStruct->ballSpriteIds[0] = AddItemIconSprite(102, 102, gBallToDisplay);
-        gSprites[gBattleStruct->ballSpriteIds[0]].x = LAST_USED_BALL_X_0;
+        gSprites[gBattleStruct->ballSpriteIds[0]].x = LAST_USED_BALL_ENTRY_X;
         gSprites[gBattleStruct->ballSpriteIds[0]].y = LAST_USED_BALL_Y;
         gSprites[gBattleStruct->ballSpriteIds[0]].sHide = FALSE;
         gLastUsedBallMenuPresent = TRUE;
@@ -3051,10 +3053,11 @@ void TryAddLastUsedBallItemSprites(void)
     if (gBattleStruct->ballSpriteIds[1] == MAX_SPRITES)
     {
         gBattleStruct->ballSpriteIds[1] = CreateSprite(&sSpriteTemplate_LastUsedBallWindow,
-                                                       LAST_BALL_WIN_X_0,
+                                                       LAST_USED_BALL_ENTRY_X,
                                                        LAST_USED_WIN_Y, 5);
         gSprites[gBattleStruct->ballSpriteIds[1]].sHide = FALSE;
-        gSprites[gBattleStruct->moveInfoSpriteId].sHide = TRUE;
+        if (gBattleStruct->moveInfoSpriteId != MAX_SPRITES)
+            gSprites[gBattleStruct->moveInfoSpriteId].sHide = TRUE;
         gLastUsedBallMenuPresent = TRUE;
     }
     if (B_LAST_USED_BALL_CYCLE == TRUE)
@@ -3110,16 +3113,16 @@ static void SpriteCB_LastUsedBallWin(struct Sprite *sprite)
 {
     if (sprite->sHide)
     {
-        if (sprite->x != LAST_BALL_WIN_X_0)
+        if (sprite->x > LAST_BALL_WIN_X_0)
             sprite->x--;
-
-        if (sprite->x == LAST_BALL_WIN_X_0)
+        else
             DestroyLastUsedBallWinGfx(sprite);
     }
-    else
+    else if (sprite->x < LAST_BALL_WIN_X_F)
     {
-        if (sprite->x != LAST_BALL_WIN_X_F)
-            sprite->x++;
+        sprite->x += LAST_USED_BALL_ENTRY_SPEED;
+        if (sprite->x > LAST_BALL_WIN_X_F)
+            sprite->x = LAST_BALL_WIN_X_F;
     }
 }
 
@@ -3127,19 +3130,19 @@ static void SpriteCB_LastUsedBall(struct Sprite *sprite)
 {
     if (sprite->sHide)
     {
-        if (sprite->y < LAST_USED_BALL_Y) // Used to recover from an incomplete bounce before hiding the window
+        if (sprite->y < LAST_USED_BALL_Y) // Recover from incomplete bounce before hiding
             sprite->y++;
 
-        if (sprite->x != LAST_USED_BALL_X_0)
+        if (sprite->x > LAST_USED_BALL_X_0)
             sprite->x--;
-
-        if (sprite->x == LAST_USED_BALL_X_0)
+        else
             DestroyLastUsedBallGfx(sprite);
     }
-    else
+    else if (sprite->x < LAST_USED_BALL_X_F)
     {
-        if (sprite->x != LAST_USED_BALL_X_F)
-            sprite->x++;
+        sprite->x += LAST_USED_BALL_ENTRY_SPEED;
+        if (sprite->x > LAST_USED_BALL_X_F)
+            sprite->x = LAST_USED_BALL_X_F;
     }
 }
 
