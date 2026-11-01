@@ -6359,7 +6359,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Donphan @ Oran Berry
-Level: 32
+Level: 33
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_MIGUEL_4 ===
@@ -6372,7 +6372,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Donphan @ Oran Berry
-Level: 35
+Level: 37
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_MIGUEL_5 ===
@@ -6385,7 +6385,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Donphan @ Sitrus Berry
-Level: 38
+Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_VICTORIA ===
@@ -6648,7 +6648,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Riolu
-Level: 30
+Level: 28
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Metal Claw
 - Force Palm
@@ -6656,7 +6656,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Detect
 
 Machoke
-Level: 30
+Level: 28
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 === TRAINER_SHELBY_3 ===
@@ -6669,7 +6669,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Lucario
-Level: 33
+Level: 32
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Meteor Mash
 - Force Palm
@@ -6677,7 +6677,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Detect
 
 Machoke
-Level: 33
+Level: 32
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 === TRAINER_SHELBY_4 ===
@@ -6711,7 +6711,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Lucario
-Level: 39
+Level: 40
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - Meteor Mash
 - Force Palm
@@ -6719,11 +6719,11 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - Detect
 
 Mienshao
-Level: 39
+Level: 40
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 Machamp
-Level: 39
+Level: 40
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 === TRAINER_CALVIN_1 ===
@@ -9838,11 +9838,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Houndour
-Level: 23
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mightyena
-Level: 23
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_GINA_AND_MIA_1 ===
@@ -9890,11 +9890,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Houndoom
-Level: 27
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mightyena
-Level: 27
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_GINA_AND_MIA_2 ===
@@ -9928,11 +9928,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Houndoom
-Level: 30
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mightyena
-Level: 30
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_AMY_AND_LIV_5 ===
@@ -9945,19 +9945,19 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Houndoom
-Level: 33
+Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mightyena
-Level: 33
+Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Ponyta
-Level: 33
+Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Blitzle
-Level: 33
+Zebstrika
+Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_AMY_AND_LIV_6 ===
@@ -9970,19 +9970,19 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Houndoom
-Level: 36
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mightyena
-Level: 36
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Rapidash
-Level: 36
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Zebstrika
-Level: 36
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_HUEY ===
@@ -10409,15 +10409,15 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Hoppip
+Chingling
 Level: 17
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Burmy
+Eevee
 Level: 17
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Noibat
+Shroomish
 Level: 17
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -10483,15 +10483,15 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Skiploom
+Chimecho
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Wormadam
+Glaceon
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Noibat
+Breloom
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -10504,16 +10504,16 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Jumpluff
-Level: 29
+Chimecho
+Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Wormadam
-Level: 29
+Glaceon
+Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Noibat
-Level: 29
+Breloom
+Level: 30
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_EDWIN_4 ===
@@ -10525,16 +10525,16 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Jumpluff
-Level: 32
+Chimecho
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Wormadam
-Level: 32
+Glaceon
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Noibat
-Level: 32
+Breloom
+Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_EDWIN_5 ===
@@ -10546,16 +10546,16 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Jumpluff
-Level: 35
+Chimecho
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Wormadam
-Level: 35
+Glaceon
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Noibat
-Level: 35
+Breloom
+Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_WALLY_VR_1 ===
@@ -11162,28 +11162,28 @@ Double Battle: No
 AI: Check Bad Move
 
 Loudred
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Linoone
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Aron
-Level: 25
+Level: 27
 Ability: Rock Head
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mightyena
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Noctowl
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Machop
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_ISAAC_4 ===
@@ -11196,28 +11196,28 @@ Double Battle: No
 AI: Check Bad Move
 
 Loudred
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Linoone
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Aron
-Level: 28
+Lairon
+Level: 32
 Ability: Rock Head
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mightyena
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Noctowl
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Machoke
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_ISAAC_5 ===
@@ -11230,28 +11230,28 @@ Double Battle: No
 AI: Check Bad Move
 
 Loudred
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Linoone
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lairon
-Level: 31
+Level: 37
 Ability: Rock Head
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mightyena
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Noctowl
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Machoke
-Level: 31
+Machamp
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_LYDIA_1 ===
@@ -11367,27 +11367,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Skiploom
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Azumarill
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Roselia
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Donphan
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Finneon
-Level: 25
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_LYDIA_4 ===
@@ -11400,27 +11400,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Jumpluff
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Azumarill
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Roselia
-Level: 28
+Roserade
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Donphan
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Finneon
-Level: 28
+Lumineon
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_LYDIA_5 ===
@@ -11433,27 +11433,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Jumpluff
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Azumarill
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Roserade
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Donphan
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lumineon
-Level: 31
+Level: 37
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_JACKSON_1 ===
@@ -11531,7 +11531,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Jumpluff
-Level: 39
+Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_JACKSON_4 ===
@@ -11545,7 +11545,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Jumpluff
-Level: 42
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_JACKSON_5 ===
@@ -11559,12 +11559,12 @@ Double Battle: No
 AI: Basic Trainer
 
 Kecleon
-Level: 45
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
 Jumpluff
-Level: 45
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_CATHERINE_1 ===
@@ -11639,16 +11639,16 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-Petilil
-Level: 30
+SPECIES_LILLIGANT_HISUI
+Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Roselia
-Level: 30
+Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Eevee
-Level: 30
+Leafeon
+Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CATHERINE_3 ===
@@ -11661,16 +11661,16 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Petilil
-Level: 33
+SPECIES_LILLIGANT_HISUI
+Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Roselia
-Level: 33
+Roserade
+Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Leafeon
-Level: 33
+Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CATHERINE_4 ===
@@ -11684,19 +11684,19 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 SPECIES_LILLIGANT_HISUI
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Petal Blizzard
 - Victory Dance
 - Brick Break
 
 Roserade
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Leafeon
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_CATHERINE_5 ===
 Name: CATHERINE
@@ -11709,19 +11709,19 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LILLIGANT_HISUI
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Petal Blizzard
 - Victory Dance
 - Brick Break
 
 Roserade
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Leafeon
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_JULIO ===
 Name: JULIO
@@ -18292,27 +18292,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Loudred
-Level: 36
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mightyena
-Level: 36
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Linoone
-Level: 36
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Jumpluff
-Level: 36
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Cottonee
-Level: 36
+Whimsicott
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Noctowl
-Level: 36
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_GABRIELLE_3 ===
@@ -18324,24 +18324,24 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Loudred
-Level: 39
+Exploud
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mightyena
-Level: 39
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Linoone
-Level: 39
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Jumpluff
-Level: 39
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Whimsicott
-Level: 39
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Moonblast
 - Giga Drain
@@ -18349,7 +18349,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Cotton Guard
 
 Noctowl
-Level: 39
+Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_GABRIELLE_4 ===
@@ -18362,23 +18362,23 @@ Double Battle: No
 AI: Check Bad Move
 
 Exploud
-Level: 42
+Level: 48
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mightyena
-Level: 42
+Level: 48
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Linoone
-Level: 42
+Level: 48
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Jumpluff
-Level: 42
+Level: 48
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Whimsicott
-Level: 42
+Level: 48
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Moonblast
 - Giga Drain
@@ -18386,7 +18386,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Cotton Guard
 
 Noctowl
-Level: 42
+Level: 48
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_GABRIELLE_5 ===
@@ -18399,23 +18399,23 @@ Double Battle: No
 AI: Check Bad Move
 
 Exploud
-Level: 45
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mightyena
-Level: 45
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Linoone
-Level: 45
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Jumpluff
-Level: 45
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Whimsicott
-Level: 45
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Moonblast
 - Giga Drain
@@ -18423,7 +18423,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Cotton Guard
 
 Noctowl
-Level: 45
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_THALIA_2 ===
