@@ -432,12 +432,12 @@ AI: Check Bad Move
 Carvanha
 Level: 19
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 126 Spe
+EVs: 126 HP / 126 Spe / 126 Def / 126 SpD
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 19
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP
+EVs: 126 HP / 126 Spe
 
 === TRAINER_GRUNT_MUSEUM_2 ===
 Name: GRUNT
@@ -450,13 +450,13 @@ AI: Check Bad Move
 
 Zubat
 Level: 19
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 126 Spe
+IVs: 18 HP / 31 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 126 Spe / 126 Atk
 
 Carvanha
 Level: 19
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 126 Spe
+EVs: 126 HP / 126 Spe / 126 Def / 126 SpD
 
 === TRAINER_GRUNT_SPACE_CENTER_1 ===
 Name: GRUNT
@@ -7000,7 +7000,8 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mightyena
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 24 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP
 
 === TRAINER_ALLEN ===
 Name: ALLEN
