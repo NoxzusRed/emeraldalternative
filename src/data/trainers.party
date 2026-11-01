@@ -431,11 +431,13 @@ AI: Check Bad Move
 
 Carvanha
 Level: 19
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 126 Spe
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 19
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP
 
 === TRAINER_GRUNT_MUSEUM_2 ===
 Name: GRUNT
@@ -448,11 +450,13 @@ AI: Check Bad Move
 
 Zubat
 Level: 19
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 126 Spe
 
 Carvanha
 Level: 19
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 126 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_1 ===
 Name: GRUNT
@@ -5524,8 +5528,8 @@ EVs: 126 HP
 
 Riolu
 Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+IVs: 12 HP / 18 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 68 Atk
 - Force Palm
 - Bullet Punch
 - Bulk Up
@@ -5533,8 +5537,8 @@ EVs: 126 HP
 
 Meditite
 Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 0 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 126 SpA
 - Aura Sphere
 - Psybeam
 - Detect
@@ -6798,7 +6802,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Mienfoo
 Level: 12
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -18877,7 +18881,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 
 Mawile @ Assault Vest
 Level: 79
-Nature: Sassy
+Nature: Calm
 Ability: Huge Power
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 EVs: 252 HP
