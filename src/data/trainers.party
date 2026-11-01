@@ -3797,11 +3797,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Machoke
-Level: 29
+Level: 31
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Machoke
-Level: 29
+Level: 31
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_NOB_4 ===
@@ -3814,15 +3814,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Machoke
-Level: 31
+Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Machoke
-Level: 31
+Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Machoke
-Level: 31
+Machamp @ Black Belt
+Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_NOB_5 ===
@@ -3835,19 +3835,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Machoke
-Level: 33
+Level: 39
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 Machoke
-Level: 33
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
-
-Machoke
-Level: 33
+Level: 39
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 Machamp @ Black Belt
-Level: 33
+Level: 39
+IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+
+Machamp @ Black Belt
+Level: 39
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 === TRAINER_YUJI ===
@@ -3867,7 +3867,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunder Punch
 - Fake Out
 
-Machoke
+Hariyama
 Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -3884,6 +3884,10 @@ Machop
 Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
+Makuhita
+Level: 21
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 === TRAINER_ATSUSHI ===
 Name: ATSUSHI
 Class: Black Belt
@@ -3893,10 +3897,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Mienfoo
+Medicham
 Level: 34
+Ability: Huge Power
 IVs: 31 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 Atk / 252 HP / 126 Def / 126 SpD
+EVs: 252 HP / 126 Def / 126 SpD
 - Thunder Punch
 - Fake Out
 
