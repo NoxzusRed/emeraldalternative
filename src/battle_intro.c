@@ -238,31 +238,24 @@ static void BattleIntroSlide1(u8 taskId)
         {
             gTasks[taskId].tState++;
             gTasks[taskId].data[2] = DISPLAY_WIDTH;
-            gTasks[taskId].data[3] = 32;
+            gTasks[taskId].data[3] = 0;
             gIntroSlideFlags &= ~1;
         }
         break;
     case 3:
-        if (gTasks[taskId].data[3])
-        {
-            gTasks[taskId].data[3]--;
-        }
-        else
-        {
-            if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS)
-            {
-                if (gBattle_BG1_Y != (u16)(-80))
-                    gBattle_BG1_Y -= 2;
-            }
-            else
-            {
-                if (gBattle_BG1_Y != (u16)(-56))
-                    gBattle_BG1_Y -= 1;
-            }
-        }
+		if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS)
+		{
+			if (gBattle_BG1_Y != (u16)(-80))
+				gBattle_BG1_Y -= 4;
+		}
+		else
+		{
+			if (gBattle_BG1_Y != (u16)(-56))
+				gBattle_BG1_Y -= 2;
+		}
 
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x7F8;
+            gBattle_WIN0V -= 0x1FE;
 
         if (gTasks[taskId].data[2])
             gTasks[taskId].data[2] -= INTRO_SLIDE_SPEED;
@@ -274,9 +267,13 @@ static void BattleIntroSlide1(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
-        if (gTasks[taskId].data[2] == 0)
-        {
-            gScanlineEffect.state = 3;
+		 if (gTasks[taskId].data[2] == 0
+			&& (gBattle_WIN0V & 0xFF00) == 0
+			&& gBattle_BG1_Y ==
+				(gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS
+					? (u16)(-80) : (u16)(-56)))
+		{
+			gScanlineEffect.state = 3;
             gTasks[taskId].tState++;
             CpuFill32(0, (void *)BG_SCREEN_ADDR(28), BG_SCREEN_SIZE);
             SetBgAttribute(1, BG_ATTR_CHARBASEINDEX, 0);
@@ -373,7 +370,7 @@ static void BattleIntroSlide2(u8 taskId)
         }
 
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x7F8;
+            gBattle_WIN0V -= 0x1FE;
 
         if (gTasks[taskId].data[2])
             gTasks[taskId].data[2] -= INTRO_SLIDE_SPEED;
@@ -385,7 +382,8 @@ static void BattleIntroSlide2(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
-        if (gTasks[taskId].data[2] == 0)
+        if (gTasks[taskId].data[2] == 0
+            && (gBattle_WIN0V & 0xFF00) == 0)
         {
             gScanlineEffect.state = 3;
             gTasks[taskId].tState++;
@@ -463,7 +461,7 @@ static void BattleIntroSlide3(u8 taskId)
         }
 
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x7F8;
+            gBattle_WIN0V -= 0x1FE;
 
         if (gTasks[taskId].data[2])
             gTasks[taskId].data[2] -= INTRO_SLIDE_SPEED;
@@ -475,7 +473,8 @@ static void BattleIntroSlide3(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
-        if (gTasks[taskId].data[2] == 0)
+        if (gTasks[taskId].data[2] == 0
+            && (gBattle_WIN0V & 0xFF00) == 0)
         {
             gScanlineEffect.state = 3;
             gTasks[taskId].tState++;

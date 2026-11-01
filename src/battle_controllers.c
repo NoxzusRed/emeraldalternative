@@ -2139,9 +2139,14 @@ static void SetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId)
 }
 
 // In normal singles, if follower Pokémon exists, and the Pokémon following is being sent out, have it slide in instead of being thrown
+
 static bool8 ShouldDoSlideInAnim(u32 battler)
 {
     struct ObjectEvent *followerObj = GetFollowerObject();
+
+    if (!B_PLAYER_FOLLOWER_SLIDEIN)
+        return FALSE;
+
     if (!followerObj || followerObj->invisible)
         return FALSE;
 
@@ -2157,6 +2162,7 @@ static bool8 ShouldDoSlideInAnim(u32 battler)
 
     return TRUE;
 }
+
 
 void StartSendOutAnim(u32 battler, bool32 dontClearTransform, bool32 dontClearSubstituteBit, bool32 doSlideIn)
 {

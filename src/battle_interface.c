@@ -1479,10 +1479,21 @@ void Task_HidePartyStatusSummary(u8 taskId)
     isBattleStart = gTasks[taskId].tIsBattleStart;
     summaryBarSpriteId = gTasks[taskId].tSummaryBarSpriteId;
     battler = gTasks[taskId].tBattler;
-
     for (i = 0; i < PARTY_SIZE; i++)
         ballIconSpriteIds[i] = gTasks[taskId].tBallIconSpriteId(i);
-
+    // No ocultar la interfaz hasta que la barra
+    // haya terminado completamente de entrar.
+    if (gSprites[summaryBarSpriteId].x2 != 0)
+        return;
+    // Esperar tambien a que las seis Pokeballs
+    // hayan completado sus animaciones de entrada.
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (gSprites[ballIconSpriteIds[i]].x2 != 0)
+            return;
+    }
+    // Una vez terminada la entrada,
+    // permitir la animacion de salida.
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL | BLDCNT_EFFECT_BLEND);
     SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(16, 0));
 
@@ -2480,6 +2491,8 @@ static u8* AddTextPrinterAndCreateWindowOnAbilityPopUp(const u8 *str, u32 x, u32
 {
     u32 fontId;
     u8 color[3] = {color1, color2, color3};
+    u8 savedFg, savedBg, savedShadow;
+
     struct WindowTemplate winTemplate = {0};
     winTemplate.width = POPUP_WINDOW_WIDTH;
     winTemplate.height = 2;
@@ -2488,7 +2501,19 @@ static u8* AddTextPrinterAndCreateWindowOnAbilityPopUp(const u8 *str, u32 x, u32
     FillWindowPixelBuffer(*windowId, PIXEL_FILL(color1));
 
     fontId = GetFontIdToFit(str, FONT_SMALL, 0, 76);
-    AddTextPrinterParameterized4(*windowId, fontId, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
+
+    // Save the colors used by the active text printer.
+    SaveTextColors(&savedFg, &savedBg, &savedShadow);
+
+    // Draw the ability popup using its own colors.
+    AddTextPrinterParameterized4(
+        *windowId, fontId, x, y,
+        0, 0, color, TEXT_SKIP_DRAW, str);
+
+    // Restore the previous text colors to avoid
+    // corrupting messages still being printed.
+    RestoreTextColors(&savedFg, &savedBg, &savedShadow);
+
     return (u8 *)(GetWindowAttribute(*windowId, WINDOW_TILE_DATA));
 }
 
