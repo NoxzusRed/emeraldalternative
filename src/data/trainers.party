@@ -10653,18 +10653,21 @@ AI: Basic Trainer
 
 Ponyta
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 126 HP
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 68 Def / 68 SpD
 
 Wingull
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 SpA / 252 Atk
+- Water Pulse
+- Wing Attack
+- Supersonic
 
 Servine
 Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+EVs: 126 HP / 126 SpA
 
 === TRAINER_BRENDAN_ROUTE_119_MUDKIP ===
 Name: BRENDAN
@@ -10722,12 +10725,15 @@ AI: Basic Trainer
 
 Wingull
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 SpA / 252 Atk
+- Water Pulse
+- Wing Attack
+- Supersonic
 
 Skiploom
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP
 
 Braixen
@@ -10795,18 +10801,18 @@ AI: Basic Trainer
 
 Skiploom
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP
 
 Ponyta
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 126 HP
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 68 Def / 68 SpD
 
 Marshtomp
 Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+EVs: 126 HP / 126 Def / 126 SpD
 
 === TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
 Name: BRENDAN
@@ -10864,18 +10870,21 @@ AI: Basic Trainer
 
 Wingull
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 SpA / 252 Atk
+- Water Pulse
+- Wing Attack
+- Supersonic
 
 Ponyta
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 126 HP
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 68 Def / 68 SpD
 
 Servine
 Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+EVs: 126 HP / 126 SpA
 
 === TRAINER_MAY_ROUTE_119_MUDKIP ===
 Name: MAY
@@ -10933,12 +10942,15 @@ AI: Basic Trainer
 
 Wingull
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 SpA / 252 Atk
+- Water Pulse
+- Wing Attack
+- Supersonic
 
 Skiploom
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
 Braixen
@@ -11006,18 +11018,18 @@ AI: Basic Trainer
 
 Skiploom
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
 Ponyta
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 126 HP
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 68 Def / 68 SpD
 
 Marshtomp
 Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+EVs: 126 HP / 126 Def / 126 SpD
 
 === TRAINER_MAY_ROUTE_119_TORCHIC ===
 Name: MAY
