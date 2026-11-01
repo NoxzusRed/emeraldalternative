@@ -1864,7 +1864,7 @@ static bool32 ShouldTrainerRequestBattle(int matchCallId)
     int numRematchTrainersFought;
     int max, rand, n;
 
-    if (GetNumOwnedBadges() < 5)
+    if (!FlagGet(FLAG_BADGE04_GET))
         return FALSE;
 
     dayCount = RtcGetLocalDayCount();
