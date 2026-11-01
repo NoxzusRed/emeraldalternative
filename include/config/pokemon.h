@@ -71,6 +71,13 @@
 #define P_FLAG_FORCE_SHINY               0  // If this flag is set, all wild and gift Pokémon will forced into being Shiny.
 #define P_FLAG_FORCE_NO_SHINY            0  // If this flag is set, all wild and gift Pokémon will forced into NOT being Shiny.
 
+// Pokédex: how much space to leave between seen entries.
+#define DONT_SKIP_GAPS                   0 // Show all gaps.
+#define SKIP_GAPS_EXCEPT_ONE             1 // Show one unseen entry after each seen entry.
+#define SKIP_GAPS_EXCEPT_BEFORE_AFTER    2 // Show one unseen entry before and after seen entries.
+#define SKIP_ALL_GAPS                    3 // Show only seen entries.
+#define P_SKIP_POKEDEX_GAPS              SKIP_GAPS_EXCEPT_BEFORE_AFTER
+
 // Go here if you want to disable specific families of Pokémon.
 #include "config/species_enabled.h"
 

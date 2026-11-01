@@ -9,6 +9,7 @@ u16 GetNationalPokedexCount(u8 caseID);
 u16 GetHoennPokedexCount(u8 caseID);
 u8 DisplayCaughtMonDexPage(u16 species, bool32 isShiny, u32 personality);
 s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID);
+bool32 ShouldSkipPokedexListEntry(u16 dexNum, u16 previousDexNum, u16 nextDexNum);
 void DrawFootprint(u8 windowId, u16 species);
 u16 CreateMonSpriteFromNationalDexNumber(u16 nationalNum, s16 x, s16 y, u16 paletteSlot);
 bool16 HasAllHoennMons(void);

@@ -50,6 +50,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "config/pokedex_plus_hgss.h"
+#include "config/pokemon.h"
 
 enum
 {
@@ -2483,7 +2484,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
     {
     default:
     case DEX_MODE_HOENN:
-        temp_dexCount = HOENN_DEX_COUNT;
+        temp_dexCount = HOENN_DEX_COUNT - 1;
         temp_isHoennDex = TRUE;
         break;
     case DEX_MODE_NATIONAL:
@@ -2494,7 +2495,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         }
         else
         {
-            temp_dexCount = HOENN_DEX_COUNT;
+            temp_dexCount = HOENN_DEX_COUNT - 1;
             temp_isHoennDex = TRUE;
         }
         break;
@@ -2503,38 +2504,54 @@ static void CreatePokedexList(u8 dexMode, u8 order)
     switch (order)
     {
     case ORDER_NUMERICAL:
-        if (temp_isHoennDex)
+    {
+        u16 listIndex = 0;
+        u16 previousDexNum;
+        u16 nextDexNum;
+        bool8 seen;
+        bool8 passedFirstNationalSeen = FALSE;
+
+        for (i = 0; i < temp_dexCount; i++)
         {
-            for (i = 0; i < temp_dexCount; i++)
+            if (temp_isHoennDex)
             {
                 temp_dexNum = HoennToNationalOrder(i + 1);
-                sPokedexView->pokedexList[i].dexNum = temp_dexNum;
-                sPokedexView->pokedexList[i].seen = GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN);
-                sPokedexView->pokedexList[i].owned = GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT);
-                if (sPokedexView->pokedexList[i].seen)
-                    sPokedexView->pokemonListCount = i + 1;
+                previousDexNum = (i > 0) ? HoennToNationalOrder(i) : NATIONAL_DEX_NONE;
+                nextDexNum = (i + 1 < temp_dexCount) ? HoennToNationalOrder(i + 2) : NATIONAL_DEX_NONE;
             }
-        }
-        else
-        {
-            s16 r5, r10;
-            for (i = 0, r5 = 0, r10 = 0; i < temp_dexCount; i++)
+            else
             {
                 temp_dexNum = i + 1;
-                if (GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN))
-                    r10 = 1;
-                if (r10)
-                {
-                    sPokedexView->pokedexList[r5].dexNum = temp_dexNum;
-                    sPokedexView->pokedexList[r5].seen = GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN);
-                    sPokedexView->pokedexList[r5].owned = GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT);
-                    if (sPokedexView->pokedexList[r5].seen)
-                        sPokedexView->pokemonListCount = r5 + 1;
-                    r5++;
-                }
+                previousDexNum = (i > 0) ? i : NATIONAL_DEX_NONE;
+                nextDexNum = (i + 1 < temp_dexCount) ? i + 2 : NATIONAL_DEX_NONE;
             }
+
+            if (temp_dexNum == NATIONAL_DEX_NONE)
+                continue;
+
+            seen = GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN);
+            if (seen)
+                passedFirstNationalSeen = TRUE;
+
+            // With skipping disabled, retain the original National Dex starting point.
+            if (!temp_isHoennDex && P_SKIP_POKEDEX_GAPS == DONT_SKIP_GAPS && !passedFirstNationalSeen)
+                continue;
+
+            if (ShouldSkipPokedexListEntry(temp_dexNum, previousDexNum, nextDexNum))
+                continue;
+
+            sPokedexView->pokedexList[listIndex].dexNum = temp_dexNum;
+            sPokedexView->pokedexList[listIndex].seen = seen;
+            sPokedexView->pokedexList[listIndex].owned = GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT);
+
+            // Include the trailing unseen neighbour when the configured mode permits it.
+            if (seen || P_SKIP_POKEDEX_GAPS != DONT_SKIP_GAPS)
+                sPokedexView->pokemonListCount = listIndex + 1;
+
+            listIndex++;
         }
         break;
+    }
     case ORDER_ALPHABETICAL:
         for (i = 0; i < NATIONAL_DEX_COUNT; i++)
         {
@@ -2605,6 +2622,23 @@ static void CreatePokedexList(u8 dexMode, u8 order)
             }
         }
         break;
+    }
+
+    // Keep a safe placeholder on new saves, where no species has been seen yet.
+    if (sPokedexView->pokemonListCount == 0)
+    {
+        temp_dexNum = temp_isHoennDex ? HoennToNationalOrder(1) : NATIONAL_DEX_NONE + 1;
+        sPokedexView->pokedexList[0].dexNum = temp_dexNum;
+        sPokedexView->pokedexList[0].seen = FALSE;
+        sPokedexView->pokedexList[0].owned = FALSE;
+        sPokedexView->pokemonListCount = 1;
+    }
+
+    // The saved cursor can be beyond the end of a newly compacted numerical list.
+    if (sPokedexView->selectedPokemon >= sPokedexView->pokemonListCount)
+    {
+        sPokedexView->selectedPokemon = sPokedexView->pokemonListCount - 1;
+        sPokedexView->pokeBallRotation = sPokedexView->selectedPokemon * 16 + POKEBALL_ROTATION_TOP;
     }
 
     for (i = sPokedexView->pokemonListCount; i < NATIONAL_DEX_COUNT; i++)
@@ -2742,6 +2776,14 @@ static void CreateMonDexNum(u16 entryNum, u8 left, u8 top, u16 unused)
     text[offset++] = CHAR_0 + ((dexNum % 1000) % 100) / 10;
     text[offset++] = CHAR_0 + ((dexNum % 1000) % 100) % 10;
     text[offset++] = EOS;
+    if (P_SKIP_POKEDEX_GAPS == SKIP_GAPS_EXCEPT_ONE
+     && sPokedexView->dexOrder == ORDER_NUMERICAL
+     && !sPokedexView->pokedexList[entryNum].seen)
+    {
+        u32 i;
+        for (i = 0; text[i] != EOS; i++)
+            text[i] = CHAR_HYPHEN;
+    }
     PrintMonDexNumAndName(0, FONT_NARROW, text, left, top);
 }
 
@@ -3394,7 +3436,9 @@ static void SpriteCB_Scrollbar(struct Sprite *sprite)
     if (sPokedexView->currentPage != PAGE_MAIN && sPokedexView->currentPage != PAGE_SEARCH_RESULTS)
         DestroySprite(sprite);
     else
-        sprite->y2 = sPokedexView->selectedPokemon * 120 / (sPokedexView->pokemonListCount - 1);
+        sprite->y2 = (sPokedexView->pokemonListCount > 1)
+                   ? sPokedexView->selectedPokemon * 120 / (sPokedexView->pokemonListCount - 1)
+                   : 0;
 }
 
 static void SpriteCB_ScrollArrow(struct Sprite *sprite)
