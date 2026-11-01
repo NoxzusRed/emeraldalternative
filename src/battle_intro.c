@@ -238,31 +238,25 @@ static void BattleIntroSlide1(u8 taskId)
         {
             gTasks[taskId].tState++;
             gTasks[taskId].data[2] = DISPLAY_WIDTH;
-            gTasks[taskId].data[3] = 32;
+            gTasks[taskId].data[3] = 0; // Start the foreground motion immediately.
             gIntroSlideFlags &= ~1;
         }
         break;
     case 3:
-        if (gTasks[taskId].data[3])
+        // Move the foreground continuously until it clears the scene.
+        if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS)
         {
-            gTasks[taskId].data[3]--;
+            if (gBattle_BG1_Y != (u16)(-80))
+                gBattle_BG1_Y -= 4;
         }
         else
         {
-            if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS)
-            {
-                if (gBattle_BG1_Y != (u16)(-80))
-                    gBattle_BG1_Y -= 2;
-            }
-            else
-            {
-                if (gBattle_BG1_Y != (u16)(-56))
-                    gBattle_BG1_Y -= 1;
-            }
+            if (gBattle_BG1_Y != (u16)(-56))
+                gBattle_BG1_Y -= 2;
         }
 
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x7F8;
+            gBattle_WIN0V -= 0x1FE;
 
         if (gTasks[taskId].data[2])
             gTasks[taskId].data[2] -= INTRO_SLIDE_SPEED;
@@ -274,7 +268,11 @@ static void BattleIntroSlide1(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
-        if (gTasks[taskId].data[2] == 0)
+        // Wait for the horizontal and vertical opening and the foreground.
+        if (gTasks[taskId].data[2] == 0
+            && (gBattle_WIN0V & 0xFF00) == 0
+            && gBattle_BG1_Y == (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS
+                                   ? (u16)(-80) : (u16)(-56)))
         {
             gScanlineEffect.state = 3;
             gTasks[taskId].tState++;
@@ -373,7 +371,7 @@ static void BattleIntroSlide2(u8 taskId)
         }
 
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x7F8;
+            gBattle_WIN0V -= 0x1FE;
 
         if (gTasks[taskId].data[2])
             gTasks[taskId].data[2] -= INTRO_SLIDE_SPEED;
@@ -385,7 +383,11 @@ static void BattleIntroSlide2(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
-        if (gTasks[taskId].data[2] == 0)
+        // Wait until the opening and the blend are both complete.
+        if (gTasks[taskId].data[2] == 0
+            && (gBattle_WIN0V & 0xFF00) == 0
+            && gTasks[taskId].data[3] == 0
+            && (gTasks[taskId].data[4] & 0x1F) == 0)
         {
             gScanlineEffect.state = 3;
             gTasks[taskId].tState++;
@@ -463,7 +465,7 @@ static void BattleIntroSlide3(u8 taskId)
         }
 
         if (gBattle_WIN0V & 0xFF00)
-            gBattle_WIN0V -= 0x7F8;
+            gBattle_WIN0V -= 0x1FE;
 
         if (gTasks[taskId].data[2])
             gTasks[taskId].data[2] -= INTRO_SLIDE_SPEED;
@@ -475,7 +477,11 @@ static void BattleIntroSlide3(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
-        if (gTasks[taskId].data[2] == 0)
+        // Wait until the opening and the blend are both complete.
+        if (gTasks[taskId].data[2] == 0
+            && (gBattle_WIN0V & 0xFF00) == 0
+            && gTasks[taskId].data[3] == 0
+            && (gTasks[taskId].data[4] & 0xF) == 0)
         {
             gScanlineEffect.state = 3;
             gTasks[taskId].tState++;
@@ -557,7 +563,9 @@ static void BattleIntroSlideLink(u8 taskId)
         for (; i < DISPLAY_HEIGHT; i++)
             gScanlineEffectRegBuffers[gScanlineEffect.srcBuffer][i] = -gTasks[taskId].data[2];
 
-        if (gTasks[taskId].data[2] == 0)
+        // Wait for the vertical opening before clearing the slide.
+        if (gTasks[taskId].data[2] == 0
+            && (gBattle_WIN0V & 0xFF00) == 0)
         {
             gScanlineEffect.state = 3;
             gTasks[taskId].tState++;
