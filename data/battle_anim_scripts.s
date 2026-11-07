@@ -28594,6 +28594,7 @@ gBattleAnimGeneral_FocusPunchSetUp::
 	end
 
 gBattleAnimGeneral_IngrainHeal::
+	setarg 7, 0 @ La barra de PS debe esperar a los brillos de curacion
 	loadspritegfx ANIM_TAG_ORBS
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	monbg ANIM_DEF_PARTNER
@@ -28604,6 +28605,7 @@ gBattleAnimGeneral_IngrainHeal::
 	call AbsorbEffect
 	waitforvisualfinish
 	delay 15
+	setarg 7, 1 @ Comenzar a curar en paralelo a HealingEffect
 	call HealingEffect
 	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 4, 0, RGB(13, 31, 12)

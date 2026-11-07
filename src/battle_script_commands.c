@@ -70,6 +70,7 @@
 
 EWRAM_DATA static u8 sParallelBerryAnimBattler;
 EWRAM_DATA static u8 sParallelBerryHealBattler;
+EWRAM_DATA static u8 sParallelIngrainHealBattler;
 EWRAM_DATA static u8 sParallelStatAnimBattler;
 EWRAM_DATA static u8 sMultiStatMessagesRemaining;
 EWRAM_DATA static bool8 sHoldMultiStatMessage;
@@ -88,6 +89,7 @@ static bool8 IsParallelBerryAnimActive(void)
     if (sParallelBerryAnimBattler == 0)
     {
         sParallelBerryHealBattler = 0;
+        sParallelIngrainHealBattler = 0;
         return FALSE;
     }
 
@@ -98,6 +100,7 @@ static bool8 IsParallelBerryAnimActive(void)
     {
         sParallelBerryAnimBattler = 0;
         sParallelBerryHealBattler = 0;
+        sParallelIngrainHealBattler = 0;
         return FALSE;
     }
 
@@ -110,6 +113,7 @@ static bool8 IsParallelBerryAnimActive(void)
 
     sParallelBerryAnimBattler = 0;
     sParallelBerryHealBattler = 0;
+    sParallelIngrainHealBattler = 0;
     return FALSE;
 }
 
@@ -2679,6 +2683,15 @@ static void Cmd_healthbarupdate(void)
 	{
 		return;
 	}
+
+    // Ingrain: comenzar a subir los PS cuando aparecen los brillos,
+    // no durante los orbes verdes que los preceden.
+    if (sParallelIngrainHealBattler == battler + 1)
+    {
+        if (IsParallelBerryAnimActive() && gBattleAnimArgs[7] != 1)
+            return;
+        sParallelIngrainHealBattler = 0;
+    }
 
     if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
     {
@@ -5979,10 +5992,10 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
     if (IsParallelBerryAnimActive() || IsParallelStatAnimActive())
         return;
 
-    // Curacion de movimientos que absorben energia.
-    // Iniciar los brillos y permitir que la barra
-    // de PS se mueva al mismo tiempo.
-    if (animId == B_ANIM_SIMPLE_HEAL &&
+    // Animaciones de curacion en paralelo a la barra de PS.
+    // Ingrain conserva sus orbes y espera a los brillos para curar.
+    if ((animId == B_ANIM_SIMPLE_HEAL ||
+         animId == B_ANIM_INGRAIN_HEAL) &&
         argPtr == &gParallelDrainHealMarker)
     {
         // No mostrar curacion si el efecto inflige
@@ -6042,6 +6055,8 @@ gAnimDisableStructPtr = &gDisableStructs[battler];
                     0))
             {
                 sParallelBerryAnimBattler = battler + 1;
+                if (animId == B_ANIM_INGRAIN_HEAL)
+                    sParallelIngrainHealBattler = battler + 1;
             }
         }
 

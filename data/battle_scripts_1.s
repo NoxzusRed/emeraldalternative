@@ -6519,7 +6519,13 @@ BattleScript_WishButHealBlocked::
 	end2
 
 BattleScript_IngrainTurnHeal::
-	playanimation BS_ATTACKER, B_ANIM_INGRAIN_HEAL
+	playanimation BS_ATTACKER, B_ANIM_INGRAIN_HEAL, gParallelDrainHealMarker
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	waitanimation
+	end2
+
 BattleScript_TurnHeal:
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
 	healthbarupdate BS_ATTACKER
