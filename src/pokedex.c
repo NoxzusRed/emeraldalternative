@@ -41,6 +41,16 @@ static u16 PokedexNationalNumToDisplaySpecies(u16 nationalNum)
     if (nationalNum == NATIONAL_DEX_QWILFISH)
         return SPECIES_QWILFISH_HISUI;
 #endif
+#if P_FAMILY_PETILIL && P_HISUIAN_FORMS
+    if (nationalNum == NATIONAL_DEX_LILLIGANT)
+        return SPECIES_LILLIGANT_HISUI;
+#endif
+#if P_FAMILY_ZORUA && P_HISUIAN_FORMS
+    if (nationalNum == NATIONAL_DEX_ZORUA)
+        return SPECIES_ZORUA_HISUI;
+    if (nationalNum == NATIONAL_DEX_ZOROARK)
+        return SPECIES_ZOROARK_HISUI;
+#endif
     return NationalPokedexNumToSpecies(nationalNum);
 }
 

@@ -4160,7 +4160,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     },
 
     [SPECIES_LILLIGANT] =
-    /*{
+    {
         .baseHP        = 70,
         .baseAttack    = 60,
         .baseDefense   = 75,
@@ -4214,33 +4214,6 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 13, SHADOW_SIZE_M)
-		.categoryName = _("Spinning"),
-        .height = 12,
-        .weight = 192,
-        .description = COMPOUND_STRING(
-            "Its well-developed legs are the result of\n"
-            "a life spent on mountains covered in deep\n"
-            "snow. The scent it exudes from its flower\n"
-            "crown heartens those in proximity."),
-        .pokemonScale = 320,
-        .pokemonOffset = 7,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_LilligantHisui,
-        .frontPicSize = MON_COORDS_SIZE(56, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_LilligantHisui,
-        .backPicSize = MON_COORDS_SIZE(56, 56),
-        .backPicYOffset = 5,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_LilligantHisui,
-        .shinyPalette = gMonShinyPalette_LilligantHisui,
-        .iconSprite = gMonIcon_LilligantHisui,
-        .iconPalIndex = 1,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-3, 13, SHADOW_SIZE_S)
         FOOTPRINT(Lilligant)
         OVERWORLD(
             sPicTable_Lilligant,
@@ -4253,72 +4226,6 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sLilligantLevelUpLearnset,
         .teachableLearnset = sLilligantTeachableLearnset,
-        .formSpeciesIdTable = sLilligantFormSpeciesIdTable,
-    },*/
-{
-        .baseHP        = 70,
-        .baseAttack    = 105,
-        .baseDefense   = 75,
-        .baseSpeed     = 105,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 75,
-        .types = MON_TYPES(TYPE_GRASS, TYPE_FIGHTING),
-        .catchRate = 75,
-        .expYield = 168,
-        .evYield_Attack = 1,
-        .evYield_Speed = 1,
-        .itemRare = ITEM_ABSORB_BULB,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_HUSTLE, ABILITY_LEAF_GUARD },
-        .bodyColor = BODY_COLOR_GREEN,
-        .noFlip = TRUE,
-        .speciesName = _("Lilligant"),
-        .cryId = CRY_LILLIGANT,
-        .natDexNum = NATIONAL_DEX_LILLIGANT,
-        .categoryName = _("Spinning"),
-        .height = 12,
-        .weight = 192,
-        .description = COMPOUND_STRING(
-            "Its well-developed legs are the result of\n"
-            "a life spent on mountains covered in deep\n"
-            "snow. The scent it exudes from its flower\n"
-            "crown heartens those in proximity."),
-        .pokemonScale = 320,
-        .pokemonOffset = 7,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_LilligantHisui,
-        .frontPicSize = MON_COORDS_SIZE(56, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_LilligantHisui,
-        .backPicSize = MON_COORDS_SIZE(56, 56),
-        .backPicYOffset = 5,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_LilligantHisui,
-        .shinyPalette = gMonShinyPalette_LilligantHisui,
-        .iconSprite = gMonIcon_LilligantHisui,
-        .iconPalIndex = 1,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-3, 13, SHADOW_SIZE_S)
-        FOOTPRINT(Lilligant)
-        OVERWORLD(
-            sPicTable_LilligantHisui,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_LilligantHisui,
-            gShinyOverworldPalette_LilligantHisui
-        )
-        .isHisuianForm = TRUE,
-        .levelUpLearnset = sLilligantHisuiLevelUpLearnset,
-        .teachableLearnset = sLilligantHisuiTeachableLearnset,
         .formSpeciesIdTable = sLilligantFormSpeciesIdTable,
     },
 
@@ -6619,7 +6526,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
 #if P_FAMILY_ZORUA
     [SPECIES_ZORUA] =
-    /*{
+    {
         .baseHP        = 40,
         .baseAttack    = 65,
         .baseDefense   = 40,
@@ -6688,74 +6595,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggMoveLearnset = sZoruaEggMoveLearnset,
         .formSpeciesIdTable = sZoruaFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ZOROARK}),
-    },*/
-    {
-        .baseHP        = 35,
-        .baseAttack    = 60,
-        .baseDefense   = 40,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 40,
-        .types = MON_TYPES(TYPE_NORMAL, TYPE_GHOST),
-        .catchRate = 75,
-        .expYield = 66,
-        .evYield_SpAttack = 1,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 25,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_ILLUSION, ABILITY_NONE, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_GRAY,
-        .speciesName = _("Zorua"),
-        .cryId = CRY_ZORUA,
-        .natDexNum = NATIONAL_DEX_ZORUA,
-        .categoryName = _("Spiteful Fox"),
-        .height = 7,
-        .weight = 125,
-        .description = COMPOUND_STRING(
-            "Derives power from resentment,\n"
-            "which rises as energy atop its head and\n"
-            "takes on the forms of foes. In this\n"
-            "way, Zorua vents lingering malice."),
-        .pokemonScale = 365,
-        .pokemonOffset = 12,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_ZoruaHisui,
-        .frontPicSize = MON_COORDS_SIZE(48, 64),
-        .frontPicYOffset = 1,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_ZoruaHisui,
-        .backPicSize = MON_COORDS_SIZE(56, 64),
-        .backPicYOffset = 1,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_ZoruaHisui,
-        .shinyPalette = gMonShinyPalette_ZoruaHisui,
-        .iconSprite = gMonIcon_ZoruaHisui,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
-        SHADOW(2, 12, SHADOW_SIZE_S)
-        FOOTPRINT(Zorua)
-        OVERWORLD(
-            sPicTable_ZoruaHisui,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_ZoruaHisui,
-            gShinyOverworldPalette_ZoruaHisui
-        )
-        .isHisuianForm = TRUE,
-        .levelUpLearnset = sZoruaHisuiLevelUpLearnset,
-        .teachableLearnset = sZoruaHisuiTeachableLearnset,
-        .formSpeciesIdTable = sZoruaFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ZOROARK_HISUI}),
     },
 
     [SPECIES_ZOROARK] =
-    /*{
+    {
         .baseHP        = 60,
         .baseAttack    = 105,
         .baseDefense   = 60,
@@ -6821,69 +6664,6 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sZoroarkLevelUpLearnset,
         .teachableLearnset = sZoroarkTeachableLearnset,
-        .formSpeciesIdTable = sZoroarkFormSpeciesIdTable,
-    },*/
-    {
-        .baseHP        = 55,
-        .baseAttack    = 100,
-        .baseDefense   = 60,
-        .baseSpeed     = 110,
-        .baseSpAttack  = 125,
-        .baseSpDefense = 60,
-        .types = MON_TYPES(TYPE_NORMAL, TYPE_GHOST),
-        .catchRate = 45,
-        .expYield = 179,
-        .evYield_SpAttack = 2,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_ILLUSION, ABILITY_NONE, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_GRAY,
-        .speciesName = _("Zoroark"),
-        .cryId = CRY_ZOROARK,
-        .natDexNum = NATIONAL_DEX_ZOROARK,
-        .categoryName = _("Baneful Fox"),
-        .height = 16,
-        .weight = 730,
-        .description = COMPOUND_STRING(
-            "Heedless of its own safety,\n"
-            "Zoroark attacks its nemeses with a bitter\n"
-            "energy so intense, it lacerates\n"
-            "Zoroark's own body."),
-        .pokemonScale = 259,
-        .pokemonOffset = 1,
-        .trainerScale = 296,
-        .trainerOffset = 1,
-        .frontPic = gMonFrontPic_ZoroarkHisui,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_ZoroarkHisui,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 0,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_ZoroarkHisui,
-        .shinyPalette = gMonShinyPalette_ZoroarkHisui,
-        .iconSprite = gMonIcon_ZoroarkHisui,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(11, 13, SHADOW_SIZE_L)
-        FOOTPRINT(Zoroark)
-        OVERWORLD(
-            sPicTable_ZoroarkHisui,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_ZoroarkHisui,
-            gShinyOverworldPalette_ZoroarkHisui
-        )
-        .isHisuianForm = TRUE,
-        .levelUpLearnset = sZoroarkHisuiLevelUpLearnset,
-        .teachableLearnset = sZoroarkHisuiTeachableLearnset,
         .formSpeciesIdTable = sZoroarkFormSpeciesIdTable,
     },
 
