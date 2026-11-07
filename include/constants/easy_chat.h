@@ -50,7 +50,10 @@
 #define EC_GROUP_MOVE_2           19
 #define EC_GROUP_TRENDY_SAYING    20
 #define EC_GROUP_POKEMON_NATIONAL 21
-#define EC_NUM_GROUPS             22
+// Stable National Dex offsets for Pokemon whose species IDs exceed 9 bits.
+#define EC_GROUP_POKEMON_EXTENDED_1 22
+#define EC_GROUP_POKEMON_EXTENDED_2 23
+#define EC_NUM_GROUPS             24
 
 // TRAINER
 #define EC_WORD_I_CHOOSE_YOU  ((EC_GROUP_TRAINER << EC_MASK_BITS) | 0)
@@ -1107,7 +1110,7 @@
 
 #define EC_NUM_ALPHABET_GROUPS 27 // 26 (1 for each letter) + 1 (Others)
 
-#define EC_MAX_WORDS_IN_GROUP 270 // The closest is words by letter S, at 262
+#define EC_MAX_WORDS_IN_GROUP 384 // Expanded regional Pokemon and alphabet lists
 
 // If the Pokémon or Move group tables have an ID higher than 511, the word will be seen as
 // invalid due to the index looping back to the beginning and not matching the proper value.
@@ -1116,6 +1119,7 @@
 #define EC_MASK_BITS 9
 #define EC_MASK_GROUP ((1 << (16 - EC_MASK_BITS)) - 1)
 #define EC_MASK_INDEX ((1 << EC_MASK_BITS) - 1)
+#define EC_REGIONAL_POKEMON_BLOCK_SIZE (EC_MASK_INDEX + 1)
 
 #define EC_POKEMON(mon) ((EC_GROUP_POKEMON << EC_MASK_BITS) | SPECIES_##mon)
 #define EC_POKEMON_NATIONAL(mon) ((EC_GROUP_POKEMON_NATIONAL << EC_MASK_BITS) | SPECIES_##mon)

@@ -156,4 +156,15 @@ const struct EasyChatGroup gEasyChatGroups[] = {
         .numWords = ARRAY_COUNT(gEasyChatGroup_Pokemon2),
         .numEnabledWords = ARRAY_COUNT(gEasyChatGroup_Pokemon2),
     },
+    // Internal word IDs; the National Dex offset is decoded directly.
+    [EC_GROUP_POKEMON_EXTENDED_1] =
+    {
+        .numWords = EC_REGIONAL_POKEMON_BLOCK_SIZE,
+        .numEnabledWords = 0,
+    },
+    [EC_GROUP_POKEMON_EXTENDED_2] =
+    {
+        .numWords = EC_REGIONAL_POKEMON_BLOCK_SIZE,
+        .numEnabledWords = 0,
+    },
 };

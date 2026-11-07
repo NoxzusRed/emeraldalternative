@@ -1236,6 +1236,8 @@ static const u8 *const sEasyChatGroupNamePointers[EC_NUM_GROUPS] = {
     [EC_GROUP_MOVE_2]           = gEasyChatGroupName_Move2,
     [EC_GROUP_TRENDY_SAYING]    = gEasyChatGroupName_TrendySaying,
     [EC_GROUP_POKEMON_NATIONAL] = gEasyChatGroupName_Pokemon2,
+    [EC_GROUP_POKEMON_EXTENDED_1] = gEasyChatGroupName_Pokemon,
+    [EC_GROUP_POKEMON_EXTENDED_2] = gEasyChatGroupName_Pokemon,
 };
 
 static const u16 sDefaultProfileWords[EASY_CHAT_BATTLE_WORDS_COUNT - 2] = {
@@ -5117,15 +5119,36 @@ static bool8 IsEasyChatGroupUnlocked(u8 groupId)
         return FlagGet(FLAG_SYS_GAME_CLEAR);
     case EC_GROUP_POKEMON_NATIONAL:
         return EasyChatIsNationalPokedexEnabled();
+    case EC_GROUP_POKEMON_EXTENDED_1:
+    case EC_GROUP_POKEMON_EXTENDED_2:
+        // Internal encodings, not extra categories in the menu.
+        return GetHoennPokedexCount(FLAG_GET_SEEN) != 0;
     default:
         return TRUE;
     }
 }
 
+// Preserve existing saved Pokemon word IDs. Extended IDs use stable
+// National Dex numbers, so reordering the Hoenn Dex will not rename words.
+static u16 GetRegionalEasyChatPokemonWord(u16 nationalNum)
+{
+    u16 species = NationalPokedexNumToSpecies(nationalNum);
+
+    if (species != SPECIES_NONE && species <= EC_MASK_INDEX)
+        return EC_WORD(EC_GROUP_POKEMON, species);
+
+    if (nationalNum < 2 * EC_REGIONAL_POKEMON_BLOCK_SIZE)
+        return EC_WORD(EC_GROUP_POKEMON_EXTENDED_1,
+                       nationalNum - EC_REGIONAL_POKEMON_BLOCK_SIZE);
+
+    return EC_WORD(EC_GROUP_POKEMON_EXTENDED_2,
+                   nationalNum - 2 * EC_REGIONAL_POKEMON_BLOCK_SIZE);
+}
+
 u16 EasyChat_GetNumWordsInGroup(u8 groupId)
 {
     if (groupId == EC_GROUP_POKEMON)
-        return GetNationalPokedexCount(FLAG_GET_SEEN);
+        return GetHoennPokedexCount(FLAG_GET_SEEN);
 
     if (IsEasyChatGroupUnlocked(groupId))
         return gEasyChatGroups[groupId].numEnabledWords;
@@ -5147,6 +5170,20 @@ static bool8 IsEasyChatWordInvalid(u16 easyChatWord)
     index = EC_INDEX(easyChatWord);
     if (groupId >= EC_NUM_GROUPS)
         return TRUE;
+
+    // Pokemon group zero keeps using the old species-ID representation.
+    if (groupId == EC_GROUP_POKEMON)
+        return index == SPECIES_NONE || SpeciesToNationalPokedexNum(index) == NATIONAL_DEX_NONE;
+
+    if (groupId == EC_GROUP_POKEMON_EXTENDED_1
+     || groupId == EC_GROUP_POKEMON_EXTENDED_2)
+    {
+        u32 nationalNum = index + (groupId == EC_GROUP_POKEMON_EXTENDED_1
+                                  ? EC_REGIONAL_POKEMON_BLOCK_SIZE
+                                  : 2 * EC_REGIONAL_POKEMON_BLOCK_SIZE);
+        return nationalNum > NATIONAL_DEX_COUNT
+            || NationalPokedexNumToSpecies(nationalNum) == SPECIES_NONE;
+    }
 
     numWords = gEasyChatGroups[groupId].numWords;
     switch (groupId)
@@ -5178,6 +5215,11 @@ bool8 IsBardWordInvalid(u16 easyChatWord)
     if (groupId >= EC_NUM_GROUPS)
         return TRUE;
 
+    // The original Bard phoneme table lacks extended species entries.
+    if (groupId == EC_GROUP_POKEMON_EXTENDED_1
+     || groupId == EC_GROUP_POKEMON_EXTENDED_2)
+        return TRUE;
+
     switch (groupId)
     {
     case EC_GROUP_POKEMON:
@@ -5206,6 +5248,12 @@ static const u8 *GetEasyChatWord(u8 groupId, u16 index)
     case EC_GROUP_POKEMON:
     case EC_GROUP_POKEMON_NATIONAL:
         return GetSpeciesName(index);
+    case EC_GROUP_POKEMON_EXTENDED_1:
+        return GetSpeciesName(NationalPokedexNumToSpecies(
+            EC_REGIONAL_POKEMON_BLOCK_SIZE + index));
+    case EC_GROUP_POKEMON_EXTENDED_2:
+        return GetSpeciesName(NationalPokedexNumToSpecies(
+            2 * EC_REGIONAL_POKEMON_BLOCK_SIZE + index));
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
         return GetMoveName(index);
@@ -5353,9 +5401,15 @@ static bool8 CanPhraseFitInXRowsYCols(const u16 *easyChatWords, u8 numRows, u8 n
 
 u16 GetRandomEasyChatWordFromGroup(u16 groupId)
 {
-    u16 index = Random() % gEasyChatGroups[groupId].numWords;
+    u16 index;
+
     if (groupId == EC_GROUP_POKEMON
-     || groupId == EC_GROUP_POKEMON_NATIONAL
+     || groupId == EC_GROUP_POKEMON_EXTENDED_1
+     || groupId == EC_GROUP_POKEMON_EXTENDED_2)
+        return GetRandomUnlockedEasyChatPokemon();
+
+    index = Random() % gEasyChatGroups[groupId].numWords;
+    if (groupId == EC_GROUP_POKEMON_NATIONAL
      || groupId == EC_GROUP_MOVE_1
      || groupId == EC_GROUP_MOVE_2)
     {
@@ -5533,28 +5587,23 @@ static bool8 EasyChatIsNationalPokedexEnabled(void)
 
 static u16 GetRandomUnlockedEasyChatPokemon(void)
 {
-    u16 i;
-    u16 numWords;
-    const u16 *species;
-    u16 index = EasyChat_GetNumWordsInGroup(EC_GROUP_POKEMON);
-    if (index == 0)
+    u16 hoennNum;
+    u16 seenCount = GetHoennPokedexCount(FLAG_GET_SEEN);
+    u16 index;
+
+    if (seenCount == 0)
         return EC_EMPTY_WORD;
 
-    index = Random() % index;
-    species = gEasyChatGroups[EC_GROUP_POKEMON].wordData.valueList;
-    numWords = gEasyChatGroups[EC_GROUP_POKEMON].numWords;
-    for (i = 0; i < numWords; i++)
+    index = Random() % seenCount;
+    for (hoennNum = 1; hoennNum < HOENN_DEX_COUNT; hoennNum++)
     {
-        u16 dexNum = SpeciesToNationalPokedexNum(*species);
-        if (GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
+        u16 nationalNum = HoennToNationalOrder(hoennNum);
+        if (nationalNum != NATIONAL_DEX_NONE && GetSetPokedexFlag(nationalNum, FLAG_GET_SEEN))
         {
-            if (index)
-                index--;
-            else
-                return EC_WORD(EC_GROUP_POKEMON, *species);
+            if (index == 0)
+                return GetRegionalEasyChatPokemonWord(nationalNum);
+            index--;
         }
-
-        species++;
     }
 
     return EC_EMPTY_WORD;
@@ -5616,7 +5665,7 @@ static void SetUnlockedEasyChatGroups(void)
     int i;
 
     sWordData->numUnlockedGroups = 0;
-    if (GetNationalPokedexCount(FLAG_GET_SEEN))
+    if (GetHoennPokedexCount(FLAG_GET_SEEN))
         sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_POKEMON;
 
     // These groups are unlocked automatically
@@ -5683,6 +5732,71 @@ static u8 *CopyEasyChatWordPadded(u8 *dest, u16 easyChatWord, u16 totalChars)
     return str;
 }
 
+// Add seen regional Pokemon missing from the original Hoenn alphabet data.
+static void AddRegionalPokemonToAlphabet(void)
+{
+    u16 hoennNum;
+
+    for (hoennNum = 1; hoennNum < HOENN_DEX_COUNT; hoennNum++)
+    {
+        u16 nationalNum = HoennToNationalOrder(hoennNum);
+        u16 species;
+        u16 regionalWord;
+        u16 *words;
+        u16 count;
+        u16 pos, j;
+        u8 letter;
+        u8 name[64], otherName[64];
+
+        if (nationalNum == NATIONAL_DEX_NONE
+         || !GetSetPokedexFlag(nationalNum, FLAG_GET_SEEN))
+            continue;
+
+        species = NationalPokedexNumToSpecies(nationalNum);
+        if (species == SPECIES_NONE)
+            continue;
+
+        regionalWord = GetRegionalEasyChatPokemonWord(nationalNum);
+        CopyEasyChatWord(name, regionalWord);
+
+        if (name[0] >= CHAR_A && name[0] <= CHAR_Z)
+            letter = name[0] - CHAR_A + 1;
+        else
+            letter = 0;
+
+        words = sWordData->unlockedAlphabetWords[letter];
+        count = sWordData->numUnlockedAlphabetWords[letter];
+
+        for (pos = 0; pos < count; pos++)
+        {
+            if (words[pos] == regionalWord)
+                break;
+            // Replace a National duplicate with the visible regional word.
+            if (EC_GROUP(words[pos]) == EC_GROUP_POKEMON_NATIONAL
+             && EC_INDEX(words[pos]) == species)
+            {
+                words[pos] = regionalWord;
+                break;
+            }
+        }
+        if (pos < count || count >= EC_MAX_WORDS_IN_GROUP)
+            continue;
+
+        // The original list is alphabetized; insert the missing name.
+        for (pos = 0; pos < count; pos++)
+        {
+            CopyEasyChatWord(otherName, words[pos]);
+            if (StringCompare(name, otherName) < 0)
+                break;
+        }
+
+        for (j = count; j > pos; j--)
+            words[j] = words[j - 1];
+        words[pos] = regionalWord;
+        sWordData->numUnlockedAlphabetWords[letter]++;
+    }
+}
+
 static void SetUnlockedWordsByAlphabet(void)
 {
     int i, j, k;
@@ -5713,6 +5827,12 @@ static void SetUnlockedWordsByAlphabet(void)
 
             for (k = 0; k < numToProcess; k++)
             {
+                // Keep the old word IDs readable, but do not offer species
+                // outside the customized regional Dex in its menu.
+                if (EC_GROUP(words[k]) == EC_GROUP_POKEMON
+                 && NationalToHoennOrder(SpeciesToNationalPokedexNum(EC_INDEX(words[k]))) == 0)
+                    continue;
+
                 if (IsEasyChatWordUnlocked(words[k]))
                 {
                     sWordData->unlockedAlphabetWords[i][index++] = words[k];
@@ -5724,6 +5844,8 @@ static void SetUnlockedWordsByAlphabet(void)
             words += numToProcess;
         }
     }
+
+    AddRegionalPokemonToAlphabet();
 }
 
 static void SetSelectedWordGroup(bool32 inAlphabetMode, u16 groupId)
@@ -5755,8 +5877,27 @@ static u16 SetSelectedWordGroup_GroupMode(u16 groupId)
     const struct EasyChatWordInfo *wordInfo;
     u16 numWords = gEasyChatGroups[groupId].numWords;
 
-    if (groupId == EC_GROUP_POKEMON || groupId == EC_GROUP_POKEMON_NATIONAL
-     || groupId == EC_GROUP_MOVE_1  || groupId == EC_GROUP_MOVE_2)
+    if (groupId == EC_GROUP_POKEMON)
+    {
+        // The completed alphabet lists contain all seen regional Pokemon.
+        u32 letter, j;
+        for (letter = 0, totalWords = 0; letter < EC_NUM_ALPHABET_GROUPS; letter++)
+        {
+            for (j = 0; j < sWordData->numUnlockedAlphabetWords[letter]; j++)
+            {
+                u16 word = sWordData->unlockedAlphabetWords[letter][j];
+                u32 wordGroup = EC_GROUP(word);
+                if (wordGroup == EC_GROUP_POKEMON
+                 || wordGroup == EC_GROUP_POKEMON_EXTENDED_1
+                 || wordGroup == EC_GROUP_POKEMON_EXTENDED_2)
+                    sWordData->selectedGroupWords[totalWords++] = word;
+            }
+        }
+        return totalWords;
+    }
+
+    if (groupId == EC_GROUP_POKEMON_NATIONAL
+     || groupId == EC_GROUP_MOVE_1 || groupId == EC_GROUP_MOVE_2)
     {
         list = gEasyChatGroups[groupId].wordData.valueList;
         for (i = 0, totalWords = 0; i < numWords; i++)
@@ -5795,6 +5936,11 @@ static u16 SetSelectedWordGroup_AlphabetMode(u16 groupId)
 static bool8 IsEasyChatGroupUnlocked2(u8 groupId)
 {
     int i;
+
+    if (groupId == EC_GROUP_POKEMON_EXTENDED_1
+     || groupId == EC_GROUP_POKEMON_EXTENDED_2)
+        groupId = EC_GROUP_POKEMON;
+
     for (i = 0; i < sWordData->numUnlockedGroups; i++)
     {
         if (sWordData->unlockedGroupIds[i] == groupId)
@@ -5810,6 +5956,16 @@ static bool8 IsEasyChatIndexAndGroupUnlocked(u16 wordIndex, u8 groupId)
     {
     case EC_GROUP_POKEMON:
         return GetSetPokedexFlag(SpeciesToNationalPokedexNum(wordIndex), FLAG_GET_SEEN);
+    case EC_GROUP_POKEMON_EXTENDED_1:
+    case EC_GROUP_POKEMON_EXTENDED_2:
+    {
+        u32 nationalNum = wordIndex + (groupId == EC_GROUP_POKEMON_EXTENDED_1
+                                      ? EC_REGIONAL_POKEMON_BLOCK_SIZE
+                                      : 2 * EC_REGIONAL_POKEMON_BLOCK_SIZE);
+        return nationalNum <= NATIONAL_DEX_COUNT
+            && NationalToHoennOrder(nationalNum) != 0
+            && GetSetPokedexFlag(nationalNum, FLAG_GET_SEEN);
+    }
     case EC_GROUP_POKEMON_NATIONAL:
         if (IsRestrictedWordSpecies(wordIndex))
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(wordIndex), FLAG_GET_SEEN);

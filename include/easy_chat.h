@@ -112,7 +112,7 @@ struct EasyChatScreenWordData
     u8 unused[44];
     u16 selectedGroupWords[EC_MAX_WORDS_IN_GROUP];
     u16 numSelectedGroupWords;
-}; /*size = 0x3BA4*/
+}; // Size depends on EC_MAX_WORDS_IN_GROUP and EC_NUM_GROUPS
 
 struct EasyChatWordsByLetter
 {
