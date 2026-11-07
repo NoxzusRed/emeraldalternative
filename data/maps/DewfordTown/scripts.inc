@@ -131,6 +131,9 @@ DewfordTown_EventScript_SailToPetalburg::
 	applymovement LOCALID_PLAYER, DewfordTown_Movement_ExitBoatPetalburg
 	waitmovement 0
 	showobjectat LOCALID_PLAYER, MAP_ROUTE104
+	@ Finish the visible landing before removing the moving boat.
+	@ fadescreen waits until the fade has completed.
+	fadescreen FADE_TO_BLACK
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
