@@ -5430,7 +5430,6 @@ bool8 MonKnowsMove(struct Pokemon *mon, u16 move)
 
 int MoveToHM(u16 move)
 {
-	u8 i;
     int item;
     switch (move)
     {
