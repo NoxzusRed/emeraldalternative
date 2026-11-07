@@ -1231,19 +1231,19 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Magnemite
-Level: 17
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Whismur
-Level: 17
+Loudred
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Klink
-Level: 17
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Noibat
-Level: 17
+Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_GABBY_AND_TY_2 ===
@@ -1281,20 +1281,32 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Magneton
-Level: 31
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 Spe
 
 Loudred
-Level: 31
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 126 SpA
+- Uproar
+- Roar
 
 Klink
-Level: 31
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 252 Atk / 252 SpA
+- Gear Grind
+- Discharge
 
 Noibat
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 34
+Nature: Modest
+IVs: 18 HP / 18 Atk / 18 Def / 31 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 252 SpA
+- Air Slash
+- Dragon Pulse
+- Hyper Voice
 
 === TRAINER_GABBY_AND_TY_4 ===
 Name: GABBY & TY
@@ -1305,21 +1317,35 @@ Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
 
-Magneton
-Level: 36
+Magnezone
+Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 Spe
 
-Loudred
-Level: 36
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Exploud
+Level: 41
+IVs: 24 HP / 31 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 126 Atk
+- Hyper Voice
+- Crunch
+- Roar
 
-Klink
-Level: 36
+Klang
+Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 252 Atk / 252 SpA
+- Gear Grind
+- Shift Gear
+- Discharge
 
 Noibat
-Level: 36
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Level: 41
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 31 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 252 SpA
+- Air Slash
+- Dragon Pulse
+- Hyper Voice
 
 === TRAINER_GABBY_AND_TY_5 ===
 Name: GABBY & TY
@@ -1330,21 +1356,36 @@ Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
 
-Magneton
-Level: 40
+Magnezone
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 Spe
 
-Loudred
-Level: 40
+Exploud
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 126 Atk
+- Hyper Voice
+- Crunch
+- Roar
 
-Klang
-Level: 40
+Klinklang
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 SpD / 126 Atk
+- Gear Grind
+- Shift Gear
+- Wild Charge
+- Giga Impact
 
-Noibat
-Level: 40
+Noivern
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 252 Atk
+- Dragon Pulse
+- Air Slash
+- Boomburst
+- Fly
 
 === TRAINER_GABBY_AND_TY_6 ===
 Name: GABBY & TY
@@ -1356,36 +1397,40 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Magnezone
-Level: 44
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Sonic Boom
+EVs: 126 Spe
 - Thunder Wave
 - Metal Sound
 - Thunderbolt
+- Flash Cannon
 
 Exploud
-Level: 44
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Astonish
-- Stomp
-- Supersonic
+EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 126 Atk
 - Hyper Voice
+- Crunch
+- Ice Fang
+- Roar
 
 Klinklang
-Level: 44
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 SpD / 126 Atk
 - Gear Grind
 - Shift Gear
-- Autotomize
-- Screech
+- Wild Charge
+- Giga Impact
 
 Noivern
-Level: 44
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 252 Atk
+- Dragon Pulse
 - Air Slash
-- Supersonic
-- Super Fang
-- Roost
+- Boomburst
+- Fly
 
 === TRAINER_LOLA_1 ===
 Name: LOLA
@@ -1651,6 +1696,7 @@ AI: Basic Trainer
 Teddiursa
 Level: 29
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
 - Teeter Dance
 - Dizzy Punch
 - Focus Punch
@@ -1726,9 +1772,9 @@ Magneton
 Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunderbolt
-- Supersonic
 - Thunder Wave
 - Sonic Boom
+- Metal Sound
 
 SPECIES_LILLIGANT_HISUI
 Level: 32
@@ -3287,7 +3333,7 @@ SPECIES_QWILFISH_HISUI
 Level: 24
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-SPECIES_QWILFISH_HISUI
+Brionne
 Level: 24
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -3300,7 +3346,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_QWILFISH_HISUI
+SPECIES_BASCULIN_WHITE_STRIPED
 Level: 24
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -3381,7 +3427,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_QWILFISH_HISUI
+Overqwil
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP
@@ -3776,7 +3822,8 @@ AI: Check Bad Move
 
 Machop
 Level: 24
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 12 Atk / 24 Def / 12 SpA / 24 SpD / 12 Spe
+EVs: 64 Atk / 126 HP
 
 === TRAINER_NOB_2 ===
 Name: NOB
@@ -3790,6 +3837,7 @@ AI: Check Bad Move
 Machoke
 Level: 27
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+EVs: 64 Atk / 126 HP
 
 === TRAINER_NOB_3 ===
 Name: NOB
@@ -3803,10 +3851,12 @@ AI: Check Bad Move
 Machoke
 Level: 31
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+EVs: 64 Atk / 126 HP
 
 Machoke
 Level: 31
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+EVs: 64 Atk / 126 HP
 
 === TRAINER_NOB_4 ===
 Name: NOB
@@ -3820,14 +3870,17 @@ AI: Check Bad Move
 Machoke
 Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 64 Atk / 126 HP
 
 Machoke
 Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 64 Atk / 126 HP
 
 Machamp @ Black Belt
 Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 64 Atk / 126 HP
 
 === TRAINER_NOB_5 ===
 Name: NOB
@@ -3841,18 +3894,22 @@ AI: Check Bad Move
 Machoke
 Level: 39
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+EVs: 64 Atk / 126 HP
 
 Machoke
 Level: 39
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+EVs: 64 Atk / 126 HP
 
 Machamp @ Black Belt
 Level: 39
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+EVs: 64 Atk / 126 HP
 
 Machamp @ Black Belt
 Level: 39
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+EVs: 64 Atk / 126 HP
 
 === TRAINER_YUJI ===
 Name: YUJI
@@ -4410,7 +4467,9 @@ AI: Check Bad Move
 
 Linoone
 Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 18 SpA / 6 SpD / 6 Spe
+- Surf
+- Slash
 
 Noctowl
 Level: 22
@@ -4457,7 +4516,9 @@ AI: Check Bad Move
 
 Linoone
 Level: 26
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 18 SpA / 6 SpD / 6 Spe
+- Surf
+- Slash
 
 Noctowl
 Level: 26
@@ -4474,7 +4535,9 @@ AI: Check Bad Move
 
 Linoone
 Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 24 SpA / 12 SpD / 12 Spe
+- Surf
+- Slash
 
 Noctowl
 Level: 29
@@ -4490,16 +4553,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Excadrill
-Level: 31
+Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Noctowl
-Level: 31
+Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Linoone
-Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 32
+IVs: 12 HP / 12 Atk / 12 Def / 24 SpA / 12 SpD / 12 Spe
+EVs: 126 SpA
+- Surf
+- Slash
 
 === TRAINER_ETHAN_5 ===
 Name: ETHAN
@@ -4511,16 +4577,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 34
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Excadrill
-Level: 34
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Linoone
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
+EVs: 126 SpA
+- Surf
+- Slash
 
 === TRAINER_BRENT ===
 Name: BRENT
@@ -4548,11 +4617,12 @@ SPECIES_WORMADAM_SANDY
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-MOTHIM
+Swadloon
 Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 12 Atk / 31 Def / 12 SpA / 31 SpD / 12 Spe
+EVs: 252 HP
 
-SPECIES_VIVILLON_MEADOW
+Whirlipede
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4565,11 +4635,11 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_WORMADAM_PLANT
+Ariados
 Level: 28
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-WHIRLIPEDE
+Whirlipede
 Level: 28
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4586,17 +4656,30 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_VIVILLON_MEADOW
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Venomoth
+Level: 33
+IVs: 18 HP / 31 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 SpA / 252 Atk
+- Air Slash
+- Psybeam
+- Poison Fang
 
 Mothim
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 33
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 Spe
+- Lunge
+- Aerial Ace
+- Roost
 
 Masquerain
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 33
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 SpA
+- Air Slash
+- Giga Drain
+- Water Pulse
+- Quiver Dance
 
 === TRAINER_DEREK ===
 Name: DEREK
@@ -4611,7 +4694,7 @@ SPECIES_VIVILLON_MEADOW
 Level: 16
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Burmy
+Spinarak
 Level: 19
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -4624,17 +4707,30 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Masquerain
-Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Venomoth
+Level: 37
+IVs: 18 HP / 31 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 SpA / 252 Atk
+- Air Slash
+- Psybeam
+- Poison Fang
+
+Mothim
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 Spe
+- Lunge
+- Aerial Ace
+- Roost
 
 Masquerain
-Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Masquerain
-Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 SpA
+- Air Slash
+- Giga Drain
+- Water Pulse
+- Quiver Dance
 
 === TRAINER_JEFFREY_3 ===
 Name: JEFFREY
@@ -4645,17 +4741,30 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Masquerain
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Venomoth
+Level: 41
+IVs: 24 HP / 31 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 SpA / 252 Atk
+- Air Slash
+- Psychic
+- Poison Fang
+
+Mothim
+Level: 41
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 Spe
+- Lunge
+- Aerial Ace
+- Roost
 
 Masquerain
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Masquerain
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 41
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 SpA
+- Air Slash
+- Giga Drain
+- Surf
+- Quiver Dance
 
 === TRAINER_JEFFREY_4 ===
 Name: JEFFREY
@@ -4666,21 +4775,39 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Masquerain
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Venomoth
+Level: 45
+IVs: 24 HP / 31 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 SpA / 252 Atk
+- Air Slash
+- Psychic
+- Poison Fang
 
-SPECIES_VIVILLON_MEADOW
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Mothim
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 Spe
+- Lunge
+- Aerial Ace
+- Roost
 
 Masquerain
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 SpA
+- Air Slash
+- Giga Drain
+- Surf
+- Quiver Dance
 
-Masquerain
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Frosmoth
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 Def / 126 Spe
+- Ice Beam
+- Bug Buzz
+- Dazzling Gleam
+- Quiver Dance
 
 === TRAINER_JEFFREY_5 ===
 Name: JEFFREY
@@ -4691,25 +4818,39 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Masquerain @ Silver Powder
-Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Venomoth
+Level: 49
+IVs: 24 HP / 31 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 SpA / 252 Atk
+- Air Slash
+- Psychic
+- Poison Fang
 
-SPECIES_VIVILLON_MEADOW @ Silver Powder
-Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Mothim
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 Spe
+- Lunge
+- Aerial Ace
+- Roost
 
-Masquerain @ Silver Powder
-Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Masquerain
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 SpA
+- Air Slash
+- Giga Drain
+- Surf
+- Quiver Dance
 
-Masquerain @ Silver Powder
-Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Mothim @ Silver Powder
-Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Frosmoth
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 Def / 126 Spe
+- Ice Beam
+- Bug Buzz
+- Dazzling Gleam
+- Quiver Dance
 
 === TRAINER_EDWARD ===
 Name: EDWARD
@@ -5575,7 +5716,7 @@ EVs: 126 HP / 126 Def
 Electrike
 Level: 24
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP
+EVs: 126 HP / 126 Def / 126 SpD
 - Spark
 - Leer
 - Quick Attack
@@ -5585,7 +5726,6 @@ Magneton
 Level: 26
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 0 Spe
 EVs: 126 HP
-- Supersonic
 - Shock Wave
 - Thunder Wave
 - Sonic Boom
@@ -5741,7 +5881,6 @@ Level: 40
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 252 HP / 126 Spe / 252 SpD
 - Water Pulse
-- Supersonic
 - Protect
 - Air Slash
 
@@ -5766,7 +5905,7 @@ EVs: 252 HP / 252 SpD / 126 Atk
 Altaria @ Sitrus Berry
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+EVs: 252 HP / 126 Def / 126 SpD / 252 SpA
 - Earthquake
 - Dragon Breath
 - Dragon Dance
@@ -6285,11 +6424,20 @@ AI: Check Bad Move
 
 Murkrow @ Oran Berry
 Level: 18
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Atk / 64 Def / 64 SpD
+- Wing Attack
+- Night Shade
+- Thief
+- Mean Look
 
 Zigzagoon @ Oran Berry
 Level: 18
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 24 Def / 12 SpA / 24 SpD / 12 Spe
+EVs: 252 HP / 126 Atk / 126 Def / 126 SpD
+- Headbutt
+- Pin Missile
+- Baby-Doll Eyes
 
 === TRAINER_MIGUEL_1 ===
 Name: MIGUEL
@@ -6401,10 +6549,10 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Roselia @ Oran Berry
-Level: 24
-IVs: 31 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP
+Roselia @ Sitrus Berry
+Level: 22
+IVs: 31 HP / 6 Atk / 24 Def / 12 SpA / 24 SpD / 6 Spe
+EVs: 252 HP / 126 Def / 126 SpD
 - Magical Leaf
 - Growth
 - Leech Seed
@@ -6614,12 +6762,19 @@ EVs: 126 Atk / 252 HP
 
 Morelull
 Level: 20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 70 SpA / 70 Atk
+IVs: 24 HP / 12 Atk / 24 Def / 12 SpA / 24 SpD / 31 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+- Leech Seed
+- Ingrain
+- Draining Kiss
+- Mega Drain
 
 Lunatone
 Level: 20
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Confusion
+- Rock Slide
+- Hypnosis
 
 === TRAINER_SHELBY_1 ===
 Name: SHELBY
@@ -7129,7 +7284,7 @@ SPECIES_BASCULIN_WHITE_STRIPED
 Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-SPECIES_QWILFISH_HISUI
+Finneon
 Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -8588,7 +8743,7 @@ Joltik
 Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Skorupi
+SPECIES_ZOROARK_HISUI
 Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -8635,7 +8790,7 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Skorupi
+SPECIES_ZORUA_HISUI
 Level: 21
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -8671,7 +8826,7 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Skorupi
+SPECIES_ZORUA_HISUI
 Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -8695,7 +8850,7 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Skorupi
+SPECIES_ZORUA_HISUI
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -8707,7 +8862,7 @@ Croagunk
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-SPECIES_WORMADAM_TRASH
+Joltik
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -8723,7 +8878,7 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Skorupi
+SPECIES_ZOROARK_HISUI
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -8735,7 +8890,7 @@ Croagunk
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-SPECIES_WORMADAM_TRASH
+Joltik
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -8751,11 +8906,11 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Skorupi
+SPECIES_ZOROARK_HISUI
 Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Skorupi
+Drapion
 Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -8763,7 +8918,7 @@ Toxicroak
 Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-SPECIES_WORMADAM_TRASH
+Galvantula
 Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9594,7 +9749,6 @@ Level: 25
 IVs: 12 HP / 31 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP
 - Sand Attack
-- Poison Sting
 - Slash
 - Dig
 
@@ -9604,7 +9758,6 @@ IVs: 24 HP / 12 Atk / 24 Def / 12 SpA / 24 SpD / 12 Spe
 EVs: 126 HP / 126 Def / 126 SpD
 - Rollout
 - Bubble Beam
-- Tail Whip
 - Defense Curl
 
 === TRAINER_CAROL ===
@@ -9863,7 +10016,7 @@ Hoppip
 Level: 10
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Burmy
+Budew
 Level: 10
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Tackle
@@ -10439,7 +10592,7 @@ SPECIES_WORMADAM_TRASH
 Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Mothim
+Ariados
 Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -11480,7 +11633,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Jumpluff
-Level: 38
+Level: 35
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_LORENZO ===
@@ -11530,7 +11683,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Jumpluff
-Level: 36
+Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_JACKSON_3 ===
@@ -11544,7 +11697,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Jumpluff
-Level: 40
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_JACKSON_4 ===
@@ -11558,7 +11711,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Jumpluff
-Level: 44
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_JACKSON_5 ===
@@ -11572,12 +11725,12 @@ Double Battle: No
 AI: Basic Trainer
 
 Kecleon
-Level: 48
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
 Jumpluff
-Level: 48
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_CATHERINE_1 ===
@@ -11590,7 +11743,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-Petilil
+SPECIES_LILLIGANT_HISUI
 Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12397,8 +12550,8 @@ AI: Basic Trainer
 
 Mightyena
 Level: 26
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Spe
+IVs: 30 HP / 18 Atk / 30 Def / 18 SpA / 30 SpD / 18 Spe
+EVs: 252 HP / 126 Spe / 64 Def / 64 SpD
 - Thief
 - Fire Fang
 - Thunder Fang
@@ -12406,7 +12559,7 @@ EVs: 252 HP / 126 Spe
 
 Golbat
 Level: 26
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 30 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP
 - Poison Fang
 - Wing Attack
@@ -12417,15 +12570,15 @@ Houndoom
 Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Atk
-- Bite
+- Crunch
 - Fire Fang
 - Flame Charge
 - Roar
 
 Camerupt
 Level: 28
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+IVs: 30 HP / 18 Atk / 30 Def / 18 SpA / 30 SpD / 18 Spe
+EVs: 252 HP / 180 Def / 180 SpD
 - Rock Slide
 - Incinerate
 - Bulldoze
@@ -12461,10 +12614,9 @@ Hoppip
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Burmy
+Wooper
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
 
 === TRAINER_JANICE ===
 Name: JANICE
@@ -12490,15 +12642,29 @@ AI: Basic Trainer
 
 Marill
 Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 31 Atk / 24 Def / 31 SpA / 24 SpD / 12 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 126 Atk
+- Bubble Beam
+- Slam
+- Bounce
+- Charm
 
 SPECIES_VIVILLON_MEADOW
 Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 12 Atk / 24 Def / 12 SpA / 24 SpD / 12 Spe
+EVs: 126 HP / 64 Def / 64 SpD
+- Gust
+- Struggle Bug
+- Psybeam
+- Poison Powder
 
 Numel
 Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 12 Atk / 31 Def / 12 SpA / 31 SpD / 12 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+- Bulldoze
+- Incinerate
+- Amnesia
 
 === TRAINER_HALEY_2 ===
 Name: HALEY
@@ -12513,7 +12679,7 @@ Skiploom
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Mothim
+Quagsire
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12530,7 +12696,7 @@ Jumpluff
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Mothim
+Quagsire
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12547,7 +12713,7 @@ Jumpluff
 Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Mothim
+Quagsire
 Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12561,15 +12727,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 34
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Jumpluff
-Level: 34
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Mothim
-Level: 34
+Quagsire
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SALLY ===
@@ -12692,10 +12858,9 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Stun Spore
 - String Shot
 
-Burmy
+Spinarak
 Level: 11
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Tackle
 
 === TRAINER_DOUG ===
 Name: DOUG
@@ -12740,8 +12905,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_WORMADAM_SANDY
-Level: 32
+Heracross
+Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JAMES_1 ===
@@ -12758,9 +12923,9 @@ Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 
-Burmy
+Spewpa
 Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 0 Atk / 24 Def / 0 SpA / 24 SpD / 0 Spe
 - Tackle
 
 === TRAINER_JAMES_2 ===
@@ -12772,7 +12937,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Wormadam
+Mothim
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+SPECIES_VIVILLON_MEADOW
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12786,11 +12955,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Mothim
-Level: 29
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Wormadam
-Level: 29
+SPECIES_VIVILLON_MEADOW
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JAMES_4 ===
@@ -12803,15 +12972,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Masquerain
-Level: 31
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mothim
-Level: 31
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Wormadam
-Level: 31
+SPECIES_VIVILLON_MEADOW
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JAMES_5 ===
@@ -12824,19 +12993,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Masquerain
-Level: 33
+Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Venomoth
-Level: 33
+Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mothim
-Level: 33
+Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Wormadam
-Level: 33
+SPECIES_VIVILLON_MEADOW
+Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRICE ===
@@ -13330,7 +13499,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Overqwil
+SPECIES_ZOROARK_HISUI
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -13349,11 +13518,11 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-SPECIES_WORMADAM_TRASH
+Cofagrigus
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Overqwil
+Joltik
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -14484,7 +14653,7 @@ Finneon
 Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-SPECIES_QWILFISH_HISUI
+Carvanha
 Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -15125,7 +15294,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_QWILFISH_HISUI
+Finneon
+Level: 26
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Brionne
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -15372,7 +15545,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_WORMADAM_TRASH
+SPECIES_ZORUA_HISUI
 Level: 28
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -15462,7 +15635,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Burmy
+Hoothoot
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
@@ -15624,7 +15797,7 @@ Venomoth
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-SPECIES_VIVILLON_MEADOW
+Ariados
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -17527,11 +17700,12 @@ EVs: 56 SpA
 - Electroweb
 - String Shot
 
-Joltik
+Spinarak
 Level: 19
-IVs: 12 HP / 12 Atk / 12 Def / 30 SpA / 12 SpD / 12 Spe
-EVs: 56 SpA
-- Electroweb
+IVs: 24 HP / 31 Atk / 24 Def / 12 SpA / 24 SpD / 12 Spe
+EVs: 180 Atk / 64 HP / 64 Def / 64 SpD
+- Shadow Sneak
+- Pin Missile
 - String Shot
 
 === TRAINER_DARIUS ===
@@ -18625,8 +18799,8 @@ EVs: 252 HP / 68 Atk
 Sableye
 Level: 29
 Nature: Modest
-IVs: 31 HP / 12 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 68 SpA
+IVs: 31 HP / 12 Atk / 12 Def / 24 SpA / 12 SpD / 12 Spe
+EVs: 252 HP
 - Shadow Ball
 - Dark Pulse
 - Power Gem
