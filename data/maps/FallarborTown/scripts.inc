@@ -140,12 +140,12 @@ FallarborTown_Text_FallarborMint:
 	.string "We brought mint from Galar so we could\n"
 	.string "grow it in Fallarbor Town.\p"
 	.string "By growing it here, we can combine the\n"
-	.string "cooling sensation of mint with the heat\p"
+	.string "cooling sensation of mint with the heat\l"
 	.string "of Fallarbor soil.$"
 
 FallarborTown_Text_Rolycoly:
-	.string "Rolycolys help us in the fields. They\n"
-	.string "like the mint, too!.$"
+	.string "The Rolycoly help us in the fields.\n"
+	.string "They like the mint, too!.$"
 
 FallarborTown_Text_OldLadyShop:
 	.string "I opened the Mint Shop with my\n"

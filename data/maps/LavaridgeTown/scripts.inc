@@ -276,11 +276,13 @@ LavaridgeTown_EventScript_HerbShopSign::
 LavaridgeTown_EventScript_Camerupt::
 	playmoncry SPECIES_CAMERUPT, CRY_MODE_NORMAL
     msgbox LavaridgeTown_Text_Camerupt, MSGBOX_DEFAULT
+	release
     end
 
 LavaridgeTown_EventScript_Houndour::
 	playmoncry SPECIES_HOUNDOUR, CRY_MODE_NORMAL
     msgbox LavaridgeTown_Text_Houndour, MSGBOX_DEFAULT
+	release
     end
 
 LavaridgeTown_Text_Houndour:
