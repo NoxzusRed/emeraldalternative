@@ -13131,21 +13131,6 @@ Baltoy
 Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-=== TRAINER_LUCAS_2 ===
-Name: LUCAS
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
-
-Wailmer
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Splash
-- Water Gun
-
 === TRAINER_MIKE_1 ===
 Name: MIKE
 Class: Hiker
@@ -19643,7 +19628,7 @@ Munna
 Level: 13
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-=== TRAINER_BEAUTY_CAMILA ===
+=== TRAINER_CAMILA ===
 Name: CAMILA
 Class: Beauty
 Pic: Beauty
@@ -19652,10 +19637,20 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Skitty
-Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Vaporeon
+Level: 28
+IVs: 24 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 64 Def / 126 Atk
+- Bite
+- Water Pulse
+- Aurora Beam
+- Baby-Doll Eyes
 
-Kirlia
-Level: 25
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Shiinotic
+Level: 28
+IVs: 24 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Def / 126 SpA
+- Mega Drain
+- Draining Kiss
+- Sleep Powder
+- Dream Eater
