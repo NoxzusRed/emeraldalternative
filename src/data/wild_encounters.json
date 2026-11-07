@@ -1876,7 +1876,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BUDEW"
+                "species": "SPECIES_SPINARAK"
               },
               {
                 "min_level": 5,
@@ -3497,7 +3497,7 @@
               {
                 "min_level": 25,
                 "max_level": 27,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ARIADOS"
               },
               {
                 "min_level": 25,
@@ -3670,8 +3670,8 @@
               },
               {
                 "min_level": 25,
-                "max_level": 25,
-                "species": "SPECIES_AZUMARILL"
+                "max_level": 27,
+                "species": "SPECIES_ARIADOS"
               },
               {
                 "min_level": 25,
@@ -12358,7 +12358,7 @@
           "map": "MAP_UNDERWATER_DEWFORD",
           "base_label": "gUnderwater_Dewford",
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 15,
             "mons": [
               {
                 "min_level": 35,
@@ -12599,7 +12599,7 @@
           "map": "MAP_ROUTE120_HERACROSS_NEST",
           "base_label": "gRoute120_HeracrossNest",
           "land_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 25,
