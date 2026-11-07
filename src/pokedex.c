@@ -37,6 +37,10 @@
 // or the shared National Dex conversion used by battles and other systems.
 static u16 PokedexNationalNumToDisplaySpecies(u16 nationalNum)
 {
+#if P_FAMILY_SCATTERBUG
+    if (nationalNum == NATIONAL_DEX_VIVILLON)
+        return SPECIES_VIVILLON_MEADOW;
+#endif
 #if P_FAMILY_QWILFISH && P_HISUIAN_FORMS
     if (nationalNum == NATIONAL_DEX_QWILFISH)
         return SPECIES_QWILFISH_HISUI;
