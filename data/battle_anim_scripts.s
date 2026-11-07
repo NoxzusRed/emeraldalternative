@@ -28381,6 +28381,22 @@ gBattleAnimGeneral_HeldItemEffect::
 	waitforvisualfinish
 	end
 
+@ Reusable fast held-item effect: Quick Claw, potentially other items.
+@ Skip the three Pokemon rotations; overlap the stars, flash and ring.
+gBattleAnimGeneral_FastHeldItemEffect::
+	loadspritegfx ANIM_TAG_THIN_RING
+	loadspritegfx ANIM_TAG_SPARKLE_2
+	setarg 7, 1
+	playsewithpan SE_M_MORNING_SUN, SOUND_PAN_ATTACKER
+	createsprite gGrantingStarsSpriteTemplate, ANIM_ATTACKER, 2, -15, 0, 0, 0, 32, 24
+	delay 4
+	createsprite gGrantingStarsSpriteTemplate, ANIM_ATTACKER, 2, 12, -5, 0, 0, 32, 24
+	playsewithpan SE_SHINY, SOUND_PAN_ATTACKER
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_ATTACKER, 3, 7, 0, RGB(17, 31, 25)
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0
+	waitforvisualfinish
+	end
+
 gBattleAnimGeneral_SmokeballEscape::
 	loadspritegfx ANIM_TAG_PINK_CLOUD
 	monbg ANIM_ATTACKER

@@ -206,6 +206,7 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_ITEM_KNOCKOFF]          = gBattleAnimGeneral_ItemKnockoff,
     [B_ANIM_TURN_TRAP]              = gBattleAnimGeneral_TurnTrap,
     [B_ANIM_HELD_ITEM_EFFECT]       = gBattleAnimGeneral_HeldItemEffect,
+    [B_ANIM_FAST_HELD_ITEM_EFFECT]  = gBattleAnimGeneral_FastHeldItemEffect,
     [B_ANIM_SMOKEBALL_ESCAPE]       = gBattleAnimGeneral_SmokeballEscape,
     [B_ANIM_HANGED_ON]              = gBattleAnimGeneral_HangedOn,
     [B_ANIM_RAIN_CONTINUES]         = gBattleAnimGeneral_Rain,

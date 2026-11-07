@@ -9102,7 +9102,7 @@ BattleScript_ActivateTeraformZero_End:
 
 BattleScript_QuickClawActivation::
 	flushtextbox
-	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT
+	playanimation BS_ATTACKER, B_ANIM_FAST_HELD_ITEM_EFFECT
 	waitanimation
 	@printstring STRINGID_CANACTFASTERTHANKSTO
 	@waitmessage B_WAIT_TIME_SHORTEST

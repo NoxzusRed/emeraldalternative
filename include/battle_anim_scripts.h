@@ -957,6 +957,7 @@ extern const u8 gBattleAnimGeneral_PokeblockThrow[];
 extern const u8 gBattleAnimGeneral_ItemKnockoff[];
 extern const u8 gBattleAnimGeneral_TurnTrap[];
 extern const u8 gBattleAnimGeneral_HeldItemEffect[];
+extern const u8 gBattleAnimGeneral_FastHeldItemEffect[];
 extern const u8 gBattleAnimGeneral_SmokeballEscape[];
 extern const u8 gBattleAnimGeneral_HangedOn[];
 extern const u8 gBattleAnimGeneral_Rain[];
