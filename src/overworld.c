@@ -877,19 +877,55 @@ static bool8 IsRoute111UpperCrossingToEast(void)
     return TRUE;
 }
 
+// Check both directions of an adjacent-map connection.
+static bool8 IsCameraTransitionBetweenMaps(u8 firstGroup, u8 firstNum, u8 secondGroup, u8 secondNum)
+{
+    u8 currentGroup = gSaveBlock1Ptr->location.mapGroup;
+    u8 currentNum = gSaveBlock1Ptr->location.mapNum;
+    u8 nextGroup = sWarpDestination.mapGroup;
+    u8 nextNum = sWarpDestination.mapNum;
+
+    return ((currentGroup == firstGroup && currentNum == firstNum
+          && nextGroup == secondGroup && nextNum == secondNum)
+         || (currentGroup == secondGroup && currentNum == secondNum
+          && nextGroup == firstGroup && nextNum == firstNum));
+}
+
+static bool8 ShouldPreserveCyclingMusicOnCameraTransition(void)
+{
+    // Only preserve the active bike song while actually riding a bicycle.
+    if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE)
+     || GetCurrentMapMusic() != MUS_CYCLING)
+        return FALSE;
+
+    // Route 111 has two crossings to its eastern section; cover both.
+    return IsCameraTransitionBetweenMaps(
+               MAP_GROUP(MAP_ROUTE111), MAP_NUM(MAP_ROUTE111),
+               MAP_GROUP(MAP_ROUTE111_EAST), MAP_NUM(MAP_ROUTE111_EAST))
+        || IsCameraTransitionBetweenMaps(
+               MAP_GROUP(MAP_RUSTBORO_CITY), MAP_NUM(MAP_RUSTBORO_CITY),
+               MAP_GROUP(MAP_RUSTBORO_CITY_EAST), MAP_NUM(MAP_RUSTBORO_CITY_EAST))
+        || IsCameraTransitionBetweenMaps(
+               MAP_GROUP(MAP_FALLARBOR_TOWN), MAP_NUM(MAP_FALLARBOR_TOWN),
+               MAP_GROUP(MAP_FALLARBOR_TOWN_EAST), MAP_NUM(MAP_FALLARBOR_TOWN_EAST));
+}
+
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
     bool8 preserveDesertWeather;
+    bool8 preserveCyclingMusic;
 
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
+    preserveCyclingMusic = ShouldPreserveCyclingMusicOnCameraTransition();
 
     // Detectar el cruce antes de cambiar de mapa.
     preserveDesertWeather =
         IsRoute111DesertCrossingFromEast() ||
         IsRoute111UpperCrossingToEast();
 
-    // Dont transition map music between BF Outside West/East
-    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
+    // Keep the bike music across the specified adjacent outdoor maps.
+    // Preserve the original Battle Frontier behavior as well.
+    if (!preserveCyclingMusic && gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
         TransitionMapMusic();
 
     ApplyCurrentWarp();
@@ -914,7 +950,10 @@ if (I_VS_SEEKER_CHARGING != 0)
         SetSavedWeatherFromCurrMapHeader();
     ChooseAmbientCrySpecies();
     SetDefaultFlashLevel();
-    Overworld_ClearSavedMusic();
+    if (preserveCyclingMusic)
+        Overworld_SetSavedMusic(MUS_CYCLING);
+    else
+        Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     InitMap();
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
