@@ -4044,6 +4044,30 @@ static void DoBattleIntro(void)
             gBattleStruct->overworldWeatherDone = FALSE;
             Ai_InitPartyStruct(); // Save mons party counts, and first 2/4 mons on the battlefield.
 
+            // Registrar como vistos los Pokemon rivales presentes al iniciar la pelea.
+            if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK
+                                   | BATTLE_TYPE_RECORDED
+                                   | BATTLE_TYPE_RECORDED_LINK
+                                   | BATTLE_TYPE_FIRST_BATTLE
+                                   | BATTLE_TYPE_SAFARI
+                                   | BATTLE_TYPE_EREADER_TRAINER
+                                   | BATTLE_TYPE_WALLY_TUTORIAL
+                                   | BATTLE_TYPE_FRONTIER
+                                   | BATTLE_TYPE_TRAINER_HILL)))
+            {
+                for (battler = 0; battler < gBattlersCount; battler++)
+                {
+                    if (IsOnPlayerSide(battler) || !IsBattlerAlive(battler))
+                        continue;
+
+                    HandleSetPokedexFlag(
+                        SpeciesToNationalPokedexNum(gBattleMons[battler].species),
+                        FLAG_SET_SEEN,
+                        gBattleMons[battler].personality
+                    );
+                }
+            }
+
             // Try to set a status to start the battle with
             gBattleStruct->startingStatus = 0;
             if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && GetTrainerStartingStatusFromId(TRAINER_BATTLE_PARAM.opponentB))
