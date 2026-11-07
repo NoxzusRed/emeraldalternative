@@ -4302,7 +4302,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
 #if P_FAMILY_BASCULIN
     [SPECIES_BASCULIN_RED_STRIPED] =
-    /*{
+    {
         .baseHP        = 70,
         .baseAttack    = 92,
         .baseDefense   = 65,
@@ -4366,73 +4366,6 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sBasculinTeachableLearnset,
         .eggMoveLearnset = sBasculinEggMoveLearnset,
         .formSpeciesIdTable = sBasculinFormSpeciesIdTable,
-    },*/
-    {
-        .baseHP        = 70,
-        .baseAttack    = 92,
-        .baseDefense   = 65,
-        .baseSpeed     = 98,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 55,
-        .types = MON_TYPES(TYPE_WATER),
-        .catchRate = 190,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 75 : 108, //161,
-        .evYield_Speed = 2,
-        .itemRare = ITEM_DEEP_SEA_SCALE,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 40,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_2),
-        .abilities = { ABILITY_RATTLED, ABILITY_ADAPTABILITY, ABILITY_MOLD_BREAKER },
-        .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Basculin"),
-        .cryId = CRY_BASCULIN,
-        .natDexNum = NATIONAL_DEX_BASCULIN,
-        .categoryName = _("Mellow"),
-        .height = 10,
-        .weight = 180,
-        .description = COMPOUND_STRING(
-            "While this ancient form of Basculin shares\n"
-            "a vast array of qualities with other forms,\n"
-            "it differs in several respects, including\n"
-            "demeanor, being much gentler than others."),
-        .pokemonScale = 316,
-        .pokemonOffset = 7,
-        .trainerScale = 257,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_BasculinWhiteStriped,
-        .frontPicSize = MON_COORDS_SIZE(48, 40),
-        .frontPicYOffset = 12,
-        .frontAnimFrames = sAnims_Basculin,
-        .frontAnimId = ANIM_TIP_MOVE_FORWARD,
-        .enemyMonElevation = 6,
-        .backPic = gMonBackPic_BasculinWhiteStriped,
-        .backPicSize = MON_COORDS_SIZE(64, 40),
-        .backPicYOffset = 16,
-        .backAnimId = BACK_ANIM_JOLT_RIGHT,
-        .palette = gMonPalette_BasculinWhiteStriped,
-        .shinyPalette = gMonShinyPalette_BasculinWhiteStriped,
-        .iconSprite = gMonIcon_BasculinWhiteStriped,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-2, 5, SHADOW_SIZE_S)
-        FOOTPRINT(Basculin)
-        OVERWORLD(
-            sPicTable_BasculinWhiteStriped,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_BasculinWhiteStriped,
-            gShinyOverworldPalette_BasculinWhiteStriped
-        )
-        .levelUpLearnset = sBasculinWhiteStripedLevelUpLearnset,
-        .teachableLearnset = sBasculinWhiteStripedTeachableLearnset,
-        .eggMoveLearnset = sBasculinWhiteStripedEggMoveLearnset,
-        .formSpeciesIdTable = sBasculinFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_BASCULEGION_M, CONDITIONS({IF_RECOIL_DAMAGE_GE, 294}, {IF_GENDER, MON_MALE})},
-                                {EVO_LEVEL, 0, SPECIES_BASCULEGION_F, CONDITIONS({IF_RECOIL_DAMAGE_GE, 294}, {IF_GENDER, MON_FEMALE})}),
     },
 
     [SPECIES_BASCULIN_BLUE_STRIPED] =

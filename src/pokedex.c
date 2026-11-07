@@ -41,6 +41,10 @@ static u16 PokedexNationalNumToDisplaySpecies(u16 nationalNum)
     if (nationalNum == NATIONAL_DEX_QWILFISH)
         return SPECIES_QWILFISH_HISUI;
 #endif
+#if P_FAMILY_BASCULIN && P_HISUIAN_FORMS
+    if (nationalNum == NATIONAL_DEX_BASCULIN)
+        return SPECIES_BASCULIN_WHITE_STRIPED;
+#endif
 #if P_FAMILY_PETILIL && P_HISUIAN_FORMS
     if (nationalNum == NATIONAL_DEX_LILLIGANT)
         return SPECIES_LILLIGANT_HISUI;
