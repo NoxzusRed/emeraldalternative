@@ -10508,7 +10508,7 @@ const struct Item gItemsInfo[] =
         .price = 1000,
         .description = COMPOUND_STRING(
             "A savage roar that\n"
-            "makes the foe flee \n"
+            "makes the foe flee\n"
             "to end the battle."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
