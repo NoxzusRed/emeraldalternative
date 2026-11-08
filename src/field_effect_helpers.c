@@ -27,6 +27,7 @@ static void UpdateObjectReflectionSprite(struct Sprite *);
 static void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 static void LoadObjectHighBridgeReflectionPalette(struct ObjectEvent *, struct Sprite *sprite);
 static void LoadObjectRegularReflectionPalette(struct ObjectEvent *, struct Sprite *);
+static u8 TryLoadBirdkeeperIceReflectionPalette(struct ObjectEvent *, struct Sprite *);
 
 static void UpdateGrassFieldEffectSubpriority(struct Sprite *, u8, u8);
 static void FadeFootprintsTireTracks_Step0(struct Sprite *);
@@ -157,12 +158,39 @@ static void ApplyIceFilter(u8 paletteNum, u16 *dest)
     }
 }
 
+// Birdkeeper's manually authored reflection palette is used for ice.
+// Regular water reflections keep the shared filtered-palette behavior.
+static u8 TryLoadBirdkeeperIceReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    const struct ObjectEventGraphicsInfo *graphicsInfo;
+
+    if (!sprite->sIsStillReflection)
+        return 0xFF;
+
+    graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
+    if (graphicsInfo->reflectionPaletteTag != OBJ_EVENT_PAL_TAG_NPC_5_REFLECTION)
+        return 0xFF;
+
+    return LoadObjectEventPalette(OBJ_EVENT_PAL_TAG_NPC_5_REFLECTION);
+}
+
 static void LoadObjectRegularReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     const struct Sprite *mainSprite = &gSprites[objectEvent->spriteId];
     u16 baseTag = GetSpritePaletteTagByPaletteNum(mainSprite->oam.paletteNum);
-    u16 paletteTag = REFLECTION_PAL_TAG(baseTag, mainSprite->oam.paletteNum);
-    u8 paletteNum = IndexOfSpritePaletteTag(paletteTag);
+    u8 customPaletteNum = TryLoadBirdkeeperIceReflectionPalette(objectEvent, sprite);
+    u16 paletteTag;
+    u8 paletteNum;
+
+    if (customPaletteNum != 0xFF)
+    {
+        sprite->oam.paletteNum = customPaletteNum;
+        sprite->oam.objMode = ST_OAM_OBJ_BLEND;
+        return;
+    }
+
+    paletteTag = REFLECTION_PAL_TAG(baseTag, mainSprite->oam.paletteNum);
+    paletteNum = IndexOfSpritePaletteTag(paletteTag);
     if (paletteNum <= 16)
     {
         // Load filtered palette
@@ -206,26 +234,34 @@ static void UpdateObjectReflectionSprite(struct Sprite *reflectionSprite)
     // This is basically a copy of LoadObjectRegularReflectionPalette
     if (IndexOfSpritePaletteTag(HIGH_BRIDGE_PAL_TAG) != reflectionSprite->oam.paletteNum)
     {
-        u16 baseTag = GetSpritePaletteTagByPaletteNum(mainSprite->oam.paletteNum);
-        u16 paletteTag = REFLECTION_PAL_TAG(baseTag, mainSprite->oam.paletteNum);
-        u8 paletteNum = IndexOfSpritePaletteTag(paletteTag);
-        if (paletteNum >= 16)
+        u8 customPaletteNum = TryLoadBirdkeeperIceReflectionPalette(objectEvent, reflectionSprite);
+        if (customPaletteNum != 0xFF)
         {
-            // Build filtered palette
-            u16 filteredData[16];
-            struct SpritePalette filteredPal = {.tag = paletteTag, .data = filteredData};
-            // Free palette if unused
-            reflectionSprite->inUse = FALSE;
-            FieldEffectFreePaletteIfUnused(reflectionSprite->oam.paletteNum);
-            reflectionSprite->inUse = TRUE;
-            if (reflectionSprite->sIsStillReflection == FALSE)
-                ApplyPondFilter(mainSprite->oam.paletteNum, filteredData);
-            else
-                ApplyIceFilter(mainSprite->oam.paletteNum, filteredData);
-            paletteNum = LoadSpritePalette(&filteredPal);
-            UpdateSpritePaletteWithWeather(paletteNum, TRUE);
+            reflectionSprite->oam.paletteNum = customPaletteNum;
         }
-        reflectionSprite->oam.paletteNum = paletteNum;
+        else
+        {
+            u16 baseTag = GetSpritePaletteTagByPaletteNum(mainSprite->oam.paletteNum);
+            u16 paletteTag = REFLECTION_PAL_TAG(baseTag, mainSprite->oam.paletteNum);
+            u8 paletteNum = IndexOfSpritePaletteTag(paletteTag);
+            if (paletteNum >= 16)
+            {
+                // Build filtered palette
+                u16 filteredData[16];
+                struct SpritePalette filteredPal = {.tag = paletteTag, .data = filteredData};
+                // Free palette if unused
+                reflectionSprite->inUse = FALSE;
+                FieldEffectFreePaletteIfUnused(reflectionSprite->oam.paletteNum);
+                reflectionSprite->inUse = TRUE;
+                if (reflectionSprite->sIsStillReflection == FALSE)
+                    ApplyPondFilter(mainSprite->oam.paletteNum, filteredData);
+                else
+                    ApplyIceFilter(mainSprite->oam.paletteNum, filteredData);
+                paletteNum = LoadSpritePalette(&filteredPal);
+                UpdateSpritePaletteWithWeather(paletteNum, TRUE);
+            }
+            reflectionSprite->oam.paletteNum = paletteNum;
+        }
     }
     reflectionSprite->oam.shape = mainSprite->oam.shape;
     reflectionSprite->oam.size = mainSprite->oam.size;
