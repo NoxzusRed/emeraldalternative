@@ -2814,10 +2814,13 @@ static void Cmd_datahpupdate(void)
 
                 enum BattleMoveEffects effect = GetMoveEffect(gCurrentMove);
 
-                // Metal Burst uses the last direct hit, regardless of its damage category.
-                // Recoil, passive damage, and Pain Split must not count.
+                // Metal Burst remembers the latest HP damage from an opposing move.
+                // Ally damage, passive effects and hits absorbed by Substitute do not count.
+                // Each multi-hit strike updates this, so only the final hit is returned.
                 if (cmd->battler == BS_TARGET
                     && gBattlerAttacker != battler
+                    && GetBattlerSide(gBattlerAttacker) != GetBattlerSide(battler)
+                    && gBattleStruct->moveDamage[battler] > 0
                     && !(gHitMarker & HITMARKER_PASSIVE_DAMAGE)
                     && effect != EFFECT_PAIN_SPLIT)
                 {
