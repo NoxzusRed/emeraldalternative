@@ -48313,11 +48313,11 @@ F_TRAINER_FEMALE |
 #line 19461
             .heldItem = ITEM_SITRUS_BERRY,
 #line 19466
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 0, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 126, 252, 0, 126, 252),
 #line 19465
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
 #line 19464
-            .ability = ABILITY_CLOUD_NINE,
+            .ability = ABILITY_PIXILATE,
 #line 19462
             .lvl = 77,
 #line 19463
@@ -48326,7 +48326,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 19467
                 MOVE_AERIAL_ACE,
-                MOVE_SAFEGUARD,
+                MOVE_BODY_SLAM,
                 MOVE_DRAGON_PULSE,
                 MOVE_DRAGON_DANCE,
             },
@@ -48440,7 +48440,7 @@ F_TRAINER_FEMALE |
 #line 19518
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 19517
-            .ability = ABILITY_SYNCHRONIZE,
+            .ability = ABILITY_PIXILATE,
 #line 19515
             .lvl = 80,
 #line 19516
@@ -48448,10 +48448,10 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 19520
+                MOVE_HYPER_VOICE,
+                MOVE_DREAM_EATER,
                 MOVE_HYPNOSIS,
                 MOVE_CALM_MIND,
-                MOVE_DREAM_EATER,
-                MOVE_MOONBLAST,
             },
             },
         },

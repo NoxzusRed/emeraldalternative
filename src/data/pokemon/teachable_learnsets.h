@@ -29869,6 +29869,7 @@ static const u16 sKecleonTeachableLearnset[] = {
     MOVE_ICE_BEAM,
     MOVE_ICE_PUNCH,
     MOVE_ICY_WIND,
+	MOVE_IRON_HEAD,
     MOVE_IRON_TAIL,
     MOVE_KNOCK_OFF,
     MOVE_LAST_RESORT,
@@ -29930,6 +29931,7 @@ static const u16 sKecleonTeachableLearnset[] = {
     MOVE_WATER_PULSE,
     MOVE_WONDER_ROOM,
     MOVE_WORK_UP,
+	MOVE_ZEN_HEADBUTT,
     MOVE_UNAVAILABLE,
 };
 
