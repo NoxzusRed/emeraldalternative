@@ -6608,7 +6608,7 @@ BattleScript_DefDownSpeedUpRet::
 BattleScript_KnockedOff::
 	playanimation BS_TARGET, B_ANIM_ITEM_KNOCKOFF
 	printstring STRINGID_PKMNKNOCKEDOFF
-	waitmessage B_WAIT_TIME_SHORTEST
+	waitmessage 90 @ 1.5 segundos para leer el nombre del objeto
 	return
 
 BattleScript_MoveUsedIsImprisoned::
