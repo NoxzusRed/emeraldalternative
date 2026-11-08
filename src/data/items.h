@@ -11927,10 +11927,10 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_GUST,
     },
 
-    [ITEM_TM_MAGICAL_LEAF] =
+    [ITEM_TM99] =
     {
         .name = _("TM99"),
-        .price = 3000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "A magical leaf\n"
             "attack that never\n"
