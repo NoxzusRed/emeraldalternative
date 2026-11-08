@@ -72,7 +72,6 @@ EWRAM_DATA static u8 sParallelBerryAnimBattler;
 EWRAM_DATA static u8 sParallelBerryHealBattler;
 EWRAM_DATA static u8 sParallelIngrainHealBattler;
 EWRAM_DATA static u8 sParallelStatAnimBattler;
-EWRAM_DATA static u8 sParallelKnockOffAnimBattler;
 EWRAM_DATA static u8 sMultiStatMessagesRemaining;
 EWRAM_DATA static bool8 sHoldMultiStatMessage;
 
@@ -136,26 +135,6 @@ static bool8 IsParallelStatAnimActive(void)
     }
 
     sParallelStatAnimBattler = 0;
-    return FALSE;
-}
-
-// Track the flying-item visual separately from the Knock Off message.
-static bool8 IsParallelKnockOffAnimActive(void)
-{
-    u8 battler;
-
-    if (sParallelKnockOffAnimBattler == 0)
-        return FALSE;
-
-    battler = sParallelKnockOffAnimBattler - 1;
-    if (gBattleSpritesDataPtr != NULL
-        && battler < gBattlersCount
-        && gBattleSpritesDataPtr->healthBoxesData[battler].animFromTableActive)
-    {
-        return TRUE;
-    }
-
-    sParallelKnockOffAnimBattler = 0;
     return FALSE;
 }
 
@@ -2653,8 +2632,7 @@ static void Cmd_waitanimation(void)
     if (gBattleControllerExecFlags == 0
         && !IsTextPrinterActive(B_WIN_MSG)
         && !IsParallelBerryAnimActive()
-        && !IsParallelStatAnimActive()
-        && !IsParallelKnockOffAnimActive())
+        && !IsParallelStatAnimActive())
     {
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
@@ -5928,8 +5906,7 @@ static void Cmd_absorb(void)
 
 static void Cmd_return(void)
 {
-    // Knock Off must not continue until both the message and the flying item finish.
-    if (IsParallelStatAnimActive() || IsParallelKnockOffAnimActive())
+    if (IsParallelStatAnimActive())
         return;
 
     BattleScriptPop();
@@ -6026,7 +6003,7 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
 {
     // No iniciar otra animacion general mientras
     // la animacion de una baya sigue ejecutandose.
-    if (IsParallelBerryAnimActive() || IsParallelStatAnimActive() || IsParallelKnockOffAnimActive())
+    if (IsParallelBerryAnimActive() || IsParallelStatAnimActive())
         return;
 
     // Animaciones de curacion en paralelo a la barra de PS.
@@ -6095,33 +6072,6 @@ gAnimDisableStructPtr = &gDisableStructs[battler];
                 if (animId == B_ANIM_INGRAIN_HEAL)
                     sParallelIngrainHealBattler = battler + 1;
             }
-        }
-
-        gBattlescriptCurrInstr = nextInstr;
-        return;
-    }
-
-    // Mostrar el mensaje del objeto perdido mientras este sale volando.
-    // Dejar el controlador libre para que pueda imprimir el texto al instante.
-    // Combates link, grabados y pruebas mantienen el sistema secuencial.
-    if (animId == B_ANIM_ITEM_KNOCKOFF
-        && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
-        && !gTestRunnerEnabled
-        && !(gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
-    {
-        if (gBattleControllerExecFlags || gAnimScriptActive || IsBattleSEPlaying(battler))
-            return;
-
-        gAnimDisableStructPtr = &gDisableStructs[battler];
-
-        if (!TryHandleLaunchBattleTableAnimation(
-                battler,
-                battler,
-                battler,
-                animId,
-                argPtr != NULL ? *argPtr : 0))
-        {
-            sParallelKnockOffAnimBattler = battler + 1;
         }
 
         gBattlescriptCurrInstr = nextInstr;

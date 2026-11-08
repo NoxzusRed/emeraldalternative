@@ -6606,8 +6606,9 @@ BattleScript_DefDownSpeedUpRet::
 	return
 
 BattleScript_KnockedOff::
-	playanimation BS_TARGET, B_ANIM_ITEM_KNOCKOFF
+	@ El mensaje se muestra al iniciar la animacion del objeto.
 	printstring STRINGID_PKMNKNOCKEDOFF
+	playanimation BS_TARGET, B_ANIM_ITEM_KNOCKOFF
 	waitmessage 90 @ 1.5 segundos para leer el nombre del objeto
 	return
 
