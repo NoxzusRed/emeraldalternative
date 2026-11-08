@@ -1176,7 +1176,9 @@ static void PokeballGlowEffect_PlaceBalls(struct Sprite *sprite)
     u8 spriteId;
     if (sprite->sTimer == 0 || (--sprite->sTimer) == 0)
     {
-        sprite->sTimer = 25;
+        // Shorter interval between Poké Balls at Pokémon Centers.
+        // Keep the original timing for the Hall of Fame sequence.
+        sprite->sTimer = sprite->sPlayHealSe ? 10 : 25;
         spriteId = CreateSpriteAtEnd(&sSpriteTemplate_PokeballGlow, sPokeballCoordOffsets[sprite->sCounter].x + sprite->x2, sPokeballCoordOffsets[sprite->sCounter].y + sprite->y2, 0);
         gSprites[spriteId].oam.priority = 2;
         gSprites[spriteId].sEffectSpriteId = sprite->sSpriteId;
