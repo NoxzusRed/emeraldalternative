@@ -117,81 +117,81 @@ LittlerootTown_StartersHouse_EventScript_MudkipPartyFull::
 
 LittlerootTown_StartersHouse_Text_OfferSnivyEgg:
     .string "SNIVY are such graceful POKéMON!"
-    .string "I've cared for this EGG myself.\\p"
-    .string "It deserves a thoughtful TRAINER.\\n"
+    .string "I've cared for this EGG myself.\p"
+    .string "It deserves a thoughtful TRAINER.\n"
     .string "Would you like to raise it?$"
 
 LittlerootTown_StartersHouse_Text_OfferFennekinEgg:
-    .string "Hey, look! This EGG is so warm!\\p"
-    .string "There's a FENNEKIN inside,\\n"
-    .string "just waiting to meet someone!\\p"
+    .string "Hey, look! This EGG is so warm!\p"
+    .string "There's a FENNEKIN inside,\n"
+    .string "just waiting to meet someone!\p"
     .string "Wanna take it on an adventure?$"
 
 LittlerootTown_StartersHouse_Text_OfferMudkipEgg:
-    .string "A little MUDKIP is waiting\\n"
-    .string "inside this EGG.\\p"
-    .string "It needs a kind TRAINER to\\n"
+    .string "A little MUDKIP is waiting\n"
+    .string "inside this EGG.\p"
+    .string "It needs a kind TRAINER to\n"
     .string "help it grow. Will you take it?$"
 
 LittlerootTown_StartersHouse_Text_ReceivedEgg:
     .string "{PLAYER} received the EGG!$"
 
 LittlerootTown_StartersHouse_Text_SnivyAlreadyChoseThisStarter:
-    .string "You already chose SNIVY?\\n"
-    .string "What a lovely first partner!\\p"
-    .string "I'll save this EGG for someone\\n"
+    .string "You already chose SNIVY?\n"
+    .string "What a lovely first partner!\p"
+    .string "I'll save this EGG for someone\n"
     .string "who hasn't found theirs yet.$"
 
 LittlerootTown_StartersHouse_Text_FennekinAlreadyChoseThisStarter:
-    .string "You picked FENNEKIN already?\\n"
-    .string "No way! Great choice!\\p"
-    .string "I'll keep this EGG for another\\n"
+    .string "You picked FENNEKIN already?\n"
+    .string "No way! Great choice!\p"
+    .string "I'll keep this EGG for another\n"
     .string "lucky new TRAINER.$"
 
 LittlerootTown_StartersHouse_Text_MudkipAlreadyChoseThisStarter:
-    .string "You already have a MUDKIP?\\n"
-    .string "Then you're in good hands!\\p"
-    .string "I'll find another caring\\n"
+    .string "You already have a MUDKIP?\n"
+    .string "Then you're in good hands!\p"
+    .string "I'll find another caring\n"
     .string "TRAINER for this EGG.$"
 
 LittlerootTown_StartersHouse_Text_SnivyAlreadyReceivedEgg:
-    .string "How is your SNIVY EGG doing?\\n"
-    .string "A little patience goes a\\n"
+    .string "How is your SNIVY EGG doing?\n"
+    .string "A little patience goes a\n"
     .string "long way, you know.$"
 
 LittlerootTown_StartersHouse_Text_FennekinAlreadyReceivedEgg:
-    .string "Did your FENNEKIN hatch yet?\\n"
+    .string "Did your FENNEKIN hatch yet?\n"
     .string "I bet it's super cute!$"
 
 LittlerootTown_StartersHouse_Text_MudkipAlreadyReceivedEgg:
-    .string "Keep traveling with that EGG.\\n"
+    .string "Keep traveling with that EGG.\n"
     .string "It'll hatch when it's ready.$"
 
 LittlerootTown_StartersHouse_Text_SnivyDeclineEgg:
-    .string "Of course. A precious EGG\\n"
-    .string "should never be rushed.\\p"
+    .string "Of course. A precious EGG\n"
+    .string "should never be rushed.\p"
     .string "Come back when you're ready.$"
 
 LittlerootTown_StartersHouse_Text_FennekinDeclineEgg:
-    .string "Aw, really? Okay!\\n"
-    .string "I'll be here if you\\n"
+    .string "Aw, really? Okay!\n"
+    .string "I'll be here if you\n"
     .string "change your mind!$"
 
 LittlerootTown_StartersHouse_Text_MudkipDeclineEgg:
-    .string "That's all right. Caring for\\n"
-    .string "an EGG is a big responsibility.\\p"
+    .string "That's all right. Caring for\n"
+    .string "an EGG is a big responsibility.\p"
     .string "Come back whenever you're ready.$"
 
 LittlerootTown_StartersHouse_Text_SnivyPartyFull:
-    .string "Your party is already full!\\p"
-    .string "Please make some room before\\n"
+    .string "Your party is already full!\p"
+    .string "Please make some room before\n"
     .string "you take this EGG.$"
 
 LittlerootTown_StartersHouse_Text_FennekinPartyFull:
-    .string "Whoa! Six POKéMON already?\\n"
+    .string "Whoa! Six POKéMON already?\n"
     .string "Make a little space first!$"
 
 LittlerootTown_StartersHouse_Text_MudkipPartyFull:
-    .string "You have six POKéMON with you.\\n"
-    .string "Please come back with room\\n"
+    .string "You have six POKéMON with you.\n"
+    .string "Please come back with room\n"
     .string "for this EGG.$"
