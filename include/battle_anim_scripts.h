@@ -963,6 +963,7 @@ extern const u8 gBattleAnimGeneral_HangedOn[];
 extern const u8 gBattleAnimGeneral_Rain[];
 extern const u8 gBattleAnimGeneral_Sun[];
 extern const u8 gBattleAnimGeneral_Sandstorm[];
+extern const u8 gBattleAnimGeneral_SandstormShort[];
 extern const u8 gBattleAnimGeneral_Hail[];
 extern const u8 gBattleAnimGeneral_LeechSeedDrain[];
 extern const u8 gBattleAnimGeneral_MonHit[];

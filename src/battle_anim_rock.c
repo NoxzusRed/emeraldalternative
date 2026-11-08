@@ -515,6 +515,7 @@ static void AnimParticleInVortex_Step(struct Sprite *sprite)
 #define tBlend          data[11]
 #define tFullAlphaTimer data[11] // not a typo; this data field is used for multiple purposes
 #define tState          data[12]
+#define tFullAlphaDuration data[13] // weather-turn variant uses a shorter hold
 
 void AnimTask_LoadSandstormBackground(u8 taskId)
 {
@@ -544,7 +545,16 @@ void AnimTask_LoadSandstormBackground(u8 taskId)
         var0 = 1;
 
     gTasks[taskId].data[0] = var0;
+    gTasks[taskId].tFullAlphaDuration = 101;
     gTasks[taskId].func = AnimTask_LoadSandstormBackground_Step;
+}
+
+// Keep the move and ability activation animations unchanged.
+// Shorten only the end-of-turn Sandstorm weather animation.
+void AnimTask_LoadSandstormBackgroundShort(u8 taskId)
+{
+    AnimTask_LoadSandstormBackground(taskId);
+    gTasks[taskId].tFullAlphaDuration = 26;
 }
 
 static void AnimTask_LoadSandstormBackground_Step(u8 taskId)
@@ -574,7 +584,7 @@ static void AnimTask_LoadSandstormBackground_Step(u8 taskId)
         }
         break;
     case 1:
-        if (++gTasks[taskId].tFullAlphaTimer == 101)
+        if (++gTasks[taskId].tFullAlphaTimer == gTasks[taskId].tFullAlphaDuration)
         {
             gTasks[taskId].tBlend = 7;
             gTasks[taskId].tState++;
@@ -616,6 +626,7 @@ static void AnimTask_LoadSandstormBackground_Step(u8 taskId)
 #undef tBlend
 #undef tFullAlphaTimer
 #undef tState
+#undef tFullAlphaDuration
 
 // Animates the sprites that fly diagonally across the screen
 // in Sandstorm and Heat Wave.

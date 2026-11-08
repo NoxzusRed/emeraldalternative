@@ -28469,6 +28469,24 @@ gBattleAnimGeneral_Sun::
 gBattleAnimGeneral_Sandstorm::
 	goto gBattleAnimMove_Sandstorm
 
+@ Approximate the short Rain weather-turn animation duration (~85 frames).
+@ Keep the full Sandstorm move/ability animation above unchanged.
+gBattleAnimGeneral_SandstormShort::
+	loadspritegfx ANIM_TAG_FLYING_DIRT
+	playsewithpan SE_M_SANDSTORM, 0
+	createvisualtask AnimTask_LoadSandstormBackgroundShort, 5, FALSE
+	delay 12
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 10, 2816, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 90, 2560, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 50, 2816, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 20, 2560, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 70, 2304, 96, 0
+	end
+
 gBattleAnimGeneral_Hail::
 	goto gBattleAnimMove_Hail
 

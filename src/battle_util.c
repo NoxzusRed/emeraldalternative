@@ -164,7 +164,7 @@ static const struct BattleWeatherInfo sBattleWeatherInfo[BATTLE_WEATHER_COUNT] =
         .rock = HOLD_EFFECT_SMOOTH_ROCK,
         .endMessage = B_MSG_WEATHER_END_SANDSTORM,
         .continuesMessage = B_MSG_WEATHER_TURN_SANDSTORM,
-        .animation = B_ANIM_SANDSTORM_CONTINUES,
+        .animation = B_ANIM_SANDSTORM_TURN_SHORT,
     },
 
     [BATTLE_WEATHER_HAIL] =

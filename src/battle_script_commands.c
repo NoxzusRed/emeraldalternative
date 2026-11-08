@@ -6166,6 +6166,7 @@ gAnimDisableStructPtr = &gDisableStructs[battler];
     else if (animId == B_ANIM_RAIN_CONTINUES
           || animId == B_ANIM_SUN_CONTINUES
           || animId == B_ANIM_SANDSTORM_CONTINUES
+          || animId == B_ANIM_SANDSTORM_TURN_SHORT
           || animId == B_ANIM_HAIL_CONTINUES
           || animId == B_ANIM_SNOW_CONTINUES
           || animId == B_ANIM_FOG_CONTINUES)

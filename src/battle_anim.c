@@ -212,6 +212,7 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_RAIN_CONTINUES]         = gBattleAnimGeneral_Rain,
     [B_ANIM_SUN_CONTINUES]          = gBattleAnimGeneral_Sun,
     [B_ANIM_SANDSTORM_CONTINUES]    = gBattleAnimGeneral_Sandstorm,
+    [B_ANIM_SANDSTORM_TURN_SHORT]   = gBattleAnimGeneral_SandstormShort,
     [B_ANIM_HAIL_CONTINUES]         = gBattleAnimGeneral_Hail,
     [B_ANIM_LEECH_SEED_DRAIN]       = gBattleAnimGeneral_LeechSeedDrain,
     [B_ANIM_MON_HIT]                = gBattleAnimGeneral_MonHit,
