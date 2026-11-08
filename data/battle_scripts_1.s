@@ -7012,6 +7012,7 @@ BattleScript_DoTurnDmg:
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
+BattleScript_DoTurnDmgAfterHp:
 	tryfaintmon BS_ATTACKER
 	checkteamslost BattleScript_DoTurnDmgEnd
 	tryrestorehpberry
@@ -7161,7 +7162,12 @@ BattleScript_PrintPayDayMoneyString::
 BattleScript_WrapTurnDmg::
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_DoTurnDmgEnd
 	playanimation BS_ATTACKER, B_ANIM_TURN_TRAP, sB_ANIM_ARG1
-	goto BattleScript_DoTurnDmg
+	@ Animate the HP bar while the trapping visual is still playing.
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	waitanimation
+	goto BattleScript_DoTurnDmgAfterHp
 
 BattleScript_WrapEnds::
 	printstring STRINGID_PKMNFREEDFROM

@@ -72,6 +72,7 @@ EWRAM_DATA static u8 sParallelBerryAnimBattler;
 EWRAM_DATA static u8 sParallelBerryHealBattler;
 EWRAM_DATA static u8 sParallelIngrainHealBattler;
 EWRAM_DATA static u8 sParallelStatAnimBattler;
+EWRAM_DATA static u8 sParallelTrapAnimBattler;
 EWRAM_DATA static u8 sMultiStatMessagesRemaining;
 EWRAM_DATA static bool8 sHoldMultiStatMessage;
 
@@ -135,6 +136,26 @@ static bool8 IsParallelStatAnimActive(void)
     }
 
     sParallelStatAnimBattler = 0;
+    return FALSE;
+}
+
+// Track lingering end-of-turn trapping visuals while their HP bar is moving.
+static bool8 IsParallelTrapAnimActive(void)
+{
+    u8 battler;
+
+    if (sParallelTrapAnimBattler == 0)
+        return FALSE;
+
+    battler = sParallelTrapAnimBattler - 1;
+    if (gBattleSpritesDataPtr != NULL
+        && battler < gBattlersCount
+        && gBattleSpritesDataPtr->healthBoxesData[battler].animFromTableActive)
+    {
+        return TRUE;
+    }
+
+    sParallelTrapAnimBattler = 0;
     return FALSE;
 }
 
@@ -2632,7 +2653,8 @@ static void Cmd_waitanimation(void)
     if (gBattleControllerExecFlags == 0
         && !IsTextPrinterActive(B_WIN_MSG)
         && !IsParallelBerryAnimActive()
-        && !IsParallelStatAnimActive())
+        && !IsParallelStatAnimActive()
+        && !IsParallelTrapAnimActive())
     {
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
@@ -6001,10 +6023,31 @@ static void Cmd_endselectionscript(void)
 
 static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *nextInstr)
 {
-    // No iniciar otra animacion general mientras
-    // la animacion de una baya sigue ejecutandose.
-    if (IsParallelBerryAnimActive() || IsParallelStatAnimActive())
+    // Do not overwrite an animation that is still running in parallel.
+    if (IsParallelBerryAnimActive() || IsParallelStatAnimActive() || IsParallelTrapAnimActive())
         return;
+
+    // Trapping effects (Fire Spin, Sand Tomb, etc.) should lower HP during
+    // their visual, not after it. No concurrent animations in link/replays/tests.
+    if (animId == B_ANIM_TURN_TRAP
+        && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+        && !gTestRunnerEnabled
+        && !(gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
+    {
+        if (gBattleControllerExecFlags || gAnimScriptActive || IsBattleSEPlaying(battler))
+            return;
+
+        gAnimDisableStructPtr = &gDisableStructs[battler];
+        if (!TryHandleLaunchBattleTableAnimation(
+                battler, battler, battler, animId,
+                argPtr != NULL ? *argPtr : 0))
+        {
+            sParallelTrapAnimBattler = battler + 1;
+        }
+
+        gBattlescriptCurrInstr = nextInstr;
+        return;
+    }
 
     // Animaciones de curacion en paralelo a la barra de PS.
     // Ingrain conserva sus orbes y espera a los brillos para curar.
