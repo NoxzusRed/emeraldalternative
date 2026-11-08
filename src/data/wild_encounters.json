@@ -7751,18 +7751,18 @@
             "mons": [
               {
                 "min_level": 15,
-                "max_level": 16,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 17,
                 "max_level": 18,
                 "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 15,
                 "max_level": 18,
-                "species": "SPECIES_ROGGENROLA"
+                "species": "SPECIES_RALTS"
+              },
+              {
+                "min_level": 17,
+                "max_level": 18,
+                "species": "SPECIES_RALTS"
               },
               {
                 "min_level": 14,
@@ -7911,7 +7911,7 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_BOLDORE"
+                "species": "SPECIES_GARDEVOIR"
               },
               {
                 "min_level": 35,
@@ -8065,7 +8065,7 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_BOLDORE"
+                "species": "SPECIES_GARDEVOIR"
               },
               {
                 "min_level": 35,
@@ -11716,7 +11716,7 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_BOLDORE"
+                "species": "SPECIES_GARDEVOIR"
               },
               {
                 "min_level": 35,
