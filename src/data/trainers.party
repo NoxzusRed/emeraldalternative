@@ -4859,7 +4859,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Gothorita
+Claydol
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4906,7 +4906,7 @@ Gothita
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Gothita
+Gardevoir
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4953,7 +4953,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Duosion
+Gardevoir
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4970,7 +4970,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Duosion
+Gardevoir
 Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4987,7 +4987,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Reuniclus
+Gardevoir
 Level: 41
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -5008,7 +5008,7 @@ Solrock
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Reuniclus
+Gardevoir
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -5065,7 +5065,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Gothorita
+Gardevoir
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -5086,7 +5086,7 @@ Noctowl
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Gothorita
+Gardevoir
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -5936,7 +5936,7 @@ EVs: 252 HP / 252 Def / 252 SpD
 Reuniclus
 Level: 49
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 31 Spe
-EVs: 252 HP / 252 Spe
+EVs: 252 HP / 252 Spe / 126 Atk
 - Psychic
 - Hammer Arm
 - Confuse Ray
@@ -12124,7 +12124,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Girafarig
+Farigiraf
 Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12176,11 +12176,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Duosion
+Gardevoir
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Gothorita
+Musharna
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -15539,6 +15539,10 @@ Gothita
 Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
+Kirlia
+Level: 30
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 === TRAINER_HELENE ===
 Name: HELENE
 Class: Battle Girl
@@ -15570,7 +15574,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Gothita
+Kirlia
 Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -16776,6 +16780,16 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Shadow Claw
 - Protect
 
+Ursaluna @ Flame Orb
+Level: 61
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+- Facade
+- Rest
+- Crunch
+- Play Rough
+
 Blissey @ Leftovers
 Level: 61
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -16831,15 +16845,15 @@ EVs: 252 HP / 252 Def / 252 SpD
 - Hyper Voice
 - Protect
 
-Ursaring @ Flame Orb
-Ability: Guts
+Ursaluna @ Flame Orb
 Level: 66
+Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD
 - Facade
-- Close Combat
 - Crunch
-- Protect
+- Rest
+- Play Rough
 
 Exploud
 Level: 66
@@ -16887,7 +16901,7 @@ EVs: 252 HP / 252 Def / 252 SpD
 - Hyper Voice
 - Protect
 
-Ursaring @ Flame Orb
+Ursaluna @ Flame Orb
 Ability: Guts
 Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -16999,6 +17013,15 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Hypnosis
 - Roost
 
+Tropius
+Level: 59
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 252 Atk / 126 Def / 126 SpD
+- Sunny Day
+- Aerial Ace
+- Solar Beam
+- Synthesis
+
 Pelipper
 Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17016,6 +17039,15 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
 - Iron Head
 - Spikes
 - Roost
+
+Noivern
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 SpA
+- Hurricane
+- Dragon Pulse
+- Flamethrower
+- Tailwind
 
 Altaria @ Chesto Berry
 Level: 64
@@ -17072,6 +17104,15 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
 - Spikes
 - Roost
 
+Noivern
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 SpA
+- Hurricane
+- Dragon Pulse
+- Flamethrower
+- Tailwind
+
 Altaria @ Chesto Berry
 Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17098,6 +17139,15 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
 - Brave Bird
 - Flare Blitz
 - Tailwind
+- Protect
+
+Tropius
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Giga Drain
+- Air Slash
+- Leech Seed
 - Protect
 
 Drifblim
@@ -17220,7 +17270,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Protect
 
 Claydol
-Level: 63
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
@@ -17228,8 +17278,26 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Light Screen
 - Protect
 
-Lunatone @ Chesto Berry
+Gardevoir
 Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Psychic
+- Moonblast
+- Calm Mind
+- Protect
+
+Sigilyph
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+- Psychic
+- Air Slash
+- Cosmic Power
+- Roost
+
+Lunatone @ Chesto Berry
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
@@ -17266,7 +17334,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Protect
 
 Reuniclus
-Level: 68
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
@@ -17283,8 +17351,17 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Light Screen
 - Protect
 
-Lunatone @ Chesto Berry
+Gardevoir
 Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Psychic
+- Moonblast
+- Calm Mind
+- Protect
+
+Lunatone @ Chesto Berry
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
@@ -17320,6 +17397,15 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
 - Cosmic Power
 - Roost
 
+Farigiraf
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
+- Twin Beam
+- Psychic
+- Hyper Voice
+- Protect
+
 Gardevoir
 Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17339,7 +17425,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
 - Protect
 
 Lunatone @ Chesto Berry
-Level: 73
+Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
@@ -17376,21 +17462,21 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Protect
 
 Bronzong
-Level: 78
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Psychic
 - Gyro Ball
 - Reflect
 - Light Screen
 
-Reuniclus
-Level: 75
+Gardevoir
+Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
-- Focus Blast
-- Recover
+- Moonblast
+- Calm Mind
 - Protect
 
 Metagross
@@ -17403,7 +17489,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
 - Protect
 
 Lunatone @ Chesto Berry
-Level: 78
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Psychic
@@ -17429,6 +17515,14 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+
+Luvdisc @ Assault Vest
+Modest Nature
+Level: 76
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Draining Kiss
 
 Primarina
 Level: 61
@@ -17486,6 +17580,14 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
+Luvdisc @ Assault Vest
+Modest Nature
+Level: 81
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Draining Kiss
+
 Sharpedo
 Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17541,6 +17643,14 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+
+Luvdisc @ Assault Vest
+Modest Nature
+Level: 86
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Draining Kiss
 
 Primarina @ Sitrus Berry
 Level: 71
