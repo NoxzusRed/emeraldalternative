@@ -2,8 +2,10 @@
 #include "main.h"
 #include "text.h"
 #include "menu.h"
+#include "menu_helpers.h"
 #include "malloc.h"
 #include "gpu_regs.h"
+#include "scanline_effect.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "trig.h"
@@ -1665,7 +1667,20 @@ void CB2_OpenFlyMap(void)
     switch (gMain.state)
     {
     case 0:
-        SetVBlankCallback(NULL);
+        // Opening Fly directly with L bypasses the Party Menu's video cleanup.
+        // Stop overworld scanline/DMA effects and clear stale BG/OBJ tiles and
+        // palettes before loading the Fly map to avoid corrupted map graphics.
+        if (sFlyMapOpenedWithL)
+        {
+            SetVBlankHBlankCallbacksToNull();
+            ScanlineEffect_Stop();
+            ResetVramOamAndBgCntRegs();
+            ClearScheduledBgCopiesToVram();
+        }
+        else
+        {
+            SetVBlankCallback(NULL);
+        }
         SetGpuReg(REG_OFFSET_DISPCNT, 0);
         SetGpuReg(REG_OFFSET_BG0HOFS, 0);
         SetGpuReg(REG_OFFSET_BG0VOFS, 0);
