@@ -3197,38 +3197,22 @@ Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_1 ===
-Name: COURTNEY
-Class: Magma Admin
-Pic: Magma Admin F
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt F
 Gender: Female
 Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Carkol
-Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Numel
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 126 HP
-- Smack Down
-- Flame Charge
-- Smokescreen
 
-Quilava
-Level: 23
-IVs: 6 HP / 12 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 126 HP / 68 Atk
-- Flame Wheel
-- Rollout
-- Smokescreen
-
-Houndour
-Level: 24
-IVs: 6 HP / 12 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 126 HP / 68 Atk
-- Bite
-- Incinerate
-- Roar
-- Smog
+Carkol
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_STEVE_2 ===
 Name: STEVE
@@ -12111,11 +12095,11 @@ AI: Check Bad Move
 
 Zubat
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Houndour
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CLARENCE ===
 Name: CLARENCE
@@ -19654,3 +19638,37 @@ EVs: 126 HP / 64 Def / 126 SpA
 - Draining Kiss
 - Sleep Powder
 - Dream Eater
+
+=== TRAINER_COURTNEY_MT_CHIMNEY ===
+Name: COURTNEY
+Class: Magma Admin
+Pic: Magma Admin F
+Gender: Female
+Music: Magma
+Double Battle: No
+AI: Check Bad Move
+
+Carkol
+Level: 24
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 68 Def / 68 SpD
+- Smack Down
+- Flame Charge
+- Smokescreen
+
+Quilava
+Level: 25
+IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 126 Atk / 126 Def / 126 SpD
+- Flame Wheel
+- Rollout
+- Smokescreen
+
+Houndour
+Level: 25
+IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 126 Atk / 68 Spe
+- Bite
+- Incinerate
+- Roar
+- Smog

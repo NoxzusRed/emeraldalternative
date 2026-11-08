@@ -51,6 +51,7 @@ MtChimney_EventScript_Maxie::
 	removeobject LOCALID_MT_CHIMNEY_MAXIE
 	removeobject LOCALID_MT_CHIMNEY_MAGMA_GRUNT_1
 	removeobject LOCALID_MT_CHIMNEY_TABITHA
+	removeobject LOCALID_MT_CHIMNEY_COURTNEY
 	removeobject LOCALID_MT_CHIMNEY_MAGMA_GRUNT_2
 	setflag FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
 	fadescreenswapbuffers FADE_FROM_BLACK
@@ -410,6 +411,11 @@ MtChimney_EventScript_Tabitha::
 	msgbox MtChimney_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+MtChimney_EventScript_Courtney::
+	trainerbattle_single TRAINER_COURTNEY_MT_CHIMNEY, MtChimney_Text_CourtneyIntro, MtChimney_Text_CourtneyDefeat
+	msgbox MtChimney_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 MtChimney_EventScript_Grunt2::
 	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_2, MtChimney_Text_Grunt2Intro, MtChimney_Text_Grunt2Defeat
 	msgbox MtChimney_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
@@ -619,6 +625,26 @@ MtChimney_Text_TabithaPostBattle:
 	.string "BOSS, hurry!\n"
 	.string "Give it the METEORITE's energy!\p"
 	.string "Hehehe…$"
+
+MtChimney_Text_CourtneyIntro:
+	.string "You are just a child...?\p"
+	.string "Tabitha is up ahead. He is delivering\n"
+	.string "the METEORITE to LEADER MAXIE.\p"
+	.string "You want to interfere...\n"
+	.string "I won't allow it. I will... delete you.$"
+
+MtChimney_Text_CourtneyDefeat:
+	.string "... ...\n"
+	.string "... ...\p"
+	.string "This changes nothing...\n"
+	.string "You'll see when it awakens.$"
+
+MtChimney_Text_CourtneyPostBattle:
+	.string "It doesn't matter...\n"
+	.string "I have stalled you long enough.\p"
+	.string "MAXIE already has the METEORITE.\n"
+	.string "TABITHA won't let you interrupt its\l"
+	.string "awakening.$"
 
 MtChimney_Text_Grunt2Intro:
 	.string "We of TEAM MAGMA are working hard for\n"

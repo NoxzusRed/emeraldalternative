@@ -877,12 +877,13 @@
 #define TRAINER_ARENA_BRENDAN_FENNEKIN    	869 // Custom Ever Grande Arena Trainer
 #define TRAINER_ARENA_MAY_FENNEKIN   		870 // Custom Ever Grande Arena Trainer
 #define TRAINER_EMMA						871
+#define TRAINER_COURTNEY_MT_CHIMNEY			872
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      872
+#define TRAINERS_COUNT                      873
 #define MAX_TRAINERS_COUNT                  900
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

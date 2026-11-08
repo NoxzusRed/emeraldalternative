@@ -503,7 +503,7 @@ EverGrandeCity_Text_ArenaTabithaDefeat:
     .string "Impossible!$"
 
 EverGrandeCity_Text_ArenaCourtneyDefeat:
-    .string "I...lost?$"
+    .string "Let's go TABITHA.$"
 
 EverGrandeCity_Text_ArenaWallaceBattleIntro:
     .string "WALLACE: Show me how much\n"
