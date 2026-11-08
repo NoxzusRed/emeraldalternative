@@ -2814,6 +2814,17 @@ static void Cmd_datahpupdate(void)
 
                 enum BattleMoveEffects effect = GetMoveEffect(gCurrentMove);
 
+                // Metal Burst uses the last direct hit, regardless of its damage category.
+                // Recoil, passive damage, and Pain Split must not count.
+                if (cmd->battler == BS_TARGET
+                    && gBattlerAttacker != battler
+                    && !(gHitMarker & HITMARKER_PASSIVE_DAMAGE)
+                    && effect != EFFECT_PAIN_SPLIT)
+                {
+                    gProtectStructs[battler].metalBurstDmg = gBattleStruct->moveDamage[battler];
+                    gProtectStructs[battler].metalBurstBattlerId = gBattlerAttacker;
+                }
+
                 // Note: While physicalDmg/specialDmg below are only distinguished between for Counter/Mirror Coat, they are
                 //       used in combination as general damage trackers for other purposes. specialDmg is additionally used
                 //       to help determine if a fire move should defrost the target.
@@ -16967,39 +16978,52 @@ void BS_CalcMetalBurstDmg(void)
 {
     NATIVE_ARGS(const u8 *failInstr);
 
-    u8 sideAttacker = GetBattlerSide(gBattlerAttacker);
-    u8 sideTarget = 0;
+    u32 attacker = gBattlerAttacker;
+    u32 lastAttacker = gProtectStructs[attacker].metalBurstBattlerId;
+    u32 damageTaken = gProtectStructs[attacker].metalBurstDmg;
+    u32 sideTarget;
+    u32 battler;
 
-    if (gProtectStructs[gBattlerAttacker].physicalDmg
-        && sideAttacker != (sideTarget = GetBattlerSide(gProtectStructs[gBattlerAttacker].physicalBattlerId))
-        && gBattleMons[gProtectStructs[gBattlerAttacker].physicalBattlerId].hp)
+    // A direct hit from an opponent is required; the last hit cannot be from an ally.
+    if (damageTaken == 0
+        || lastAttacker >= gBattlersCount
+        || GetBattlerSide(attacker) == GetBattlerSide(lastAttacker))
     {
-        gBattleStruct->moveDamage[gBattlerTarget] = gProtectStructs[gBattlerAttacker].physicalDmg * 150 / 100;
-
-        if (IsAffectedByFollowMe(gBattlerAttacker, sideTarget, gCurrentMove))
-            gBattlerTarget = gSideTimers[sideTarget].followmeTarget;
-        else
-            gBattlerTarget = gProtectStructs[gBattlerAttacker].physicalBattlerId;
-
-        gBattlescriptCurrInstr = cmd->nextInstr;
+        gBattlescriptCurrInstr = cmd->failInstr;
+        return;
     }
-    else if (gProtectStructs[gBattlerAttacker].specialDmg
-             && sideAttacker != (sideTarget = GetBattlerSide(gProtectStructs[gBattlerAttacker].specialBattlerId))
-             && gBattleMons[gProtectStructs[gBattlerAttacker].specialBattlerId].hp)
-    {
-        gBattleStruct->moveDamage[gBattlerTarget] = gProtectStructs[gBattlerAttacker].specialDmg * 150 / 100;
 
-        if (IsAffectedByFollowMe(gBattlerAttacker, sideTarget, gCurrentMove))
+    sideTarget = GetBattlerSide(lastAttacker);
+    if (IsBattlerAlive(lastAttacker))
+    {
+        if (IsAffectedByFollowMe(attacker, sideTarget, gCurrentMove))
             gBattlerTarget = gSideTimers[sideTarget].followmeTarget;
         else
-            gBattlerTarget = gProtectStructs[gBattlerAttacker].specialBattlerId;
-
-        gBattlescriptCurrInstr = cmd->nextInstr;
+            gBattlerTarget = lastAttacker;
     }
     else
     {
-        gBattlescriptCurrInstr = cmd->failInstr;
+        // If the attacker fainted before Metal Burst, hit a remaining opponent.
+        for (battler = 0; battler < gBattlersCount; battler++)
+        {
+            if (GetBattlerSide(battler) == sideTarget && IsBattlerAlive(battler))
+            {
+                gBattlerTarget = battler;
+                break;
+            }
+        }
+
+        if (battler == gBattlersCount)
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+            return;
+        }
     }
+
+    // In doubles the selected target can differ from the Pokemon that hit the user.
+    // Set damage only after determining the actual target.
+    gBattleStruct->moveDamage[gBattlerTarget] = damageTaken * 150 / 100;
+    gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
 void BS_JumpIfCantFling(void)

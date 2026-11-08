@@ -175,6 +175,8 @@ struct ProtectStruct
     u16 specialDmg;
     u8 physicalBattlerId;
     u8 specialBattlerId;
+    u16 metalBurstDmg; // Last direct hit taken this turn (physical or special).
+    u8 metalBurstBattlerId;
 };
 
 // Cleared at the start of HandleAction_ActionFinished
