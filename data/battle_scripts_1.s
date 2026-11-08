@@ -4025,9 +4025,26 @@ BattleScript_EffectProtect::
 BattleScript_EffectEndure::
 	attackcanceler
 BattleScript_ProtectLikeAtkString:
+	@ Only Protect skips the move announcement on success.
+	@ Endure, Mat Block and other Protect-like moves keep their original messages.
+	jumpifmove MOVE_PROTECT, BattleScript_ProtectNoUsedMessage
 	attackstring
 	ppreduce
 	setprotectlike
+	goto BattleScript_ProtectLikeResult
+
+BattleScript_ProtectNoUsedMessage:
+	ppreduce
+	setprotectlike
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_PROTECT_FAILED, BattleScript_ProtectFailedShowUsed
+	@ Keep bookkeeping consistent with a normal move even without the text.
+	orword gHitMarker, HITMARKER_ATTACKSTRING_PRINTED
+	goto BattleScript_ProtectLikeResult
+
+BattleScript_ProtectFailedShowUsed:
+	attackstring
+
+BattleScript_ProtectLikeResult:
 	printfromtable gProtectLikeUsedStringIds
 	attackanimation
 	waitanimation
