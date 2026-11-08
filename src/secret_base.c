@@ -415,6 +415,107 @@ static void SetSecretBaseWarpDestination(void)
     SetWarpDestinationToMapWarp(MAP_GROUP(MAP_SECRET_BASE_RED_CAVE1), GET_BASE_MAP_NUM(secretBaseGroup), GET_BASE_WARP_ID(secretBaseGroup));
 }
 
+// Find a landing spot immediately outside the player's Secret Base entrance.
+// All exterior Secret Base BG events are on the TownsAndRoutes map group.
+// Use only ROM map headers and the existing Secret Base ID: no saved warps,
+// flags, variables, or other persistent Secret Base state are changed.
+static bool8 IsValidSecretBaseFlyLandingTile(const struct MapHeader *mapHeader, s16 x, s16 y)
+{
+    const struct MapLayout *layout = mapHeader->mapLayout;
+    u16 tile, metatileId, behavior;
+
+    if (x < 0 || y < 0 || x >= layout->width || y >= layout->height)
+        return FALSE;
+
+    tile = layout->map[y * layout->width + x];
+    if (tile & MAPGRID_COLLISION_MASK)
+        return FALSE;
+
+    metatileId = tile & MAPGRID_METATILE_ID_MASK;
+    if (metatileId < NUM_METATILES_IN_PRIMARY)
+        behavior = layout->primaryTileset->metatileAttributes[metatileId] & METATILE_ATTR_BEHAVIOR_MASK;
+    else
+        behavior = layout->secondaryTileset->metatileAttributes[metatileId - NUM_METATILES_IN_PRIMARY] & METATILE_ATTR_BEHAVIOR_MASK;
+
+    // Do not land in water or on a tile that forces movement.
+    return !MetatileBehavior_IsSurfableWaterOrUnderwater(behavior)
+        && !MetatileBehavior_IsForcedMovementTile(behavior);
+}
+
+static bool8 FindPlayerSecretBaseExterior(s8 *mapGroup, s8 *mapNum, s8 *x, s8 *y)
+{
+    static const s8 sLandingOffsets[][2] =
+    {
+        { 0,  1}, // Prefer the tile below the entrance
+        {-1,  0},
+        { 1,  0},
+        { 0, -1},
+    };
+    const u8 secretBaseId = gSaveBlock1Ptr->secretBases[0].secretBaseId;
+    u16 mapId, i, direction;
+
+    if (secretBaseId == 0)
+        return FALSE;
+
+    // MAP_ROUTE123_NORTH is currently the last map in TownsAndRoutes.
+    for (mapId = MAP_NUM(MAP_PETALBURG_CITY); mapId <= MAP_NUM(MAP_ROUTE123_NORTH); mapId++)
+    {
+        const struct MapHeader *mapHeader = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_PETALBURG_CITY), mapId);
+        const struct MapEvents *events = mapHeader->events;
+
+        if (events == NULL || mapHeader->mapLayout == NULL)
+            continue;
+
+        for (i = 0; i < events->bgEventCount; i++)
+        {
+            const struct BgEvent *event = &events->bgEvents[i];
+
+            if (event->kind != BG_EVENT_SECRET_BASE || event->bgUnion.secretBaseId != secretBaseId)
+                continue;
+
+            for (direction = 0; direction < ARRAY_COUNT(sLandingOffsets); direction++)
+            {
+                s16 landX = event->x + sLandingOffsets[direction][0];
+                s16 landY = event->y + sLandingOffsets[direction][1];
+
+                if (landX < 0 || landX > 127 || landY < 0 || landY > 127)
+                    continue;
+
+                if (IsValidSecretBaseFlyLandingTile(mapHeader, landX, landY))
+                {
+                    *mapGroup = MAP_GROUP(MAP_PETALBURG_CITY);
+                    *mapNum = mapId;
+                    *x = landX;
+                    *y = landY;
+                    return TRUE;
+                }
+            }
+        }
+    }
+
+    return FALSE;
+}
+
+bool8 CanFastTravelToPlayerSecretBase(void)
+{
+    s8 mapGroup, mapNum, x, y;
+
+    if (CurMapIsSecretBase()
+     || (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
+     || !Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType))
+        return FALSE;
+
+    return FindPlayerSecretBaseExterior(&mapGroup, &mapNum, &x, &y);
+}
+
+void SetPlayerSecretBaseFlyDestination(void)
+{
+    s8 mapGroup, mapNum, x, y;
+
+    if (FindPlayerSecretBaseExterior(&mapGroup, &mapNum, &x, &y))
+        SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, x, y);
+}
+
 #define tState data[0]
 
 static void Task_EnterSecretBase(u8 taskId)

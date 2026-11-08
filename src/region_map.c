@@ -80,9 +80,11 @@ static EWRAM_DATA struct {
     u8 tileBuffer[0x1c0];
     u8 nameBuffer[0x26]; // never read
     bool8 choseFlyLocation;
+    bool8 choseSecretBase;
 } *sFlyMap = NULL;
 
 static bool32 sDrawFlyDestTextWindow;
+static const u8 sText_FlyToSecretBase[] = _("FLY / SEL: BASE");
 static EWRAM_DATA bool8 sFlyMapOpenedWithL = FALSE;
 
 static u8 ProcessRegionMapInput_Full(void);
@@ -1733,6 +1735,8 @@ void CB2_OpenFlyMap(void)
         CreateRegionMapCursor(TAG_CURSOR, TAG_CURSOR);
         CreateRegionMapPlayerIcon(TAG_PLAYER_ICON, TAG_PLAYER_ICON);
         sFlyMap->mapSecId = sFlyMap->regionMap.mapSecId;
+        sFlyMap->choseFlyLocation = FALSE;
+        sFlyMap->choseSecretBase = FALSE;
         StringFill(sFlyMap->nameBuffer, CHAR_SPACE, MAP_NAME_LENGTH);
         sDrawFlyDestTextWindow = TRUE;
         DrawFlyDestTextWindow();
@@ -1750,7 +1754,10 @@ void CB2_OpenFlyMap(void)
         LoadPalette(sRegionMapFramePal, BG_PLTT_ID(1), sizeof(sRegionMapFramePal));
         PutWindowTilemap(WIN_FLY_TO_WHERE);
         FillWindowPixelBuffer(WIN_FLY_TO_WHERE, PIXEL_FILL(0));
-        AddTextPrinterParameterized(WIN_FLY_TO_WHERE, FONT_NORMAL, gText_FlyToWhere, 0, 1, 0, NULL);
+        if (CanFastTravelToPlayerSecretBase())
+            AddTextPrinterParameterized(WIN_FLY_TO_WHERE, FONT_NORMAL, sText_FlyToSecretBase, 0, 1, 0, NULL);
+        else
+            AddTextPrinterParameterized(WIN_FLY_TO_WHERE, FONT_NORMAL, gText_FlyToWhere, 0, 1, 0, NULL);
         ScheduleBgCopyTilemapToVram(0);
         gMain.state++;
         break;
@@ -1993,6 +2000,15 @@ static void CB_HandleFlyMapInput(void)
 {
     if (sFlyMap->state == 0)
     {
+        if (JOY_NEW(SELECT_BUTTON) && CanFastTravelToPlayerSecretBase())
+        {
+            m4aSongNumStart(SE_SELECT);
+            sFlyMap->choseSecretBase = TRUE;
+            sFlyMap->choseFlyLocation = TRUE;
+            SetFlyMapCallback(CB_ExitFlyMap);
+            return;
+        }
+
         switch (DoRegionMapInputCallback())
         {
         case MAP_INPUT_NONE:
@@ -2036,7 +2052,10 @@ static void CB_ExitFlyMap(void)
                 struct RegionMap* tempRegionMap = &sFlyMap->regionMap;
 
                 sFlyMapOpenedWithL = FALSE;
-                SetFlyDestination(tempRegionMap);
+                if (sFlyMap->choseSecretBase)
+                    SetPlayerSecretBaseFlyDestination();
+                else
+                    SetFlyDestination(tempRegionMap);
                 ReturnToFieldFromFlyMapSelect();
             }
             else if (sFlyMapOpenedWithL)
