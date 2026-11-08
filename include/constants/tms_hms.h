@@ -97,7 +97,9 @@
 	F(POISON_FANG) \
 	F(SMART_STRIKE) \
 	F(IRON_HEAD) \
-	F(ZEN_HEADBUTT)
+	F(ZEN_HEADBUTT) \
+	F(POWER_GEM) \
+	F(GUST)
 
 #define FOREACH_HM(F) \
     F(CUT) \
