@@ -19461,11 +19461,11 @@ AI: Basic Trainer
 Altaria @ Sitrus Berry
 Level: 77
 Nature: Relaxed
-Ability: Cloud Nine
+Ability: Pixilate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
 - Aerial Ace
-- Safeguard
+- Body Slam
 - Dragon Pulse
 - Dragon Dance
 
@@ -19514,13 +19514,13 @@ EVs: 252 HP / 252 Def / 252 SpD
 Gardevoir @ Wide Lens
 Level: 80
 Nature: Bold
-Ability: Synchronize
+Ability: Pixilate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
+- Hyper Voice
+- Dream Eater
 - Hypnosis
 - Calm Mind
-- Dream Eater
-- Moonblast
 
 === TRAINER_ARENA_MATT ===
 Name: MATT
