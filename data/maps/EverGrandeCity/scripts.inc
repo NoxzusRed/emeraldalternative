@@ -496,14 +496,17 @@ EverGrandeCity_Text_ArenaWallyDefeat:
     .string "You're still one step ahead!$"
 
 EverGrandeCity_Text_ArenaMagmaIntro:
-    .string "TABITHA: This time, you'll\n"
-    .string "face both of us together!$"
+    .string "TABITHA: Hehehe!\n"
+    .string "This time you'll face both of us\l"
+	.string "together!\p"
+	.string "COURTNEY: ... ...\n"
+	.string "We will... delete you.$"
 
 EverGrandeCity_Text_ArenaTabithaDefeat:
     .string "Impossible!$"
 
 EverGrandeCity_Text_ArenaCourtneyDefeat:
-    .string "Let's go TABITHA.$"
+    .string "Let's go, TABITHA.$"
 
 EverGrandeCity_Text_ArenaWallaceBattleIntro:
     .string "WALLACE: Show me how much\n"
