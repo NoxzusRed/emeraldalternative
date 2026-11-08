@@ -5216,7 +5216,6 @@ BattleScript_FaintAttacker::
 	playfaintcry BS_ATTACKER
 	pause B_WAIT_TIME_SHORTEST
 	dofaintanimation BS_ATTACKER
-	printstring STRINGID_ATTACKERFAINTED
 	cleareffectsonfaint BS_ATTACKER
 	tryactivatesoulheart
 	tryactivatereceiver BS_ATTACKER
@@ -5230,7 +5229,6 @@ BattleScript_FaintTarget::
 	playfaintcry BS_TARGET
 	pause B_WAIT_TIME_SHORTEST
 	dofaintanimation BS_TARGET
-	printstring STRINGID_TARGETFAINTED
 	cleareffectsonfaint BS_TARGET
 	tryactivatesoulheart
 	tryactivatereceiver BS_TARGET
