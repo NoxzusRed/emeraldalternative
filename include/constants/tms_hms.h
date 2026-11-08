@@ -99,7 +99,8 @@
 	F(IRON_HEAD) \
 	F(ZEN_HEADBUTT) \
 	F(POWER_GEM) \
-	F(GUST)
+	F(GUST) \
+	F(MAGICAL_LEAF)
 
 #define FOREACH_HM(F) \
     F(CUT) \
