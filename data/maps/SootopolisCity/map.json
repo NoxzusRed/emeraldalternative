@@ -274,9 +274,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_DAWN_STONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_PP_MAX",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_SOOTOPOLIS_CITY_DAWN_STONE"
+      "flag": "FLAG_ITEM_SOOTOPOLIS_CITY_PP_MAX"
     }
   ],
   "warp_events": [
