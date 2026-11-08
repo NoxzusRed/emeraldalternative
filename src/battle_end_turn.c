@@ -5,6 +5,7 @@
 #include "battle_ai_util.h"
 #include "battle_gimmick.h"
 #include "battle_scripts.h"
+#include "test_runner.h"
 #include "constants/battle.h"
 #include "constants/battle_string_ids.h"
 #include "constants/hold_effects.h"
@@ -187,8 +188,169 @@ static bool32 HandleEndTurnVarious(u32 battler)
     return effect;
 }
 
+// Sandstorm and Hail can hit several battlers on the same turn.  Group only
+// the *visual* hit and HP-bar animations; actual HP changes, fainting,
+// held items, and other turn effects still run through their original scripts.
+EWRAM_DATA static u32 sWeatherDamageBatchMask;
+EWRAM_DATA static s32 sWeatherDamageBatchAmounts[MAX_BATTLERS_COUNT];
+EWRAM_DATA static bool8 sWeatherDamageBatchPrepared;
+EWRAM_DATA static bool8 sWeatherDamageBatchHitsStarted;
+EWRAM_DATA static bool8 sWeatherDamageBatchBarsStarted;
+EWRAM_DATA static bool8 sWeatherDamageBatchSoundPlayed;
+EWRAM_DATA static u8 sWeatherDamageBatchActiveBattler; // battler + 1, or 0
+
+static bool32 IsSandstormDamageCandidate(u32 battler, u32 ability)
+{
+    return ability != ABILITY_SAND_VEIL
+        && ability != ABILITY_SAND_FORCE
+        && ability != ABILITY_SAND_RUSH
+        && ability != ABILITY_OVERCOAT
+        && !IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
+        && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
+        && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES;
+}
+
+static bool32 IsHailDamageCandidate(u32 battler, u32 ability)
+{
+    return ability != ABILITY_ICE_BODY
+        && ability != ABILITY_SNOW_CLOAK
+        && ability != ABILITY_OVERCOAT
+        && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
+        && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
+        && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES;
+}
+
+static void PrepareSimultaneousWeatherDamage(u32 weather)
+{
+    u32 i, count = 0, mask = 0;
+
+    if (sWeatherDamageBatchPrepared)
+        return;
+    sWeatherDamageBatchPrepared = TRUE;
+
+    // Keep the established sequential battle-controller behavior for these modes.
+    if (gTestRunnerEnabled
+        || (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)))
+        return;
+
+    if (weather != BATTLE_WEATHER_SANDSTORM && weather != BATTLE_WEATHER_HAIL)
+        return;
+
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        u32 ability;
+
+        if (!IsBattlerAlive(i))
+            continue;
+
+        ability = GetBattlerAbility(i);
+        // Do not record a Magic Guard activation early; the normal per-battler
+        // handler still performs that check in the correct turn order.
+        if (ability == ABILITY_MAGIC_GUARD)
+            continue;
+
+        if ((weather == BATTLE_WEATHER_SANDSTORM && IsSandstormDamageCandidate(i, ability))
+         || (weather == BATTLE_WEATHER_HAIL && IsHailDamageCandidate(i, ability)))
+        {
+            mask |= (1u << i);
+            sWeatherDamageBatchAmounts[i] = GetNonDynamaxMaxHP(i) / 16;
+            if (sWeatherDamageBatchAmounts[i] == 0)
+                sWeatherDamageBatchAmounts[i] = 1;
+            count++;
+        }
+    }
+
+    // One victim retains exactly the old animation and damage sequence.
+    if (count >= 2)
+        sWeatherDamageBatchMask = mask;
+}
+
+static bool32 IsCurrentSimultaneousWeatherDamage(u32 battler)
+{
+    return sWeatherDamageBatchActiveBattler == battler + 1
+        && (sWeatherDamageBatchMask & (1u << battler));
+}
+
+// Only the first battler's effectiveness sound is needed: all impacts are
+// displayed together instead of playing one hit sound per battler afterward.
+bool32 SkipRepeatedSimultaneousWeatherDamageSound(u32 battler)
+{
+    if (!IsCurrentSimultaneousWeatherDamage(battler))
+        return FALSE;
+
+    if (sWeatherDamageBatchSoundPlayed)
+        return TRUE;
+    sWeatherDamageBatchSoundPlayed = TRUE;
+    return FALSE;
+}
+
+bool32 TryEmitSimultaneousWeatherHits(u32 battler)
+{
+    u32 i;
+
+    if (!IsCurrentSimultaneousWeatherDamage(battler))
+        return FALSE;
+
+    if (!sWeatherDamageBatchHitsStarted)
+    {
+        for (i = 0; i < gBattlersCount; i++)
+        {
+            if (!(sWeatherDamageBatchMask & (1u << i)))
+                continue;
+
+            // The hit-animation controller uses this damage to start its
+            // nonblocking blink, allowing the HP bar to run concurrently.
+            gBattleStruct->moveDamage[i] = sWeatherDamageBatchAmounts[i];
+            BtlController_EmitHitAnimation(i, B_COMM_TO_CONTROLLER);
+            MarkBattlerForControllerExec(i);
+        }
+        sWeatherDamageBatchHitsStarted = TRUE;
+    }
+    return TRUE;
+}
+
+bool32 TryEmitSimultaneousWeatherHpBars(u32 battler)
+{
+    u32 i;
+
+    if (!IsCurrentSimultaneousWeatherDamage(battler))
+        return FALSE;
+
+    if (!sWeatherDamageBatchBarsStarted)
+    {
+        for (i = 0; i < gBattlersCount; i++)
+        {
+            if (!(sWeatherDamageBatchMask & (1u << i)))
+                continue;
+
+            BtlController_EmitHealthBarUpdate(i, B_COMM_TO_CONTROLLER,
+                                              min(sWeatherDamageBatchAmounts[i], 10000));
+            MarkBattlerForControllerExec(i);
+
+            if (IsOnPlayerSide(i))
+                gBattleResults.playerMonWasDamaged = TRUE;
+        }
+        sWeatherDamageBatchBarsStarted = TRUE;
+    }
+    return TRUE;
+}
+
+void FinishSimultaneousWeatherDamageForBattler(u32 battler)
+{
+    if (IsCurrentSimultaneousWeatherDamage(battler))
+        sWeatherDamageBatchActiveBattler = 0;
+}
+
 static bool32 HandleEndTurnWeather(u32 battler)
 {
+    // New turn: discard the previous weather damage visual group.
+    sWeatherDamageBatchMask = 0;
+    sWeatherDamageBatchActiveBattler = 0;
+    sWeatherDamageBatchPrepared = FALSE;
+    sWeatherDamageBatchHitsStarted = FALSE;
+    sWeatherDamageBatchBarsStarted = FALSE;
+    sWeatherDamageBatchSoundPlayed = FALSE;
+
     gBattleStruct->endTurnEventsCounter++;
     return EndOrContinueWeather();
 }
@@ -237,18 +399,15 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
         }
         break;
     case BATTLE_WEATHER_SANDSTORM:
-        if (ability != ABILITY_SAND_VEIL
-         && ability != ABILITY_SAND_FORCE
-         && ability != ABILITY_SAND_RUSH
-         && ability != ABILITY_OVERCOAT
-         && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
-         && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-         && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
+        if (IsSandstormDamageCandidate(battler, ability)
          && !IsBattlerProtectedByMagicGuard(battler, ability))
         {
+            PrepareSimultaneousWeatherDamage(currBattleWeather);
             gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
             if (gBattleStruct->moveDamage[battler] == 0)
                 gBattleStruct->moveDamage[battler] = 1;
+            if (sWeatherDamageBatchMask & (1u << battler))
+                sWeatherDamageBatchActiveBattler = battler + 1;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SANDSTORM;
             BattleScriptExecute(BattleScript_DamagingWeather);
             effect = TRUE;
@@ -263,16 +422,15 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
         }
         else if (currBattleWeather == BATTLE_WEATHER_HAIL)
         {
-            if (ability != ABILITY_SNOW_CLOAK
-             && ability != ABILITY_OVERCOAT
-             && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
-             && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-             && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
+            if (IsHailDamageCandidate(battler, ability)
              && !IsBattlerProtectedByMagicGuard(battler, ability))
             {
+                PrepareSimultaneousWeatherDamage(currBattleWeather);
                 gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
                 if (gBattleStruct->moveDamage[battler] == 0)
                     gBattleStruct->moveDamage[battler] = 1;
+                if (sWeatherDamageBatchMask & (1u << battler))
+                    sWeatherDamageBatchActiveBattler = battler + 1;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_HAIL;
                 BattleScriptExecute(BattleScript_DamagingWeather);
                 effect = TRUE;

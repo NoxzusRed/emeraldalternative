@@ -2696,6 +2696,12 @@ static void Cmd_healthbarupdate(void)
     if (gBattleControllerExecFlags)
         return;
 
+    if (TryEmitSimultaneousWeatherHpBars(battler))
+    {
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
+
 	// Esperar a que el Pokemon termine
 	// de comer la berry antes de curarse.
 	if (sParallelBerryHealBattler == battler + 1
@@ -2758,6 +2764,10 @@ static void Cmd_datahpupdate(void)
         return;
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
+
+    // The batched hit and HP bars are already running or finished.  This
+    // battler's normal data update/faint/berry sequence can now proceed.
+    FinishSimultaneousWeatherDamageForBattler(battler);
 
     if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
     {
@@ -2914,6 +2924,12 @@ static void Cmd_effectivenesssound(void)
 
     if (gBattleControllerExecFlags)
         return;
+
+    if (SkipRepeatedSimultaneousWeatherDamageSound(gBattlerAttacker))
+    {
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
 
     u32 moveResultFlags = gBattleStruct->moveResultFlags[gBattlerTarget];
 
@@ -9134,6 +9150,12 @@ static void Cmd_yesnoboxstoplearningmove(void)
 static void Cmd_hitanimation(void)
 {
     CMD_ARGS(u8 battler);
+
+    if (TryEmitSimultaneousWeatherHits(gBattlerAttacker))
+    {
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
 
     if (!IsDoubleSpreadMove())
     {

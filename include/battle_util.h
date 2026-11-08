@@ -385,4 +385,10 @@ bool32 HadMoreThanHalfHpNowDoesnt(u32 battler);
 void UpdateStallMons(void);
 bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId);
 
+// Parallel Sandstorm/Hail hit visuals; actual HP and faint handling remain sequential.
+bool32 SkipRepeatedSimultaneousWeatherDamageSound(u32 battler);
+bool32 TryEmitSimultaneousWeatherHits(u32 battler);
+bool32 TryEmitSimultaneousWeatherHpBars(u32 battler);
+void FinishSimultaneousWeatherDamageForBattler(u32 battler);
+
 #endif // GUARD_BATTLE_UTIL_H
