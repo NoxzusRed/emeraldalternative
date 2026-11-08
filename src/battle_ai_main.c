@@ -121,6 +121,15 @@ static void LimitAiConsecutiveStatBoosts(u32 battler)
     }
 }
 
+// Spit Up has no effect without an earlier Stockpile.
+static bool32 IsAiSpitUpWithoutStockpile(u32 battler, u32 move)
+{
+    return move != MOVE_NONE
+        && move != MOVE_UNAVAILABLE
+        && GetMoveEffect(move) == EFFECT_SPIT_UP
+        && gDisableStructs[battler].stockpileCounter == 0;
+}
+
 static u32 ChooseMoveOrAction_Singles(u32 battler);
 static u32 ChooseMoveOrAction_Doubles(u32 battler);
 static inline void BattleAI_DoAIProcessing(struct AiThinkingStruct *aiThink, u32 battlerAtk, u32 battlerDef);
@@ -383,6 +392,10 @@ void BattleAI_SetupAIData(u8 defaultScoreMoves, u32 battler)
             SET_SCORE(battler, moveIndex, 0);
 
         defaultScoreMoves >>= 1;
+
+        // Discard a failing Spit Up regardless of the AI skill flags.
+        if (IsAiSpitUpWithoutStockpile(battler, gBattleMons[battler].moves[moveIndex]))
+            SET_SCORE(battler, moveIndex, 0);
     }
 
     gBattlerTarget = SetRandomTarget(battler);
@@ -404,6 +417,9 @@ void BattleAI_SetupAIData(u8 defaultScoreMoves, u32 battler)
                 SET_SCORE(opposingBattler, moveIndex, 0);
 
             defaultScoreMovesTarget >>= 1;
+
+            if (IsAiSpitUpWithoutStockpile(opposingBattler, gBattleMons[opposingBattler].moves[moveIndex]))
+                SET_SCORE(opposingBattler, moveIndex, 0);
         }
     }
 }
@@ -488,6 +504,50 @@ void ComputeBattlerDecisions(u32 battler)
     }
 }
 
+// Avoid a failed Spit Up even if all AI scores tie at zero or a
+// custom AI score gives it priority. Keep forced-move behavior intact.
+static u32 AvoidAiFailedSpitUp(u32 battler, u32 chosenMoveIndex)
+{
+    u32 i, move, target, bestCount = 0;
+    u32 bestIndices[MAX_MON_MOVES];
+    s32 bestScore = 0;
+
+    if (chosenMoveIndex >= MAX_MON_MOVES
+     || !IsAiSpitUpWithoutStockpile(battler, gBattleMons[battler].moves[chosenMoveIndex]))
+        return chosenMoveIndex;
+
+    target = IsDoubleBattle()
+           ? gAiBattleData->chosenTarget[battler]
+           : GetOppositeBattler(battler);
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        s32 score;
+
+        move = gBattleMons[battler].moves[i];
+        if (IsMoveUnusable(i, move, gAiLogicData->moveLimitations[battler])
+         || IsAiSpitUpWithoutStockpile(battler, move)
+         || (IsDoubleBattle() && !CanTargetBattler(battler, target, move)))
+            continue;
+
+        score = gAiBattleData->finalScore[battler][target][i];
+        if (bestCount == 0 || score > bestScore)
+        {
+            bestScore = score;
+            bestIndices[0] = i;
+            bestCount = 1;
+        }
+        else if (score == bestScore)
+        {
+            bestIndices[bestCount++] = i;
+        }
+    }
+
+    // Encore and other locks can leave Spit Up as the only usable move.
+    if (bestCount == 0)
+        return chosenMoveIndex;
+    return bestIndices[Random() % bestCount];
+}
+
 u32 BattleAI_ChooseMoveIndex(u32 battler)
 {
     u32 chosenMoveIndex;
@@ -496,6 +556,8 @@ u32 BattleAI_ChooseMoveIndex(u32 battler)
         chosenMoveIndex = ChooseMoveOrAction_Singles(battler);
     else
         chosenMoveIndex = ChooseMoveOrAction_Doubles(battler);
+
+    chosenMoveIndex = AvoidAiFailedSpitUp(battler, chosenMoveIndex);
 
     // Clear protect structures, some flags may be set during AI calcs
     // e.g. pranksterElevated from GetBattleMovePriority
