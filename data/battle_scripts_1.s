@@ -5643,8 +5643,7 @@ BattleScript_WeatherFaded::
 	end2
 
 BattleScript_DamagingWeather::
-	printfromtable gSandStormHailDmgStringIds
-	waitmessage B_WAIT_TIME_SHORTEST
+	@ Sandstorm and Hail damage is shown visually, without per-Pokemon text.
 	effectivenesssound
 	hitanimation BS_ATTACKER
 	goto BattleScript_DoTurnDmg
