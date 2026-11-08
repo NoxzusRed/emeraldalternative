@@ -2597,6 +2597,18 @@ static void PrintTMHMMoveData(u16 itemId)
     u16 move;
     const u8 *text;
 
+    // Type icons share a 16-color palette: the Fairy highlight borrows
+    // Grass's green slot only while Fairy is shown.
+    u16 highlightColor = RGB(15, 25, 10); // Original Grass green (#7BCD52)
+
+    if (itemId != ITEM_NONE)
+    {
+        move = ItemIdToBattleMoveId(itemId);
+        if (GetMoveType(move) == TYPE_FAIRY)
+            highlightColor = RGB(31, 18, 22); // Light pink (#FF94B5)
+    }
+    LoadPalette(&highlightColor, BG_PLTT_ID(12) + 5, sizeof(highlightColor));
+
     FillWindowPixelBuffer(WIN_TMHM_INFO, PIXEL_FILL(0));
     if (itemId == ITEM_NONE)
     {
@@ -2606,7 +2618,6 @@ static void PrintTMHMMoveData(u16 itemId)
     }
     else
     {
-        move = ItemIdToBattleMoveId(itemId);
         BlitMenuInfoIcon(WIN_TMHM_INFO, GetMoveType(move) + 1, 0, 0);
 
         // Print TMHM power
