@@ -4694,7 +4694,7 @@
     {
       "id": "LAYOUT_DEWFORD_CAVE",
       "name": "DewfordCave_Layout",
-      "width": 20,
+      "width": 31,
       "height": 19,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",

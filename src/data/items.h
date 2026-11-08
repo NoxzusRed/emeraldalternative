@@ -11912,7 +11912,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_POWER_GEM,
     },
 
-    [ITEM_TM_GUST] =
+    [ITEM_TM98] =
     {
         .name = _("TM98"),
         .price = 3000,
