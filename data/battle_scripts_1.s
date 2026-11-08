@@ -2854,7 +2854,12 @@ BattleScript_PrintMoveMissed::
 	attackstring
 	ppreduce
 BattleScript_MoveMissedPause::
+	@ Si Protect bloqueo el movimiento, dejar visible el nombre antes del resultado.
+	jumpifbyte CMP_EQUAL, cMISS_TYPE, B_MSG_PROTECTED, BattleScript_ProtectBlockedMoveDelay
 	pause B_WAIT_TIME_SHORTEST
+	goto BattleScript_MoveMissed
+BattleScript_ProtectBlockedMoveDelay:
+	pause 60 @ 1 segundo para leer el movimiento que fue bloqueado
 BattleScript_MoveMissed::
 	effectivenesssound
 	resultmessage
