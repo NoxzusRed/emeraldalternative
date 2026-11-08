@@ -838,9 +838,12 @@ static void Cmd_end(void)
 {
     s32 i;
     bool32 continuousAnim = FALSE;
+    // The shared short Sandstorm effect ends once the visuals finish.
+    // Let its sound continue naturally while the battle resumes.
+    bool32 waitForSound = (sBattleAnimScriptPtr != gBattleAnimGeneral_SandstormShortEnd);
 
-    // Keep waiting as long as there are animations to be done.
-    if (gAnimVisualTaskCount != 0 || gAnimSoundTaskCount != 0
+    // Wait for the visual tasks, and for audio only in other animations.
+    if (gAnimVisualTaskCount != 0 || (waitForSound && gAnimSoundTaskCount != 0)
      || sMonAnimTaskIdArray[0] != TASK_NONE || sMonAnimTaskIdArray[1] != TASK_NONE)
     {
         sSoundAnimFramesToWait = 0;
@@ -848,8 +851,8 @@ static void Cmd_end(void)
         return;
     }
 
-    // Finish the sound effects.
-    if (IsSEPlaying())
+    // Other animations still wait for their sound effects.
+    if (waitForSound && IsSEPlaying())
     {
         if (++sSoundAnimFramesToWait <= 90) // Wait 90 frames, then halt the sound effect.
         {
@@ -863,7 +866,7 @@ static void Cmd_end(void)
         }
     }
 
-    // The SE has halted, so set the SE Frame Counter to 0 and continue.
+    // Reset the sound wait counter; Sandstorm's SE may still be playing.
     sSoundAnimFramesToWait = 0;
 
     for (i = 0; i < ANIM_SPRITE_INDEX_COUNT; i++)

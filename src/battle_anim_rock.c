@@ -515,7 +515,7 @@ static void AnimParticleInVortex_Step(struct Sprite *sprite)
 #define tBlend          data[11]
 #define tFullAlphaTimer data[11] // not a typo; this data field is used for multiple purposes
 #define tState          data[12]
-#define tFullAlphaDuration data[13] // weather-turn variant uses a shorter hold
+#define tFullAlphaDuration data[13] // Short Sandstorm variant uses a shorter hold
 
 void AnimTask_LoadSandstormBackground(u8 taskId)
 {
@@ -549,8 +549,7 @@ void AnimTask_LoadSandstormBackground(u8 taskId)
     gTasks[taskId].func = AnimTask_LoadSandstormBackground_Step;
 }
 
-// Keep the move and ability activation animations unchanged.
-// Shorten only the end-of-turn Sandstorm weather animation.
+// Short Sandstorm background shared by the move, weather abilities, and turn updates.
 void AnimTask_LoadSandstormBackgroundShort(u8 taskId)
 {
     AnimTask_LoadSandstormBackground(taskId);

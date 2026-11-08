@@ -24164,24 +24164,7 @@ FlamethrowerCreateFlames:
 
 @ Also used by Sandstorm weather
 gBattleAnimMove_Sandstorm::
-	loadspritegfx ANIM_TAG_FLYING_DIRT
-	playsewithpan SE_M_SANDSTORM, 0
-	createvisualtask AnimTask_LoadSandstormBackground, 5, FALSE
-	delay 16
-	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 10, 2304, 96, 0
-	delay 10
-	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 90, 2048, 96, 0
-	delay 10
-	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 50, 2560, 96, 0
-	delay 10
-	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 20, 2304, 96, 0
-	delay 10
-	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 70, 1984, 96, 0
-	delay 10
-	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 0, 2816, 96, 0
-	delay 10
-	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 60, 2560, 96, 0
-	end
+	goto gBattleAnimGeneral_SandstormShort
 
 gBattleAnimMove_Whirlpool::
 	loadspritegfx ANIM_TAG_WATER_ORB
@@ -28467,10 +28450,10 @@ gBattleAnimGeneral_Sun::
 	goto gBattleAnimMove_SunnyDay
 
 gBattleAnimGeneral_Sandstorm::
-	goto gBattleAnimMove_Sandstorm
+	goto gBattleAnimGeneral_SandstormShort
 
-@ Approximate the short Rain weather-turn animation duration (~85 frames).
-@ Keep the full Sandstorm move/ability animation above unchanged.
+@ Shared short Sandstorm visual for the move, weather abilities, and turn updates.
+@ Its visible duration matches the shorter Rain weather animation (~85 frames).
 gBattleAnimGeneral_SandstormShort::
 	loadspritegfx ANIM_TAG_FLYING_DIRT
 	playsewithpan SE_M_SANDSTORM, 0
@@ -28485,6 +28468,7 @@ gBattleAnimGeneral_SandstormShort::
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 20, 2560, 96, 0
 	delay 6
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 70, 2304, 96, 0
+gBattleAnimGeneral_SandstormShortEnd::
 	end
 
 gBattleAnimGeneral_Hail::
