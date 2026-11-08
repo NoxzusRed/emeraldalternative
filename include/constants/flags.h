@@ -67,7 +67,7 @@
 #define FLAG_HIDE_LITTLEROOT_TREE_2   		0x36 //
 #define FLAG_ROUTE115_SHORTCUT_OPEN   		0x37 //
 #define FLAG_HIDE_ROUTE115_GREEN_NPC    	0x38 //
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_ROUTE123_SHORTCUT_OPEN  0x39 // Persistent Route 123 shortcut to Mt. Pyre
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag

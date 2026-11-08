@@ -1,10 +1,72 @@
 Route123_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route123_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route123_OnTransition
 	.byte 0
 
+Route123_OnLoad:
+	call_if_set FLAG_ROUTE123_SHORTCUT_OPEN, Route123_EventScript_ApplyShortcutTiles
+	end
+
 Route123_OnTransition:
 	special SetRoute123Weather
+	setflag FLAG_TEMP_17
+	goto_if_unset FLAG_VISITED_LILYCOVE_CITY, Route123_OnTransition_End
+	goto_if_set FLAG_ROUTE123_SHORTCUT_OPEN, Route123_OnTransition_End
+	clearflag FLAG_TEMP_17
+
+Route123_OnTransition_End:
 	end
+
+Route123_EventScript_RedTrainerShortcut::
+	lock
+	faceplayer
+	msgbox Route123_Text_RedTrainerShortcut, MSGBOX_DEFAULT
+	closemessage
+	@ Fade without warping: keeps Route 123's current rain/weather running.
+	fadescreenswapbuffers FADE_TO_BLACK
+	setflag FLAG_ROUTE123_SHORTCUT_OPEN
+	setflag FLAG_TEMP_17
+	call Route123_EventScript_ApplyShortcutTiles
+	@ Local IDs in Route123/map.json: 45 = Red Trainer, 46 = Krookodile.
+	removeobject 46
+	removeobject 45
+	special DrawWholeMapView
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+Route123_EventScript_Krookodile::
+	playmoncry SPECIES_KROOKODILE, CRY_MODE_NORMAL
+	msgbox Route123_Text_Krookodile, MSGBOX_DEFAULT
+	release
+	end
+
+Route123_EventScript_ApplyShortcutTiles::
+	@ Changes persist through the completed-event flag and ON_LOAD.
+	@ Opening 1: vertical cliff near the west side.
+	setmetatile 42, 13, 0x106, TRUE
+	setmetatile 42, 14, 0x001, FALSE
+	setmetatile 42, 15, 0x001, FALSE
+	setmetatile 42, 16, 0x001, FALSE
+	setmetatile 42, 17, 0x0FE, TRUE
+	@ Opening 2: ledge cap and path.
+	setmetatile 55, 14, 0x0D6, TRUE
+	setmetatile 56, 14, 0x001, FALSE
+	setmetatile 56, 15, 0x001, FALSE
+	setmetatile 56, 16, 0x001, FALSE
+	setmetatile 56, 17, 0x001, FALSE
+	@ Opening 3: central cliff.
+	setmetatile 71, 15, 0x001, FALSE
+	setmetatile 71, 16, 0x001, FALSE
+	setmetatile 71, 17, 0x001, FALSE
+	setmetatile 71, 18, 0x001, FALSE
+	@ Opening 4: eastern cliff.
+	setmetatile 81, 13, 0x001, FALSE
+	setmetatile 81, 14, 0x001, FALSE
+	setmetatile 81, 15, 0x001, FALSE
+	setmetatile 81, 16, 0x001, FALSE
+	setmetatile 81, 17, 0x001, FALSE
+	return
 
 Route123_EventScript_GigaDrainGirl::
 	lock
@@ -195,4 +257,13 @@ Route123_Text_RouteSignMtPyre:
 
 Route123_Text_BerryMastersHouse:
 	.string "BERRY MASTER'S HOUSE$"
+
+
+Route123_Text_RedTrainerShortcut:
+	.string "We'll clear a path through\n"
+	.string "the ledges toward MT. PYRE!\p"
+	.string "Stand back for a moment!$"
+
+Route123_Text_Krookodile:
+	.string "Krook!$"
 
