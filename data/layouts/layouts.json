@@ -4780,6 +4780,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/EverGrandeCity_Mart/border.bin",
       "blockdata_filepath": "data/layouts/EverGrandeCity_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE123_NORTH",
+      "name": "Route123_North_Layout",
+      "width": 12,
+      "height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/Route123_North/border.bin",
+      "blockdata_filepath": "data/layouts/Route123_North/map.bin"
     }
   ]
 }
