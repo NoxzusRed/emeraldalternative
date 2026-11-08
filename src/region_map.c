@@ -1950,12 +1950,22 @@ static void TryCreateRedOutlineFlyDestIcons(void)
     }
 }
 
-// Keep the selected Fly destination visible. The cursor already highlights
-// the current map section; hiding the pink marker exposes the red/orange map
-// tile underneath and looks like the city's icon is changing or corrupted.
+// Flickers fly destination icon color (by hiding the fly icon sprite) if the cursor is currently on it
 static void SpriteCB_FlyDestIcon(struct Sprite *sprite)
 {
-    sprite->invisible = FALSE;
+    if (sFlyMap->regionMap.mapSecId == sprite->sIconMapSec)
+    {
+        if (++sprite->sFlickerTimer > 16)
+        {
+            sprite->sFlickerTimer = 0;
+            sprite->invisible = sprite->invisible ? FALSE : TRUE;
+        }
+    }
+    else
+    {
+        sprite->sFlickerTimer = 16;
+        sprite->invisible = FALSE;
+    }
 }
 
 #undef sIconMapSec
