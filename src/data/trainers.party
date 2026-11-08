@@ -5558,15 +5558,15 @@ EVs: 252 HP / 126 Atk / 126 SpA / 126 Def
 - Dragon Dance
 - Dual Wingbeat
 
-Kingdra
-Adamant Nature
+Garchomp
 Level: 57
+Ability: Sand Veil
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 128 Atk / 128 Spe
-- Smokescreen
-- Dragon Dance
-- Wave Crash
-- Scale Shot
+EVs: 252 HP / 126 SpD / 126 Def / 64 Atk
+- Dig
+- Dragon Claw
+- Crunch
+- Sandstorm
 
 Dragalge
 Level: 57
@@ -11727,9 +11727,12 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-SPECIES_LILLIGANT_HISUI
+Sunflora
 Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Sunny Day
+- Solar Beam
+- Flame Burst
 
 Roselia
 Level: 32

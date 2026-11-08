@@ -1216,7 +1216,7 @@
               {
                 "min_level": 15,
                 "max_level": 17,
-                "species": "SPECIES_HOPPIP"
+                "species": "SPECIES_SUNKERN"
               },
               {
                 "min_level": 18,
@@ -1231,7 +1231,7 @@
               {
                 "min_level": 18,
                 "max_level": 18,
-                "species": "SPECIES_SKIPLOOM"
+                "species": "SPECIES_SUNKERN"
               },
               {
                 "min_level": 16,
