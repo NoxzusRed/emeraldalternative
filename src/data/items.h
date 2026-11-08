@@ -11927,16 +11927,19 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_GUST,
     },
 
-    [ITEM_TM99] =
+    [ITEM_TM_MAGICAL_LEAF] =
     {
         .name = _("TM99"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "A magical leaf\n"
+            "attack that never\n"
+            "misses its target."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_MAGICAL_LEAF,
     },
 
     [ITEM_TM100] =
