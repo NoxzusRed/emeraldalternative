@@ -1113,22 +1113,22 @@
               {
                 "min_level": 15,
                 "max_level": 16,
-                "species": "SPECIES_TEDDIURSA"
+                "species": "SPECIES_MACHOP"
               },
               {
                 "min_level": 15,
                 "max_level": 16,
-                "species": "SPECIES_TEDDIURSA"
+                "species": "SPECIES_MACHOP"
               },
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_TEDDIURSA"
+                "species": "SPECIES_MACHOP"
               },
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_TEDDIURSA"
+                "species": "SPECIES_MACHOP"
               }
             ]
           }
@@ -2799,7 +2799,7 @@
               {
                 "min_level": 21,
                 "max_level": 21,
-                "species": "SPECIES_MACHOP"
+                "species": "SPECIES_GLIGAR"
               },
               {
                 "min_level": 20,
@@ -2814,7 +2814,7 @@
               {
                 "min_level": 20,
                 "max_level": 20,
-                "species": "SPECIES_MACHOP"
+                "species": "SPECIES_GLIGAR"
               },
               {
                 "min_level": 21,
@@ -2824,7 +2824,7 @@
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_MACHOP"
+                "species": "SPECIES_GLIGAR"
               },
               {
                 "min_level": 22,
@@ -3252,9 +3252,9 @@
                 "species": "SPECIES_BLITZLE"
               },
               {
-                "min_level": 25,
+                "min_level": 23,
                 "max_level": 25,
-                "species": "SPECIES_SWABLU"
+                "species": "SPECIES_AXEW"
               },
               {
                 "min_level": 24,
@@ -3263,8 +3263,8 @@
               },
               {
                 "min_level": 23,
-                "max_level": 25,
-                "species": "SPECIES_HOOTHOOT"
+                "max_level": 26,
+                "species": "SPECIES_AXEW"
               },
               {
                 "min_level": 25,
@@ -9802,7 +9802,7 @@
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_GLIGAR"
+                "species": "SPECIES_YANMA"
               },
               {
                 "min_level": 34,
@@ -9812,7 +9812,7 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_GLIGAR"
+                "species": "SPECIES_YANMA"
               },
               {
                 "min_level": 36,
@@ -10055,7 +10055,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 28,
@@ -10065,7 +10065,7 @@
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10085,7 +10085,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10124,7 +10124,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 28,
@@ -10134,7 +10134,7 @@
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10154,7 +10154,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10193,7 +10193,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 28,
@@ -10203,7 +10203,7 @@
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10223,7 +10223,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10262,7 +10262,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 28,
@@ -10272,7 +10272,7 @@
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10292,7 +10292,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10331,7 +10331,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 28,
@@ -10341,7 +10341,7 @@
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10361,7 +10361,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10400,7 +10400,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 28,
@@ -10410,7 +10410,7 @@
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10430,7 +10430,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10469,7 +10469,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 28,
@@ -10479,7 +10479,7 @@
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10499,7 +10499,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10538,7 +10538,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 28,
@@ -10548,7 +10548,7 @@
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -10568,7 +10568,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_MACHOKE"
               },
               {
                 "min_level": 30,
@@ -12660,6 +12660,75 @@
                 "min_level": 25,
                 "max_level": 27,
                 "species": "SPECIES_MASQUERAIN"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_MAGMA_HIDEOUT_STAIRS",
+          "base_label": "gMagmaHideout_Stairs",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 28,
+                "species": "SPECIES_TORKOAL"
+              },
+              {
+                "min_level": 28,
+                "max_level": 28,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_TORKOAL"
+              },
+              {
+                "min_level": 28,
+                "max_level": 28,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 29,
+                "max_level": 29,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_CARKOL"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_CARKOL"
+              },
+              {
+                "min_level": 31,
+                "max_level": 31,
+                "species": "SPECIES_CARKOL"
+              },
+              {
+                "min_level": 32,
+                "max_level": 32,
+                "species": "SPECIES_CARKOL"
+              },
+              {
+                "min_level": 33,
+                "max_level": 33,
+                "species": "SPECIES_CARKOL"
               }
             ]
           }
