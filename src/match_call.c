@@ -1163,6 +1163,14 @@ bool32 TryStartMatchCall(void)
         && MapAllowsMatchCall()
         && SelectMatchCallTrainer())
     {
+        if (gSaveBlock2Ptr->optionsRandomCallsOff)
+        {
+            // Keep rematch requests and other random Match Call effects,
+            // but skip only the unsolicited dialogue and its animations.
+            SelectMatchCallMessage(sMatchCallState.trainerId, gStringVar4);
+            return FALSE;
+        }
+
         StartMatchCall();
         return TRUE;
     }
