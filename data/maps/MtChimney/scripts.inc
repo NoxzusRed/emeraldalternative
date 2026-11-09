@@ -752,7 +752,7 @@ MtChimney_Text_Bushaa:
 MtChimney_Text_LavaCookiesJust200:
 	.string "LAVA COOKIES are MT. CHIMNEY's local\n"
 	.string "specialty.\p"
-	.string "Try a few. It's just 6 for ¥1200.$"
+	.string "Try a few. It's 6 for just ¥1200.$"
 
 MtChimney_Text_ThankYouDear:
 	.string "Thank you, dear!$"
