@@ -1206,8 +1206,29 @@ static void ApplyCleanseTagEncounterRateMod(u32 *encRate)
 
 bool8 TryDoDoubleWildBattle(void)
 {
-    if (GetSafariZoneFlag()
-      || (B_DOUBLE_WILD_REQUIRE_2_MONS == TRUE && GetMonsStateToDoubles() != PLAYER_HAS_TWO_USABLE_MONS))
+    u32 i;
+    u32 usableMons = 0;
+
+    if (GetSafariZoneFlag())
+        return FALSE;
+
+    // Wild encounters must not start a double battle with only one usable
+    // party Pokemon. The overworld 2-vs-1 option is for trainer battles.
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+
+        if (species != SPECIES_NONE
+         && species != SPECIES_EGG
+         && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
+         && GetMonData(&gPlayerParty[i], MON_DATA_HP) > 0)
+        {
+            if (++usableMons >= 2)
+                break;
+        }
+    }
+
+    if (usableMons < 2)
         return FALSE;
     if (FollowerNPCIsBattlePartner() && FNPC_FLAG_PARTNER_WILD_BATTLES != 0
      && (FNPC_FLAG_PARTNER_WILD_BATTLES == FNPC_ALWAYS || FlagGet(FNPC_FLAG_PARTNER_WILD_BATTLES)) && FNPC_NPC_FOLLOWER_WILD_BATTLE_VS_2 == TRUE)
