@@ -5611,12 +5611,12 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_FAMILY_SIGILYPH
     [SPECIES_SIGILYPH] =
     {
-        .baseHP        = 72,
-        .baseAttack    = 58,
-        .baseDefense   = 80,
-        .baseSpeed     = 97,
-        .baseSpAttack  = 103,
-        .baseSpDefense = 80,
+        .baseHP        = 70,
+        .baseAttack    = 50,
+        .baseDefense   = 85,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FLYING),
         .catchRate = 45,
         .expYield = 172,
