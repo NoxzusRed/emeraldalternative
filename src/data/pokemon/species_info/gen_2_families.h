@@ -2233,7 +2233,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sAzurillLevelUpLearnset,
         .teachableLearnset = sAzurillTeachableLearnset,
         .eggMoveLearnset = sAzurillEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MARILL, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MARILL, CONDITIONS({IF_MIN_FRIENDSHIP, 120})}),
     },
 #endif //P_GEN_3_CROSS_EVOS
 

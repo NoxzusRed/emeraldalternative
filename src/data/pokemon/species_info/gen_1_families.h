@@ -5730,7 +5730,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sGolbatLevelUpLearnset,
         .teachableLearnset = sGolbatTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_CROBAT, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_CROBAT, CONDITIONS({IF_MIN_FRIENDSHIP, 220})}),
     },
 
 #if P_GEN_2_CROSS_EVOS
@@ -6415,8 +6415,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseHP        = 70,
         .baseAttack    = 65,
         .baseDefense   = 60,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 90,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 100,
         .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 75 : 90,
         .types = MON_TYPES(TYPE_BUG, TYPE_POISON),
         .catchRate = 75,
