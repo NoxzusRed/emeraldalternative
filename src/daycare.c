@@ -317,13 +317,12 @@ static void ApplyDaycareExperience(struct Pokemon *mon)
         // Add the mon's gained daycare experience level by level until it can't level up anymore.
         if (TryIncrementMonLevel(mon))
         {
-            // Teach the mon new moves it learned while in the daycare.
+            // Learn new moves only if a move slot is empty.
+            // Keep all existing moves unchanged when the move set is full.
             firstMove = TRUE;
             while ((learnedMove = MonTryLearningNewMove(mon, firstMove)) != 0)
             {
                 firstMove = FALSE;
-                if (learnedMove == MON_HAS_MAX_MOVES)
-                    DeleteFirstMoveAndGiveMoveToMon(mon, gMoveToLearn);
             }
         }
         else
