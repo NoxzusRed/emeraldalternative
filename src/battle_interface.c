@@ -2422,6 +2422,9 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
 }
 
 #define ABILITY_POP_UP_TAG 0xD720
+// Each battler's popup needs its own OBJ tiles: ability names are drawn
+// directly into the sheet, so sharing one sheet corrupts simultaneous popups.
+#define ABILITY_POP_UP_GFX_TAG_BASE 0xD730
 
 // for sprite
 #define tOriginalX      data[0]
@@ -2432,6 +2435,7 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
 #define tIsMain         data[5]
 
 // for task
+#define tAbilityPopUpBattler data[0]
 #define tSpriteId1      data[6]
 #define tSpriteId2      data[7]
 
@@ -2749,6 +2753,9 @@ void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
 {
     const s16 (*coords)[2];
     u8 spriteId1, spriteId2, battlerPosition, taskId;
+    u16 gfxTag = ABILITY_POP_UP_GFX_TAG_BASE + battler;
+    struct SpriteSheet gfxSheet = sSpriteSheet_AbilityPopUp;
+    struct SpriteTemplate popupTemplate = sSpriteTemplate_AbilityPopUp;
 
     if (B_ABILITY_POP_UP == FALSE)
         return;
@@ -2764,10 +2771,13 @@ void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
     }
 
     if (!IsAnyAbilityPopUpActive())
-    {
-        LoadSpriteSheet(&sSpriteSheet_AbilityPopUp);
         LoadSpritePalette(&sSpritePalette_AbilityPopUp);
-    }
+
+    // Make a separate copy of the popup tiles for each battler.
+    // Both sprites in this popup still share the same dedicated sheet.
+    gfxSheet.tag = gfxTag;
+    LoadSpriteSheet(&gfxSheet);
+    popupTemplate.tileTag = gfxTag;
 
     gBattleStruct->battlerState[battler].activeAbilityPopUps = TRUE;
     battlerPosition = GetBattlerPosition(battler);
@@ -2779,10 +2789,10 @@ void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
 
     if ((battlerPosition & BIT_SIDE) == B_SIDE_PLAYER)
     {
-        spriteId1 = CreateSprite(&sSpriteTemplate_AbilityPopUp,
+        spriteId1 = CreateSprite(&popupTemplate,
                                 coords[battlerPosition][0] - ABILITY_POP_UP_POS_X_SLIDE,
                                 coords[battlerPosition][1], 0);
-        spriteId2 = CreateSprite(&sSpriteTemplate_AbilityPopUp,
+        spriteId2 = CreateSprite(&popupTemplate,
                                 coords[battlerPosition][0] - ABILITY_POP_UP_POS_X_SLIDE + ABILITY_POP_UP_POS_X_DIFF,
                                 coords[battlerPosition][1], 1); //Appears below
 
@@ -2791,10 +2801,10 @@ void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
     }
     else
     {
-        spriteId1 = CreateSprite(&sSpriteTemplate_AbilityPopUp,
+        spriteId1 = CreateSprite(&popupTemplate,
                                 coords[battlerPosition][0] + ABILITY_POP_UP_POS_X_SLIDE,
                                 coords[battlerPosition][1], 0);
-        spriteId2 = CreateSprite(&sSpriteTemplate_AbilityPopUp,
+        spriteId2 = CreateSprite(&popupTemplate,
                                 coords[battlerPosition][0] + ABILITY_POP_UP_POS_X_SLIDE + ABILITY_POP_UP_POS_X_DIFF,
                                 coords[battlerPosition][1], 1); //Appears below
 
@@ -2810,6 +2820,7 @@ void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
     gBattleStruct->abilityPopUpSpriteIds[battler][1] = spriteId2;
 
     taskId = CreateTask(Task_FreeAbilityPopUpGfx, 5);
+    gTasks[taskId].tAbilityPopUpBattler = battler;
     gTasks[taskId].tSpriteId1 = spriteId1;
     gTasks[taskId].tSpriteId2 = spriteId2;
 
@@ -2885,11 +2896,13 @@ void DestroyAbilityPopUp(u8 battler)
 static void Task_FreeAbilityPopUpGfx(u8 taskId)
 {
     if (!gSprites[gTasks[taskId].tSpriteId1].inUse
-        && !gSprites[gTasks[taskId].tSpriteId2].inUse
-        && !IsAnyAbilityPopUpActive())
+        && !gSprites[gTasks[taskId].tSpriteId2].inUse)
     {
-        FreeSpriteTilesByTag(ABILITY_POP_UP_TAG);
-        FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
+        // Free only this popup's tiles; other battlers may still have
+        // different ability names visible at the same time.
+        FreeSpriteTilesByTag(ABILITY_POP_UP_GFX_TAG_BASE + gTasks[taskId].tAbilityPopUpBattler);
+        if (!IsAnyAbilityPopUpActive())
+            FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
         DestroyTask(taskId);
     }
 }
