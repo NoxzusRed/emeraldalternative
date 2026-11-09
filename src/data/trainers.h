@@ -2043,7 +2043,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 897
-            .species = SPECIES_ROSELIA,
+            .species = SPECIES_SUNFLORA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 899
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -29320,7 +29320,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11755
-            .species = SPECIES_JUMPLUFF,
+            .species = SPECIES_SUNFLORA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11757
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -30957,7 +30957,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HOUNDOUR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12399
-            .ev = TRAINER_PARTY_EVS(126, 68, 0, 0, 0, 0),
+            .ev = TRAINER_PARTY_EVS(126, 68, 68, 0, 0, 68),
 #line 12398
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 12397
@@ -30977,9 +30977,9 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MIGHTYENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12408
-            .ev = TRAINER_PARTY_EVS(126, 0, 0, 0, 0, 0),
+            .ev = TRAINER_PARTY_EVS(126, 68, 68, 0, 0, 68),
 #line 12407
-            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+            .iv = TRAINER_PARTY_IVS(12, 24, 12, 12, 12, 12),
 #line 12406
             .lvl = 24,
             .nature = NATURE_HARDY,
@@ -30997,9 +30997,9 @@ F_TRAINER_FEMALE |
             .species = SPECIES_NUMEL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12417
-            .ev = TRAINER_PARTY_EVS(126, 0, 0, 0, 0, 0),
+            .ev = TRAINER_PARTY_EVS(126, 68, 0, 0, 126, 0),
 #line 12416
-            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+            .iv = TRAINER_PARTY_IVS(12, 24, 12, 12, 12, 12),
 #line 12415
             .lvl = 25,
             .nature = NATURE_HARDY,
@@ -31016,9 +31016,9 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GOLBAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12425
-            .ev = TRAINER_PARTY_EVS(126, 0, 0, 0, 0, 0),
+            .ev = TRAINER_PARTY_EVS(126, 68, 68, 0, 0, 68),
 #line 12424
-            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+            .iv = TRAINER_PARTY_IVS(12, 24, 12, 12, 12, 12),
 #line 12423
             .lvl = 25,
             .nature = NATURE_HARDY,
@@ -31301,7 +31301,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MIGHTYENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12541
-            .ev = TRAINER_PARTY_EVS(252, 0, 64, 126, 0, 64),
+            .ev = TRAINER_PARTY_EVS(252, 0, 126, 126, 0, 126),
 #line 12540
             .iv = TRAINER_PARTY_IVS(30, 18, 30, 18, 18, 30),
 #line 12539
@@ -31321,7 +31321,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GOLBAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12550
-            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 0),
+            .ev = TRAINER_PARTY_EVS(252, 0, 68, 0, 0, 68),
 #line 12549
             .iv = TRAINER_PARTY_IVS(30, 18, 18, 18, 18, 18),
 #line 12548
@@ -31341,7 +31341,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_HOUNDOOM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12559
-            .ev = TRAINER_PARTY_EVS(252, 126, 0, 0, 0, 0),
+            .ev = TRAINER_PARTY_EVS(252, 126, 68, 0, 0, 68),
 #line 12558
             .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
 #line 12557
@@ -31363,7 +31363,7 @@ F_TRAINER_FEMALE |
 #line 12568
             .ev = TRAINER_PARTY_EVS(252, 0, 180, 0, 0, 180),
 #line 12567
-            .iv = TRAINER_PARTY_IVS(30, 18, 30, 18, 18, 30),
+            .iv = TRAINER_PARTY_IVS(30, 24, 30, 24, 24, 30),
 #line 12566
             .lvl = 28,
             .nature = NATURE_HARDY,
@@ -49038,7 +49038,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CARKOL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19767
-            .ev = TRAINER_PARTY_EVS(252, 0, 68, 0, 0, 68),
+            .ev = TRAINER_PARTY_EVS(252, 68, 68, 0, 0, 68),
 #line 19766
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 19765
@@ -49057,9 +49057,9 @@ F_TRAINER_FEMALE |
             .species = SPECIES_QUILAVA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19775
-            .ev = TRAINER_PARTY_EVS(252, 126, 126, 0, 0, 126),
+            .ev = TRAINER_PARTY_EVS(252, 168, 126, 0, 0, 126),
 #line 19774
-            .iv = TRAINER_PARTY_IVS(12, 24, 12, 12, 12, 12),
+            .iv = TRAINER_PARTY_IVS(12, 31, 12, 12, 12, 12),
 #line 19773
             .lvl = 25,
             .nature = NATURE_HARDY,
@@ -49068,23 +49068,24 @@ F_TRAINER_FEMALE |
 #line 19776
                 MOVE_FLAME_WHEEL,
                 MOVE_ROLLOUT,
+                MOVE_BULLDOZE,
                 MOVE_SMOKESCREEN,
             },
             },
             {
-#line 19780
+#line 19781
             .species = SPECIES_HOUNDOUR,
             .gender = TRAINER_MON_RANDOM_GENDER,
+#line 19784
+            .ev = TRAINER_PARTY_EVS(252, 126, 68, 68, 0, 68),
 #line 19783
-            .ev = TRAINER_PARTY_EVS(252, 126, 0, 68, 0, 0),
-#line 19782
             .iv = TRAINER_PARTY_IVS(12, 24, 12, 12, 12, 12),
-#line 19781
+#line 19782
             .lvl = 25,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-#line 19784
+#line 19785
                 MOVE_BITE,
                 MOVE_INCINERATE,
                 MOVE_ROAR,

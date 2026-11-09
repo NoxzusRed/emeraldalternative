@@ -894,7 +894,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Roselia
+Sunflora
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -11752,7 +11752,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-Jumpluff
+Sunflora
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12396,7 +12396,7 @@ AI: Basic Trainer
 Houndour
 Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP / 68 Atk
+EVs: 126 HP / 68 Atk / 68 Def / 68 SpD
 - Bite
 - Fire Fang
 - Poison Fang
@@ -12404,8 +12404,8 @@ EVs: 126 HP / 68 Atk
 
 Mightyena
 Level: 24
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 68 Def / 68 SpD / 68 Atk
 - Bite
 - Fire Fang
 - Poison Fang
@@ -12413,16 +12413,16 @@ EVs: 126 HP
 
 Numel
 Level: 25
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 68 Atk / 126 SpA
 - Magnitude
 - Incinerate
 - Curse
 
 Golbat
 Level: 25
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 68 Atk / 68 Def / 68 SpD
 - Wing Attack
 - Poison Fang
 - Confuse Ray
@@ -12538,7 +12538,7 @@ AI: Basic Trainer
 Mightyena
 Level: 26
 IVs: 30 HP / 18 Atk / 30 Def / 18 SpA / 30 SpD / 18 Spe
-EVs: 252 HP / 126 Spe / 64 Def / 64 SpD
+EVs: 252 HP / 126 Spe / 126 Def / 126 SpD
 - Thief
 - Fire Fang
 - Thunder Fang
@@ -12547,7 +12547,7 @@ EVs: 252 HP / 126 Spe / 64 Def / 64 SpD
 Golbat
 Level: 26
 IVs: 30 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP
+EVs: 252 HP / 68 Def / 68 SpD
 - Poison Fang
 - Wing Attack
 - Whirlwind
@@ -12556,7 +12556,7 @@ EVs: 252 HP
 Houndoom
 Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Atk
+EVs: 252 HP / 126 Atk / 68 Def / 68 SpD
 - Crunch
 - Fire Fang
 - Flame Charge
@@ -12564,7 +12564,7 @@ EVs: 252 HP / 126 Atk
 
 Camerupt
 Level: 28
-IVs: 30 HP / 18 Atk / 30 Def / 18 SpA / 30 SpD / 18 Spe
+IVs: 30 HP / 24 Atk / 30 Def / 24 SpA / 30 SpD / 24 Spe
 EVs: 252 HP / 180 Def / 180 SpD
 - Rock Slide
 - Incinerate
@@ -19764,23 +19764,24 @@ AI: Check Bad Move
 Carkol
 Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 68 Def / 68 SpD
+EVs: 252 HP / 68 Def / 68 SpD / 68 Atk
 - Smack Down
 - Flame Charge
 - Smokescreen
 
 Quilava
 Level: 25
-IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 126 Atk / 126 Def / 126 SpD
+IVs: 12 HP / 31 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 168 Atk / 126 Def / 126 SpD
 - Flame Wheel
 - Rollout
+- Bulldoze
 - Smokescreen
 
 Houndour
 Level: 25
 IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 126 Atk / 68 Spe
+EVs: 252 HP / 126 Atk / 68 Spe / 68 Def / 68 SpD
 - Bite
 - Incinerate
 - Roar
