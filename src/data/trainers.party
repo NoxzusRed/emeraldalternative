@@ -684,9 +684,10 @@ EVs: 252 HP / 126 SpA
 
 Mightyena
 Modest Nature
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 126 Spe / 126 SpA
+Level: 39
+Ability: Intimidate
+IVs: 31 HP / 12 Atk / 24 Def / 31 SpA / 24 SpD / 31 Spe
+EVs: 252 HP / 126 Spe / 252 SpA
 - Dark Pulse
 - Shadow Ball
 - Hyper Voice
@@ -5346,11 +5347,12 @@ Mugshot: Purple
 Mightyena
 Adamant Nature
 Level: 53
+Ability: Strong Jaw
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 126 Atk
-- Roar
-- Double Edge
-- Sand Attack
+- Psychic Fangs
+- Fire Fang
+- Thunder Fang
 - Crunch
 
 Honchkrow
@@ -12492,8 +12494,13 @@ AI: Basic Trainer
 
 Mightyena
 Level: 43
+Ability: Strong Jaw
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Atk / 126 Def / 126 SpD
+- Crunch
+- Fire Fang
+- Poison Fang
+- Thunder Fang
 
 Crobat
 Level: 43
@@ -12535,6 +12542,7 @@ AI: Basic Trainer
 
 Mightyena
 Level: 26
+Ability: Strong Jaw
 IVs: 30 HP / 18 Atk / 30 Def / 18 SpA / 30 SpD / 18 Spe
 EVs: 252 HP / 126 Spe / 126 Def / 126 SpD
 - Thief

@@ -5219,8 +5219,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #if P_FAMILY_FINNEON
     [SPECIES_FINNEON] =
     {
-        .baseHP        = 49,
-        .baseAttack    = 49,
+        .baseHP        = 59,
+        .baseAttack    = 39,
         .baseDefense   = 56,
         .baseSpeed     = 66,
         .baseSpAttack  = 49,
@@ -5306,8 +5306,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 
     [SPECIES_LUMINEON] =
     {
-        .baseHP        = 69,
-        .baseAttack    = 69,
+        .baseHP        = 89,
+        .baseAttack    = 49,
         .baseDefense   = 76,
         .baseSpeed     = 91,
         .baseSpAttack  = 69,
