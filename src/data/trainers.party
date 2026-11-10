@@ -1866,7 +1866,7 @@ Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
-Pelipper
+Haxorus
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
@@ -2013,15 +2013,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Manectric
-Level: 29
+Level: 30
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Wailmer
-Level: 29
+Level: 30
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Mienfoo
-Level: 29
+Level: 30
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 - Ice Punch
 - Aerial Ace
@@ -2039,15 +2039,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Manectric
-Level: 32
+Level: 34
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Wailmer
-Level: 32
+Level: 34
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Mienfoo
-Level: 32
+Level: 34
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Ice Punch
 - U-turn
@@ -2065,15 +2065,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Manectric
-Level: 35
+Level: 38
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 Wailmer
-Level: 35
+Level: 38
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 Mienfoo
-Level: 35
+Level: 38
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 - Ice Punch
 - Fire Punch
@@ -5564,7 +5564,7 @@ Level: 57
 Ability: Sand Veil
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 252 HP / 126 SpD / 126 Def / 64 Atk
-- Dig
+- Earthquake
 - Dragon Claw
 - Crunch
 - Sandstorm
@@ -5581,7 +5581,7 @@ EVs: 252 HP / 252 Def / 126 SpD
 Flygon @ Sitrus Berry
 Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 SpD / 252 SpA
+EVs: 252 HP / 126 SpD / 252 SpA / 64 Spe
 - Flamethrower
 - Dragon Claw
 - Rock Slide
@@ -5807,8 +5807,8 @@ EVs: 64 HP
 
 Linoone @ Chesto Berry
 Level: 33
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Spe / 64 Def / 64 SpD
+IVs: 24 HP / 24 Atk / 28 Def / 24 SpA / 28 SpD / 24 Spe
+EVs: 252 HP / 252 Spe / 100 Def / 100 SpD
 - Slash
 - Belly Drum
 - Night Slash
@@ -8264,7 +8264,7 @@ Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP
 
-Altaria
+Gabite
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -8286,7 +8286,7 @@ Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
-Altaria
+Garchomp
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
@@ -8310,7 +8310,7 @@ Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
-Altaria
+Garchomp
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
@@ -8339,7 +8339,7 @@ Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
-Altaria
+Garchomp
 Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
@@ -8373,7 +8373,7 @@ Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
-Altaria
+Garchomp
 Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
