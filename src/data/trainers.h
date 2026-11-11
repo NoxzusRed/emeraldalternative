@@ -24825,7 +24825,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9982
-            .species = SPECIES_HOUNDOUR,
+            .species = SPECIES_HOUNDOOM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9984
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -49084,7 +49084,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 19787
-            .species = SPECIES_HOUNDOUR,
+            .species = SPECIES_HOUNDOOM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19790
             .ev = TRAINER_PARTY_EVS(252, 126, 68, 68, 0, 68),
