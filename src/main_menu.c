@@ -177,6 +177,10 @@ static bool8 sMainMenuLegendaryBgActive;
 static u8 sInlineOptionsReturnMenuType;
 static u8 sInlineOptionsReturnItem;
 static bool8 sInlineOptionsReturnWireless;
+static bool8 sMainMenuInlineRestoring;
+static EWRAM_DATA u16 sSavedMainMenuTextPalette[16];
+enum { INLINE_BG_SWAP_NONE, INLINE_BG_SWAP_TO_OPTIONS, INLINE_BG_SWAP_TO_MAIN };
+static u8 sInlineBgSwap;
 
 // Wait for every main-menu option and window to be in VRAM before fading in.
 // Errors may reveal their error window first, so the user can acknowledge it.
@@ -198,6 +202,7 @@ static void Task_WaitForSaveFileErrorWindow(u8);
 static void CreateMainMenuErrorWindow(const u8 *);
 static void ClearMainMenuWindowTilemap(const struct WindowTemplate *);
 static void Task_DisplayMainMenu(u8);
+static void Task_RestoreMainMenuInline(u8);
 static void Task_WaitForBatteryDryErrorWindow(u8);
 static void MainMenu_FormatSavegameText(void);
 static void HighlightSelectedMainMenuItem(u8, u8, s16);
@@ -618,6 +623,31 @@ static void VBlankCB_MainMenu(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
+
+    // Both completed menus are revealed only in VBlank, AFTER palette upload.
+    // The legendary remains on BG1/BG2 throughout both screen changes.
+    if (sInlineBgSwap == INLINE_BG_SWAP_TO_OPTIONS)
+    {
+        ShowBg(3);
+        HideBg(0);
+        sInlineBgSwap = INLINE_BG_SWAP_NONE;
+    }
+    else if (sInlineBgSwap == INLINE_BG_SWAP_TO_MAIN)
+    {
+        ShowBg(0);
+        HideBg(3);
+        sInlineBgSwap = INLINE_BG_SWAP_NONE;
+    }
+}
+
+void MainMenu_QueueInlineBackgroundSwap(bool8 showOptions)
+{
+    sInlineBgSwap = showOptions ? INLINE_BG_SWAP_TO_OPTIONS : INLINE_BG_SWAP_TO_MAIN;
+}
+
+bool8 MainMenu_IsInlineBackgroundSwapPending(void)
+{
+    return sInlineBgSwap != INLINE_BG_SWAP_NONE;
 }
 
 void CB2_InitMainMenu(void)
@@ -634,6 +664,8 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 {
     (void)returningFromOptionsMenu;
     sMainMenuFadeState = MAIN_MENU_FADE_WAIT_FOR_CONTENT;
+    sInlineBgSwap = INLINE_BG_SWAP_NONE;
+    sMainMenuInlineRestoring = FALSE;
     sMainMenuLegendaryBgActive = FALSE;
     SetVBlankCallback(NULL);
     ScanlineEffect_Stop();
@@ -718,31 +750,65 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 
 #define tArrowTaskIsScrolled data[15]   // For scroll indicator arrow task
 
-// Return from inline OPTION without reinitializing the GPU or background.
-// The main menu's selection and its highlighted window are restored in
-// the same task frame as B/CANCEL, preserving the legendary's motion.
+// Stage BG0 offscreen while BG3 continues displaying the complete OPTION
+// window. Never reset BG1/BG2 or the HBlank distortion in either direction.
 void MainMenu_ReturnFromInlineOptions(u8 taskId)
 {
-    FreeAllWindowBuffers();
-    UnsetBgTilemapBuffer(0);
-    InitWindows(sWindowTemplates_MainMenu);
-    DeactivateAllTextPrinters();
+    sMainMenuInlineRestoring = TRUE;
+    gTasks[taskId].data[8] = 0;
+    gTasks[taskId].func = Task_RestoreMainMenuInline;
+}
 
-    // The new BG0 tilemap starts empty, so no OPTION text remains.
-    CopyBgTilemapBufferToVram(0);
-    LoadMainMenuWindowFrameTiles(0, MAIN_MENU_BORDER_TILE);
-    LoadPalette(sMainMenuTextPal, BG_PLTT_ID(MAIN_MENU_TEXT_PAL), PLTT_SIZE_4BPP);
+static void Task_RestoreMainMenuInline(u8 taskId)
+{
+    switch (gTasks[taskId].data[8])
+    {
+    case 0:
+        FreeAllWindowBuffers();
+        UnsetBgTilemapBuffer(3);
+        InitWindows(sWindowTemplates_MainMenu);
+        DeactivateAllTextPrinters();
+        ChangeBgY(0, 0, BG_COORD_SET);
 
-    gTasks[taskId].tMenuType = sInlineOptionsReturnMenuType;
-    gTasks[taskId].tCurrItem = sInlineOptionsReturnItem;
-    gTasks[taskId].tItemCount = sInlineOptionsReturnMenuType + 2;
-    gTasks[taskId].tIsScrolled = FALSE;
-    gTasks[taskId].tWirelessAdapterConnected = sInlineOptionsReturnWireless;
-    sCurrItemAndOptionMenuCheck = sInlineOptionsReturnItem;
+        // Restore the BG0 frame graphics but NOT its shared palette yet.
+        LoadBgTiles(0, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles,
+                    0x120, MAIN_MENU_BORDER_TILE);
+        gTasks[taskId].tMenuType = sInlineOptionsReturnMenuType;
+        gTasks[taskId].tCurrItem = sInlineOptionsReturnItem;
+        gTasks[taskId].tItemCount = sInlineOptionsReturnMenuType + 2;
+        gTasks[taskId].tIsScrolled = FALSE;
+        gTasks[taskId].tWirelessAdapterConnected = sInlineOptionsReturnWireless;
+        sCurrItemAndOptionMenuCheck = sInlineOptionsReturnItem;
+        gTasks[taskId].data[8] = 1;
+        break;
+    case 1:
+        Task_DisplayMainMenu(taskId);
+        gTasks[taskId].func = Task_RestoreMainMenuInline;
+        gTasks[taskId].data[8] = 2;
+        break;
+    case 2:
+        Task_HighlightSelectedMainMenuItem(taskId);
+        gTasks[taskId].func = Task_RestoreMainMenuInline;
+        gTasks[taskId].data[8] = 3;
+        break;
+    case 3:
+        if (IsDma3ManagerBusyWithBgCopy())
+            break;
 
-    // Both the normal and the extended Mystery Events menu restore here.
-    Task_DisplayMainMenu(taskId);
-    Task_HighlightSelectedMainMenuItem(taskId);
+        // The visible BG3 menu keeps its original palette until VBlank.
+        LoadPalette(sSavedMainMenuTextPalette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL), PLTT_SIZE_4BPP);
+        LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal,
+                    BG_PLTT_ID(MAIN_MENU_FRAME_PAL), PLTT_SIZE_4BPP);
+        LoadDimmedMainMenuWindowPalettes();
+        sMainMenuInlineRestoring = FALSE;
+        MainMenu_QueueInlineBackgroundSwap(FALSE);
+        gTasks[taskId].data[8] = 4;
+        break;
+    case 4:
+        if (!MainMenu_IsInlineBackgroundSwapPending())
+            gTasks[taskId].func = Task_HandleMainMenuInput;
+        break;
+    }
 }
 
 static void Task_MainMenuCheckSaveFile(u8 taskId)
@@ -875,29 +941,33 @@ static void Task_DisplayMainMenu(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(6, 15));
         SetGpuReg(REG_OFFSET_BLDY, 0);
 
-        palette = RGB_BLACK;
-        LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 14, PLTT_SIZEOF(1));
-
-        palette = RGB_WHITE;
-        LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 10, PLTT_SIZEOF(1));
-
-        palette = RGB(12, 12, 12);
-        LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 11, PLTT_SIZEOF(1));
-
-        palette = RGB(26, 26, 25);
-        LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 12, PLTT_SIZEOF(1));
-
-        // Note: If there is no save file, the save block is zeroed out,
-        // so the default gender is MALE.
-        if (gSaveBlock2Ptr->playerGender == MALE)
+        if (!sMainMenuInlineRestoring)
         {
-            palette = RGB(4, 16, 31);
-            LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 1, PLTT_SIZEOF(1));
-        }
-        else
-        {
-            palette = RGB(31, 3, 21);
-            LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 1, PLTT_SIZEOF(1));
+            palette = RGB_BLACK;
+            LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 14, PLTT_SIZEOF(1));
+
+            palette = RGB_WHITE;
+            LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 10, PLTT_SIZEOF(1));
+
+            palette = RGB(12, 12, 12);
+            LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 11, PLTT_SIZEOF(1));
+
+            palette = RGB(26, 26, 25);
+            LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 12, PLTT_SIZEOF(1));
+
+            // Note: If there is no save file, the save block is zeroed out,
+            // so the default gender is MALE.
+            if (gSaveBlock2Ptr->playerGender == MALE)
+            {
+                palette = RGB(4, 16, 31);
+                LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 1, PLTT_SIZEOF(1));
+            }
+            else
+            {
+                palette = RGB(31, 3, 21);
+                LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 1, PLTT_SIZEOF(1));
+            }
+
         }
 
         switch (gTasks[taskId].tMenuType)
@@ -994,9 +1064,9 @@ static void Task_DisplayMainMenu(u8 taskId)
                 }
                 break;
         }
-        // Use matching dark/normal palettes for each menu window, without
-        // disturbing the transparent background layers.
-        LoadDimmedMainMenuWindowPalettes();
+        // Recolor the hidden BG0 only when it is ready to be displayed.
+        if (!sMainMenuInlineRestoring)
+            LoadDimmedMainMenuWindowPalettes();
 
         // All options and save data are drawn before the first visible
         // fade-in frame. The callback also waits for VRAM/DMA completion.
@@ -1285,6 +1355,8 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 sInlineOptionsReturnMenuType = gTasks[taskId].tMenuType;
                 sInlineOptionsReturnItem = gTasks[taskId].tCurrItem;
                 sInlineOptionsReturnWireless = gTasks[taskId].tWirelessAdapterConnected;
+                CpuCopy16(gPlttBufferUnfaded + BG_PLTT_ID(MAIN_MENU_TEXT_PAL),
+                          sSavedMainMenuTextPalette, PLTT_SIZE_4BPP);
                 if (sInlineOptionsReturnMenuType == HAS_MYSTERY_EVENTS)
                     RemoveScrollIndicatorArrowPair(gTasks[taskId].tScrollArrowTaskId);
                 OptionMenu_OpenFromMainMenu(taskId);

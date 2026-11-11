@@ -77,9 +77,11 @@ static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
 static void LoadOptionWindowFrame(u8 selection);
+static void Task_PrepareInlineOptions(u8 taskId);
 
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
 static bool8 sOptionMenuOnMainMenu;
+static bool8 sOptionMenuPreparingInline;
 
 // Match the main menu's dedicated UI palette and VRAM tile banks, while
 // leaving all original title background palette banks untouched.
@@ -129,10 +131,12 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
 
 // The old OPTION window graphics are drawn on BG0 instead of rebuilding
 // BG1/BG2. The two windows end at tile 0x1A1, before the frame at 0x1D5.
+// GBA text-mode BG3: a separate 16 KiB charbase and tilemap. BG0's
+// already visible main-menu graphics are never touched while preparing.
 static const struct WindowTemplate sInlineOptionWindowTemplates[] =
 {
     [WIN_HEADER] = {
-        .bg = 0,
+        .bg = 3,
         .tilemapLeft = 2,
         .tilemapTop = 1,
         .width = 26,
@@ -141,7 +145,7 @@ static const struct WindowTemplate sInlineOptionWindowTemplates[] =
         .baseBlock = 1
     },
     [WIN_OPTIONS] = {
-        .bg = 0,
+        .bg = 3,
         .tilemapLeft = 2,
         .tilemapTop = 5,
         .width = 26,
@@ -150,6 +154,17 @@ static const struct WindowTemplate sInlineOptionWindowTemplates[] =
         .baseBlock = 0x35
     },
     DUMMY_WIN_TEMPLATE
+};
+
+static const struct BgTemplate sInlineOptionBgTemplate =
+{
+    .bg = 3,
+    .charBaseIndex = 1,
+    .mapBaseIndex = 29,
+    .screenSize = 0,
+    .paletteMode = 0,
+    .priority = 0,
+    .baseTile = 0
 };
 
 static const struct BgTemplate sOptionMenuBgTemplates[] =
@@ -305,57 +320,87 @@ void CB2_InitOptionMenu(void)
 // Called only for OPTION selected from CONTINUE / NEW GAME.
 // The main menu's CB2/VBlank callbacks and background tasks stay active,
 // with no fade and no reload of the animated legendary or its palette.
+// Option is pre-rendered over several short tasks while CONTINUE remains
+// fully visible. The display is swapped only after all VRAM copies complete.
 void OptionMenu_OpenFromMainMenu(u8 taskId)
 {
     sOptionMenuOnMainMenu = TRUE;
+    sOptionMenuPreparingInline = TRUE;
     sArrowPressed = FALSE;
+    gTasks[taskId].data[8] = 0;
+    gTasks[taskId].func = Task_PrepareInlineOptions;
+}
 
-    FreeAllWindowBuffers();
-    UnsetBgTilemapBuffer(0);
-    InitWindows(sInlineOptionWindowTemplates);
-    DeactivateAllTextPrinters();
+static void Task_PrepareInlineOptions(u8 taskId)
+{
+    switch (gTasks[taskId].data[8])
+    {
+    case 0:
+        FreeAllWindowBuffers();
+        UnsetBgTilemapBuffer(0);
+        InitBgFromTemplate(&sInlineOptionBgTemplate);
+        ChangeBgX(3, 0, BG_COORD_SET);
+        ChangeBgY(3, 0, BG_COORD_SET);
+        InitWindows(sInlineOptionWindowTemplates);
+        DeactivateAllTextPrinters();
 
-    // Clear the old menu's BG0 tilemap, not the entire VRAM. This also
-    // removes the previously highlighted CONTINUE/NEW GAME/OPTION frames.
-    CopyBgTilemapBufferToVram(0);
+        // Backgrounds BG0/BG1/BG2 remain visible and unchanged.
+        LoadOptionWindowFrame(gSaveBlock2Ptr->optionsWindowFrameType);
+        gTasks[taskId].tMenuSelection = 0;
+        gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
+        gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
+        gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+        gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
+        gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
+        gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
+        gTasks[taskId].tRandomCallsOff = gSaveBlock2Ptr->optionsRandomCallsOff;
+        PutWindowTilemap(WIN_HEADER);
+        PutWindowTilemap(WIN_OPTIONS);
+        DrawHeaderText();
+        DrawOptionMenuTexts();
+        gTasks[taskId].data[8] = 1;
+        break;
+    case 1:
+        // While preparing, the text printers write only to RAM.
+        TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
+        BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
+        BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
+        Sound_DrawChoices(gTasks[taskId].tSound);
+        ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
+        FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
+        RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
+        HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+        DrawMainMenuWindowBorder(&sInlineOptionWindowTemplates[WIN_HEADER], INLINE_OPTION_FRAME_TILE);
+        DrawMainMenuWindowBorder(&sInlineOptionWindowTemplates[WIN_OPTIONS], INLINE_OPTION_FRAME_TILE);
+        gTasks[taskId].data[8] = 2;
+        break;
+    case 2:
+        // Exactly one graphic transfer per complete window.
+        CopyWindowToVram(WIN_HEADER, COPYWIN_GFX);
+        CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
+        gTasks[taskId].data[8] = 3;
+        break;
+    case 3:
+        if (IsDma3ManagerBusyWithBgCopy())
+            break;
 
-    LoadPalette(sOptionMenuText_Pal, BG_PLTT_ID(INLINE_OPTION_TEXT_PALETTE),
-                sizeof(sOptionMenuText_Pal));
-    LoadOptionWindowFrame(gSaveBlock2Ptr->optionsWindowFrameType);
-
-    gTasks[taskId].tMenuSelection = 0;
-    gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
-    gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
-    gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
-    gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
-    gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
-    gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
-    gTasks[taskId].tRandomCallsOff = gSaveBlock2Ptr->optionsRandomCallsOff;
-
-    // White background and original moving ▶ cursor, exactly as in the
-    // standalone options screen. No gray selection fill is introduced.
-    PutWindowTilemap(WIN_HEADER);
-    PutWindowTilemap(WIN_OPTIONS);
-    DrawHeaderText();
-    DrawOptionMenuTexts();
-    TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
-    BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
-    BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
-    Sound_DrawChoices(gTasks[taskId].tSound);
-    ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
-    FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
-    RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
-    HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
-    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
-
-    DrawMainMenuWindowBorder(&sInlineOptionWindowTemplates[WIN_HEADER], INLINE_OPTION_FRAME_TILE);
-    DrawMainMenuWindowBorder(&sInlineOptionWindowTemplates[WIN_OPTIONS], INLINE_OPTION_FRAME_TILE);
-
-    // The old selection WIN0 mask would clip OPTION; make it zero-size.
-    // Keep WINOUT's BG_ALL/FX bits for the legendary's scenery alpha blend.
-    SetGpuReg(REG_OFFSET_WIN0H, 0);
-    SetGpuReg(REG_OFFSET_WIN0V, 0);
-    gTasks[taskId].func = Task_OptionMenuProcessInput;
+        // The main menu remains untouched until VBlank uploads these
+        // colors and atomically activates BG3 instead of BG0.
+        LoadPalette(sOptionMenuText_Pal, BG_PLTT_ID(INLINE_OPTION_TEXT_PALETTE),
+                    sizeof(sOptionMenuText_Pal));
+        LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal,
+                    BG_PLTT_ID(INLINE_OPTION_FRAME_PALETTE), PLTT_SIZE_4BPP);
+        SetGpuReg(REG_OFFSET_WIN0H, 0);
+        SetGpuReg(REG_OFFSET_WIN0V, 0);
+        sOptionMenuPreparingInline = FALSE;
+        MainMenu_QueueInlineBackgroundSwap(TRUE);
+        gTasks[taskId].data[8] = 4;
+        break;
+    case 4:
+        if (!MainMenu_IsInlineBackgroundSwapPending())
+            gTasks[taskId].func = Task_OptionMenuProcessInput;
+        break;
+    }
 }
 
 static void Task_OptionMenuFadeIn(u8 taskId)
@@ -503,7 +548,8 @@ static void HighlightOptionMenuItem(u8 index)
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_SHORT, gText_SelectorArrow3,
                                 0, index * OPTION_ROW_HEIGHT,
                                 TEXT_SKIP_DRAW, NULL);
-    CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
+    if (!sOptionMenuPreparingInline)
+        CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
 }
 
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
@@ -653,12 +699,13 @@ static void LoadOptionWindowFrame(u8 selection)
 {
     if (sOptionMenuOnMainMenu)
     {
-        // The background effects occupy BG1/BG2. Only load the selected
-        // frame into BG0 and the UI palette bank reserved by the main menu.
-        LoadBgTiles(0, GetWindowFrameTilesPal(selection)->tiles,
+        // BG3 has independent character tiles. Do not recolor visible
+        // BG0 until the finished options layer is activated in VBlank.
+        LoadBgTiles(3, GetWindowFrameTilesPal(selection)->tiles,
                     0x120, INLINE_OPTION_FRAME_TILE);
-        LoadPalette(GetWindowFrameTilesPal(selection)->pal,
-                    BG_PLTT_ID(INLINE_OPTION_FRAME_PALETTE), PLTT_SIZE_4BPP);
+        if (!sOptionMenuPreparingInline)
+            LoadPalette(GetWindowFrameTilesPal(selection)->pal,
+                        BG_PLTT_ID(INLINE_OPTION_FRAME_PALETTE), PLTT_SIZE_4BPP);
     }
     else
     {
@@ -773,7 +820,8 @@ static void DrawHeaderText(void)
 {
     FillWindowPixelBuffer(WIN_HEADER, PIXEL_FILL(1));
     AddTextPrinterParameterized(WIN_HEADER, FONT_NORMAL, gText_Option, 8, 1, TEXT_SKIP_DRAW, NULL);
-    CopyWindowToVram(WIN_HEADER, COPYWIN_FULL);
+    if (!sOptionMenuPreparingInline)
+        CopyWindowToVram(WIN_HEADER, COPYWIN_FULL);
 }
 
 static void DrawOptionMenuTexts(void)
@@ -783,7 +831,8 @@ static void DrawOptionMenuTexts(void)
     FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
     for (i = 0; i < MENUITEM_COUNT; i++)
         AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[i], 8, (i * OPTION_ROW_HEIGHT) + 1, TEXT_SKIP_DRAW, NULL);
-    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+    if (!sOptionMenuPreparingInline)
+        CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
 #define TILE_TOP_CORNER_L 0x1A2
