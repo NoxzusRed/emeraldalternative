@@ -174,6 +174,8 @@ static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
 
 static u8 sBirchSpeechMainTaskId;
 static bool8 sMainMenuLegendaryBgActive;
+static u8 sMainMenuReturnMenuType;
+static u8 sMainMenuReturnItem;
 
 // Wait for every main-menu option and window to be in VRAM before fading in.
 // Errors may reveal their error window first, so the user can acknowledge it.
@@ -225,7 +227,6 @@ static void Task_NewGameBirchSpeech_StartPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_WaitForPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_BoyOrGirl(u8);
 static void LoadMainMenuWindowFrameTiles(u8, u16);
-static void DrawMainMenuWindowBorder(const struct WindowTemplate *, u16);
 static void Task_HighlightSelectedMainMenuItem(u8);
 static void Task_NewGameBirchSpeech_WaitToShowGenderMenu(u8);
 static void Task_NewGameBirchSpeech_ChooseGender(u8);
@@ -716,6 +717,31 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 
 #define tArrowTaskIsScrolled data[15]   // For scroll indicator arrow task
 
+// Restore the CONTINUE / NEW GAME / OPTION windows without touching the
+// legendary's BG1/BG2 layers, wave DMA or title animation state.
+void MainMenu_ReturnFromInlineOptions(u8 taskId)
+{
+    FreeAllWindowBuffers();
+    UnsetBgTilemapBuffer(0);
+    InitWindows(sWindowTemplates_MainMenu);
+    DeactivateAllTextPrinters();
+
+    FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 32, 32);
+    CopyBgTilemapBufferToVram(0);
+    LoadMainMenuWindowFrameTiles(0, MAIN_MENU_BORDER_TILE);
+    LoadPalette(sMainMenuTextPal, BG_PLTT_ID(MAIN_MENU_TEXT_PAL), PLTT_SIZE_4BPP);
+
+    gTasks[taskId].tMenuType = sMainMenuReturnMenuType;
+    gTasks[taskId].tCurrItem = sMainMenuReturnItem;
+    gTasks[taskId].tItemCount = sMainMenuReturnMenuType + 2;
+    gTasks[taskId].tIsScrolled = FALSE;
+    sCurrItemAndOptionMenuCheck = sMainMenuReturnItem;
+
+    // Restore the menu and highlight in the same task invocation.
+    Task_DisplayMainMenu(taskId);
+    Task_HighlightSelectedMainMenuItem(taskId);
+}
+
 static void Task_MainMenuCheckSaveFile(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
@@ -1070,7 +1096,9 @@ static bool8 HandleMainMenuInput(u8 taskId)
     {
         PlaySE(SE_SELECT);
         IsWirelessAdapterConnected();   // why bother calling this here? debug? Task_HandleMainMenuAPressed will check too
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+        // OPTION is redrawn in place. Other actions keep their normal fade.
+        if (tCurrItem != tItemCount - 1)
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
         gTasks[taskId].func = Task_HandleMainMenuAPressed;
     }
     else if (JOY_NEW(B_BUTTON))
@@ -1248,10 +1276,13 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 DestroyTask(taskId);
                 break;
             case ACTION_OPTION:
-                gMain.savedCallback = CB2_ReinitMainMenu;
-                SetMainCallback2(CB2_InitOptionMenu);
-                DestroyTask(taskId);
-                break;
+                // Reuse BG0 windows; do not reset BG1/BG2 or their animation.
+                if (gTasks[taskId].tMenuType == HAS_MYSTERY_EVENTS)
+                    RemoveScrollIndicatorArrowPair(gTasks[taskId].tScrollArrowTaskId);
+                sMainMenuReturnMenuType = gTasks[taskId].tMenuType;
+                sMainMenuReturnItem = gTasks[taskId].tCurrItem;
+                OptionMenu_OpenFromMainMenu(taskId);
+                return;
             case ACTION_MYSTERY_GIFT:
                 SetMainCallback2(CB2_InitMysteryGift);
                 DestroyTask(taskId);
@@ -2388,7 +2419,7 @@ static void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
                 PLTT_SIZE_4BPP);
 }
 
-static void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 baseTileNum)
+void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 baseTileNum)
 {
     const u8 palette = baseTileNum == MAIN_MENU_BORDER_TILE ? MAIN_MENU_FRAME_PAL : 2;
     u16 r9 = 1 + baseTileNum;
