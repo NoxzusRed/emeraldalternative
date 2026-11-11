@@ -58,6 +58,7 @@ static void MainCB2(void);
 static void Task_TitleScreenPhase1(u8);
 static void Task_TitleScreenPhase2(u8);
 static void Task_TitleScreenPhase3(u8);
+static void CB2_GoToMainMenu(void);
 static void CB2_GoToClearSaveDataScreen(void);
 static void CB2_GoToResetRtcScreen(void);
 static void CB2_GoToBerryFixScreen(void);
@@ -867,8 +868,9 @@ static void Task_TitleScreenPhase3(u8 taskId)
 				break;
 			}
 		}
-        // Enter the main menu directly: do not fade the legendary out.
-        SetMainCallback2(CB2_InitMainMenu);
+        // Fade the title completely to black before initializing the menu.
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        SetMainCallback2(CB2_GoToMainMenu);
 	}
     else if (JOY_HELD(CLEAR_SAVE_BUTTON_COMBO) == CLEAR_SAVE_BUTTON_COMBO)
     {
@@ -1012,6 +1014,12 @@ void AnimateTitleScreenBackgroundForMainMenu(void)
     UpdateLegendaryMarkingColor(sTitleBackgroundFrame, 6);
 }
 
+static void CB2_GoToMainMenu(void)
+{
+    if (!UpdatePaletteFade())
+        SetMainCallback2(CB2_InitMainMenu);
+}
+
 static void CB2_GoToCopyrightScreen(void)
 {
     if (!UpdatePaletteFade())
@@ -1080,5 +1088,14 @@ static void UpdateLegendaryMarkingColor(u8 frameNum, u8 paletteNum)
             color = RGB(intensity, 0, 0);
     }
     sTitleMarkingColor = color;
-    LoadPalette(&color, BG_PLTT_ID(paletteNum) + 15, sizeof(color));
+    if (paletteNum == 6 && gPaletteFade.active)
+    {
+        // Preserve the active menu fade: UpdatePaletteFade blends from
+        // the unfaded color on this frame, without a bright pixel flash.
+        gPlttBufferUnfaded[BG_PLTT_ID(6) + 15] = color;
+    }
+    else
+    {
+        LoadPalette(&color, BG_PLTT_ID(paletteNum) + 15, sizeof(color));
+    }
 }

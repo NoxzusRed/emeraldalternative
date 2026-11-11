@@ -175,6 +175,17 @@ static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
 static u8 sBirchSpeechMainTaskId;
 static bool8 sMainMenuLegendaryBgActive;
 
+// Wait for every main-menu option and window to be in VRAM before fading in.
+// Errors may reveal their error window first, so the user can acknowledge it.
+enum
+{
+    MAIN_MENU_FADE_IDLE,
+    MAIN_MENU_FADE_WAIT_FOR_CONTENT,
+    MAIN_MENU_FADE_WAIT_FOR_VBLANK,
+    MAIN_MENU_FADE_READY,
+};
+static u8 sMainMenuFadeState;
+
 // Static ROM declarations
 
 static u32 InitMainMenu(bool8);
@@ -568,6 +579,22 @@ static void CB2_MainMenu(void)
         AnimateTitleScreenBackgroundForMainMenu();
     AnimateSprites();
     BuildOamBuffer();
+
+    if (sMainMenuFadeState == MAIN_MENU_FADE_WAIT_FOR_VBLANK)
+    {
+        // Allow one VBlank for the newly drawn options to reach VRAM.
+        sMainMenuFadeState = MAIN_MENU_FADE_READY;
+    }
+    else if (sMainMenuFadeState == MAIN_MENU_FADE_READY
+          && !IsDma3ManagerBusyWithBgCopy())
+    {
+        sMainMenuFadeState = MAIN_MENU_FADE_IDLE;
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+    }
+
+    if (sMainMenuFadeState != MAIN_MENU_FADE_IDLE)
+        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+
     UpdatePaletteFade();
 }
 
@@ -593,6 +620,7 @@ void CB2_ReinitMainMenu(void)
 static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 {
     (void)returningFromOptionsMenu;
+    sMainMenuFadeState = MAIN_MENU_FADE_WAIT_FOR_CONTENT;
     sMainMenuLegendaryBgActive = FALSE;
     SetVBlankCallback(NULL);
     ScanlineEffect_Stop();
@@ -618,7 +646,8 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     ResetTasks();
     ResetSpriteData();
     FreeAllSpritePalettes();
-    // The title and this menu change directly, without a black/white fade.
+    // The previous screen has already faded out. Keep this menu fully
+    // black until its text, windows, and graphics are all loaded.
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sMainMenuBgTemplates, ARRAY_COUNT(sMainMenuBgTemplates));
     if (IsTitleScreenRayquazaBackground())
@@ -639,6 +668,7 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     DeactivateAllTextPrinters();
     LoadMainMenuWindowFrameTiles(0, MAIN_MENU_BORDER_TILE);
     LoadTitleScreenBackgroundForMainMenu();
+    BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
 
     SetGpuReg(REG_OFFSET_WIN0H, 0);
     SetGpuReg(REG_OFFSET_WIN0V, 0);
@@ -923,6 +953,10 @@ static void Task_DisplayMainMenu(u8 taskId)
                 }
                 break;
         }
+        // All options and save data are drawn before the first visible
+        // fade-in frame. The callback also waits for VRAM/DMA completion.
+        if (sMainMenuFadeState == MAIN_MENU_FADE_WAIT_FOR_CONTENT)
+            sMainMenuFadeState = MAIN_MENU_FADE_WAIT_FOR_VBLANK;
         gTasks[taskId].func = Task_HighlightSelectedMainMenuItem;
     }
 }
@@ -936,6 +970,10 @@ static void Task_HighlightSelectedMainMenuItem(u8 taskId)
 static bool8 HandleMainMenuInput(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
+
+    // The menu is already drawn, but input must wait for the fade-in.
+    if (sMainMenuFadeState != MAIN_MENU_FADE_IDLE || gPaletteFade.active)
+        return FALSE;
 
     if (JOY_NEW(A_BUTTON))
     {
@@ -2185,6 +2223,8 @@ static void CreateMainMenuErrorWindow(const u8 *str)
     DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[7], MAIN_MENU_BORDER_TILE);
     SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(9, DISPLAY_WIDTH - 9));
     SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(113, DISPLAY_HEIGHT - 1));
+    if (sMainMenuFadeState == MAIN_MENU_FADE_WAIT_FOR_CONTENT)
+        sMainMenuFadeState = MAIN_MENU_FADE_WAIT_FOR_VBLANK;
 }
 
 static void MainMenu_FormatSavegameText(void)
