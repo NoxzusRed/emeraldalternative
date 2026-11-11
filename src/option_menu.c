@@ -61,7 +61,6 @@ static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
 static void Task_OptionMenuSave(u8 taskId);
 static void Task_OptionMenuFadeOut(u8 taskId);
-static void Task_InlineOptionReturnFadeOut(u8 taskId);
 static void HighlightOptionMenuItem(u8 selection);
 static u8 TextSpeed_ProcessInput(u8 selection);
 static void TextSpeed_DrawChoices(u8 selection);
@@ -476,10 +475,9 @@ void CB2_InitFieldOptionMenu(void)
     }
 }
 
-// Called only for OPTION selected from the main menu.
-// Its fade-out has already finished; keep the same legendary running
-// underneath while the new UI is prepared offscreen on BG3. The new
-// menu fades in only after the complete UI has been swapped in VBlank.
+// Called only for OPTION selected from the title's main menu.
+// The current UI stays visible during BG3 preparation, and the fully
+// rendered options replace it during VBlank with no palette fade.
 void OptionMenu_OpenFromMainMenu(u8 taskId)
 {
     sOptionMenuOnMainMenu = TRUE;
@@ -555,17 +553,10 @@ static void Task_PrepareInlineOptions(u8 taskId)
         gTasks[taskId].data[8] = 4;
         break;
     case 4:
+        // The UI is already complete, and BG3 is now visible. No
+        // fade-in: accept inputs only once the VBlank swap has finished.
         if (!MainMenu_IsInlineBackgroundSwapPending())
-        {
-            // Every option, cursor, frame and palette is ready now.
-            // Fade from full black to the complete BG3 menu; input
-            // remains disabled until Task_OptionMenuFadeIn finishes.
-            if (BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK))
-            {
-                MainMenu_FinishInlineOptionsBlackout();
-                gTasks[taskId].func = Task_OptionMenuFadeIn;
-            }
-        }
+            gTasks[taskId].func = Task_OptionMenuProcessInput;
         break;
     }
 }
@@ -682,27 +673,15 @@ static void Task_OptionMenuSave(u8 taskId)
 
     if (sOptionMenuOnMainMenu)
     {
-        // Fade OPTION completely out before preparing the main menu.
-        // Both B and CANCEL use this same return transition.
-        MainMenu_StartInlineOptionsBlackout();
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-        gTasks[taskId].func = Task_InlineOptionReturnFadeOut;
+        // Both B and CANCEL restore the previous main menu in hidden
+        // BG0, then switch the complete interface in VBlank. No fade.
+        sOptionMenuOnMainMenu = FALSE;
+        MainMenu_ReturnFromInlineOptions(taskId);
         return;
     }
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
-}
-
-static void Task_InlineOptionReturnFadeOut(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        // The display is black now; the existing staged BG0 rebuild runs
-        // while Groudon/Kyogre/Rayquaza and their effects stay active.
-        sOptionMenuOnMainMenu = FALSE;
-        MainMenu_ReturnFromInlineOptions(taskId);
-    }
 }
 
 static void Task_OptionMenuFadeOut(u8 taskId)

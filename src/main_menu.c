@@ -178,7 +178,6 @@ static u8 sInlineOptionsReturnMenuType;
 static u8 sInlineOptionsReturnItem;
 static bool8 sInlineOptionsReturnWireless;
 static bool8 sMainMenuInlineRestoring;
-static bool8 sInlineOptionsTransitionBlackout;
 static EWRAM_DATA u16 sSavedMainMenuTextPalette[16];
 enum { INLINE_BG_SWAP_NONE, INLINE_BG_SWAP_TO_OPTIONS, INLINE_BG_SWAP_TO_MAIN };
 static u8 sInlineBgSwap;
@@ -615,12 +614,6 @@ static void CB2_MainMenu(void)
         BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
 
     UpdatePaletteFade();
-
-    // Keep the screen completely black between the fade-out and the
-    // first frame of OPTION's fade-in. Its text/frame palette is loaded
-    // while BG3 is still hidden; also cover the title's animated colors.
-    if (sInlineOptionsTransitionBlackout && !gPaletteFade.active)
-        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
 }
 
 static void VBlankCB_MainMenu(void)
@@ -657,16 +650,6 @@ bool8 MainMenu_IsInlineBackgroundSwapPending(void)
     return sInlineBgSwap != INLINE_BG_SWAP_NONE;
 }
 
-void MainMenu_StartInlineOptionsBlackout(void)
-{
-    sInlineOptionsTransitionBlackout = TRUE;
-}
-
-void MainMenu_FinishInlineOptionsBlackout(void)
-{
-    sInlineOptionsTransitionBlackout = FALSE;
-}
-
 void CB2_InitMainMenu(void)
 {
     InitMainMenu(FALSE);
@@ -683,7 +666,6 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     sMainMenuFadeState = MAIN_MENU_FADE_WAIT_FOR_CONTENT;
     sInlineBgSwap = INLINE_BG_SWAP_NONE;
     sMainMenuInlineRestoring = FALSE;
-    sInlineOptionsTransitionBlackout = FALSE;
     sMainMenuLegendaryBgActive = FALSE;
     SetVBlankCallback(NULL);
     ScanlineEffect_Stop();
@@ -823,20 +805,9 @@ static void Task_RestoreMainMenuInline(u8 taskId)
         gTasks[taskId].data[8] = 4;
         break;
     case 4:
+        // BG0 is now completely visible. No fade: return control only
+        // after the VBlank swap to avoid displaying half-drawn windows.
         if (!MainMenu_IsInlineBackgroundSwapPending())
-        {
-            // The main menu is fully prepared and BG0 is visible. Fade
-            // in only now, so no incomplete windows are ever revealed.
-            if (BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK))
-            {
-                MainMenu_FinishInlineOptionsBlackout();
-                gTasks[taskId].data[8] = 5;
-            }
-        }
-        break;
-    case 5:
-        // Disable input while the main menu is fading back in.
-        if (!gPaletteFade.active)
             gTasks[taskId].func = Task_HandleMainMenuInput;
         break;
     }
@@ -1199,13 +1170,12 @@ static bool8 HandleMainMenuInput(u8 taskId)
     if (JOY_NEW(A_BUTTON))
     {
         PlaySE(SE_SELECT);
-        // Do not probe the wireless adapter here. Its RFU handshake may
-        // block a frame before the fade even begins. Only wireless menu
-        // actions require a live connection check.
-        // All actions fade to black. OPTION keeps the title background
-        // loaded and prepares its UI invisibly after this fade-out.
-        sInlineOptionsTransitionBlackout = (tCurrItem == tItemCount - 1);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+        // OPTION stays on this screen: leave the legendary and main
+        // menu visible while its replacement UI is prepared on hidden
+        // BG3. All other actions retain their original fade-out.
+        // Do not probe the wireless adapter here (RFU can stall frames).
+        if (tCurrItem != tItemCount - 1)
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
         gTasks[taskId].func = Task_HandleMainMenuAPressed;
     }
     else if (JOY_NEW(B_BUTTON))
@@ -1375,7 +1345,11 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 }
                 break;
         }
-        ChangeBgY(0, 0, BG_COORD_SET);
+        // Mystery Events can scroll the main-menu BG0 down to reveal
+        // OPTION. Keep its position unchanged while that menu is visible;
+        // reset it only for destinations that actually leave the screen.
+        if (action != ACTION_OPTION)
+            ChangeBgY(0, 0, BG_COORD_SET);
         switch (action)
         {
             case ACTION_NEW_GAME:
