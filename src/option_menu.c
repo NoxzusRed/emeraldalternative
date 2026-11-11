@@ -1,6 +1,7 @@
 #include "global.h"
 #include "option_menu.h"
 #include "bg.h"
+#include "dma3.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
 #include "main.h"
@@ -361,7 +362,8 @@ void CB2_InitFieldOptionMenu(void)
 
         sOptionMenuOnOverworld = TRUE;
         sOptionMenuOnMainMenu = FALSE;
-        sOptionMenuPreparingInline = FALSE;
+        // Stage all UI graphics in RAM until both windows are complete.
+        sOptionMenuPreparingInline = TRUE;
         sArrowPressed = FALSE;
 
         // Freeze field input and tasks without destroying map tiles,
@@ -373,6 +375,18 @@ void CB2_InitFieldOptionMenu(void)
         UnsetBgTilemapBuffer(0);
         InitWindows(sFieldOptionWindowTemplates);
         DeactivateAllTextPrinters();
+
+        // The overworld uses WIN0/WIN1 for map effects; inherited masks
+        // can conceal BG0 and the map in unrelated horizontal strips.
+        // They will be restored by the normal return-to-field reload.
+        SetGpuReg(REG_OFFSET_DISPCNT, GetGpuReg(REG_OFFSET_DISPCNT)
+                                    & ~(DISPCNT_WIN0_ON | DISPCNT_WIN1_ON));
+        SetGpuReg(REG_OFFSET_WIN0H, 0);
+        SetGpuReg(REG_OFFSET_WIN0V, 0);
+        SetGpuReg(REG_OFFSET_WIN1H, 0);
+        SetGpuReg(REG_OFFSET_WIN1V, 0);
+        ChangeBgX(0, 0, BG_COORD_SET);
+        ChangeBgY(0, 0, BG_COORD_SET);
 
         // BG0 is the topmost layer. Ensure map sprites (including the
         // player) stay behind the opaque options boxes instead of
@@ -423,18 +437,39 @@ void CB2_InitFieldOptionMenu(void)
         FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
         RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
-        CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+
+        // Upload the complete header, all eight option rows and the
+        // finished tilemap once; no intermediate window is ever shown.
+        CopyWindowToVram(WIN_HEADER, COPYWIN_GFX);
+        CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
+        CopyBgTilemapBufferToVram(0);
         BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
         gMain.state++;
         break;
     }
     case 3:
-        // Never reveal incomplete options while DMA transfers are pending.
-        if (IsDma3ManagerBusyWithBgCopy())
+        // Ensure ALL queued graphics copies (not just BG-tracked ones)
+        // have completed before the first visible fade-in frame.
+        if (IsDma3ManagerBusyWithBgCopy()
+         || CheckForSpaceForDma3Request(-1) != 0)
         {
             BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
             break;
         }
+
+        // Leave an extra full frame for the graphics/palette VBlank.
+        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+        gMain.state++;
+        break;
+    case 4:
+        if (IsDma3ManagerBusyWithBgCopy()
+         || CheckForSpaceForDma3Request(-1) != 0)
+        {
+            BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+            break;
+        }
+
+        sOptionMenuPreparingInline = FALSE;
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         SetMainCallback2(MainCB2);
         break;
@@ -1030,5 +1065,8 @@ static void DrawBgWindowFrames(void)
     FillBgTilemapBufferRect(bg, TILE_BOT_EDGE,      2, 19, 26,  1, pal);
     FillBgTilemapBufferRect(bg, TILE_BOT_CORNER_R, 28, 19,  1,  1, pal);
 
-    CopyBgTilemapBufferToVram(bg);
+    // In-game OPTION uploads BG0 only once, after every option label,
+    // value and border has been written into its RAM tilemap.
+    if (!(sOptionMenuOnOverworld && sOptionMenuPreparingInline))
+        CopyBgTilemapBufferToVram(bg);
 }
