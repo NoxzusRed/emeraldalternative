@@ -312,6 +312,13 @@ static const u8 gText_ContinueMenuBadges[] = _("BADGES");
 #define MENU_WIDTH_ERROR 26
 #define MENU_HEIGHT_ERROR 4
 
+// Keep the original title graphics' palette numbers unchanged. These four
+// palette slots are unused by Groudon, Kyogre, and Rayquaza tilemaps.
+#define MAIN_MENU_FRAME_PAL     9
+#define MAIN_MENU_TEXT_PAL      10
+#define MAIN_MENU_DIM_TEXT_PAL  12
+#define MAIN_MENU_DIM_FRAME_PAL 13
+
 #define MENU_SHADOW_PADDING 1
 
 #define MENU_WIN_HCOORDS WIN_RANGE(((MENU_LEFT - 1) * 8) + MENU_SHADOW_PADDING, (MENU_LEFT + MENU_WIDTH + 1) * 8 - MENU_SHADOW_PADDING)
@@ -328,7 +335,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .tilemapTop = MENU_TOP_WIN0,
         .width = MENU_WIDTH,
         .height = MENU_HEIGHT_WIN0,
-        .paletteNum = 15,
+        .paletteNum = MAIN_MENU_TEXT_PAL,
         .baseBlock = 1
     },
     // OPTIONS
@@ -338,7 +345,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .tilemapTop = MENU_TOP_WIN1,
         .width = MENU_WIDTH,
         .height = MENU_HEIGHT_WIN1,
-        .paletteNum = 15,
+        .paletteNum = MAIN_MENU_TEXT_PAL,
         .baseBlock = 0x35
     },
     // Has saved game
@@ -349,7 +356,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .tilemapTop = MENU_TOP_WIN2,
         .width = MENU_WIDTH,
         .height = MENU_HEIGHT_WIN2,
-        .paletteNum = 15,
+        .paletteNum = MAIN_MENU_TEXT_PAL,
         .baseBlock = 1
     },
     // NEW GAME
@@ -359,7 +366,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .tilemapTop = MENU_TOP_WIN3,
         .width = MENU_WIDTH,
         .height = MENU_HEIGHT_WIN3,
-        .paletteNum = 15,
+        .paletteNum = MAIN_MENU_TEXT_PAL,
         .baseBlock = 0x9D
     },
     // OPTION / MYSTERY GIFT
@@ -369,7 +376,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .tilemapTop = MENU_TOP_WIN4,
         .width = MENU_WIDTH,
         .height = MENU_HEIGHT_WIN4,
-        .paletteNum = 15,
+        .paletteNum = MAIN_MENU_TEXT_PAL,
         .baseBlock = 0xD1
     },
     // OPTION / MYSTERY EVENTS
@@ -379,7 +386,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .tilemapTop = MENU_TOP_WIN5,
         .width = MENU_WIDTH,
         .height = MENU_HEIGHT_WIN5,
-        .paletteNum = 15,
+        .paletteNum = MAIN_MENU_TEXT_PAL,
         .baseBlock = 0x105
     },
     // OPTION
@@ -389,7 +396,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .tilemapTop = MENU_TOP_WIN6,
         .width = MENU_WIDTH,
         .height = MENU_HEIGHT_WIN6,
-        .paletteNum = 15,
+        .paletteNum = MAIN_MENU_TEXT_PAL,
         .baseBlock = 0x139
     },
     // Error message window
@@ -399,7 +406,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .tilemapTop = MENU_TOP_ERROR,
         .width = MENU_WIDTH_ERROR,
         .height = MENU_HEIGHT_ERROR,
-        .paletteNum = 15,
+        .paletteNum = MAIN_MENU_TEXT_PAL,
         .baseBlock = 0x16D
     },
     DUMMY_WIN_TEMPLATE
@@ -646,7 +653,6 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 
     ResetPaletteFade();
     LoadPalette(sMainMenuBgPal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
-    LoadPalette(sMainMenuTextPal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     ResetTasks();
     ResetSpriteData();
     FreeAllSpritePalettes();
@@ -670,8 +676,11 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     ChangeBgY(1, 0, BG_COORD_SET);
     InitWindows(sWindowTemplates_MainMenu);
     DeactivateAllTextPrinters();
-    LoadMainMenuWindowFrameTiles(0, MAIN_MENU_BORDER_TILE);
+    // Draw every background with the exact original palettes, then load
+    // the UI palettes into banks not used by the backgrounds.
     LoadTitleScreenBackgroundForMainMenu();
+    LoadMainMenuWindowFrameTiles(0, MAIN_MENU_BORDER_TILE);
+    LoadPalette(sMainMenuTextPal, BG_PLTT_ID(MAIN_MENU_TEXT_PAL), PLTT_SIZE_4BPP);
     BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
 
     SetGpuReg(REG_OFFSET_WIN0H, 0);
@@ -838,28 +847,28 @@ static void Task_DisplayMainMenu(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDY, 0);
 
         palette = RGB_BLACK;
-        LoadPalette(&palette, BG_PLTT_ID(15) + 14, PLTT_SIZEOF(1));
+        LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 14, PLTT_SIZEOF(1));
 
         palette = RGB_WHITE;
-        LoadPalette(&palette, BG_PLTT_ID(15) + 10, PLTT_SIZEOF(1));
+        LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 10, PLTT_SIZEOF(1));
 
         palette = RGB(12, 12, 12);
-        LoadPalette(&palette, BG_PLTT_ID(15) + 11, PLTT_SIZEOF(1));
+        LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 11, PLTT_SIZEOF(1));
 
         palette = RGB(26, 26, 25);
-        LoadPalette(&palette, BG_PLTT_ID(15) + 12, PLTT_SIZEOF(1));
+        LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 12, PLTT_SIZEOF(1));
 
         // Note: If there is no save file, the save block is zeroed out,
         // so the default gender is MALE.
         if (gSaveBlock2Ptr->playerGender == MALE)
         {
             palette = RGB(4, 16, 31);
-            LoadPalette(&palette, BG_PLTT_ID(15) + 1, PLTT_SIZEOF(1));
+            LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 1, PLTT_SIZEOF(1));
         }
         else
         {
             palette = RGB(31, 3, 21);
-            LoadPalette(&palette, BG_PLTT_ID(15) + 1, PLTT_SIZEOF(1));
+            LoadPalette(&palette, BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 1, PLTT_SIZEOF(1));
         }
 
         switch (gTasks[taskId].tMenuType)
@@ -989,12 +998,12 @@ static void LoadDimmedMainMenuWindowPalettes(void)
 
     for (i = 0; i < 16; i++)
     {
-        dimText[i] = DimMainMenuColor(gPlttBufferUnfaded[BG_PLTT_ID(15) + i]);
-        dimFrame[i] = DimMainMenuColor(gPlttBufferUnfaded[BG_PLTT_ID(2) + i]);
+        dimText[i] = DimMainMenuColor(gPlttBufferUnfaded[BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + i]);
+        dimFrame[i] = DimMainMenuColor(gPlttBufferUnfaded[BG_PLTT_ID(MAIN_MENU_FRAME_PAL) + i]);
     }
 
-    LoadPalette(dimText, BG_PLTT_ID(12), sizeof(dimText));
-    LoadPalette(dimFrame, BG_PLTT_ID(13), sizeof(dimFrame));
+    LoadPalette(dimText, BG_PLTT_ID(MAIN_MENU_DIM_TEXT_PAL), sizeof(dimText));
+    LoadPalette(dimFrame, BG_PLTT_ID(MAIN_MENU_DIM_FRAME_PAL), sizeof(dimFrame));
 }
 
 static void UpdateMainMenuWindowPalettes(u8 menuType, u8 selectedItem)
@@ -1032,10 +1041,10 @@ static void UpdateMainMenuWindowPalettes(u8 menuType, u8 selectedItem)
                 u16 *entry = &tilemap[y * 32 + x];
                 u8 palette = *entry >> 12;
 
-                if (palette == 2 || palette == 13)
-                    *entry = (*entry & 0x0FFF) | ((selected ? 2 : 13) << 12);
-                else if (palette == 15 || palette == 12)
-                    *entry = (*entry & 0x0FFF) | ((selected ? 15 : 12) << 12);
+                if (palette == MAIN_MENU_FRAME_PAL || palette == MAIN_MENU_DIM_FRAME_PAL)
+                    *entry = (*entry & 0x0FFF) | ((selected ? MAIN_MENU_FRAME_PAL : MAIN_MENU_DIM_FRAME_PAL) << 12);
+                else if (palette == MAIN_MENU_TEXT_PAL || palette == MAIN_MENU_DIM_TEXT_PAL)
+                    *entry = (*entry & 0x0FFF) | ((selected ? MAIN_MENU_TEXT_PAL : MAIN_MENU_DIM_TEXT_PAL) << 12);
             }
         }
     }
@@ -1258,8 +1267,8 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
             case ACTION_INVALID:
                 gTasks[taskId].tCurrItem = 0;
                 gTasks[taskId].func = Task_DisplayMainMenuInvalidActionError;
-                gPlttBufferUnfaded[BG_PLTT_ID(15) + 1] = RGB_WHITE;
-                gPlttBufferFaded[BG_PLTT_ID(15) + 1] = RGB_WHITE;
+                gPlttBufferUnfaded[BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 1] = RGB_WHITE;
+                gPlttBufferFaded[BG_PLTT_ID(MAIN_MENU_TEXT_PAL) + 1] = RGB_WHITE;
                 SetGpuReg(REG_OFFSET_BG2HOFS, 0);
                 SetGpuReg(REG_OFFSET_BG2VOFS, 0);
                 SetGpuReg(REG_OFFSET_BG1HOFS, 0);
@@ -2374,11 +2383,14 @@ static void MainMenu_FormatSavegameBadges(void)
 static void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
 {
     LoadBgTiles(bgId, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, tileOffset);
-    LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
+    LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal,
+                BG_PLTT_ID(tileOffset == MAIN_MENU_BORDER_TILE ? MAIN_MENU_FRAME_PAL : 2),
+                PLTT_SIZE_4BPP);
 }
 
 static void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 baseTileNum)
 {
+    const u8 palette = baseTileNum == MAIN_MENU_BORDER_TILE ? MAIN_MENU_FRAME_PAL : 2;
     u16 r9 = 1 + baseTileNum;
     u16 r10 = 2 + baseTileNum;
     u16 sp18 = 3 + baseTileNum;
@@ -2387,14 +2399,14 @@ static void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 
     u16 sp14 = 7 + baseTileNum;
     u16 r6 = 8 + baseTileNum;
 
-    FillBgTilemapBufferRect(template->bg, baseTileNum, template->tilemapLeft - 1, template->tilemapTop - 1, 1, 1, 2);
-    FillBgTilemapBufferRect(template->bg, r9, template->tilemapLeft, template->tilemapTop - 1, template->width, 1, 2);
-    FillBgTilemapBufferRect(template->bg, r10, template->tilemapLeft + template->width, template->tilemapTop - 1, 1, 1, 2);
-    FillBgTilemapBufferRect(template->bg, sp18, template->tilemapLeft - 1, template->tilemapTop, 1, template->height, 2);
-    FillBgTilemapBufferRect(template->bg, spC, template->tilemapLeft + template->width, template->tilemapTop, 1, template->height, 2);
-    FillBgTilemapBufferRect(template->bg, sp10, template->tilemapLeft - 1, template->tilemapTop + template->height, 1, 1, 2);
-    FillBgTilemapBufferRect(template->bg, sp14, template->tilemapLeft, template->tilemapTop + template->height, template->width, 1, 2);
-    FillBgTilemapBufferRect(template->bg, r6, template->tilemapLeft + template->width, template->tilemapTop + template->height, 1, 1, 2);
+    FillBgTilemapBufferRect(template->bg, baseTileNum, template->tilemapLeft - 1, template->tilemapTop - 1, 1, 1, palette);
+    FillBgTilemapBufferRect(template->bg, r9, template->tilemapLeft, template->tilemapTop - 1, template->width, 1, palette);
+    FillBgTilemapBufferRect(template->bg, r10, template->tilemapLeft + template->width, template->tilemapTop - 1, 1, 1, palette);
+    FillBgTilemapBufferRect(template->bg, sp18, template->tilemapLeft - 1, template->tilemapTop, 1, template->height, palette);
+    FillBgTilemapBufferRect(template->bg, spC, template->tilemapLeft + template->width, template->tilemapTop, 1, template->height, palette);
+    FillBgTilemapBufferRect(template->bg, sp10, template->tilemapLeft - 1, template->tilemapTop + template->height, 1, 1, palette);
+    FillBgTilemapBufferRect(template->bg, sp14, template->tilemapLeft, template->tilemapTop + template->height, template->width, 1, palette);
+    FillBgTilemapBufferRect(template->bg, r6, template->tilemapLeft + template->width, template->tilemapTop + template->height, 1, 1, palette);
     CopyBgTilemapBufferToVram(template->bg);
 }
 
