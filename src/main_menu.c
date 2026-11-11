@@ -173,6 +173,7 @@ static EWRAM_DATA bool8 sStartedPokeBallTask = 0;
 static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
 
 static u8 sBirchSpeechMainTaskId;
+static bool8 sMainMenuLegendaryBgActive;
 
 // Static ROM declarations
 
@@ -563,6 +564,8 @@ enum
 static void CB2_MainMenu(void)
 {
     RunTasks();
+    if (sMainMenuLegendaryBgActive)
+        AnimateTitleScreenBackgroundForMainMenu();
     AnimateSprites();
     BuildOamBuffer();
     UpdatePaletteFade();
@@ -570,6 +573,8 @@ static void CB2_MainMenu(void)
 
 static void VBlankCB_MainMenu(void)
 {
+    if (sMainMenuLegendaryBgActive)
+        ScanlineEffect_InitHBlankDmaTransfer();
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
@@ -587,7 +592,10 @@ void CB2_ReinitMainMenu(void)
 
 static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 {
+    (void)returningFromOptionsMenu;
+    sMainMenuLegendaryBgActive = FALSE;
     SetVBlankCallback(NULL);
+    ScanlineEffect_Stop();
 
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     SetGpuReg(REG_OFFSET_BG2CNT, 0);
@@ -607,14 +615,10 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     ResetPaletteFade();
     LoadPalette(sMainMenuBgPal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
     LoadPalette(sMainMenuTextPal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-    ScanlineEffect_Stop();
     ResetTasks();
     ResetSpriteData();
     FreeAllSpritePalettes();
-    if (returningFromOptionsMenu)
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK); // fade to black
-    else
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_WHITEALPHA); // fade to white
+    // The title and this menu change directly, without a black/white fade.
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sMainMenuBgTemplates, ARRAY_COUNT(sMainMenuBgTemplates));
     if (IsTitleScreenRayquazaBackground())
@@ -652,6 +656,11 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     ShowBg(1);
     ShowBg(2);
     CreateTask(Task_MainMenuCheckSaveFile, 0);
+
+    // Recreate the same wavy scenery effect used on the title screen.
+    // Title uses BG1HOFS; the menu draws that scenery on BG2.
+    ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG2HOFS, FALSE);
+    sMainMenuLegendaryBgActive = TRUE;
 
     return 0;
 }
@@ -1141,6 +1150,9 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
                 return;
         }
+        // Stop the background effect before another screen reuses BG2.
+        sMainMenuLegendaryBgActive = FALSE;
+        ScanlineEffect_Stop();
         FreeAllWindowBuffers();
         if (action != ACTION_OPTION)
             sCurrItemAndOptionMenuCheck = 0;
@@ -1156,6 +1168,8 @@ static void Task_HandleMainMenuBPressed(u8 taskId)
         if (gTasks[taskId].tMenuType == HAS_MYSTERY_EVENTS)
             RemoveScrollIndicatorArrowPair(gTasks[taskId].tScrollArrowTaskId);
         sCurrItemAndOptionMenuCheck = 0;
+        sMainMenuLegendaryBgActive = FALSE;
+        ScanlineEffect_Stop();
         FreeAllWindowBuffers();
         SetMainCallback2(CB2_InitTitleScreen);
         DestroyTask(taskId);

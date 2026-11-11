@@ -39,6 +39,8 @@ enum
 
 static u8 sTitleBackground;
 static u16 sTitleMarkingColor;
+static u8 sTitleBackgroundFrame;
+static u16 sTitleBackgroundScrollY;
 
 #define VERSION_BANNER_RIGHT_TILEOFFSET 64
 #define VERSION_BANNER_LEFT_X 98
@@ -56,12 +58,11 @@ static void MainCB2(void);
 static void Task_TitleScreenPhase1(u8);
 static void Task_TitleScreenPhase2(u8);
 static void Task_TitleScreenPhase3(u8);
-static void CB2_GoToMainMenu(void);
 static void CB2_GoToClearSaveDataScreen(void);
 static void CB2_GoToResetRtcScreen(void);
 static void CB2_GoToBerryFixScreen(void);
 static void CB2_GoToCopyrightScreen(void);
-static void UpdateLegendaryMarkingColor(u8);
+static void UpdateLegendaryMarkingColor(u8, u8);
 
 static void SpriteCB_VersionBannerLeft(struct Sprite *sprite);
 static void SpriteCB_VersionBannerRight(struct Sprite *sprite);
@@ -597,6 +598,8 @@ void CB2_InitTitleScreen(void)
     default:
     case 0:
 		sTitleBackground = Random() % 3;
+        sTitleBackgroundFrame = 0;
+        sTitleBackgroundScrollY = 0;
         SetVBlankCallback(NULL);
         SetGpuReg(REG_OFFSET_BLDCNT, 0);
         SetGpuReg(REG_OFFSET_BLDALPHA, 0);
@@ -864,8 +867,8 @@ static void Task_TitleScreenPhase3(u8 taskId)
 				break;
 			}
 		}
-		BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
-		SetMainCallback2(CB2_GoToMainMenu);
+        // Enter the main menu directly: do not fade the legendary out.
+        SetMainCallback2(CB2_InitMainMenu);
 	}
     else if (JOY_HELD(CLEAR_SAVE_BUTTON_COMBO) == CLEAR_SAVE_BUTTON_COMBO)
     {
@@ -895,7 +898,10 @@ static void Task_TitleScreenPhase3(u8 taskId)
 			gBattle_BG1_Y = (sTitleBackground == TITLE_BG_RAYQUAZA) ? gTasks[taskId].tBg1Y / 2 : gTasks[taskId].tBg1Y;
             gBattle_BG1_X = 0;
         }
-        UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
+        // Keep the exact title animation phase for the menu that follows.
+        sTitleBackgroundFrame = gTasks[taskId].tCounter;
+        sTitleBackgroundScrollY = gTasks[taskId].tBg1Y;
+        UpdateLegendaryMarkingColor(sTitleBackgroundFrame, 14);
         if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
         {
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
@@ -982,17 +988,28 @@ void LoadTitleScreenBackgroundForMainMenu(void)
         break;
     }
 
-    // Freeze the last marking color shown on Press Start in the new palette.
+    // Start at the exact scenery position and color reached on Press Start.
+    SetGpuReg(REG_OFFSET_BG2VOFS, sTitleBackground == TITLE_BG_RAYQUAZA
+                                  ? sTitleBackgroundScrollY / 2
+                                  : sTitleBackgroundScrollY);
     LoadPalette(&sTitleMarkingColor, BG_PLTT_ID(6) + 15, sizeof(sTitleMarkingColor));
 
     // Make transparent background areas black instead of menu violet.
     LoadPalette(gTitleScreenBgPalettes, BG_PLTT_ID(0), sizeof(u16));
 }
 
-static void CB2_GoToMainMenu(void)
+// Match the title's animation rates: scenery scrolls every other frame,
+// at half that speed for Rayquaza; the legendary's marking changes every
+// fourth frame. The menu's scenery is BG2 rather than title BG1.
+void AnimateTitleScreenBackgroundForMainMenu(void)
 {
-    if (!UpdatePaletteFade())
-        SetMainCallback2(CB2_InitMainMenu);
+    if (++sTitleBackgroundFrame & 1)
+        sTitleBackgroundScrollY++;
+
+    SetGpuReg(REG_OFFSET_BG2VOFS, sTitleBackground == TITLE_BG_RAYQUAZA
+                                  ? sTitleBackgroundScrollY / 2
+                                  : sTitleBackgroundScrollY);
+    UpdateLegendaryMarkingColor(sTitleBackgroundFrame, 6);
 }
 
 static void CB2_GoToCopyrightScreen(void)
@@ -1038,7 +1055,7 @@ static void UpdateLegendaryMarkingColor(u8 frameNum)
 }
 */
 
-static void UpdateLegendaryMarkingColor(u8 frameNum)
+static void UpdateLegendaryMarkingColor(u8 frameNum, u8 paletteNum)
 {
     u16 color;
 	if ((frameNum % 4) != 0)
@@ -1063,5 +1080,5 @@ static void UpdateLegendaryMarkingColor(u8 frameNum)
             color = RGB(intensity, 0, 0);
     }
     sTitleMarkingColor = color;
-    LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
+    LoadPalette(&color, BG_PLTT_ID(paletteNum) + 15, sizeof(color));
 }
