@@ -1199,7 +1199,9 @@ static bool8 HandleMainMenuInput(u8 taskId)
     if (JOY_NEW(A_BUTTON))
     {
         PlaySE(SE_SELECT);
-        IsWirelessAdapterConnected();   // why bother calling this here? debug? Task_HandleMainMenuAPressed will check too
+        // Do not probe the wireless adapter here. Its RFU handshake may
+        // block a frame before the fade even begins. Only wireless menu
+        // actions require a live connection check.
         // All actions fade to black. OPTION keeps the title background
         // loaded and prepares its UI invisibly after this fade-out.
         sInlineOptionsTransitionBlackout = (tCurrItem == tItemCount - 1);
@@ -1256,15 +1258,23 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
     {
         if (gTasks[taskId].tMenuType == HAS_MYSTERY_EVENTS)
             RemoveScrollIndicatorArrowPair(gTasks[taskId].tScrollArrowTaskId);
-        ClearStdWindowAndFrame(0, TRUE);
-        ClearStdWindowAndFrame(1, TRUE);
-        ClearStdWindowAndFrame(2, TRUE);
-        ClearStdWindowAndFrame(3, TRUE);
-        ClearStdWindowAndFrame(4, TRUE);
-        ClearStdWindowAndFrame(5, TRUE);
-        ClearStdWindowAndFrame(6, TRUE);
-        ClearStdWindowAndFrame(7, TRUE);
-        wirelessAdapterConnected = IsWirelessAdapterConnected();
+        // The fade-out has finished. No need to clear all eight menu
+        // windows and upload each one to VRAM: CONTINUE reloads the
+        // overworld, NEW GAME switches BG templates, and OPTION prepares
+        // its replacement windows while the screen is black.
+        //
+        // RFU detection includes a synchronous hardware handshake. Do
+        // it only for Mystery Gift / Mystery Events, never for the three
+        // normal choices (CONTINUE, NEW GAME, OPTION).
+        wirelessAdapterConnected = FALSE;
+        if ((gTasks[taskId].tMenuType == HAS_MYSTERY_GIFT
+          && gTasks[taskId].tCurrItem == 2)
+         || (gTasks[taskId].tMenuType == HAS_MYSTERY_EVENTS
+          && (gTasks[taskId].tCurrItem == 2
+           || gTasks[taskId].tCurrItem == 3)))
+        {
+            wirelessAdapterConnected = IsWirelessAdapterConnected();
+        }
         switch (gTasks[taskId].tMenuType)
         {
             case HAS_NO_SAVED_GAME:
@@ -1388,8 +1398,8 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 sInlineOptionsReturnWireless = gTasks[taskId].tWirelessAdapterConnected;
                 CpuCopy16(gPlttBufferUnfaded + BG_PLTT_ID(MAIN_MENU_TEXT_PAL),
                           sSavedMainMenuTextPalette, PLTT_SIZE_4BPP);
-                if (sInlineOptionsReturnMenuType == HAS_MYSTERY_EVENTS)
-                    RemoveScrollIndicatorArrowPair(gTasks[taskId].tScrollArrowTaskId);
+                // The scroll arrow pair, if present, was already removed
+                // at the start of this action; never destroy it twice.
                 OptionMenu_OpenFromMainMenu(taskId);
                 return;
             case ACTION_MYSTERY_GIFT:
