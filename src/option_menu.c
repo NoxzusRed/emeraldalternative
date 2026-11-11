@@ -725,7 +725,23 @@ static void Task_OptionMenuSave(u8 taskId)
         if (sOptionMenuOnOverworld)
         {
             struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+            struct Sprite *sprite = &gSprites[player->spriteId];
+            s16 frame;
+            u8 animCmdIndex;
+
             ObjectEventSetGraphicsId(player, player->graphicsId);
+
+            // The Start menu freezes sprite animation, so updating graphics info
+            // and palette alone leaves the previous style's tiles in OBJ VRAM.
+            // Copy the currently displayed frame now without restarting the
+            // animation, changing the player's direction, or reloading the map.
+            if (sprite->inUse && !sprite->usingSheet && sprite->images != NULL)
+            {
+                animCmdIndex = sprite->animBeginning ? 0 : sprite->animCmdIndex;
+                frame = sprite->anims[sprite->animNum][animCmdIndex].frame.imageValue;
+                if (frame >= 0)
+                    RequestSpriteFrameImageCopy(frame, sprite->oam.tileNum, sprite->images);
+            }
         }
     }
 
