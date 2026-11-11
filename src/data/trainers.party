@@ -2712,13 +2712,13 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Eevee @ Nugget
-Level: 32
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Sylveon @ Nugget
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Eevee @ Nugget
-Level: 32
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CINDY_4 ===
 Name: CINDY
@@ -2731,15 +2731,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Sylveon @ Nugget
-Level: 36
+Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Espeon @ Nugget
-Level: 36
+Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Eevee @ Nugget
-Level: 36
+Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CINDY_5 ===
@@ -2753,15 +2753,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Sylveon @ Nugget
-Level: 42
+Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Espeon @ Nugget
-Level: 42
+Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Glaceon @ Nugget
-Level: 42
+Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CINDY_6 ===
@@ -2775,16 +2775,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Sylveon @ Nugget
-Level: 46
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Espeon @ Nugget
-Level: 46
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Glaceon @ Nugget
-Level: 46
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_MELISSA ===
 Name: MELISSA
@@ -5805,10 +5805,11 @@ EVs: 64 HP
 - Bulldoze
 - Iron Tail
 
-Linoone @ Chesto Berry
+Linoone @ Figy Berry
 Level: 33
-IVs: 24 HP / 24 Atk / 28 Def / 24 SpA / 28 SpD / 24 Spe
-EVs: 252 HP / 252 Spe / 100 Def / 100 SpD
+Ability: Gluttony
+IVs: 24 HP / 24 Atk / 20 Def / 24 SpA / 20 SpD / 24 Spe
+EVs: 252 HP / 252 Spe / 50 Def / 50 SpD
 - Slash
 - Belly Drum
 - Night Slash
