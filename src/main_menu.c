@@ -198,6 +198,8 @@ static void Task_DisplayMainMenu(u8);
 static void Task_WaitForBatteryDryErrorWindow(u8);
 static void MainMenu_FormatSavegameText(void);
 static void HighlightSelectedMainMenuItem(u8, u8, s16);
+static void LoadDimmedMainMenuWindowPalettes(void);
+static void UpdateMainMenuWindowPalettes(u8, u8);
 static void Task_HandleMainMenuInput(u8);
 static void Task_HandleMainMenuAPressed(u8);
 static void Task_HandleMainMenuBPressed(u8);
@@ -463,14 +465,16 @@ static const struct BgTemplate sMainMenuBgTemplates[] = {
 };
 
 
+// BG0 is the menu. BG1 carries the translucent moving scenery and must
+// be in front of the BG2 legendary, as on the original Press Start screen.
 static const struct BgTemplate sMainMenuRsTitleBgTemplates[] = {
-    { .bg = 1, .charBaseIndex = 2, .mapBaseIndex = 24, .screenSize = 0, .paletteMode = 0, .priority = 1, .baseTile = 0 },
-    { .bg = 2, .charBaseIndex = 2, .mapBaseIndex = 25, .screenSize = 0, .paletteMode = 0, .priority = 2, .baseTile = 0 }
+    { .bg = 1, .charBaseIndex = 2, .mapBaseIndex = 25, .screenSize = 0, .paletteMode = 0, .priority = 1, .baseTile = 0 },
+    { .bg = 2, .charBaseIndex = 2, .mapBaseIndex = 24, .screenSize = 0, .paletteMode = 0, .priority = 2, .baseTile = 0 }
 };
 
 static const struct BgTemplate sMainMenuRayquazaTitleBgTemplates[] = {
-    { .bg = 1, .charBaseIndex = 2, .mapBaseIndex = 26, .screenSize = 0, .paletteMode = 0, .priority = 1, .baseTile = 0 },
-    { .bg = 2, .charBaseIndex = 3, .mapBaseIndex = 27, .screenSize = 0, .paletteMode = 0, .priority = 2, .baseTile = 0 }
+    { .bg = 1, .charBaseIndex = 3, .mapBaseIndex = 27, .screenSize = 0, .paletteMode = 0, .priority = 1, .baseTile = 0 },
+    { .bg = 2, .charBaseIndex = 2, .mapBaseIndex = 26, .screenSize = 0, .paletteMode = 0, .priority = 2, .baseTile = 0 }
 };
 
 static const struct BgTemplate sBirchBgTemplate = {
@@ -687,9 +691,8 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     ShowBg(2);
     CreateTask(Task_MainMenuCheckSaveFile, 0);
 
-    // Recreate the same wavy scenery effect used on the title screen.
-    // Title uses BG1HOFS; the menu draws that scenery on BG2.
-    ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG2HOFS, FALSE);
+    // The BG1 scenery has the same HBlank distortion as Press Start.
+    ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, FALSE);
     sMainMenuLegendaryBgActive = TRUE;
 
     return 0;
@@ -712,11 +715,11 @@ static void Task_MainMenuCheckSaveFile(u8 taskId)
     {
         SetGpuReg(REG_OFFSET_WIN0H, 0);
         SetGpuReg(REG_OFFSET_WIN0V, 0);
-        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ);
+        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
         SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR);
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_EFFECT_DARKEN | BLDCNT_TGT1_BG0);
-        SetGpuReg(REG_OFFSET_BLDALPHA, 0);
-        SetGpuReg(REG_OFFSET_BLDY, 7);
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BD);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(6, 15));
+        SetGpuReg(REG_OFFSET_BLDY, 0);
 
         if (IsWirelessAdapterConnected())
             tWirelessAdapterConnected = TRUE;
@@ -790,11 +793,11 @@ static void Task_MainMenuCheckBattery(u8 taskId)
     {
         SetGpuReg(REG_OFFSET_WIN0H, 0);
         SetGpuReg(REG_OFFSET_WIN0V, 0);
-        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ);
+        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
         SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR);
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_EFFECT_DARKEN | BLDCNT_TGT1_BG0);
-        SetGpuReg(REG_OFFSET_BLDALPHA, 0);
-        SetGpuReg(REG_OFFSET_BLDY, 7);
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BD);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(6, 15));
+        SetGpuReg(REG_OFFSET_BLDY, 0);
 
         if (!(RtcGetErrorStatus() & RTC_ERR_FLAG_MASK))
         {
@@ -828,11 +831,11 @@ static void Task_DisplayMainMenu(u8 taskId)
     {
         SetGpuReg(REG_OFFSET_WIN0H, 0);
         SetGpuReg(REG_OFFSET_WIN0V, 0);
-        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ);
+        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
         SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR);
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_EFFECT_DARKEN | BLDCNT_TGT1_BG0);
-        SetGpuReg(REG_OFFSET_BLDALPHA, 0);
-        SetGpuReg(REG_OFFSET_BLDY, 7);
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BD);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(6, 15));
+        SetGpuReg(REG_OFFSET_BLDY, 0);
 
         palette = RGB_BLACK;
         LoadPalette(&palette, BG_PLTT_ID(15) + 14, PLTT_SIZEOF(1));
@@ -947,12 +950,16 @@ static void Task_DisplayMainMenu(u8 taskId)
                 if (sCurrItemAndOptionMenuCheck == 4)
                 {
                     ChangeBgY(0, 0x2000, BG_COORD_ADD);
-                    ChangeBgY(1, 0x2000, BG_COORD_ADD);
+                    // Keep the animated scenery independent of menu scrolling.
                     tIsScrolled = TRUE;
                     gTasks[tScrollArrowTaskId].tArrowTaskIsScrolled = TRUE;
                 }
                 break;
         }
+        // Use matching dark/normal palettes for each menu window, without
+        // disturbing the transparent background layers.
+        LoadDimmedMainMenuWindowPalettes();
+
         // All options and save data are drawn before the first visible
         // fade-in frame. The callback also waits for VRAM/DMA completion.
         if (sMainMenuFadeState == MAIN_MENU_FADE_WAIT_FOR_CONTENT)
@@ -961,9 +968,84 @@ static void Task_DisplayMainMenu(u8 taskId)
     }
 }
 
+
+#define MAIN_MENU_DIM_COEFF 9 // Remaining intensity after the old BLDY=7 darkening.
+
+// The GBA has only one BLDCNT effect mode at a time. Now that BG1 uses
+// alpha blending for clouds/bubbles/lava, reproduce the original menu's
+// unselected grey windows with separate pre-darkened palette banks.
+static u16 DimMainMenuColor(u16 color)
+{
+    return RGB(((color & 31) * MAIN_MENU_DIM_COEFF) / 16,
+               (((color >> 5) & 31) * MAIN_MENU_DIM_COEFF) / 16,
+               (((color >> 10) & 31) * MAIN_MENU_DIM_COEFF) / 16);
+}
+
+static void LoadDimmedMainMenuWindowPalettes(void)
+{
+    u16 dimText[16];
+    u16 dimFrame[16];
+    u8 i;
+
+    for (i = 0; i < 16; i++)
+    {
+        dimText[i] = DimMainMenuColor(gPlttBufferUnfaded[BG_PLTT_ID(15) + i]);
+        dimFrame[i] = DimMainMenuColor(gPlttBufferUnfaded[BG_PLTT_ID(2) + i]);
+    }
+
+    LoadPalette(dimText, BG_PLTT_ID(14), sizeof(dimText));
+    LoadPalette(dimFrame, BG_PLTT_ID(13), sizeof(dimFrame));
+}
+
+static void UpdateMainMenuWindowPalettes(u8 menuType, u8 selectedItem)
+{
+    u16 *tilemap = GetBgTilemapBuffer(0);
+    u8 firstWindow;
+    u8 lastWindow;
+    u8 window;
+    u8 x;
+    u8 y;
+
+    if (tilemap == NULL)
+        return;
+
+    if (menuType == HAS_NO_SAVED_GAME)
+    {
+        firstWindow = 0;
+        lastWindow = 1;
+    }
+    else
+    {
+        firstWindow = 2;
+        lastWindow = menuType + 3;
+    }
+
+    for (window = firstWindow; window <= lastWindow; window++)
+    {
+        const struct WindowTemplate *template = &sWindowTemplates_MainMenu[window];
+        bool8 selected = window == firstWindow + selectedItem;
+
+        for (y = template->tilemapTop - 1; y <= template->tilemapTop + template->height; y++)
+        {
+            for (x = template->tilemapLeft - 1; x <= template->tilemapLeft + template->width; x++)
+            {
+                u16 *entry = &tilemap[y * 32 + x];
+                u8 palette = *entry >> 12;
+
+                if (palette == 2 || palette == 13)
+                    *entry = (*entry & 0x0FFF) | ((selected ? 2 : 13) << 12);
+                else if (palette == 15 || palette == 14)
+                    *entry = (*entry & 0x0FFF) | ((selected ? 15 : 14) << 12);
+            }
+        }
+    }
+    CopyBgTilemapBufferToVram(0);
+}
+
 static void Task_HighlightSelectedMainMenuItem(u8 taskId)
 {
     HighlightSelectedMainMenuItem(gTasks[taskId].tMenuType, gTasks[taskId].tCurrItem, gTasks[taskId].tIsScrolled);
+    UpdateMainMenuWindowPalettes(gTasks[taskId].tMenuType, gTasks[taskId].tCurrItem);
     gTasks[taskId].func = Task_HandleMainMenuInput;
 }
 
@@ -995,7 +1077,7 @@ static bool8 HandleMainMenuInput(u8 taskId)
         if (tMenuType == HAS_MYSTERY_EVENTS && tIsScrolled == TRUE && tCurrItem == 1)
         {
             ChangeBgY(0, 0x2000, BG_COORD_SUB);
-            ChangeBgY(1, 0x2000, BG_COORD_SUB);
+            // Keep the animated scenery independent of menu scrolling.
             gTasks[tScrollArrowTaskId].tArrowTaskIsScrolled = tIsScrolled = FALSE;
         }
         tCurrItem--;
@@ -1007,7 +1089,7 @@ static bool8 HandleMainMenuInput(u8 taskId)
         if (tMenuType == HAS_MYSTERY_EVENTS && tCurrItem == 3 && tIsScrolled == FALSE)
         {
             ChangeBgY(0, 0x2000, BG_COORD_ADD);
-            ChangeBgY(1, 0x2000, BG_COORD_ADD);
+            // Keep the animated scenery independent of menu scrolling.
             gTasks[tScrollArrowTaskId].tArrowTaskIsScrolled = tIsScrolled = TRUE;
         }
         tCurrItem++;
@@ -1142,7 +1224,6 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 break;
         }
         ChangeBgY(0, 0, BG_COORD_SET);
-        ChangeBgY(1, 0, BG_COORD_SET);
         switch (action)
         {
             case ACTION_NEW_GAME:

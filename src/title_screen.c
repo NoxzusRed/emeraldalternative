@@ -991,7 +991,7 @@ void LoadTitleScreenBackgroundForMainMenu(void)
     }
 
     // Start at the exact scenery position and color reached on Press Start.
-    SetGpuReg(REG_OFFSET_BG2VOFS, sTitleBackground == TITLE_BG_RAYQUAZA
+    SetGpuReg(REG_OFFSET_BG1VOFS, sTitleBackground == TITLE_BG_RAYQUAZA
                                   ? sTitleBackgroundScrollY / 2
                                   : sTitleBackgroundScrollY);
     LoadPalette(&sTitleMarkingColor, BG_PLTT_ID(6) + 15, sizeof(sTitleMarkingColor));
@@ -1002,13 +1002,13 @@ void LoadTitleScreenBackgroundForMainMenu(void)
 
 // Match the title's animation rates: scenery scrolls every other frame,
 // at half that speed for Rayquaza; the legendary's marking changes every
-// fourth frame. The menu's scenery is BG2 rather than title BG1.
+// fourth frame. The menu uses BG1 for translucent scenery, as on the title.
 void AnimateTitleScreenBackgroundForMainMenu(void)
 {
     if (++sTitleBackgroundFrame & 1)
         sTitleBackgroundScrollY++;
 
-    SetGpuReg(REG_OFFSET_BG2VOFS, sTitleBackground == TITLE_BG_RAYQUAZA
+    SetGpuReg(REG_OFFSET_BG1VOFS, sTitleBackground == TITLE_BG_RAYQUAZA
                                   ? sTitleBackgroundScrollY / 2
                                   : sTitleBackgroundScrollY);
     UpdateLegendaryMarkingColor(sTitleBackgroundFrame, 6);
