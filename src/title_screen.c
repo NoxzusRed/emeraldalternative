@@ -951,14 +951,26 @@ static void RemapMainMenuTitleTilemap(u8 screenBase, u16 tileCount)
 
 void LoadTitleScreenBackgroundForMainMenu(void)
 {
-    // These source palettes are shared by the original title's scenery
-    // and legendary graphics, including the Ruby/Sapphire effects.
-    LoadPalette(gTitleScreenBgPalettes +  0 * 16, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
-    LoadPalette(gTitleScreenBgPalettes +  2 * 16, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
-    LoadPalette(gTitleScreenBgPalettes +  3 * 16, BG_PLTT_ID(4), PLTT_SIZE_4BPP);
-    LoadPalette(gTitleScreenBgPalettes +  5 * 16, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
-    LoadPalette(gTitleScreenBgPalettes +  8 * 16, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
-    LoadPalette(gTitleScreenBgPalettes + 11 * 16, BG_PLTT_ID(8), PLTT_SIZE_4BPP);
+    if (sTitleBackground == TITLE_BG_RAYQUAZA)
+    {
+        // Rayquaza uses some of the menu's palette slots, so only this
+        // variant needs to remap its background palette numbers.
+        LoadPalette(gTitleScreenBgPalettes +  0 * 16, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+        LoadPalette(gTitleScreenBgPalettes +  2 * 16, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
+        LoadPalette(gTitleScreenBgPalettes +  3 * 16, BG_PLTT_ID(4), PLTT_SIZE_4BPP);
+        LoadPalette(gTitleScreenBgPalettes +  5 * 16, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
+        LoadPalette(gTitleScreenBgPalettes +  8 * 16, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        LoadPalette(gTitleScreenBgPalettes + 11 * 16, BG_PLTT_ID(8), PLTT_SIZE_4BPP);
+    }
+    else
+    {
+        // Groudon's lava and Kyogre's bubbles use palette slots 0, 8,
+        // 11 and 14. Preserve those original colors and indices exactly:
+        // remapping them changes the visual effect in the main menu.
+        LoadPalette(gTitleScreenBgPalettes +  0 * 16, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+        LoadPalette(gTitleScreenBgPalettes +  8 * 16, BG_PLTT_ID(8), PLTT_SIZE_4BPP);
+        LoadPalette(gTitleScreenBgPalettes + 11 * 16, BG_PLTT_ID(11), PLTT_SIZE_4BPP);
+    }
 
     switch (sTitleBackground)
     {
@@ -966,17 +978,17 @@ void LoadTitleScreenBackgroundForMainMenu(void)
         LZ77UnCompVram(sTitleGroudonGfx, (void *)BG_CHAR_ADDR(2));
         LZ77UnCompVram(sTitleGroudonMap, (void *)BG_SCREEN_ADDR(24));
         LZ77UnCompVram(sTitleLavaMap, (void *)BG_SCREEN_ADDR(25));
-        LoadPalette(sTitleGroudonPal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
-        RemapMainMenuTitleTilemap(24, 32 * 20);
-        RemapMainMenuTitleTilemap(25, 32 * 32);
+        LoadPalette(sTitleGroudonPal, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
+        // Leave both original Ruby tilemaps unchanged.
+
         break;
     case TITLE_BG_KYOGRE:
         LZ77UnCompVram(sTitleKyogreGfx, (void *)BG_CHAR_ADDR(2));
         LZ77UnCompVram(sTitleKyogreMap, (void *)BG_SCREEN_ADDR(24));
         LZ77UnCompVram(sTitleWaterMap, (void *)BG_SCREEN_ADDR(25));
-        LoadPalette(sTitleKyogrePal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
-        RemapMainMenuTitleTilemap(24, 32 * 20);
-        RemapMainMenuTitleTilemap(25, 32 * 32);
+        LoadPalette(sTitleKyogrePal, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
+        // Leave both original Sapphire tilemaps unchanged.
+
         break;
     case TITLE_BG_RAYQUAZA:
     default:
@@ -994,7 +1006,9 @@ void LoadTitleScreenBackgroundForMainMenu(void)
     SetGpuReg(REG_OFFSET_BG1VOFS, sTitleBackground == TITLE_BG_RAYQUAZA
                                   ? sTitleBackgroundScrollY / 2
                                   : sTitleBackgroundScrollY);
-    LoadPalette(&sTitleMarkingColor, BG_PLTT_ID(6) + 15, sizeof(sTitleMarkingColor));
+    LoadPalette(&sTitleMarkingColor,
+                BG_PLTT_ID(sTitleBackground == TITLE_BG_RAYQUAZA ? 6 : 14) + 15,
+                sizeof(sTitleMarkingColor));
 
     // Make transparent background areas black instead of menu violet.
     LoadPalette(gTitleScreenBgPalettes, BG_PLTT_ID(0), sizeof(u16));
@@ -1011,7 +1025,8 @@ void AnimateTitleScreenBackgroundForMainMenu(void)
     SetGpuReg(REG_OFFSET_BG1VOFS, sTitleBackground == TITLE_BG_RAYQUAZA
                                   ? sTitleBackgroundScrollY / 2
                                   : sTitleBackgroundScrollY);
-    UpdateLegendaryMarkingColor(sTitleBackgroundFrame, 6);
+    UpdateLegendaryMarkingColor(sTitleBackgroundFrame,
+                               sTitleBackground == TITLE_BG_RAYQUAZA ? 6 : 14);
 }
 
 static void CB2_GoToMainMenu(void)
@@ -1088,11 +1103,11 @@ static void UpdateLegendaryMarkingColor(u8 frameNum, u8 paletteNum)
             color = RGB(intensity, 0, 0);
     }
     sTitleMarkingColor = color;
-    if (paletteNum == 6 && gPaletteFade.active)
+    if (gPaletteFade.active)
     {
-        // Preserve the active menu fade: UpdatePaletteFade blends from
-        // the unfaded color on this frame, without a bright pixel flash.
-        gPlttBufferUnfaded[BG_PLTT_ID(6) + 15] = color;
+        // Preserve the active menu fade in either background palette;
+        // writing directly to the faded buffer would cause a bright flash.
+        gPlttBufferUnfaded[BG_PLTT_ID(paletteNum) + 15] = color;
     }
     else
     {

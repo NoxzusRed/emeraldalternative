@@ -447,7 +447,7 @@ static const struct BgTemplate sMainMenuBgTemplates[] = {
     {
         .bg = 0,
         .charBaseIndex = 0,
-        .mapBaseIndex = 30,
+        .mapBaseIndex = 28,
         .screenSize = 0,
         .paletteMode = 0,
         .priority = 0,
@@ -993,7 +993,7 @@ static void LoadDimmedMainMenuWindowPalettes(void)
         dimFrame[i] = DimMainMenuColor(gPlttBufferUnfaded[BG_PLTT_ID(2) + i]);
     }
 
-    LoadPalette(dimText, BG_PLTT_ID(14), sizeof(dimText));
+    LoadPalette(dimText, BG_PLTT_ID(12), sizeof(dimText));
     LoadPalette(dimFrame, BG_PLTT_ID(13), sizeof(dimFrame));
 }
 
@@ -1034,8 +1034,8 @@ static void UpdateMainMenuWindowPalettes(u8 menuType, u8 selectedItem)
 
                 if (palette == 2 || palette == 13)
                     *entry = (*entry & 0x0FFF) | ((selected ? 2 : 13) << 12);
-                else if (palette == 15 || palette == 14)
-                    *entry = (*entry & 0x0FFF) | ((selected ? 15 : 14) << 12);
+                else if (palette == 15 || palette == 12)
+                    *entry = (*entry & 0x0FFF) | ((selected ? 15 : 12) << 12);
             }
         }
     }
