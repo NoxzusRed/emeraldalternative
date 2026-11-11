@@ -174,6 +174,9 @@ static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
 
 static u8 sBirchSpeechMainTaskId;
 static bool8 sMainMenuLegendaryBgActive;
+static u8 sInlineOptionsReturnMenuType;
+static u8 sInlineOptionsReturnItem;
+static bool8 sInlineOptionsReturnWireless;
 
 // Wait for every main-menu option and window to be in VRAM before fading in.
 // Errors may reveal their error window first, so the user can acknowledge it.
@@ -225,7 +228,6 @@ static void Task_NewGameBirchSpeech_StartPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_WaitForPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_BoyOrGirl(u8);
 static void LoadMainMenuWindowFrameTiles(u8, u16);
-static void DrawMainMenuWindowBorder(const struct WindowTemplate *, u16);
 static void Task_HighlightSelectedMainMenuItem(u8);
 static void Task_NewGameBirchSpeech_WaitToShowGenderMenu(u8);
 static void Task_NewGameBirchSpeech_ChooseGender(u8);
@@ -716,6 +718,33 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 
 #define tArrowTaskIsScrolled data[15]   // For scroll indicator arrow task
 
+// Return from inline OPTION without reinitializing the GPU or background.
+// The main menu's selection and its highlighted window are restored in
+// the same task frame as B/CANCEL, preserving the legendary's motion.
+void MainMenu_ReturnFromInlineOptions(u8 taskId)
+{
+    FreeAllWindowBuffers();
+    UnsetBgTilemapBuffer(0);
+    InitWindows(sWindowTemplates_MainMenu);
+    DeactivateAllTextPrinters();
+
+    // The new BG0 tilemap starts empty, so no OPTION text remains.
+    CopyBgTilemapBufferToVram(0);
+    LoadMainMenuWindowFrameTiles(0, MAIN_MENU_BORDER_TILE);
+    LoadPalette(sMainMenuTextPal, BG_PLTT_ID(MAIN_MENU_TEXT_PAL), PLTT_SIZE_4BPP);
+
+    gTasks[taskId].tMenuType = sInlineOptionsReturnMenuType;
+    gTasks[taskId].tCurrItem = sInlineOptionsReturnItem;
+    gTasks[taskId].tItemCount = sInlineOptionsReturnMenuType + 2;
+    gTasks[taskId].tIsScrolled = FALSE;
+    gTasks[taskId].tWirelessAdapterConnected = sInlineOptionsReturnWireless;
+    sCurrItemAndOptionMenuCheck = sInlineOptionsReturnItem;
+
+    // Both the normal and the extended Mystery Events menu restore here.
+    Task_DisplayMainMenu(taskId);
+    Task_HighlightSelectedMainMenuItem(taskId);
+}
+
 static void Task_MainMenuCheckSaveFile(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
@@ -1070,7 +1099,10 @@ static bool8 HandleMainMenuInput(u8 taskId)
     {
         PlaySE(SE_SELECT);
         IsWirelessAdapterConnected();   // why bother calling this here? debug? Task_HandleMainMenuAPressed will check too
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+        // OPTION replaces only BG0's windows. Other menu actions keep
+        // their original fade and callback-based screen transitions.
+        if (tCurrItem != tItemCount - 1)
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
         gTasks[taskId].func = Task_HandleMainMenuAPressed;
     }
     else if (JOY_NEW(B_BUTTON))
@@ -1248,10 +1280,15 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 DestroyTask(taskId);
                 break;
             case ACTION_OPTION:
-                gMain.savedCallback = CB2_ReinitMainMenu;
-                SetMainCallback2(CB2_InitOptionMenu);
-                DestroyTask(taskId);
-                break;
+                // Keep the legendary, BG1/BG2 scenery, palettes and wave DMA.
+                // Only the windows on BG0 are replaced.
+                sInlineOptionsReturnMenuType = gTasks[taskId].tMenuType;
+                sInlineOptionsReturnItem = gTasks[taskId].tCurrItem;
+                sInlineOptionsReturnWireless = gTasks[taskId].tWirelessAdapterConnected;
+                if (sInlineOptionsReturnMenuType == HAS_MYSTERY_EVENTS)
+                    RemoveScrollIndicatorArrowPair(gTasks[taskId].tScrollArrowTaskId);
+                OptionMenu_OpenFromMainMenu(taskId);
+                return;
             case ACTION_MYSTERY_GIFT:
                 SetMainCallback2(CB2_InitMysteryGift);
                 DestroyTask(taskId);
@@ -2388,7 +2425,7 @@ static void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
                 PLTT_SIZE_4BPP);
 }
 
-static void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 baseTileNum)
+void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 baseTileNum)
 {
     const u8 palette = baseTileNum == MAIN_MENU_BORDER_TILE ? MAIN_MENU_FRAME_PAL : 2;
     u16 r9 = 1 + baseTileNum;

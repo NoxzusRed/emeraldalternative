@@ -4,6 +4,7 @@
 #include "gpu_regs.h"
 #include "international_string_util.h"
 #include "main.h"
+#include "main_menu.h"
 #include "menu.h"
 #include "palette.h"
 #include "scanline_effect.h"
@@ -75,8 +76,16 @@ static void RandomCalls_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
+static void LoadOptionWindowFrame(u8 selection);
 
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
+static bool8 sOptionMenuOnMainMenu;
+
+// Match the main menu's dedicated UI palette and VRAM tile banks, while
+// leaving all original title background palette banks untouched.
+#define INLINE_OPTION_FRAME_TILE 0x1D5
+#define INLINE_OPTION_FRAME_PALETTE 9
+#define INLINE_OPTION_TEXT_PALETTE 10
 
 static const u16 sOptionMenuText_Pal[] = INCBIN_U16("graphics/interface/option_menu_text.gbapal");
 // note: this is only used in the Japanese release
@@ -114,6 +123,31 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
         .height = 14,
         .paletteNum = 1,
         .baseBlock = 0x36
+    },
+    DUMMY_WIN_TEMPLATE
+};
+
+// The old OPTION window graphics are drawn on BG0 instead of rebuilding
+// BG1/BG2. The two windows end at tile 0x1A1, before the frame at 0x1D5.
+static const struct WindowTemplate sInlineOptionWindowTemplates[] =
+{
+    [WIN_HEADER] = {
+        .bg = 0,
+        .tilemapLeft = 2,
+        .tilemapTop = 1,
+        .width = 26,
+        .height = 2,
+        .paletteNum = INLINE_OPTION_TEXT_PALETTE,
+        .baseBlock = 1
+    },
+    [WIN_OPTIONS] = {
+        .bg = 0,
+        .tilemapLeft = 2,
+        .tilemapTop = 5,
+        .width = 26,
+        .height = 14,
+        .paletteNum = INLINE_OPTION_TEXT_PALETTE,
+        .baseBlock = 0x35
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -163,6 +197,7 @@ void CB2_InitOptionMenu(void)
     {
     default:
     case 0:
+        sOptionMenuOnMainMenu = FALSE;
         SetVBlankCallback(NULL);
         gMain.state++;
         break;
@@ -265,6 +300,62 @@ void CB2_InitOptionMenu(void)
         SetMainCallback2(MainCB2);
         return;
     }
+}
+
+// Called only for OPTION selected from CONTINUE / NEW GAME.
+// The main menu's CB2/VBlank callbacks and background tasks stay active,
+// with no fade and no reload of the animated legendary or its palette.
+void OptionMenu_OpenFromMainMenu(u8 taskId)
+{
+    sOptionMenuOnMainMenu = TRUE;
+    sArrowPressed = FALSE;
+
+    FreeAllWindowBuffers();
+    UnsetBgTilemapBuffer(0);
+    InitWindows(sInlineOptionWindowTemplates);
+    DeactivateAllTextPrinters();
+
+    // Clear the old menu's BG0 tilemap, not the entire VRAM. This also
+    // removes the previously highlighted CONTINUE/NEW GAME/OPTION frames.
+    CopyBgTilemapBufferToVram(0);
+
+    LoadPalette(sOptionMenuText_Pal, BG_PLTT_ID(INLINE_OPTION_TEXT_PALETTE),
+                sizeof(sOptionMenuText_Pal));
+    LoadOptionWindowFrame(gSaveBlock2Ptr->optionsWindowFrameType);
+
+    gTasks[taskId].tMenuSelection = 0;
+    gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
+    gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
+    gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+    gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
+    gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
+    gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
+    gTasks[taskId].tRandomCallsOff = gSaveBlock2Ptr->optionsRandomCallsOff;
+
+    // White background and original moving ▶ cursor, exactly as in the
+    // standalone options screen. No gray selection fill is introduced.
+    PutWindowTilemap(WIN_HEADER);
+    PutWindowTilemap(WIN_OPTIONS);
+    DrawHeaderText();
+    DrawOptionMenuTexts();
+    TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
+    BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
+    BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
+    Sound_DrawChoices(gTasks[taskId].tSound);
+    ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
+    FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
+    RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
+    HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+
+    DrawMainMenuWindowBorder(&sInlineOptionWindowTemplates[WIN_HEADER], INLINE_OPTION_FRAME_TILE);
+    DrawMainMenuWindowBorder(&sInlineOptionWindowTemplates[WIN_OPTIONS], INLINE_OPTION_FRAME_TILE);
+
+    // The old selection WIN0 mask would clip OPTION; make it zero-size.
+    // Keep WINOUT's BG_ALL/FX bits for the legendary's scenery alpha blend.
+    SetGpuReg(REG_OFFSET_WIN0H, 0);
+    SetGpuReg(REG_OFFSET_WIN0V, 0);
+    gTasks[taskId].func = Task_OptionMenuProcessInput;
 }
 
 static void Task_OptionMenuFadeIn(u8 taskId)
@@ -376,6 +467,15 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     gSaveBlock2Ptr->optionsRandomCallsOff = gTasks[taskId].tRandomCallsOff;
+
+    if (sOptionMenuOnMainMenu)
+    {
+        // B/CANCEL immediately restores the previous main menu, with its
+        // animated legendary background and without a black fade.
+        sOptionMenuOnMainMenu = FALSE;
+        MainMenu_ReturnFromInlineOptions(taskId);
+        return;
+    }
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -549,6 +649,24 @@ static void Sound_DrawChoices(u8 selection)
     DrawOptionMenuChoice(gText_SoundStereo, GetStringRightAlignXOffset(FONT_NORMAL, gText_SoundStereo, 198), YPOS_SOUND, styles[1]);
 }
 
+static void LoadOptionWindowFrame(u8 selection)
+{
+    if (sOptionMenuOnMainMenu)
+    {
+        // The background effects occupy BG1/BG2. Only load the selected
+        // frame into BG0 and the UI palette bank reserved by the main menu.
+        LoadBgTiles(0, GetWindowFrameTilesPal(selection)->tiles,
+                    0x120, INLINE_OPTION_FRAME_TILE);
+        LoadPalette(GetWindowFrameTilesPal(selection)->pal,
+                    BG_PLTT_ID(INLINE_OPTION_FRAME_PALETTE), PLTT_SIZE_4BPP);
+    }
+    else
+    {
+        LoadBgTiles(1, GetWindowFrameTilesPal(selection)->tiles, 0x120, 0x1A2);
+        LoadPalette(GetWindowFrameTilesPal(selection)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+    }
+}
+
 static u8 FrameType_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
@@ -558,8 +676,7 @@ static u8 FrameType_ProcessInput(u8 selection)
         else
             selection = 0;
 
-        LoadBgTiles(1, GetWindowFrameTilesPal(selection)->tiles, 0x120, 0x1A2);
-        LoadPalette(GetWindowFrameTilesPal(selection)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        LoadOptionWindowFrame(selection);
         sArrowPressed = TRUE;
     }
     if (JOY_NEW(DPAD_LEFT))
@@ -569,8 +686,7 @@ static u8 FrameType_ProcessInput(u8 selection)
         else
             selection = WINDOW_FRAMES_COUNT - 1;
 
-        LoadBgTiles(1, GetWindowFrameTilesPal(selection)->tiles, 0x120, 0x1A2);
-        LoadPalette(GetWindowFrameTilesPal(selection)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        LoadOptionWindowFrame(selection);
         sArrowPressed = TRUE;
     }
     return selection;
