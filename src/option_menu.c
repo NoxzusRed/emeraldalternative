@@ -5,6 +5,7 @@
 #include "international_string_util.h"
 #include "main.h"
 #include "main_menu.h"
+#include "overworld.h"
 #include "menu.h"
 #include "palette.h"
 #include "scanline_effect.h"
@@ -83,6 +84,8 @@ static void Task_PrepareInlineOptions(u8 taskId);
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
 static bool8 sOptionMenuOnMainMenu;
 static bool8 sOptionMenuPreparingInline;
+static bool8 sOptionMenuOnOverworld;
+static MainCallback sOptionSavedFieldCallback1;
 
 // Match the main menu's dedicated UI palette and VRAM tile banks, while
 // leaving all original title background palette banks untouched.
@@ -134,6 +137,30 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
 // BG1/BG2. The two windows end at tile 0x1A1, before the frame at 0x1D5.
 // GBA text-mode BG3: a separate 16 KiB charbase and tilemap. BG0's
 // already visible main-menu graphics are never touched while preparing.
+// The field map lives on BG1-BG3; only its interface BG0 is replaced.
+static const struct WindowTemplate sFieldOptionWindowTemplates[] =
+{
+    [WIN_HEADER] = {
+        .bg = 0,
+        .tilemapLeft = 2,
+        .tilemapTop = 1,
+        .width = 26,
+        .height = 2,
+        .paletteNum = 15,
+        .baseBlock = 2
+    },
+    [WIN_OPTIONS] = {
+        .bg = 0,
+        .tilemapLeft = 2,
+        .tilemapTop = 5,
+        .width = 26,
+        .height = 14,
+        .paletteNum = 15,
+        .baseBlock = 0x36
+    },
+    DUMMY_WIN_TEMPLATE
+};
+
 static const struct WindowTemplate sInlineOptionWindowTemplates[] =
 {
     [WIN_HEADER] = {
@@ -195,7 +222,10 @@ static const u16 sOptionMenuBg_Pal[] = {RGB(17, 18, 31)};
 static void MainCB2(void)
 {
     RunTasks();
-    AnimateSprites();
+    // Field animations are paused while settings are open. Preserve
+    // their last sprite positions in OAM behind the option windows.
+    if (!sOptionMenuOnOverworld)
+        AnimateSprites();
     BuildOamBuffer();
     UpdatePaletteFade();
 }
@@ -214,6 +244,7 @@ void CB2_InitOptionMenu(void)
     default:
     case 0:
         sOptionMenuOnMainMenu = FALSE;
+        sOptionMenuOnOverworld = FALSE;
         SetVBlankCallback(NULL);
         gMain.state++;
         break;
@@ -315,6 +346,98 @@ void CB2_InitOptionMenu(void)
         SetVBlankCallback(VBlankCB);
         SetMainCallback2(MainCB2);
         return;
+    }
+}
+
+// In-game OPTION: overlay the original interface on the preserved
+// overworld. StartMenuOptionCallback already performed the fade-out.
+void CB2_InitFieldOptionMenu(void)
+{
+    switch (gMain.state)
+    {
+    case 0:
+    {
+        u8 i;
+
+        sOptionMenuOnOverworld = TRUE;
+        sOptionMenuOnMainMenu = FALSE;
+        sOptionMenuPreparingInline = FALSE;
+        sArrowPressed = FALSE;
+
+        // Freeze field input and tasks without destroying map tiles,
+        // weather graphics, BG1-BG3, or the existing field VBlank.
+        sOptionSavedFieldCallback1 = gMain.callback1;
+        SetMainCallback1(NULL);
+        ResetTasks();
+        FreeAllWindowBuffers();
+        UnsetBgTilemapBuffer(0);
+        InitWindows(sFieldOptionWindowTemplates);
+        DeactivateAllTextPrinters();
+
+        // BG0 is the topmost layer. Ensure map sprites (including the
+        // player) stay behind the opaque options boxes instead of
+        // overlapping the foreground text.
+        for (i = 0; i < MAX_SPRITES; i++)
+        {
+            if (gSprites[i].inUse && gSprites[i].oam.priority == 0)
+                gSprites[i].oam.priority = 1;
+        }
+
+        // Transparent BG0 tile zero reveals the overworld outside
+        // the option windows; never clear the map's BG1-BG3 VRAM.
+        DmaFill32(3, 0, (void *)BG_CHAR_ADDR(2), 32);
+        CopyBgTilemapBufferToVram(0);
+        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+        gMain.state++;
+        break;
+    }
+    case 1:
+        LoadOptionWindowFrame(gSaveBlock2Ptr->optionsWindowFrameType);
+        LoadPalette(sOptionMenuText_Pal, BG_PLTT_ID(15), sizeof(sOptionMenuText_Pal));
+        PutWindowTilemap(WIN_HEADER);
+        PutWindowTilemap(WIN_OPTIONS);
+        DrawHeaderText();
+        DrawOptionMenuTexts();
+        DrawBgWindowFrames();
+        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+        gMain.state++;
+        break;
+    case 2:
+    {
+        u8 taskId = CreateTask(Task_OptionMenuFadeIn, 0);
+
+        gTasks[taskId].tMenuSelection = 0;
+        gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
+        gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
+        gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+        gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
+        gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
+        gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
+        gTasks[taskId].tRandomCallsOff = gSaveBlock2Ptr->optionsRandomCallsOff;
+
+        TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
+        BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
+        BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
+        Sound_DrawChoices(gTasks[taskId].tSound);
+        ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
+        FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
+        RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
+        HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+        CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+        gMain.state++;
+        break;
+    }
+    case 3:
+        // Never reveal incomplete options while DMA transfers are pending.
+        if (IsDma3ManagerBusyWithBgCopy())
+        {
+            BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+            break;
+        }
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        SetMainCallback2(MainCB2);
+        break;
     }
 }
 
@@ -552,7 +675,18 @@ static void Task_OptionMenuFadeOut(u8 taskId)
     if (!gPaletteFade.active)
     {
         DestroyTask(taskId);
-        FreeAllWindowBuffers();
+        if (sOptionMenuOnOverworld)
+        {
+            // The normal field-return path recreates all original map
+            // graphics and resumes the Start menu after fade-out.
+            CleanupOverworldWindowsAndTilemaps();
+            SetMainCallback1(sOptionSavedFieldCallback1);
+            sOptionMenuOnOverworld = FALSE;
+        }
+        else
+        {
+            FreeAllWindowBuffers();
+        }
         SetMainCallback2(gMain.savedCallback);
     }
 }
@@ -728,6 +862,12 @@ static void LoadOptionWindowFrame(u8 selection)
             LoadPalette(GetWindowFrameTilesPal(selection)->pal,
                         BG_PLTT_ID(INLINE_OPTION_FRAME_PALETTE), PLTT_SIZE_4BPP);
     }
+    else if (sOptionMenuOnOverworld)
+    {
+        // Do not replace the map's BG1 tiles or its palette.
+        LoadBgTiles(0, GetWindowFrameTilesPal(selection)->tiles, 0x120, 0x1A2);
+        LoadPalette(GetWindowFrameTilesPal(selection)->pal, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
+    }
     else
     {
         LoadBgTiles(1, GetWindowFrameTilesPal(selection)->tiles, 0x120, 0x1A2);
@@ -867,26 +1007,28 @@ static void DrawOptionMenuTexts(void)
 
 static void DrawBgWindowFrames(void)
 {
+    const u8 bg = sOptionMenuOnOverworld ? 0 : 1;
+    const u8 pal = sOptionMenuOnOverworld ? 14 : 7;
     //                     bg, tile,              x, y, width, height, palNum
     // Draw title window frame
-    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1,  0,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2,  0, 27,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R, 28,  0,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1,  1,  1,  2,  7);
-    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28,  1,  1,  2,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,  1,  3,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_EDGE,      2,  3, 27,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28,  3,  1,  1,  7);
+    FillBgTilemapBufferRect(bg, TILE_TOP_CORNER_L,  1,  0,  1,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_TOP_EDGE,      2,  0, 27,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_TOP_CORNER_R, 28,  0,  1,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_LEFT_EDGE,     1,  1,  1,  2, pal);
+    FillBgTilemapBufferRect(bg, TILE_RIGHT_EDGE,   28,  1,  1,  2, pal);
+    FillBgTilemapBufferRect(bg, TILE_BOT_CORNER_L,  1,  3,  1,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_BOT_EDGE,      2,  3, 27,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_BOT_CORNER_R, 28,  3,  1,  1, pal);
 
     // Draw options list window frame
-    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1,  4,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2,  4, 26,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R, 28,  4,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1,  5,  1, 18,  7);
-    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28,  5,  1, 18,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,  1, 19,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_EDGE,      2, 19, 26,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28, 19,  1,  1,  7);
+    FillBgTilemapBufferRect(bg, TILE_TOP_CORNER_L,  1,  4,  1,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_TOP_EDGE,      2,  4, 26,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_TOP_CORNER_R, 28,  4,  1,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_LEFT_EDGE,     1,  5,  1, 18, pal);
+    FillBgTilemapBufferRect(bg, TILE_RIGHT_EDGE,   28,  5,  1, 18, pal);
+    FillBgTilemapBufferRect(bg, TILE_BOT_CORNER_L,  1, 19,  1,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_BOT_EDGE,      2, 19, 26,  1, pal);
+    FillBgTilemapBufferRect(bg, TILE_BOT_CORNER_R, 28, 19,  1,  1, pal);
 
-    CopyBgTilemapBufferToVram(1);
+    CopyBgTilemapBufferToVram(bg);
 }

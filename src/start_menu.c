@@ -767,8 +767,8 @@ static bool8 StartMenuOptionCallback(void)
     {
         PlayRainStoppingSoundEffect();
         RemoveExtraStartMenuWindows();
-        CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_InitOptionMenu); // Display option menu
+        // Preserve the current map layers and field VBlank callback.
+        SetMainCallback2(CB2_InitFieldOptionMenu);
         gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
 
         return TRUE;
