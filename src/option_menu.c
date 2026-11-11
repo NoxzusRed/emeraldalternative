@@ -77,6 +77,8 @@ static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
 static void DrawInlineOptionMenu(u8 taskId);
+static u8 GetInlineOptionRowBgColor(u8 row);
+static void PrintInlineOptionText(const u8 *text, u8 x, u8 y);
 static void LoadOptionWindowFrame(u8 selection);
 
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
@@ -350,6 +352,30 @@ void OptionMenu_OpenFromMainMenu(u8 taskId)
 // All eight options fit in the same 14-tile window as the original screen.
 // Preserve the original text/choice positions while highlighting by pixels,
 // instead of hardware darkening (which conflicts with the animated BG blend).
+// Use the same pixel color that is already painted behind each option.
+// Normal text printers default to bgColor=1 (white), which otherwise writes
+// white rectangles over the gray unselected rows.
+static u8 GetInlineOptionRowBgColor(u8 row)
+{
+    if (row == gTasks[sInlineOptionTaskId].tMenuSelection)
+        return TEXT_COLOR_WHITE;
+    return INLINE_OPTION_INACTIVE_BG_COLOR;
+}
+
+static void PrintInlineOptionText(const u8 *text, u8 x, u8 y)
+{
+    u8 colors[3] = {
+        GetInlineOptionRowBgColor(y / OPTION_ROW_HEIGHT),
+        GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_FOREGROUND),
+        GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_SHADOW),
+    };
+
+    // Color/Shadow control codes in the existing choices still determine
+    // whether a value is gray or red; only the background is overridden.
+    AddTextPrinterParameterized3(WIN_OPTIONS, FONT_NORMAL, x, y,
+                                 colors, TEXT_SKIP_DRAW, text);
+}
+
 static void DrawInlineOptionMenu(u8 taskId)
 {
     u8 i;
@@ -364,8 +390,8 @@ static void DrawInlineOptionMenu(u8 taskId)
     }
 
     for (i = 0; i < MENUITEM_COUNT; i++)
-        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[i],
-                                    8, i * OPTION_ROW_HEIGHT + 1, TEXT_SKIP_DRAW, NULL);
+        PrintInlineOptionText(sOptionMenuItemsNames[i],
+                              8, i * OPTION_ROW_HEIGHT + 1);
 
     TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
     BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
@@ -537,7 +563,10 @@ static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
     }
 
     dst[i] = EOS;
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, dst, x, y + 1, TEXT_SKIP_DRAW, NULL);
+    if (sOptionMenuOnMainMenu)
+        PrintInlineOptionText(dst, x, y + 1);
+    else
+        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, dst, x, y + 1, TEXT_SKIP_DRAW, NULL);
 }
 
 static u8 TextSpeed_ProcessInput(u8 selection)
