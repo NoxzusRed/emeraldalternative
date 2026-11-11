@@ -1201,10 +1201,14 @@ static bool8 LoadBikeScene(u8 scene, u8 taskId)
     case 2:
         if (gSaveBlock2Ptr->playerGender == MALE)
         {
-            LoadCompressedSpriteSheet(gSpriteSheet_CreditsBrendan);
+            LoadCompressedSpriteSheet(gSaveBlock2Ptr->optionsRubyPlayerSprites
+                                      ? gSpriteSheet_CreditsRubyBrendan
+                                      : gSpriteSheet_CreditsBrendan);
             LoadCompressedSpriteSheet(gSpriteSheet_CreditsRivalMay);
             LoadCompressedSpriteSheet(gSpriteSheet_CreditsBicycle);
-            LoadSpritePalettes(gSpritePalettes_Credits);
+            LoadSpritePalettes(gSaveBlock2Ptr->optionsRubyPlayerSprites
+                                   ? gSpritePalettes_CreditsRubyBrendan
+                                   : gSpritePalettes_Credits);
 
             spriteId = CreateIntroBrendanSprite(120, 46);
             gTasks[taskId].tPlayerSpriteId = spriteId;
@@ -1218,10 +1222,14 @@ static bool8 LoadBikeScene(u8 scene, u8 taskId)
         }
         else
         {
-            LoadCompressedSpriteSheet(gSpriteSheet_CreditsMay);
+            LoadCompressedSpriteSheet(gSaveBlock2Ptr->optionsRubyPlayerSprites
+                                      ? gSpriteSheet_CreditsRubyMay
+                                      : gSpriteSheet_CreditsMay);
             LoadCompressedSpriteSheet(gSpriteSheet_CreditsRivalBrendan);
             LoadCompressedSpriteSheet(gSpriteSheet_CreditsBicycle);
-            LoadSpritePalettes(gSpritePalettes_Credits);
+            LoadSpritePalettes(gSaveBlock2Ptr->optionsRubyPlayerSprites
+                                   ? gSpritePalettes_CreditsRubyMay
+                                   : gSpritePalettes_Credits);
 
             spriteId = CreateIntroMaySprite(120, 46);
             gTasks[taskId].tPlayerSpriteId = spriteId;

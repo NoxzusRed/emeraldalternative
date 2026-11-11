@@ -102,6 +102,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
     gSaveBlock2Ptr->optionsRandomCallsOff = FALSE;
+    gSaveBlock2Ptr->optionsRubyPlayerSprites = FALSE;
 }
 
 static void ClearPokedexFlags(void)

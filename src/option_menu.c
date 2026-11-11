@@ -6,6 +6,8 @@
 #include "international_string_util.h"
 #include "main.h"
 #include "main_menu.h"
+#include "event_object_movement.h"
+#include "field_player_avatar.h"
 #include "overworld.h"
 #include "menu.h"
 #include "start_menu.h"
@@ -28,6 +30,7 @@
 #define tButtonMode data[5]
 #define tWindowFrameType data[6]
 #define tRandomCallsOff data[7]
+#define tPlayerSpriteStyle data[9]
 
 enum
 {
@@ -38,6 +41,7 @@ enum
     MENUITEM_BUTTONMODE,
     MENUITEM_FRAMETYPE,
     MENUITEM_RANDOM_CALLS,
+    MENUITEM_PLAYER_SPRITES,
     MENUITEM_CANCEL,
     MENUITEM_COUNT,
 };
@@ -50,6 +54,7 @@ enum
 
 // Eight entries fit within the existing 14-tile options window.
 #define OPTION_ROW_HEIGHT 14
+#define OPTION_VISIBLE_ROWS 8
 #define YPOS_TEXTSPEED    (MENUITEM_TEXTSPEED * OPTION_ROW_HEIGHT)
 #define YPOS_BATTLESCENE  (MENUITEM_BATTLESCENE * OPTION_ROW_HEIGHT)
 #define YPOS_BATTLESTYLE  (MENUITEM_BATTLESTYLE * OPTION_ROW_HEIGHT)
@@ -57,6 +62,7 @@ enum
 #define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * OPTION_ROW_HEIGHT)
 #define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * OPTION_ROW_HEIGHT)
 #define YPOS_RANDOM_CALLS (MENUITEM_RANDOM_CALLS * OPTION_ROW_HEIGHT)
+#define YPOS_PLAYER_SPRITES (MENUITEM_PLAYER_SPRITES * OPTION_ROW_HEIGHT)
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
@@ -77,6 +83,8 @@ static void FrameType_DrawChoices(u8 selection);
 static u8 ButtonMode_ProcessInput(u8 selection);
 static void ButtonMode_DrawChoices(u8 selection);
 static void RandomCalls_DrawChoices(u8 selection);
+static void PlayerSprites_DrawChoices(u8 selection);
+static void RedrawOptionChoices(u8 taskId);
 static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
@@ -109,6 +117,11 @@ static const u16 sOptionMenuText_Pal[] = INCBIN_U16("graphics/interface/option_m
 // note: this is only used in the Japanese release
 static const u8 sEqualSignGfx[] = INCBIN_U8("graphics/interface/option_menu_equals_sign.4bpp");
 static const u8 sText_RandomCalls[] = _("RANDOM CALLS");
+static const u8 sText_PlayerSprites[] = _("SPRITES");
+static const u8 sText_Emerald[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}EMERALD");
+static const u8 sText_Ruby[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}RUBY");
+static u8 sOptionMenuScrollOffset;
+static bool8 sOptionMenuScrollRedraw;
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
@@ -119,6 +132,7 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_BUTTONMODE]  = gText_ButtonMode,
     [MENUITEM_FRAMETYPE]   = gText_Frame,
     [MENUITEM_RANDOM_CALLS] = sText_RandomCalls,
+    [MENUITEM_PLAYER_SPRITES] = sText_PlayerSprites,
     [MENUITEM_CANCEL]      = gText_OptionMenuCancel,
 };
 
@@ -265,6 +279,7 @@ void CB2_InitOptionMenu(void)
     case 0:
         sOptionMenuOnMainMenu = FALSE;
         sOptionMenuOnOverworld = FALSE;
+        sOptionMenuScrollOffset = 0;
         SetVBlankCallback(NULL);
         gMain.state++;
         break;
@@ -347,6 +362,7 @@ void CB2_InitOptionMenu(void)
         gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
         gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
         gTasks[taskId].tRandomCallsOff = gSaveBlock2Ptr->optionsRandomCallsOff;
+        gTasks[taskId].tPlayerSpriteStyle = gSaveBlock2Ptr->optionsRubyPlayerSprites;
 
         TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
         BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
@@ -355,6 +371,7 @@ void CB2_InitOptionMenu(void)
         ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
         FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
         RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
+        PlayerSprites_DrawChoices(gTasks[taskId].tPlayerSpriteStyle);
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
 
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
@@ -381,6 +398,7 @@ void CB2_InitFieldOptionMenu(void)
 
         sOptionMenuOnOverworld = TRUE;
         sOptionMenuOnMainMenu = FALSE;
+        sOptionMenuScrollOffset = 0;
         // Stage all UI graphics in RAM until both windows are complete.
         sOptionMenuPreparingInline = TRUE;
         sArrowPressed = FALSE;
@@ -460,6 +478,7 @@ void CB2_InitFieldOptionMenu(void)
         gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
         gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
         gTasks[taskId].tRandomCallsOff = gSaveBlock2Ptr->optionsRandomCallsOff;
+        gTasks[taskId].tPlayerSpriteStyle = gSaveBlock2Ptr->optionsRubyPlayerSprites;
 
         TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
         BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
@@ -468,6 +487,7 @@ void CB2_InitFieldOptionMenu(void)
         ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
         FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
         RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
+        PlayerSprites_DrawChoices(gTasks[taskId].tPlayerSpriteStyle);
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
 
         // Upload the complete header, all eight option rows and the
@@ -498,6 +518,7 @@ void CB2_InitFieldOptionMenu(void)
 void OptionMenu_OpenFromMainMenu(u8 taskId)
 {
     sOptionMenuOnMainMenu = TRUE;
+    sOptionMenuScrollOffset = 0;
     sOptionMenuPreparingInline = TRUE;
     sArrowPressed = FALSE;
     gTasks[taskId].data[8] = 0;
@@ -527,6 +548,7 @@ static void Task_PrepareInlineOptions(u8 taskId)
         gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
         gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
         gTasks[taskId].tRandomCallsOff = gSaveBlock2Ptr->optionsRandomCallsOff;
+        gTasks[taskId].tPlayerSpriteStyle = gSaveBlock2Ptr->optionsRubyPlayerSprites;
         PutWindowTilemap(WIN_HEADER);
         PutWindowTilemap(WIN_OPTIONS);
         DrawHeaderText();
@@ -542,6 +564,7 @@ static void Task_PrepareInlineOptions(u8 taskId)
         ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
         FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
         RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
+        PlayerSprites_DrawChoices(gTasks[taskId].tPlayerSpriteStyle);
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
         DrawMainMenuWindowBorder(&sInlineOptionWindowTemplates[WIN_HEADER], INLINE_OPTION_FRAME_TILE);
         DrawMainMenuWindowBorder(&sInlineOptionWindowTemplates[WIN_OPTIONS], INLINE_OPTION_FRAME_TILE);
@@ -665,6 +688,13 @@ static void Task_OptionMenuProcessInput(u8 taskId)
 
             if (previousOption != gTasks[taskId].tRandomCallsOff)
                 RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
+        PlayerSprites_DrawChoices(gTasks[taskId].tPlayerSpriteStyle);
+            break;
+        case MENUITEM_PLAYER_SPRITES:
+            previousOption = gTasks[taskId].tPlayerSpriteStyle;
+            gTasks[taskId].tPlayerSpriteStyle = BattleScene_ProcessInput(gTasks[taskId].tPlayerSpriteStyle);
+            if (previousOption != gTasks[taskId].tPlayerSpriteStyle)
+                PlayerSprites_DrawChoices(gTasks[taskId].tPlayerSpriteStyle);
             break;
         default:
             return;
@@ -687,6 +717,17 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     gSaveBlock2Ptr->optionsRandomCallsOff = gTasks[taskId].tRandomCallsOff;
+    if (gSaveBlock2Ptr->optionsRubyPlayerSprites != gTasks[taskId].tPlayerSpriteStyle)
+    {
+        gSaveBlock2Ptr->optionsRubyPlayerSprites = gTasks[taskId].tPlayerSpriteStyle;
+        // Replace the current field sprite in-place, preserving map and
+        // movement state, and affecting only the selected playable style.
+        if (sOptionMenuOnOverworld)
+        {
+            struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+            ObjectEventSetGraphicsId(player, player->graphicsId);
+        }
+    }
 
     if (sOptionMenuOnMainMenu)
     {
@@ -777,13 +818,28 @@ static void HighlightOptionMenuItem(u8 index)
 {
     // Redraw only the 8px gutter to erase the previous cursor, without
     // touching the option labels or their selected red/gray values.
+    u8 desiredOffset = index >= OPTION_VISIBLE_ROWS ? (index - OPTION_VISIBLE_ROWS + 1) : 0;
+
+    if (sOptionMenuScrollOffset != desiredOffset)
+    {
+        u8 taskId = FindTaskIdByFunc(Task_OptionMenuProcessInput);
+        if (taskId == TASK_NONE && sOptionMenuOnOverworld)
+            taskId = sFieldOptionTaskId;
+        sOptionMenuScrollOffset = desiredOffset;
+        sOptionMenuScrollRedraw = TRUE;
+        DrawOptionMenuTexts();
+        if (taskId != TASK_NONE)
+            RedrawOptionChoices(taskId);
+        sOptionMenuScrollRedraw = FALSE;
+    }
+
     FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), 0, 0, 8,
-                        OPTION_ROW_HEIGHT * MENUITEM_COUNT);
+                        OPTION_ROW_HEIGHT * OPTION_VISIBLE_ROWS);
 
     // Reuse Pokemon's existing triangular menu cursor. FONT_SHORT has a
     // 14px height, so even CANCEL (the last row) stays inside the window.
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_SHORT, gText_SelectorArrow3,
-                                0, index * OPTION_ROW_HEIGHT,
+                                0, (index - sOptionMenuScrollOffset) * OPTION_ROW_HEIGHT,
                                 TEXT_SKIP_DRAW, NULL);
     if (!sOptionMenuPreparingInline)
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
@@ -804,7 +860,12 @@ static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
     }
 
     dst[i] = EOS;
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, dst, x, y + 1, TEXT_SKIP_DRAW, NULL);
+    if (y / OPTION_ROW_HEIGHT < sOptionMenuScrollOffset
+     || y / OPTION_ROW_HEIGHT >= sOptionMenuScrollOffset + OPTION_VISIBLE_ROWS)
+        return;
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, dst, x,
+                                y - sOptionMenuScrollOffset * OPTION_ROW_HEIGHT + 1,
+                                TEXT_SKIP_DRAW, NULL);
 }
 
 static u8 TextSpeed_ProcessInput(u8 selection)
@@ -883,6 +944,26 @@ static void RandomCalls_DrawChoices(u8 selection)
     styles[selection] = 1;
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, YPOS_RANDOM_CALLS, styles[0]);
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleSceneOff, 198), YPOS_RANDOM_CALLS, styles[1]);
+}
+
+static void PlayerSprites_DrawChoices(u8 selection)
+{
+    DrawOptionMenuChoice(sText_Emerald, 104, YPOS_PLAYER_SPRITES, selection == 0);
+    DrawOptionMenuChoice(sText_Ruby,
+                         GetStringRightAlignXOffset(FONT_NORMAL, sText_Ruby, 198),
+                         YPOS_PLAYER_SPRITES, selection == 1);
+}
+
+static void RedrawOptionChoices(u8 taskId)
+{
+    TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
+    BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
+    BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
+    Sound_DrawChoices(gTasks[taskId].tSound);
+    ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
+    FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
+    RandomCalls_DrawChoices(gTasks[taskId].tRandomCallsOff);
+    PlayerSprites_DrawChoices(gTasks[taskId].tPlayerSpriteStyle);
 }
 
 static u8 BattleStyle_ProcessInput(u8 selection)
@@ -1072,9 +1153,12 @@ static void DrawOptionMenuTexts(void)
     u8 i;
 
     FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
-    for (i = 0; i < MENUITEM_COUNT; i++)
-        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[i], 8, (i * OPTION_ROW_HEIGHT) + 1, TEXT_SKIP_DRAW, NULL);
-    if (!sOptionMenuPreparingInline)
+    for (i = sOptionMenuScrollOffset; i < MENUITEM_COUNT
+              && i < sOptionMenuScrollOffset + OPTION_VISIBLE_ROWS; i++)
+        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[i],
+            8, (i - sOptionMenuScrollOffset) * OPTION_ROW_HEIGHT + 1,
+            TEXT_SKIP_DRAW, NULL);
+    if (!sOptionMenuPreparingInline && !sOptionMenuScrollRedraw)
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 

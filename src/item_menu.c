@@ -846,7 +846,12 @@ static bool8 LoadBagMenu_Graphics(void)
         gBagMenu->graphicsLoadState++;
         break;
     case 4:
-        LoadSpritePalette(&gBagPaletteTable);
+        // Ruby and Emerald bag art share the same pixel data; only the palette differs.
+        // Keep Wally's tutorial bag on the original Emerald palette.
+        if (!IsWallysBag() && gSaveBlock2Ptr->optionsRubyPlayerSprites)
+            LoadSpritePalette(&gBagRubyPaletteTable);
+        else
+            LoadSpritePalette(&gBagPaletteTable);
         gBagMenu->graphicsLoadState++;
         break;
     default:

@@ -578,7 +578,8 @@ struct SaveBlock2
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
              u16 regionMapZoom:1; // whether the map is zoomed in
              u16 optionsRandomCallsOff:1; // Suppress unsolicited Match Call popups
-             //u16 padding1:3;
+             u16 optionsRubyPlayerSprites:1; // 0=Emerald, 1=Ruby. Reuses a reserved bit.
+             //u16 padding1:2;
              //u16 padding2;
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u8 filler_90[0x8];

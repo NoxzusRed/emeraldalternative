@@ -3087,6 +3087,43 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId)
     if (graphicsId >= NUM_OBJ_EVENT_GFX)
         graphicsId = OBJ_EVENT_GFX_NINJA_BOY;
 
+    // The save option controls graphics for Brendan/May without changing
+    // any existing IDs, movement actions, or object-event save data.
+    if (gSaveBlock2Ptr != NULL && gSaveBlock2Ptr->optionsRubyPlayerSprites)
+    {
+        switch (graphicsId)
+        {
+        case OBJ_EVENT_GFX_BRENDAN_NORMAL: return &gObjectEventGraphicsInfo_RubyBrendanNormal;
+        case OBJ_EVENT_GFX_BRENDAN_MACH_BIKE: return &gObjectEventGraphicsInfo_RubyBrendanMachBike;
+        case OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE: return &gObjectEventGraphicsInfo_RubyBrendanAcroBike;
+        case OBJ_EVENT_GFX_BRENDAN_SURFING: return &gObjectEventGraphicsInfo_RubyBrendanSurfing;
+        case OBJ_EVENT_GFX_BRENDAN_UNDERWATER: return &gObjectEventGraphicsInfo_RubyBrendanUnderwater;
+        case OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE: return &gObjectEventGraphicsInfo_RubyBrendanFieldMove;
+        case OBJ_EVENT_GFX_BRENDAN_FISHING: return &gObjectEventGraphicsInfo_RubyBrendanFishing;
+        case OBJ_EVENT_GFX_BRENDAN_WATERING: return &gObjectEventGraphicsInfo_RubyBrendanWatering;
+        case OBJ_EVENT_GFX_BRENDAN_DECORATING: return &gObjectEventGraphicsInfo_RubyBrendanDecorating;
+        case OBJ_EVENT_GFX_MAY_NORMAL: return &gObjectEventGraphicsInfo_RubyMayNormal;
+        case OBJ_EVENT_GFX_MAY_MACH_BIKE: return &gObjectEventGraphicsInfo_RubyMayMachBike;
+        case OBJ_EVENT_GFX_MAY_ACRO_BIKE: return &gObjectEventGraphicsInfo_RubyMayAcroBike;
+        case OBJ_EVENT_GFX_MAY_SURFING: return &gObjectEventGraphicsInfo_RubyMaySurfing;
+        case OBJ_EVENT_GFX_MAY_UNDERWATER: return &gObjectEventGraphicsInfo_RubyMayUnderwater;
+        case OBJ_EVENT_GFX_MAY_FIELD_MOVE: return &gObjectEventGraphicsInfo_RubyMayFieldMove;
+        case OBJ_EVENT_GFX_MAY_FISHING: return &gObjectEventGraphicsInfo_RubyMayFishing;
+        case OBJ_EVENT_GFX_MAY_WATERING: return &gObjectEventGraphicsInfo_RubyMayWatering;
+        case OBJ_EVENT_GFX_MAY_DECORATING: return &gObjectEventGraphicsInfo_RubyMayDecorating;
+        case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL: return &gObjectEventGraphicsInfo_RubyRivalBrendanNormal;
+        case OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE: return &gObjectEventGraphicsInfo_RubyRivalBrendanMachBike;
+        case OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE: return &gObjectEventGraphicsInfo_RubyRivalBrendanAcroBike;
+        case OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING: return &gObjectEventGraphicsInfo_RubyRivalBrendanSurfing;
+        case OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE: return &gObjectEventGraphicsInfo_RubyRivalBrendanFieldMove;
+        case OBJ_EVENT_GFX_RIVAL_MAY_NORMAL: return &gObjectEventGraphicsInfo_RubyRivalMayNormal;
+        case OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE: return &gObjectEventGraphicsInfo_RubyRivalMayMachBike;
+        case OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE: return &gObjectEventGraphicsInfo_RubyRivalMayAcroBike;
+        case OBJ_EVENT_GFX_RIVAL_MAY_SURFING: return &gObjectEventGraphicsInfo_RubyRivalMaySurfing;
+        case OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE: return &gObjectEventGraphicsInfo_RubyRivalMayFieldMove;
+        }
+    }
+
     return gObjectEventGraphicsInfoPointers[graphicsId];
 }
 
@@ -3186,10 +3223,12 @@ u8 LoadPlayerObjectEventPalette(u8 gender)
     {
         default:
         case MALE:
-            paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN;
+            paletteTag = gSaveBlock2Ptr->optionsRubyPlayerSprites
+                       ? OBJ_EVENT_PAL_TAG_RS_BRENDAN : OBJ_EVENT_PAL_TAG_BRENDAN;
             break;
         case FEMALE:
-            paletteTag = OBJ_EVENT_PAL_TAG_MAY;
+            paletteTag = gSaveBlock2Ptr->optionsRubyPlayerSprites
+                       ? OBJ_EVENT_PAL_TAG_RS_MAY : OBJ_EVENT_PAL_TAG_MAY;
             break;
     }
     return LoadObjectEventPalette(paletteTag);

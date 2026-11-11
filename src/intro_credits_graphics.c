@@ -65,6 +65,10 @@ static const u32 sBrendanCredits_Gfx[]    = INCBIN_U32("graphics/intro/scene_2/b
 static const u16 sMayCredits_Pal[]        = INCBIN_U16("graphics/intro/scene_2/may_credits.gbapal");
 static const u16 sUnused[0xF0]            = {0};
 static const u32 sMayCredits_Gfx[]        = INCBIN_U32("graphics/intro/scene_2/may_credits.4bpp.lz");
+static const u16 sRubyBrendanCredits_Pal[] = INCBIN_U16("graphics/intro/scene_2/ruby_brendan_credits.gbapal");
+static const u32 sRubyBrendanCredits_Gfx[] = INCBIN_U32("graphics/intro/scene_2/ruby_brendan_credits.4bpp.lz");
+static const u16 sRubyMayCredits_Pal[] = INCBIN_U16("graphics/intro/scene_2/ruby_may_credits.gbapal");
+static const u32 sRubyMayCredits_Gfx[] = INCBIN_U32("graphics/intro/scene_2/ruby_may_credits.4bpp.lz");
 static const u32 sBicycle_Gfx[]           = INCBIN_U32("graphics/intro/scene_2/bicycle.4bpp.lz");
 static const u16 sLatios_Pal[]            = INCBIN_U16("graphics/intro/scene_2/latios.gbapal");
 static const u32 sLatios_Gfx[]            = INCBIN_U32("graphics/intro/scene_2/latios.4bpp.lz");
@@ -656,6 +660,18 @@ const struct CompressedSpriteSheet gSpriteSheet_CreditsMay[] =
     {}
 };
 
+const struct CompressedSpriteSheet gSpriteSheet_CreditsRubyBrendan[] =
+{
+    { .data = sRubyBrendanCredits_Gfx, .size = 0x3800, .tag = TAG_BRENDAN },
+    {}
+};
+
+const struct CompressedSpriteSheet gSpriteSheet_CreditsRubyMay[] =
+{
+    { .data = sRubyMayCredits_Gfx, .size = 0x3800, .tag = TAG_MAY },
+    {}
+};
+
 const struct CompressedSpriteSheet gSpriteSheet_CreditsBicycle[] =
 {
     {
@@ -694,6 +710,26 @@ const struct SpritePalette gSpritePalettes_Credits[] =
     { .data = sMayCredits_Pal,     .tag = TAG_MAY },
     { .data = sLatios_Pal,         .tag = TAG_FLYGON_LATIOS },
     { .data = sLatias_Pal,         .tag = TAG_FLYGON_LATIAS },
+    {}
+};
+
+// The selected Ruby player's palette is used without recoloring the rival.
+// Both 64x448 original Ruby sprite sheets have 7 frames (0x3800 bytes).
+const struct SpritePalette gSpritePalettes_CreditsRubyBrendan[] =
+{
+    { .data = sRubyBrendanCredits_Pal, .tag = TAG_BRENDAN },
+    { .data = sMayCredits_Pal,         .tag = TAG_MAY },
+    { .data = sLatios_Pal,             .tag = TAG_FLYGON_LATIOS },
+    { .data = sLatias_Pal,             .tag = TAG_FLYGON_LATIAS },
+    {}
+};
+
+const struct SpritePalette gSpritePalettes_CreditsRubyMay[] =
+{
+    { .data = sBrendanCredits_Pal, .tag = TAG_BRENDAN },
+    { .data = sRubyMayCredits_Pal,  .tag = TAG_MAY },
+    { .data = sLatios_Pal,          .tag = TAG_FLYGON_LATIOS },
+    { .data = sLatias_Pal,          .tag = TAG_FLYGON_LATIAS },
     {}
 };
 

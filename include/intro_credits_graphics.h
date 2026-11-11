@@ -28,10 +28,14 @@ extern const struct CompressedSpriteSheet gSpriteSheet_IntroFlygon[];
 extern const struct SpritePalette gSpritePalettes_IntroPlayerFlygon[];
 extern const struct CompressedSpriteSheet gSpriteSheet_CreditsBrendan[];
 extern const struct CompressedSpriteSheet gSpriteSheet_CreditsMay[];
+extern const struct CompressedSpriteSheet gSpriteSheet_CreditsRubyBrendan[];
+extern const struct CompressedSpriteSheet gSpriteSheet_CreditsRubyMay[];
 extern const struct CompressedSpriteSheet gSpriteSheet_CreditsBicycle[];
 extern const struct CompressedSpriteSheet gSpriteSheet_CreditsRivalBrendan[];
 extern const struct CompressedSpriteSheet gSpriteSheet_CreditsRivalMay[];
 extern const struct SpritePalette gSpritePalettes_Credits[];
+extern const struct SpritePalette gSpritePalettes_CreditsRubyBrendan[];
+extern const struct SpritePalette gSpritePalettes_CreditsRubyMay[];
 
 void LoadIntroPart2Graphics(u8 scenery);
 void SetIntroPart2BgCnt(u8 scenery);
