@@ -178,6 +178,7 @@ static u8 sInlineOptionsReturnMenuType;
 static u8 sInlineOptionsReturnItem;
 static bool8 sInlineOptionsReturnWireless;
 static bool8 sMainMenuInlineRestoring;
+static bool8 sInlineOptionsOpeningBlackout;
 static EWRAM_DATA u16 sSavedMainMenuTextPalette[16];
 enum { INLINE_BG_SWAP_NONE, INLINE_BG_SWAP_TO_OPTIONS, INLINE_BG_SWAP_TO_MAIN };
 static u8 sInlineBgSwap;
@@ -614,6 +615,12 @@ static void CB2_MainMenu(void)
         BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
 
     UpdatePaletteFade();
+
+    // Keep the screen completely black between the fade-out and the
+    // first frame of OPTION's fade-in. Its text/frame palette is loaded
+    // while BG3 is still hidden; also cover the title's animated colors.
+    if (sInlineOptionsOpeningBlackout && !gPaletteFade.active)
+        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
 }
 
 static void VBlankCB_MainMenu(void)
@@ -650,6 +657,11 @@ bool8 MainMenu_IsInlineBackgroundSwapPending(void)
     return sInlineBgSwap != INLINE_BG_SWAP_NONE;
 }
 
+void MainMenu_FinishInlineOptionsBlackout(void)
+{
+    sInlineOptionsOpeningBlackout = FALSE;
+}
+
 void CB2_InitMainMenu(void)
 {
     InitMainMenu(FALSE);
@@ -666,6 +678,7 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     sMainMenuFadeState = MAIN_MENU_FADE_WAIT_FOR_CONTENT;
     sInlineBgSwap = INLINE_BG_SWAP_NONE;
     sMainMenuInlineRestoring = FALSE;
+    sInlineOptionsOpeningBlackout = FALSE;
     sMainMenuLegendaryBgActive = FALSE;
     SetVBlankCallback(NULL);
     ScanlineEffect_Stop();
@@ -1169,10 +1182,10 @@ static bool8 HandleMainMenuInput(u8 taskId)
     {
         PlaySE(SE_SELECT);
         IsWirelessAdapterConnected();   // why bother calling this here? debug? Task_HandleMainMenuAPressed will check too
-        // OPTION replaces only BG0's windows. Other menu actions keep
-        // their original fade and callback-based screen transitions.
-        if (tCurrItem != tItemCount - 1)
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+        // All actions fade to black. OPTION keeps the title background
+        // loaded and prepares its UI invisibly after this fade-out.
+        sInlineOptionsOpeningBlackout = (tCurrItem == tItemCount - 1);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
         gTasks[taskId].func = Task_HandleMainMenuAPressed;
     }
     else if (JOY_NEW(B_BUTTON))

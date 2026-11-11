@@ -317,11 +317,10 @@ void CB2_InitOptionMenu(void)
     }
 }
 
-// Called only for OPTION selected from CONTINUE / NEW GAME.
-// The main menu's CB2/VBlank callbacks and background tasks stay active,
-// with no fade and no reload of the animated legendary or its palette.
-// Option is pre-rendered over several short tasks while CONTINUE remains
-// fully visible. The display is swapped only after all VRAM copies complete.
+// Called only for OPTION selected from the main menu.
+// Its fade-out has already finished; keep the same legendary running
+// underneath while the new UI is prepared offscreen on BG3. The new
+// menu fades in only after the complete UI has been swapped in VBlank.
 void OptionMenu_OpenFromMainMenu(u8 taskId)
 {
     sOptionMenuOnMainMenu = TRUE;
@@ -398,7 +397,16 @@ static void Task_PrepareInlineOptions(u8 taskId)
         break;
     case 4:
         if (!MainMenu_IsInlineBackgroundSwapPending())
-            gTasks[taskId].func = Task_OptionMenuProcessInput;
+        {
+            // Every option, cursor, frame and palette is ready now.
+            // Fade from full black to the complete BG3 menu; input
+            // remains disabled until Task_OptionMenuFadeIn finishes.
+            if (BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK))
+            {
+                MainMenu_FinishInlineOptionsBlackout();
+                gTasks[taskId].func = Task_OptionMenuFadeIn;
+            }
+        }
         break;
     }
 }
