@@ -553,6 +553,16 @@ static void InitStartMenu(void)
         ;
 }
 
+// Recreate the Start UI over the existing overworld. Do not trigger the
+// return-to-field loader or any fade after closing in-game OPTION.
+void RestoreStartMenuFromOptionsNoFade(void)
+{
+    InitStandardTextBoxWindows();
+    InitTextBoxGfxAndPrinters();
+    InitStartMenu();
+    CreateTask(Task_ShowStartMenu, 0x50);
+}
+
 static void StartMenuTask(u8 taskId)
 {
     if (InitStartMenuStep() == TRUE)
@@ -651,9 +661,10 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
-            && gMenuCallback != StartMenuBattlePyramidRetireCallback)
+            && gMenuCallback != StartMenuBattlePyramidRetireCallback
+            && sCurrentStartMenuActions[sStartMenuCursorPos] != MENU_ACTION_OPTION)
         {
-           FadeScreen(FADE_TO_BLACK, 0);
+            FadeScreen(FADE_TO_BLACK, 0);
         }
 
         return FALSE;

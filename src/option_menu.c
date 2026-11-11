@@ -8,6 +8,7 @@
 #include "main_menu.h"
 #include "overworld.h"
 #include "menu.h"
+#include "start_menu.h"
 #include "palette.h"
 #include "scanline_effect.h"
 #include "sprite.h"
@@ -61,6 +62,7 @@ static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
 static void Task_OptionMenuSave(u8 taskId);
 static void Task_OptionMenuFadeOut(u8 taskId);
+static void Task_ReturnFromFieldOption(u8 taskId);
 static void HighlightOptionMenuItem(u8 selection);
 static u8 TextSpeed_ProcessInput(u8 selection);
 static void TextSpeed_DrawChoices(u8 selection);
@@ -86,6 +88,16 @@ static bool8 sOptionMenuOnMainMenu;
 static bool8 sOptionMenuPreparingInline;
 static bool8 sOptionMenuOnOverworld;
 static MainCallback sOptionSavedFieldCallback1;
+static u8 sFieldOptionTaskId;
+
+// The field is never reloaded while OPTION is open. Save the graphical
+// registers and OBJ priorities to restore them exactly when it closes.
+static u16 sFieldSavedDispCnt;
+static u16 sFieldSavedWin0H, sFieldSavedWin0V;
+static u16 sFieldSavedWin1H, sFieldSavedWin1V;
+static u16 sFieldSavedWinIn, sFieldSavedWinOut;
+static u16 sFieldSavedBldCnt, sFieldSavedBldAlpha, sFieldSavedBldY;
+static u8 sFieldSavedSpritePriorities[MAX_SPRITES];
 
 // Match the main menu's dedicated UI palette and VRAM tile banks, while
 // leaving all original title background palette banks untouched.
@@ -221,11 +233,19 @@ static const u16 sOptionMenuBg_Pal[] = {RGB(17, 18, 31)};
 
 static void MainCB2(void)
 {
-    RunTasks();
-    // Field animations are paused while settings are open. Preserve
-    // their last sprite positions in OAM behind the option windows.
-    if (!sOptionMenuOnOverworld)
+    if (sOptionMenuOnOverworld)
+    {
+        // Do not advance unrelated field tasks while OPTION is open.
+        // None are destroyed, so they resume in the same state on exit.
+        if (gTasks[sFieldOptionTaskId].isActive)
+            gTasks[sFieldOptionTaskId].func(sFieldOptionTaskId);
+    }
+    else
+    {
+        RunTasks();
         AnimateSprites();
+    }
+
     BuildOamBuffer();
     UpdatePaletteFade();
 }
@@ -349,8 +369,8 @@ void CB2_InitOptionMenu(void)
     }
 }
 
-// In-game OPTION: overlay the original interface on the preserved
-// overworld. StartMenuOptionCallback already performed the fade-out.
+// In-game OPTION: replace only BG0 while retaining the real overworld.
+// Do not fade or reset any field tasks, sprites or map graphics.
 void CB2_InitFieldOptionMenu(void)
 {
     switch (gMain.state)
@@ -368,8 +388,21 @@ void CB2_InitFieldOptionMenu(void)
         // Freeze field input and tasks without destroying map tiles,
         // weather graphics, BG1-BG3, or the existing field VBlank.
         sOptionSavedFieldCallback1 = gMain.callback1;
+        sFieldSavedDispCnt = GetGpuReg(REG_OFFSET_DISPCNT);
+        sFieldSavedWin0H = GetGpuReg(REG_OFFSET_WIN0H);
+        sFieldSavedWin0V = GetGpuReg(REG_OFFSET_WIN0V);
+        sFieldSavedWin1H = GetGpuReg(REG_OFFSET_WIN1H);
+        sFieldSavedWin1V = GetGpuReg(REG_OFFSET_WIN1V);
+        sFieldSavedWinIn = GetGpuReg(REG_OFFSET_WININ);
+        sFieldSavedWinOut = GetGpuReg(REG_OFFSET_WINOUT);
+        sFieldSavedBldCnt = GetGpuReg(REG_OFFSET_BLDCNT);
+        sFieldSavedBldAlpha = GetGpuReg(REG_OFFSET_BLDALPHA);
+        sFieldSavedBldY = GetGpuReg(REG_OFFSET_BLDY);
         SetMainCallback1(NULL);
-        ResetTasks();
+
+        // Remove the Start windows while the real map remains visible.
+        // The replacement UI is completed before BG0 is shown again.
+        HideBg(0);
         FreeAllWindowBuffers();
         UnsetBgTilemapBuffer(0);
         InitWindows(sFieldOptionWindowTemplates);
@@ -392,6 +425,7 @@ void CB2_InitFieldOptionMenu(void)
         // overlapping the foreground text.
         for (i = 0; i < MAX_SPRITES; i++)
         {
+            sFieldSavedSpritePriorities[i] = gSprites[i].oam.priority;
             if (gSprites[i].inUse && gSprites[i].oam.priority == 0)
                 gSprites[i].oam.priority = 1;
         }
@@ -400,7 +434,6 @@ void CB2_InitFieldOptionMenu(void)
         // the option windows; never clear the map's BG1-BG3 VRAM.
         DmaFill32(3, 0, (void *)BG_CHAR_ADDR(2), 32);
         CopyBgTilemapBufferToVram(0);
-        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
         gMain.state++;
         break;
     }
@@ -412,12 +445,12 @@ void CB2_InitFieldOptionMenu(void)
         DrawHeaderText();
         DrawOptionMenuTexts();
         DrawBgWindowFrames();
-        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
         gMain.state++;
         break;
     case 2:
     {
-        u8 taskId = CreateTask(Task_OptionMenuFadeIn, 0);
+        u8 taskId = CreateTask(Task_OptionMenuProcessInput, 0);
+        sFieldOptionTaskId = taskId;
 
         gTasks[taskId].tMenuSelection = 0;
         gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
@@ -442,34 +475,18 @@ void CB2_InitFieldOptionMenu(void)
         CopyWindowToVram(WIN_HEADER, COPYWIN_GFX);
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
         CopyBgTilemapBufferToVram(0);
-        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
         gMain.state++;
         break;
     }
     case 3:
-        // Ensure ALL queued graphics copies (not just BG-tracked ones)
-        // have completed before the first visible fade-in frame.
+        // The new header, options, values, cursor and frames must all be
+        // in VRAM before turning the interface background back on.
         if (IsDma3ManagerBusyWithBgCopy()
          || CheckForSpaceForDma3Request(-1) != 0)
-        {
-            BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
             break;
-        }
-
-        // Leave an extra full frame for the graphics/palette VBlank.
-        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
-        gMain.state++;
-        break;
-    case 4:
-        if (IsDma3ManagerBusyWithBgCopy()
-         || CheckForSpaceForDma3Request(-1) != 0)
-        {
-            BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
-            break;
-        }
 
         sOptionMenuPreparingInline = FALSE;
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        ShowBg(0);
         SetMainCallback2(MainCB2);
         break;
     }
@@ -680,8 +697,70 @@ static void Task_OptionMenuSave(u8 taskId)
         return;
     }
 
+    if (sOptionMenuOnOverworld)
+    {
+        // The original map and field tasks are still in memory.
+        gTasks[taskId].data[8] = 0;
+        gTasks[taskId].func = Task_ReturnFromFieldOption;
+        return;
+    }
+
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
+}
+
+// Rebuild only the field's UI; BG1-BG3, tilesets, weather and object
+// sprites remain untouched. The map itself is visible between menus.
+static void Task_ReturnFromFieldOption(u8 taskId)
+{
+    switch (gTasks[taskId].data[8])
+    {
+    case 0:
+        HideBg(0);
+        FreeAllWindowBuffers();
+        UnsetBgTilemapBuffer(0);
+
+        // Build the correct Start menu in one step, using the preserved
+        // map/field state. Restoring callback1 temporarily makes link-mode
+        // and special Start menus detect the original field context.
+        SetMainCallback1(sOptionSavedFieldCallback1);
+        RestoreStartMenuFromOptionsNoFade();
+        SetMainCallback1(NULL);
+        gTasks[taskId].data[8] = 1;
+        break;
+    case 1:
+    {
+        u8 i;
+
+        if (IsDma3ManagerBusyWithBgCopy()
+         || CheckForSpaceForDma3Request(-1) != 0)
+            break;
+
+        for (i = 0; i < MAX_SPRITES; i++)
+        {
+            if (gSprites[i].inUse)
+                gSprites[i].oam.priority = sFieldSavedSpritePriorities[i];
+        }
+
+        SetGpuReg(REG_OFFSET_WIN0H, sFieldSavedWin0H);
+        SetGpuReg(REG_OFFSET_WIN0V, sFieldSavedWin0V);
+        SetGpuReg(REG_OFFSET_WIN1H, sFieldSavedWin1H);
+        SetGpuReg(REG_OFFSET_WIN1V, sFieldSavedWin1V);
+        SetGpuReg(REG_OFFSET_WININ, sFieldSavedWinIn);
+        SetGpuReg(REG_OFFSET_WINOUT, sFieldSavedWinOut);
+        SetGpuReg(REG_OFFSET_BLDCNT, sFieldSavedBldCnt);
+        SetGpuReg(REG_OFFSET_BLDALPHA, sFieldSavedBldAlpha);
+        SetGpuReg(REG_OFFSET_BLDY, sFieldSavedBldY);
+        SetGpuReg(REG_OFFSET_DISPCNT, sFieldSavedDispCnt);
+
+        DestroyTask(taskId);
+        sOptionMenuOnOverworld = FALSE;
+        SetMainCallback1(sOptionSavedFieldCallback1);
+        ShowBg(0);
+        SetMainCallback2(CB2_Overworld);
+        break;
+    }
+    }
 }
 
 static void Task_OptionMenuFadeOut(u8 taskId)
@@ -689,18 +768,7 @@ static void Task_OptionMenuFadeOut(u8 taskId)
     if (!gPaletteFade.active)
     {
         DestroyTask(taskId);
-        if (sOptionMenuOnOverworld)
-        {
-            // The normal field-return path recreates all original map
-            // graphics and resumes the Start menu after fade-out.
-            CleanupOverworldWindowsAndTilemaps();
-            SetMainCallback1(sOptionSavedFieldCallback1);
-            sOptionMenuOnOverworld = FALSE;
-        }
-        else
-        {
-            FreeAllWindowBuffers();
-        }
+        FreeAllWindowBuffers();
         SetMainCallback2(gMain.savedCallback);
     }
 }
