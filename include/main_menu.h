@@ -5,6 +5,7 @@ void CB2_InitMainMenu(void);
 void MainMenu_ReturnFromInlineOptions(u8 taskId);
 void MainMenu_QueueInlineBackgroundSwap(bool8 showOptions);
 bool8 MainMenu_IsInlineBackgroundSwapPending(void);
+void MainMenu_StartInlineOptionsBlackout(void);
 void MainMenu_FinishInlineOptionsBlackout(void);
 struct WindowTemplate;
 void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 baseTileNum);

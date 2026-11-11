@@ -178,7 +178,7 @@ static u8 sInlineOptionsReturnMenuType;
 static u8 sInlineOptionsReturnItem;
 static bool8 sInlineOptionsReturnWireless;
 static bool8 sMainMenuInlineRestoring;
-static bool8 sInlineOptionsOpeningBlackout;
+static bool8 sInlineOptionsTransitionBlackout;
 static EWRAM_DATA u16 sSavedMainMenuTextPalette[16];
 enum { INLINE_BG_SWAP_NONE, INLINE_BG_SWAP_TO_OPTIONS, INLINE_BG_SWAP_TO_MAIN };
 static u8 sInlineBgSwap;
@@ -619,7 +619,7 @@ static void CB2_MainMenu(void)
     // Keep the screen completely black between the fade-out and the
     // first frame of OPTION's fade-in. Its text/frame palette is loaded
     // while BG3 is still hidden; also cover the title's animated colors.
-    if (sInlineOptionsOpeningBlackout && !gPaletteFade.active)
+    if (sInlineOptionsTransitionBlackout && !gPaletteFade.active)
         BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
 }
 
@@ -657,9 +657,14 @@ bool8 MainMenu_IsInlineBackgroundSwapPending(void)
     return sInlineBgSwap != INLINE_BG_SWAP_NONE;
 }
 
+void MainMenu_StartInlineOptionsBlackout(void)
+{
+    sInlineOptionsTransitionBlackout = TRUE;
+}
+
 void MainMenu_FinishInlineOptionsBlackout(void)
 {
-    sInlineOptionsOpeningBlackout = FALSE;
+    sInlineOptionsTransitionBlackout = FALSE;
 }
 
 void CB2_InitMainMenu(void)
@@ -678,7 +683,7 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     sMainMenuFadeState = MAIN_MENU_FADE_WAIT_FOR_CONTENT;
     sInlineBgSwap = INLINE_BG_SWAP_NONE;
     sMainMenuInlineRestoring = FALSE;
-    sInlineOptionsOpeningBlackout = FALSE;
+    sInlineOptionsTransitionBlackout = FALSE;
     sMainMenuLegendaryBgActive = FALSE;
     SetVBlankCallback(NULL);
     ScanlineEffect_Stop();
@@ -819,6 +824,19 @@ static void Task_RestoreMainMenuInline(u8 taskId)
         break;
     case 4:
         if (!MainMenu_IsInlineBackgroundSwapPending())
+        {
+            // The main menu is fully prepared and BG0 is visible. Fade
+            // in only now, so no incomplete windows are ever revealed.
+            if (BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK))
+            {
+                MainMenu_FinishInlineOptionsBlackout();
+                gTasks[taskId].data[8] = 5;
+            }
+        }
+        break;
+    case 5:
+        // Disable input while the main menu is fading back in.
+        if (!gPaletteFade.active)
             gTasks[taskId].func = Task_HandleMainMenuInput;
         break;
     }
@@ -1184,7 +1202,7 @@ static bool8 HandleMainMenuInput(u8 taskId)
         IsWirelessAdapterConnected();   // why bother calling this here? debug? Task_HandleMainMenuAPressed will check too
         // All actions fade to black. OPTION keeps the title background
         // loaded and prepares its UI invisibly after this fade-out.
-        sInlineOptionsOpeningBlackout = (tCurrItem == tItemCount - 1);
+        sInlineOptionsTransitionBlackout = (tCurrItem == tItemCount - 1);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
         gTasks[taskId].func = Task_HandleMainMenuAPressed;
     }

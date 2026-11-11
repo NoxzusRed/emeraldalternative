@@ -59,6 +59,7 @@ static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
 static void Task_OptionMenuSave(u8 taskId);
 static void Task_OptionMenuFadeOut(u8 taskId);
+static void Task_InlineOptionReturnFadeOut(u8 taskId);
 static void HighlightOptionMenuItem(u8 selection);
 static u8 TextSpeed_ProcessInput(u8 selection);
 static void TextSpeed_DrawChoices(u8 selection);
@@ -523,15 +524,27 @@ static void Task_OptionMenuSave(u8 taskId)
 
     if (sOptionMenuOnMainMenu)
     {
-        // B/CANCEL immediately restores the previous main menu, with its
-        // animated legendary background and without a black fade.
-        sOptionMenuOnMainMenu = FALSE;
-        MainMenu_ReturnFromInlineOptions(taskId);
+        // Fade OPTION completely out before preparing the main menu.
+        // Both B and CANCEL use this same return transition.
+        MainMenu_StartInlineOptionsBlackout();
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gTasks[taskId].func = Task_InlineOptionReturnFadeOut;
         return;
     }
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
+}
+
+static void Task_InlineOptionReturnFadeOut(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        // The display is black now; the existing staged BG0 rebuild runs
+        // while Groudon/Kyogre/Rayquaza and their effects stay active.
+        sOptionMenuOnMainMenu = FALSE;
+        MainMenu_ReturnFromInlineOptions(taskId);
+    }
 }
 
 static void Task_OptionMenuFadeOut(u8 taskId)
