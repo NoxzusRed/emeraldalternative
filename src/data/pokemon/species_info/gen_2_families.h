@@ -1414,10 +1414,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_LANTURN] =
     {
         .baseHP        = 125,
-        .baseAttack    = 58,
+        .baseAttack    = 48,
         .baseDefense   = 58,
         .baseSpeed     = 67,
-        .baseSpAttack  = 76,
+        .baseSpAttack  = 86,
         .baseSpDefense = 76,
         .types = MON_TYPES(TYPE_WATER, TYPE_ELECTRIC),
         .catchRate = 75,
@@ -2707,9 +2707,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
     [SPECIES_JUMPLUFF] =
     {
-        .baseHP        = 75,
+        .baseHP        = 80,
         .baseAttack    = 55,
-        .baseDefense   = 70,
+        .baseDefense   = 75,
         .baseSpeed     = 110,
         .baseSpAttack  = 55,
         .baseSpDefense = P_UPDATED_STATS >= GEN_6 ? 95 : 85,
@@ -3197,12 +3197,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_YANMEGA] =
     {
-        .baseHP        = 86,
-        .baseAttack    = 76,
-        .baseDefense   = 86,
+        .baseHP        = 85,
+        .baseAttack    = 65,
+        .baseDefense   = 85,
         .baseSpeed     = 95,
-        .baseSpAttack  = 116,
-        .baseSpDefense = 56,
+        .baseSpAttack  = 120,
+        .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_BUG, TYPE_FLYING),
         .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 180 : 198,
@@ -3375,11 +3375,11 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
     [SPECIES_QUAGSIRE] =
     {
-        .baseHP        = 95,
-        .baseAttack    = 85,
+        .baseHP        = 100,
+        .baseAttack    = 105,
         .baseDefense   = 85,
         .baseSpeed     = 35,
-        .baseSpAttack  = 65,
+        .baseSpAttack  = 70,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_WATER, TYPE_GROUND),
         .catchRate = 90,
@@ -3748,9 +3748,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_MISDREAVUS] =
     {
         .baseHP        = 60,
-        .baseAttack    = 60,
+        .baseAttack    = 50,
         .baseDefense   = 60,
-        .baseSpeed     = 85,
+        .baseSpeed     = 95,
         .baseSpAttack  = 85,
         .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_GHOST),
@@ -3827,9 +3827,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_MISMAGIUS] =
     {
         .baseHP        = 60,
-        .baseAttack    = 60,
+        .baseAttack    = 50,
         .baseDefense   = 60,
-        .baseSpeed     = 105,
+        .baseSpeed     = 115,
         .baseSpAttack  = 105,
         .baseSpDefense = 105,
         .types = MON_TYPES(TYPE_GHOST),
@@ -5281,7 +5281,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SWARM, ABILITY_GUTS, ABILITY_MOXIE },
+        .abilities = { ABILITY_SKILL_LINK, ABILITY_GUTS, ABILITY_MOXIE },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Heracross"),
         .cryId = CRY_HERACROSS,
@@ -7023,7 +7023,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_SKARMORY
     [SPECIES_SKARMORY] =
     {
-        .baseHP        = 65,
+        .baseHP        = 70,
         .baseAttack    = 80,
         .baseDefense   = 140,
         .baseSpeed     = 70,

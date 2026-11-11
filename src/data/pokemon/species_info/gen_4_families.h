@@ -3174,10 +3174,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     {
         .baseHP        = 90,
         .baseAttack    = 50,
-        .baseDefense   = 34,
+        .baseDefense   = 35,
         .baseSpeed     = 70,
         .baseSpAttack  = 60,
-        .baseSpDefense = 44,
+        .baseSpDefense = 45,
         .types = MON_TYPES(TYPE_GHOST, TYPE_FLYING),
         .catchRate = 125,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 70 : 127,
@@ -3245,10 +3245,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     {
         .baseHP        = 150,
         .baseAttack    = 80,
-        .baseDefense   = 44,
+        .baseDefense   = 45,
         .baseSpeed     = 80,
         .baseSpAttack  = 90,
-        .baseSpDefense = 54,
+        .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_GHOST, TYPE_FLYING),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 174 : 204,
@@ -4894,11 +4894,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 
     [SPECIES_DRAPION] =
     {
-        .baseHP        = 70,
+        .baseHP        = 85,
         .baseAttack    = 90,
         .baseDefense   = 110,
         .baseSpeed     = 95,
-        .baseSpAttack  = 60,
+        .baseSpAttack  = 45,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_POISON, TYPE_DARK),
         .catchRate = 45,

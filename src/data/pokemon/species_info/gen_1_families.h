@@ -2573,10 +2573,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 35,
         .baseAttack    = 60,
-        .baseDefense   = 44,
+        .baseDefense   = 45,
         .baseSpeed     = 55,
         .baseSpAttack  = 40,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 54 : 40,
+        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 55 : 40,
         .types = MON_TYPES(TYPE_POISON),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 58 : 62,
@@ -2644,12 +2644,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_ARBOK] =
     {
-        .baseHP        = 60,
+        .baseHP        = 70,
         .baseAttack    = P_UPDATED_STATS >= GEN_7 ? 95 : 85,
-        .baseDefense   = 69,
+        .baseDefense   = 70,
         .baseSpeed     = 80,
         .baseSpAttack  = 65,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 79 : 65,
+        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 80 : 65,
         .types = MON_TYPES(TYPE_POISON),
         .catchRate = 90,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
@@ -14971,7 +14971,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_SEADRA] =
     {
-        .baseHP        = 55,
+        .baseHP        = 65,
         .baseAttack    = 65,
         .baseDefense   = 95,
         .baseSpeed     = 85,
@@ -15049,7 +15049,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_GEN_2_CROSS_EVOS
     [SPECIES_KINGDRA] =
     {
-        .baseHP        = 75,
+        .baseHP        = 85,
         .baseAttack    = 95,
         .baseDefense   = 95,
         .baseSpeed     = 85,

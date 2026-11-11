@@ -222,7 +222,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseHP        = 75,
         .baseAttack    = 75,
         .baseDefense   = 95,
-        .baseSpeed     = 113,
+        .baseSpeed     = 115,
         .baseSpAttack  = 75,
         .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_GRASS),
@@ -2632,7 +2632,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseHP        = 60,
         .baseAttack    = 85,
         .baseDefense   = 40,
-        .baseSpeed     = 68,
+        .baseSpeed     = 70,
         .baseSpAttack  = 30,
         .baseSpDefense = 45,
         .types = MON_TYPES(TYPE_GROUND),
@@ -2704,7 +2704,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseHP        = 110,
         .baseAttack    = 135,
         .baseDefense   = 60,
-        .baseSpeed     = 88,
+        .baseSpeed     = 90,
         .baseSpAttack  = 50,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_GROUND, TYPE_STEEL),
@@ -3628,10 +3628,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_LEAVANNY] =
     {
         .baseHP        = 75,
-        .baseAttack    = 103,
+        .baseAttack    = 105,
         .baseDefense   = 80,
-        .baseSpeed     = 92,
-        .baseSpAttack  = 70,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 60,
         .baseSpDefense = P_UPDATED_STATS >= GEN_6 ? 80 : 70,
         .types = MON_TYPES(TYPE_BUG, TYPE_GRASS),
         .catchRate = 45,
@@ -3719,7 +3719,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_POISON_POINT, ABILITY_SWARM, ABILITY_SPEED_BOOST },
+        .abilities = { ABILITY_POISON_POINT, ABILITY_SPEED_BOOST, ABILITY_SHELL_ARMOR },
     #else
         .abilities = { ABILITY_POISON_POINT, ABILITY_SWARM, ABILITY_QUICK_FEET },
     #endif
@@ -3797,7 +3797,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_POISON_POINT, ABILITY_SWARM, ABILITY_SPEED_BOOST },
+        .abilities = { ABILITY_POISON_POINT, ABILITY_SPEED_BOOST, ABILITY_SHELL_ARMOR },
     #else
         .abilities = { ABILITY_POISON_POINT, ABILITY_SWARM, ABILITY_QUICK_FEET },
     #endif
@@ -3879,7 +3879,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_POISON_POINT, ABILITY_SWARM, ABILITY_SPEED_BOOST },
+        .abilities = { ABILITY_POISON_POINT, ABILITY_SPEED_BOOST, ABILITY_SHELL_ARMOR },
     #else
         .abilities = { ABILITY_POISON_POINT, ABILITY_SWARM, ABILITY_QUICK_FEET },
     #endif
@@ -4639,7 +4639,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_SANDILE] =
     {
         .baseHP        = 50,
-        .baseAttack    = 72,
+        .baseAttack    = 75,
         .baseDefense   = 35,
         .baseSpeed     = 65,
         .baseSpAttack  = 35,
@@ -4709,9 +4709,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_KROKOROK] =
     {
         .baseHP        = 60,
-        .baseAttack    = 82,
+        .baseAttack    = 85,
         .baseDefense   = 45,
-        .baseSpeed     = 74,
+        .baseSpeed     = 75,
         .baseSpAttack  = 45,
         .baseSpDefense = 45,
         .types = MON_TYPES(TYPE_GROUND, TYPE_DARK),
@@ -4777,7 +4777,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_KROOKODILE] =
     {
         .baseHP        = 95,
-        .baseAttack    = 117,
+        .baseAttack    = 118,
         .baseDefense   = P_UPDATED_STATS >= GEN_6 ? 80 : 70,
         .baseSpeed     = 92,
         .baseSpAttack  = 65,
@@ -5687,7 +5687,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_FAMILY_YAMASK
     [SPECIES_YAMASK] =
     {
-        .baseHP        = 38,
+        .baseHP        = 40,
         .baseAttack    = 30,
         .baseDefense   = 85,
         .baseSpeed     = 30,
@@ -5761,7 +5761,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_COFAGRIGUS] =
     {
-        .baseHP        = 58,
+        .baseHP        = 60,
         .baseAttack    = 50,
         .baseDefense   = 145,
         .baseSpeed     = 30,
@@ -8884,7 +8884,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseAttack    = 77,
         .baseDefense   = 60,
         .baseSpeed     = 108,
-        .baseSpAttack  = 97,
+        .baseSpAttack  = 100,
         .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_BUG, TYPE_ELECTRIC),
         .catchRate = 75,
