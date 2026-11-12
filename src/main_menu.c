@@ -752,9 +752,8 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, FALSE);
     sMainMenuLegendaryBgActive = TRUE;
 
-    // Keep the title cry audible on its own before starting the matching
-    // weather theme. Inline OPTION does not reset this pending song.
-    // Rayquaza retains the existing main-menu music behavior.
+    // Keep the legendary's cry audible on its own before starting its
+    // background-specific theme. Inline OPTION does not reset the song.
     sPendingMainMenuWeatherMusic = GetTitleScreenMainMenuMusic();
 
     return 0;
