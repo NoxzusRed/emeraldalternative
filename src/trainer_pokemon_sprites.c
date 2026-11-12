@@ -326,6 +326,26 @@ u16 CreateTrainerCardMonIconSprite(u16 species, bool8 isShiny, u32 personality, 
     return CreateTrainerCardSprite(species, isShiny, personality, isFrontPic, destX, destY, paletteSlot, windowId, FALSE);
 }
 
+// Apply the same player sprite option to both Brendan and May, including
+// whichever one appears as the rival. Keep the original trainer IDs intact.
+u16 GetBrendanMayTrainerPicByStyle(u16 trainerPicId)
+{
+    if (gSaveBlock2Ptr == NULL)
+        return trainerPicId;
+
+    switch (trainerPicId)
+    {
+    case TRAINER_PIC_BRENDAN:
+    case TRAINER_PIC_RS_BRENDAN:
+        return gSaveBlock2Ptr->optionsRubyPlayerSprites ? TRAINER_PIC_RS_BRENDAN : TRAINER_PIC_BRENDAN;
+    case TRAINER_PIC_MAY:
+    case TRAINER_PIC_RS_MAY:
+        return gSaveBlock2Ptr->optionsRubyPlayerSprites ? TRAINER_PIC_RS_MAY : TRAINER_PIC_MAY;
+    default:
+        return trainerPicId;
+    }
+}
+
 u16 CreateTrainerPicSprite(u16 species, bool8 isFrontPic, s16 x, s16 y, u8 paletteSlot, u16 paletteTag)
 {
     return CreatePicSprite(species, FALSE, 0, isFrontPic, x, y, paletteSlot, paletteTag, TRUE);
