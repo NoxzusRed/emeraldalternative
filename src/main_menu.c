@@ -174,6 +174,7 @@ static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
 
 static u8 sBirchSpeechMainTaskId;
 static bool8 sMainMenuLegendaryBgActive;
+static u16 sPendingMainMenuWeatherMusic;
 static u8 sInlineOptionsReturnMenuType;
 static u8 sInlineOptionsReturnItem;
 static bool8 sInlineOptionsReturnWireless;
@@ -593,6 +594,18 @@ enum
 static void CB2_MainMenu(void)
 {
     RunTasks();
+
+    // The title cry may still be playing after the main menu is drawn.
+    // Check the cry audio itself: InitMainMenu resets the cry-ducking task,
+    // so IsCryFinished() can incorrectly report that the cry has ended.
+    if (sMainMenuLegendaryBgActive
+     && sPendingMainMenuWeatherMusic != MUS_NONE
+     && !IsCryPlaying())
+    {
+        PlayBGM(sPendingMainMenuWeatherMusic);
+        sPendingMainMenuWeatherMusic = MUS_NONE;
+    }
+
     if (sMainMenuLegendaryBgActive)
         AnimateTitleScreenBackgroundForMainMenu();
     AnimateSprites();
@@ -667,6 +680,7 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     sInlineBgSwap = INLINE_BG_SWAP_NONE;
     sMainMenuInlineRestoring = FALSE;
     sMainMenuLegendaryBgActive = FALSE;
+    sPendingMainMenuWeatherMusic = MUS_NONE;
     SetVBlankCallback(NULL);
     ScanlineEffect_Stop();
 
@@ -738,11 +752,10 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, FALSE);
     sMainMenuLegendaryBgActive = TRUE;
 
-    // Use the weather theme matching the persistent title background.
-    // Rayquaza keeps the existing main-menu audio behavior. Inline OPTION
-    // never reinitializes this menu, so returning from it preserves the song.
-    if (GetTitleScreenMainMenuMusic() != MUS_NONE)
-        PlayBGM(GetTitleScreenMainMenuMusic());
+    // Keep the title cry audible on its own before starting the matching
+    // weather theme. Inline OPTION does not reset this pending song.
+    // Rayquaza retains the existing main-menu music behavior.
+    sPendingMainMenuWeatherMusic = GetTitleScreenMainMenuMusic();
 
     return 0;
 }
