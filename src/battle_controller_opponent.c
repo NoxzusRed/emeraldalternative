@@ -436,7 +436,7 @@ static u32 OpponentGetTrainerPicId(u32 battlerId)
         trainerPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentA);
     }
 
-    return trainerPicId;
+    return GetBrendanMayTrainerPicByStyle(trainerPicId);
 }
 
 static void OpponentHandleDrawTrainerPic(u32 battler)
