@@ -199,6 +199,7 @@ static void ItemMenu_Register(u8);
 static void ItemMenu_Deselect(u8);
 static void Task_SelectRegisteredItemDirection(u8);
 static void Task_RegisteredItemsWheel(u8);
+static void Task_UseRegisteredItemAfterDpadRelease(u8);
 static void BuildRegisteredItemsMessage(void);
 static u16 *GetRegisteredItemSlot(u8);
 static bool8 IsItemRegistered(u16);
@@ -2229,7 +2230,6 @@ static void Task_RegisteredItemsWheel(u8 taskId)
 {
     s8 direction = -1;
     u16 itemId;
-    u8 itemTaskId;
 
     // CB1 creates this task before CB2's RunTasks in the very same frame.
     // Ignore that opening SELECT press and only accept input once released.
@@ -2273,16 +2273,29 @@ static void Task_RegisteredItemsWheel(u8 taskId)
     }
 
     PlaySE(SE_SELECT);
-    CloseRegisteredItemsWheel(taskId);
-    // Preserve the original key-item use behavior, including field restrictions.
+    // Keep movement locked while the selecting D-pad button remains held.
+    // Closing and unlocking here causes the same keypress to move the player.
+    HideFieldMessageBox();
+    gTasks[taskId].data[1] = itemId;
+    gTasks[taskId].func = Task_UseRegisteredItemAfterDpadRelease;
+}
+
+static void Task_UseRegisteredItemAfterDpadRelease(u8 taskId)
+{
+    u16 itemId;
+
+    if (JOY_HELD(DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT))
+        return;
+
+    itemId = (u16)gTasks[taskId].data[1];
+    // The registered-item task already holds field controls and has frozen
+    // objects. Reuse it rather than destroying/recreating a task this frame.
     HideMapNamePopUpWindow();
-    LockPlayerFieldControls();
-    FreezeObjectEvents();
-    PlayerFreeze();
-    StopPlayerAvatar();
+    ChangeBgY_ScreenOff(0, 0, BG_COORD_SET);
     gSpecialVar_ItemId = itemId;
-    itemTaskId = CreateTask(GetItemFieldFunc(itemId), 8);
-    gTasks[itemTaskId].tUsingRegisteredKeyItem = TRUE;
+    memset(gTasks[taskId].data, 0, sizeof(gTasks[taskId].data));
+    gTasks[taskId].tUsingRegisteredKeyItem = TRUE;
+    gTasks[taskId].func = GetItemFieldFunc(itemId);
 }
 
 bool8 UseRegisteredKeyItemOnField(void)
