@@ -2240,7 +2240,7 @@ static void Task_RegisteredItemsWheel(u8 taskId)
 
 bool8 UseRegisteredKeyItemOnField(void)
 {
-    u8 taskId, i;
+    u8 i;
     u16 itemId;
     s16 x, y;
 
@@ -2275,7 +2275,7 @@ bool8 UseRegisteredKeyItemOnField(void)
     }
     CopyWindowToVram(0, COPYWIN_FULL);
     PlaySE(SE_WIN_OPEN);
-    taskId = CreateTask(Task_RegisteredItemsWheel, 8);
+    CreateTask(Task_RegisteredItemsWheel, 8);
     return TRUE;
 }
 
