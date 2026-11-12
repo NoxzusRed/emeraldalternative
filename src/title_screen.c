@@ -918,6 +918,21 @@ bool8 IsTitleScreenRayquazaBackground(void)
     return sTitleBackground == TITLE_BG_RAYQUAZA;
 }
 
+// Keep the PRESS START music unchanged; select a weather theme only for
+// the CONTINUE / NEW GAME / OPTION menu sharing the same legendary art.
+u16 GetTitleScreenMainMenuMusic(void)
+{
+    switch (sTitleBackground)
+    {
+    case TITLE_BG_GROUDON:
+        return MUS_WEATHER_GROUDON;
+    case TITLE_BG_KYOGRE:
+        return MUS_ABNORMAL_WEATHER;
+    default:
+        return MUS_NONE;
+    }
+}
+
 // The title artwork is rendered with the same source tilemaps, color banks
 // and order of background layers on both screens. Palette slots 9, 10, 12,
 // and 13 are unused by all three title backgrounds; the main-menu windows
