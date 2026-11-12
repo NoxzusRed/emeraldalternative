@@ -224,7 +224,7 @@ static const u8 sText_DepositedVar2Var1s[] = _("Deposited {STR_VAR_2}\n{STR_VAR_
 static const u8 sText_NoRoomForItems[] = _("There's no room to\nstore items.");
 static const u8 sText_SelectShortcut[] = _("Press a direction\nto assign item.");
 static const u8 sText_ShortcutsTitle[] = _("SELECT AN ITEM");
-static const u8 sText_ShortcutsHelp[] = _("D-PAD: USE  B: EXIT");
+static const u8 sText_ShortcutsHelp[] = _("B: EXIT");
 static const u8 sText_ShortcutEmpty[] = _("-----");
 static const u8 sText_ShortcutUp[] = _("UP:");
 static const u8 sText_ShortcutDown[] = _("DOWN:");
@@ -241,13 +241,14 @@ static const u8 *const sShortcutDirections[] =
 static const struct WindowTemplate sRegisteredItemsWheelWindow =
 {
     .bg = 0,
-    .tilemapLeft = 5,
-    .tilemapTop = 4,
-    .width = 20,
-    .height = 11,
+    .tilemapLeft = 8,
+    .tilemapTop = 5,
+    .width = 14,
+    .height = 9,
     .paletteNum = 15,
-    // Window tiles 0x21D..0x2F8 stay below the overworld BG map at 0x300.
-    .baseBlock = 0x21D
+    // Reuse the Start menu's known-safe BG0 tile range. This 126-tile
+    // window fits fully below the standard dialogue graphics at 0x214.
+    .baseBlock = 0x139
 };
 static const u8 sText_CantStoreImportantItems[] = _("Important items\ncan't be stored in\nthe PC!");
 
@@ -2259,14 +2260,13 @@ bool8 UseRegisteredKeyItemOnField(void)
         return FALSE;
 
     HideMapNamePopUpWindow();
-    ChangeBgY_ScreenOff(0, 0, BG_COORD_SET);
     LockPlayerFieldControls();
     FreezeObjectEvents();
     PlayerFreeze();
     StopPlayerAvatar();
 
-    // Uses the standard field window graphics without allocating VRAM tiles
-    // overlapping the overworld text box or frame palettes.
+    // The compact BG0 window uses the tile area known to work for START.
+    // Do not change the field BG scroll/display registers just to show it.
     LoadMessageBoxAndBorderGfx();
     windowId = AddWindow(&sRegisteredItemsWheelWindow);
     if (windowId == WINDOW_NONE)
@@ -2276,18 +2276,19 @@ bool8 UseRegisteredKeyItemOnField(void)
         return TRUE;
     }
     DrawStdWindowFrame(windowId, FALSE);
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, sText_ShortcutsTitle, 8, 1, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutsTitle, 8, 0, TEXT_SKIP_DRAW, NULL);
 
     for (i = 0; i < 4; i++)
     {
         itemId = *GetRegisteredItemSlot(i);
-        AddTextPrinterParameterized(windowId, FONT_NARROW, sShortcutDirections[i], 8, 17 + i * 14, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NARROW, sShortcutDirections[i], 8, 13 + i * 12, TEXT_SKIP_DRAW, NULL);
         if (itemId != ITEM_NONE && itemId < ITEMS_COUNT && CheckBagHasItem(itemId, 1))
-            AddTextPrinterParameterized(windowId, FONT_NARROW, GetItemName(itemId), 56, 17 + i * 14, TEXT_SKIP_DRAW, NULL);
+            AddTextPrinterParameterized(windowId, FONT_NARROW, GetItemName(itemId), 38, 13 + i * 12, TEXT_SKIP_DRAW, NULL);
         else
-            AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutEmpty, 56, 17 + i * 14, TEXT_SKIP_DRAW, NULL);
+            AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutEmpty, 38, 13 + i * 12, TEXT_SKIP_DRAW, NULL);
     }
-    AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutsHelp, 8, 77, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutsHelp, 8, 61, TEXT_SKIP_DRAW, NULL);
+    // Transfer both the window tile graphics and its tilemap on opening.
     CopyWindowToVram(windowId, COPYWIN_FULL);
 
     taskId = CreateTask(Task_RegisteredItemsWheel, 8);
