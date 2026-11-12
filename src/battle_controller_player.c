@@ -663,6 +663,21 @@ static void TryShowAsTarget(u32 battler)
     }
 }
 
+static bool8 IsWeatherSettingMove(u16 move)
+{
+    switch (move)
+    {
+    case MOVE_SUNNY_DAY:
+    case MOVE_RAIN_DANCE:
+    case MOVE_SANDSTORM:
+    case MOVE_HAIL:
+    case MOVE_SNOWSCAPE:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
 void HandleInputChooseMove(u32 battler)
 {
     u16 moveTarget;
@@ -714,7 +729,9 @@ void HandleInputChooseMove(u32 battler)
                 canSelectTarget = 0;
             }
 
-            if (B_SHOW_TARGETS == TRUE)
+            // Weather-setting moves modify the field, not selected targets.
+            if (B_SHOW_TARGETS == TRUE
+             && !IsWeatherSettingMove(moveInfo->moves[gMoveSelectionCursor[battler]]))
             {
                 // Show all available targets for multi-target moves
                 if ((moveTarget & MOVE_TARGET_ALL_BATTLERS) == MOVE_TARGET_ALL_BATTLERS)

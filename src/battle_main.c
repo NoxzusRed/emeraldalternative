@@ -206,6 +206,7 @@ EWRAM_DATA struct SpecialStatus gSpecialStatuses[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gBattleWeather = 0;
 EWRAM_DATA struct WishFutureKnock gWishFutureKnock = {0};
 EWRAM_DATA u16 gIntroSlideFlags = 0;
+EWRAM_DATA static u16 sDirectWildIntroWaitFrames = 0;
 EWRAM_DATA u8 gSentPokesToOpponent[2] = {0};
 EWRAM_DATA struct BattleEnigmaBerry gEnigmaBerries[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct BattleScripting gBattleScripting = {0};
@@ -3516,6 +3517,15 @@ static bool8 UseDirectWildBattleIntro(void)
     return TRUE;
 }
 
+static bool8 DirectWildIntroHasSprite(u32 battler)
+{
+    u8 spriteId = gBattlerSpriteIds[battler];
+
+    return IsBattlerAlive(battler)
+        && spriteId < MAX_SPRITES
+        && gSprites[spriteId].inUse;
+}
+
 static void CreateDirectWildBattleSprite(u32 battler)
 {
     struct Pokemon *mon = GetBattlerMon(battler);
@@ -3538,6 +3548,13 @@ static void CreateDirectWildBattleSprite(u32 battler)
         GetBattlerSpriteDefault_Y(battler),
         GetBattlerSpriteSubpriority(battler)
     );
+
+    if (spriteId >= MAX_SPRITES)
+    {
+        // Do not enter the intro wait loop with a missing sprite.
+        gAbsentBattlerFlags |= 1u << battler;
+        return;
+    }
 
     gBattlerSpriteIds[battler] = spriteId;
 
@@ -3577,7 +3594,7 @@ static void Task_DirectWildIntroEffects(u8 taskId)
             s16 targetX;
             u16 species;
 
-            if (!IsBattlerAlive(battler))
+            if (!DirectWildIntroHasSprite(battler))
                 continue;
 
             sprite = &gSprites[gBattlerSpriteIds[battler]];
@@ -3636,7 +3653,7 @@ static void Task_DirectWildIntroEffects(u8 taskId)
     battler = gTasks[taskId].data[0];
 
     while (battler < gBattlersCount
-           && !IsBattlerAlive(battler))
+           && !DirectWildIntroHasSprite(battler))
         battler++;
 
     gTasks[taskId].data[0] = battler;
@@ -3659,7 +3676,7 @@ static void Task_DirectWildIntroEffects(u8 taskId)
     {
         for (battler = 0; battler < gBattlersCount; battler++)
         {
-            if (!IsBattlerAlive(battler))
+            if (!DirectWildIntroHasSprite(battler))
                 continue;
 
             if (!(gTasks[taskId].data[1] & (1 << battler))
@@ -3683,7 +3700,7 @@ static void Task_DirectWildIntroEffects(u8 taskId)
 
             for (battler = 0; battler < gBattlersCount; battler++)
             {
-                if (!IsBattlerAlive(battler))
+                if (!DirectWildIntroHasSprite(battler))
                     continue;
 
                 gBattleSpritesDataPtr
@@ -3771,13 +3788,21 @@ static void DoBattleIntro(void)
                 #endif
             }
 
-            // Entrada directa para combates salvajes.
+            // Mark empty party slots absent before waiting for the intro;
+            // the regular battle path does this later, after the intro.
             if (UseDirectWildBattleIntro())
             {
-                if (IsBattlerAlive(battler))
+                if (!IsValidForBattle(GetBattlerMon(battler))
+                 || gBattleMons[battler].species == SPECIES_NONE
+                 || !IsBattlerAlive(battler))
                 {
-                    CreateDirectWildBattleSprite(battler);
+                    gAbsentBattlerFlags |= 1u << battler;
+                    continue;
+                }
 
+                CreateDirectWildBattleSprite(battler);
+                if (DirectWildIntroHasSprite(battler))
+                {
                     if (!IsOnPlayerSide(battler))
                     {
                         gBattleResults.lastOpponentSpecies =
@@ -3848,6 +3873,7 @@ static void DoBattleIntro(void)
             gTasks[taskId].data[1] = 0;
             gTasks[taskId].data[2] = 0;
 
+            sDirectWildIntroWaitFrames = 0;
             gBattleStruct->introState =
                 BATTLE_INTRO_STATE_WILD_WAIT_SPRITES;
         }
@@ -4094,7 +4120,7 @@ case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
     for (battler = 0; battler < gBattlersCount; battler++)
     {
         struct Sprite *sprite;
-        if (!IsBattlerAlive(battler))
+        if (!DirectWildIntroHasSprite(battler))
             continue;
         sprite = &gSprites[gBattlerSpriteIds[battler]];
         // Esperar a que llegue a su posicion y
@@ -4106,17 +4132,19 @@ case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
             break;
         }
     }
-    if (battler == gBattlersCount)
+    // Fall back after six seconds if an animation callback never finishes.
+    if (battler == gBattlersCount || ++sDirectWildIntroWaitFrames >= 360)
     {
+        sDirectWildIntroWaitFrames = 0;
         gBattleStruct->introState =
             BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES;
     }
     break;
     case BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES:
-        // Mostrar las barras de PS de los Pokemon activos.
+        // Show healthboxes only for battlers with active sprites.
         for (battler = 0; battler < gBattlersCount; battler++)
         {
-            if (!IsBattlerAlive(battler))
+            if (!DirectWildIntroHasSprite(battler))
                 continue;
 
             UpdateHealthboxAttribute(
@@ -4136,22 +4164,27 @@ case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
             BATTLE_INTRO_STATE_WILD_WAIT_HEALTHBOXES;
         break;
     case BATTLE_INTRO_STATE_WILD_WAIT_HEALTHBOXES:
-        // Esperar a que las barras terminen de entrar.
-        for (battler = 0;
-             battler < gBattlersCount;
-             battler++)
+        // Skip absent battlers and wait only for active healthboxes.
+        for (battler = 0; battler < gBattlersCount; battler++)
         {
-            if (!IsBattlerAlive(battler))
+            u8 healthboxId;
+
+            if (!DirectWildIntroHasSprite(battler))
                 continue;
-            if (gSprites[gHealthboxSpriteIds[battler]].callback
-                != SpriteCallbackDummy)
-            {
-                return;
-            }
+
+            healthboxId = gHealthboxSpriteIds[battler];
+            if (healthboxId < MAX_SPRITES
+             && gSprites[healthboxId].inUse
+             && gSprites[healthboxId].callback != SpriteCallbackDummy)
+                break;
         }
-        // Continuar con la inicializacion normal del turno.
-        gBattleStruct->introState =
-            BATTLE_INTRO_STATE_SET_DEX_AND_BATTLE_VARS;
+
+        if (battler == gBattlersCount || ++sDirectWildIntroWaitFrames >= 360)
+        {
+            sDirectWildIntroWaitFrames = 0;
+            gBattleStruct->introState =
+                BATTLE_INTRO_STATE_SET_DEX_AND_BATTLE_VARS;
+        }
         break;
     }
 }
