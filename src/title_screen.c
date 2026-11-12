@@ -918,8 +918,8 @@ bool8 IsTitleScreenRayquazaBackground(void)
     return sTitleBackground == TITLE_BG_RAYQUAZA;
 }
 
-// Keep the PRESS START music unchanged; select a weather theme only for
-// the CONTINUE / NEW GAME / OPTION menu sharing the same legendary art.
+// Keep the PRESS START music unchanged; select the corresponding music
+// only for the CONTINUE / NEW GAME / OPTION menu.
 u16 GetTitleScreenMainMenuMusic(void)
 {
     switch (sTitleBackground)
@@ -928,6 +928,8 @@ u16 GetTitleScreenMainMenuMusic(void)
         return MUS_WEATHER_GROUDON;
     case TITLE_BG_KYOGRE:
         return MUS_ABNORMAL_WEATHER;
+    case TITLE_BG_RAYQUAZA:
+        return MUS_ABANDONED_SHIP;
     default:
         return MUS_NONE;
     }
