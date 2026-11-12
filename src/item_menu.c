@@ -195,6 +195,7 @@ static void BagMenu_ItemPrintCallback(u8, u32, u8);
 static void ItemMenu_UseOutOfBattle(u8);
 static void ItemMenu_Toss(u8);
 static void ItemMenu_Register(u8);
+static void ItemMenu_Deselect(u8);
 static void Task_SelectRegisteredItemDirection(u8);
 static void Task_RegisteredItemsWheel(u8);
 static u16 *GetRegisteredItemSlot(u8);
@@ -240,12 +241,13 @@ static const u8 *const sShortcutDirections[] =
 static const struct WindowTemplate sRegisteredItemsWheelWindow =
 {
     .bg = 0,
-    .tilemapLeft = 4,
+    .tilemapLeft = 5,
     .tilemapTop = 4,
-    .width = 22,
+    .width = 20,
     .height = 11,
     .paletteNum = 15,
-    .baseBlock = 0x300
+    // Window tiles 0x21D..0x2F8 stay below the overworld BG map at 0x300.
+    .baseBlock = 0x21D
 };
 static const u8 sText_CantStoreImportantItems[] = _("Important items\ncan't be stored in\nthe PC!");
 
@@ -311,7 +313,7 @@ static const struct MenuAction sItemMenuActions[] = {
     [ACTION_BATTLE_USE]        = {gMenuText_Use,                {ItemMenu_UseInBattle}},
     [ACTION_CHECK]             = {COMPOUND_STRING("CHECK"),     {ItemMenu_UseOutOfBattle}},
     [ACTION_WALK]              = {COMPOUND_STRING("WALK"),      {ItemMenu_UseOutOfBattle}},
-    [ACTION_DESELECT]          = {COMPOUND_STRING("DESELECT"),  {ItemMenu_Register}},
+    [ACTION_DESELECT]          = {COMPOUND_STRING("DESELECT"),  {ItemMenu_Deselect}},
     [ACTION_CHECK_TAG]         = {COMPOUND_STRING("CHECK TAG"), {ItemMenu_CheckTag}},
     [ACTION_CONFIRM]           = {gMenuText_Confirm,            {Task_FadeAndCloseBagMenu}},
     [ACTION_SHOW]              = {COMPOUND_STRING("SHOW"),      {ItemMenu_Show}},
@@ -2004,13 +2006,26 @@ static void FinishRegisterItem(u8 taskId)
     ScheduleBgCopyTilemapToVram(0);
 }
 
+static void ItemMenu_Deselect(u8 taskId)
+{
+    u8 direction;
+
+    RemoveContextWindow();
+    // Remove the item immediately from whichever shortcut it occupies.
+    for (direction = 0; direction < 4; direction++)
+    {
+        if (*GetRegisteredItemSlot(direction) == gSpecialVar_ItemId)
+            *GetRegisteredItemSlot(direction) = ITEM_NONE;
+    }
+    FinishRegisterItem(taskId);
+}
+
 static void ItemMenu_Register(u8 taskId)
 {
     RemoveContextWindow();
-    FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
-    BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, sText_SelectShortcut, 3, 1, 0, 0, TEXT_SKIP_DRAW, COLORID_NORMAL);
-    CopyWindowToVram(WIN_DESCRIPTION, COPYWIN_GFX);
-    gTasks[taskId].func = Task_SelectRegisteredItemDirection;
+    // Use the visible bag message window, not the hidden description tilemap.
+    // Once printing finishes, the task waits for the desired D-pad direction.
+    DisplayItemMessage(taskId, FONT_NORMAL, sText_SelectShortcut, Task_SelectRegisteredItemDirection);
 }
 
 static void Task_SelectRegisteredItemDirection(u8 taskId)
@@ -2022,7 +2037,7 @@ static void Task_SelectRegisteredItemDirection(u8 taskId)
     if (JOY_NEW(B_BUTTON))
     {
         PlaySE(SE_SELECT);
-        FinishRegisterItem(taskId);
+        CloseItemMessage(taskId);
         return;
     }
 
@@ -2054,7 +2069,7 @@ static void Task_SelectRegisteredItemDirection(u8 taskId)
         }
         *GetRegisteredItemSlot(direction) = selectedItem;
     }
-    FinishRegisterItem(taskId);
+    CloseItemMessage(taskId);
 }
 
 static void ItemMenu_Give(u8 taskId)
