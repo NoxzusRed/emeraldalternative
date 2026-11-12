@@ -738,6 +738,12 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, FALSE);
     sMainMenuLegendaryBgActive = TRUE;
 
+    // Use the weather theme matching the persistent title background.
+    // Rayquaza keeps the existing main-menu audio behavior. Inline OPTION
+    // never reinitializes this menu, so returning from it preserves the song.
+    if (GetTitleScreenMainMenuMusic() != MUS_NONE)
+        PlayBGM(GetTitleScreenMainMenuMusic());
+
     return 0;
 }
 
