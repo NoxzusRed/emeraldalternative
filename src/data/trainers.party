@@ -5808,7 +5808,7 @@ EVs: 64 HP
 Linoone @ Figy Berry
 Level: 33
 Ability: Gluttony
-IVs: 24 HP / 24 Atk / 20 Def / 24 SpA / 20 SpD / 24 Spe
+IVs: 24 HP / 24 Atk / 20 Def / 24 SpA / 20 SpD / 31 Spe
 EVs: 252 HP / 252 Spe / 50 Def / 50 SpD
 - Slash
 - Belly Drum
@@ -5827,7 +5827,7 @@ EVs: 64 HP
 
 Exploud @ Sitrus Berry
 Level: 34
-IVs: 30 HP / 0 Atk / 30 Def / 0 SpA / 30 SpD / 12 Spe
+IVs: 30 HP / 0 Atk / 30 Def / 24 SpA / 30 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Hyper Voice
 - Crunch

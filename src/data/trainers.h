@@ -14262,7 +14262,7 @@ F_TRAINER_FEMALE |
 #line 5812
             .ev = TRAINER_PARTY_EVS(252, 0, 50, 252, 0, 50),
 #line 5811
-            .iv = TRAINER_PARTY_IVS(24, 24, 20, 24, 24, 20),
+            .iv = TRAINER_PARTY_IVS(24, 24, 20, 31, 24, 20),
 #line 5810
             .ability = ABILITY_GLUTTONY,
 #line 5809
@@ -14310,7 +14310,7 @@ F_TRAINER_FEMALE |
 #line 5831
             .ev = TRAINER_PARTY_EVS(252, 0, 126, 0, 0, 126),
 #line 5830
-            .iv = TRAINER_PARTY_IVS(30, 0, 30, 12, 0, 30),
+            .iv = TRAINER_PARTY_IVS(30, 0, 30, 12, 24, 30),
 #line 5829
             .lvl = 34,
             .nature = NATURE_HARDY,
