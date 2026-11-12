@@ -117,8 +117,6 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         {
             if (newKeys & START_BUTTON)
                 input->pressedStartButton = TRUE;
-            if (newKeys & SELECT_BUTTON)
-                input->pressedSelectButton = TRUE;
             if (newKeys & A_BUTTON)
                 input->pressedAButton = TRUE;
             if (newKeys & B_BUTTON)
@@ -128,6 +126,13 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
             if ((newKeys & L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode != OPTIONS_BUTTON_MODE_L_EQUALS_A)
                 input->pressedLButton = TRUE;
         }
+
+        // At maximum Mach Bike speed, normal menu inputs are suppressed,
+        // but SELECT must still be able to dismount at the next tile center.
+        if ((newKeys & SELECT_BUTTON)
+         && (GetPlayerSpeed() != PLAYER_SPEED_FASTEST
+          || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE)))
+            input->pressedSelectButton = TRUE;
 
         if (heldKeys & (DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT))
         {
@@ -193,6 +198,37 @@ static bool8 TryOpenFlyMapShortcut(void)
     }
 
     return FALSE;
+}
+
+// SELECT takes priority over the registered-item wheel while riding a bike.
+// Match the standard Bike item's restrictions instead of allowing the player
+// to dismount on Cycling Road or on Acro Bike rails.
+static bool8 TryDismountBikeWithSelect(void)
+{
+    s16 x, y;
+    u8 metatileBehavior;
+
+    if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
+        return FALSE;
+
+    PlayerGetDestCoords(&x, &y);
+    metatileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+    if (FlagGet(FLAG_SYS_CYCLING_ROAD)
+     || MetatileBehavior_IsVerticalRail(metatileBehavior)
+     || MetatileBehavior_IsHorizontalRail(metatileBehavior)
+     || MetatileBehavior_IsIsolatedVerticalRail(metatileBehavior)
+     || MetatileBehavior_IsIsolatedHorizontalRail(metatileBehavior)
+     || !Overworld_IsBikingAllowed()
+     || IsBikingDisallowedByPlayer()
+     || !FollowerNPCCanBike())
+    {
+        PlaySE(SE_FAILURE);
+        return TRUE;
+    }
+
+    GetOnOffBike(PLAYER_AVATAR_FLAG_ON_FOOT);
+    FollowerNPC_HandleBike();
+    return TRUE;
 }
 
 int ProcessPlayerFieldInput(struct FieldInput *input)
@@ -273,8 +309,13 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->tookStep && TryFindHiddenPokemon())
         return TRUE;
 
-    if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
-        return TRUE;
+    if (input->pressedSelectButton)
+    {
+        if (TryDismountBikeWithSelect())
+            return TRUE;
+        if (UseRegisteredKeyItemOnField() == TRUE)
+            return TRUE;
+    }
 
     if (input->pressedRButton && TryStartDexNavSearch())
         return TRUE;
