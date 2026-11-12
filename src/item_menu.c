@@ -14,6 +14,7 @@
 #include "event_object_lock.h"
 #include "event_scripts.h"
 #include "field_player_avatar.h"
+#include "field_message_box.h"
 #include "field_specials.h"
 #include "graphics.h"
 #include "gpu_regs.h"
@@ -198,6 +199,7 @@ static void ItemMenu_Register(u8);
 static void ItemMenu_Deselect(u8);
 static void Task_SelectRegisteredItemDirection(u8);
 static void Task_RegisteredItemsWheel(u8);
+static void BuildRegisteredItemsMessage(void);
 static u16 *GetRegisteredItemSlot(u8);
 static bool8 IsItemRegistered(u16);
 static void ItemMenu_Give(u8);
@@ -223,8 +225,6 @@ static const u8 sText_DepositHowManyVar1[] = _("Deposit how many\n{STR_VAR_1}?")
 static const u8 sText_DepositedVar2Var1s[] = _("Deposited {STR_VAR_2}\n{STR_VAR_1}.");
 static const u8 sText_NoRoomForItems[] = _("There's no room to\nstore items.");
 static const u8 sText_SelectShortcut[] = _("Press a direction\nto assign item.");
-static const u8 sText_ShortcutsTitle[] = _("SELECT AN ITEM");
-static const u8 sText_ShortcutsHelp[] = _("B: EXIT");
 static const u8 sText_ShortcutEmpty[] = _("-----");
 static const u8 sText_ShortcutUp[] = _("UP:");
 static const u8 sText_ShortcutDown[] = _("DOWN:");
@@ -579,6 +579,8 @@ EWRAM_DATA struct BagPosition gBagPosition = {0};
 static EWRAM_DATA struct ListBuffer1 *sListBuffer1 = 0;
 static EWRAM_DATA struct ListBuffer2 *sListBuffer2 = 0;
 EWRAM_DATA u16 gSpecialVar_ItemId = 0;
+// Dynamic two-line prompt for the regular overworld dialogue renderer.
+static EWRAM_DATA u8 sRegisteredItemsMessage[100] = {0};
 static EWRAM_DATA struct TempWallyBag *sTempWallyBag = 0;
 
 void ResetBagScrollPositions(void)
@@ -2181,11 +2183,43 @@ static void Task_ItemContext_GiveToPC(u8 taskId)
 
 #define tUsingRegisteredKeyItem data[3] // See usage in item_use.c
 
+// Build two compact rows for the normal overworld message box:
+// UP / DOWN on the first line, LEFT / RIGHT on the second line.
+static void BuildRegisteredItemsMessage(void)
+{
+    u8 i, j;
+    u8 *dest = sRegisteredItemsMessage;
+
+    for (i = 0; i < 4; i++)
+    {
+        u16 itemId = *GetRegisteredItemSlot(i);
+        const u8 *itemName;
+
+        if (itemId != ITEM_NONE && itemId < ITEMS_COUNT && CheckBagHasItem(itemId, 1))
+            itemName = GetItemName(itemId);
+        else
+            itemName = sText_ShortcutEmpty;
+
+        dest = StringCopy(dest, sShortcutDirections[i]);
+        *dest++ = CHAR_SPACE;
+        // Limit names so two options fit on each line of the message box.
+        for (j = 0; j < 8 && itemName[j] != EOS; j++)
+            *dest++ = itemName[j];
+
+        if (i == 1)
+            *dest++ = CHAR_NEWLINE;
+        else if (i == 0 || i == 2)
+        {
+            *dest++ = CHAR_SPACE;
+            *dest++ = CHAR_SPACE;
+        }
+    }
+    *dest = EOS;
+}
+
 static void CloseRegisteredItemsWheel(u8 taskId)
 {
-    // The standard field message window (0) is permanent. Clear it,
-    // but never remove it, or later dialogues will lose their window.
-    ClearStdWindowAndFrameToTransparent(0, TRUE);
+    HideFieldMessageBox();
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
     DestroyTask(taskId);
@@ -2226,9 +2260,8 @@ static void Task_RegisteredItemsWheel(u8 taskId)
 
     PlaySE(SE_SELECT);
     CloseRegisteredItemsWheel(taskId);
-    // Reuse the existing registered key item path (including the field checks).
+    // Preserve the original key-item use behavior, including field restrictions.
     HideMapNamePopUpWindow();
-    ChangeBgY_ScreenOff(0, 0, BG_COORD_SET);
     LockPlayerFieldControls();
     FreezeObjectEvents();
     PlayerFreeze();
@@ -2240,11 +2273,12 @@ static void Task_RegisteredItemsWheel(u8 taskId)
 
 bool8 UseRegisteredKeyItemOnField(void)
 {
-    u8 i;
-    u16 itemId;
-    s16 x, y;
+    u8 taskId;
 
     if (InUnionRoom() == TRUE || InBattlePyramid() || InBattlePike() || InMultiPartnerRoom() == TRUE)
+        return FALSE;
+
+    if (!IsFieldMessageBoxHidden())
         return FALSE;
 
     HideMapNamePopUpWindow();
@@ -2253,29 +2287,22 @@ bool8 UseRegisteredKeyItemOnField(void)
     PlayerFreeze();
     StopPlayerAvatar();
 
-    // The field message window is initialized as window 0 by InitStandardTextBoxWindows.
-    // Drawing the four shortcuts here avoids allocating a second window or touching
-    // the overworld BG tile memory. Both columns fit inside the 27x4-tile message box.
-    LoadMessageBoxAndBorderGfx();
-    DrawStdWindowFrame(0, FALSE);
-    AddTextPrinterParameterized(0, FONT_NARROW, sText_ShortcutsTitle, 8, 0, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(0, FONT_NARROW, sText_ShortcutsHelp, 166, 0, TEXT_SKIP_DRAW, NULL);
-
-    for (i = 0; i < 4; i++)
+    // Let the same engine task that draws NPC dialogues render the four shortcuts.
+    // It initializes the textbox and transfers BG graphics in the correct order.
+    BuildRegisteredItemsMessage();
+    if (ShowFieldMessage(sRegisteredItemsMessage))
     {
-        itemId = *GetRegisteredItemSlot(i);
-        x = (i & 1) ? 112 : 8;
-        y = (i < 2) ? 12 : 24;
-        AddTextPrinterParameterized(0, FONT_NARROW, sShortcutDirections[i], x, y, TEXT_SKIP_DRAW, NULL);
-        x += GetStringWidth(FONT_NARROW, sShortcutDirections[i], 0) + 3;
-        if (itemId != ITEM_NONE && itemId < ITEMS_COUNT && CheckBagHasItem(itemId, 1))
-            AddTextPrinterParameterized(0, FONT_NARROW, GetItemName(itemId), x, y, TEXT_SKIP_DRAW, NULL);
-        else
-            AddTextPrinterParameterized(0, FONT_NARROW, sText_ShortcutEmpty, x, y, TEXT_SKIP_DRAW, NULL);
+        taskId = CreateTask(Task_RegisteredItemsWheel, 8);
+        if (taskId != TASK_NONE)
+        {
+            PlaySE(SE_WIN_OPEN);
+            return TRUE;
+        }
+        HideFieldMessageBox();
     }
-    CopyWindowToVram(0, COPYWIN_FULL);
-    PlaySE(SE_WIN_OPEN);
-    CreateTask(Task_RegisteredItemsWheel, 8);
+
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
     return TRUE;
 }
 
