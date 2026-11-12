@@ -7265,7 +7265,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_TRAPINCH] =
     {
         .baseHP        = 45,
-        .baseAttack    = 100,
+        .baseAttack    = 110,
         .baseDefense   = 45,
         .baseSpeed     = 10,
         .baseSpAttack  = 45,
@@ -7341,10 +7341,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_VIBRAVA] =
     {
         .baseHP        = 50,
-        .baseAttack    = 70,
+        .baseAttack    = 80,
         .baseDefense   = 50,
         .baseSpeed     = 70,
-        .baseSpAttack  = 50,
+        .baseSpAttack  = 55,
         .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_GROUND, TYPE_DRAGON),
         .catchRate = 120,
