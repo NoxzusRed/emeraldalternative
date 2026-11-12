@@ -12,7 +12,6 @@
 #include "graphics.h"
 #include "international_string_util.h"
 #include "link.h"
-#include "m4a.h"
 #include "main.h"
 #include "main_menu.h"
 #include "menu.h"
@@ -176,7 +175,6 @@ static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
 static u8 sBirchSpeechMainTaskId;
 static bool8 sMainMenuLegendaryBgActive;
 static u16 sPendingMainMenuWeatherMusic;
-static bool8 sRayquazaMenuMusicStarted;
 static u8 sInlineOptionsReturnMenuType;
 static u8 sInlineOptionsReturnItem;
 static bool8 sInlineOptionsReturnWireless;
@@ -592,45 +590,20 @@ enum
 
 #define MAIN_MENU_BORDER_TILE   0x1D5
 #define BIRCH_DLG_BASE_TILE_NUM 0xFC
-#define RAYQUAZA_MENU_VOLUME    160 // 160/256 of normal BGM volume
-
-static void RestoreRayquazaMainMenuVolume(void)
-{
-    if (sRayquazaMenuMusicStarted)
-    {
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
-        sRayquazaMenuMusicStarted = FALSE;
-    }
-}
 
 static void CB2_MainMenu(void)
 {
     RunTasks();
 
-    // The cry may outlive the title's ducking task. Do not start the
-    // menu theme until the cry audio itself has actually finished.
-    if (sMainMenuLegendaryBgActive)
+    // The title cry may still be playing after the main menu is drawn.
+    // Check the cry audio itself: InitMainMenu resets the cry-ducking task,
+    // so IsCryFinished() can incorrectly report that the cry has ended.
+    if (sMainMenuLegendaryBgActive
+     && sPendingMainMenuWeatherMusic != MUS_NONE
+     && !IsCryPlaying())
     {
-        if (sPendingMainMenuWeatherMusic != MUS_NONE && !IsCryPlaying())
-        {
-            PlayBGM(sPendingMainMenuWeatherMusic);
-            if (sPendingMainMenuWeatherMusic == MUS_RAYQUAZA_MENU)
-            {
-                m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, RAYQUAZA_MENU_VOLUME);
-                sRayquazaMenuMusicStarted = TRUE;
-            }
-            sPendingMainMenuWeatherMusic = MUS_NONE;
-        }
-        else if (sRayquazaMenuMusicStarted
-              && sMainMenuFadeState == MAIN_MENU_FADE_IDLE
-              && !gPaletteFade.active
-              && IsBGMStopped())
-        {
-            // Loop the menu music in code; leave the MIDI and original
-            // MUS_RAYQUAZA_APPEARS unchanged.
-            PlayBGM(MUS_RAYQUAZA_MENU);
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, RAYQUAZA_MENU_VOLUME);
-        }
+        PlayBGM(sPendingMainMenuWeatherMusic);
+        sPendingMainMenuWeatherMusic = MUS_NONE;
     }
 
     if (sMainMenuLegendaryBgActive)
@@ -708,7 +681,6 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     sMainMenuInlineRestoring = FALSE;
     sMainMenuLegendaryBgActive = FALSE;
     sPendingMainMenuWeatherMusic = MUS_NONE;
-    sRayquazaMenuMusicStarted = FALSE;
     SetVBlankCallback(NULL);
     ScanlineEffect_Stop();
 
@@ -1448,8 +1420,6 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
                 return;
         }
-        // Restore normal volume for any music played after leaving this menu.
-        RestoreRayquazaMainMenuVolume();
         // Stop the background effect before another screen reuses BG2.
         sMainMenuLegendaryBgActive = FALSE;
         ScanlineEffect_Stop();
@@ -1468,7 +1438,6 @@ static void Task_HandleMainMenuBPressed(u8 taskId)
         if (gTasks[taskId].tMenuType == HAS_MYSTERY_EVENTS)
             RemoveScrollIndicatorArrowPair(gTasks[taskId].tScrollArrowTaskId);
         sCurrItemAndOptionMenuCheck = 0;
-        RestoreRayquazaMainMenuVolume();
         sMainMenuLegendaryBgActive = FALSE;
         ScanlineEffect_Stop();
         FreeAllWindowBuffers();
