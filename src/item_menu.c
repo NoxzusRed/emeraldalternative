@@ -238,18 +238,6 @@ static const u8 *const sShortcutDirections[] =
     sText_ShortcutRight
 };
 
-static const struct WindowTemplate sRegisteredItemsWheelWindow =
-{
-    .bg = 0,
-    .tilemapLeft = 8,
-    .tilemapTop = 5,
-    .width = 14,
-    .height = 9,
-    .paletteNum = 15,
-    // Reuse the Start menu's known-safe BG0 tile range. This 126-tile
-    // window fits fully below the standard dialogue graphics at 0x214.
-    .baseBlock = 0x139
-};
 static const u8 sText_CantStoreImportantItems[] = _("Important items\ncan't be stored in\nthe PC!");
 
 static const struct BgTemplate sBgTemplates_ItemMenu[] =
@@ -2195,10 +2183,9 @@ static void Task_ItemContext_GiveToPC(u8 taskId)
 
 static void CloseRegisteredItemsWheel(u8 taskId)
 {
-    u8 windowId = gTasks[taskId].data[0];
-
-    ClearStdWindowAndFrameToTransparent(windowId, TRUE);
-    RemoveWindow(windowId);
+    // The standard field message window (0) is permanent. Clear it,
+    // but never remove it, or later dialogues will lose their window.
+    ClearStdWindowAndFrameToTransparent(0, TRUE);
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
     DestroyTask(taskId);
@@ -2253,8 +2240,9 @@ static void Task_RegisteredItemsWheel(u8 taskId)
 
 bool8 UseRegisteredKeyItemOnField(void)
 {
-    u8 taskId, windowId, i;
+    u8 taskId, i;
     u16 itemId;
+    s16 x, y;
 
     if (InUnionRoom() == TRUE || InBattlePyramid() || InBattlePike() || InMultiPartnerRoom() == TRUE)
         return FALSE;
@@ -2265,34 +2253,29 @@ bool8 UseRegisteredKeyItemOnField(void)
     PlayerFreeze();
     StopPlayerAvatar();
 
-    // The compact BG0 window uses the tile area known to work for START.
-    // Do not change the field BG scroll/display registers just to show it.
+    // The field message window is initialized as window 0 by InitStandardTextBoxWindows.
+    // Drawing the four shortcuts here avoids allocating a second window or touching
+    // the overworld BG tile memory. Both columns fit inside the 27x4-tile message box.
     LoadMessageBoxAndBorderGfx();
-    windowId = AddWindow(&sRegisteredItemsWheelWindow);
-    if (windowId == WINDOW_NONE)
-    {
-        ScriptUnfreezeObjectEvents();
-        UnlockPlayerFieldControls();
-        return TRUE;
-    }
-    DrawStdWindowFrame(windowId, FALSE);
-    AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutsTitle, 8, 0, TEXT_SKIP_DRAW, NULL);
+    DrawStdWindowFrame(0, FALSE);
+    AddTextPrinterParameterized(0, FONT_NARROW, sText_ShortcutsTitle, 8, 0, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(0, FONT_NARROW, sText_ShortcutsHelp, 166, 0, TEXT_SKIP_DRAW, NULL);
 
     for (i = 0; i < 4; i++)
     {
         itemId = *GetRegisteredItemSlot(i);
-        AddTextPrinterParameterized(windowId, FONT_NARROW, sShortcutDirections[i], 8, 13 + i * 12, TEXT_SKIP_DRAW, NULL);
+        x = (i & 1) ? 112 : 8;
+        y = (i < 2) ? 12 : 24;
+        AddTextPrinterParameterized(0, FONT_NARROW, sShortcutDirections[i], x, y, TEXT_SKIP_DRAW, NULL);
+        x += GetStringWidth(FONT_NARROW, sShortcutDirections[i], 0) + 3;
         if (itemId != ITEM_NONE && itemId < ITEMS_COUNT && CheckBagHasItem(itemId, 1))
-            AddTextPrinterParameterized(windowId, FONT_NARROW, GetItemName(itemId), 38, 13 + i * 12, TEXT_SKIP_DRAW, NULL);
+            AddTextPrinterParameterized(0, FONT_NARROW, GetItemName(itemId), x, y, TEXT_SKIP_DRAW, NULL);
         else
-            AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutEmpty, 38, 13 + i * 12, TEXT_SKIP_DRAW, NULL);
+            AddTextPrinterParameterized(0, FONT_NARROW, sText_ShortcutEmpty, x, y, TEXT_SKIP_DRAW, NULL);
     }
-    AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutsHelp, 8, 61, TEXT_SKIP_DRAW, NULL);
-    // Transfer both the window tile graphics and its tilemap on opening.
-    CopyWindowToVram(windowId, COPYWIN_FULL);
-
+    CopyWindowToVram(0, COPYWIN_FULL);
+    PlaySE(SE_WIN_OPEN);
     taskId = CreateTask(Task_RegisteredItemsWheel, 8);
-    gTasks[taskId].data[0] = windowId;
     return TRUE;
 }
 
