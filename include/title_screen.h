@@ -5,6 +5,7 @@ extern const u16 gTitleScreenAlphaBlend[64];
 
 void CB2_InitTitleScreen(void);
 bool8 IsTitleScreenRayquazaBackground(void);
+u16 GetTitleScreenMainMenuMusic(void);
 void LoadTitleScreenBackgroundForMainMenu(void);
 void AnimateTitleScreenBackgroundForMainMenu(void);
 
