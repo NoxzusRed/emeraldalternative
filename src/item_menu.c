@@ -581,7 +581,7 @@ static EWRAM_DATA struct ListBuffer1 *sListBuffer1 = 0;
 static EWRAM_DATA struct ListBuffer2 *sListBuffer2 = 0;
 EWRAM_DATA u16 gSpecialVar_ItemId = 0;
 // Dynamic two-line prompt for the regular overworld dialogue renderer.
-static EWRAM_DATA u8 sRegisteredItemsMessage[100] = {0};
+static EWRAM_DATA u8 sRegisteredItemsMessage[160] = {0};
 static EWRAM_DATA struct TempWallyBag *sTempWallyBag = 0;
 
 void ResetBagScrollPositions(void)
@@ -2184,36 +2184,72 @@ static void Task_ItemContext_GiveToPC(u8 taskId)
 
 #define tUsingRegisteredKeyItem data[3] // See usage in item_use.c
 
-// Build two compact rows for the normal overworld message box:
-// UP / DOWN on the first line, LEFT / RIGHT on the second line.
+// Fit the two shortcuts on each line to the dialogue window's actual width.
+// Show full item names whenever possible instead of truncating every name at
+// eight characters. Only shorten the longer entries if the row is too wide.
+#define SHORTCUT_ROW_MAX_WIDTH 200
+
 static void BuildRegisteredItemsMessage(void)
 {
-    u8 i, j;
+    const u8 *names[4];
+    u8 lengths[4];
+    u8 row, i, j;
     u8 *dest = sRegisteredItemsMessage;
 
     for (i = 0; i < 4; i++)
     {
         u16 itemId = *GetRegisteredItemSlot(i);
-        const u8 *itemName;
 
         if (itemId != ITEM_NONE && itemId < ITEMS_COUNT && CheckBagHasItem(itemId, 1))
-            itemName = GetItemName(itemId);
+            names[i] = GetItemName(itemId);
         else
-            itemName = sText_ShortcutEmpty;
+            names[i] = sText_ShortcutEmpty;
 
-        dest = StringCopy(dest, sShortcutDirections[i]);
-        *dest++ = CHAR_SPACE;
-        // Limit names so two options fit on each line of the message box.
-        for (j = 0; j < 8 && itemName[j] != EOS; j++)
-            *dest++ = itemName[j];
+        for (j = 0; j < ITEM_NAME_LENGTH && names[i][j] != EOS; j++)
+            ;
+        lengths[i] = j;
+    }
 
-        if (i == 1)
-            *dest++ = CHAR_NEWLINE;
-        else if (i == 0 || i == 2)
+    for (row = 0; row < 2; row++)
+    {
+        u8 left = row * 2;
+        u8 right = left + 1;
+        u8 line[2 * ITEM_NAME_LENGTH + 32];
+        u8 *end;
+
+        // The two names share the available space dynamically. The result is
+        // measured in pixels using the same font as the field message printer.
+        while (TRUE)
         {
-            *dest++ = CHAR_SPACE;
-            *dest++ = CHAR_SPACE;
+            end = StringCopy(line, sShortcutDirections[left]);
+            *end++ = CHAR_SPACE;
+            for (j = 0; j < lengths[left]; j++)
+                *end++ = names[left][j];
+
+            *end++ = CHAR_SPACE;
+            *end++ = CHAR_SPACE;
+            end = StringCopy(end, sShortcutDirections[right]);
+            *end++ = CHAR_SPACE;
+            for (j = 0; j < lengths[right]; j++)
+                *end++ = names[right][j];
+            *end = EOS;
+
+            if (GetStringWidth(FONT_NORMAL, line, 0) <= SHORTCUT_ROW_MAX_WIDTH)
+                break;
+
+            // Share any necessary trimming rather than cutting both names
+            // to the same arbitrary character limit.
+            if (lengths[left] >= lengths[right] && lengths[left] > 0)
+                lengths[left]--;
+            else if (lengths[right] > 0)
+                lengths[right]--;
+            else
+                break;
         }
+
+        dest = StringCopy(dest, line);
+        if (row == 0)
+            *dest++ = CHAR_NEWLINE;
     }
     *dest = EOS;
 }
