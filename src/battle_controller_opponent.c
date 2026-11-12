@@ -39,6 +39,7 @@
 #include "constants/trainers.h"
 #include "trainer_hill.h"
 #include "test_runner.h"
+#include "trainer_pokemon_sprites.h"
 
 static void OpponentHandleLoadMonSprite(u32 battler);
 static void OpponentHandleSwitchInAnim(u32 battler);
