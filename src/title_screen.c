@@ -929,7 +929,7 @@ u16 GetTitleScreenMainMenuMusic(void)
     case TITLE_BG_KYOGRE:
         return MUS_ABNORMAL_WEATHER;
     case TITLE_BG_RAYQUAZA:
-        return MUS_ABANDONED_SHIP;
+        return MUS_RAYQUAZA_APPEARS;
     default:
         return MUS_NONE;
     }
