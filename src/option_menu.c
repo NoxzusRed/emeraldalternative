@@ -21,6 +21,7 @@
 #include "window.h"
 #include "gba/m4a_internal.h"
 #include "constants/rgb.h"
+#include "constants/event_objects.h"
 
 #define tMenuSelection data[0]
 #define tTextSpeed data[1]
@@ -708,6 +709,46 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     }
 }
 
+// Player and rival graphics use the same saved Ruby/Emerald selector,
+// regardless of the gender chosen at the start of the game.
+static bool8 IsBrendanMayObjectGraphics(u16 graphicsId)
+{
+    switch (graphicsId)
+    {
+    case OBJ_EVENT_GFX_BRENDAN_NORMAL:
+    case OBJ_EVENT_GFX_BRENDAN_MACH_BIKE:
+    case OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE:
+    case OBJ_EVENT_GFX_BRENDAN_SURFING:
+    case OBJ_EVENT_GFX_BRENDAN_UNDERWATER:
+    case OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE:
+    case OBJ_EVENT_GFX_BRENDAN_FISHING:
+    case OBJ_EVENT_GFX_BRENDAN_WATERING:
+    case OBJ_EVENT_GFX_BRENDAN_DECORATING:
+    case OBJ_EVENT_GFX_MAY_NORMAL:
+    case OBJ_EVENT_GFX_MAY_MACH_BIKE:
+    case OBJ_EVENT_GFX_MAY_ACRO_BIKE:
+    case OBJ_EVENT_GFX_MAY_SURFING:
+    case OBJ_EVENT_GFX_MAY_UNDERWATER:
+    case OBJ_EVENT_GFX_MAY_FIELD_MOVE:
+    case OBJ_EVENT_GFX_MAY_FISHING:
+    case OBJ_EVENT_GFX_MAY_WATERING:
+    case OBJ_EVENT_GFX_MAY_DECORATING:
+    case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL:
+    case OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE:
+    case OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE:
+    case OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING:
+    case OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE:
+    case OBJ_EVENT_GFX_RIVAL_MAY_NORMAL:
+    case OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE:
+    case OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE:
+    case OBJ_EVENT_GFX_RIVAL_MAY_SURFING:
+    case OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
 static void Task_OptionMenuSave(u8 taskId)
 {
     gSaveBlock2Ptr->optionsTextSpeed = gTasks[taskId].tTextSpeed;
@@ -720,27 +761,40 @@ static void Task_OptionMenuSave(u8 taskId)
     if (gSaveBlock2Ptr->optionsRubyPlayerSprites != gTasks[taskId].tPlayerSpriteStyle)
     {
         gSaveBlock2Ptr->optionsRubyPlayerSprites = gTasks[taskId].tPlayerSpriteStyle;
-        // Replace the current field sprite in-place, preserving map and
-        // movement state, and affecting only the selected playable style.
+        // Refresh both protagonists on the current map: the playable
+        // character and the other one appearing as the rival/NPC.
         if (sOptionMenuOnOverworld)
         {
-            struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
-            struct Sprite *sprite = &gSprites[player->spriteId];
-            s16 frame;
-            u8 animCmdIndex;
+            u8 i;
 
-            ObjectEventSetGraphicsId(player, player->graphicsId);
-
-            // The Start menu freezes sprite animation, so updating graphics info
-            // and palette alone leaves the previous style's tiles in OBJ VRAM.
-            // Copy the currently displayed frame now without restarting the
-            // animation, changing the player's direction, or reloading the map.
-            if (sprite->inUse && !sprite->usingSheet && sprite->images != NULL)
+            for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
             {
-                animCmdIndex = sprite->animBeginning ? 0 : sprite->animCmdIndex;
-                frame = sprite->anims[sprite->animNum][animCmdIndex].frame.imageValue;
-                if (frame >= 0)
-                    RequestSpriteFrameImageCopy(frame, sprite->oam.tileNum, sprite->images);
+                struct ObjectEvent *obj = &gObjectEvents[i];
+                struct Sprite *sprite;
+                s16 frame;
+                u8 animCmdIndex;
+
+                if (!obj->active || !IsBrendanMayObjectGraphics(obj->graphicsId))
+                    continue;
+                if (obj->spriteId >= MAX_SPRITES)
+                    continue;
+
+                sprite = &gSprites[obj->spriteId];
+                if (!sprite->inUse)
+                    continue;
+
+                ObjectEventSetGraphicsId(obj, obj->graphicsId);
+
+                // The Start menu pauses the overworld animations, so copy
+                // the current frame into VRAM immediately without changing
+                // direction, resetting movement or reloading the map.
+                if (!sprite->usingSheet && sprite->images != NULL)
+                {
+                    animCmdIndex = sprite->animBeginning ? 0 : sprite->animCmdIndex;
+                    frame = sprite->anims[sprite->animNum][animCmdIndex].frame.imageValue;
+                    if (frame >= 0)
+                        RequestSpriteFrameImageCopy(frame, sprite->oam.tileNum, sprite->images);
+                }
             }
         }
     }
