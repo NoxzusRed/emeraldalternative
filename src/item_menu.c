@@ -2231,6 +2231,20 @@ static void Task_RegisteredItemsWheel(u8 taskId)
     u16 itemId;
     u8 itemTaskId;
 
+    // CB1 creates this task before CB2's RunTasks in the very same frame.
+    // Ignore that opening SELECT press and only accept input once released.
+    if (gTasks[taskId].data[0] == 0)
+    {
+        gTasks[taskId].data[0] = 1;
+        return;
+    }
+    if (gTasks[taskId].data[0] == 1)
+    {
+        if (JOY_HELD(SELECT_BUTTON))
+            return;
+        gTasks[taskId].data[0] = 2;
+    }
+
     if (JOY_NEW(B_BUTTON | SELECT_BUTTON))
     {
         PlaySE(SE_SELECT);
