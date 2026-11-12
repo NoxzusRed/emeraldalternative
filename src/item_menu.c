@@ -11,6 +11,7 @@
 #include "decompress.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "event_object_lock.h"
 #include "event_scripts.h"
 #include "field_player_avatar.h"
 #include "field_specials.h"
@@ -224,9 +225,16 @@ static const u8 sText_SelectShortcut[] = _("Press a direction\nto assign item.")
 static const u8 sText_ShortcutsTitle[] = _("SELECT AN ITEM");
 static const u8 sText_ShortcutsHelp[] = _("D-PAD: USE  B: EXIT");
 static const u8 sText_ShortcutEmpty[] = _("-----");
+static const u8 sText_ShortcutUp[] = _("UP:");
+static const u8 sText_ShortcutDown[] = _("DOWN:");
+static const u8 sText_ShortcutLeft[] = _("LEFT:");
+static const u8 sText_ShortcutRight[] = _("RIGHT:");
 static const u8 *const sShortcutDirections[] =
 {
-    _("UP:"), _("DOWN:"), _("LEFT:"), _("RIGHT:")
+    sText_ShortcutUp,
+    sText_ShortcutDown,
+    sText_ShortcutLeft,
+    sText_ShortcutRight
 };
 
 static const struct WindowTemplate sRegisteredItemsWheelWindow =
