@@ -194,6 +194,10 @@ static void BagMenu_ItemPrintCallback(u8, u32, u8);
 static void ItemMenu_UseOutOfBattle(u8);
 static void ItemMenu_Toss(u8);
 static void ItemMenu_Register(u8);
+static void Task_SelectRegisteredItemDirection(u8);
+static void Task_RegisteredItemsWheel(u8);
+static u16 *GetRegisteredItemSlot(u8);
+static bool8 IsItemRegistered(u16);
 static void ItemMenu_Give(u8);
 static void ItemMenu_Cancel(u8);
 static void ItemMenu_UseInBattle(u8);
@@ -216,6 +220,25 @@ static const u8 sText_Var1CantBeHeldHere[] = _("The {STR_VAR_1} can't be held\nh
 static const u8 sText_DepositHowManyVar1[] = _("Deposit how many\n{STR_VAR_1}?");
 static const u8 sText_DepositedVar2Var1s[] = _("Deposited {STR_VAR_2}\n{STR_VAR_1}.");
 static const u8 sText_NoRoomForItems[] = _("There's no room to\nstore items.");
+static const u8 sText_SelectShortcut[] = _("Press a direction\nto assign item.");
+static const u8 sText_ShortcutsTitle[] = _("SELECT AN ITEM");
+static const u8 sText_ShortcutsHelp[] = _("D-PAD: USE  B: EXIT");
+static const u8 sText_ShortcutEmpty[] = _("-----");
+static const u8 *const sShortcutDirections[] =
+{
+    _("UP:"), _("DOWN:"), _("LEFT:"), _("RIGHT:")
+};
+
+static const struct WindowTemplate sRegisteredItemsWheelWindow =
+{
+    .bg = 0,
+    .tilemapLeft = 4,
+    .tilemapTop = 4,
+    .width = 22,
+    .height = 11,
+    .paletteNum = 15,
+    .baseBlock = 0x300
+};
 static const u8 sText_CantStoreImportantItems[] = _("Important items\ncan't be stored in\nthe PC!");
 
 static const struct BgTemplate sBgTemplates_ItemMenu[] =
@@ -1003,7 +1026,7 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
         else
         {
             // Print registered icon
-            if (gSaveBlock1Ptr->registeredItem != ITEM_NONE && gSaveBlock1Ptr->registeredItem == itemId)
+            if (IsItemRegistered(itemId))
                 BlitBitmapToWindow(windowId, sRegisteredSelect_Gfx, 96, y - 1, 24, 16);
         }
     }
@@ -1649,7 +1672,7 @@ static void OpenContextMenu(u8 taskId)
                 gBagMenu->contextMenuItemsPtr = gBagMenu->contextMenuItemsBuffer;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_KeyItemsPocket);
                 memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_KeyItemsPocket, sizeof(sContextMenuItems_KeyItemsPocket));
-                if (gSaveBlock1Ptr->registeredItem == gSpecialVar_ItemId)
+                if (IsItemRegistered(gSpecialVar_ItemId))
                     gBagMenu->contextMenuItemsBuffer[1] = ACTION_DESELECT;
                 if (gSpecialVar_ItemId == ITEM_MACH_BIKE || gSpecialVar_ItemId == ITEM_ACRO_BIKE)
                 {
@@ -1938,21 +1961,92 @@ static void Task_RemoveItemFromBag(u8 taskId)
     }
 }
 
-static void ItemMenu_Register(u8 taskId)
+// Keep the original SELECT registration as the UP shortcut, so saves are compatible.
+// The other three directions occupy the six unused bytes at SaveBlock1 + 0x9C2.
+static u16 *GetRegisteredItemSlot(u8 direction)
+{
+    if (direction == 0)
+        return &gSaveBlock1Ptr->registeredItem;
+    return &gSaveBlock1Ptr->registeredItems[direction - 1];
+}
+
+static bool8 IsItemRegistered(u16 itemId)
+{
+    u8 direction;
+    for (direction = 0; direction < 4; direction++)
+    {
+        if (*GetRegisteredItemSlot(direction) == itemId && itemId != ITEM_NONE)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static void FinishRegisterItem(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     u16 *scrollPos = &gBagPosition.scrollPosition[gBagPosition.pocket];
     u16 *cursorPos = &gBagPosition.cursorPosition[gBagPosition.pocket];
 
-    if (gSaveBlock1Ptr->registeredItem == gSpecialVar_ItemId)
-        gSaveBlock1Ptr->registeredItem = ITEM_NONE;
-    else
-        gSaveBlock1Ptr->registeredItem = gSpecialVar_ItemId;
     DestroyListMenuTask(tListTaskId, scrollPos, cursorPos);
     LoadBagItemListBuffers(gBagPosition.pocket);
     tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, *scrollPos, *cursorPos);
+    PrintItemDescription(tListPosition);
+    BagMenu_PrintCursor(tListTaskId, COLORID_NORMAL);
+    ReturnToItemList(taskId);
     ScheduleBgCopyTilemapToVram(0);
-    ItemMenu_Cancel(taskId);
+}
+
+static void ItemMenu_Register(u8 taskId)
+{
+    RemoveContextWindow();
+    FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
+    BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, sText_SelectShortcut, 3, 1, 0, 0, TEXT_SKIP_DRAW, COLORID_NORMAL);
+    CopyWindowToVram(WIN_DESCRIPTION, COPYWIN_GFX);
+    gTasks[taskId].func = Task_SelectRegisteredItemDirection;
+}
+
+static void Task_SelectRegisteredItemDirection(u8 taskId)
+{
+    s8 direction = -1;
+    u8 i;
+    u16 selectedItem = gSpecialVar_ItemId;
+
+    if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        FinishRegisterItem(taskId);
+        return;
+    }
+
+    if (JOY_NEW(DPAD_UP))
+        direction = 0;
+    else if (JOY_NEW(DPAD_DOWN))
+        direction = 1;
+    else if (JOY_NEW(DPAD_LEFT))
+        direction = 2;
+    else if (JOY_NEW(DPAD_RIGHT))
+        direction = 3;
+
+    if (direction < 0)
+        return;
+
+    PlaySE(SE_SELECT);
+    if (*GetRegisteredItemSlot(direction) == selectedItem)
+    {
+        // Selecting the same direction again removes that registration.
+        *GetRegisteredItemSlot(direction) = ITEM_NONE;
+    }
+    else
+    {
+        // Keep an item in only one direction at a time.
+        for (i = 0; i < 4; i++)
+        {
+            if (*GetRegisteredItemSlot(i) == selectedItem)
+                *GetRegisteredItemSlot(i) = ITEM_NONE;
+        }
+        *GetRegisteredItemSlot(direction) = selectedItem;
+    }
+    FinishRegisterItem(taskId);
 }
 
 static void ItemMenu_Give(u8 taskId)
@@ -2075,33 +2169,106 @@ static void Task_ItemContext_GiveToPC(u8 taskId)
 
 #define tUsingRegisteredKeyItem data[3] // See usage in item_use.c
 
+static void CloseRegisteredItemsWheel(u8 taskId)
+{
+    u8 windowId = gTasks[taskId].data[0];
+
+    ClearStdWindowAndFrameToTransparent(windowId, TRUE);
+    RemoveWindow(windowId);
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+    DestroyTask(taskId);
+}
+
+static void Task_RegisteredItemsWheel(u8 taskId)
+{
+    s8 direction = -1;
+    u16 itemId;
+    u8 itemTaskId;
+
+    if (JOY_NEW(B_BUTTON | SELECT_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        CloseRegisteredItemsWheel(taskId);
+        return;
+    }
+
+    if (JOY_NEW(DPAD_UP))
+        direction = 0;
+    else if (JOY_NEW(DPAD_DOWN))
+        direction = 1;
+    else if (JOY_NEW(DPAD_LEFT))
+        direction = 2;
+    else if (JOY_NEW(DPAD_RIGHT))
+        direction = 3;
+
+    if (direction < 0)
+        return;
+
+    itemId = *GetRegisteredItemSlot(direction);
+    if (itemId == ITEM_NONE || itemId >= ITEMS_COUNT || !CheckBagHasItem(itemId, 1)
+     || GetItemFieldFunc(itemId) == NULL)
+    {
+        PlaySE(SE_FAILURE);
+        return;
+    }
+
+    PlaySE(SE_SELECT);
+    CloseRegisteredItemsWheel(taskId);
+    // Reuse the existing registered key item path (including the field checks).
+    HideMapNamePopUpWindow();
+    ChangeBgY_ScreenOff(0, 0, BG_COORD_SET);
+    LockPlayerFieldControls();
+    FreezeObjectEvents();
+    PlayerFreeze();
+    StopPlayerAvatar();
+    gSpecialVar_ItemId = itemId;
+    itemTaskId = CreateTask(GetItemFieldFunc(itemId), 8);
+    gTasks[itemTaskId].tUsingRegisteredKeyItem = TRUE;
+}
+
 bool8 UseRegisteredKeyItemOnField(void)
 {
-    u8 taskId;
+    u8 taskId, windowId, i;
+    u16 itemId;
 
     if (InUnionRoom() == TRUE || InBattlePyramid() || InBattlePike() || InMultiPartnerRoom() == TRUE)
         return FALSE;
+
     HideMapNamePopUpWindow();
     ChangeBgY_ScreenOff(0, 0, BG_COORD_SET);
-    if (gSaveBlock1Ptr->registeredItem != ITEM_NONE)
+    LockPlayerFieldControls();
+    FreezeObjectEvents();
+    PlayerFreeze();
+    StopPlayerAvatar();
+
+    // Uses the standard field window graphics without allocating VRAM tiles
+    // overlapping the overworld text box or frame palettes.
+    LoadMessageBoxAndBorderGfx();
+    windowId = AddWindow(&sRegisteredItemsWheelWindow);
+    if (windowId == WINDOW_NONE)
     {
-        if (CheckBagHasItem(gSaveBlock1Ptr->registeredItem, 1) == TRUE)
-        {
-            LockPlayerFieldControls();
-            FreezeObjectEvents();
-            PlayerFreeze();
-            StopPlayerAvatar();
-            gSpecialVar_ItemId = gSaveBlock1Ptr->registeredItem;
-            taskId = CreateTask(GetItemFieldFunc(gSaveBlock1Ptr->registeredItem), 8);
-            gTasks[taskId].tUsingRegisteredKeyItem = TRUE;
-            return TRUE;
-        }
-        else
-        {
-            gSaveBlock1Ptr->registeredItem = ITEM_NONE;
-        }
+        ScriptUnfreezeObjectEvents();
+        UnlockPlayerFieldControls();
+        return TRUE;
     }
-    ScriptContext_SetupScript(EventScript_SelectWithoutRegisteredItem);
+    DrawStdWindowFrame(windowId, FALSE);
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, sText_ShortcutsTitle, 8, 1, TEXT_SKIP_DRAW, NULL);
+
+    for (i = 0; i < 4; i++)
+    {
+        itemId = *GetRegisteredItemSlot(i);
+        AddTextPrinterParameterized(windowId, FONT_NARROW, sShortcutDirections[i], 8, 17 + i * 14, TEXT_SKIP_DRAW, NULL);
+        if (itemId != ITEM_NONE && itemId < ITEMS_COUNT && CheckBagHasItem(itemId, 1))
+            AddTextPrinterParameterized(windowId, FONT_NARROW, GetItemName(itemId), 56, 17 + i * 14, TEXT_SKIP_DRAW, NULL);
+        else
+            AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutEmpty, 56, 17 + i * 14, TEXT_SKIP_DRAW, NULL);
+    }
+    AddTextPrinterParameterized(windowId, FONT_NARROW, sText_ShortcutsHelp, 8, 77, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+
+    taskId = CreateTask(Task_RegisteredItemsWheel, 8);
+    gTasks[taskId].data[0] = windowId;
     return TRUE;
 }
 
