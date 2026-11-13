@@ -229,6 +229,7 @@ LilycoveCity_EventScript_AquaGrunt4::
 LilycoveCity_EventScript_Rival::
 	lock
 	faceplayer
+	goto_if_set FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING, LilycoveCity_EventScript_GiveDestinyKnot
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, LilycoveCity_EventScript_May
 	goto_if_eq VAR_RESULT, FEMALE, LilycoveCity_EventScript_Brendan
@@ -321,6 +322,7 @@ LilycoveCity_EventScript_BattleBrendanMudkip::
 	end
 
 LilycoveCity_EventScript_DefeatedMay::
+	setflag FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING
 	msgbox LilycoveCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
@@ -353,6 +355,7 @@ LilycoveCity_EventScript_MayBattleFrontier::
 	return
 
 LilycoveCity_EventScript_DefeatedBrendan::
+	setflag FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING
 	msgbox LilycoveCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
@@ -377,6 +380,7 @@ LilycoveCity_EventScript_BrendanBattleFrontier::
 	return
 
 LilycoveCity_EventScript_RivalFlyAway::
+	goto_if_set FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING, LilycoveCity_EventScript_GiveDestinyKnot
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
@@ -389,6 +393,32 @@ LilycoveCity_EventScript_RivalFlyAway::
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	setflag FLAG_MET_RIVAL_LILYCOVE
+	release
+	end
+
+LilycoveCity_EventScript_GiveDestinyKnot::
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, LilycoveCity_EventScript_MayGiveDestinyKnot
+	goto LilycoveCity_EventScript_BrendanGiveDestinyKnot
+
+LilycoveCity_EventScript_MayGiveDestinyKnot::
+	msgbox LilycoveCity_Text_MayGiveDestinyKnot, MSGBOX_DEFAULT
+	goto LilycoveCity_EventScript_ReceiveDestinyKnot
+
+LilycoveCity_EventScript_BrendanGiveDestinyKnot::
+	msgbox LilycoveCity_Text_BrendanGiveDestinyKnot, MSGBOX_DEFAULT
+	goto LilycoveCity_EventScript_ReceiveDestinyKnot
+
+LilycoveCity_EventScript_ReceiveDestinyKnot::
+	giveitem ITEM_DESTINY_KNOT
+	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_EventScript_DestinyKnotBagFull
+	clearflag FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING
+	goto LilycoveCity_EventScript_RivalFlyAway
+
+LilycoveCity_EventScript_DestinyKnotBagFull::
+	msgbox LilycoveCity_Text_DestinyKnotBagFull, MSGBOX_DEFAULT
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	release
 	end
 
@@ -636,6 +666,21 @@ LilycoveCity_Text_MayDefeat:
 	.string "{PLAYER}{KUN}, on ROUTE 103.\p"
 	.string "That battle helped you become this\n"
 	.string "strong, {PLAYER}{KUN}, didn't it?$"
+
+LilycoveCity_Text_MayGiveDestinyKnot:
+	.string "MAY: You really have gotten stronger!\p"
+	.string "Here, I want you to have this\n"
+	.string "DESTINY KNOT. You earned it!$"
+
+LilycoveCity_Text_BrendanGiveDestinyKnot:
+	.string "BRENDAN: You've really improved!\p"
+	.string "Take this DESTINY KNOT.\n"
+	.string "You earned it fair and square!$"
+
+LilycoveCity_Text_DestinyKnotBagFull:
+	.string "Your BAG is full!\p"
+	.string "Make some space and come back.\n"
+	.string "I'll keep the DESTINY KNOT for you!$"
 
 LilycoveCity_Text_MayGoingBackToLittleroot:
 	.string "MAY: I'm thinking of going back to\n"
