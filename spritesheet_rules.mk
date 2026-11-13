@@ -227,6 +227,10 @@ $(OBJEVENTGFXDIR)/people/beauty.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/birdkeeper.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+# Case-sensitive path matches the uploaded file cooltrainer_M.png.
+$(OBJEVENTGFXDIR)/people/cooltrainer_M.4bpp: %.4bpp: %.png spritesheet_rules.mk
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/black_belt.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
