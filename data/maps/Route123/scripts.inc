@@ -10,7 +10,8 @@ Route123_OnLoad:
 Route123_OnTransition:
 	special SetRoute123Weather
 	setflag FLAG_TEMP_17
-	goto_if_unset FLAG_VISITED_LILYCOVE_CITY, Route123_OnTransition_End
+	@ Only show the shortcut NPCs after Team Aqua's Route 121 departure scene.
+	goto_if_lt VAR_ROUTE121_STATE, 1, Route123_OnTransition_End
 	goto_if_set FLAG_ROUTE123_SHORTCUT_OPEN, Route123_OnTransition_End
 	clearflag FLAG_TEMP_17
 
