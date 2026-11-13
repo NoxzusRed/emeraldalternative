@@ -1261,7 +1261,7 @@
 #define FLAG_ITEM_RUSTURF_TUNNEL_HIGH_SUN_STONE                     0x4B8 //
 #define FLAG_UNUSED						                            0x4B9 // Unused Flag
 #define FLAG_ITEM_SOOTOPOLIS_CITY_PP_MAX                            0x4BA //
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
+#define FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING                     0x4BB // Claim after defeating May/Brendan in Lilycove
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
