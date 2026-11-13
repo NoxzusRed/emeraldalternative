@@ -229,6 +229,10 @@ static const struct SpriteFrameImage sPicTable_CooltrainerM[] = {
     overworld_ascending_frames(gObjectEventPic_CooltrainerM, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_CooltrainerF[] = {
+    overworld_ascending_frames(gObjectEventPic_CooltrainerF, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Scientist1[] = {
     overworld_ascending_frames(gObjectEventPic_Scientist1, 2, 4),
 };
