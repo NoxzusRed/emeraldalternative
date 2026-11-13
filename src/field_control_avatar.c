@@ -312,7 +312,13 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->pressedSelectButton)
     {
         if (TryDismountBikeWithSelect())
-            return TRUE;
+        {
+            // Dismounting does not start a script or menu: keep field controls
+            // unlocked and allow PlayerStep to update the avatar transition.
+            // Ignore any directional input on the same frame.
+            input->dpadDirection = DIR_NONE;
+            return FALSE;
+        }
         if (UseRegisteredKeyItemOnField() == TRUE)
             return TRUE;
     }
