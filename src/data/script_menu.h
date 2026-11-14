@@ -105,37 +105,37 @@ static const struct MenuAction MultichoiceList_LevelMode[] =
 
 static const struct MenuAction MultichoiceList_Mechadoll1_Q1[] =
 {
-    {COMPOUND_STRING("ODDISH")},
+    {COMPOUND_STRING("PETILIL")},
     {COMPOUND_STRING("POOCHYENA")},
-    {COMPOUND_STRING("TAILLOW")},
+    {COMPOUND_STRING("MURKROW")},
 };
 
 static const struct MenuAction MultichoiceList_Mechadoll1_Q2[] =
 {
     {COMPOUND_STRING("AZURILL")},
-    {COMPOUND_STRING("LOTAD")},
+    {COMPOUND_STRING("WOOPER")},
     {COMPOUND_STRING("WINGULL")},
 };
 
 static const struct MenuAction MultichoiceList_Mechadoll1_Q3[] =
 {
-    {COMPOUND_STRING("DUSTOX")},
+    {COMPOUND_STRING("SNIVY")},
     {COMPOUND_STRING("ZUBAT")},
-    {COMPOUND_STRING("NINCADA")},
+    {COMPOUND_STRING("PARAS")},
 };
 
 static const struct MenuAction MultichoiceList_Mechadoll2_Q1[] =
 {
-    {COMPOUND_STRING("RALTS")},
+    {COMPOUND_STRING("BUDEW")},
     {COMPOUND_STRING("ZIGZAGOON")},
-    {COMPOUND_STRING("SLAKOTH")},
+    {COMPOUND_STRING("WHISMUR")},
 };
 
 static const struct MenuAction MultichoiceList_Mechadoll2_Q2[] =
 {
-    {COMPOUND_STRING("POOCHYENA")},
-    {COMPOUND_STRING("SHROOMISH")},
     {COMPOUND_STRING("ZIGZAGOON")},
+    {COMPOUND_STRING("MURKROW")},
+    {COMPOUND_STRING("POOCHYENA")},
 };
 
 static const struct MenuAction MultichoiceList_Mechadoll2_Q3[] =
@@ -155,14 +155,14 @@ static const struct MenuAction MultichoiceList_Mechadoll3_Q1[] =
 static const struct MenuAction MultichoiceList_Mechadoll3_Q2[] =
 {
     {COMPOUND_STRING("¥60")},
-    {COMPOUND_STRING("¥55")},
     {COMPOUND_STRING("Nothing")},
+    {COMPOUND_STRING("¥100")},
 };
 
 static const struct MenuAction MultichoiceList_Mechadoll3_Q3[] =
 {
-    {COMPOUND_STRING("They will cost more.")},
     {COMPOUND_STRING("They will cost less.")},
+    {COMPOUND_STRING("They will cost more.")},
     {COMPOUND_STRING("Same price")},
 };
 
@@ -196,8 +196,8 @@ static const struct MenuAction MultichoiceList_Mechadoll5_Q1[] =
 
 static const struct MenuAction MultichoiceList_Mechadoll5_Q2[] =
 {
+    {COMPOUND_STRING("9")},
     {COMPOUND_STRING("6")},
-    {COMPOUND_STRING("7")},
     {COMPOUND_STRING("8")},
 };
 
