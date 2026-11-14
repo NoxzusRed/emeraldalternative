@@ -490,8 +490,7 @@ MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo:
 	.string "I, ARCHIE, now have it in my possession!\p"
 	.string "Fufufu… Now we can bring our ultimate\n"
 	.string "objective to fruition!\p"
-	.string "But if you think you can stop us,\n"
-	.string "you'll have to defeat me first!$"
+	.string "But if you think you can stop us...$"
 
 MtPyre_Summit_Text_ArchieDefeat:
 	.string "Grr! How did you overpower me?!$"

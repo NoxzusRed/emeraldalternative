@@ -1261,7 +1261,7 @@
 #define FLAG_ITEM_RUSTURF_TUNNEL_HIGH_SUN_STONE                     0x4B8 //
 #define FLAG_ITEM_ROUTE_111_CAVE_HYPER_POTION						0x4B9 //
 #define FLAG_ITEM_SOOTOPOLIS_CITY_PP_MAX                            0x4BA //
-#define FLAG_UNUSED         								        0x4BB // Unused Flag
+#define FLAG_ITEM_RUSTURF_TUNNEL_HIGH_HYPER_POTION					0x4BB //
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
