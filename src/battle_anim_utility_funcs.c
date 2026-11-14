@@ -384,7 +384,7 @@ static void AnimTask_DrawFallingWhiteLinesOnAttacker_Step(u8 taskId)
 #define aDecrease         data[0]
 #define aAnimStatId       data[1]
 #define aIsTarget         data[2]
-#define aMultipleBattlers data[3] // Always false. Changes for multiple battlers are instead run sequentially.
+#define aMultipleBattlers data[3] // Both active partners share the graphic when both can lose the stat.
 #define aSharply          data[4]
 
 // Task data defines for InitStatsChangeAnimation
@@ -470,7 +470,8 @@ static void StatsChangeAnimation_Step2(u8 taskId)
     if (sAnimStatsChangeData->aMultipleBattlers)
     {
         battlerSpriteId = gBattlerSpriteIds[sAnimStatsChangeData->battler2];
-        spriteId2 = CreateInvisibleSpriteCopy(sAnimStatsChangeData->battler2, battlerSpriteId, sAnimStatsChangeData->species);
+        spriteId2 = CreateInvisibleSpriteCopy(sAnimStatsChangeData->battler2, battlerSpriteId,
+                                              GetMonData(GetBattlerMon(sAnimStatsChangeData->battler2), MON_DATA_SPECIES));
     }
 
     GetBattleAnimBg1Data(&animBgData);

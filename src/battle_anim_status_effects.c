@@ -11,6 +11,8 @@
 #include "constants/battle_anim.h"
 #include "constants/rgb.h"
 
+EWRAM_DATA bool8 gBattleAnimStatDropBothBattlers = FALSE;
+
 extern const struct CompressedSpriteSheet gBattleAnimPicTable[];
 extern const struct SpritePalette gBattleAnimPaletteTable[];
 extern const struct OamData gOamData_AffineOff_ObjNormal_8x8;
@@ -580,7 +582,8 @@ void AnimTask_StatsChange(u8 taskId)
     gBattleAnimArgs[0] = goesDown;
     gBattleAnimArgs[1] = animStatId;
     gBattleAnimArgs[2] = FALSE; // Whether it's the target, rather than attacker
-    gBattleAnimArgs[3] = FALSE; // Whether it hits multiple battlers
+    gBattleAnimArgs[3] = goesDown && gBattleAnimStatDropBothBattlers;
+    gBattleAnimStatDropBothBattlers = FALSE;
     gBattleAnimArgs[4] = sharply;
     gTasks[taskId].func = InitStatsChangeAnimation;
     gTasks[taskId].func(taskId);

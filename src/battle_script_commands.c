@@ -73,6 +73,13 @@ EWRAM_DATA static u8 sParallelBerryHealBattler;
 EWRAM_DATA static u8 sParallelIngrainHealBattler;
 EWRAM_DATA static u8 sParallelStatAnimBattler;
 EWRAM_DATA static u8 sParallelTrapAnimBattler;
+
+// A paired visual is shown once, but each battler's stat change and message
+// still runs through its own normal battle-script commands.
+EWRAM_DATA static const u8 *sGroupedStatDropAnimInstr;
+EWRAM_DATA static u8 sGroupedStatDropSecondBattler;
+EWRAM_DATA static u8 sGroupedStatDropAttacker;
+EWRAM_DATA static u8 sGroupedStatDropStat;
 EWRAM_DATA static u8 sMultiStatMessagesRemaining;
 EWRAM_DATA static bool8 sHoldMultiStatMessage;
 
@@ -511,6 +518,7 @@ static void Cmd_playanimation(void);
 static void Cmd_playanimation_var(void);
 static void Cmd_setgraphicalstatchangevalues(void);
 static void Cmd_playstatchangeanimation(void);
+static void ClearGroupedStatDrop(void);
 static void Cmd_moveend(void);
 static void Cmd_sethealblock(void);
 static void Cmd_returnatktoball(void);
@@ -3180,8 +3188,10 @@ static void Cmd_printstring(void)
     {
         u16 id = (cmd->id == 0 ? gBattleScripting.savedStringId : cmd->id);
 
-        // Only stat-table messages should receive the multi-stat pause.
-        sHoldMultiStatMessage = FALSE;
+        // Intimidate has its own text, but should get the same existing
+        // multi-stat reading time when both battlers share an animation.
+        sHoldMultiStatMessage = sMultiStatMessagesRemaining != 0
+            && id == STRINGID_PKMNCUTSATTACKWITH;
         gBattlescriptCurrInstr = cmd->nextInstr;
         PrepareStringBattle(id, gBattlerAttacker);
         gBattleCommunication[MSG_DISPLAY] = 1;
@@ -5959,6 +5969,7 @@ static void Cmd_end(void)
 
     sMultiStatMessagesRemaining = 0;
     sHoldMultiStatMessage = FALSE;
+    ClearGroupedStatDrop();
 
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
         BattleArena_AddSkillPoints(gBattlerAttacker);
@@ -5975,6 +5986,7 @@ static void Cmd_end2(void)
 
     sMultiStatMessagesRemaining = 0;
     sHoldMultiStatMessage = FALSE;
+    ClearGroupedStatDrop();
     gCurrentActionFuncId = B_ACTION_TRY_FINISH;
 }
 
@@ -5988,6 +6000,7 @@ static void Cmd_end3(void)
 
     sMultiStatMessagesRemaining = 0;
     sHoldMultiStatMessage = FALSE;
+    ClearGroupedStatDrop();
     BattleScriptPop();
     if (gBattleResources->battleCallbackStack->size != 0)
         gBattleResources->battleCallbackStack->size--;
@@ -6037,11 +6050,100 @@ static void Cmd_endselectionscript(void)
     *(gBattlerAttacker + gBattleStruct->selectionScriptFinished) = TRUE;
 }
 
+static void ClearGroupedStatDrop(void)
+{
+    sGroupedStatDropAnimInstr = NULL;
+    sGroupedStatDropSecondBattler = 0;
+    sGroupedStatDropAttacker = 0;
+    sGroupedStatDropStat = 0;
+}
+
+// Only pair visuals for battle scripts that explicitly process several
+// battlers. If either battler might be protected or have a different stat
+// outcome, retain the original one-target-at-a-time animation.
+static bool8 CanShareStatDropVisual(u32 battler, const u8 *animInstr)
+{
+    u32 other = BATTLE_PARTNER(battler);
+    u32 ability;
+    u32 stat = GET_STAT_BUFF_ID(gBattleScripting.statChanger);
+
+    if (animInstr != BattleScript_SpreadStatDownAnim
+     && animInstr != BattleScript_IntimidateStatDownAnim
+     && animInstr != BattleScript_LowerSideStatsAnim
+     && animInstr != BattleScript_SupersweetSyrupStatDownAnim
+     && animInstr != BattleScript_CottonDownStatDownAnim)
+        return FALSE;
+
+    if (!IsDoubleBattle() || other >= gBattlersCount
+     || other <= battler  // The other battler must not have been processed yet.
+     || !IsBattlerAlive(other) || !IsBattlerSpriteVisible(other)
+     || other == gBattlerAttacker
+     || !(gBattleScripting.statChanger & STAT_BUFF_NEGATIVE)
+     || stat == 0 || stat >= NUM_BATTLE_STATS
+     || gBattleMons[other].statStages[stat] <= MIN_STAT_STAGE
+     || (gStatuses3[other] & STATUS3_SEMI_INVULNERABLE)
+     || (gBattleStruct->moveResultFlags[other] & MOVE_RESULT_NO_EFFECT))
+        return FALSE;
+
+    if (animInstr == BattleScript_SpreadStatDownAnim
+     && !IsSpreadMove(GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove)))
+        return FALSE;
+
+    // Cotton Down excludes its owner even when on the same side as a target.
+    if (animInstr == BattleScript_CottonDownStatDownAnim && other == gEffectBattler)
+        return FALSE;
+
+    ability = GetBattlerAbility(other);
+    if (GetBattlerAbility(battler) == ABILITY_SIMPLE
+     || ability == ABILITY_SIMPLE || ability == ABILITY_CONTRARY
+     || ability == ABILITY_MIRROR_ARMOR
+     || CanAbilityPreventStatLoss(ability)
+     || GetBattlerHoldEffect(other, TRUE) == HOLD_EFFECT_CLEAR_AMULET
+     || gSideTimers[GetBattlerSide(other)].mistTimer
+     || IsFlowerVeilProtected(other)
+     || gBattleMons[other].status2 & STATUS2_SUBSTITUTE
+     || gProtectStructs[other].protected != PROTECT_NONE
+     || gProtectStructs[BATTLE_PARTNER(other)].protected != PROTECT_NONE)
+        return FALSE;
+
+    if ((ability == ABILITY_KEEN_EYE || ability == ABILITY_MINDS_EYE)
+        && stat == STAT_ACC)
+        return FALSE;
+    if ((B_ILLUMINATE_EFFECT >= GEN_9 && ability == ABILITY_ILLUMINATE)
+        && stat == STAT_ACC)
+        return FALSE;
+    if ((ability == ABILITY_HYPER_CUTTER && stat == STAT_ATK)
+     || (ability == ABILITY_BIG_PECKS && stat == STAT_DEF))
+        return FALSE;
+
+    if (animInstr == BattleScript_IntimidateStatDownAnim
+     && (ability == ABILITY_GUARD_DOG
+      || (B_UPDATED_INTIMIDATE >= GEN_8
+       && (ability == ABILITY_INNER_FOCUS || ability == ABILITY_SCRAPPY
+        || ability == ABILITY_OWN_TEMPO || ability == ABILITY_OBLIVIOUS))))
+        return FALSE;
+
+    return TRUE;
+}
+
 static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *nextInstr)
 {
     // Do not overwrite an animation that is still running in parallel.
     if (IsParallelBerryAnimActive() || IsParallelStatAnimActive() || IsParallelTrapAnimActive())
         return;
+
+    // The other battler's stage was changed by its own statbuffchange
+    // command, but the paired visual already showed that decrease.
+    if (animId == B_ANIM_STATS_CHANGE
+     && sGroupedStatDropAnimInstr == gBattlescriptCurrInstr
+     && sGroupedStatDropSecondBattler == battler + 1
+     && sGroupedStatDropAttacker == gBattlerAttacker
+     && sGroupedStatDropStat == GET_STAT_BUFF_ID(gBattleScripting.statChanger))
+    {
+        ClearGroupedStatDrop();
+        gBattlescriptCurrInstr = nextInstr;
+        return;
+    }
 
     // Trapping effects (Fire Spin, Sand Tomb, etc.) should lower HP during
     // their visual, not after it. No concurrent animations in link/replays/tests.
@@ -6181,6 +6283,10 @@ gAnimDisableStructPtr = &gDisableStructs[battler];
 
         gAnimDisableStructPtr = &gDisableStructs[battler];
 
+        // The stat effect uses one shared background and can animate both
+        // active partners at once. Never pair uncertain/immunized targets.
+        bool8 shareVisual = CanShareStatDropVisual(battler, gBattlescriptCurrInstr);
+        gBattleAnimStatDropBothBattlers = shareVisual;
         if (!TryHandleLaunchBattleTableAnimation(
                 battler,
                 battler,
@@ -6189,6 +6295,20 @@ gAnimDisableStructPtr = &gDisableStructs[battler];
                 argPtr != NULL ? *argPtr : 0))
         {
             sParallelStatAnimBattler = battler + 1;
+            if (shareVisual)
+            {
+                sGroupedStatDropAnimInstr = gBattlescriptCurrInstr;
+                sGroupedStatDropSecondBattler = BATTLE_PARTNER(battler) + 1;
+                sGroupedStatDropAttacker = gBattlerAttacker;
+                sGroupedStatDropStat = GET_STAT_BUFF_ID(gBattleScripting.statChanger);
+                // Reuse the existing 48-frame multi-stat message minimum
+                // for each of the two affected Pokemon, not the animation.
+                sMultiStatMessagesRemaining = 2;
+            }
+        }
+        else
+        {
+            gBattleAnimStatDropBothBattlers = FALSE;
         }
 
         gBattlescriptCurrInstr = nextInstr;
@@ -6734,6 +6854,7 @@ static void Cmd_moveend(void)
 
     sMultiStatMessagesRemaining = 0;
     sHoldMultiStatMessage = FALSE;
+    ClearGroupedStatDrop();
 
     do
     {

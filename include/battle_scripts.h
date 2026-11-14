@@ -18,6 +18,12 @@ extern const u8 BattleScript_FailedFromAtkCanceler[];
 extern const u8 BattleScript_ButItFailed[];
 extern const u8 BattleScript_StatUp[];
 extern const u8 BattleScript_StatDown[];
+// Animation entry points for shared stat-drop visuals in double battles.
+extern const u8 BattleScript_SpreadStatDownAnim[];
+extern const u8 BattleScript_IntimidateStatDownAnim[];
+extern const u8 BattleScript_LowerSideStatsAnim[];
+extern const u8 BattleScript_SupersweetSyrupStatDownAnim[];
+extern const u8 BattleScript_CottonDownStatDownAnim[];
 extern const u8 BattleScript_AlreadyAtFullHp[];
 extern const u8 BattleScript_PresentHealTarget[];
 extern const u8 BattleScript_MoveUsedMustRecharge[];

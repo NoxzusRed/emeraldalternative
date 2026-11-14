@@ -221,6 +221,9 @@ enum {
     STAT_ANIM_PAL_MULTIPLE = 0xFF
 };
 
+// Set only for one stat-drop animation; the animation task consumes it.
+extern bool8 gBattleAnimStatDropBothBattlers;
+
 void LaunchStatusAnimation(u8 battler, u8 statusAnimId);
 extern const union AnimCmd *const gAnims_SpinningSparkle[];
 
