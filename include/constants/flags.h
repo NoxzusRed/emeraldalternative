@@ -43,33 +43,33 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 //Custom Scripts
-#define FLAG_RECEIVED_EVIOLITE				0x20 //
-#define FLAG_RECEIVED_ROCKY_HELMET			0x21 //
-#define FLAG_RECEIVED_RED_SHARD				0x22 //
-#define FLAG_RECEIVED_YELLOW_SHARD          0x23 //
-#define FLAG_RECEIVED_GREEN_SHARD			0x24 //
-#define FLAG_RECEIVED_BLUE_SHARD			0x25 //
-#define FLAG_RECEIVED_TM_POISON_JAB			0x26 //
-#define FLAG_CAUGHT_JIRACHI					0x27 //
-#define FLAG_HIDE_JIRACHI					0x28 //
-#define FLAG_DEFEATED_JIRACHI				0x29 //
-#define FLAG_RECEIVED_TM_FLAMETHROWER		0x2A //
-#define FLAG_CAUGHT_WAILORD					0x2B //
-#define FLAG_HIDE_WAILORD					0x2C //
-#define FLAG_DEFEATED_WAILORD				0x2D //
-#define FLAG_RECEIVED_SNIVY_EGG				0x2E //
-#define FLAG_RECEIVED_FENNEKIN_EGG			0x2F //
-#define FLAG_RECEIVED_MUDKIP_EGG			0x30 //
-#define FLAG_HIDE_RUSTBORO_EAST_LUCARIO		0x32 //
-#define FLAG_HIDE_ROUTE115_AQUA				0x33 //
-#define FLAG_LILYCOVE_FERRY_WELCOME_DONE    0x34 //
-#define FLAG_HIDE_LITTLEROOT_TREE_1    		0x35 //
-#define FLAG_HIDE_LITTLEROOT_TREE_2   		0x36 //
-#define FLAG_ROUTE115_SHORTCUT_OPEN   		0x37 //
-#define FLAG_HIDE_ROUTE115_GREEN_NPC    	0x38 //
-#define FLAG_ROUTE123_SHORTCUT_OPEN			0x39 //
-#define FLAG_JOHTO_STARTERS_INITIALIZED		0x3A //
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
+#define FLAG_RECEIVED_EVIOLITE						0x20 //
+#define FLAG_RECEIVED_ROCKY_HELMET					0x21 //
+#define FLAG_RECEIVED_RED_SHARD						0x22 //
+#define FLAG_RECEIVED_YELLOW_SHARD         			0x23 //
+#define FLAG_RECEIVED_GREEN_SHARD					0x24 //
+#define FLAG_RECEIVED_BLUE_SHARD					0x25 //
+#define FLAG_RECEIVED_TM_POISON_JAB					0x26 //
+#define FLAG_CAUGHT_JIRACHI							0x27 //
+#define FLAG_HIDE_JIRACHI							0x28 //
+#define FLAG_DEFEATED_JIRACHI						0x29 //
+#define FLAG_RECEIVED_TM_FLAMETHROWER				0x2A //
+#define FLAG_CAUGHT_WAILORD							0x2B //
+#define FLAG_HIDE_WAILORD							0x2C //
+#define FLAG_DEFEATED_WAILORD						0x2D //
+#define FLAG_RECEIVED_SNIVY_EGG						0x2E //
+#define FLAG_RECEIVED_FENNEKIN_EGG					0x2F //
+#define FLAG_RECEIVED_MUDKIP_EGG					0x30 //
+#define FLAG_HIDE_RUSTBORO_EAST_LUCARIO				0x32 //
+#define FLAG_HIDE_ROUTE115_AQUA						0x33 //
+#define FLAG_LILYCOVE_FERRY_WELCOME_DONE   			0x34 //
+#define FLAG_HIDE_LITTLEROOT_TREE_1    				0x35 //
+#define FLAG_HIDE_LITTLEROOT_TREE_2   				0x36 //
+#define FLAG_ROUTE115_SHORTCUT_OPEN   				0x37 //
+#define FLAG_HIDE_ROUTE115_GREEN_NPC    			0x38 //
+#define FLAG_ROUTE123_SHORTCUT_OPEN					0x39 //
+#define FLAG_JOHTO_STARTERS_INITIALIZED				0x3A //
+#define FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING    0x3B //
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
@@ -1259,9 +1259,9 @@
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_STARDUST                       0x4B6 // 
 #define FLAG_ITEM_ROUTE_111_EAST_SOFT_SAND                          0x4B7 //
 #define FLAG_ITEM_RUSTURF_TUNNEL_HIGH_SUN_STONE                     0x4B8 //
-#define FLAG_UNUSED						                            0x4B9 // Unused Flag
+#define FLAG_ITEM_ROUTE_111_CAVE_HYPER_POTION						0x4B9 //
 #define FLAG_ITEM_SOOTOPOLIS_CITY_PP_MAX                            0x4BA //
-#define FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING                     0x4BB // Claim after defeating May/Brendan in Lilycove
+#define FLAG_UNUSED         								        0x4BB // Unused Flag
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
