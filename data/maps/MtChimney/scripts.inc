@@ -5,22 +5,6 @@ MtChimney_MapScripts::
 
 MtChimney_OnTransition:
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1
-	@ Spawn Courtney only once the Magma Hideout entrance has opened.
-	@ After Maxie's defeat, leave the TM ball only if Heat Wave was not obtained.
-	setflag FLAG_HIDE_MT_CHIMNEY_COURTNEY
-	setflag FLAG_HIDE_MT_CHIMNEY_HEAT_WAVE_BALL
-	goto_if_set FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, MtChimney_EventScript_CheckHeatWaveAfterMaxie
-	call_if_ge VAR_JAGGED_PASS_STATE, 2, MtChimney_EventScript_ShowCourtney
-	end
-
-MtChimney_EventScript_ShowCourtney::
-	clearflag FLAG_HIDE_MT_CHIMNEY_COURTNEY
-	return
-
-MtChimney_EventScript_CheckHeatWaveAfterMaxie::
-	goto_if_set FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE, MtChimney_EventScript_EndHeatWaveAfterMaxie
-	clearflag FLAG_HIDE_MT_CHIMNEY_HEAT_WAVE_BALL
-MtChimney_EventScript_EndHeatWaveAfterMaxie::
 	end
 
 MtChimney_OnResume:
@@ -67,7 +51,7 @@ MtChimney_EventScript_Maxie::
 	removeobject LOCALID_MT_CHIMNEY_MAXIE
 	removeobject LOCALID_MT_CHIMNEY_MAGMA_GRUNT_1
 	removeobject LOCALID_MT_CHIMNEY_TABITHA
-	@ Courtney is now part of the later Magma Hideout chapter.
+	removeobject LOCALID_MT_CHIMNEY_COURTNEY
 	removeobject LOCALID_MT_CHIMNEY_MAGMA_GRUNT_2
 	setflag FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
 	fadescreenswapbuffers FADE_FROM_BLACK
@@ -428,40 +412,9 @@ MtChimney_EventScript_Tabitha::
 	end
 
 MtChimney_EventScript_Courtney::
-	trainerbattle_single TRAINER_COURTNEY_MT_CHIMNEY, MtChimney_Text_CourtneyIntro, MtChimney_Text_CourtneyDefeat, MtChimney_EventScript_CourtneyReward
-	goto_if_unset FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE, MtChimney_EventScript_CourtneyReward
+	trainerbattle_single TRAINER_COURTNEY_MT_CHIMNEY, MtChimney_Text_CourtneyIntro, MtChimney_Text_CourtneyDefeat
 	msgbox MtChimney_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 	end
-
-MtChimney_EventScript_CourtneyReward::
-	lock
-	faceplayer
-	goto_if_set FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE, MtChimney_EventScript_CourtneyAlreadyGaveTM
-	msgbox MtChimney_Text_CourtneyGiveHeatWave, MSGBOX_DEFAULT
-	giveitem ITEM_TM88
-	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_CourtneyBagFull
-	setflag FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE
-	releaseall
-	end
-
-MtChimney_EventScript_CourtneyAlreadyGaveTM::
-	msgbox MtChimney_Text_CourtneyPostBattle, MSGBOX_DEFAULT
-	releaseall
-	end
-
-MtChimney_EventScript_CourtneyBagFull::
-	msgbox MtChimney_Text_CourtneyNoRoom, MSGBOX_DEFAULT
-	releaseall
-	end
-
-@ Keep the normal TM ball pickup text, while recording that Heat Wave
-@ was claimed so it never respawns after a map transition.
-MtChimney_EventScript_HeatWaveBall::
-	checkitemspace ITEM_TM88, 1
-	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_HeatWaveBallFind
-	setflag FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE
-MtChimney_EventScript_HeatWaveBallFind::
-	goto Common_EventScript_FindItem
 
 MtChimney_EventScript_Grunt2::
 	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_2, MtChimney_Text_Grunt2Intro, MtChimney_Text_Grunt2Defeat
@@ -674,27 +627,24 @@ MtChimney_Text_TabithaPostBattle:
 	.string "Hehehe…$"
 
 MtChimney_Text_CourtneyIntro:
-	.string "COURTNEY: ...So, you've found\n"
-	.string "our hideout entrance.\p"
-	.string "MAXIE is busy... I won't let you\n"
-	.string "interfere. I'll... delete you.$"
+	.string "You are just a child...?\p"
+	.string "Tabitha is up ahead. He is delivering\n"
+	.string "the METEORITE to LEADER MAXIE.\p"
+	.string "You want to interfere...\n"
+	.string "I won't allow it. I will... delete you.$"
 
 MtChimney_Text_CourtneyDefeat:
 	.string "... ...\n"
 	.string "... ...\p"
-	.string "My calculations... were wrong.$"
-
-MtChimney_Text_CourtneyGiveHeatWave:
-	.string "COURTNEY: ...You're stronger than\n"
-	.string "I expected. Here... take this.$"
-
-MtChimney_Text_CourtneyNoRoom:
-	.string "COURTNEY: ...Your BAG is full.\p"
-	.string "Come back with room for this TM.$"
+	.string "This changes nothing...\n"
+	.string "You'll see when it awakens.$"
 
 MtChimney_Text_CourtneyPostBattle:
-	.string "MAXIE is inside the hideout...\p"
-	.string "My mission... hasn't changed.$"
+	.string "It doesn't matter...\n"
+	.string "I have stalled you long enough.\p"
+	.string "MAXIE already has the METEORITE.\n"
+	.string "TABITHA won't let you interrupt its\l"
+	.string "awakening.$"
 
 MtChimney_Text_Grunt2Intro:
 	.string "We of TEAM MAGMA are working hard for\n"
