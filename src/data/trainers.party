@@ -19800,3 +19800,49 @@ EVs: 252 HP / 126 Atk / 68 Spe / 68 Def / 68 SpD
 - Incinerate
 - Roar
 - Smog
+
+=== TRAINER_ARCHIE_MT_PYRE ===
+Name: ARCHIE
+Class: Aqua Leader
+Pic: Aqua Leader Archie
+Gender: Male
+Music: Aqua
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Mightyena
+Level: 38
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 126 Atk / 126 Spe
+- Crunch
+- Thunder Fang
+- Fire Fang
+- Roar
+
+Crobat
+Level: 38
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 126 Atk / 126 Spe
+- Cross Poison
+- Aerial Ace
+- Confuse Ray
+- Bite
+
+Sharpedo
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 Atk / 126 Spe
+- Aqua Jet
+- Crunch
+- Ice Fang
+- Slash
+
+Dragalge
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 SpA / 126 SpD
+- Dragon Pulse
+- Sludge Bomb
+- Water Pulse
+- Smokescreen

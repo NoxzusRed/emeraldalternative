@@ -40,6 +40,8 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	call_if_eq VAR_0x8008, 1, MtPyre_Summit_EventScript_ArchieFacePlayer1
 	call_if_eq VAR_0x8008, 2, MtPyre_Summit_EventScript_ArchieFacePlayer2
 	msgbox MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_ARCHIE_MT_PYRE, MtPyre_Summit_Text_ArchieDefeat
+	msgbox MtPyre_Summit_Text_ArchieAfterBattle, MSGBOX_DEFAULT
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_MT_PYRE_SUMMIT_ARCHIE
@@ -488,6 +490,15 @@ MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo:
 	.string "I, ARCHIE, now have it in my possession!\p"
 	.string "Fufufu… Now we can bring our ultimate\n"
 	.string "objective to fruition!\p"
+	.string "But if you think you can stop us,\n"
+	.string "you'll have to defeat me first!$"
+
+MtPyre_Summit_Text_ArchieDefeat:
+	.string "Grr! How did you overpower me?!$"
+
+MtPyre_Summit_Text_ArchieAfterBattle:
+	.string "ARCHIE: Hah! You may have won, but\n"
+	.string "the RED ORB is still ours!\p"
 	.string "Okay, TEAM!\n"
 	.string "We're pulling out!$"
 
