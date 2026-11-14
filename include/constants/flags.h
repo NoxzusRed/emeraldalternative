@@ -70,10 +70,10 @@
 #define FLAG_ROUTE123_SHORTCUT_OPEN					0x39 //
 #define FLAG_JOHTO_STARTERS_INITIALIZED				0x3A //
 #define FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING    0x3B //
-#define FLAG_UNUSED1        						0x3C //
-#define FLAG_UNUSED2								0x3D //
-#define FLAG_HIDE_MT_CHIMNEY_COURTNEY_HIDEOUT        0x3E // Second Courtney, after Magma Emblem
-#define FLAG_HIDE_MT_CHIMNEY_COURTNEY_HEAT_WAVE_BALL 0x3F // TM88 fallback after Maxie
+#define FLAG_HIDE_MT_CHIMNEY_COURTNEY_HIDEOUT       0x3C //
+#define FLAG_HIDE_MT_CHIMNEY_HEAT_WAVE_BALL			0x3D //
+#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
+#define FLAG_UNUSED_0x03F	 0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag

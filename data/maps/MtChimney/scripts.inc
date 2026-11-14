@@ -7,7 +7,7 @@ MtChimney_OnTransition:
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1
 	@ The hideout Courtney spawns once the Magma Emblem is received.
 	setflag FLAG_HIDE_MT_CHIMNEY_COURTNEY_HIDEOUT
-	setflag FLAG_HIDE_MT_CHIMNEY_COURTNEY_HEAT_WAVE_BALL
+	setflag FLAG_HIDE_MT_CHIMNEY_HEAT_WAVE_BALL
 	goto_if_unset FLAG_RECEIVED_RED_OR_BLUE_ORB, MtChimney_EventScript_CourtneyHideoutEndTransition
 	goto_if_set FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, MtChimney_EventScript_CourtneyHideoutAfterMaxie
 	clearflag FLAG_HIDE_MT_CHIMNEY_COURTNEY_HIDEOUT
@@ -15,7 +15,7 @@ MtChimney_OnTransition:
 
 MtChimney_EventScript_CourtneyHideoutAfterMaxie::
 	goto_if_set FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE, MtChimney_EventScript_CourtneyHideoutEndTransition
-	clearflag FLAG_HIDE_MT_CHIMNEY_COURTNEY_HEAT_WAVE_BALL
+	clearflag FLAG_HIDE_MT_CHIMNEY_HEAT_WAVE_BALL
 
 MtChimney_EventScript_CourtneyHideoutEndTransition::
 	end

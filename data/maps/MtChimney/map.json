@@ -439,7 +439,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM88",
       "script": "MtChimney_EventScript_CourtneyHeatWaveBall",
-      "flag": "FLAG_HIDE_MT_CHIMNEY_COURTNEY_HEAT_WAVE_BALL"
+      "flag": "FLAG_HIDE_MT_CHIMNEY_HEAT_WAVE_BALL"
     },
     {
       "local_id": "LOCALID_MT_CHIMNEY_COURTNEY",
