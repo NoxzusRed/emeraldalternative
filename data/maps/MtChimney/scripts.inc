@@ -5,6 +5,19 @@ MtChimney_MapScripts::
 
 MtChimney_OnTransition:
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1
+	@ The hideout Courtney spawns once the Magma Emblem is received.
+	setflag FLAG_HIDE_MT_CHIMNEY_COURTNEY_HIDEOUT
+	setflag FLAG_HIDE_MT_CHIMNEY_COURTNEY_HEAT_WAVE_BALL
+	goto_if_unset FLAG_RECEIVED_RED_OR_BLUE_ORB, MtChimney_EventScript_CourtneyHideoutEndTransition
+	goto_if_set FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, MtChimney_EventScript_CourtneyHideoutAfterMaxie
+	clearflag FLAG_HIDE_MT_CHIMNEY_COURTNEY_HIDEOUT
+	goto MtChimney_EventScript_CourtneyHideoutEndTransition
+
+MtChimney_EventScript_CourtneyHideoutAfterMaxie::
+	goto_if_set FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE, MtChimney_EventScript_CourtneyHideoutEndTransition
+	clearflag FLAG_HIDE_MT_CHIMNEY_COURTNEY_HEAT_WAVE_BALL
+
+MtChimney_EventScript_CourtneyHideoutEndTransition::
 	end
 
 MtChimney_OnResume:
@@ -416,6 +429,40 @@ MtChimney_EventScript_Courtney::
 	msgbox MtChimney_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+@ An independent battle using TRAINER_COURTNEY_MAGMA_HIDEOUT.
+MtChimney_EventScript_CourtneyHideout::
+	trainerbattle_single TRAINER_COURTNEY_MAGMA_HIDEOUT, MtChimney_Text_CourtneyHideoutIntro, MtChimney_Text_CourtneyHideoutDefeat, MtChimney_EventScript_CourtneyHideoutFirstVictory
+	goto_if_unset FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE, MtChimney_EventScript_CourtneyHideoutGiveHeatWave
+	msgbox MtChimney_Text_CourtneyHideoutPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MtChimney_EventScript_CourtneyHideoutFirstVictory::
+	msgbox MtChimney_Text_CourtneyHideoutAfterVictory, MSGBOX_DEFAULT
+	goto MtChimney_EventScript_CourtneyHideoutGiveHeatWave
+
+MtChimney_EventScript_CourtneyHideoutGiveHeatWave::
+	lock
+	faceplayer
+	giveitem ITEM_TM88
+	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_CourtneyHideoutBagFull
+	setflag FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE
+	releaseall
+	end
+
+MtChimney_EventScript_CourtneyHideoutBagFull::
+	msgbox MtChimney_Text_CourtneyHideoutBagFull, MSGBOX_DEFAULT
+	releaseall
+	end
+
+@ Standard item-ball pickup, with a persistent flag shared with Courtney's reward.
+MtChimney_EventScript_CourtneyHeatWaveBall::
+	checkitemspace ITEM_TM88, 1
+	goto_if_eq VAR_RESULT, FALSE, MtChimney_EventScript_CourtneyHeatWaveBallFind
+	setflag FLAG_ITEM_MT_CHIMNEY_TM_HEAT_WAVE
+MtChimney_EventScript_CourtneyHeatWaveBallFind::
+	finditem ITEM_TM88, 1
+	end
+
 MtChimney_EventScript_Grunt2::
 	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_2, MtChimney_Text_Grunt2Intro, MtChimney_Text_Grunt2Defeat
 	msgbox MtChimney_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
@@ -645,6 +692,31 @@ MtChimney_Text_CourtneyPostBattle:
 	.string "MAXIE already has the METEORITE.\n"
 	.string "TABITHA won't let you interrupt its\l"
 	.string "awakening.$"
+
+MtChimney_Text_CourtneyHideoutIntro:
+	.string "COURTNEY: ...You found the entrance\n"
+	.string "to our hideout.\p"
+	.string "MAXIE is busy with our plans.\n"
+	.string "I won't let you interfere.\p"
+	.string "I'll... eliminate you.$"
+
+MtChimney_Text_CourtneyHideoutDefeat:
+	.string "...I was defeated?\n"
+	.string "My calculations... were wrong.$"
+
+MtChimney_Text_CourtneyHideoutAfterVictory:
+	.string "COURTNEY: ...You won.\p"
+	.string "You're stronger than I expected.\n"
+	.string "Take this TM... as your reward.$"
+
+MtChimney_Text_CourtneyHideoutBagFull:
+	.string "COURTNEY: ...Your BAG is full.\p"
+	.string "Come back when you have room\n"
+	.string "for the TM.$"
+
+MtChimney_Text_CourtneyHideoutPostBattle:
+	.string "COURTNEY: ...Our battle is over.\p"
+	.string "But MAXIE's plans will continue.$"
 
 MtChimney_Text_Grunt2Intro:
 	.string "We of TEAM MAGMA are working hard for\n"
