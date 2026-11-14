@@ -109,11 +109,13 @@ AI: Check Bad Move
 
 Mightyena
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Sharpedo
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: GRUNT
@@ -126,11 +128,13 @@ AI: Check Bad Move
 
 Golbat
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Sharpedo
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
 Name: GRUNT
@@ -143,11 +147,13 @@ AI: Check Bad Move
 
 Golbat
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Atk / 64 SpA
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
 Name: GRUNT
@@ -160,15 +166,18 @@ AI: Check Bad Move
 
 Sharpedo
 Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Atk / 64 SpA
 
 Skrelp
 Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Atk / 126 SpA
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
 Name: GRUNT
@@ -181,11 +190,13 @@ AI: Check Bad Move
 
 Mightyena
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Golbat
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
 Name: GRUNT
@@ -198,11 +209,13 @@ AI: Check Bad Move
 
 Sharpedo
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
 Name: GRUNT
@@ -215,11 +228,13 @@ AI: Check Bad Move
 
 Golbat
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Skrelp
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GABRIELLE_1 ===
 Name: GABRIELLE
@@ -328,7 +343,8 @@ AI: Check Bad Move
 
 Sharpedo
 Level: 44
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_DECLAN ===
 Name: DECLAN
@@ -562,11 +578,13 @@ AI: Check Bad Move
 
 Sharpedo
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Golbat
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
 Name: GRUNT
@@ -579,11 +597,13 @@ AI: Check Bad Move
 
 Golbat
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Mightyena
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_FREDRICK ===
 Name: FREDRICK
@@ -613,7 +633,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Mightyena
-Level: 44
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Spe
 - Crunch
@@ -622,7 +642,7 @@ EVs: 252 HP / 126 Spe
 - Roar
 
 Cloyster
-Level: 44
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 SpA
 - Aurora Beam
@@ -631,7 +651,7 @@ EVs: 252 HP / 126 SpA
 - Protect
 
 Crobat
-Level: 45
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 SpA / 126 Spe
 - Sludge Bomb
@@ -722,7 +742,7 @@ AI: Basic Trainer
 
 Sharpedo
 Modest Nature
-Level: 47
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Spe / 126 SpA
 - Dark Pulse
@@ -731,7 +751,7 @@ EVs: 252 HP / 126 Spe / 126 SpA
 
 Basculegion (F)
 Modest Nature
-Level: 49
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Muddy Water
@@ -740,9 +760,9 @@ EVs: 252 HP / 126 Def / 126 SpD
 
 Mightyena
 Modest Nature
-Level: 49
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpA / 252 Spe
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 31 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpA / 252 Spe
 - Dark Pulse
 - Shadow Ball
 - Hyper Voice
@@ -4011,11 +4031,13 @@ AI: Check Bad Move
 
 Mightyena
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Golbat
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_8 ===
 Name: GRUNT
@@ -4028,11 +4050,13 @@ AI: Check Bad Move
 
 Sharpedo
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Atk / 126 SpA
 
 === TRAINER_SHAWN ===
 Name: SHAWN
@@ -11912,14 +11936,17 @@ AI: Check Bad Move
 Mightyena
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Golbat
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Skrelp
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Atk / 126 SpA
 
 === TRAINER_GRUNT_MT_PYRE_4 ===
 Name: GRUNT
@@ -19702,12 +19729,13 @@ AI: Basic Trainer
 Houndoom @ Assault Vest
 Level: 77
 Nature: Bold
-Ability: Early Bird
+Ability: Solar Power
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Flamethrower
 - Dark Pulse
 - Shadow Ball
+- Sunny Day
 
 Coalossal @ Choice Scarf
 Level: 79
@@ -19717,6 +19745,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 Atk
 - Heat Crash
 - Stone Edge
+- Sunny Day
 
 Typhlosion @ Wide Lens
 Level: 80
@@ -19725,8 +19754,9 @@ Ability: Blaze
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Inferno
-- Scorching Sands
+- Earth Power
 - Shadow Ball
+- Sunny Day
 
 === TRAINER_FLORA ===
 Name: FLORA
