@@ -70,8 +70,8 @@
 #define FLAG_ROUTE123_SHORTCUT_OPEN					0x39 //
 #define FLAG_JOHTO_STARTERS_INITIALIZED				0x3A //
 #define FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING    0x3B //
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
+#define FLAG_HIDE_MT_CHIMNEY_COURTNEY        0x3C // Mt. Chimney; gated by Magma Hideout progress
+#define FLAG_HIDE_MT_CHIMNEY_HEAT_WAVE_BALL 0x3D // Mt. Chimney; fallback reward after Maxie
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
