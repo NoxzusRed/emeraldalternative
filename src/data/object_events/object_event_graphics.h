@@ -130,6 +130,7 @@ const u32 gObjectEventPic_Beauty[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Birdkeeper[] = INCBIN_U32("graphics/object_events/pics/people/birdkeeper.4bpp");
 const u32 gObjectEventPic_CooltrainerM[] = INCBIN_U32("graphics/object_events/pics/people/cooltrainer_M.4bpp");
 const u32 gObjectEventPic_CooltrainerF[] = INCBIN_U32("graphics/object_events/pics/people/cooltrainer_f.4bpp");
+const u32 gObjectEventPic_Kindler[] = INCBIN_U32("graphics/object_events/pics/people/kindler.4bpp");
 const u16 gObjectEventPal_CooltrainerM[] = INCBIN_U16("graphics/object_events/palettes/cooltrainer.gbapal");
 const u16 gObjectEventPal_CooltrainerMReflection[] = INCBIN_U16("graphics/object_events/palettes/cooltrainer_reflection.gbapal");
 const u32 gObjectEventPic_Scientist1[] = INCBIN_U32("graphics/object_events/pics/people/scientist_1.4bpp");
