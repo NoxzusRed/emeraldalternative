@@ -405,6 +405,10 @@ static const struct ScrollArrowsTemplate sBagScrollArrowsTemplate = {
 
 static const u8 sRegisteredSelect_Gfx[] = INCBIN_U8("graphics/bag/select_button.4bpp");
 
+// Three-digit TM number prefix for the TMs/HMs Bag pocket.
+// The existing numbered Berry label remains unchanged.
+static const u8 sText_NumberItem_TM[] = _("TM{STR_VAR_1}{CLEAR 0x07}{STR_VAR_2}");
+
 enum {
     COLORID_NORMAL,
     COLORID_POCKET_NAME,
@@ -955,10 +959,9 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
         }
         else
         {
-            // TM100 requires three digits; preserve two digits for TM01-TM99.
-            ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS,
-                                       itemId >= ITEM_TM100 ? 3 : 2);
-            StringExpandPlaceholders(dest, gText_NumberItem_TMBerry);
+            // All TMs are displayed with three digits: TM001 - TM100.
+            ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 3);
+            StringExpandPlaceholders(dest, sText_NumberItem_TM);
         }
         break;
     case BERRIES_POCKET:
