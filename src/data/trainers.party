@@ -130,6 +130,10 @@ Golbat
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Sharpedo
 Level: 38
@@ -149,6 +153,10 @@ Golbat
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 38
@@ -197,6 +205,10 @@ Golbat
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
 Name: GRUNT
@@ -230,6 +242,10 @@ Golbat
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Skrelp
 Level: 42
@@ -389,14 +405,21 @@ AI: Check Bad Move
 Golbat
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Skrelp
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Mightyena
 Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_WEATHER_INST_2 ===
 Name: GRUNT
@@ -410,10 +433,12 @@ AI: Check Bad Move
 Mightyena
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Sharpedo
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_WEATHER_INST_3 ===
 Name: GRUNT
@@ -427,14 +452,21 @@ AI: Check Bad Move
 Mightyena
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Golbat
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Sharpedo
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_MUSEUM_1 ===
 Name: GRUNT
@@ -485,11 +517,13 @@ AI: Check Bad Move
 
 Camerupt
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Houndoom
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_MT_PYRE_1 ===
 Name: GRUNT
@@ -502,15 +536,22 @@ AI: Check Bad Move
 
 Golbat
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Skrelp
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_MT_PYRE_2 ===
 Name: GRUNT
@@ -523,11 +564,13 @@ AI: Check Bad Move
 
 Sharpedo
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Mightyena
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_MT_PYRE_3 ===
 Name: GRUNT
@@ -540,15 +583,18 @@ AI: Check Bad Move
 
 Mightyena
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Sharpedo
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_WEATHER_INST_4 ===
 Name: GRUNT
@@ -561,11 +607,13 @@ AI: Check Bad Move
 
 Sharpedo
 Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Skrelp
 Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_5 ===
 Name: GRUNT
@@ -585,6 +633,10 @@ Golbat
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
 Name: GRUNT
@@ -599,6 +651,10 @@ Golbat
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Mightyena
 Level: 38
@@ -1281,20 +1337,34 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Magnemite
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 29
+IVs: 31 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpA / 252 Def / 252 SpD
+- Thunderbolt
+- Thunder Wave
 
 Loudred
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 29
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 126 SpA
+- Uproar
+- Roar
 
 Klink
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 29
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 252 Atk / 252 SpA
+- Gear Grind
+- Discharge
 
 Noibat
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 29
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 252 SpA
+- Air Slash
+- Dragon Pulse
+- Hyper Voice
+
 
 === TRAINER_GABBY_AND_TY_3 ===
 Name: GABBY & TY
@@ -1306,28 +1376,31 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Magneton
-Level: 34
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 Spe
+- Thunderbolt
+- Flash Cannon
+- Thunder Wave
 
 Loudred
-Level: 34
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 35
+IVs: 31 HP / 24 Atk / 31 Def / 31 SpA / 31 SpD / 24 Spe
 EVs: 126 HP / 126 Def / 126 SpD / 126 SpA
 - Uproar
 - Roar
 
 Klink
-Level: 34
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 35
+IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
 EVs: 126 HP / 126 Def / 126 SpD / 252 Atk / 252 SpA
 - Gear Grind
 - Discharge
 
 Noibat
-Level: 34
+Level: 35
 Nature: Modest
-IVs: 18 HP / 18 Atk / 18 Def / 31 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 24 Atk / 31 Def / 31 SpA / 31 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 252 SpA
 - Air Slash
 - Dragon Pulse
@@ -1342,31 +1415,34 @@ Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
 
-Magnezone
-Level: 41
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Magneton
+Level: 42
+IVs: 31 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 Spe
+- Thunderbolt
+- Flash Cannon
+- Thunder Wave
 
 Exploud
-Level: 41
-IVs: 24 HP / 31 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Level: 42
+IVs: 31 HP / 31 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 126 Atk
 - Hyper Voice
 - Crunch
 - Roar
 
 Klang
-Level: 41
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Level: 42
+IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
 EVs: 126 HP / 126 Def / 126 SpD / 252 Atk / 252 SpA
 - Gear Grind
 - Shift Gear
 - Discharge
 
 Noibat
-Level: 41
+Level: 42
 Nature: Modest
-IVs: 24 HP / 24 Atk / 24 Def / 31 SpA / 24 SpD / 24 Spe
+IVs: 31 HP / 24 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 252 SpA
 - Air Slash
 - Dragon Pulse
@@ -1385,10 +1461,13 @@ Magnezone
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 Spe
+- Thunderbolt
+- Flash Cannon
+- Thunder Wave
 
 Exploud
 Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
 EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 126 Atk
 - Hyper Voice
 - Crunch
@@ -1396,8 +1475,8 @@ EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 126 Atk
 
 Klinklang
 Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 126 SpD / 126 Atk
+IVs: 31 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpD / 126 Atk
 - Gear Grind
 - Shift Gear
 - Wild Charge
@@ -1405,7 +1484,7 @@ EVs: 126 HP / 126 SpD / 126 Atk
 
 Noivern
 Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 24 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
 EVs: 126 HP / 126 Def / 126 SpD / 126 SpA / 252 Atk
 - Dragon Pulse
 - Air Slash
@@ -2669,15 +2748,18 @@ AI: Check Bad Move
 
 Mightyena
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Typhlosion
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Camerupt
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_CINDY_2 ===
 Name: CINDY
@@ -4038,6 +4120,10 @@ Golbat
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_8 ===
 Name: GRUNT
@@ -5386,7 +5472,7 @@ EVs: 252 HP / 252 Def / 252 SpD
 Honchkrow
 Level: 56
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Spe / 64 Atk
 - Night Slash
 - Double Team
 - Brave Bird
@@ -5394,8 +5480,8 @@ EVs: 252 HP / 126 Def / 126 SpD / 126 Spe
 
 Cacturne
 Level: 56
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
+IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
+EVs: 252 HP / 252 Atk / 252 SpA / 126 Def / 126 SpD
 - Leech Seed
 - Sucker Punch
 - Energy Ball
@@ -5403,6 +5489,7 @@ EVs: 252 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
 
 Sharpedo
 Level: 56
+Ability: Speed Boost
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 252 HP / 126 Spe / 252 Def / 252 SpD
 - Liquidation
@@ -5412,7 +5499,8 @@ EVs: 252 HP / 126 Spe / 252 Def / 252 SpD
 
 Houndoom
 Level: 56
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Nature: Bold
+IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
 EVs: 252 HP / 126 Spe / 252 Def / 252 SpD / 126 SpA
 - Flamethrower
 - Dark Pulse
@@ -5422,7 +5510,7 @@ EVs: 252 HP / 126 Spe / 252 Def / 252 SpD / 126 SpA
 Absol @ Sitrus Berry
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 127 Def / 126 SpD / 126 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Spe
 - Aerial Ace
 - Night Slash
 - Swords Dance
@@ -5442,7 +5530,7 @@ Mugshot: Green
 Trevenant
 Level: 55
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 126 Atk / 126 Def / 126 SpD
+EVs: 252 HP / 126 Atk / 252 Def / 252 SpD
 - Shadow Claw
 - Horn Leech
 - Leech Seed
@@ -5459,8 +5547,9 @@ EVs: 252 HP / 126 Atk / 252 Def / 252 SpD
 
 Sableye
 Level: 56
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 68 SpA
+Nature: Modest
+IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
+EVs: 252 HP / 126 SpA / 126 Def / 126 SpD
 - Shadow Ball
 - Double Team
 - Dark Pulse
@@ -5468,8 +5557,8 @@ EVs: 252 HP / 68 SpA
 
 SPECIES_ZOROARK_HISUI
 Level: 56
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Spe
 - Shadow Ball
 - Dark Pulse
 - Hyper Voice
@@ -5478,7 +5567,7 @@ EVs: 252 HP / 126 Def / 126 SpD
 Chandelure @ Sitrus Berry
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 Def / 126 Spe / 126 SpD
+EVs: 252 HP / 252 Def / 126 Spe / 252 SpD
 - Shadow Ball
 - Flamethrower
 - Energy Ball
@@ -5486,8 +5575,9 @@ EVs: 252 HP / 126 Def / 126 Spe / 126 SpD
 
 Dusknoir @ Sitrus Berry
 Level: 58
+Nature: Impish
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 Atk
+EVs: 252 HP / 126 Def / 126 SpD
 - Shadow Punch
 - Ice Punch
 - Thunder Punch
@@ -5516,15 +5606,15 @@ EVs: 252 SpD / 252 HP
 
 Glalie
 Level: 57
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 Atk / 252 Spe / 252 HP
+Ability: Refrigerate
+IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
+EVs: 126 Atk / 252 Spe / 252 HP
 - Giga Impact
-- Crunch
 - Protect
 
 Glaceon (F)
 Level: 57
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
 EVs: 252 HP / 252 SpD
 - Attract
 - Ice Beam
@@ -5533,7 +5623,7 @@ EVs: 252 HP / 252 SpD
 
 Froslass
 Level: 57
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+IVs: 30 HP / 30 Atk / 30 Def / 31 SpA / 30 SpD / 31 Spe
 EVs: 252 HP / 252 SpA / 252 Spe
 - Shadow Ball
 - Ice Beam
@@ -5571,7 +5661,7 @@ Mugshot: Blue
 
 Noivern
 Level: 58
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 31 Spe
 EVs: 252 HP / 126 SpA / 252 Spe
 - Hurricane
 - Dragon Pulse
@@ -5580,8 +5670,8 @@ EVs: 252 HP / 126 SpA / 252 Spe
 
 Altaria
 Level: 59
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 126 Atk / 126 SpA / 126 Def
+IVs: 30 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
+EVs: 252 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
 - Dragon Pulse
 - Moonblast
 - Dragon Dance
@@ -10845,7 +10935,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Ponyta
-Level: 39
+Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 126 Atk
 - Flame Wheel
@@ -10853,17 +10943,17 @@ EVs: 252 HP / 252 Def / 252 SpD / 126 Atk
 - High Horsepower
 
 Pelipper
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
 Galvantula
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
 Serperior
-Level: 41
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
@@ -10923,22 +11013,22 @@ Double Battle: No
 AI: Basic Trainer
 
 Galvantula
-Level: 39
+Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
 Pelipper
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
 Jumpluff
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
 Delphox
-Level: 41
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
@@ -10992,22 +11082,22 @@ Double Battle: No
 AI: Basic Trainer
 
 Galvantula
-Level: 39
+Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
 Jumpluff
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
 Ponyta
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
 Swampert
-Level: 41
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
@@ -11063,7 +11153,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Ponyta
-Level: 39
+Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 126 Atk
 - Flame Wheel
@@ -11071,17 +11161,17 @@ EVs: 252 HP / 252 Def / 252 SpD / 126 Atk
 - High Horsepower
 
 Pelipper
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
 Galvantula
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
 Serperior
-Level: 41
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
@@ -11141,22 +11231,22 @@ Double Battle: No
 AI: Basic Trainer
 
 Galvantula
-Level: 39
+Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
 Pelipper
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
 Jumpluff
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
 Delphox
-Level: 41
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
@@ -11210,22 +11300,22 @@ Double Battle: No
 AI: Basic Trainer
 
 Galvantula
-Level: 39
+Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 SpA / 252 Spe
 
 Jumpluff
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
 Ponyta
-Level: 40
+Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
 Swampert
-Level: 41
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
@@ -11942,6 +12032,10 @@ Golbat
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Skrelp
 Level: 42
@@ -11959,16 +12053,22 @@ AI: Check Bad Move
 
 Wailmer
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Golbat
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Skrelp
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 HP
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_JAGGED_PASS ===
 Name: GRUNT
@@ -11990,6 +12090,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Golbat
 Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Wing Attack
+- Poison Fang
+- Bite
+- U-turn
 
 Carkol
 Level: 22
@@ -12236,15 +12340,18 @@ AI: Check Bad Move
 
 Typhlosion
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Mightyena
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Coalossal
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_SPACE_CENTER_4 ===
 Name: GRUNT
@@ -12257,11 +12364,13 @@ AI: Check Bad Move
 
 Claydol
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Houndoom
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_SPACE_CENTER_5 ===
 Name: GRUNT
@@ -12274,11 +12383,17 @@ AI: Check Bad Move
 
 Golbat
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Mightyena
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_SPACE_CENTER_6 ===
 Name: GRUNT
@@ -12291,11 +12406,13 @@ AI: Check Bad Move
 
 Mightyena
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Typhlosion
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_GRUNT_SPACE_CENTER_7 ===
 Name: GRUNT
@@ -12308,11 +12425,13 @@ AI: Check Bad Move
 
 Claydol
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 Coalossal
 Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_MACEY ===
 Name: MACEY
@@ -12416,11 +12535,17 @@ AI: Check Bad Move
 
 Golbat
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Mightyena
 Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Atk / 64 SpA
 
 === TRAINER_TABITHA_MT_CHIMNEY ===
 Name: TABITHA
@@ -12531,7 +12656,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Mightyena
-Level: 47
+Level: 48
 Ability: Strong Jaw
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
@@ -12541,7 +12666,7 @@ EVs: 252 HP / 126 Def / 126 SpD
 - Thunder Fang
 
 Crobat
-Level: 47
+Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Spe / 252 Atk
 - Cross Poison
@@ -12549,7 +12674,7 @@ EVs: 252 HP / 126 Spe / 252 Atk
 - Aerial Ace
 
 Houndoom
-Level: 48
+Level: 49
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Spe
 - Flamethrower
@@ -14957,6 +15082,10 @@ Golbat
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Coalossal
 Level: 36
@@ -15018,6 +15147,10 @@ EVs: 252 HP / 64 Atk / 64 SpA
 Golbat
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_5 ===
 Name: GRUNT
@@ -15075,6 +15208,10 @@ Crobat
 Level: 37
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Aerial Ace
+- Crunch
+- Poison Fang
+- X-Scissor
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_8 ===
 Name: GRUNT
@@ -15103,6 +15240,10 @@ Golbat
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Wing Attack
+- Crunch
+- Poison Fang
+- X-Scissor
 
 Quilava
 Level: 34
@@ -15174,6 +15315,10 @@ Crobat
 Level: 37
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Aerial Ace
+- Crunch
+- Poison Fang
+- X-Scissor
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_14 ===
 Name: GRUNT
@@ -15237,7 +15382,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Houndoom
-Level: 44
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Incinerate
@@ -15245,7 +15390,7 @@ EVs: 252 HP / 126 Def / 126 SpD
 - Roar
 
 Mightyena
-Level: 44
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Spe
 - Crunch
@@ -15254,7 +15399,7 @@ EVs: 252 HP / 126 Spe
 - Roar
 
 Crobat
-Level: 45
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 - Cross Poison
@@ -15263,7 +15408,7 @@ EVs: 252 HP
 - Confuse Ray
 
 Camerupt
-Level: 47
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Def / 64 SpD
 - Earthquake
@@ -19217,9 +19362,9 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA
 Mawile @ Assault Vest
 Level: 79
 Nature: Calm
-Ability: Huge Power
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD
 - Crunch
 - Play Rough
 - Iron Head
@@ -19360,9 +19505,9 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA / 126 Atk
 Mawile @ Assault Vest
 Level: 79
 Nature: Sassy
-Ability: Huge Power
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD
 - Crunch
 - Play Rough
 - Iron Head
@@ -19504,9 +19649,9 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe / 126 SpA / 126 Atk
 Mawile @ Assault Vest
 Level: 79
 Nature: Sassy
-Ability: Huge Power
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD
 - Crunch
 - Play Rough
 - Iron Head
@@ -19873,8 +20018,8 @@ AI: Basic Trainer
 
 Coalossal
 Level: 45
-IVs: 31 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 68 Def / 68 SpD / 68 Atk / 68 SpA
+IVs: 31 HP / 31 Atk / 24 Def / 31 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 64 Atk / 64 SpA
 - Rock Slide
 - Heat Wave
 - Smokescreen
@@ -19882,8 +20027,8 @@ EVs: 252 HP / 68 Def / 68 SpD / 68 Atk / 68 SpA
 
 Typhlosion
 Level: 46
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+IVs: 24 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 64 Spe
 - Lava Plume
 - Earthquake
 - Sunny Day
@@ -19891,8 +20036,8 @@ EVs: 252 HP / 126 Def / 126 SpD
 Houndoom
 Level: 47
 Ability: Solar Power
-IVs: 31 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 68 Spe / 126 Def / 126 SpD
+IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 126 Spe / 252 Def / 252 SpD
 - Flamethrower
 - Dark Pulse
 - Shadow Ball

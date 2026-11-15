@@ -694,29 +694,28 @@ MtChimney_Text_CourtneyPostBattle:
 	.string "awakening.$"
 
 MtChimney_Text_CourtneyHideoutIntro:
-	.string "COURTNEY: ...You found the entrance\n"
-	.string "to our hideout.\p"
-	.string "MAXIE is busy with our plans.\n"
-	.string "I won't let you interfere.\p"
-	.string "I'll... eliminate you.$"
+	.string "COURTNEY: What are you doing here?\p"
+	.string "You are too late. Maxie is down there\n"
+	.string "fulfilling our plans.\p"
+	.string "If you won't leave, I'll have to end you.$"
 
 MtChimney_Text_CourtneyHideoutDefeat:
-	.string "...I was defeated?\n"
-	.string "My calculations... were wrong.$"
+	.string "I just can't defeat this kid...$"
 
 MtChimney_Text_CourtneyHideoutAfterVictory:
 	.string "COURTNEY: ...You won.\p"
 	.string "You're stronger than I expected.\n"
-	.string "Take this TM... as your reward.$"
+	.string "Take this and go away...$"
 
 MtChimney_Text_CourtneyHideoutBagFull:
-	.string "COURTNEY: ...Your BAG is full.\p"
-	.string "Come back when you have room\n"
-	.string "for the TM.$"
+	.string "COURTNEY: ...Your BAG is full.\n"
+	.string "Come back when you have room.$"
 
 MtChimney_Text_CourtneyHideoutPostBattle:
-	.string "COURTNEY: ...Our battle is over.\p"
-	.string "But MAXIE's plans will continue.$"
+	.string "COURTNEY: ...Our battle is over.\n"
+	.string "But MAXIE's plans will continue.\p"
+	.string "Get lost before I throw you into the\n"
+	.string "caldera.$"
 
 MtChimney_Text_Grunt2Intro:
 	.string "We of TEAM MAGMA are working hard for\n"
