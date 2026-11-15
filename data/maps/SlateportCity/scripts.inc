@@ -9,11 +9,56 @@ SlateportCity_OnTransition:
     call SlateportCity_EventScript_EnterSlateport
     call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
     call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
+    @ The two Drifloon-line Pokémon appear only after visiting Pacifidlog Town.
+    setflag FLAG_HIDE_SLATEPORT_CITY_DRIFLOON_DRIFBLIM
+    call_if_set FLAG_VISITED_PACIFIDLOG_TOWN, SlateportCity_EventScript_ShowDrifloonAndDrifblim
     end
+
+SlateportCity_EventScript_ShowDrifloonAndDrifblim::
+    clearflag FLAG_HIDE_SLATEPORT_CITY_DRIFLOON_DRIFBLIM
+    return
 
 SlateportCity_EventScript_UsePostLeagueLayout::
     setmaplayoutindex LAYOUT_SLATEPORT_CITY_POST_LEAGUE
     return
+
+@ Pacifidlog fast travel, available only after the player has been there.
+SlateportCity_EventScript_Drifloon::
+    playmoncry SPECIES_DRIFLOON, CRY_MODE_NORMAL
+    msgbox SlateportCity_Text_Drifloon, MSGBOX_SIGN
+    end
+
+SlateportCity_EventScript_Drifblim::
+    lock
+    faceplayer
+    playmoncry SPECIES_DRIFBLIM, CRY_MODE_NORMAL
+    msgbox SlateportCity_Text_Drifblim, MSGBOX_DEFAULT
+    msgbox SlateportCity_Text_DrifblimTravel, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_DrifblimDecline
+    closemessage
+    @ Warp uses the regular black fade and resets the player's facing to south.
+    @ (8, 16) is immediately outside Pacifidlog's Pokémon Center.
+    warp MAP_PACIFIDLOG_TOWN, 8, 16
+    waitstate
+    release
+    end
+
+SlateportCity_EventScript_DrifblimDecline::
+    closemessage
+    release
+    end
+
+SlateportCity_Text_Drifloon:
+    .string "DRIFLOON: Flooooo...!\\p"
+    .string "It floats gently on the sea breeze.$"
+
+SlateportCity_Text_Drifblim:
+    .string "DRIFBLIM: Fwooooo...!\\p"
+    .string "It looks ready for a long flight.$"
+
+SlateportCity_Text_DrifblimTravel:
+    .string "Ride DRIFBLIM to PACIFIDLOG\\n"
+    .string "TOWN?$"
 
 SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_VISITED_SLATEPORT_CITY

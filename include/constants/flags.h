@@ -72,7 +72,7 @@
 #define FLAG_RIVAL_LILYCOVE_DESTINY_KNOT_PENDING    0x3B //
 #define FLAG_HIDE_MT_CHIMNEY_COURTNEY_HIDEOUT       0x3C //
 #define FLAG_HIDE_MT_CHIMNEY_HEAT_WAVE_BALL			0x3D //
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
+#define FLAG_HIDE_SLATEPORT_CITY_DRIFLOON_DRIFBLIM 0x3E // Visible after first visit to Pacifidlog Town
 #define FLAG_UNUSED_0x03F	 0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
