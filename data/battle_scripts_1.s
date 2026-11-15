@@ -7750,9 +7750,12 @@ BattleScript_SupersweetSyrupContrary_WontIncrease:
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORTEST
 	call BattleScript_AbilityPopUp
+	@ Start the sunlight animation alongside the Drought message.
+	@ Only Drought uses the parallel marker; other weather is unchanged.
+	playanimation BS_BATTLER_0, B_ANIM_SUN_CONTINUES, gParallelDroughtSunAnimMarker
 	printstring STRINGID_PKMNSXINTENSIFIEDSUN
-	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_SUN_CONTINUES
+	waitmessage B_WAIT_TIME_SHORTEST
+	waitanimation
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
