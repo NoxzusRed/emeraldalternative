@@ -73,6 +73,7 @@ EWRAM_DATA static u8 sParallelBerryHealBattler;
 EWRAM_DATA static u8 sParallelIngrainHealBattler;
 EWRAM_DATA static u8 sParallelStatAnimBattler;
 EWRAM_DATA static u8 sParallelTrapAnimBattler;
+EWRAM_DATA static u8 sParallelDroughtSunAnimBattler;
 
 // A paired visual is shown once, but each battler's stat change and message
 // still runs through its own normal battle-script commands.
@@ -89,6 +90,7 @@ EWRAM_DATA static bool8 sHoldMultiStatMessage;
 extern const u16 gStatDownStringIds[];
 
 const u16 gParallelDrainHealMarker = 0;
+const u16 gParallelDroughtSunAnimMarker = 0;
 
 static bool8 IsParallelBerryAnimActive(void)
 {
@@ -143,6 +145,24 @@ static bool8 IsParallelStatAnimActive(void)
     }
 
     sParallelStatAnimBattler = 0;
+    return FALSE;
+}
+
+// Drought's sunlight effect shares the screen with its ability message.
+static bool8 IsParallelDroughtSunAnimActive(void)
+{
+    u8 battler;
+
+    if (sParallelDroughtSunAnimBattler == 0)
+        return FALSE;
+
+    battler = sParallelDroughtSunAnimBattler - 1;
+    if (gBattleSpritesDataPtr != NULL
+     && battler < gBattlersCount
+     && gBattleSpritesDataPtr->healthBoxesData[battler].animFromTableActive)
+        return TRUE;
+
+    sParallelDroughtSunAnimBattler = 0;
     return FALSE;
 }
 
@@ -2662,7 +2682,8 @@ static void Cmd_waitanimation(void)
         && !IsTextPrinterActive(B_WIN_MSG)
         && !IsParallelBerryAnimActive()
         && !IsParallelStatAnimActive()
-        && !IsParallelTrapAnimActive())
+        && !IsParallelTrapAnimActive()
+        && !IsParallelDroughtSunAnimActive())
     {
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
@@ -6141,6 +6162,28 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
      && sGroupedStatDropStat == GET_STAT_BUFF_ID(gBattleScripting.statChanger))
     {
         ClearGroupedStatDrop();
+        gBattlescriptCurrInstr = nextInstr;
+        return;
+    }
+
+    // The Drought sunlight effect starts with the ability text, rather than
+    // after it. Its original animation is unchanged. The following
+    // waitanimation waits for this background visual to finish.
+    if (animId == B_ANIM_SUN_CONTINUES
+     && argPtr == &gParallelDroughtSunAnimMarker
+     && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+     && !gTestRunnerEnabled
+     && !(gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
+    {
+        if (gBattleControllerExecFlags || gAnimScriptActive
+         || IsBattleSEPlaying(battler))
+            return;
+
+        gAnimDisableStructPtr = &gDisableStructs[battler];
+        if (!TryHandleLaunchBattleTableAnimation(battler, battler, battler,
+                                                 B_ANIM_SUN_CONTINUES, 0))
+            sParallelDroughtSunAnimBattler = battler + 1;
+
         gBattlescriptCurrInstr = nextInstr;
         return;
     }
