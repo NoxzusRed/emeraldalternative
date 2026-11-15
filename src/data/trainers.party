@@ -771,7 +771,7 @@ EVs: 252 HP / 126 Spe / 252 SpA
 
 Sharpedo
 Modest Nature
-Ability: Rough Skin
+Ability: Speed Boost
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 24 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 126 Spe / 126 SpA
@@ -799,6 +799,7 @@ AI: Basic Trainer
 Sharpedo
 Modest Nature
 Level: 49
+Ability: Speed Boost
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Spe / 126 SpA
 - Dark Pulse
@@ -6094,7 +6095,7 @@ AI: Basic Trainer
 
 Primarina
 Jolly Nature
-Level: 54
+Level: 52
 IVs: 31 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 31 Spe
 EVs: 252 HP / 252 Spe / 126 Def
 - Rain Dance
@@ -6104,14 +6105,14 @@ EVs: 252 HP / 252 Spe / 126 Def
 
 Luvdisc @ Assault Vest
 Modest Nature
-Level: 65
+Level: 60
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
 - Draining Kiss
 
 Jellicent
-Level: 56
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 SpA
 - Rain Dance
@@ -6121,7 +6122,7 @@ EVs: 252 HP / 126 SpA
 
 Relicanth @ Chesto Berry
 Careful Nature
-Level: 56
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 31 SpD / 24 Spe
 EVs: 252 HP / 126 Atk / 126 Def / 252 SpD
 - Protect
@@ -6130,7 +6131,7 @@ EVs: 252 HP / 126 Atk / 126 Def / 252 SpD
 - Dive
 
 Lumineon
-Level: 55
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
 - Water Pulse
@@ -6139,7 +6140,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
 - Rain Dance
 
 Kingdra @ Chesto Berry
-Level: 57
+Level: 55
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 252 HP / 126 SpA
 - Water Pulse
@@ -12024,21 +12025,21 @@ Double Battle: No
 AI: Check Bad Move
 
 Mightyena
-Level: 42
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
 
-Golbat
-Level: 42
+Crobat
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
-- Wing Attack
+- Aerial Ace
 - Crunch
 - Poison Fang
 - X-Scissor
 
 Skrelp
-Level: 42
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Atk / 126 SpA
 
@@ -15749,17 +15750,21 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Solosis
+Gothorita @ Eviolite
 Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpA
+- Psybeam
+- Dark Pulse
 
-Gothita
+Kirlia @ Eviolite
 Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Kirlia
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpA
+- Psybeam
+- Draining Kiss
 
 === TRAINER_HELENE ===
 Name: HELENE
