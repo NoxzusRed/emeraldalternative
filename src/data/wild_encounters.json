@@ -7529,7 +7529,7 @@
               {
                 "min_level": 42,
                 "max_level": 42,
-                "species": "SPECIES_MIENFOO"
+                "species": "SPECIES_EELEKTRIK"
               },
               {
                 "min_level": 42,
@@ -7539,7 +7539,7 @@
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_BOLDORE"
+                "species": "SPECIES_EELEKTRIK"
               },
               {
                 "min_level": 44,
@@ -7628,7 +7628,7 @@
               {
                 "min_level": 46,
                 "max_level": 46,
-                "species": "SPECIES_MIENFOO"
+                "species": "SPECIES_EELEKTRIK"
               },
               {
                 "min_level": 46,
@@ -7638,7 +7638,7 @@
               {
                 "min_level": 44,
                 "max_level": 44,
-                "species": "SPECIES_BOLDORE"
+                "species": "SPECIES_EELEKTRIK"
               },
               {
                 "min_level": 44,
