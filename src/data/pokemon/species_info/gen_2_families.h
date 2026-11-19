@@ -231,7 +231,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_CYNDAQUIL
     [SPECIES_CYNDAQUIL] =
     {
-        .baseHP        = 39,
+        .baseHP        = 40,
         .baseAttack    = 52,
         .baseDefense   = 43,
         .baseSpeed     = 65,
@@ -382,7 +382,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseAttack    = 74,
         .baseDefense   = 78,
         .baseSpeed     = 100,
-        .baseSpAttack  = 119,
+        .baseSpAttack  = 120,
         .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_FIRE, TYPE_GROUND),
         .catchRate = 45,
@@ -7027,8 +7027,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseAttack    = 80,
         .baseDefense   = 140,
         .baseSpeed     = 70,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 70,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_STEEL, TYPE_FLYING),
         .catchRate = 25,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 163 : 168,

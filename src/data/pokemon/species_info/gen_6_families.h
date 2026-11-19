@@ -220,7 +220,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseAttack    = 45,
         .baseDefense   = 40,
         .baseSpeed     = 60,
-        .baseSpAttack  = 62,
+        .baseSpAttack  = 65,
         .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 45,
@@ -289,7 +289,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
     [SPECIES_BRAIXEN] =
     {
-        .baseHP        = 59,
+        .baseHP        = 60,
         .baseAttack    = 59,
         .baseDefense   = 58,
         .baseSpeed     = 73,

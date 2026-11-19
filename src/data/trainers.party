@@ -5884,6 +5884,7 @@ EVs: 252 HP / 252 Def / 252 SpD
 
 Camerupt @White Herb
 Level: 31
+Ability: Solid Rock
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 126 HP / 126 Atk / 126 Def / 126 SpD
 - Overheat
@@ -5893,6 +5894,7 @@ EVs: 126 HP / 126 Atk / 126 Def / 126 SpD
 
 Torkoal @ White Herb
 Level: 33
+Ability: Drought
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 252 HP / 252 Def / 126 Atk / 126 SpD
 - Overheat
@@ -10829,6 +10831,24 @@ Breloom
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
+=== TRAINER_WALLY_MAUVILLE ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Roselia
+Level: 24
+IVs: 21 HP / 21 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+- Magical Leaf
+- Growth
+- Leech Seed
+- Stun Spore
+
 === TRAINER_WALLY_VR_1 ===
 Name: WALLY
 Class: Rival
@@ -10893,6 +10913,262 @@ EVs: 252 HP / 252 Def / 126 SpD
 - Psychic
 - Moonblast
 
+=== TRAINER_WALLY_VR_2 ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Altaria
+Level: 58
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
+- Aerial Ace
+- Safeguard
+- Dragon Pulse
+- Dragon Dance
+
+Ursaluna @ Chesto Berry
+Level: 59
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpD
+- Headlong Rush
+- Thrash
+- Rest
+- Shadow Claw
+
+Roserade
+Level: 58
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Spe / 126 Def
+- Magical Leaf
+- Leech Seed
+- Sludge Bomb
+- Growth
+
+Gigalith
+Level: 59
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpD
+- Rock Slide
+- Earthquake
+- Iron Defense
+- Protect
+
+Magnezone
+Level: 60
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpD
+- Flash Cannon
+- Thunderbolt
+- Metal Sound
+- Zap Cannon
+
+Gardevoir @ Sitrus Berry
+Level: 61
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 126 SpD
+- Double Team
+- Calm Mind
+- Psychic
+- Moonblast
+
+=== TRAINER_WALLY_VR_3 ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Altaria
+Level: 60
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
+- Aerial Ace
+- Safeguard
+- Dragon Pulse
+- Dragon Dance
+
+Ursaluna @ Chesto Berry
+Level: 61
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpD
+- Headlong Rush
+- Thrash
+- Rest
+- Shadow Claw
+
+Roserade
+Level: 60
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Spe / 126 Def
+- Magical Leaf
+- Leech Seed
+- Sludge Bomb
+- Growth
+
+Gigalith
+Level: 61
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpD
+- Rock Slide
+- Earthquake
+- Iron Defense
+- Protect
+
+Magnezone
+Level: 62
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpD
+- Flash Cannon
+- Thunderbolt
+- Metal Sound
+- Zap Cannon
+
+Gardevoir @ Sitrus Berry
+Level: 63
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 126 SpD
+- Double Team
+- Calm Mind
+- Psychic
+- Moonblast
+
+=== TRAINER_WALLY_VR_4 ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Altaria
+Level: 63
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
+- Aerial Ace
+- Safeguard
+- Dragon Pulse
+- Dragon Dance
+
+Ursaluna @ Chesto Berry
+Level: 64
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpD
+- Headlong Rush
+- Thrash
+- Rest
+- Shadow Claw
+
+Roserade
+Level: 63
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Spe / 126 Def
+- Magical Leaf
+- Leech Seed
+- Sludge Bomb
+- Growth
+
+Gigalith
+Level: 64
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpD
+- Rock Slide
+- Earthquake
+- Iron Defense
+- Protect
+
+Magnezone
+Level: 65
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpD
+- Flash Cannon
+- Thunderbolt
+- Metal Sound
+- Zap Cannon
+
+Gardevoir @ Sitrus Berry
+Level: 66
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 126 SpD
+- Double Team
+- Calm Mind
+- Psychic
+- Moonblast
+
+=== TRAINER_WALLY_VR_5 ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Altaria
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
+- Aerial Ace
+- Safeguard
+- Dragon Pulse
+- Dragon Dance
+
+Ursaluna @ Chesto Berry
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpD
+- Headlong Rush
+- Thrash
+- Rest
+- Shadow Claw
+
+Roserade
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Spe / 126 Def
+- Magical Leaf
+- Leech Seed
+- Sludge Bomb
+- Growth
+
+Gigalith
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpD
+- Rock Slide
+- Earthquake
+- Iron Defense
+- Protect
+
+Magnezone
+Level: 70
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpD
+- Flash Cannon
+- Thunderbolt
+- Metal Sound
+- Zap Cannon
+
+Gardevoir @ Sitrus Berry
+Level: 71
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 126 SpD
+- Double Team
+- Calm Mind
+- Psychic
+- Moonblast
+
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
 Name: BRENDAN
 Class: Rival
@@ -10907,6 +11183,24 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - Leer
+
+=== TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+
+Wingull
+Level: 13
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP
+
+Snivy
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN
@@ -10967,6 +11261,41 @@ Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
+=== TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Tropius
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Rapidash
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Galvantula
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Pelipper
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+
+Serperior
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
+
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
 Name: BRENDAN
 Class: Rival
@@ -10981,6 +11310,24 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Scratch
 - Tail Whip
+
+=== TRAINER_BRENDAN_RUSTBORO_TREECKO ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+
+Hoppip
+Level: 13
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+
+Fennekin
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_TREECKO ===
 Name: BRENDAN
@@ -11042,6 +11389,41 @@ Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
+=== TRAINER_BRENDAN_LILYCOVE_TREECKO ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Tropius
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Galvantula
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Pelipper
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+
+Jumpluff
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Delphox
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
 Name: BRENDAN
 Class: Rival
@@ -11056,6 +11438,23 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - Growl
+
+=== TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Ponyta
+Level: 13
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Mudkip
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_TORCHIC ===
 Name: BRENDAN
@@ -11111,6 +11510,41 @@ Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
+=== TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Tropius
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Jumpluff
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Galvantula
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Rapidash
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Swampert
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
 Name: MAY
 Class: Rival
@@ -11125,6 +11559,24 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - Leer
+
+=== TRAINER_MAY_RUSTBORO_MUDKIP ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
+
+Wingull
+Level: 13
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP
+
+Snivy
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
 Name: MAY
@@ -11142,8 +11594,9 @@ EVs: 252 HP / 126 Def / 126 SpD / 126 SpA / 252 Atk
 - Water Pulse
 - Wing Attack
 
-Ponyta
+Torkoal
 Level: 19
+Ability: Drought
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 126 HP / 68 Def / 68 SpD
 
@@ -11162,13 +11615,14 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Ponyta
+Torkoal
 Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk
-- Flame Wheel
-- Take Down
-- High Horsepower
+Ability: Drought
+IVs: 24 HP / 24 Atk / 12 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpD / 126 Atk
+- Lava Plume
+- Body Slam
+- Clear Smog
 
 Pelipper
 Level: 38
@@ -11185,6 +11639,45 @@ Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
+=== TRAINER_MAY_LILYCOVE_MUDKIP ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Tropius
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Torkoal
+Level: 44
+Ability: Drought
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpD / 126 Atk / 80 SpA
+- Lava Plume
+- Body Slam
+- Clear Smog
+
+Galvantula
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Pelipper
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+
+Serperior
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
+
 === TRAINER_MAY_ROUTE_103_TREECKO ===
 Name: MAY
 Class: Rival
@@ -11199,6 +11692,24 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 -Scratch
 -Tail Whip
+
+=== TRAINER_MAY_RUSTBORO_TREECKO ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+
+Hoppip
+Level: 13
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+
+Fennekin
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
 Name: MAY
@@ -11260,6 +11771,41 @@ Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 
+=== TRAINER_MAY_LILYCOVE_TREECKO ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Tropius
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Pelipper
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
+
+Galvantula
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Jumpluff
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Delphox
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD
+
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
 Name: MAY
 Class: Rival
@@ -11275,6 +11821,25 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - Growl
 
+=== TRAINER_MAY_RUSTBORO_TORCHIC ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+
+Torkoal
+Level: 13
+Ability: Drought
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP
+
+Mudkip
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
 === TRAINER_MAY_ROUTE_110_TORCHIC ===
 Name: MAY
 Class: Rival
@@ -11289,10 +11854,14 @@ Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
-Ponyta
+Torkoal
 Level: 19
+Ability: Drought
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP / 68 Def / 68 SpD
+EVs: 126 HP / 68 SpD
+- Flame Wheel
+- Clear Smog
+- Smokescreen
 
 Marshtomp @ Sitrus Berry
 Level: 22
@@ -11319,15 +11888,58 @@ Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 
-Ponyta
+Torkoal
 Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+Ability: Drought
+IVs: 24 HP / 24 Atk / 12 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpD / 126 Atk
+- Lava Plume
+- Body Slam
+- Clear Smog
 
 Swampert
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Def / 126 SpD
+
+=== TRAINER_MAY_LILYCOVE_TORCHIC ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Tropius
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Jumpluff
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
+
+Torkoal
+Level: 44
+Ability: Drought
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 SpD / 126 Atk / 80 SpA
+- Lava Plume
+- Body Slam
+- Clear Smog
+
+Galvantula
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+
+Swampert
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpD
 
 === TRAINER_ISAAC_1 ===
 Name: ISAAC
@@ -12460,42 +13072,6 @@ Musharna
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_BRENDAN_RUSTBORO_TREECKO ===
-Name: BRENDAN
-Class: Rival
-Pic: Brendan
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Check Bad Move
-
-Hoppip
-Level: 13
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP / 252 Def / 252 SpD
-
-Fennekin
-Level: 15
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-=== TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
-Name: BRENDAN
-Class: Rival
-Pic: Brendan
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Check Bad Move
-
-Wingull
-Level: 13
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP
-
-Snivy
-Level: 15
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
 === TRAINER_PAXTON ===
 Name: PAXTON
 Class: Expert
@@ -12619,41 +13195,6 @@ Loudred
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 252 HP
-
-=== TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
-Name: BRENDAN
-Class: Rival
-Pic: Brendan
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Basic Trainer
-
-Ponyta
-Level: 13
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Mudkip
-Level: 15
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-=== TRAINER_MAY_RUSTBORO_MUDKIP ===
-Name: MAY
-Class: Rival
-Pic: May
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
-
-Wingull
-Level: 13
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP
-
-Snivy
-Level: 15
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MAXIE_MAGMA_HIDEOUT ===
 Name: MAXIE
@@ -13714,490 +14255,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Drifblim
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-=== TRAINER_WALLY_MAUVILLE ===
-Name: WALLY
-Class: Rival
-Pic: Wally
-Gender: Male
-Music: Male
-Items: Super Potion
-Double Battle: No
-AI: Basic Trainer
-
-Roselia
-Level: 24
-IVs: 21 HP / 21 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
-- Magical Leaf
-- Growth
-- Leech Seed
-- Stun Spore
-
-=== TRAINER_WALLY_VR_2 ===
-Name: WALLY
-Class: Rival
-Pic: Wally
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Altaria
-Level: 58
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
-- Aerial Ace
-- Safeguard
-- Dragon Pulse
-- Dragon Dance
-
-Ursaluna @ Chesto Berry
-Level: 59
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpD
-- Headlong Rush
-- Thrash
-- Rest
-- Shadow Claw
-
-Roserade
-Level: 58
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Spe / 126 Def
-- Magical Leaf
-- Leech Seed
-- Sludge Bomb
-- Growth
-
-Gigalith
-Level: 59
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 SpD
-- Rock Slide
-- Earthquake
-- Iron Defense
-- Protect
-
-Magnezone
-Level: 60
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpD
-- Flash Cannon
-- Thunderbolt
-- Metal Sound
-- Zap Cannon
-
-Gardevoir @ Sitrus Berry
-Level: 61
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 126 SpD
-- Double Team
-- Calm Mind
-- Psychic
-- Moonblast
-
-=== TRAINER_WALLY_VR_3 ===
-Name: WALLY
-Class: Rival
-Pic: Wally
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Altaria
-Level: 60
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
-- Aerial Ace
-- Safeguard
-- Dragon Pulse
-- Dragon Dance
-
-Ursaluna @ Chesto Berry
-Level: 61
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpD
-- Headlong Rush
-- Thrash
-- Rest
-- Shadow Claw
-
-Roserade
-Level: 60
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Spe / 126 Def
-- Magical Leaf
-- Leech Seed
-- Sludge Bomb
-- Growth
-
-Gigalith
-Level: 61
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 SpD
-- Rock Slide
-- Earthquake
-- Iron Defense
-- Protect
-
-Magnezone
-Level: 62
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpD
-- Flash Cannon
-- Thunderbolt
-- Metal Sound
-- Zap Cannon
-
-Gardevoir @ Sitrus Berry
-Level: 63
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 126 SpD
-- Double Team
-- Calm Mind
-- Psychic
-- Moonblast
-
-=== TRAINER_WALLY_VR_4 ===
-Name: WALLY
-Class: Rival
-Pic: Wally
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Altaria
-Level: 63
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
-- Aerial Ace
-- Safeguard
-- Dragon Pulse
-- Dragon Dance
-
-Ursaluna @ Chesto Berry
-Level: 64
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpD
-- Headlong Rush
-- Thrash
-- Rest
-- Shadow Claw
-
-Roserade
-Level: 63
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Spe / 126 Def
-- Magical Leaf
-- Leech Seed
-- Sludge Bomb
-- Growth
-
-Gigalith
-Level: 64
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 SpD
-- Rock Slide
-- Earthquake
-- Iron Defense
-- Protect
-
-Magnezone
-Level: 65
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpD
-- Flash Cannon
-- Thunderbolt
-- Metal Sound
-- Zap Cannon
-
-Gardevoir @ Sitrus Berry
-Level: 66
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 126 SpD
-- Double Team
-- Calm Mind
-- Psychic
-- Moonblast
-
-=== TRAINER_WALLY_VR_5 ===
-Name: WALLY
-Class: Rival
-Pic: Wally
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Altaria
-Level: 68
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
-- Aerial Ace
-- Safeguard
-- Dragon Pulse
-- Dragon Dance
-
-Ursaluna @ Chesto Berry
-Level: 69
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpD
-- Headlong Rush
-- Thrash
-- Rest
-- Shadow Claw
-
-Roserade
-Level: 68
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Spe / 126 Def
-- Magical Leaf
-- Leech Seed
-- Sludge Bomb
-- Growth
-
-Gigalith
-Level: 69
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 SpD
-- Rock Slide
-- Earthquake
-- Iron Defense
-- Protect
-
-Magnezone
-Level: 70
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpD
-- Flash Cannon
-- Thunderbolt
-- Metal Sound
-- Zap Cannon
-
-Gardevoir @ Sitrus Berry
-Level: 71
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 126 SpD
-- Double Team
-- Calm Mind
-- Psychic
-- Moonblast
-
-=== TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
-Name: BRENDAN
-Class: Rival
-Pic: Brendan
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Tropius
-Level: 43
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Rapidash
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Galvantula
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Pelipper
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
-
-Serperior
-Level: 46
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
-
-=== TRAINER_BRENDAN_LILYCOVE_TREECKO ===
-Name: BRENDAN
-Class: Rival
-Pic: Brendan
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Tropius
-Level: 43
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Galvantula
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Pelipper
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
-
-Jumpluff
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Delphox
-Level: 46
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
-
-=== TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
-Name: BRENDAN
-Class: Rival
-Pic: Brendan
-Gender: Male
-Music: Male
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Tropius
-Level: 43
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Jumpluff
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Galvantula
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Rapidash
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Swampert
-Level: 46
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
-
-=== TRAINER_MAY_LILYCOVE_MUDKIP ===
-Name: MAY
-Class: Rival
-Pic: May
-Gender: Female
-Music: Female
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Tropius
-Level: 43
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Rapidash
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Galvantula
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Pelipper
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
-
-Serperior
-Level: 46
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
-
-=== TRAINER_MAY_LILYCOVE_TREECKO ===
-Name: MAY
-Class: Rival
-Pic: May
-Gender: Female
-Music: Female
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Tropius
-Level: 43
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Pelipper
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Atk / 126 SpA
-
-Galvantula
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Jumpluff
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Delphox
-Level: 46
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
-
-=== TRAINER_MAY_LILYCOVE_TORCHIC ===
-Name: MAY
-Class: Rival
-Pic: May
-Gender: Female
-Music: Female
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Tropius
-Level: 43
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Jumpluff
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA / 126 Spe
-
-Rapidash
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Galvantula
-Level: 44
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD
-
-Swampert
-Level: 46
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
 
 === TRAINER_JONAH ===
 Name: JONAH
@@ -16066,42 +16123,6 @@ Girafarig
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_MAY_RUSTBORO_TREECKO ===
-Name: MAY
-Class: Rival
-Pic: May
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Basic Trainer
-
-Hoppip
-Level: 13
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP / 252 Def / 252 SpD
-
-Fennekin
-Level: 15
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-=== TRAINER_MAY_RUSTBORO_TORCHIC ===
-Name: MAY
-Class: Rival
-Pic: May
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Basic Trainer
-
-Torkoal
-Level: 13
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-EVs: 252 HP
-
-Mudkip
-Level: 15
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
 === TRAINER_ROXANNE_2 ===
 Name: ROXANNE
 Class: Leader
@@ -16442,6 +16463,16 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
 - Aura Sphere
 - Dark Pulse
 - Calm Mind
+
+Toxicroak
+Level: 65
+Ability: Poison Touch
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+- Poison Jab
+- Close Combat
+- Sucker Punch
+- Bulk Up
 
 Heracross
 Level: 68
@@ -16812,6 +16843,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 
 Torkoal @ White Herb
 Level: 62
+Ability: Drought
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Overheat
@@ -16867,6 +16899,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 
 Torkoal @ White Herb
 Level: 67
+Ability: Drought
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Overheat
@@ -16922,6 +16955,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 
 Torkoal @ White Herb
 Level: 72
+Ability: Drought
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Overheat
@@ -16986,6 +17020,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 
 Torkoal @ White Herb
 Level: 77
+Ability: Drought
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Overheat
@@ -19204,7 +19239,7 @@ AI: Check Bad Move
 Flareon
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP
+EVs: 126 HP / 60 Def / 60 SpD
 - Fire Fang
 - Bite
 - Baby-Doll Eyes
@@ -19212,7 +19247,7 @@ EVs: 126 HP
 Quilava
 Level: 22
 IVs: 12 HP / 24 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 126 HP / 126 Atk
+EVs: 126 HP / 126 Atk / 60 Def / 60 SpD
 - Flame Wheel
 - Dig
 
@@ -19341,15 +19376,16 @@ EVs: 252 HP / 252 Def / 252 SpD / 68 Atk / 252 Spe
 - Curse
 - Synthesis
 
-Rapidash @ Sitrus Berry
+Torkoal @ Leftovers
 Level: 78
-Nature: Jolly
-Ability: Flame Body
+Nature: Calm
+Ability: Drought
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 252 Spe
-- Flare Blitz
-- Smart Strike
-- Flame Charge
+EVs: 252 HP / 252 SpD / 252 Def / 252 Spe
+- Lava Plume
+- Sludge Bomb
+- Earthquake
+- Shell Smash
 
 Galvantula @ Wide Lens
 Level: 78
@@ -19628,15 +19664,16 @@ EVs: 252 HP / 252 Def / 252 SpD / 68 Atk / 252 Spe
 - Curse
 - Synthesis
 
-Rapidash @ Sitrus Berry
+Torkoal @ Leftovers
 Level: 78
-Nature: Jolly
-Ability: Flame Body
+Nature: Calm
+Ability: Drought
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 252 Spe
-- Flare Blitz
-- Smart Strike
-- Flame Charge
+EVs: 252 HP / 252 SpD / 252 Def / 252 Spe
+- Lava Plume
+- Sludge Bomb
+- Earthquake
+- Shell Smash
 
 Galvantula @ Wide Lens
 Level: 78
