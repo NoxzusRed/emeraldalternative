@@ -23,9 +23,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM98",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM101",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_DEWFORD_TM_GUST"
+      "flag": "FLAG_ITEM_DEWFORD_TM_VACUUM_WAVE"
     }
   ],
   "warp_events": [

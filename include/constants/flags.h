@@ -1253,7 +1253,7 @@
 #define FLAG_ITEM_ROUTE_116_TM_POISON_FANG                          0x4B0 //
 #define FLAG_ITEM_ROUTE_115_TM_SMART_STRIKE                         0x4B1 //
 #define FLAG_ITEM_ROUTE_111_EAST_TM_POWER_GEM                       0x4B2 //
-#define FLAG_ITEM_DEWFORD_TM_GUST		                            0x4B3 //
+#define FLAG_ITEM_DEWFORD_TM_VACUUM_WAVE		                    0x4B3 //
 #define FLAG_ITEM_DEWFORD_UNDERWATER_PP_MAX                         0x4B4 //
 #define FLAG_ITEM_DEWFORD_UNDERWATER_TM_LIQUIDATION                 0x4B5 //
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_STARDUST                       0x4B6 // 
@@ -1262,7 +1262,7 @@
 #define FLAG_ITEM_ROUTE_111_CAVE_HYPER_POTION						0x4B9 //
 #define FLAG_ITEM_SOOTOPOLIS_CITY_PP_MAX                            0x4BA //
 #define FLAG_ITEM_RUSTURF_TUNNEL_HIGH_HYPER_POTION					0x4BB //
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
+#define FLAG_ITEM_GRANITE_CAVE_1F_TM_GUST		                    0x4BC //
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
