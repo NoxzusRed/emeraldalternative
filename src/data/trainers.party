@@ -10841,9 +10841,27 @@ Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Roselia
-Level: 24
+Teddiursa
+Level: 22
+IVs: 21 HP / 21 Atk / 21 Def / 21 SpA / 21 SpD / 0 Spe
+EVs: 126 HP
+- Slash
+- Lick
+- Payback
+- Baby-Doll Eyes
+
+Roggenrola
+Level: 22
 IVs: 21 HP / 21 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+EVs: 126 HP
+- Rock Tomb
+- Bulldoze
+- Iron Defense
+
+Roselia
+Level: 23
+IVs: 21 HP / 21 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+EVs: 126 HP
 - Magical Leaf
 - Growth
 - Leech Seed
