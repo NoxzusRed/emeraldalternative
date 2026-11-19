@@ -37,6 +37,11 @@ static bool32 IsAiStatBoostingMove(u32 battler, u32 move)
 {
     enum BattleMoveEffects effect;
 
+    // Stockpile is allowed up to three uses by its own battle effect.
+    // It should neither trigger nor be blocked by the two-turn boost rule.
+    if (move == MOVE_STOCKPILE)
+        return FALSE;
+
     if (move == MOVE_NONE || move == MOVE_UNAVAILABLE
         || !IsBattleMoveStatus(move))
         return FALSE;
@@ -74,50 +79,74 @@ static bool32 IsAiStatBoostingMove(u32 battler, u32 move)
     }
 }
 
-static void LimitAiConsecutiveStatBoosts(u32 battler)
+// Only pure status moves that lower the target's stats count as debuffs.
+// Exclude Memento (which also faints the user), attacking moves such as Snarl
+// and Bulldoze, and moves that have other purposes such as Parting Shot.
+static bool32 IsAiPureStatLoweringMove(u32 move)
+{
+    if (move == MOVE_NONE || move == MOVE_UNAVAILABLE
+        || !IsBattleMoveStatus(move))
+        return FALSE;
+
+    return GetMoveEffect(move) != EFFECT_MEMENTO
+        && IsStatLoweringEffect(GetMoveEffect(move));
+}
+
+// On the third consecutive stat-boost/debuff turn, prefer an alternate move
+// only when it can actually be used against this target. The two streaks are
+// independent; using a different move type breaks the corresponding streak.
+static void LimitAiConsecutiveStatChanges(u32 battler)
 {
     u32 i, last, previous;
-    bool32 hasAlternative = FALSE;
+    u32 lastMove, previousMove;
+    bool32 limitBoosts, limitDrops, hasAlternative = FALSE;
 
     if (!BattlerHasAi(battler))
         return;
 
     last = gBattleHistory->moveHistoryIndex[battler];
-    previous = (last + AI_MOVE_HISTORY_COUNT - 1)
-               % AI_MOVE_HISTORY_COUNT;
+    previous = (last + AI_MOVE_HISTORY_COUNT - 1) % AI_MOVE_HISTORY_COUNT;
+    lastMove = gBattleHistory->moveHistory[battler][last];
+    previousMove = gBattleHistory->moveHistory[battler][previous];
 
-    if (!IsAiStatBoostingMove(
-            battler, gBattleHistory->moveHistory[battler][last])
-        || !IsAiStatBoostingMove(
-            battler, gBattleHistory->moveHistory[battler][previous]))
+    limitBoosts = IsAiStatBoostingMove(battler, lastMove)
+               && IsAiStatBoostingMove(battler, previousMove);
+    limitDrops = IsAiPureStatLoweringMove(lastMove)
+              && IsAiPureStatLoweringMove(previousMove);
+
+    if (!limitBoosts && !limitDrops)
         return;
 
-    // Verificar que exista otra opcion utilizable.
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         u32 move = gBattleMons[battler].moves[i];
 
-        if (move != MOVE_NONE
-            && gBattleMons[battler].pp[i] > 0
-            && gAiThinkingStruct->score[i] > 0
-            && !IsAiStatBoostingMove(battler, move))
-        {
-            hasAlternative = TRUE;
-            break;
-        }
+        if (IsMoveUnusable(i, move, gAiLogicData->moveLimitations[battler])
+            || gBattleMons[battler].pp[i] == 0
+            || gAiThinkingStruct->score[i] == 0
+            || (IsDoubleBattle() && !CanTargetBattler(battler, gBattlerTarget, move)))
+            continue;
+
+        if ((limitBoosts && IsAiStatBoostingMove(battler, move))
+            || (limitDrops && IsAiPureStatLoweringMove(move)))
+            continue;
+
+        hasAlternative = TRUE;
+        break;
     }
 
-    if (!hasAlternative && !(gAiLogicData->moveLimitations[battler] & (1u << i)))
+    // If every alternative is disabled, out of PP or ineffective according
+    // to the AI's scoring, allow another debuff/boost rather than force failure.
+    if (!hasAlternative)
         return;
 
-    // Descartar temporalmente los aumentos de stats.
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (IsAiStatBoostingMove(
-                battler, gBattleMons[battler].moves[i]))
-        {
+        u32 move = gBattleMons[battler].moves[i];
+
+        if ((limitBoosts && IsAiStatBoostingMove(battler, move))
+            || (limitDrops && IsAiPureStatLoweringMove(move)))
             SET_SCORE(battler, i, 0);
-        }
     }
 }
 
@@ -848,7 +877,7 @@ static u32 ChooseMoveOrAction_Singles(u32 battler)
         gAiThinkingStruct->aiLogicId++;
     }
 	
-	LimitAiConsecutiveStatBoosts(battler);
+	LimitAiConsecutiveStatChanges(battler);
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         gAiBattleData->finalScore[battler][opposingBattler][i] = gAiThinkingStruct->score[i];
@@ -926,7 +955,7 @@ static u32 ChooseMoveOrAction_Doubles(u32 battler)
                 gAiThinkingStruct->aiLogicId++;
             }
 
-			LimitAiConsecutiveStatBoosts(battler);
+			LimitAiConsecutiveStatChanges(battler);
             mostViableMovesScores[0] = gAiThinkingStruct->score[0];
             mostViableMovesIndices[0] = 0;
             mostViableMovesNo = 1;
