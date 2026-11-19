@@ -1601,6 +1601,11 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     SetGpuReg(REG_OFFSET_BG1HOFS, 0);
     SetGpuReg(REG_OFFSET_BG1VOFS, 0);
     HideBg(2);
+
+    // The legendary main menu uses BG0 screenblock 28; Birch switches
+    // to screenblock 30. Clear the old contents before showing Birch's BG0,
+    // otherwise leftovers from the RS title graphics draw vertical stripes.
+    DmaFill16(3, 0, (void *)BG_SCREEN_ADDR(30), 0x800);
     SetGpuReg(REG_OFFSET_WIN0H, 0);
     SetGpuReg(REG_OFFSET_WIN0V, 0);
     SetGpuReg(REG_OFFSET_WININ, 0);
