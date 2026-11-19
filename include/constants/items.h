@@ -994,10 +994,13 @@
 
 #define ITEM_STRANGE_BALL 828
 
+// New TMs are appended after existing items to preserve the original IDs.
+#define ITEM_TM101 829
+
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 829
+#define ITEMS_COUNT 830
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
@@ -1027,7 +1030,7 @@
 #define MAIL_NONE 0xFF
 #define ITEM_TO_MULCH(itemId)(((itemId) - ITEM_GROWTH_MULCH) + 1)
 
-#define NUM_TECHNICAL_MACHINES 100
+#define NUM_TECHNICAL_MACHINES 101
 #define NUM_HIDDEN_MACHINES 8
 
 #define MAX_BAG_ITEM_CAPACITY         999

@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_TMS_HMS_H
 #define GUARD_CONSTANTS_TMS_HMS_H
 
-#define FOREACH_TM(F) \
+#define FOREACH_TM_ORIGINAL(F) \
     F(FOCUS_PUNCH) \
     F(DRAGON_CLAW) \
     F(WATER_PULSE) \
@@ -102,6 +102,11 @@
 	F(GUST) \
 	F(MAGICAL_LEAF) \
 	F(LIQUIDATION)
+
+// Extra TMs have IDs beyond the original contiguous TM/HM block.
+#define FOREACH_TM(F) \
+    FOREACH_TM_ORIGINAL(F) \
+    F(VACUUM_WAVE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

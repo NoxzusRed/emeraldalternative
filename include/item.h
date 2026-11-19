@@ -99,10 +99,13 @@ u32 GetItemSellPrice(u32 itemId);
 enum
 {
     ENUM_TM_START_ = ITEM_TM01 - 1,
-    FOREACH_TM(ENUM_TM)
+    FOREACH_TM_ORIGINAL(ENUM_TM)
 
     ENUM_HM_START_ = ITEM_HM01 - 1,
     FOREACH_HM(ENUM_HM)
+
+    // Do not renumber existing HMs when adding TM101.
+    ITEM_TM_VACUUM_WAVE = ITEM_TM101,
 };
 #undef ENUM_TM
 #undef ENUM_HM

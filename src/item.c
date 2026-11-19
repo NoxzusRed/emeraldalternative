@@ -585,6 +585,16 @@ void CompactItemsInBagPocket(struct BagPocket *bagPocket)
     }
 }
 
+// Show TM101 immediately after TM100, despite its item ID following the other items.
+static u16 GetTMHMSortKey(u16 itemId)
+{
+    if (itemId == ITEM_TM101)
+        return ITEM_HM01;
+    if (itemId >= ITEM_HM01 && itemId <= ITEM_HM08)
+        return itemId + 1;
+    return itemId;
+}
+
 void SortBerriesOrTMHMs(struct BagPocket *bagPocket)
 {
     u16 i, j;
@@ -597,7 +607,8 @@ void SortBerriesOrTMHMs(struct BagPocket *bagPocket)
             {
                 if (GetBagItemQuantity(&bagPocket->itemSlots[j].quantity) == 0)
                     continue;
-                if (bagPocket->itemSlots[i].itemId <= bagPocket->itemSlots[j].itemId)
+                if (GetTMHMSortKey(bagPocket->itemSlots[i].itemId)
+                    <= GetTMHMSortKey(bagPocket->itemSlots[j].itemId))
                     continue;
             }
             SwapItemSlots(&bagPocket->itemSlots[i], &bagPocket->itemSlots[j]);

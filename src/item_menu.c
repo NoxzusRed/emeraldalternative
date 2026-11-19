@@ -951,7 +951,7 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
     case TMHM_POCKET:
         end = StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(itemId)));
         PrependFontIdToFit(gStringVar2, end, FONT_NARROW, 61);
-        if (itemId >= ITEM_HM01)
+        if (itemId >= ITEM_HM01 && itemId <= ITEM_HM08)
         {
             // Get HM number
             ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_HM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 1);
@@ -960,7 +960,8 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
         else
         {
             // All TMs are displayed with three digits: TM001 - TM100.
-            ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 3);
+            ConvertIntToDecimalStringN(gStringVar1, itemId == ITEM_TM101 ? 101 : itemId - ITEM_TM01 + 1,
+                                       STR_CONV_MODE_LEADING_ZEROS, 3);
             StringExpandPlaceholders(dest, sText_NumberItem_TM);
         }
         break;
