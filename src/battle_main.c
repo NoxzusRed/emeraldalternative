@@ -3649,10 +3649,10 @@ static void Task_DirectWildIntroEffects(u8 taskId)
                     sprite->x = targetX;
             }
 
-            // Launch an animation as soon as its sprite is halfway in.
-            // The battle UI will no longer block on its callback afterward.
-            if ((IsOnPlayerSide(battler)
-                 && sprite->x - targetX <= DISPLAY_WIDTH / 2)
+            // Wait until a player's back sprite is fully on-screen before
+            // starting its individual animation. Front sprites still animate
+            // from halfway through their slide.
+            if ((IsOnPlayerSide(battler) && sprite->x == targetX)
              || (!IsOnPlayerSide(battler)
                  && targetX - sprite->x <= DISPLAY_WIDTH / 2))
             {
@@ -3673,22 +3673,34 @@ static void Task_DirectWildIntroEffects(u8 taskId)
     if (battler < gBattlersCount
         && (sDirectWildIntroAnimStarted & (1u << battler)))
     {
-        // A stale cry must not prevent a newly arrived Pokemon from crying.
-        bool32 cryPlaying = IsCryPlayingOrClearCrySongs();
-
-        if (!cryPlaying || ++gTasks[taskId].data[1] >= 90)
+        // A short minimum gap stops the second cry from immediately
+        // interrupting the player's first cry.
+        if (gTasks[taskId].data[3] != 0)
         {
-            if (cryPlaying)
-                StopCryAndClearCrySongs();
+            gTasks[taskId].data[3]--;
+        }
+        else
+        {
+            bool32 cryPlaying = IsCryPlayingOrClearCrySongs();
+            // Prioritize the first (player-side) cry if a stale sound is
+            // still reported active during the transition.
+            u16 maxWait = IsOnPlayerSide(battler) ? 12 : 90;
 
-            PlayCry_ByMode(
-                gBattleMons[battler].species,
-                IsOnPlayerSide(battler) ? -25 : 25,
-                CRY_MODE_NORMAL
-            );
+            if (!cryPlaying || ++gTasks[taskId].data[1] >= maxWait)
+            {
+                if (cryPlaying)
+                    StopCryAndClearCrySongs();
 
-            gTasks[taskId].data[0] = battler + 1;
-            gTasks[taskId].data[1] = 0;
+                PlayCry_ByMode(
+                    gBattleMons[battler].species,
+                    IsOnPlayerSide(battler) ? -25 : 25,
+                    CRY_MODE_NORMAL
+                );
+
+                gTasks[taskId].data[0] = battler + 1;
+                gTasks[taskId].data[1] = 0;
+                gTasks[taskId].data[3] = 24;
+            }
         }
     }
 
@@ -3893,6 +3905,7 @@ static void DoBattleIntro(void)
             gTasks[taskId].data[0] = 0;
             gTasks[taskId].data[1] = 0;
             gTasks[taskId].data[2] = 0;
+            gTasks[taskId].data[3] = 0;
 
             sDirectWildIntroWaitFrames = 0;
             sDirectWildIntroAnimStarted = 0;
