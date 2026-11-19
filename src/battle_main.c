@@ -207,6 +207,8 @@ EWRAM_DATA u16 gBattleWeather = 0;
 EWRAM_DATA struct WishFutureKnock gWishFutureKnock = {0};
 EWRAM_DATA u16 gIntroSlideFlags = 0;
 EWRAM_DATA static u16 sDirectWildIntroWaitFrames = 0;
+// Entry animation startup must not depend on the sprite callback finishing.
+EWRAM_DATA static u8 sDirectWildIntroAnimStarted = 0;
 EWRAM_DATA u8 gSentPokesToOpponent[2] = {0};
 EWRAM_DATA struct BattleEnigmaBerry gEnigmaBerries[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct BattleScripting gBattleScripting = {0};
@@ -3580,6 +3582,36 @@ static void CreateDirectWildBattleSprite(u32 battler)
 }
 
 
+// Trigger each wild entrance animation only once, including when the
+// introductory slide completes before its task can launch the animation.
+static void StartDirectWildMonIntroAnimation(u32 battler)
+{
+    struct Sprite *sprite;
+    u16 species;
+
+    if ((sDirectWildIntroAnimStarted & (1u << battler))
+     || !DirectWildIntroHasSprite(battler))
+        return;
+
+    sprite = &gSprites[gBattlerSpriteIds[battler]];
+    species = GetMonData(GetBattlerMon(battler), MON_DATA_SPECIES);
+    sDirectWildIntroAnimStarted |= 1u << battler;
+
+    if (IsOnPlayerSide(battler))
+    {
+        BattleAnimateBackSprite(sprite, species);
+    }
+    else if (!(gHitMarker & HITMARKER_NO_ANIMATIONS))
+    {
+        if (HasTwoFramesAnimation(species))
+            StartSpriteAnim(sprite, 1);
+        LaunchAnimationTaskForFrontSprite(
+            sprite, gSpeciesInfo[species].frontAnimId);
+    }
+
+    TryShinyAnimation(battler, GetBattlerMon(battler));
+}
+
 static void Task_DirectWildIntroEffects(u8 taskId)
 {
     u32 battler;
@@ -3592,7 +3624,6 @@ static void Task_DirectWildIntroEffects(u8 taskId)
         {
             struct Sprite *sprite;
             s16 targetX;
-            u16 species;
 
             if (!DirectWildIntroHasSprite(battler))
                 continue;
@@ -3618,33 +3649,14 @@ static void Task_DirectWildIntroEffects(u8 taskId)
                     sprite->x = targetX;
             }
 
-            // Iniciar la animacion a mitad del recorrido.
-            if (!(gTasks[taskId].data[1] & (1 << battler))
-                && ((IsOnPlayerSide(battler)
-                     && sprite->x - targetX <= DISPLAY_WIDTH / 2)
-                 || (!IsOnPlayerSide(battler)
-                     && targetX - sprite->x <= DISPLAY_WIDTH / 2)))
+            // Launch an animation as soon as its sprite is halfway in.
+            // The battle UI will no longer block on its callback afterward.
+            if ((IsOnPlayerSide(battler)
+                 && sprite->x - targetX <= DISPLAY_WIDTH / 2)
+             || (!IsOnPlayerSide(battler)
+                 && targetX - sprite->x <= DISPLAY_WIDTH / 2))
             {
-                gTasks[taskId].data[1] |= 1 << battler;
-                species = sprite->data[2];
-
-                if (IsOnPlayerSide(battler))
-                {
-                    BattleAnimateBackSprite(sprite, species);
-                }
-                else if (!(gHitMarker & HITMARKER_NO_ANIMATIONS))
-                {
-                    if (HasTwoFramesAnimation(species))
-                        StartSpriteAnim(sprite, 1);
-
-                    LaunchAnimationTaskForFrontSprite(
-                        sprite,
-                        gSpeciesInfo[species].frontAnimId
-                    );
-                }
-
-                TryShinyAnimation(
-                    battler, GetBattlerMon(battler));
+                StartDirectWildMonIntroAnimation(battler);
             }
         }
     }
@@ -3659,16 +3671,25 @@ static void Task_DirectWildIntroEffects(u8 taskId)
     gTasks[taskId].data[0] = battler;
 
     if (battler < gBattlersCount
-        && (gTasks[taskId].data[1] & (1 << battler))
-        && !IsCryPlayingOrClearCrySongs())
+        && (sDirectWildIntroAnimStarted & (1u << battler)))
     {
-        PlayCry_ByMode(
-            gBattleMons[battler].species,
-            IsOnPlayerSide(battler) ? -25 : 25,
-            CRY_MODE_NORMAL
-        );
+        // A stale cry must not prevent a newly arrived Pokemon from crying.
+        bool32 cryPlaying = IsCryPlayingOrClearCrySongs();
 
-        gTasks[taskId].data[0] = battler + 1;
+        if (!cryPlaying || ++gTasks[taskId].data[1] >= 90)
+        {
+            if (cryPlaying)
+                StopCryAndClearCrySongs();
+
+            PlayCry_ByMode(
+                gBattleMons[battler].species,
+                IsOnPlayerSide(battler) ? -25 : 25,
+                CRY_MODE_NORMAL
+            );
+
+            gTasks[taskId].data[0] = battler + 1;
+            gTasks[taskId].data[1] = 0;
+        }
     }
 
     // Limpiar recursos shiny cuando terminen.
@@ -3679,7 +3700,7 @@ static void Task_DirectWildIntroEffects(u8 taskId)
             if (!DirectWildIntroHasSprite(battler))
                 continue;
 
-            if (!(gTasks[taskId].data[1] & (1 << battler))
+            if (!(sDirectWildIntroAnimStarted & (1u << battler))
                 || !gBattleSpritesDataPtr
                         ->healthBoxesData[battler]
                         .finishedShinyMonAnim)
@@ -3874,6 +3895,7 @@ static void DoBattleIntro(void)
             gTasks[taskId].data[2] = 0;
 
             sDirectWildIntroWaitFrames = 0;
+            sDirectWildIntroAnimStarted = 0;
             gBattleStruct->introState =
                 BATTLE_INTRO_STATE_WILD_WAIT_SPRITES;
         }
@@ -4115,31 +4137,55 @@ static void DoBattleIntro(void)
         }
         break;
 case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
-    if (gBattleControllerExecFlags)
-        break;
-    for (battler = 0; battler < gBattlersCount; battler++)
-    {
-        struct Sprite *sprite;
-        if (!DirectWildIntroHasSprite(battler))
-            continue;
-        sprite = &gSprites[gBattlerSpriteIds[battler]];
-        // Esperar a que llegue a su posicion y
-        // termine su animacion de entrada.
-        if (sprite->x != GetBattlerSpriteCoord(
-                battler, BATTLER_COORD_X_2)
-            || sprite->callback != SpriteCallbackDummy)
-        {
+        if (gBattleControllerExecFlags)
             break;
+
+        for (battler = 0; battler < gBattlersCount; battler++)
+        {
+            struct Sprite *sprite;
+            s16 targetX;
+
+            if (!DirectWildIntroHasSprite(battler))
+                continue;
+
+            sprite = &gSprites[gBattlerSpriteIds[battler]];
+            targetX = GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2);
+            if (sprite->x != targetX)
+                break;
+
+            // Safeguard if a sprite arrived before the slide task launched
+            // its animation. The bitmask prevents duplicate animations.
+            StartDirectWildMonIntroAnimation(battler);
         }
-    }
-    // Fall back after six seconds if an animation callback never finishes.
-    if (battler == gBattlersCount || ++sDirectWildIntroWaitFrames >= 360)
-    {
-        sDirectWildIntroWaitFrames = 0;
-        gBattleStruct->introState =
-            BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES;
-    }
-    break;
+
+        // Do not wait for SpriteCallbackDummy: back-sprite animations can
+        // keep a callback active after the visible entry, delaying all bars.
+        // The animation task and cries continue independently.
+        if (battler == gBattlersCount)
+        {
+            sDirectWildIntroWaitFrames = 0;
+            gBattleStruct->introState =
+                BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES;
+        }
+        else if (++sDirectWildIntroWaitFrames >= 120)
+        {
+            // Recover from an interrupted slide in two seconds, rather than
+            // hanging for six. Ensure every sprite starts its animation.
+            for (battler = 0; battler < gBattlersCount; battler++)
+            {
+                if (!DirectWildIntroHasSprite(battler))
+                    continue;
+
+                gSprites[gBattlerSpriteIds[battler]].x =
+                    GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2);
+                StartDirectWildMonIntroAnimation(battler);
+            }
+
+            sDirectWildIntroWaitFrames = 0;
+            gBattleStruct->introState =
+                BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES;
+        }
+        break;
     case BATTLE_INTRO_STATE_WILD_SHOW_HEALTHBOXES:
         // Show healthboxes only for battlers with active sprites.
         for (battler = 0; battler < gBattlersCount; battler++)
