@@ -1591,21 +1591,29 @@ static void HighlightSelectedMainMenuItem(u8 menuType, u8 selectedMenuItem, s16 
 
 static void Task_NewGameBirchSpeech_Init(u8 taskId)
 {
-    // BG1 was scrolling for the animated legendary on the title/main menu.
-    // Restore its original offsets before using it for Birch's introduction.
+    // Leaving the animated legendary menu for Birch requires the same full
+    // graphics reset used when returning from the player naming screen.
+    // Keep this task alive; unlike the naming screen, do not ResetTasks().
+    SetVBlankCallback(NULL);
     ScanlineEffect_Stop();
+    ResetBgsAndClearDma3BusyFlags(0);
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
+    InitBgsFromTemplates(0, sMainMenuBgTemplates, ARRAY_COUNT(sMainMenuBgTemplates));
     InitBgFromTemplate(&sBirchBgTemplate);
-    InitBgFromTemplate(&sMainMenuBgTemplates[1]);
+    SetGpuReg(REG_OFFSET_BG2CNT, 0);
+    SetGpuReg(REG_OFFSET_BG1CNT, 0);
+    SetGpuReg(REG_OFFSET_BG0CNT, 0);
+    SetGpuReg(REG_OFFSET_BG2HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG2VOFS, 0);
     SetGpuReg(REG_OFFSET_BG1HOFS, 0);
     SetGpuReg(REG_OFFSET_BG1VOFS, 0);
-    HideBg(2);
-
-    // The legendary main menu uses BG0 screenblock 28; Birch switches
-    // to screenblock 30. Clear the old contents before showing Birch's BG0,
-    // otherwise leftovers from the RS title graphics draw vertical stripes.
-    DmaFill16(3, 0, (void *)BG_SCREEN_ADDR(30), 0x800);
+    SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    DmaFill16(3, 0, VRAM, VRAM_SIZE);
+    DmaFill32(3, 0, OAM, OAM_SIZE);
+    DmaFill16(3, 0, PLTT, PLTT_SIZE);
+    ResetPaletteFade();
     SetGpuReg(REG_OFFSET_WIN0H, 0);
     SetGpuReg(REG_OFFSET_WIN0V, 0);
     SetGpuReg(REG_OFFSET_WININ, 0);
@@ -1631,6 +1639,7 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     PlayBGM(MUS_ROUTE122);
     ShowBg(0);
     ShowBg(1);
+    SetVBlankCallback(VBlankCB_MainMenu);
 }
 
 static void Task_NewGameBirchSpeech_WaitToShowBirch(u8 taskId)
