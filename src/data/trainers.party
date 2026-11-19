@@ -1133,21 +1133,24 @@ AI: Check Bad Move
 
 Baltoy
 Level: 33
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Psybeam
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 12 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 SpA / 126 Atk
+- Psychic
 - Self Destruct
 - Sandstorm
 - Ancient Power
 
 Excadrill
 Level: 33
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 80 HP / 80 Atk / 80 Spe
 - Dig
 - Slash
 
 Yamask
 Level: 33
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 12 SpA / 31 SpD / 12 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 252 Atk
 - Shadow Claw
 
 === TRAINER_FOSTER ===
@@ -6009,8 +6012,8 @@ EVs: 252 HP / 252 SpD / 126 Atk
 
 Altaria @ Sitrus Berry
 Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 252 SpA
+IVs: 31 HP / 31 Atk / 24 Def / 31 SpA / 24 SpD / 31 Spe
+EVs: 252 HP / 40 Def / 40 SpD / 252 SpA / 126 Atk
 - Earthquake
 - Dragon Breath
 - Dragon Dance
@@ -8824,15 +8827,18 @@ AI: Check Bad Move / Try To Faint
 
 Joltik
 Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 252 Atk / 252 SpA
 
 Skorupi
 Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 252 Atk / 252 SpA
 
 Yamask
 Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 252 Atk / 252 SpA
 
 === TRAINER_TAKASHI ===
 Name: TAKASHI
@@ -8845,11 +8851,13 @@ AI: Check Bad Move / Try To Faint
 
 Joltik
 Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 252 Atk / 252 SpA
 
 SPECIES_ZOROARK_HISUI
 Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 252 Atk / 252 SpA
 
 === TRAINER_DIANNE ===
 Name: DIANNE
@@ -13664,7 +13672,7 @@ Cofagrigus
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Joltik
+Galvantula
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 

@@ -49,11 +49,10 @@ SlateportCity_EventScript_DrifblimDecline::
     end
 
 SlateportCity_Text_Drifloon:
-    .string "DRIFLOON: Flooooo...!\p"
-    .string "It floats gently on the sea breeze.$"
+    .string "Flooooo...!$"
 
 SlateportCity_Text_Drifblim:
-    .string "DRIFBLIM: Fwooooo...!\p"
+    .string "Fwooooo...!\p"
     .string "It looks ready for a long flight.$"
 
 SlateportCity_Text_DrifblimTravel:
