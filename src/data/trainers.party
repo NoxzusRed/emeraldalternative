@@ -2724,7 +2724,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc @ Nugget
-Level: 50
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Attract
@@ -2733,7 +2733,7 @@ EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Water Pulse
 
 Luvdisc @ Nugget
-Level: 50
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Attract
@@ -6108,10 +6108,11 @@ EVs: 252 HP / 252 Spe / 126 Def
 
 Luvdisc @ Assault Vest
 Modest Nature
-Level: 60
+Level: 70
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
+- Ice Beam
 - Draining Kiss
 
 Jellicent
@@ -9517,12 +9518,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc
-Level: 38
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
 Luvdisc
-Level: 38
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
@@ -9602,12 +9603,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc
-Level: 38
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
 Luvdisc
-Level: 38
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
@@ -9649,12 +9650,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc
-Level: 36
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
 Luvdisc
-Level: 36
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
@@ -9721,12 +9722,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc
-Level: 38
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
 Luvdisc
-Level: 38
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
@@ -9805,7 +9806,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc
-Level: 45
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
@@ -12947,7 +12948,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc
-Level: 50
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
@@ -13465,12 +13466,12 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Luvdisc
-Level: 55
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 SpA / 252 Spe
 
 Luvdisc
-Level: 55
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 SpA / 252 Spe
 
@@ -17749,7 +17750,7 @@ AI: Basic Trainer
 
 Luvdisc @ Assault Vest
 Modest Nature
-Level: 76
+Level: 86
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
@@ -17813,7 +17814,7 @@ AI: Basic Trainer
 
 Luvdisc @ Assault Vest
 Modest Nature
-Level: 81
+Level: 96
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
@@ -17877,7 +17878,7 @@ AI: Basic Trainer
 
 Luvdisc @ Assault Vest
 Modest Nature
-Level: 86
+Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
@@ -18950,7 +18951,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc
-Level: 38
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
@@ -18972,7 +18973,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc
-Level: 42
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
@@ -18994,7 +18995,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Luvdisc
-Level: 46
+Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 

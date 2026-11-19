@@ -9403,7 +9403,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseHP        = 65,
         .baseAttack    = 85,
         .baseDefense   = 70,
-        .baseSpeed     = 40,
+        .baseSpeed     = 60,
         .baseSpAttack  = 75,
         .baseSpDefense = 70,
         .types = MON_TYPES(TYPE_ELECTRIC),
@@ -9471,10 +9471,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_EELEKTROSS] =
     {
-        .baseHP        = 85,
+        .baseHP        = 105,
         .baseAttack    = 115,
         .baseDefense   = 80,
-        .baseSpeed     = 50,
+        .baseSpeed     = 70,
         .baseSpAttack  = 105,
         .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_ELECTRIC),

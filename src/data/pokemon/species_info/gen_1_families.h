@@ -6255,7 +6255,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PARASECT] =
     {
-        .baseHP        = 60,
+        .baseHP        = 80,
         .baseAttack    = 95,
         .baseDefense   = 80,
         .baseSpeed     = 45,
