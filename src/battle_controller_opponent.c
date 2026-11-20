@@ -350,7 +350,19 @@ static void SwitchIn_ShowHealthbox(u32 battler)
 static void SwitchIn_TryShinyAnim(u32 battler)
 {
     if (SwitchIn_TryShinyAnimUtil(battler))
+    {
+        // The ball has opened: show HP now, while shiny/cry can continue.
+        if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+         && !gTestRunnerEnabled
+         && !gBattleSpritesDataPtr->healthBoxesData[battler].healthboxSlideInStarted)
+        {
+            UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetBattlerMon(battler), HEALTHBOX_ALL);
+            StartHealthboxSlideIn(battler);
+            SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
+            gBattleSpritesDataPtr->healthBoxesData[battler].healthboxSlideInStarted = TRUE;
+        }
         gBattlerControllerFuncs[battler] = SwitchIn_ShowHealthbox;
+    }
 }
 
 static void OpponentBufferExecCompleted(u32 battler)

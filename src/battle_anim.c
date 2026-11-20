@@ -851,9 +851,14 @@ static void Cmd_end(void)
         return;
     }
 
-    // Between strikes, do not wait for the previous hit's SE tail.
-    // Visual effects and sound tasks still finish before getting here.
-    if (waitForSound && !(gAnimMoveIndex != MOVE_NONE && gMultiHitCounter > 1) && IsSEPlaying())
+    // In ordinary battles, movement visuals finish without waiting for the
+    // trailing sound effect. Sound tasks and visual tasks still finish above.
+    // Keep the original synchronization for link, recorded and test battles.
+    bool32 fastMoveAudio = gAnimMoveIndex != MOVE_NONE
+        && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+        && !gTestRunnerEnabled;
+
+    if (waitForSound && !fastMoveAudio && IsSEPlaying())
     {
         if (++sSoundAnimFramesToWait <= 90) // Wait 90 frames, then halt the sound effect.
         {
@@ -2026,6 +2031,15 @@ static void Cmd_waitsound(void)
     {
         sSoundAnimFramesToWait = 0;
         sAnimFramesToWait = 1;
+    }
+    else if (gAnimMoveIndex != MOVE_NONE
+          && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+          && !gTestRunnerEnabled)
+    {
+        // No active sound tasks: let the SE tail play while visuals advance.
+        sSoundAnimFramesToWait = 0;
+        sBattleAnimScriptPtr++;
+        sAnimFramesToWait = 0;
     }
     else if (IsSEPlaying())
     {
