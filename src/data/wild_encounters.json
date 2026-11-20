@@ -9920,28 +9920,28 @@
                 "species": "SPECIES_CLAUNCHER"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
+                "min_level": 35,
+                "max_level": 40,
                 "species": "SPECIES_CLAUNCHER"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_CLAUNCHER"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_CLAUNCHER"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_CLAWITZER"
               },
               {
                 "min_level": 35,
                 "max_level": 40,
+                "species": "SPECIES_CLAUNCHER"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_CLAUNCHER"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_CLAWITZER"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
                 "species": "SPECIES_CLAWITZER"
               }
             ]
