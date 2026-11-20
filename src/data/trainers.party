@@ -20245,3 +20245,21 @@ EVs: 252 HP
 - Psychic Fangs
 - Phantom Force
 - Crunch
+
+=== TRAINER_BLACK_BELT_DEWFORD_CAVE ===
+Name: KENZO
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move
+
+Machop
+Level: 16
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Mienfoo
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
