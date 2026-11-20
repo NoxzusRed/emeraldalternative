@@ -2642,7 +2642,7 @@ void DoWallyTutorialBagMenu(void)
 }
 
 #define tTimer data[8]
-#define WALLY_BAG_DELAY 42 // ~0.7 seconds between automated tutorial bag actions
+#define WALLY_BAG_DELAY 102 // The number of frames between each action Wally takes in the bag
 
 static void Task_WallyTutorialBagMenu(u8 taskId)
 {

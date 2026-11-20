@@ -134,18 +134,12 @@ static void WallyBufferRunCommand(u32 battler)
     }
 }
 
-// Wally's scripted inputs must not use B_WAIT_TIME_LONG: the game's
-// global battle text wait multiplier is zero, and decrementing a zero
-// u8 counter would otherwise stall for 256 frames.
-#define WALLY_ACTION_DELAY 18 // ~0.3 seconds between automated inputs
-#define WALLY_MOVE_DELAY   25 // Time to display the move selection before choosing
-
 static void WallyHandleActions(u32 battler)
 {
     switch (gBattleStruct->wallyBattleState)
     {
     case 0:
-        gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY;
+        gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
         gBattleStruct->wallyBattleState++;
     case 1:
         if (--gBattleStruct->wallyWaitFrames == 0)
@@ -155,7 +149,7 @@ static void WallyHandleActions(u32 battler)
             WallyBufferExecCompleted(battler);
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
-            gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY;
+            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
         }
         break;
     case 2:
@@ -166,7 +160,7 @@ static void WallyHandleActions(u32 battler)
             WallyBufferExecCompleted(battler);
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
-            gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY;
+            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
         }
         break;
     case 3:
@@ -176,7 +170,7 @@ static void WallyHandleActions(u32 battler)
             WallyBufferExecCompleted(battler);
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
-            gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY;
+            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
         }
         break;
     case 4:
@@ -185,7 +179,7 @@ static void WallyHandleActions(u32 battler)
             PlaySE(SE_SELECT);
             ActionSelectionDestroyCursorAt(0);
             ActionSelectionCreateCursorAt(1, 0);
-            gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY;
+            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
             gBattleStruct->wallyBattleState++;
         }
         break;
@@ -370,7 +364,7 @@ static void WallyHandleChooseMove(u32 battler)
     case 0:
         InitMoveSelectionsVarsAndStrings(battler);
         gBattleStruct->wallyMovesState++;
-        gBattleStruct->wallyMoveFrames = WALLY_MOVE_DELAY;
+        gBattleStruct->wallyMoveFrames = 80;
         break;
     case 1:
         if (!IsDma3ManagerBusyWithBgCopy())
