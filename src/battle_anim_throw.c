@@ -22,6 +22,19 @@
 #include "constants/songs.h"
 #include "constants/rgb.h"
 
+// Shorter capture-only timings; keep the full capture fanfare intact.
+#define CATCH_THROW_FRAMES          24
+#define CATCH_SHRINK_DELAY           6
+#define CATCH_SHRINK_FRAMES         20
+#define CATCH_SHRINK_SCALE_STEP     45
+#define CATCH_BOUNCE_PHASE_STEP      6
+#define CATCH_SHAKE_PAUSE_FRAMES    18
+#define CATCH_RELEASE_PAUSE_FRAMES  18
+#define CATCH_CLICK_FRAME           24
+#define CATCH_UNFADE_FRAME          42
+#define CATCH_FANFARE_FRAME         70
+#define CATCH_FANFARE_END_FRAME    290
+
 // iwram
 COMMON_DATA u32 gMonShrinkDuration = 0;
 COMMON_DATA u16 gMonShrinkDelta = 0;
@@ -965,7 +978,7 @@ void AnimTask_ThrowBall(u8 taskId)
 
     enum PokeBall ballId = ItemIdToBallId(gLastUsedItem);
     spriteId = CreateSprite(&gBallSpriteTemplates[ballId], 32, 80, 29);
-    gSprites[spriteId].sDuration = 34;
+    gSprites[spriteId].sDuration = CATCH_THROW_FRAMES;
     gSprites[spriteId].sTargetX = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X);
     gSprites[spriteId].sTargetY = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y) - 16;
     gSprites[spriteId].callback = SpriteCB_Ball_Throw;
@@ -1003,7 +1016,7 @@ void AnimTask_ThrowBall_StandingTrainer(u8 taskId)
     ballId = ItemIdToBallId(gLastUsedItem);
     subpriority = GetBattlerSpriteSubpriority(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)) + 1;
     spriteId = CreateSprite(&gBallSpriteTemplates[ballId], x + 32, y | 80, subpriority);
-    gSprites[spriteId].sDuration = 34;
+    gSprites[spriteId].sDuration = CATCH_THROW_FRAMES;
     gSprites[spriteId].sTargetX = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X);
     gSprites[spriteId].sTargetY = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y) - 16;
     gSprites[spriteId].callback = SpriteCallbackDummy;
@@ -1105,7 +1118,7 @@ static void SpriteCB_Ball_Arc(struct Sprite *sprite)
 
 static void SpriteCB_Ball_MonShrink(struct Sprite *sprite)
 {
-    if (++sprite->sTimer == 10)
+    if (++sprite->sTimer == CATCH_SHRINK_DELAY)
     {
         sprite->sTaskId = CreateTask(TaskDummy, 50);
         sprite->callback = SpriteCB_Ball_MonShrink_Step;
@@ -1136,14 +1149,14 @@ static void SpriteCB_Ball_MonShrink_Step(struct Sprite *sprite)
     case MON_SHRINK:
         PrepareBattlerSpriteForRotScale(spriteId, ST_OAM_OBJ_NORMAL);
         gTasks[taskId].data[10] = 256;
-        gMonShrinkDuration = 28;
+        gMonShrinkDuration = CATCH_SHRINK_FRAMES;
         gMonShrinkDistance = (gSprites[spriteId].y + gSprites[spriteId].y2) - (sprite->y + sprite->y2);
         gMonShrinkDelta = (u32)(gMonShrinkDistance * 256) / gMonShrinkDuration;
         gTasks[taskId].data[2] = gMonShrinkDelta;
         gTasks[taskId].tState++; // MON_SHRINK_STEP
         break;
     case MON_SHRINK_STEP:
-        gTasks[taskId].data[10] += 32;
+        gTasks[taskId].data[10] += CATCH_SHRINK_SCALE_STEP;
         SetSpriteRotScale(spriteId, gTasks[taskId].data[10], gTasks[taskId].data[10], 0);
         gTasks[taskId].data[3] += gTasks[taskId].data[2];
         gSprites[spriteId].y2 = -gTasks[taskId].data[3] >> 8;
@@ -1222,7 +1235,7 @@ static void SpriteCB_Ball_Bounce_Step(struct Sprite *sprite)
     {
     case BALL_FALLING:
         sprite->y2 = -Cos(sprite->sPhase, sprite->sAmplitude);
-        sprite->sPhase += PHASE_DELTA(sprite->sState) + 4;
+        sprite->sPhase += PHASE_DELTA(sprite->sState) + CATCH_BOUNCE_PHASE_STEP;
         // Once the ball touches the ground
         if (sprite->sPhase >= 64)
         {
@@ -1252,7 +1265,7 @@ static void SpriteCB_Ball_Bounce_Step(struct Sprite *sprite)
         break;
     case BALL_RISING:
         sprite->y2 = -Cos(sprite->sPhase, sprite->sAmplitude);
-        sprite->sPhase -= PHASE_DELTA(sprite->sState) + 4;
+        sprite->sPhase -= PHASE_DELTA(sprite->sState) + CATCH_BOUNCE_PHASE_STEP;
         // Once ball reaches max height
         if (sprite->sPhase <= 0)
         {
@@ -1298,7 +1311,7 @@ static void SpriteCB_Ball_Bounce_Step(struct Sprite *sprite)
 
 static void SpriteCB_Ball_Wobble(struct Sprite *sprite)
 {
-    if (++sprite->sTimer == 31)
+    if (++sprite->sTimer == CATCH_SHAKE_PAUSE_FRAMES)
     {
         sprite->sState = 0;
         sprite->affineAnimPaused = TRUE;
@@ -1324,7 +1337,6 @@ static void SpriteCB_Ball_Wobble(struct Sprite *sprite)
 static void SpriteCB_Ball_Wobble_Step(struct Sprite *sprite)
 {
     s8 shakes;
-    u16 frame;
 
     switch (STATE(sprite->sState))
     {
@@ -1342,8 +1354,7 @@ static void SpriteCB_Ball_Wobble_Step(struct Sprite *sprite)
 
         sprite->sTimer++;
         sprite->affineAnimPaused = FALSE;
-        frame = sprite->sTimer + 7;
-        if (frame > 14)
+        if (sprite->sTimer >= 6)
         {
             gBattleSpritesDataPtr->animationData->ballSubpx = 0;
             sprite->sState++; // BALL_PIVOT_1
@@ -1380,8 +1391,7 @@ static void SpriteCB_Ball_Wobble_Step(struct Sprite *sprite)
 
         sprite->sTimer++;
         sprite->affineAnimPaused = FALSE;
-        frame = sprite->sTimer + 12;
-        if (frame > 24)
+        if (sprite->sTimer >= 10)
         {
             gBattleSpritesDataPtr->animationData->ballSubpx = 0;
             sprite->sState++; // BALL_PIVOT_2
@@ -1417,8 +1427,7 @@ static void SpriteCB_Ball_Wobble_Step(struct Sprite *sprite)
 
         sprite->sTimer++;
         sprite->affineAnimPaused = FALSE;
-        frame = sprite->sTimer + 4;
-        if (frame > 8)
+        if (sprite->sTimer >= 4)
         {
             gBattleSpritesDataPtr->animationData->ballSubpx = 0;
             sprite->sState++; // BALL_NEXT_MOVE
@@ -1466,7 +1475,7 @@ static void SpriteCB_Ball_Wobble_Step(struct Sprite *sprite)
         break;
     case BALL_WAIT_NEXT_SHAKE:
     default:
-        if (++sprite->sTimer == 31)
+        if (++sprite->sTimer == CATCH_SHAKE_PAUSE_FRAMES)
         {
             sprite->sTimer = 0;
             RESET_STATE(sprite->sState);
@@ -1493,7 +1502,7 @@ static void SpriteCB_Ball_Wobble_Step(struct Sprite *sprite)
 
 static void SpriteCB_Ball_Release(struct Sprite *sprite)
 {
-    if (++sprite->sTimer == 31)
+    if (++sprite->sTimer == CATCH_RELEASE_PAUSE_FRAMES)
     {
         sprite->data[5] = 0;
         sprite->callback = SpriteCB_Ball_Release_Step;
@@ -1519,24 +1528,24 @@ static void SpriteCB_Ball_Capture_Step(struct Sprite *sprite)
     u8 *battler = &gBattleAnimTarget;
 
     sprite->sTimer++;
-    if (sprite->sTimer == 40)
+    if (sprite->sTimer == CATCH_CLICK_FRAME)
     {
         PlaySE(SE_RG_BALL_CLICK);
         BlendPalettes(0x10000 << sprite->oam.paletteNum, 6, RGB_BLACK);
         MakeCaptureStars(sprite);
     }
-    else if (sprite->sTimer == 60)
+    else if (sprite->sTimer == CATCH_UNFADE_FRAME)
     {
         BeginNormalPaletteFade(0x10000 << sprite->oam.paletteNum, 2, 6, 0, RGB_BLACK);
     }
-    else if (sprite->sTimer == 95)
+    else if (sprite->sTimer == CATCH_FANFARE_FRAME)
     {
         gDoingBattleAnim = FALSE;
         UpdateOamPriorityInAllHealthboxes(1, FALSE);
         m4aMPlayAllStop();
         PlaySE(MUS_RG_CAUGHT_INTRO);
     }
-    else if (sprite->sTimer == 315)
+    else if (sprite->sTimer == CATCH_FANFARE_END_FRAME)
     {
         FreeOamMatrix(gSprites[gBattlerSpriteIds[*battler]].oam.matrixNum);
         DestroySprite(&gSprites[gBattlerSpriteIds[*battler]]);
@@ -2740,7 +2749,7 @@ static void CB_CriticalCaptureThrownBallMovement(struct Sprite *sprite)
         if (bounceCount < 3)
             sprite->x2++;
 
-        if (++sprite->data[5] >= 3)
+        if (++sprite->data[5] >= 2)
             sprite->data[3] += 257;
 
         break;
