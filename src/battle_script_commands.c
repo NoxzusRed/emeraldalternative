@@ -70,6 +70,7 @@
 
 EWRAM_DATA static u8 sParallelBerryAnimBattler;
 EWRAM_DATA static u8 sParallelBerryHealBattler;
+EWRAM_DATA static u8 sParallelItemAnimBattler;
 EWRAM_DATA static u8 sParallelIngrainHealBattler;
 EWRAM_DATA static u8 sParallelStatAnimBattler;
 EWRAM_DATA static u8 sParallelTrapAnimBattler;
@@ -126,6 +127,25 @@ static bool8 IsParallelBerryAnimActive(void)
     sParallelBerryAnimBattler = 0;
     sParallelBerryHealBattler = 0;
     sParallelIngrainHealBattler = 0;
+    return FALSE;
+}
+
+// Let an item message start while its visual is still playing, but never
+// advance to the next independent effect before that visual finishes.
+static bool8 IsParallelItemAnimActive(void)
+{
+    u8 battler;
+
+    if (sParallelItemAnimBattler == 0)
+        return FALSE;
+
+    battler = sParallelItemAnimBattler - 1;
+    if (gBattleSpritesDataPtr != NULL
+     && battler < gBattlersCount
+     && gBattleSpritesDataPtr->healthBoxesData[battler].animFromTableActive)
+        return TRUE;
+
+    sParallelItemAnimBattler = 0;
     return FALSE;
 }
 
@@ -2683,6 +2703,7 @@ static void Cmd_waitanimation(void)
     if (gBattleControllerExecFlags == 0
         && !IsTextPrinterActive(B_WIN_MSG)
         && !IsParallelBerryAnimActive()
+        && !IsParallelItemAnimActive()
         && !IsParallelStatAnimActive()
         && !IsParallelTrapAnimActive()
         && !IsParallelDroughtSunAnimActive())
@@ -5964,7 +5985,8 @@ static void Cmd_waitstate(void)
     CMD_ARGS();
 
     if (gBattleControllerExecFlags == 0
-        && !IsParallelStatAnimActive())
+        && !IsParallelStatAnimActive()
+        && !IsParallelItemAnimActive())
         gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -5987,7 +6009,7 @@ static void Cmd_absorb(void)
 
 static void Cmd_return(void)
 {
-    if (IsParallelStatAnimActive())
+    if (IsParallelStatAnimActive() || IsParallelItemAnimActive())
         return;
 
     BattleScriptPop();
@@ -5997,7 +6019,7 @@ static void Cmd_end(void)
 {
     CMD_ARGS();
 
-    if (IsParallelStatAnimActive())
+    if (IsParallelStatAnimActive() || IsParallelItemAnimActive())
         return;
 
     sMultiStatMessagesRemaining = 0;
@@ -6014,7 +6036,7 @@ static void Cmd_end2(void)
 {
     CMD_ARGS();
 
-    if (IsParallelStatAnimActive())
+    if (IsParallelStatAnimActive() || IsParallelItemAnimActive())
         return;
 
     sMultiStatMessagesRemaining = 0;
@@ -6028,7 +6050,7 @@ static void Cmd_end3(void)
 {
     CMD_ARGS();
 
-    if (IsParallelStatAnimActive())
+    if (IsParallelStatAnimActive() || IsParallelItemAnimActive())
         return;
 
     sMultiStatMessagesRemaining = 0;
@@ -6162,7 +6184,8 @@ static bool8 CanShareStatDropVisual(u32 battler, const u8 *animInstr)
 static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *nextInstr)
 {
     // Do not overwrite an animation that is still running in parallel.
-    if (IsParallelBerryAnimActive() || IsParallelStatAnimActive() || IsParallelTrapAnimActive())
+    if (IsParallelBerryAnimActive() || IsParallelItemAnimActive()
+     || IsParallelStatAnimActive() || IsParallelTrapAnimActive())
         return;
 
     // The other battler's stage was changed by its own statbuffchange
@@ -6324,6 +6347,28 @@ gAnimDisableStructPtr = &gDisableStructs[battler];
         gBattlescriptCurrInstr = nextInstr;
         return;
     }
+    // Non-berry held items: animate as the following item message is printed.
+    // Existing berry healing synchronization remains unchanged.
+    if (animId == B_ANIM_HELD_ITEM_EFFECT
+     && GetItemPocket(gLastUsedItem) != POCKET_BERRIES
+     && (nextInstr[0] == 0x10 || nextInstr[0] == 0x13)
+     && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+     && !gTestRunnerEnabled
+     && !(gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
+    {
+        if (gBattleControllerExecFlags || gAnimScriptActive)
+            return;
+
+        gAnimDisableStructPtr = &gDisableStructs[battler];
+        if (!TryHandleLaunchBattleTableAnimation(
+                battler, battler, battler, animId,
+                argPtr != NULL ? *argPtr : 0))
+            sParallelItemAnimBattler = battler + 1;
+
+        gBattlescriptCurrInstr = nextInstr;
+        return;
+    }
+
     // Launch stat animation while the following stat message starts printing.
     // Keep the standard controller path for link, recorded and test battles.
     if (animId == B_ANIM_STATS_CHANGE
