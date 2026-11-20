@@ -50103,3 +50103,102 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 20270
+    [DIFFICULTY_NORMAL][TRAINER_GONZALO] =
+    {
+#line 20271
+        .trainerName = _("GONZALO"),
+#line 20272
+        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+#line 20273
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .encounterMusic_gender =
+#line 20275
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 20276
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 20277
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = 2,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 20279
+            .species = SPECIES_DWEBBLE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 20281
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+#line 20280
+            .lvl = 14,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 20283
+            .species = SPECIES_PARAS,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 20287
+            .ev = TRAINER_PARTY_EVS(126, 0, 0, 0, 0, 0),
+#line 20286
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+#line 20285
+            .ability = ABILITY_TECHNICIAN,
+#line 20284
+            .lvl = 14,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 20288
+                MOVE_FURY_CUTTER,
+                MOVE_MEGA_DRAIN,
+            },
+            },
+        },
+    },
+#line 20291
+    [DIFFICULTY_NORMAL][TRAINER_MARCELO] =
+    {
+#line 20292
+        .trainerName = _("MARCELO"),
+#line 20293
+        .trainerClass = TRAINER_CLASS_HIKER,
+#line 20294
+        .trainerPic = TRAINER_PIC_HIKER,
+        .encounterMusic_gender =
+#line 20296
+            TRAINER_ENCOUNTER_MUSIC_HIKER,
+#line 20297
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 20298
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = 2,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 20300
+            .species = SPECIES_ROGGENROLA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 20303
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+#line 20302
+            .ability = ABILITY_WEAK_ARMOR,
+#line 20301
+            .lvl = 14,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 20305
+            .species = SPECIES_ARON,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 20308
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+#line 20307
+            .ability = ABILITY_FILTER,
+#line 20306
+            .lvl = 14,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },

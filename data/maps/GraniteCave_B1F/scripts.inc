@@ -10,7 +10,7 @@ GraniteCave_B1F_SetHoleWarp:
 	end
 
 GraniteCave_B1F_EventScript_BugCatcher::
-	trainerbattle_single TRAINER_BUG_CATCHER_GRANITE_CAVE_B1F, GraniteCave_B1F_Text_BugCatcherIntro, GraniteCave_B1F_Text_BugCatcherDefeat
+	trainerbattle_single TRAINER_GONZALO, GraniteCave_B1F_Text_BugCatcherIntro, GraniteCave_B1F_Text_BugCatcherDefeat
 	msgbox GraniteCave_B1F_Text_BugCatcherPostBattle, MSGBOX_AUTOCLOSE
 	end
 

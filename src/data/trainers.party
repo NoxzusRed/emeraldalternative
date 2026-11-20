@@ -20267,8 +20267,8 @@ Makuhita
 Level: 13
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_BUG_CATCHER_GRANITE_CAVE_B1F ===
-Name: ELIO
+=== TRAINER_GONZALO ===
+Name: GONZALO
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -20276,16 +20276,20 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Spinarak
-Level: 13
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
 Dwebble
 Level: 14
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_HIKER_GRANITE_CAVE_B2F ===
-Name: MATEO
+Paras
+Level: 14
+Ability: Technician
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 126 HP
+- Fury Cutter
+- Mega Drain
+
+=== TRAINER_MARCELO ===
+Name: MARCELO
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -20295,9 +20299,10 @@ AI: Check Bad Move
 
 Roggenrola
 Level: 14
+Ability: Weak Armor
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Nosepass
-Level: 15
+Aron
+Level: 14
+Ability: Filter
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
