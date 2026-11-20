@@ -406,9 +406,36 @@ static void DoBattlePikeWildBattle(void)
     TryUpdateGymLeaderRematchFromWild();
 }
 
+// Use Wally's dedicated battle theme for every version of his team,
+// including Victory Road rematches and the Ever Grande Arena fight.
+// Other rivals and ordinary trainers retain their existing battle themes.
+static bool8 IsWallyBattleTrainer(u32 trainerId)
+{
+    switch (trainerId)
+    {
+    case TRAINER_WALLY_MAUVILLE:
+    case TRAINER_WALLY_VR_1:
+    case TRAINER_WALLY_VR_2:
+    case TRAINER_WALLY_VR_3:
+    case TRAINER_WALLY_VR_4:
+    case TRAINER_WALLY_VR_5:
+    case TRAINER_ARENA_WALLY:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
 static void DoTrainerBattle(void)
 {
-    CreateBattleStartTask(GetTrainerBattleTransition(), 0);
+    u16 song = 0;
+
+    if (IsWallyBattleTrainer(TRAINER_BATTLE_PARAM.opponentA)
+     || ((gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+      && IsWallyBattleTrainer(TRAINER_BATTLE_PARAM.opponentB)))
+        song = MUS_VS_WALLY;
+
+    CreateBattleStartTask(GetTrainerBattleTransition(), song);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_TRAINER_BATTLES);
     TryUpdateGymLeaderRematchFromTrainer();
