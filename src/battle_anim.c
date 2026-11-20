@@ -851,8 +851,9 @@ static void Cmd_end(void)
         return;
     }
 
-    // Other animations still wait for their sound effects.
-    if (waitForSound && IsSEPlaying())
+    // Between strikes, do not wait for the previous hit's SE tail.
+    // Visual effects and sound tasks still finish before getting here.
+    if (waitForSound && !(gAnimMoveIndex != MOVE_NONE && gMultiHitCounter > 1) && IsSEPlaying())
     {
         if (++sSoundAnimFramesToWait <= 90) // Wait 90 frames, then halt the sound effect.
         {

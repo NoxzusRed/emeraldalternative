@@ -863,7 +863,8 @@ void UpdateOamPriorityInAllHealthboxes(u8 priority, bool32 hideHPBoxes)
 
         UpdateIndicatorOamPriority(healthboxLeftSpriteId, priority);
 
-        if (B_HIDE_HEALTHBOX_IN_ANIMS == TRUE && hideHPBoxes && IsBattlerAlive(i))
+        // Keep the opposing Pokémon's HP bar visible throughout animations.
+        if (B_HIDE_HEALTHBOX_IN_ANIMS == TRUE && hideHPBoxes && IsBattlerAlive(i) && IsOnPlayerSide(i))
             TryToggleHealboxVisibility(priority, healthboxLeftSpriteId, healthboxRightSpriteId, healthbarSpriteId);
     }
 }

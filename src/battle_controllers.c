@@ -2795,7 +2795,8 @@ void BtlController_HandleBallThrowAnim(u32 battler, u32 target, u32 animId, bool
 
 void BtlController_HandleMoveAnimation(u32 battler, bool32 updateTvData)
 {
-    if (!IsBattleSEPlaying(battler))
+    // Consecutive hits may start while the preceding hit's sound is fading.
+    if ((gMultiHitCounter && gBattleScripting.animTurn > 1) || !IsBattleSEPlaying(battler))
     {
         u16 move = gBattleResources->bufferA[battler][1] | (gBattleResources->bufferA[battler][2] << 8);
 

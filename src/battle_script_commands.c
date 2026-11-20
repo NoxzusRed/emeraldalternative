@@ -83,6 +83,8 @@ EWRAM_DATA static u8 sGroupedStatDropAttacker;
 EWRAM_DATA static u8 sGroupedStatDropStat;
 EWRAM_DATA static u8 sMultiStatMessagesRemaining;
 EWRAM_DATA static bool8 sHoldMultiStatMessage;
+// Leave a multi-hit critical-hit message visible through the following strike.
+EWRAM_DATA static bool8 sClearMultiHitCritAfterAnimation;
 
 // Each stat name gets at least 0.8 seconds in multi-stat moves.
 #define MULTI_STAT_MESSAGE_MIN_FRAMES 48
@@ -2724,6 +2726,16 @@ static void Cmd_healthbarupdate(void)
 
     if (gBattleControllerExecFlags)
         return;
+
+    // The next hit's visual and impact animation have finished by this point.
+    // Clear the previous critical-hit text before updating HP.
+    if (sClearMultiHitCritAfterAnimation)
+    {
+        sClearMultiHitCritAfterAnimation = FALSE;
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_FlushMessageBox;
+        return;
+    }
 
     if (TryEmitSimultaneousWeatherHpBars(battler))
     {
@@ -7455,6 +7467,10 @@ static void Cmd_moveend(void)
                 }
                 else
                 {
+                    // Save this before Dragon Darts can switch to its other target.
+                    bool8 previousHitCritical = gSpecialStatuses[gBattlerTarget].criticalHit
+                        && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT);
+
                     if (moveEffect == EFFECT_DRAGON_DARTS
                      && !IsAffectedByFollowMe(gBattlerAttacker, GetBattlerSide(gBattlerTarget), gCurrentMove)
                      && !(gBattleStruct->moveResultFlags[BATTLE_PARTNER(gBattlerTarget)] & MOVE_RESULT_MISSED) // didn't miss the other target
@@ -7476,9 +7492,11 @@ static void Cmd_moveend(void)
                         gBattleScripting.animTargetsHit = 0;
                         gBattleScripting.moveendState = 0;
                         gSpecialStatuses[gBattlerAttacker].multiHitOn = TRUE;
+                        // Do not blank the text box between strikes. A critical-hit
+                        // message stays until the next strike's impact finishes.
+                        sClearMultiHitCritAfterAnimation = previousHitCritical;
                         MoveValuesCleanUp();
-                        BattleScriptPush(GetMoveBattleScript(gCurrentMove));
-                        gBattlescriptCurrInstr = BattleScript_FlushMessageBox;
+                        gBattlescriptCurrInstr = GetMoveBattleScript(gCurrentMove);
                         return;
                     }
                     else
@@ -7489,6 +7507,7 @@ static void Cmd_moveend(void)
                     }
                 }
             }
+            sClearMultiHitCritAfterAnimation = FALSE;
             gMultiHitCounter = 0;
             gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_OFF;
             gSpecialStatuses[gBattlerAttacker].multiHitOn = 0;
