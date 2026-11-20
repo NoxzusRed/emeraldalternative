@@ -2332,12 +2332,15 @@ static bool32 Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold(void)
 
 static bool32 Fishing_RollForBite(u32 rod, bool32 isStickyHold)
 {
-    return ((Random() % 100) > CalculateFishingBiteOdds(rod, isStickyHold));
+    // odds is the chance of NOT getting a bite, in percent.
+    // >= also lets an odds value of 0 guarantee a bite.
+    return ((Random() % 100) >= CalculateFishingBiteOdds(rod, isStickyHold));
 }
 
 static u32 CalculateFishingBiteOdds(u32 rod, bool32 isStickyHold)
 {
     u32 odds;
+    u32 bonus;
 
     if (rod == OLD_ROD)
         odds = FISHING_OLD_ROD_ODDS;
@@ -2346,17 +2349,24 @@ static u32 CalculateFishingBiteOdds(u32 rod, bool32 isStickyHold)
     if (rod == SUPER_ROD)
         odds = FISHING_SUPER_ROD_ODDS;
 
-    odds -= CalculateFishingFollowerBoost();
+    // Subtract bonuses without underflowing the unsigned chance.
+    // With the Super Rod, follower friendship alone can exceed its
+    // base 25% chance of no bite.
+    bonus = CalculateFishingFollowerBoost();
+    odds = (bonus >= odds) ? 0 : odds - bonus;
 
     if (isStickyHold)
     {
         if (I_FISHING_STICKY_BOOST >= GEN_4)
-            odds -= (100 - odds);
+            bonus = 100 - odds;
         else
-            odds -= FISHING_STICKY_BOOST;
+            bonus = FISHING_STICKY_BOOST;
+
+        odds = (bonus >= odds) ? 0 : odds - bonus;
     }
 
-    odds -= CalculateFishingProximityBoost(odds);
+    bonus = CalculateFishingProximityBoost(odds);
+    odds = (bonus >= odds) ? 0 : odds - bonus;
 
     return odds;
 }
