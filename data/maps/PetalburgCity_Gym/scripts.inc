@@ -84,7 +84,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	playse SE_EXIT
 	removeobject LOCALID_PETALBURG_GYM_WALLY
 	setflag FLAG_HIDE_PETALBURG_CITY_WALLY
-	delay 30
+	delay 10
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
@@ -96,7 +96,7 @@ PetalburgCity_Gym_Movement_WallyExitGym:
 	walk_down
 	walk_down
 	walk_down
-	delay_16
+	delay_4
 	step_end
 
 PetalburgCity_Gym_EventScript_Norman::

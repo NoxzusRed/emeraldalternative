@@ -145,7 +145,7 @@ PetalburgCity_Movement_WalkInsideHouseWallysDad:
 	step_end
 
 PetalburgCity_Movement_WallyTutorialPlayer:
-	delay_8
+	delay_4
 	walk_down
 	walk_down
 	walk_down
@@ -180,7 +180,7 @@ PetalburgCity_Movement_WallyTutorialPlayer:
 	step_end
 
 PetalburgCity_Movement_WallyTutorialWally:
-	delay_8
+	delay_4
 	walk_down
 	walk_down
 	walk_down
@@ -211,10 +211,10 @@ PetalburgCity_Movement_WallyTutorialWally:
 	walk_up
 	walk_up
 	walk_right
-	delay_16
+	delay_4
 	walk_in_place_faster_up
-	delay_16
-	delay_16
+	delay_4
+	delay_4
 	walk_in_place_faster_right
 	step_end
 
