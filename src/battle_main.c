@@ -79,7 +79,6 @@
 #include "cable_club.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
-extern const u16 gWeatherStartsStringIds[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
 
 static void CB2_InitBattleInternal(void);
@@ -205,8 +204,6 @@ EWRAM_DATA u8 gBattleOutcome = 0;
 EWRAM_DATA struct ProtectStruct gProtectStructs[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct SpecialStatus gSpecialStatuses[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gBattleWeather = 0;
-// Set when a direct wild intro has already displayed its weather.
-EWRAM_DATA u8 gWildIntroWeatherShown = FALSE;
 EWRAM_DATA struct WishFutureKnock gWishFutureKnock = {0};
 EWRAM_DATA u16 gIntroSlideFlags = 0;
 EWRAM_DATA static u16 sDirectWildIntroWaitFrames = 0;
@@ -3130,7 +3127,6 @@ static void BattleStartClearSetData(void)
     gEffectBattler = 0;
     gBattlerAbility = 0;
     gBattleWeather = 0;
-    gWildIntroWeatherShown = FALSE;
     gHitMarker = 0;
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_RECORDED))
@@ -3616,56 +3612,10 @@ static void StartDirectWildMonIntroAnimation(u32 battler)
     TryShinyAnimation(battler, GetBattlerMon(battler));
 }
 
-// Play the existing weather visual and text as the wild Pokemon slide in.
-// The real battle weather and dependent abilities still begin in the regular
-// FIRST_TURN_EVENTS_OVERWORLD_WEATHER phase, without a second notice.
-static void TryShowWildIntroWeather(void)
-{
-    u32 weather = GetCurrentWeather();
-    u8 animId;
-
-    if (gWildIntroWeatherShown || gBattleControllerExecFlags || gAnimScriptActive
-     || (gIntroSlideFlags & 1))
-        return;
-
-    switch (weather)
-    {
-    case WEATHER_RAIN:
-    case WEATHER_RAIN_THUNDERSTORM:
-    case WEATHER_DOWNPOUR:
-        animId = B_ANIM_RAIN_CONTINUES;
-        break;
-    case WEATHER_SANDSTORM:
-        animId = B_ANIM_SANDSTORM_CONTINUES;
-        break;
-    case WEATHER_DROUGHT:
-        animId = B_ANIM_SUN_CONTINUES;
-        break;
-    case WEATHER_SNOW:
-        animId = (B_OVERWORLD_SNOW >= GEN_9) ? B_ANIM_SNOW_CONTINUES : B_ANIM_HAIL_CONTINUES;
-        break;
-    case WEATHER_FOG_HORIZONTAL:
-    case WEATHER_FOG_DIAGONAL:
-        if (B_OVERWORLD_FOG != GEN_4)
-            return;
-        animId = B_ANIM_FOG_CONTINUES;
-        break;
-    default:
-        return;
-    }
-
-    gWildIntroWeatherShown = TRUE;
-    PrepareStringBattle(gWeatherStartsStringIds[weather], GetBattlerAtPosition(B_POSITION_PLAYER_LEFT));
-    gAnimDisableStructPtr = &gDisableStructs[0];
-    InitAndLaunchSpecialAnimation(0, 0, 0, animId);
-}
-
 static void Task_DirectWildIntroEffects(u8 taskId)
 {
     u32 battler;
     bool8 shinyDone = TRUE;
-
-    TryShowWildIntroWeather();
 
     // Movimiento y animaciones independientes.
     if (!(gIntroSlideFlags & 1))
@@ -4287,12 +4237,6 @@ case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
              && gSprites[healthboxId].callback != SpriteCallbackDummy)
                 break;
         }
-
-        // Avoid beginning ability scripts while the intro weather is still
-        // using the shared battle animation engine.
-        if (gWildIntroWeatherShown
-         && gBattleSpritesDataPtr->healthBoxesData[0].specialAnimActive)
-            break;
 
         if (battler == gBattlersCount || ++sDirectWildIntroWaitFrames >= 360)
         {
