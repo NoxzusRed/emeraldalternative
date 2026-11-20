@@ -615,6 +615,7 @@ gSongTable::
     song mus_mauville, 0, 0
     song mus_mossdeep, 0, 0
     song mus_rayquaza_menu, 0, 0
+    song mus_vs_wally, 0, 0
 
 	.align 2
 dummy_song_header:
