@@ -550,7 +550,6 @@
 #define MUS_MOSSDEEP                611
 #define MUS_RAYQUAZA_MENU           612
 #define MUS_VS_WALLY                613
-#define MUS_VS_CYNTHIA_EMERALD      614 // Original champion-style composition
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
