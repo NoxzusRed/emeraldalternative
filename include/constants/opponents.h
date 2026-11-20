@@ -880,7 +880,7 @@
 #define TRAINER_COURTNEY_MT_CHIMNEY			872
 #define TRAINER_ARCHIE_MT_PYRE              873
 #define TRAINER_COURTNEY_MAGMA_HIDEOUT		874
-#define TRAINER_BLACK_BELT_DEWFORD_CAVE      875
+#define TRAINER_RENZO					    875
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled

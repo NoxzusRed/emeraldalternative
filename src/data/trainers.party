@@ -7470,15 +7470,15 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_BASCULIN_WHITE_STRIPED
-Level: 12
+Level: 13
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 SPECIES_QWILFISH_HISUI
-Level: 12
+Level: 13
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 SPECIES_BASCULIN_WHITE_STRIPED
-Level: 12
+Level: 13
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_NED ===
@@ -7490,8 +7490,12 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_QWILFISH_HISUI
-Level: 14
+Shellder
+Level: 13
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+SPECIES_BASCULIN_WHITE_STRIPED
+Level: 13
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_DALE ===
@@ -20246,8 +20250,8 @@ EVs: 252 HP
 - Phantom Force
 - Crunch
 
-=== TRAINER_BLACK_BELT_DEWFORD_CAVE ===
-Name: KENZO
+=== TRAINER_RENZO ===
+Name: RENZO
 Class: Black Belt
 Pic: Black Belt
 Gender: Male
@@ -20255,11 +20259,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 16
+Meditite
+Level: 13
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Mienfoo
-Level: 17
+Makuhita
+Level: 13
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
