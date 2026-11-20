@@ -312,7 +312,12 @@ static u64 GetAiFlags(u16 trainerId)
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_HAS_AI) && !IsWildMonSmart())
         return 0;
-    if (trainerId == 0xFFFF)
+    // Safari behavior takes priority over wild AI and trainer identifiers.
+    if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
+    {
+        flags = AI_FLAG_SAFARI;
+    }
+    else if (trainerId == 0xFFFF)
     {
         flags = GetWildAiFlags();
     }
@@ -320,8 +325,6 @@ static u64 GetAiFlags(u16 trainerId)
     {
         if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
             flags = GetAiScriptsInRecordedBattle();
-        else if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
-            flags = AI_FLAG_SAFARI;
         else if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
             flags = AI_FLAG_ROAMING;
         else if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
@@ -367,7 +370,13 @@ void BattleAI_SetupFlags(void)
         return;
     }
 
-    if (IsWildMonSmart() && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER)))
+    if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
+    {
+        // Safari opponents must never inherit smart-wild combat AI flags.
+        gAiThinkingStruct->aiFlags[B_POSITION_OPPONENT_LEFT] = AI_FLAG_SAFARI;
+        gAiThinkingStruct->aiFlags[B_POSITION_OPPONENT_RIGHT] = AI_FLAG_SAFARI;
+    }
+    else if (IsWildMonSmart() && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER)))
     {
         // smart wild AI
         gAiThinkingStruct->aiFlags[B_POSITION_OPPONENT_LEFT] = GetAiFlags(0xFFFF);
@@ -506,6 +515,19 @@ void ComputeBattlerDecisions(u32 battler)
         && (BattlerHasAi(battler)
         && !(gBattleTypeFlags & BATTLE_TYPE_PALACE)))
     {
+        // Safari has no attacking Pokemon on the player side. Decide once
+        // per turn, then store the flee/watch choice for the controller.
+        // Do not score combat moves against the empty player-side battler.
+        if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
+        {
+            gAiThinkingStruct->aiAction = 0;
+            gAiBattleData->actionFlee = FALSE;
+            gAiBattleData->choiceWatch = FALSE;
+            AI_Safari(battler, GetOppositeBattler(battler), MOVE_NONE, 0);
+            BattlerChoseNonMoveAction();
+            return;
+        }
+
         // If ai is about to flee or chosen to watch player, no need to calc anything
         if (BattlerChoseNonMoveAction())
             return;
