@@ -3676,12 +3676,12 @@
               {
                 "min_level": 25,
                 "max_level": 26,
-                "species": "SPECIES_PETILIL"
+                "species": "SPECIES_GROVYLE"
               },
               {
                 "min_level": 26,
                 "max_level": 27,
-                "species": "SPECIES_PETILIL"
+                "species": "SPECIES_GROVYLE"
               },
               {
                 "min_level": 25,
@@ -9812,12 +9812,12 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_YANMA"
+                "species": "SPECIES_SALANDIT"
               },
               {
                 "min_level": 36,
                 "max_level": 36,
-                "species": "SPECIES_YANMA"
+                "species": "SPECIES_SALANDIT"
               },
               {
                 "min_level": 34,
@@ -9832,32 +9832,32 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_SALANDIT"
+                "species": "SPECIES_WIMPOD"
               },
               {
                 "min_level": 34,
                 "max_level": 34,
-                "species": "SPECIES_SALANDIT"
+                "species": "SPECIES_WIMPOD"
               },
               {
                 "min_level": 36,
                 "max_level": 36,
-                "species": "SPECIES_SALANDIT"
+                "species": "SPECIES_WIMPOD"
               },
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_SALANDIT"
+                "species": "SPECIES_WIMPOD"
               },
               {
                 "min_level": 39,
                 "max_level": 39,
-                "species": "SPECIES_SALANDIT"
+                "species": "SPECIES_WIMPOD"
               },
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_SALANDIT"
+                "species": "SPECIES_WIMPOD"
               }
             ]
           },
@@ -12619,12 +12619,12 @@
               {
                 "min_level": 25,
                 "max_level": 27,
-                "species": "SPECIES_HERACROSS"
+                "species": "SPECIES_GROVYLE"
               },
               {
                 "min_level": 25,
                 "max_level": 27,
-                "species": "SPECIES_HERACROSS"
+                "species": "SPECIES_GROVYLE"
               },
               {
                 "min_level": 25,

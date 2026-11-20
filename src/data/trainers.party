@@ -8530,14 +8530,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Shelgon
-Level: 37
+Sceptile
+Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP
-- Dragon Breath
-- Headbutt
-- Focus Energy
-- Ember
+EVs: 252 HP / 180 Atk / 126 SpA
+- Dragon Pulse
+- Leaf Blade
+- Dragon Dance
 
 === TRAINER_PERRY ===
 Name: PERRY
@@ -8850,10 +8849,13 @@ Level: 32
 IVs: 31 HP / 31 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Atk / 252 SpA
 
-Yamask
+Grovyle
 Level: 32
 IVs: 31 HP / 31 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 252 Atk / 252 SpA
+EVs: 252 HP / 126 Atk / 126 SpA
+- Dragon Breath
+- Giga Drain
+- Vacuum Wave
 
 === TRAINER_TAKASHI ===
 Name: TAKASHI
@@ -8864,7 +8866,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Joltik
+Grovyle
 Level: 31
 IVs: 31 HP / 31 Atk / 12 Def / 31 SpA / 12 SpD / 12 Spe
 EVs: 252 HP / 252 Atk / 252 SpA
@@ -10544,15 +10546,21 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Skorupi
-Level: 35
+Sceptile
+Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 126 Atk / 126 SpA
+EVs: 252 HP / 64 Atk / 126 SpA
+- Leaf Blade
+- Dragon Claw
+- Leech Seed
 
-Croagunk
-Level: 35
+Toxicroak
+Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-EVs: 252 HP / 126 Atk / 126 SpA
+EVs: 252 HP / 64 Atk / 64 SpA
+- Karate Chop
+- Poison Jab
+- Sucker Punch
 
 === TRAINER_KAYLEY ===
 Name: KAYLEY
@@ -10621,10 +10629,10 @@ Double Battle: No
 AI: Basic Trainer
 
 Manectric
-Level: 37
+Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP
-- Bite
+- Crunch
 - Roar
 - Thunder Wave
 - Thunderbolt
