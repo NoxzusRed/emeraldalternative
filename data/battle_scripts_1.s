@@ -5677,9 +5677,13 @@ BattleScript_OverworldStatusStarts_TryActivations:
 	return
 
 BattleScript_OverworldWeatherStarts::
+	@ A normal wild intro may have already shown the weather and animation.
+	@ Still process weather-dependent ability effects exactly once here.
+	jumpifbyte CMP_EQUAL, gWildIntroWeatherShown, TRUE, BattleScript_OverworldWeatherStarts_Abilities
 	printfromtable gWeatherStartsStringIds
 	waitmessage B_WAIT_TIME_SHORTEST
 	playanimation_var BS_BATTLER_0, sB_ANIM_ARG1
+BattleScript_OverworldWeatherStarts_Abilities:
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
@@ -7351,9 +7355,10 @@ BattleScript_ItemSteal::
 BattleScript_DrizzleActivates::
 	pause B_WAIT_TIME_SHORTEST
 	call BattleScript_AbilityPopUp
+	playanimation BS_BATTLER_0, B_ANIM_RAIN_CONTINUES, gParallelDroughtSunAnimMarker
 	printstring STRINGID_PKMNMADEITRAIN
-	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_RAIN_CONTINUES
+	waitmessage B_WAIT_TIME_SHORTEST
+	waitanimation
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
@@ -7372,7 +7377,8 @@ BattleScript_AbilityPopUpTarget::
 BattleScript_AbilityPopUp::
 	.if B_ABILITY_POP_UP == TRUE
 	showabilitypopup BS_ABILITY_BATTLER
-	pause 40
+	@ Let the pop-up remain on-screen during the effect and message.
+	pause 12
 	.endif
 	recordability BS_ABILITY_BATTLER
 	sethword sABILITY_OVERWRITE, 0
@@ -7572,18 +7578,20 @@ BattleScript_HealerActivates::
 BattleScript_SandstreamActivates::
 	pause B_WAIT_TIME_SHORTEST
 	call BattleScript_AbilityPopUp
+	playanimation BS_BATTLER_0, B_ANIM_SANDSTORM_CONTINUES, gParallelDroughtSunAnimMarker
 	printstring STRINGID_PKMNSXWHIPPEDUPSANDSTORM
-	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_SANDSTORM_CONTINUES
+	waitmessage B_WAIT_TIME_SHORTEST
+	waitanimation
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
 BattleScript_SandSpitActivates::
 	pause B_WAIT_TIME_SHORTEST
 	call BattleScript_AbilityPopUp
+	playanimation BS_BATTLER_0, B_ANIM_SANDSTORM_CONTINUES, gParallelDroughtSunAnimMarker
 	printstring STRINGID_ASANDSTORMKICKEDUP
-	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_SANDSTORM_CONTINUES
+	waitmessage B_WAIT_TIME_SHORTEST
+	waitanimation
 	call BattleScript_ActivateWeatherAbilities
 	return
 
@@ -7627,9 +7635,8 @@ BattleScript_TryIntimidateHoldEffectsRet:
 BattleScript_IntimidateActivates::
 	savetarget
 .if B_ABILITY_POP_UP == TRUE
+	@ Keep the ability popup while the targets' stats animate.
 	showabilitypopup BS_ATTACKER
-	pause B_WAIT_TIME_SHORTEST
-	destroyabilitypopup
 .endif
 	setbyte gBattlerTarget, 0
 BattleScript_IntimidateLoop:
@@ -7908,18 +7915,20 @@ BattleScript_MimicryActivates::
 BattleScript_SnowWarningActivatesHail::
 	pause B_WAIT_TIME_SHORTEST
 	call BattleScript_AbilityPopUp
+	playanimation BS_BATTLER_0, B_ANIM_HAIL_CONTINUES, gParallelDroughtSunAnimMarker
 	printstring STRINGID_SNOWWARNINGHAIL
-	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_HAIL_CONTINUES
+	waitmessage B_WAIT_TIME_SHORTEST
+	waitanimation
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
 BattleScript_SnowWarningActivatesSnow::
 	pause B_WAIT_TIME_SHORTEST
 	call BattleScript_AbilityPopUp
+	playanimation BS_BATTLER_0, B_ANIM_SNOW_CONTINUES, gParallelDroughtSunAnimMarker
 	printstring STRINGID_SNOWWARNINGSNOW
-	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_SNOW_CONTINUES
+	waitmessage B_WAIT_TIME_SHORTEST
+	waitanimation
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
