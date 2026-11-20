@@ -66,6 +66,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_ThirstyMan::
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_VendingMachine::
 	lockall
+	setvar VAR_TEMP_1, 0  @ Start at Fresh Water for each new interaction
 	message LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike
 	waitmessage
 	showmoneybox 0, 0
@@ -73,7 +74,20 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_VendingMachine::
 	end
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink::
-	multichoice 16, 0, MULTI_VENDING_MACHINE, FALSE
+	@ Remember the last drink selected while the machine stays open.
+	goto_if_eq VAR_TEMP_1, 1, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseSodaPop
+	goto_if_eq VAR_TEMP_1, 2, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseLemonade
+	multichoicedefault 16, 0, MULTI_VENDING_MACHINE, 0, FALSE
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_HandleDrinkChoice
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseSodaPop::
+	multichoicedefault 16, 0, MULTI_VENDING_MACHINE, 1, FALSE
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_HandleDrinkChoice
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseLemonade::
+	multichoicedefault 16, 0, MULTI_VENDING_MACHINE, 2, FALSE
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_HandleDrinkChoice::
 	copyvar VAR_TEMP_1, VAR_RESULT
 	switch VAR_TEMP_1
 	case 0, LilycoveCity_DepartmentStoreRooftop_EventScript_FreshWater
