@@ -2793,18 +2793,10 @@ void BtlController_HandleBallThrowAnim(u32 battler, u32 target, u32 animId, bool
     HandleBallThrow(battler, target, animId, allowCriticalCapture);
 }
 
-// Local battles may overlap residual SE with the following animation.
-static bool32 CanOverlapBattleSound(void)
-{
-    return !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
-        && !gTestRunnerEnabled;
-}
-
 void BtlController_HandleMoveAnimation(u32 battler, bool32 updateTvData)
 {
-    if ((CanOverlapBattleSound() && !gAnimScriptActive)
-     || (gMultiHitCounter && gBattleScripting.animTurn > 1)
-     || !IsBattleSEPlaying(battler))
+    // Consecutive hits may start while the preceding hit's sound is fading.
+    if ((gMultiHitCounter && gBattleScripting.animTurn > 1) || !IsBattleSEPlaying(battler))
     {
         u16 move = gBattleResources->bufferA[battler][1] | (gBattleResources->bufferA[battler][2] << 8);
 
@@ -2958,8 +2950,7 @@ void BtlController_HandleStatusIconUpdate(u32 battler)
 
 void BtlController_HandleStatusAnimation(u32 battler)
 {
-    if ((CanOverlapBattleSound() && !gAnimScriptActive)
-     || !IsBattleSEPlaying(battler))
+    if (!IsBattleSEPlaying(battler))
     {
         InitAndLaunchChosenStatusAnimation(battler, gBattleResources->bufferA[battler][1],
                         gBattleResources->bufferA[battler][2] | (gBattleResources->bufferA[battler][3] << 8) | (gBattleResources->bufferA[battler][4] << 16) | (gBattleResources->bufferA[battler][5] << 24));
@@ -3267,8 +3258,7 @@ void BtlController_HandleHidePartyStatusSummary(u32 battler)
 
 void BtlController_HandleBattleAnimation(u32 battler, bool32 ignoreSE, bool32 updateTvData)
 {
-    if (ignoreSE || (CanOverlapBattleSound() && !gAnimScriptActive)
-     || !IsBattleSEPlaying(battler))
+    if (ignoreSE || !IsBattleSEPlaying(battler))
     {
         u8 animationId = gBattleResources->bufferA[battler][1];
         u16 argument = gBattleResources->bufferA[battler][2] | (gBattleResources->bufferA[battler][3] << 8);
@@ -3415,14 +3405,9 @@ bool32 SwitchIn_ShowHealthboxUtil(u32 battler)
     }
 
     StartSpriteAnim(&gSprites[gBattlerSpriteIds[battler]], 0);
-    // The opponent's HP bar can already be sliding in alongside shiny effects.
-    if (!gBattleSpritesDataPtr->healthBoxesData[battler].healthboxSlideInStarted)
-    {
-        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetBattlerMon(battler), HEALTHBOX_ALL);
-        StartHealthboxSlideIn(battler);
-        SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
-    }
-    gBattleSpritesDataPtr->healthBoxesData[battler].healthboxSlideInStarted = FALSE;
+    UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetBattlerMon(battler), HEALTHBOX_ALL);
+    StartHealthboxSlideIn(battler);
+    SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
 
     if (side == B_SIDE_OPPONENT)
         CopyBattleSpriteInvisibility(battler);
