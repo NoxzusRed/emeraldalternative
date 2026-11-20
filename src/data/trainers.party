@@ -284,7 +284,11 @@ AI: Check Bad Move
 
 Poochyena
 Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bite
+- Tackle
+- Howl
+- Sand Attack
 
 === TRAINER_MARCEL ===
 Name: MARCEL
@@ -735,11 +739,13 @@ AI: Check Bad Move
 
 Croagunk
 Level: 33
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Atk / 126 SpA
 
 Meditite
 Level: 33
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Atk / 126 SpA
 
 === TRAINER_SHELLY_WEATHER_INSTITUTE ===
 Name: SHELLY
@@ -2269,15 +2275,15 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Mawile
 Level: 33
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 64 Def / 64 SpD
 - Psychic Fangs
 - Poison Fang
 - Crunch
-- Fake Tears
 
 Roserade
 Level: 33
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 12 Atk / 24 Def / 12 SpA / 24 SpD / 12 Spe
 - Mega Drain
 - Magical Leaf
 - Grass Whistle
@@ -2515,6 +2521,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Typhlosion
 Level: 36
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Lava Plume
+- Dig
 
 Roselia
 Level: 36
@@ -2537,6 +2545,8 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Typhlosion
 Level: 40
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+- Lava Plume
+- Dig
 
 Roserade
 Level: 40
@@ -2759,6 +2769,8 @@ Typhlosion
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Lava Plume
+- Dig
 
 Camerupt
 Level: 40
@@ -5787,7 +5799,7 @@ Meditite
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 EVs: 126 HP / 126 SpA
-- Aura Sphere
+- Vacuum Wave
 - Psybeam
 - Detect
 - Calm Mind
@@ -9264,6 +9276,7 @@ AI: Check Bad Move
 Castform
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpA
 - Rain Dance
 - Weather Ball
 - Thunder
@@ -10534,10 +10547,12 @@ AI: Basic Trainer
 Skorupi
 Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 126 Atk / 126 SpA
 
 Croagunk
 Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 252 HP / 126 Atk / 126 SpA
 
 === TRAINER_KAYLEY ===
 Name: KAYLEY
@@ -10551,6 +10566,7 @@ AI: Check Bad Move
 Castform
 Level: 35
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 SpA
 - Sunny Day
 - Weather Ball
 - Flamethrower
@@ -11212,9 +11228,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Wingull
-Level: 13
+Level: 14
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 252 HP
+
+Ponyta
+Level: 14
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP
+- Flame Charge
+- Tail Whip
 
 Snivy
 Level: 15
@@ -11339,9 +11362,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Hoppip
-Level: 13
+Level: 14
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 252 HP / 252 Def / 252 SpD
+
+Wingull
+Level: 14
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP
 
 Fennekin
 Level: 15
@@ -11467,8 +11495,16 @@ Double Battle: No
 AI: Basic Trainer
 
 Ponyta
-Level: 13
+Level: 14
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 126 HP
+- Flame Charge
+- Tail Whip
+
+Hoppip
+Level: 14
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP / 252 Def / 252 SpD
 
 Mudkip
 Level: 15
@@ -11588,7 +11624,13 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Wingull
-Level: 13
+Level: 14
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP
+
+Torkoal
+Level: 14
+Ability: Drought
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 252 HP
 
@@ -11721,9 +11763,14 @@ Double Battle: No
 AI: Basic Trainer
 
 Hoppip
-Level: 13
+Level: 14
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 252 HP / 252 Def / 252 SpD
+
+Wingull
+Level: 14
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP
 
 Fennekin
 Level: 15
@@ -11849,10 +11896,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Torkoal
-Level: 13
+Level: 14
 Ability: Drought
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 EVs: 252 HP
+
+Hoppip
+Level: 14
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 252 HP / 252 Def / 252 SpD
 
 Mudkip
 Level: 15
@@ -12982,6 +13034,8 @@ Typhlosion
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Lava Plume
+- Dig
 
 Mightyena
 Level: 38
@@ -13053,6 +13107,8 @@ Typhlosion
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Lava Plume
+- Dig
 
 === TRAINER_GRUNT_SPACE_CENTER_7 ===
 Name: GRUNT
@@ -13555,16 +13611,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Scatterbug
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 8
+IVs: 0 HP / 6 Atk / 0 Def / 0 SpA / 0 SpD / 6 Spe
 
-Scatterbug
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Spinarak
+Level: 8
+IVs: 0 HP / 6 Atk / 0 Def / 0 SpA / 0 SpD / 6 Spe
 
-Scatterbug
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Surskit
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 6 SpA / 0 SpD / 6 Spe
 
 === TRAINER_JOSE ===
 Name: JOSE
@@ -15279,6 +15335,8 @@ Typhlosion
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Lava Plume
+- Dig
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_7 ===
 Name: GRUNT
@@ -15442,6 +15500,8 @@ Typhlosion
 Level: 37
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA
+- Lava Plume
+- Dig
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_16 ===
 Name: GRUNT
@@ -15519,6 +15579,8 @@ Typhlosion
 Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP
+- Lava Plume
+- Dig
 
 === TRAINER_MAXIE_MOSSDEEP ===
 Name: MAXIE
@@ -19141,6 +19203,9 @@ EVs: 126 HP
 Murkrow
 Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Gust
+- Astonish
+- Haze
 
 === TRAINER_HEX_MANIAC_ROUTE111_EAST ===
 Name: ALMA
@@ -20085,13 +20150,14 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Coalossal
-Level: 45
-IVs: 31 HP / 31 Atk / 24 Def / 31 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 64 Atk / 64 SpA
-- Rock Slide
-- Heat Wave
-- Smokescreen
+Houndoom @ Leftovers
+Level: 47
+Ability: Solar Power
+IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 126 Spe / 252 Def / 252 SpD
+- Flamethrower
+- Dark Pulse
+- Shadow Ball
 - Sunny Day
 
 Typhlosion
@@ -20102,14 +20168,13 @@ EVs: 252 HP / 126 Def / 126 SpD / 64 Spe
 - Earthquake
 - Sunny Day
 
-Houndoom
-Level: 47
-Ability: Solar Power
-IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 Spe / 252 Def / 252 SpD
-- Flamethrower
-- Dark Pulse
-- Shadow Ball
+Coalossal @ Passho Berry
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 64 Atk / 64 SpA
+- Rock Slide
+- Heat Wave
+- Smokescreen
 - Sunny Day
 
 === TRAINER_ARCHIE_MT_PYRE ===
