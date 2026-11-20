@@ -134,12 +134,16 @@ static void WallyBufferRunCommand(u32 battler)
     }
 }
 
+// Keep the scripted selection pauses independent of battle text timing.
+// 90 frames at 60 FPS = 1.5 seconds.
+#define WALLY_ACTION_DELAY_FRAMES 90
+
 static void WallyHandleActions(u32 battler)
 {
     switch (gBattleStruct->wallyBattleState)
     {
     case 0:
-        gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
+        gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY_FRAMES;
         gBattleStruct->wallyBattleState++;
     case 1:
         if (--gBattleStruct->wallyWaitFrames == 0)
@@ -149,7 +153,7 @@ static void WallyHandleActions(u32 battler)
             WallyBufferExecCompleted(battler);
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
-            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
+            gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY_FRAMES;
         }
         break;
     case 2:
@@ -160,7 +164,7 @@ static void WallyHandleActions(u32 battler)
             WallyBufferExecCompleted(battler);
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
-            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
+            gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY_FRAMES;
         }
         break;
     case 3:
@@ -170,7 +174,7 @@ static void WallyHandleActions(u32 battler)
             WallyBufferExecCompleted(battler);
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
-            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
+            gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY_FRAMES;
         }
         break;
     case 4:
@@ -179,7 +183,7 @@ static void WallyHandleActions(u32 battler)
             PlaySE(SE_SELECT);
             ActionSelectionDestroyCursorAt(0);
             ActionSelectionCreateCursorAt(1, 0);
-            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
+            gBattleStruct->wallyWaitFrames = WALLY_ACTION_DELAY_FRAMES;
             gBattleStruct->wallyBattleState++;
         }
         break;
