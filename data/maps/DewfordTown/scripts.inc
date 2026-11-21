@@ -129,8 +129,18 @@ DewfordTown_EventScript_SailToPetalburg::
 DewfordTown_EventScript_ArriveInPetalburg::
 	showobjectat LOCALID_PLAYER, MAP_ROUTE104
 	call Common_EventScript_StopBrineysBoatMusic
+	@ On the combined Slateport trip, the player may already be one tile
+	@ nearer the dock. Do not reuse all three steps from Dewford's landing.
+	goto_if_eq VAR_BOARD_BRINEY_BOAT_STATE, 4, DewfordTown_EventScript_ExitBoatFromSlateport
 	applymovement LOCALID_PLAYER, DewfordTown_Movement_ExitBoatPetalburg
 	waitmovement 0
+	goto DewfordTown_EventScript_FinishPetalburgArrival
+
+DewfordTown_EventScript_ExitBoatFromSlateport::
+	applymovement LOCALID_PLAYER, DewfordTown_Movement_ExitBoatPetalburgFromSlateport
+	waitmovement 0
+
+DewfordTown_EventScript_FinishPetalburgArrival::
 	showobjectat LOCALID_PLAYER, MAP_ROUTE104
 	@ Finish the visible landing before removing the moving boat.
 	@ fadescreen waits until the fade has completed.
@@ -573,6 +583,13 @@ DewfordTown_Movement_PlayerBoardBoat:
 
 DewfordTown_Movement_ExitBoatPetalburg:
 	walk_up
+	walk_up
+	walk_up
+	step_end
+
+@ Slateport's boarding can place the player one tile ahead of the
+@ position used by a departure directly from Dewford.
+DewfordTown_Movement_ExitBoatPetalburgFromSlateport:
 	walk_up
 	walk_up
 	step_end
