@@ -564,3 +564,6 @@ gSpecials::
 	def_special UseBlankMessageToCancelPokemonPic
 	def_special EnterCode
 	def_special GetCodeFeedback
+	def_special HyperTraining_CheckMon
+	def_special HyperTraining_CanTrainStat
+	def_special HyperTraining_ApplyCap
