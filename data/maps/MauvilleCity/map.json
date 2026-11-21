@@ -355,6 +355,13 @@
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_TMSHOP",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_HYPER_TRAINING_CENTER",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],
