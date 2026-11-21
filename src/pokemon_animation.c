@@ -673,6 +673,60 @@ static void ResetSpriteAfterAnim(struct Sprite *sprite)
 #endif // BUGFIX
 }
 
+// Finish an unfinished battler intro animation before a move changes the
+// same sprite or OAM matrix. Changing only the callback is not enough:
+// Task_HandleMonAnimation would continue updating the sprite afterward.
+void StopMonSpriteAnimation(struct Sprite *sprite)
+{
+    u32 taskId;
+    bool32 wasAnimating = FALSE;
+
+    for (taskId = 0; taskId < NUM_TASKS; taskId++)
+    {
+        struct Sprite *taskSprite;
+
+        if (!gTasks[taskId].isActive
+         || gTasks[taskId].func != Task_HandleMonAnimation)
+            continue;
+
+        // The animation task stores its sprite pointer in data[1..2].
+        // Use unsigned halves, as done by ANIM_SPRITE inside that task.
+        taskSprite = (struct Sprite *)(((u32)(u16)gTasks[taskId].data[1] << 16)
+                                      | (u16)gTasks[taskId].data[2]);
+        if (taskSprite != sprite)
+            continue;
+
+        // Task_HandleMonAnimation temporarily overwrites the sprite's data.
+        if (gTasks[taskId].data[0] != 0)
+        {
+            sprite->data[0] = gTasks[taskId].data[4];
+            sprite->data[2] = gTasks[taskId].data[5];
+        }
+
+        DestroyTask(taskId);
+        wasAnimating = TRUE;
+    }
+
+    if (!wasAnimating)
+        return;
+
+    // Remove any pending offset, scaling or rotation before the attack.
+    SetAffineData(sprite, 256, 256, 0);
+    ResetSpriteAfterAnim(sprite);
+    sprite->affineAnims = IsOnPlayerSide(sprite->data[0])
+                        ? gAffineAnims_BattleSpritePlayerSide
+                        : gAffineAnims_BattleSpriteOpponentSide;
+    sprite->x2 = 0;
+    sprite->y2 = 0;
+    sprite->data[1] = 0;
+    sprite->animPaused = FALSE;
+    sprite->affineAnimPaused = FALSE;
+    StartSpriteAffineAnim(sprite, BATTLER_AFFINE_NORMAL);
+    StartSpriteAnim(sprite, 0);
+    BlendPalette(OBJ_PLTT_ID(sprite->oam.paletteNum), 16, 0, RGB_BLACK);
+    sprite->callback = SpriteCallbackDummy;
+}
+
 static void Anim_CircularStretchTwice(struct Sprite *sprite)
 {
     if (sprite->data[2] == 0)
