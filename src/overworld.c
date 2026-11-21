@@ -739,6 +739,20 @@ void UpdateEscapeWarp(s16 x, s16 y)
 {
     u8 currMapType = GetCurrentMapType();
     u8 destMapType = GetMapTypeByGroupAndId(sWarpDestination.mapGroup, sWarpDestination.mapNum);
+
+    // Mt. Chimney is also reachable from inside Magma Hideout.
+    // Returning to the hideout via this passage should not set Mt. Chimney
+    // as the Escape Rope / Dig exit. Use the actual entrance on Jagged Pass.
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MT_CHIMNEY)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MT_CHIMNEY)
+     && sWarpDestination.mapGroup == MAP_GROUP(MAP_MAGMA_HIDEOUT_STAIRS)
+     && sWarpDestination.mapNum == MAP_NUM(MAP_MAGMA_HIDEOUT_STAIRS))
+    {
+        // Jagged Pass's hideout door is at (16, 18); exit one tile below it.
+        SetEscapeWarp(MAP_GROUP(MAP_JAGGED_PASS), MAP_NUM(MAP_JAGGED_PASS), WARP_ID_NONE, 16, 19);
+        return;
+    }
+
     if (IsMapTypeOutdoors(currMapType) && IsMapTypeOutdoors(destMapType) != TRUE)
         SetEscapeWarp(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET + 1);
 }
