@@ -26,15 +26,21 @@ SlateportCity_Harbor_EventScript_EndEnableRegionalFerry::
     return
 
 SlateportCity_Harbor_EventScript_ShowSSTidal::
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL
-	return
+    @ Even in postgame, keep the ferry out of the submarine theft scene.
+    goto_if_eq VAR_SLATEPORT_HARBOR_STATE, 1, SlateportCity_Harbor_EventScript_EndShowSSTidal
+    clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL
+
+SlateportCity_Harbor_EventScript_EndShowSSTidal::
+    return
 
 SlateportCity_Harbor_EventScript_ReadyAquaEscapeScene::
-	savebgm MUS_ENCOUNTER_AQUA
-	setobjectxyperm LOCALID_SLATEPORT_HARBOR_CAPT_STERN, 12, 13
-	setobjectmovementtype LOCALID_SLATEPORT_HARBOR_CAPT_STERN, MOVEMENT_TYPE_FACE_LEFT
-	setflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
-	return
+    savebgm MUS_ENCOUNTER_AQUA
+    setobjectxyperm LOCALID_SLATEPORT_HARBOR_CAPT_STERN, 12, 13
+    setobjectmovementtype LOCALID_SLATEPORT_HARBOR_CAPT_STERN, MOVEMENT_TYPE_FACE_LEFT
+    setflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
+    @ Hide a previously visible S.S. Tidal before Aqua's event objects load.
+    setflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL
+    return
 
 SlateportCity_Harbor_EventScript_AquaEscapeTrigger0::
 	lockall
