@@ -209,6 +209,7 @@ EWRAM_DATA u16 gIntroSlideFlags = 0;
 EWRAM_DATA static u16 sDirectWildIntroWaitFrames = 0;
 // Entry animation startup must not depend on the sprite callback finishing.
 EWRAM_DATA static u8 sDirectWildIntroAnimStarted = 0;
+EWRAM_DATA static bool8 sDirectWildIntroVisualsPending = FALSE;
 EWRAM_DATA u8 gSentPokesToOpponent[2] = {0};
 EWRAM_DATA struct BattleEnigmaBerry gEnigmaBerries[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct BattleScripting gBattleScripting = {0};
@@ -3151,6 +3152,7 @@ static void BattleStartClearSetData(void)
 
     gPauseCounterBattle = 0;
     gIntroSlideFlags = 0;
+    sDirectWildIntroVisualsPending = FALSE;
     gLeveledUpInBattle = 0;
     gAbsentBattlerFlags = 0;
     gBattleStruct->runTries = 0;
@@ -3909,6 +3911,7 @@ static void DoBattleIntro(void)
 
             sDirectWildIntroWaitFrames = 0;
             sDirectWildIntroAnimStarted = 0;
+            sDirectWildIntroVisualsPending = TRUE;
             gBattleStruct->introState =
                 BATTLE_INTRO_STATE_WILD_WAIT_SPRITES;
         }
@@ -5831,6 +5834,23 @@ static void CheckChangingTurnOrderEffects(void)
 
 static void RunTurnActionsFunctions(void)
 {
+    // The fast wild intro permits choosing an action while entrance
+    // animations are running. Safely stop any that remain before the
+    // first action so move animations cannot deform the same sprites.
+    // Never touch later turn animations.
+    if (sDirectWildIntroVisualsPending)
+    {
+        u32 battler;
+
+        sDirectWildIntroVisualsPending = FALSE;
+        for (battler = 0; battler < gBattlersCount; battler++)
+        {
+            if ((sDirectWildIntroAnimStarted & (1u << battler))
+             && DirectWildIntroHasSprite(battler))
+                StopMonSpriteAnimation(&gSprites[gBattlerSpriteIds[battler]]);
+        }
+    }
+
     if (gBattleOutcome != 0)
         gCurrentActionFuncId = B_ACTION_FINISHED;
 
