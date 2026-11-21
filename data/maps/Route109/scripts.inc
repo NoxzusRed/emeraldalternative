@@ -144,10 +144,6 @@ Route109_EventScript_ContinueToPetalburg::
 	hideobjectat LOCALID_ROUTE109_BOAT, MAP_ROUTE109
 	clearflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
 	addobject LOCALID_DEWFORD_BOAT
-	@ Route 109 leaves the player one tile north of the boat, but Dewford's
-	@ Petalburg trip expects the player one tile east of it. Align while hidden.
-	applymovement LOCALID_PLAYER, Route109_Movement_AlignPlayerForPetalburg
-	waitmovement 0
 	@ The incoming ship finishes facing south. Turn the replacement ship
 	@ north before the onward leg starts, so it never sails backwards.
 	applymovement LOCALID_DEWFORD_BOAT, Common_Movement_WalkInPlaceFasterUp
@@ -158,13 +154,6 @@ Route109_EventScript_ContinueToPetalburg::
 	waitmovement 0
 	setvar VAR_BOARD_BRINEY_BOAT_STATE, 0
 	goto DewfordTown_EventScript_ArriveInPetalburg
-
-@ Both legs share the same boat position; only the invisible player's
-@ relative position needs changing before sailing north from Dewford.
-Route109_Movement_AlignPlayerForPetalburg:
-	walk_faster_right
-	walk_faster_down
-	step_end
 
 Route109_Movement_SailToDewford:
 	walk_in_place_faster_down
