@@ -807,6 +807,24 @@ static const struct MenuAction MultichoiceList_FerryServiceType[] =
     {COMPOUND_STRING("CANCEL")},
 };
 
+static const struct MenuAction MultichoiceList_HyperTrainingCaps[] =
+{
+    {COMPOUND_STRING("BOTTLE CAP")},
+    {COMPOUND_STRING("GOLD BOTTLE CAP")},
+    {gText_Cancel2},
+};
+
+static const struct MenuAction MultichoiceList_HyperTrainingStats[] =
+{
+    {COMPOUND_STRING("HP")},
+    {COMPOUND_STRING("ATTACK")},
+    {COMPOUND_STRING("DEFENSE")},
+    {COMPOUND_STRING("SP. ATK")},
+    {COMPOUND_STRING("SP. DEF")},
+    {COMPOUND_STRING("SPEED")},
+    {gText_Cancel2},
+};
+
 struct MultichoiceListStruct
 {
     const struct MenuAction *list;
@@ -934,6 +952,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_REGIONAL_FERRY_LILYCOVE] = MULTICHOICE(MultichoiceList_RegionalFerryLilycove),
     [MULTI_REGIONAL_FERRY_MOSSDEEP] = MULTICHOICE(MultichoiceList_RegionalFerryMossdeep),
 	[MULTI_FERRY_SERVICE_TYPE] = MULTICHOICE(MultichoiceList_FerryServiceType),
+    [MULTI_HYPER_TRAINING_CAPS] = MULTICHOICE(MultichoiceList_HyperTrainingCaps),
+    [MULTI_HYPER_TRAINING_STATS] = MULTICHOICE(MultichoiceList_HyperTrainingStats),
 };
 
 const u8 *const gStdStrings[] =
