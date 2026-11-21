@@ -36,5 +36,8 @@ void PreparePartyForSkyBattle(void);
 void GetObjectPosition(u16*, u16*, u32, u32);
 bool32 CheckObjectAtXY(u32, u32);
 bool32 CheckPartyHasSpecies(u32);
+u16 HyperTraining_CheckMon(void);
+u16 HyperTraining_CanTrainStat(void);
+u16 HyperTraining_ApplyCap(void);
 
 #endif // GUARD_FIELD_SPECIALS_H
