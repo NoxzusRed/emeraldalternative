@@ -186,7 +186,7 @@ MauvilleCity_EventScript_ScottApproachPlayerNorth::
 	return
 
 MauvilleCity_EventScript_ScottApproachPlayerEast::
-	setobjectxyperm LOCALID_MAUVILLE_SCOTT, 12, 13
+	setobjectxyperm LOCALID_MAUVILLE_SCOTT, 12, 23
 	addobject LOCALID_MAUVILLE_SCOTT
 	applymovement LOCALID_MAUVILLE_SCOTT, MauvilleCity_Movement_ScottApproachPlayerEast
 	waitmovement 0
@@ -482,6 +482,37 @@ MauvilleCity_EventScript_Magneton::
 	waitmoncry
 	release
     end
+
+MauvilleCity_EventScript_Crobat::
+	lock
+	playmoncry SPECIES_CROBAT, CRY_MODE_NORMAL
+    msgbox MauvilleCity_Text_Crobat, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+MauvilleCity_EventScript_CrobatTrainer::
+	msgbox MauvilleCity_Text_CrobatTrainer, MSGBOX_NPC
+	end
+
+MauvilleCity_EventScript_Parasect::
+	lock
+	playmoncry SPECIES_PARASECT, CRY_MODE_NORMAL
+    msgbox MauvilleCity_Text_Parasect, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+MauvilleCity_Text_Parasect:
+	.string "Pa-ra... sekt...$"
+
+MauvilleCity_Text_CrobatTrainer:
+	.string "Bring all your Bottle Caps. You can\n"
+	.string "spend them on Hyper Training at the new\l"
+	.string "Hyper Training Center.$"
+
+MauvilleCity_Text_Crobat:
+	.string "Skreee-whish!$"
 
 MauvilleCity_Text_Magneton:
 	.string "Zzz-ton-ton!$"
