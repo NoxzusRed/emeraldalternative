@@ -901,7 +901,7 @@ const struct Item gItemsInfo[] =
     [ITEM_REVIVAL_HERB] =
     {
         .name = _("Revival Herb"),
-        .price = 2800,
+        .price = 1400,
         .description = COMPOUND_STRING(
             "A very bitter herb\n"
             "that revives a\n"

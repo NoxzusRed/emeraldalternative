@@ -145,8 +145,8 @@
     {
       "local_id": "LOCALID_ROUTE106_POPPLIO_2",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(POPPLIO)",
-      "x": 21,
-      "y": 9,
+      "x": 20,
+      "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 1,
@@ -187,7 +187,7 @@
     {
       "local_id": "LOCALID_ROUTE106_POPPLIO_3",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(POPPLIO)",
-      "x": 17,
+      "x": 16,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
