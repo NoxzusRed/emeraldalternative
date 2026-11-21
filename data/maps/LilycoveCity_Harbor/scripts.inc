@@ -620,7 +620,19 @@ LilycoveCity_Harbor_EventScript_RegionalFerrySlateport::
     waitse
     closemessage
 
+    @ During Stern's interview or Team Aqua's submarine theft, arrive
+    @ outside the Pokemon Center instead of the crowded harbor.
+    goto_if_eq VAR_SLATEPORT_CITY_STATE, 1, LilycoveCity_Harbor_EventScript_RegionalFerrySlateportPokemonCenter
+    goto_if_eq VAR_SLATEPORT_HARBOR_STATE, 1, LilycoveCity_Harbor_EventScript_RegionalFerrySlateportPokemonCenter
+
     warp MAP_SLATEPORT_CITY, 30, 13
+    waitstate
+    release
+    end
+
+LilycoveCity_Harbor_EventScript_RegionalFerrySlateportPokemonCenter::
+    @ The door is at (21, 19); arrive on the tile in front of it.
+    warp MAP_SLATEPORT_CITY, 21, 20
     waitstate
     release
     end
