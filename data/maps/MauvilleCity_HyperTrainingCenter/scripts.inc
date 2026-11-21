@@ -101,9 +101,9 @@ MauvilleCity_HyperTrainingCenter_EventScript_Exit::
 MauvilleCity_HyperTrainingCenter_Text_Intro:
 	.string "Welcome to HYPER TRAINING!\p"
 	.string "A BOTTLE CAP maximizes one stat's\l"
-	.string "effective IV. A GOLD BOTTLE CAP\l"
+	.string "IV to 31. A GOLD BOTTLE CAP\l"
 	.string "maximizes all six!\p"
-	.string "Original IVs stay unchanged.\p"
+	.string "The IVs are permanently raised.\p"
 	.string "Would you like to train?$"
 
 MauvilleCity_HyperTrainingCenter_Text_NoCaps:
@@ -120,7 +120,7 @@ MauvilleCity_HyperTrainingCenter_Text_Egg:
 
 MauvilleCity_HyperTrainingCenter_Text_MonPerfect:
 	.string "{STR_VAR_1} already has perfect\l"
-	.string "effective IVs! No CAP is needed.$"
+	.string "IVs! No CAP is needed.$"
 
 MauvilleCity_HyperTrainingCenter_Text_ChooseCap:
 	.string "Which type of BOTTLE CAP\l"
@@ -135,7 +135,7 @@ MauvilleCity_HyperTrainingCenter_Text_ChooseStat:
 
 MauvilleCity_HyperTrainingCenter_Text_StatPerfect:
 	.string "{STR_VAR_1}'s {STR_VAR_2} is already\l"
-	.string "at its maximum effective IV.$"
+	.string "already at 31 IV.$"
 
 MauvilleCity_HyperTrainingCenter_Text_ConfirmStat:
 	.string "Use one BOTTLE CAP to maximize\l"
@@ -147,11 +147,11 @@ MauvilleCity_HyperTrainingCenter_Text_ConfirmGold:
 
 MauvilleCity_HyperTrainingCenter_Text_TrainedStat:
 	.string "Excellent! {STR_VAR_1}'s {STR_VAR_2}\l"
-	.string "now has an effective IV of 31!$"
+	.string "now has an IV of 31!$"
 
 MauvilleCity_HyperTrainingCenter_Text_TrainedAll:
 	.string "Excellent! All of {STR_VAR_1}'s\l"
-	.string "effective IVs are now 31!$"
+	.string "IVs are now 31!$"
 
 MauvilleCity_HyperTrainingCenter_Text_AskAgain:
 	.string "Would you like to train another\l"

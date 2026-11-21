@@ -4421,7 +4421,7 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 0;
 }
 
-// Bottle Caps activate the pre-existing Hyper Trained flags, preserving original IVs.
+// Bottle Caps now set actual IVs to 31 as well as recording Hyper Training flags.
 static const u16 sHyperTrainingIVFields[NUM_STATS] =
 {
     MON_DATA_HP_IV,
@@ -4474,6 +4474,29 @@ static bool8 HyperTrainingMonHasImprovableStat(struct Pokemon *mon)
     return FALSE;
 }
 
+
+// Bring previously Hyper Trained Pokemon up to date without spending another Cap.
+// Older builds only set the Hyper Training flags, leaving the stored IVs unchanged.
+static void HyperTrainingSyncTrainedIVs(struct Pokemon *mon)
+{
+    u8 stat;
+    u8 maxIV = MAX_PER_STAT_IVS;
+    bool8 updated = FALSE;
+
+    for (stat = 0; stat < NUM_STATS; stat++)
+    {
+        if (GetMonData(mon, sHyperTrainingFlagFields[stat])
+         && GetMonData(mon, sHyperTrainingIVFields[stat]) < MAX_PER_STAT_IVS)
+        {
+            SetMonData(mon, sHyperTrainingIVFields[stat], &maxIV);
+            updated = TRUE;
+        }
+    }
+
+    if (updated)
+        CalculateMonStats(mon);
+}
+
 // 0: eligible; 1: egg; 2: already perfect; 3: invalid party slot.
 u16 HyperTraining_CheckMon(void)
 {
@@ -4483,6 +4506,7 @@ u16 HyperTraining_CheckMon(void)
     mon = &gPlayerParty[gSpecialVar_0x8004];
     if (GetMonData(mon, MON_DATA_IS_EGG))
         return 1;
+    HyperTrainingSyncTrainedIVs(mon);
     GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
     if (!HyperTrainingMonHasImprovableStat(mon))
         return 2;
@@ -4514,6 +4538,7 @@ u16 HyperTraining_ApplyCap(void)
     struct Pokemon *mon;
     u8 stat;
     u8 trained = TRUE;
+    u8 maxIV = MAX_PER_STAT_IVS;
 
     if (partyId >= CalculatePlayerPartyCount() || capType > 1)
         return 3;
@@ -4541,13 +4566,19 @@ u16 HyperTraining_ApplyCap(void)
 
     if (capType == 0)
     {
+        SetMonData(mon, sHyperTrainingIVFields[selectedStat], &maxIV);
         SetMonData(mon, sHyperTrainingFlagFields[selectedStat], &trained);
     }
     else
     {
         for (stat = 0; stat < NUM_STATS; stat++)
+        {
             if (!HyperTrainingStatIsPerfect(mon, stat))
+            {
+                SetMonData(mon, sHyperTrainingIVFields[stat], &maxIV);
                 SetMonData(mon, sHyperTrainingFlagFields[stat], &trained);
+            }
+        }
     }
 
     CalculateMonStats(mon);
