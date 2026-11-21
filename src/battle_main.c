@@ -210,6 +210,8 @@ EWRAM_DATA static u16 sDirectWildIntroWaitFrames = 0;
 // Entry animation startup must not depend on the sprite callback finishing.
 EWRAM_DATA static u8 sDirectWildIntroAnimStarted = 0;
 EWRAM_DATA static bool8 sDirectWildIntroVisualsPending = FALSE;
+// Limit waits for direct wild intro animations before starting weather visuals.
+EWRAM_DATA static u16 sDirectWildIntroWeatherWaitFrames = 0;
 EWRAM_DATA u8 gSentPokesToOpponent[2] = {0};
 EWRAM_DATA struct BattleEnigmaBerry gEnigmaBerries[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct BattleScripting gBattleScripting = {0};
@@ -3153,6 +3155,7 @@ static void BattleStartClearSetData(void)
     gPauseCounterBattle = 0;
     gIntroSlideFlags = 0;
     sDirectWildIntroVisualsPending = FALSE;
+    sDirectWildIntroWeatherWaitFrames = 0;
     gLeveledUpInBattle = 0;
     gAbsentBattlerFlags = 0;
     gBattleStruct->runTries = 0;
@@ -4251,6 +4254,26 @@ case BATTLE_INTRO_STATE_WILD_WAIT_SPRITES:
     }
 }
 
+// Wild intro sprites can still be animating after their HP bars appear.
+// Do not start weather visuals while those animation tasks are active.
+static bool8 IsDirectWildIntroAnimationRunning(void)
+{
+    u32 battler;
+
+    if (FuncIsActiveTask(Task_DirectWildIntroEffects))
+        return TRUE;
+
+    for (battler = 0; battler < gBattlersCount; battler++)
+    {
+        if ((sDirectWildIntroAnimStarted & (1u << battler))
+         && DirectWildIntroHasSprite(battler)
+         && gSprites[gBattlerSpriteIds[battler]].callback != SpriteCallbackDummy)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
 static void TryDoEventsBeforeFirstTurn(void)
 {
     s32 i, j;
@@ -4303,6 +4326,24 @@ static void TryDoEventsBeforeFirstTurn(void)
         gBattleStruct->eventsBeforeFirstTurnState++;
         break;
     case FIRST_TURN_EVENTS_OVERWORLD_WEATHER:
+        // Keep entry animations and shiny effects separate from weather
+        // graphics. The encounter remains fast; only the weather notice waits.
+        if (sDirectWildIntroVisualsPending && IsDirectWildIntroAnimationRunning())
+        {
+            if (++sDirectWildIntroWeatherWaitFrames < 240)
+                return;
+
+            // A broken animation must not stall the battle indefinitely.
+            // Reset any still-running sprite transforms before weather starts.
+            for (i = 0; i < gBattlersCount; i++)
+            {
+                if ((sDirectWildIntroAnimStarted & (1u << i))
+                 && DirectWildIntroHasSprite(i))
+                    StopMonSpriteAnimation(&gSprites[gBattlerSpriteIds[i]]);
+            }
+        }
+        sDirectWildIntroWeatherWaitFrames = 0;
+
         if (!gBattleStruct->overworldWeatherDone
          && AbilityBattleEffects(ABILITYEFFECT_SWITCH_IN_WEATHER, 0, 0, ABILITYEFFECT_SWITCH_IN_WEATHER, 0) != 0)
         {
