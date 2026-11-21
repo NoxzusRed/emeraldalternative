@@ -4790,6 +4790,16 @@
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/Route123_North/border.bin",
       "blockdata_filepath": "data/layouts/Route123_North/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_HYPER_TRAINING_CENTER",
+      "name": "MauvilleCity_HyperTrainingCenter_Layout",
+      "width": 15,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFrontier",
+      "border_filepath": "data/layouts/MauvilleCity_HyperTrainingCenter/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_HyperTrainingCenter/map.bin"
     }
   ]
 }

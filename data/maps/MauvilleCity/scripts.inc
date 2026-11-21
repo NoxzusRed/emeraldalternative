@@ -503,6 +503,94 @@ MauvilleCity_EventScript_Parasect::
 	release
     end
 
+MauvilleCity_EventScript_Donphan::
+	lock
+	playmoncry SPECIES_DONPHAN, CRY_MODE_NORMAL
+    msgbox MauvilleCity_Text_Donphan, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
+MauvilleCity_EventScript_BottleCapGentleman::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_GENTLEMAN_MAUVILLE_BOTTLE_CAP, MauvilleCity_EventScript_BottleCapGentlemanDefeated
+	msgbox MauvilleCity_Text_BottleCapGentlemanChallenge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, MauvilleCity_EventScript_BottleCapGentlemanBattle
+	msgbox MauvilleCity_Text_BottleCapGentlemanDecline, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_EventScript_BottleCapGentlemanBattle::
+	msgbox MauvilleCity_Text_BottleCapGentlemanReady, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_GENTLEMAN_MAUVILLE_BOTTLE_CAP, MauvilleCity_Text_BottleCapGentlemanDefeat
+	msgbox MauvilleCity_Text_BottleCapGentlemanReward, MSGBOX_DEFAULT
+	goto MauvilleCity_EventScript_BottleCapGentlemanGiveReward
+	end
+
+MauvilleCity_EventScript_BottleCapGentlemanDefeated::
+	goto_if_unset FLAG_RECEIVED_MAUVILLE_GENTLEMAN_BOTTLE_CAP, MauvilleCity_EventScript_BottleCapGentlemanUnclaimed
+	msgbox MauvilleCity_Text_BottleCapGentlemanPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_EventScript_BottleCapGentlemanUnclaimed::
+	msgbox MauvilleCity_Text_BottleCapGentlemanUnclaimed, MSGBOX_DEFAULT
+	goto MauvilleCity_EventScript_BottleCapGentlemanGiveReward
+	end
+
+MauvilleCity_EventScript_BottleCapGentlemanGiveReward::
+	giveitem ITEM_BOTTLE_CAP
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_EventScript_BottleCapGentlemanBagFull
+	setflag FLAG_RECEIVED_MAUVILLE_GENTLEMAN_BOTTLE_CAP
+	msgbox MauvilleCity_Text_BottleCapGentlemanPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_EventScript_BottleCapGentlemanBagFull::
+	msgbox MauvilleCity_Text_BottleCapGentlemanBagFull, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_Text_BottleCapGentlemanChallenge:
+	.string "Good day!\p"
+	.string "You just happened to cross paths with\n"
+	.string "the owner of the Hyper Training Center!\p"
+	.string "If you manage to defeat me in a\n"
+	.string "Pokémon battle, I will reward you with a\l"
+	.string "Bottle Cap.\p"
+	.string "Care to accept my challenge?$"
+
+MauvilleCity_Text_BottleCapGentlemanDecline:
+	.string "Of course. I'll be here if you\n"
+	.string "change your mind.$"
+
+MauvilleCity_Text_BottleCapGentlemanReady:
+	.string "Marvelous! Let us begin.$"
+
+MauvilleCity_Text_BottleCapGentlemanDefeat:
+	.string "A splendid performance, indeed!$"
+
+MauvilleCity_Text_BottleCapGentlemanReward:
+	.string "A gentleman keeps his word.\n"
+	.string "Here is your BOTTLE CAP!$"
+
+MauvilleCity_Text_BottleCapGentlemanUnclaimed:
+	.string "I haven't forgotten your victory!\n"
+	.string "Please take your BOTTLE CAP.$"
+
+MauvilleCity_Text_BottleCapGentlemanBagFull:
+	.string "Your BAG seems full.\n"
+	.string "Make some room and return for\l"
+	.string "your prize. I'll keep it safe.$"
+
+MauvilleCity_Text_BottleCapGentlemanPostBattle:
+	.string "That was a splendid match!\n"
+	.string "I have no more challenges for you.$"
+
+MauvilleCity_Text_Donphan:
+	.string "Prrruuu-thud!$"
+
 MauvilleCity_Text_Parasect:
 	.string "Pa-ra... sekt...$"
 
@@ -730,78 +818,3 @@ MauvilleCity_Text_BeenCheckingOutTV:
 MauvilleCity_Text_NewTMShop:
 	.string "Did you see the new TM shop?\n"
 	.string "They brought TMs from other regions!$"
-
-@ Optional one-time battle for a Bottle Cap. An unclaimed prize can be retrieved later.
-MauvilleCity_EventScript_BottleCapGentleman::
-	lock
-	faceplayer
-	goto_if_defeated TRAINER_GENTLEMAN_MAUVILLE_BOTTLE_CAP, MauvilleCity_EventScript_BottleCapGentlemanDefeated
-	msgbox MauvilleCity_Text_BottleCapGentlemanChallenge, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, MauvilleCity_EventScript_BottleCapGentlemanBattle
-	msgbox MauvilleCity_Text_BottleCapGentlemanDecline, MSGBOX_DEFAULT
-	release
-	end
-
-MauvilleCity_EventScript_BottleCapGentlemanBattle::
-	msgbox MauvilleCity_Text_BottleCapGentlemanReady, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GENTLEMAN_MAUVILLE_BOTTLE_CAP, MauvilleCity_Text_BottleCapGentlemanDefeat
-	msgbox MauvilleCity_Text_BottleCapGentlemanReward, MSGBOX_DEFAULT
-	goto MauvilleCity_EventScript_BottleCapGentlemanGiveReward
-	end
-
-MauvilleCity_EventScript_BottleCapGentlemanDefeated::
-	goto_if_unset FLAG_RECEIVED_MAUVILLE_GENTLEMAN_BOTTLE_CAP, MauvilleCity_EventScript_BottleCapGentlemanUnclaimed
-	msgbox MauvilleCity_Text_BottleCapGentlemanPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-MauvilleCity_EventScript_BottleCapGentlemanUnclaimed::
-	msgbox MauvilleCity_Text_BottleCapGentlemanUnclaimed, MSGBOX_DEFAULT
-	goto MauvilleCity_EventScript_BottleCapGentlemanGiveReward
-	end
-
-MauvilleCity_EventScript_BottleCapGentlemanGiveReward::
-	giveitem ITEM_BOTTLE_CAP
-	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_EventScript_BottleCapGentlemanBagFull
-	setflag FLAG_RECEIVED_MAUVILLE_GENTLEMAN_BOTTLE_CAP
-	msgbox MauvilleCity_Text_BottleCapGentlemanPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-MauvilleCity_EventScript_BottleCapGentlemanBagFull::
-	msgbox MauvilleCity_Text_BottleCapGentlemanBagFull, MSGBOX_DEFAULT
-	release
-	end
-
-MauvilleCity_Text_BottleCapGentlemanChallenge:
-	.string "Good day! I collect rare treasures.\p"
-	.string "Defeat me in a POKéMON battle and\l"
-	.string "I'll give you a BOTTLE CAP.\p"
-	.string "Care to accept my challenge?$"
-
-MauvilleCity_Text_BottleCapGentlemanDecline:
-	.string "Of course. I'll be here if you\l"
-	.string "change your mind.$"
-
-MauvilleCity_Text_BottleCapGentlemanReady:
-	.string "Marvelous! Let us begin.$"
-
-MauvilleCity_Text_BottleCapGentlemanDefeat:
-	.string "A splendid performance, indeed!$"
-
-MauvilleCity_Text_BottleCapGentlemanReward:
-	.string "A gentleman keeps his word.\p"
-	.string "Here is your BOTTLE CAP!$"
-
-MauvilleCity_Text_BottleCapGentlemanUnclaimed:
-	.string "I haven't forgotten your victory!\p"
-	.string "Please take your BOTTLE CAP.$"
-
-MauvilleCity_Text_BottleCapGentlemanBagFull:
-	.string "Your BAG seems full.\p"
-	.string "Make some room and return for\l"
-	.string "your prize. I'll keep it safe.$"
-
-MauvilleCity_Text_BottleCapGentlemanPostBattle:
-	.string "That was a splendid match!\p"
-	.string "I have no more challenges for you.$"
