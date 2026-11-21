@@ -883,7 +883,7 @@
 #define TRAINER_RENZO					    875
 #define TRAINER_GONZALO						876
 #define TRAINER_MARCELO					    877
-#define TRAINER_GENTLEMAN_MAUVILLE_BOTTLE_CAP 878
+#define TRAINER_STERLING					878
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled

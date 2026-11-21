@@ -514,7 +514,7 @@ MauvilleCity_EventScript_Donphan::
 MauvilleCity_EventScript_BottleCapGentleman::
 	lock
 	faceplayer
-	goto_if_defeated TRAINER_GENTLEMAN_MAUVILLE_BOTTLE_CAP, MauvilleCity_EventScript_BottleCapGentlemanDefeated
+	goto_if_defeated TRAINER_STERLING, MauvilleCity_EventScript_BottleCapGentlemanDefeated
 	msgbox MauvilleCity_Text_BottleCapGentlemanChallenge, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, MauvilleCity_EventScript_BottleCapGentlemanBattle
 	msgbox MauvilleCity_Text_BottleCapGentlemanDecline, MSGBOX_DEFAULT
@@ -523,7 +523,7 @@ MauvilleCity_EventScript_BottleCapGentleman::
 
 MauvilleCity_EventScript_BottleCapGentlemanBattle::
 	msgbox MauvilleCity_Text_BottleCapGentlemanReady, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GENTLEMAN_MAUVILLE_BOTTLE_CAP, MauvilleCity_Text_BottleCapGentlemanDefeat
+	trainerbattle_no_intro TRAINER_STERLING, MauvilleCity_Text_BottleCapGentlemanDefeat
 	msgbox MauvilleCity_Text_BottleCapGentlemanReward, MSGBOX_DEFAULT
 	goto MauvilleCity_EventScript_BottleCapGentlemanGiveReward
 	end

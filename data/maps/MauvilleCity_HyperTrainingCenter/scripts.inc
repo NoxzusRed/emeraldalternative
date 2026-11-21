@@ -99,66 +99,63 @@ MauvilleCity_HyperTrainingCenter_EventScript_Exit::
 	end
 
 MauvilleCity_HyperTrainingCenter_Text_Intro:
-	.string "Welcome! Ready to bring out\l"
-	.string "your POKéMON's full potential?\p"
-	.string "With a BOTTLE CAP, I can raise\l"
-	.string "one IV to 31.\p"
-	.string "A GOLD BOTTLE CAP raises all six!\l"
-	.string "Those improvements are permanent.\p"
+	.string "Welcome! Ready to bring out your\n"
+	.string "Pokémon's full potential?\p"
+	.string "With a BOTTLE CAP, I can raise one IV\n"
+	.string "to 31. A GOLD BOTTLE CAP raises all six!\p"
 	.string "Shall we get started?$"
 
 MauvilleCity_HyperTrainingCenter_Text_NoCaps:
-	.string "You need a BOTTLE CAP or a\l"
-	.string "GOLD BOTTLE CAP to train.\p"
+	.string "You need a BOTTLE CAP or a GOLD BOTTLE\n"
+	.string "CAP to train your Pokémon.\p"
 	.string "Come back when you have one!$"
 
 MauvilleCity_HyperTrainingCenter_Text_ChooseMon:
-	.string "Which POKéMON should I train?$"
+	.string "Which Pokémon should I train?$"
 
 MauvilleCity_HyperTrainingCenter_Text_Egg:
-	.string "I can't train an EGG!\p"
+	.string "I can't train an EGG!\n"
 	.string "Please choose another POKéMON.$"
 
 MauvilleCity_HyperTrainingCenter_Text_MonPerfect:
-	.string "{STR_VAR_1} already has perfect\l"
+	.string "{STR_VAR_1} already has perfect\n"
 	.string "IVs! No CAP is needed.$"
 
 MauvilleCity_HyperTrainingCenter_Text_ChooseCap:
-	.string "Which type of BOTTLE CAP\l"
-	.string "would you like to use?$"
+	.string "Which type of BOTTLE CAP would you like\n"
+	.string "to use?$"
 
 MauvilleCity_HyperTrainingCenter_Text_MissingCap:
-	.string "You don't have that kind of CAP.\l"
+	.string "You don't have that kind of CAP.\n"
 	.string "Please choose another.$"
 
 MauvilleCity_HyperTrainingCenter_Text_ChooseStat:
 	.string "Which stat should I maximize?$"
 
 MauvilleCity_HyperTrainingCenter_Text_StatPerfect:
-	.string "{STR_VAR_1}'s {STR_VAR_2} IV is\l"
+	.string "{STR_VAR_1}'s {STR_VAR_2} IV is\n"
 	.string "already 31. No CAP needed!$"
 
 MauvilleCity_HyperTrainingCenter_Text_ConfirmStat:
-	.string "Use one BOTTLE CAP to maximize\l"
+	.string "Use one BOTTLE CAP to maximize\n"
 	.string "{STR_VAR_1}'s {STR_VAR_2} IV?$"
 
 MauvilleCity_HyperTrainingCenter_Text_ConfirmGold:
-	.string "Use one GOLD BOTTLE CAP to max\l"
+	.string "Use one GOLD BOTTLE CAP to max\n"
 	.string "all of {STR_VAR_1}'s IVs?$"
 
 MauvilleCity_HyperTrainingCenter_Text_TrainedStat:
-	.string "Excellent! {STR_VAR_1}'s {STR_VAR_2}\l"
+	.string "Excellent! {STR_VAR_1}'s {STR_VAR_2}\n"
 	.string "now has an IV of 31!$"
 
 MauvilleCity_HyperTrainingCenter_Text_TrainedAll:
-	.string "Excellent! All of {STR_VAR_1}'s\l"
+	.string "Excellent! All of {STR_VAR_1}'s\n"
 	.string "IVs are now 31!$"
 
 MauvilleCity_HyperTrainingCenter_Text_AskAgain:
-	.string "Would you like to train another\l"
-	.string "POKéMON?$"
+	.string "Would you like to train another\n"
+	.string "Pokémon?$"
 
-// Visitors explain how Hyper Training works without changing the training service.
 MauvilleCity_HyperTrainingCenter_EventScript_Woman::
 	msgbox MauvilleCity_HyperTrainingCenter_Text_Woman, MSGBOX_NPC
 	end
@@ -176,29 +173,29 @@ MauvilleCity_HyperTrainingCenter_EventScript_Cooltrainer::
 	end
 
 MauvilleCity_HyperTrainingCenter_Text_Woman:
-	.string "Everyone trains their POKéMON to\l"
+	.string "Everyone trains their Pokémon to\n"
 	.string "higher levels, but there's more\l"
 	.string "to strength than experience.\p"
-	.string "Each POKéMON has hidden values\l"
+	.string "Each Pokémon has hidden values\n"
 	.string "called IVs. 31 is the highest!$"
 
 MauvilleCity_HyperTrainingCenter_Text_ManNearEntrance:
-	.string "My POKéMON had a weak DEFENSE IV.\p"
+	.string "My POKéMON had a weak DEFENSE IV.\n"
 	.string "One BOTTLE CAP raised it to 31!\p"
-	.string "You have to pick the stat, though.\l"
+	.string "You have to pick the stat, though.\n"
 	.string "Each CAP only improves one.$"
 
 MauvilleCity_HyperTrainingCenter_Text_ManByWall:
-	.string "A GOLD BOTTLE CAP raises all six\l"
+	.string "A GOLD BOTTLE CAP raises all six\n"
 	.string "IVs to 31 in one go!\p"
-	.string "But if only one stat needs help,\l"
+	.string "But if only one stat needs help,\n"
 	.string "I'd save the gold one for later.$"
 
 MauvilleCity_HyperTrainingCenter_Text_Cooltrainer:
 	.string "I just finished HYPER TRAINING!\p"
-	.string "My POKéMON's IVs improved for\l"
+	.string "My POKéMON's IVs improved for\n"
 	.string "good, and its stats went up\l"
 	.string "right away!\p"
-	.string "EV training is different, though.\l"
+	.string "EV training is different, though.\n"
 	.string "There's always more to work on!$"
 

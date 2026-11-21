@@ -19476,7 +19476,9 @@ Class: Rival
 Pic: May
 Gender: Female
 Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
+AI: Basic Trainer
 
 Tropius @ Sitrus Berry
 Level: 77
@@ -19546,7 +19548,9 @@ Class: Rival
 Pic: Brendan
 Gender: Male
 Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
+AI: Basic Trainer
 
 Tropius @ Sitrus Berry
 Level: 77
@@ -19619,7 +19623,9 @@ Class: Rival
 Pic: May
 Gender: Female
 Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
+AI: Basic Trainer
 
 Tropius @ Sitrus Berry
 Level: 77
@@ -19692,7 +19698,9 @@ Class: Rival
 Pic: Brendan
 Gender: Male
 Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
+AI: Basic Trainer
 
 Tropius @ Sitrus Berry
 Level: 77
@@ -19764,7 +19772,9 @@ Class: Rival
 Pic: May
 Gender: Female
 Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
+AI: Basic Trainer
 
 Tropius @ Sitrus Berry
 Level: 77
@@ -19837,6 +19847,7 @@ Class: Rival
 Pic: Wally
 Gender: Male
 Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
@@ -19910,6 +19921,7 @@ Class: Aqua Admin
 Pic: Aqua Admin M
 Gender: Male
 Music: Aqua
+Items: Full Restore / Full Restore 
 Double Battle: No
 AI: Basic Trainer
 
@@ -19950,6 +19962,7 @@ Class: Aqua Admin
 Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
+Items: Full Restore / Full Restore 
 Double Battle: No
 AI: Basic Trainer
 
@@ -19991,6 +20004,7 @@ Class: Magma Admin
 Pic: Magma Admin
 Gender: Male
 Music: Magma
+Items: Full Restore / Full Restore 
 Double Battle: No
 AI: Basic Trainer
 
@@ -20032,6 +20046,7 @@ Class: Magma Admin
 Pic: Magma Admin F
 Gender: Female
 Music: Magma
+Items: Full Restore / Full Restore 
 Double Battle: No
 AI: Basic Trainer
 
@@ -20310,24 +20325,29 @@ Level: 14
 Ability: Filter
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_GENTLEMAN_MAUVILLE_BOTTLE_CAP ===
+=== TRAINER_STERLING ===
 Name: STERLING
 Class: Gentleman
 Pic: Gentleman
 Gender: Male
 Music: Rich
+Items: Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Linoone
-Level: 23
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Girafarig
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Arbok
+Parasect
 Level: 25
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: Technician
+IVs: 18 HP / 31 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 64 Def / 64 SpD
+- Fury Cutter
+- Bullet Seed
+- Spore
 
+Donphan
+Level: 25
+IVs: 31 HP / 18 Atk / 24 Def / 18 SpA / 24 SpD / 18 Spe
+EVs: 126 HP / 126 SpD / 126 Spe
+- Bulldoze
+- Slam
+- Thunder Fang
