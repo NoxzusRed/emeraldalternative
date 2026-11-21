@@ -42,6 +42,10 @@ MauvilleCity_EventScript_CitySign::
 	msgbox MauvilleCity_Text_CitySign, MSGBOX_SIGN
 	end
 
+MauvilleCity_EventScript_HyperTrainingCenterSign::
+	msgbox MauvilleCity_Text_HyperTrainingCenterSign, MSGBOX_SIGN
+	end
+
 MauvilleCity_EventScript_GymSign::
 	msgbox MauvilleCity_Text_GymSign, MSGBOX_SIGN
 	end
@@ -782,6 +786,9 @@ MauvilleCity_Text_PokemonCanJumpYouOnBike:
 MauvilleCity_Text_CitySign:
 	.string "MAUVILLE CITY\n"
 	.string "“The bright and shiny city of fun!”$"
+
+MauvilleCity_Text_HyperTrainingCenterSign:
+	.string "HYPER TRAINING CENTER$"
 
 MauvilleCity_Text_GymSign:
 	.string "MAUVILLE CITY POKéMON GYM\n"
