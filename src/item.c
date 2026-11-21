@@ -544,14 +544,26 @@ void CompactPCItems(void)
 
 void SwapRegisteredBike(void)
 {
-    switch (gSaveBlock1Ptr->registeredItem)
+    u32 direction;
+
+    // UP uses the original registeredItem field; DOWN, LEFT and RIGHT
+    // use registeredItems[0..2]. Keep the registered direction when
+    // Rydel exchanges one bike for the other.
+    for (direction = 0; direction < 4; direction++)
     {
-    case ITEM_MACH_BIKE:
-        gSaveBlock1Ptr->registeredItem = ITEM_ACRO_BIKE;
-        break;
-    case ITEM_ACRO_BIKE:
-        gSaveBlock1Ptr->registeredItem = ITEM_MACH_BIKE;
-        break;
+        u16 *registeredItem = (direction == 0)
+                            ? &gSaveBlock1Ptr->registeredItem
+                            : &gSaveBlock1Ptr->registeredItems[direction - 1];
+
+        switch (*registeredItem)
+        {
+        case ITEM_MACH_BIKE:
+            *registeredItem = ITEM_ACRO_BIKE;
+            break;
+        case ITEM_ACRO_BIKE:
+            *registeredItem = ITEM_MACH_BIKE;
+            break;
+        }
     }
 }
 
