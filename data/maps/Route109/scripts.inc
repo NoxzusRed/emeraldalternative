@@ -152,7 +152,8 @@ Route109_EventScript_ContinueToPetalburg::
 	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToPetalburg
 	applymovement LOCALID_PLAYER, DewfordTown_Movement_SailToPetalburg
 	waitmovement 0
-	setvar VAR_BOARD_BRINEY_BOAT_STATE, 0
+	@ Keep state 4 until arrival selects the shorter Slateport-specific
+	@ disembark. The shared landing script sets the normal final state.
 	goto DewfordTown_EventScript_ArriveInPetalburg
 
 Route109_Movement_SailToDewford:
