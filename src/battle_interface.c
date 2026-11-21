@@ -863,8 +863,10 @@ void UpdateOamPriorityInAllHealthboxes(u8 priority, bool32 hideHPBoxes)
 
         UpdateIndicatorOamPriority(healthboxLeftSpriteId, priority);
 
-        // Keep the opposing Pokémon's HP bar visible throughout animations.
-        if (B_HIDE_HEALTHBOX_IN_ANIMS == TRUE && hideHPBoxes && IsBattlerAlive(i) && IsOnPlayerSide(i))
+        // During multi-hit attacks, only the current target's HP bar stays visible.
+        // Keep normal visibility rules for every other battler and animation.
+        if (B_HIDE_HEALTHBOX_IN_ANIMS == TRUE && hideHPBoxes && IsBattlerAlive(i)
+         && !(gMultiHitCounter && i == gBattlerTarget))
             TryToggleHealboxVisibility(priority, healthboxLeftSpriteId, healthboxRightSpriteId, healthbarSpriteId);
     }
 }
