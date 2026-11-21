@@ -916,12 +916,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_POOCHYENA
     [SPECIES_POOCHYENA] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
+        .baseHP        = 40,
+        .baseAttack    = 60,
         .baseDefense   = 35,
         .baseSpeed     = 35,
         .baseSpAttack  = 30,
-        .baseSpDefense = 30,
+        .baseSpDefense = 35,
         .types = MON_TYPES(TYPE_DARK),
         .catchRate = 255,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
@@ -1081,7 +1081,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_ZIGZAGOON] =
     {
         .baseHP        = 38,
-        .baseAttack    = 30,
+        .baseAttack    = 35,
         .baseDefense   = 41,
         .baseSpeed     = 60,
         .baseSpAttack  = 30,
