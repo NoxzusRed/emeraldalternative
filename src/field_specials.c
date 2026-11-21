@@ -4420,3 +4420,136 @@ void GetCodeFeedback(void)
     else
         gSpecialVar_Result = 0;
 }
+
+// Bottle Caps activate the pre-existing Hyper Trained flags, preserving original IVs.
+static const u16 sHyperTrainingIVFields[NUM_STATS] =
+{
+    MON_DATA_HP_IV,
+    MON_DATA_ATK_IV,
+    MON_DATA_DEF_IV,
+    MON_DATA_SPATK_IV,
+    MON_DATA_SPDEF_IV,
+    MON_DATA_SPEED_IV,
+};
+
+static const u16 sHyperTrainingFlagFields[NUM_STATS] =
+{
+    MON_DATA_HYPER_TRAINED_HP,
+    MON_DATA_HYPER_TRAINED_ATK,
+    MON_DATA_HYPER_TRAINED_DEF,
+    MON_DATA_HYPER_TRAINED_SPATK,
+    MON_DATA_HYPER_TRAINED_SPDEF,
+    MON_DATA_HYPER_TRAINED_SPEED,
+};
+
+static const u8 sHyperTrainingTextHP[] = _("HP");
+static const u8 sHyperTrainingTextAttack[] = _("ATTACK");
+static const u8 sHyperTrainingTextDefense[] = _("DEFENSE");
+static const u8 sHyperTrainingTextSpAttack[] = _("SP. ATK");
+static const u8 sHyperTrainingTextSpDefense[] = _("SP. DEF");
+static const u8 sHyperTrainingTextSpeed[] = _("SPEED");
+
+static const u8 *const sHyperTrainingStatNames[NUM_STATS] =
+{
+    sHyperTrainingTextHP,
+    sHyperTrainingTextAttack,
+    sHyperTrainingTextDefense,
+    sHyperTrainingTextSpAttack,
+    sHyperTrainingTextSpDefense,
+    sHyperTrainingTextSpeed,
+};
+
+static bool8 HyperTrainingStatIsPerfect(struct Pokemon *mon, u8 stat)
+{
+    return GetMonData(mon, sHyperTrainingIVFields[stat]) >= MAX_PER_STAT_IVS
+        || GetMonData(mon, sHyperTrainingFlagFields[stat]) != FALSE;
+}
+
+static bool8 HyperTrainingMonHasImprovableStat(struct Pokemon *mon)
+{
+    u8 stat;
+    for (stat = 0; stat < NUM_STATS; stat++)
+        if (!HyperTrainingStatIsPerfect(mon, stat))
+            return TRUE;
+    return FALSE;
+}
+
+// 0: eligible; 1: egg; 2: already perfect; 3: invalid party slot.
+u16 HyperTraining_CheckMon(void)
+{
+    struct Pokemon *mon;
+    if (gSpecialVar_0x8004 >= CalculatePlayerPartyCount())
+        return 3;
+    mon = &gPlayerParty[gSpecialVar_0x8004];
+    if (GetMonData(mon, MON_DATA_IS_EGG))
+        return 1;
+    GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
+    if (!HyperTrainingMonHasImprovableStat(mon))
+        return 2;
+    return 0;
+}
+
+// VAR_0x8005 is the stat index selected in the menu.
+u16 HyperTraining_CanTrainStat(void)
+{
+    u16 stat = gSpecialVar_0x8005;
+    struct Pokemon *mon;
+    if (stat >= NUM_STATS || gSpecialVar_0x8004 >= CalculatePlayerPartyCount())
+        return FALSE;
+    mon = &gPlayerParty[gSpecialVar_0x8004];
+    if (GetMonData(mon, MON_DATA_IS_EGG))
+        return FALSE;
+    StringCopy(gStringVar2, sHyperTrainingStatNames[stat]);
+    return !HyperTrainingStatIsPerfect(mon, stat);
+}
+
+// VAR_0x8006 = 0 for Bottle Cap, 1 for Gold Bottle Cap.
+// Return: 0 success, 1 missing cap, 2 already perfect, 3 invalid mon.
+u16 HyperTraining_ApplyCap(void)
+{
+    u16 partyId = gSpecialVar_0x8004;
+    u16 capType = gSpecialVar_0x8006;
+    u16 selectedStat = gSpecialVar_0x8005;
+    u16 itemId;
+    struct Pokemon *mon;
+    u8 stat;
+    u8 trained = TRUE;
+
+    if (partyId >= CalculatePlayerPartyCount() || capType > 1)
+        return 3;
+    mon = &gPlayerParty[partyId];
+    if (GetMonData(mon, MON_DATA_IS_EGG))
+        return 3;
+
+    if (capType == 0)
+    {
+        if (selectedStat >= NUM_STATS)
+            return 3;
+        if (HyperTrainingStatIsPerfect(mon, selectedStat))
+            return 2;
+        itemId = ITEM_BOTTLE_CAP;
+    }
+    else
+    {
+        if (!HyperTrainingMonHasImprovableStat(mon))
+            return 2;
+        itemId = ITEM_GOLD_BOTTLE_CAP;
+    }
+
+    if (!CheckBagHasItem(itemId, 1) || !RemoveBagItem(itemId, 1))
+        return 1;
+
+    if (capType == 0)
+    {
+        SetMonData(mon, sHyperTrainingFlagFields[selectedStat], &trained);
+    }
+    else
+    {
+        for (stat = 0; stat < NUM_STATS; stat++)
+            if (!HyperTrainingStatIsPerfect(mon, stat))
+                SetMonData(mon, sHyperTrainingFlagFields[stat], &trained);
+    }
+
+    CalculateMonStats(mon);
+    return 0;
+}
