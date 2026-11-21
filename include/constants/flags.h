@@ -1137,7 +1137,7 @@
 #define FLAG_ITEM_VICTORY_ROAD_1F_PP_UP                             0x43D
 #define FLAG_ITEM_VICTORY_ROAD_B1F_TM_PSYCHIC                       0x43E
 #define FLAG_ITEM_VICTORY_ROAD_B1F_FULL_RESTORE                     0x43F
-#define FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL                        0x440
+#define FLAG_ITEM_VICTORY_ROAD_B2F_BOTTLE_CAP                       0x440 //
 #define FLAG_ITEM_MT_PYRE_6F_TM_SHADOW_BALL                         0x441
 #define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_9_TM_EARTHQUAKE              0x442
 #define FLAG_ITEM_FIERY_PATH_TM_TOXIC                               0x443
@@ -1264,11 +1264,11 @@
 #define FLAG_ITEM_RUSTURF_TUNNEL_HIGH_HYPER_POTION					0x4BB //
 #define FLAG_ITEM_GRANITE_CAVE_1F_TM_GUST		                    0x4BC //
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_WATER_STONE 				0x4BD //
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
-#define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
-#define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
-#define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
+#define FLAG_ITEM_ROUTE_111_EAST_BOTTLE_CAP                         0x4BE //
+#define FLAG_ITEM_ROUTE_119_BOTTLE_CAP                              0x4BF //
+#define FLAG_ITEM_ROUTE_120_HERACROSS_NEST_BOTTLE_CAP               0x4C0 //
+#define FLAG_ITEM_ROUTE_128_BOTTLE_CAP                              0x4C1 //
+#define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_BOTTLE_CAP         0x4C2 //
 #define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
 #define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
 #define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag

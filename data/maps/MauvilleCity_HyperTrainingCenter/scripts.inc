@@ -199,8 +199,6 @@ MauvilleCity_HyperTrainingCenter_Text_Cooltrainer:
 	.string "EV training is different, though.\n"
 	.string "There's always more to work on!$"
 
-@ Bottle Cap seller beside the Hyper Training NPC (8,5).
-@ Uses the same Battle Points as the Battle Frontier exchange corner.
 MauvilleCity_HyperTrainingCenter_EventScript_CapVendor::
 	lock
 	faceplayer
@@ -231,7 +229,7 @@ MauvilleCity_HyperTrainingCenter_EventScript_CapVendorBottle::
 	goto MauvilleCity_HyperTrainingCenter_EventScript_CapVendorPurchase
 
 MauvilleCity_HyperTrainingCenter_EventScript_CapVendorGold::
-	setvar VAR_0x8008, 50
+	setvar VAR_0x8008, 40
 	setvar VAR_0x8009, ITEM_GOLD_BOTTLE_CAP
 	msgbox MauvilleCity_HyperTrainingCenter_Text_CapVendorConfirmGold, MSGBOX_YESNO
 	goto_if_ne VAR_RESULT, YES, MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChoose
@@ -266,30 +264,30 @@ MauvilleCity_HyperTrainingCenter_EventScript_CapVendorExit::
 	end
 
 MauvilleCity_HyperTrainingCenter_Text_CapVendorWelcome:
-	.string "Looking for some BOTTLE CAPS?\p"
-	.string "I trade them for Battle Points!\p"
+	.string "Looking for some BOTTLE CAPS?\n"
+	.string "I trade them for Battle Points!\l"
 	.string "Take a look at what I've got.$"
 
 MauvilleCity_HyperTrainingCenter_Text_CapVendorConfirmBottle:
-	.string "A BOTTLE CAP costs 10 BP.\p"
+	.string "A BOTTLE CAP costs 10 BP.\n"
 	.string "Would you like one?$"
 
 MauvilleCity_HyperTrainingCenter_Text_CapVendorConfirmGold:
-	.string "A GOLD BOTTLE CAP costs 50 BP.\p"
+	.string "A GOLD BOTTLE CAP costs 40 BP.\n"
 	.string "Would you like one?$"
 
 MauvilleCity_HyperTrainingCenter_Text_CapVendorInsufficientBP:
-	.string "You don't have enough BP yet.\p"
+	.string "You don't have enough BP yet.\n"
 	.string "Win some more battles and\l"
 	.string "come back anytime!$"
 
 MauvilleCity_HyperTrainingCenter_Text_CapVendorBagFull:
-	.string "Looks like your BAG is full.\p"
+	.string "Looks like your BAG is full.\n"
 	.string "Make some room first. I'd hate\l"
 	.string "for you to lose your purchase!$"
 
 MauvilleCity_HyperTrainingCenter_Text_CapVendorSuccess:
-	.string "Thank you! Here's your\l"
+	.string "Thank you! Here's your\n"
 	.string "{STR_VAR_1}.\p"
 	.string "Anything else catch your eye?$"
 
