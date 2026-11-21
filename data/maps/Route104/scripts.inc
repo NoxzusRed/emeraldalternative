@@ -5,6 +5,7 @@ Route104_MapScripts::
 
 Route104_OnFrame:
 	map_script_2 VAR_BOARD_BRINEY_BOAT_STATE, 1, Route104_EventScript_StartSailToDewford
+	map_script_2 VAR_BOARD_BRINEY_BOAT_STATE, 3, Route104_EventScript_StartSailToDewford
 	.2byte 0
 
 Route104_EventScript_StartSailToDewford::
@@ -383,6 +384,7 @@ Route104_EventScript_SailToDewfordDadCalls::
 	goto Route104_EventScript_ArriveInDewford
 
 Route104_EventScript_ArriveInDewford::
+	goto_if_eq VAR_BOARD_BRINEY_BOAT_STATE, 3, Route104_EventScript_ContinueToSlateport
 	delay 50
 	applymovement LOCALID_PLAYER, Route104_Movement_PlayerExitBoat
 	waitmovement 0
@@ -419,6 +421,24 @@ Route104_EventScript_LandedInDewford::
 	msgbox DewfordTown_Text_BrineyLandedInDewford, MSGBOX_DEFAULT
 	releaseall
 	end
+
+@ Petalburg -> Slateport: use the two existing sailing routes as one trip.
+@ The player remains hidden/on board while we swap boats at Dewford.
+Route104_EventScript_ContinueToSlateport::
+	@ From Route 104 the hidden player is one tile north of the boat.
+	@ Match the normal Dewford embarkation position without disembarking.
+	applymovement LOCALID_PLAYER, Route104_Movement_PlayerExitBoat
+	waitmovement 0
+	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
+	hideobjectat LOCALID_ROUTE104_BOAT, MAP_ROUTE104
+	clearflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
+	addobject LOCALID_DEWFORD_BOAT
+	resetobjectsubpriority LOCALID_PLAYER, MAP_ROUTE104
+	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToSlateport
+	applymovement LOCALID_PLAYER, DewfordTown_Movement_SailToSlateport
+	waitmovement 0
+	setvar VAR_BOARD_BRINEY_BOAT_STATE, 0
+	goto DewfordTown_EventScript_ArriveInSlateport
 
 Route104_Movement_SailToDewfordBeforeDadCalls:
 	walk_down

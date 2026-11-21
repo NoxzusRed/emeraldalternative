@@ -130,6 +130,8 @@
 #define MULTI_HYPER_TRAINING_CAPS           119
 #define MULTI_HYPER_TRAINING_STATS          120
 #define MULTI_HYPER_TRAINING_BP_SHOP        121
+#define MULTI_BRINEY_FROM_PETALBURG         122
+#define MULTI_BRINEY_FROM_SLATEPORT         123
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

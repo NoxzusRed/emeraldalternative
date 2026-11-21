@@ -126,6 +126,7 @@ DewfordTown_EventScript_SailToPetalburg::
 	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToPetalburg
 	applymovement LOCALID_PLAYER, DewfordTown_Movement_SailToPetalburg
 	waitmovement 0
+DewfordTown_EventScript_ArriveInPetalburg::
 	showobjectat LOCALID_PLAYER, MAP_ROUTE104
 	call Common_EventScript_StopBrineysBoatMusic
 	applymovement LOCALID_PLAYER, DewfordTown_Movement_ExitBoatPetalburg
@@ -161,6 +162,7 @@ DewfordTown_EventScript_SailToSlateport::
 	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToSlateport
 	applymovement LOCALID_PLAYER, DewfordTown_Movement_SailToSlateport
 	waitmovement 0
+DewfordTown_EventScript_ArriveInSlateport::
 	call Common_EventScript_StopBrineysBoatMusic
 	showobjectat LOCALID_PLAYER, MAP_ROUTE109
 	applymovement LOCALID_PLAYER, DewfordTown_Movement_ExitBoatSlateport

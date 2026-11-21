@@ -113,6 +113,7 @@ Route109_EventScript_DoSailToDewford::
 	applymovement LOCALID_ROUTE109_BOAT, Route109_Movement_SailToDewford
 	applymovement LOCALID_PLAYER, Route109_Movement_SailToDewford
 	waitmovement 0
+	goto_if_eq VAR_BOARD_BRINEY_BOAT_STATE, 4, Route109_EventScript_ContinueToPetalburg
 	delay 50
 	call Common_EventScript_StopBrineysBoatMusic
 	showobjectat LOCALID_PLAYER, MAP_DEWFORD_TOWN
@@ -136,6 +137,19 @@ Route109_EventScript_DoSailToDewford::
 	copyobjectxytoperm LOCALID_DEWFORD_BRINEY
 	release
 	end
+
+@ Slateport -> Petalburg: continue through Dewford without a second prompt.
+Route109_EventScript_ContinueToPetalburg::
+	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
+	hideobjectat LOCALID_ROUTE109_BOAT, MAP_ROUTE109
+	clearflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
+	addobject LOCALID_DEWFORD_BOAT
+	resetobjectsubpriority LOCALID_PLAYER, MAP_ROUTE109
+	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToPetalburg
+	applymovement LOCALID_PLAYER, DewfordTown_Movement_SailToPetalburg
+	waitmovement 0
+	setvar VAR_BOARD_BRINEY_BOAT_STATE, 0
+	goto DewfordTown_EventScript_ArriveInPetalburg
 
 Route109_Movement_SailToDewford:
 	walk_in_place_faster_down
@@ -347,37 +361,35 @@ Route109_Movement_BrineyExitBoat:
 Route109_EventScript_MrBriney::
 	lock
 	faceplayer
-	goto_if_unset FLAG_DELIVERED_DEVON_GOODS, Route109_EventScript_HaveNotDeliveredDevonGood
-	goto Route109_EventScript_DeliveredDevonGoods
-	end
+	goto_if_unset FLAG_DELIVERED_DEVON_GOODS, Route109_EventScript_RemindDevonGoods
+	goto Route109_EventScript_ChooseDestination
 
-Route109_EventScript_HaveNotDeliveredDevonGood::
-	message Route109_Text_BrineySailToDewfordQuestion
-	msgbox Route109_Text_BrineySailToDewfordQuestion, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route109_EventScript_StayHere
-	goto Route109_EventScript_SailToDewford
-	end
+Route109_EventScript_RemindDevonGoods::
+	msgbox Route109_Text_BrineyStillDeliverDevonGoods, MSGBOX_DEFAULT
+	goto Route109_EventScript_ChooseDestination
 
-Route109_EventScript_DeliveredDevonGoods::
+Route109_EventScript_ChooseDestination::
 	message Route109_Text_BrineyWhereAreWeBound
 	waitmessage
-	multichoicedefault 21, 8, MULTI_BRINEY_OFF_DEWFORD, 1, FALSE
+	multichoicedefault 21, 6, MULTI_BRINEY_FROM_SLATEPORT, 2, FALSE
 	switch VAR_RESULT
 	case 0, Route109_EventScript_SailToDewford
-	case 1, Route109_EventScript_ChoseNotToSail
+	case 1, Route109_EventScript_SailToPetalburg
+	case 2, Route109_EventScript_ChoseNotToSail
 	case MULTI_B_PRESSED, Route109_EventScript_ChoseNotToSail
 	end
 
 Route109_EventScript_SailToDewford::
 	msgbox Route109_Text_BrineyDewfordItIs, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_BOARD_BRINEY_BOAT_STATE, 0
 	goto Route109_EventScript_StartDepartForDewford
-	end
 
-Route109_EventScript_StayHere::
-	msgbox Route109_Text_BrineyDeliverDevonGoods, MSGBOX_DEFAULT
-	release
-	end
+Route109_EventScript_SailToPetalburg::
+	msgbox Route109_Text_BrineyPetalburgItIs, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_BOARD_BRINEY_BOAT_STATE, 4
+	goto Route109_EventScript_StartDepartForDewford
 
 Route109_EventScript_ChoseNotToSail::
 	msgbox Route109_Text_BrineyTellMeWhenYouNeedToSail, MSGBOX_DEFAULT
@@ -554,20 +566,20 @@ DewfordTown_Text_BrineyLandedInSlateportDeliverGoods:
 	.string "I suppose you're going to visit CAPT.\n"
 	.string "STERN and deliver the DEVON GOODS?$"
 
-Route109_Text_BrineySailToDewfordQuestion:
-	.string "MR. BRINEY: I thought you're supposed\n"
-	.string "to deliver the DEVON GOODS.\p"
-	.string "Would you like to sail back to\n"
-	.string "DEWFORD, then?$"
+Route109_Text_BrineyStillDeliverDevonGoods:
+	.string "MR. BRINEY: You still have the\n"
+	.string "DEVON GOODS to deliver in SLATEPORT.\p"
+	.string "If you need to sail, I'll take you!$"
 
 Route109_Text_BrineyDewfordItIs:
 	.string "MR. BRINEY: DEWFORD it is, then!\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
-Route109_Text_BrineyDeliverDevonGoods:
-	.string "MR. BRINEY: Then you go on and deliver\n"
-	.string "the DEVON GOODS. I'll be waiting.$"
+Route109_Text_BrineyPetalburgItIs:
+	.string "MR. BRINEY: PETALBURG it is, then!\p"
+	.string "Anchors aweigh!\n"
+	.string "PEEKO, we're setting sail, my darling!$"
 
 DewfordTown_Text_BrineyLandedInSlateport:
 	.string "MR. BRINEY: Ahoy! We've made land in\n"

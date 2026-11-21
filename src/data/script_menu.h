@@ -76,6 +76,22 @@ static const struct MenuAction MultichoiceList_BrineyOffDewford[] =
     {gText_Exit},
 };
 
+// From Mr. Briney's house by Petalburg (Route 104).
+static const struct MenuAction MultichoiceList_BrineyFromPetalburg[] =
+{
+    {COMPOUND_STRING("DEWFORD")},
+    {COMPOUND_STRING("SLATEPORT")},
+    {gText_Exit},
+};
+
+// From the shore south of Slateport (Route 109).
+static const struct MenuAction MultichoiceList_BrineyFromSlateport[] =
+{
+    {COMPOUND_STRING("DEWFORD")},
+    {COMPOUND_STRING("PETALBURG")},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_ViewedPaintings[] =
 {
     {COMPOUND_STRING("Saw it")},
@@ -855,6 +871,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BIKE]                       = MULTICHOICE(MultichoiceList_Bike),
     [MULTI_STATUS_INFO]                = MULTICHOICE(MultichoiceList_StatusInfo),
     [MULTI_BRINEY_OFF_DEWFORD]         = MULTICHOICE(MultichoiceList_BrineyOffDewford),
+    [MULTI_BRINEY_FROM_PETALBURG]      = MULTICHOICE(MultichoiceList_BrineyFromPetalburg),
+    [MULTI_BRINEY_FROM_SLATEPORT]      = MULTICHOICE(MultichoiceList_BrineyFromSlateport),
     [MULTI_UNUSED_15]                  = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_VIEWED_PAINTINGS]           = MULTICHOICE(MultichoiceList_ViewedPaintings),
     [MULTI_YESNOINFO]                  = MULTICHOICE(MultichoiceList_YesNoInfo),

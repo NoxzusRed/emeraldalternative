@@ -25,7 +25,7 @@ Route104_MrBrineysHouse_EventScript_Briney::
 	faceplayer
 	call_if_unset FLAG_MR_BRINEY_SAILING_INTRO, Route104_MrBrineysHouse_EventScript_SailingIntro
 	goto_if_unset FLAG_DELIVERED_STEVEN_LETTER, Route104_MrBrineysHouse_EventScript_SailBothDeliveries
-	goto_if_unset FLAG_DELIVERED_DEVON_GOODS, Route104_MrBrineysHouse_EventScript_SailDeliverPackage
+	@ The Slateport option unlocks when Steven's letter is delivered.
 	goto Route104_MrBrineysHouse_EventScript_WhereAreWeBound
 	end
 
@@ -40,10 +40,11 @@ Route104_MrBrineysHouse_EventScript_SailingIntro::
 Route104_MrBrineysHouse_EventScript_WhereAreWeBound::
 	message Route104_MrBrineysHouse_Text_WhereAreWeBound
 	waitmessage
-	multichoicedefault 20, 8, MULTI_BRINEY_OFF_DEWFORD, 1, FALSE
+	multichoicedefault 20, 6, MULTI_BRINEY_FROM_PETALBURG, 2, FALSE
 	switch VAR_RESULT
 	case 0, Route104_MrBrineysHouse_EventScript_SailToDewford
-	case 1, Route104_MrBrineysHouse_EventScript_DeclineSailing
+	case 1, Route104_MrBrineysHouse_EventScript_SailToSlateport
+	case 2, Route104_MrBrineysHouse_EventScript_DeclineSailing
 	case MULTI_B_PRESSED, Route104_MrBrineysHouse_EventScript_DeclineSailing
 	end
 
@@ -71,8 +72,16 @@ Route104_MrBrineysHouse_EventScript_DeclineSailing::
 
 Route104_MrBrineysHouse_EventScript_SailToDewford::
 	msgbox Route104_MrBrineysHouse_Text_SetSailForDewford, MSGBOX_DEFAULT
-	call EventScript_BackupMrBrineyLocation
 	setvar VAR_BOARD_BRINEY_BOAT_STATE, 1
+	goto Route104_MrBrineysHouse_EventScript_Depart
+
+Route104_MrBrineysHouse_EventScript_SailToSlateport::
+	msgbox Route104_MrBrineysHouse_Text_SetSailForSlateport, MSGBOX_DEFAULT
+	setvar VAR_BOARD_BRINEY_BOAT_STATE, 3
+	goto Route104_MrBrineysHouse_EventScript_Depart
+
+Route104_MrBrineysHouse_EventScript_Depart::
+	call EventScript_BackupMrBrineyLocation
 	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY
 	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
@@ -116,6 +125,11 @@ Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford:
 
 Route104_MrBrineysHouse_Text_SetSailForDewford:
 	.string "MR. BRINEY: DEWFORD it is, then!\p"
+	.string "Anchors aweigh!\n"
+	.string "PEEKO, we're setting sail, my darling!$"
+
+Route104_MrBrineysHouse_Text_SetSailForSlateport:
+	.string "MR. BRINEY: SLATEPORT it is, then!\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
