@@ -399,11 +399,11 @@ MossdeepCity_Text_RegionalFerryDestinations:
     .string "Where would you like to go?$"
 
 MossdeepCity_Text_RegionalFerrySlateport:
-    .string "Ferry to SLATEPORT CITY: ¥200.\p"
+    .string "Ferry to Slateport City: ¥200.\p"
     .string "Would you like to travel?$"
 
 MossdeepCity_Text_RegionalFerryLilycove:
-    .string "Ferry to LILYCOVE CITY: ¥200.\p"
+    .string "Ferry to Lilycove City: ¥200.\p"
     .string "Would you like to travel?$"
 
 MossdeepCity_Text_RegionalFerryNoMoney:
@@ -433,7 +433,7 @@ MossdeepCity_Text_KriZaSha:
 	.string "Krii-zaaa-shaa!$"
 
 MossdeepCity_Text_WantKingsRockStevenGaveMe:
-	.string "I got this from STEVEN, but I don't\n"
+	.string "I got this from Steven, but I don't\n"
 	.string "know what it's good for.\p"
 	.string "I think it's called KING'S ROCK.\n"
 	.string "Do you want it?$"
@@ -442,17 +442,17 @@ MossdeepCity_Text_YouCanKeepIt:
 	.string "Why would you want it?\n"
 	.string "You're weird.\p"
 	.string "You can keep it, but keep it a secret\n"
-	.string "from STEVEN.$"
+	.string "from Steven.$"
 
 MossdeepCity_Text_StevensHouseOverThere:
-	.string "STEVEN's house is right over there!$"
+	.string "Steven's house is right over there!$"
 
 MossdeepCity_Text_WhatToDoWithWeirdRock:
 	.string "Yeah, you think so, too! What are you\n"
 	.string "supposed to do with some weird rock?$"
 
 MossdeepCity_Text_WailmerWatching:
-	.string "Around MOSSDEEP, you can see wild\n"
+	.string "Around Mossdeep, you can see wild\n"
 	.string "WAILMER.\p"
 	.string "It's called, uh…\n"
 	.string "What was it now…\p"
@@ -471,11 +471,11 @@ MossdeepCity_Text_SpaceCenterLaunchingRockets:
 
 MossdeepCity_Text_MossdeepTargetedByMagma:
 	.string "I heard from a SAILOR buddy that\n"
-	.string "TEAM AQUA set up shop in LILYCOVE.\p"
+	.string "Team Aqua set up shop in Lilycove.\p"
 	.string "I also heard that someone came along\n"
 	.string "and wiped the floor with them!\p"
-	.string "But MOSSDEEP here's been targeted\n"
-	.string "by that TEAM MAGMA.\p"
+	.string "But Mossdeep here's been targeted\n"
+	.string "by that Team Magma.\p"
 	.string "If you want to know what they're up to,\n"
 	.string "go visit the SPACE CENTER.$"
 
@@ -520,22 +520,22 @@ MossdeepCity_Text_ItsAWhiteRock:
 	.string "It's a white rock.$"
 
 MossdeepCity_Text_GymSign:
-	.string "MOSSDEEP CITY POKéMON GYM\n"
-	.string "LEADERS: LIZA & TATE\p"
+	.string "Mossdeep City POKéMON GYM\n"
+	.string "LEADERS: Liza & Tate\p"
 	.string "“The mystic combination!”$"
 
 MossdeepCity_Text_CitySign:
-	.string "MOSSDEEP CITY\n"
+	.string "Mossdeep City\n"
 	.string "“Our slogan: Cherish POKéMON!”$"
 
 MossdeepCity_Text_SpaceCenterSign:
-	.string "MOSSDEEP SPACE CENTER\n"
+	.string "Mossdeep SPACE CENTER\n"
 	.string "“The closest place to space.”$"
 
 MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "SCOTT: {PLAYER}{KUN}, feeling good?\n"
 	.string "I'm doing great!\p"
-	.string "I'd heard MOSSDEEP's GYM LEADER is\n"
+	.string "I'd heard Mossdeep's GYM LEADER is\n"
 	.string "pretty strong, so I decided to come\l"
 	.string "take a look-see for myself.\p"
 	.string "But there's something wrong about\n"
@@ -549,9 +549,9 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "Ahh… It feels great letting the waves\n"
 	.string "wash over my feet…\p"
 	.string "Speaking of the waves, you know that\n"
-	.string "island city SOOTOPOLIS?\p"
+	.string "island city Sootopolis?\p"
 	.string "I think the GYM there had a new\n"
 	.string "LEADER come in.\p"
 	.string "People tell me the new LEADER once\n"
-	.string "mentored WALLACE.$"
+	.string "mentored Wallace.$"
 
