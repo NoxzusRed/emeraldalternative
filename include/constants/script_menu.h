@@ -127,6 +127,8 @@
 #define MULTI_REGIONAL_FERRY_LILYCOVE 	   116
 #define MULTI_REGIONAL_FERRY_MOSSDEEP 	   117
 #define MULTI_FERRY_SERVICE_TYPE           118
+#define MULTI_HYPER_TRAINING_CAPS           119
+#define MULTI_HYPER_TRAINING_STATS          120
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0
