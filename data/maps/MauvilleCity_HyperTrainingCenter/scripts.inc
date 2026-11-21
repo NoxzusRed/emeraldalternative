@@ -199,3 +199,99 @@ MauvilleCity_HyperTrainingCenter_Text_Cooltrainer:
 	.string "EV training is different, though.\n"
 	.string "There's always more to work on!$"
 
+@ Bottle Cap seller beside the Hyper Training NPC (8,5).
+@ Uses the same Battle Points as the Battle Frontier exchange corner.
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendor::
+	lock
+	faceplayer
+	msgbox MauvilleCity_HyperTrainingCenter_Text_CapVendorWelcome, MSGBOX_DEFAULT
+	setvar VAR_TEMP_0, 0
+	special ShowBattlePointsWindow
+	goto MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChoose
+
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChoose::
+	goto_if_eq VAR_TEMP_0, 1, MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChooseGold
+	multichoicedefault 10, 0, MULTI_HYPER_TRAINING_BP_SHOP, 0, FALSE
+	goto MauvilleCity_HyperTrainingCenter_EventScript_CapVendorHandleSelection
+
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChooseGold::
+	multichoicedefault 10, 0, MULTI_HYPER_TRAINING_BP_SHOP, 1, FALSE
+
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendorHandleSelection::
+	copyvar VAR_TEMP_0, VAR_RESULT
+	goto_if_eq VAR_RESULT, 0, MauvilleCity_HyperTrainingCenter_EventScript_CapVendorBottle
+	goto_if_eq VAR_RESULT, 1, MauvilleCity_HyperTrainingCenter_EventScript_CapVendorGold
+	goto MauvilleCity_HyperTrainingCenter_EventScript_CapVendorExit
+
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendorBottle::
+	setvar VAR_0x8008, 10
+	setvar VAR_0x8009, ITEM_BOTTLE_CAP
+	msgbox MauvilleCity_HyperTrainingCenter_Text_CapVendorConfirmBottle, MSGBOX_YESNO
+	goto_if_ne VAR_RESULT, YES, MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChoose
+	goto MauvilleCity_HyperTrainingCenter_EventScript_CapVendorPurchase
+
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendorGold::
+	setvar VAR_0x8008, 50
+	setvar VAR_0x8009, ITEM_GOLD_BOTTLE_CAP
+	msgbox MauvilleCity_HyperTrainingCenter_Text_CapVendorConfirmGold, MSGBOX_YESNO
+	goto_if_ne VAR_RESULT, YES, MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChoose
+
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendorPurchase::
+	specialvar VAR_TEMP_1, GetFrontierBattlePoints
+	goto_if_lt VAR_TEMP_1, VAR_0x8008, MauvilleCity_HyperTrainingCenter_EventScript_CapVendorInsufficientBP
+	checkitemspace VAR_0x8009
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_HyperTrainingCenter_EventScript_CapVendorBagFull
+	additem VAR_0x8009
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_HyperTrainingCenter_EventScript_CapVendorBagFull
+	copyvar VAR_0x8004, VAR_0x8008
+	special TakeFrontierBattlePoints
+	special UpdateBattlePointsWindow
+	bufferitemname STR_VAR_1, VAR_0x8009
+	playse SE_SHOP
+	msgbox MauvilleCity_HyperTrainingCenter_Text_CapVendorSuccess, MSGBOX_DEFAULT
+	goto MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChoose
+
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendorInsufficientBP::
+	msgbox MauvilleCity_HyperTrainingCenter_Text_CapVendorInsufficientBP, MSGBOX_DEFAULT
+	goto MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChoose
+
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendorBagFull::
+	msgbox MauvilleCity_HyperTrainingCenter_Text_CapVendorBagFull, MSGBOX_DEFAULT
+	goto MauvilleCity_HyperTrainingCenter_EventScript_CapVendorChoose
+
+MauvilleCity_HyperTrainingCenter_EventScript_CapVendorExit::
+	special CloseBattlePointsWindow
+	msgbox MauvilleCity_HyperTrainingCenter_Text_CapVendorFarewell, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_HyperTrainingCenter_Text_CapVendorWelcome:
+	.string "Looking for some BOTTLE CAPS?\p"
+	.string "I trade them for Battle Points!\p"
+	.string "Take a look at what I've got.$"
+
+MauvilleCity_HyperTrainingCenter_Text_CapVendorConfirmBottle:
+	.string "A BOTTLE CAP costs 10 BP.\p"
+	.string "Would you like one?$"
+
+MauvilleCity_HyperTrainingCenter_Text_CapVendorConfirmGold:
+	.string "A GOLD BOTTLE CAP costs 50 BP.\p"
+	.string "Would you like one?$"
+
+MauvilleCity_HyperTrainingCenter_Text_CapVendorInsufficientBP:
+	.string "You don't have enough BP yet.\p"
+	.string "Win some more battles and\l"
+	.string "come back anytime!$"
+
+MauvilleCity_HyperTrainingCenter_Text_CapVendorBagFull:
+	.string "Looks like your BAG is full.\p"
+	.string "Make some room first. I'd hate\l"
+	.string "for you to lose your purchase!$"
+
+MauvilleCity_HyperTrainingCenter_Text_CapVendorSuccess:
+	.string "Thank you! Here's your\l"
+	.string "{STR_VAR_1}.\p"
+	.string "Anything else catch your eye?$"
+
+MauvilleCity_HyperTrainingCenter_Text_CapVendorFarewell:
+	.string "Good luck with your training!$"

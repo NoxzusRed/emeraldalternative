@@ -825,6 +825,13 @@ static const struct MenuAction MultichoiceList_HyperTrainingStats[] =
     {gText_Cancel2},
 };
 
+static const struct MenuAction MultichoiceList_HyperTrainingBPShop[] =
+{
+    {COMPOUND_STRING("BOTTLE CAP - 10 BP")},
+    {COMPOUND_STRING("GOLD BOTTLE CAP - 50 BP")},
+    {gText_Cancel2},
+};
+
 struct MultichoiceListStruct
 {
     const struct MenuAction *list;
@@ -954,6 +961,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
 	[MULTI_FERRY_SERVICE_TYPE] = MULTICHOICE(MultichoiceList_FerryServiceType),
     [MULTI_HYPER_TRAINING_CAPS] = MULTICHOICE(MultichoiceList_HyperTrainingCaps),
     [MULTI_HYPER_TRAINING_STATS] = MULTICHOICE(MultichoiceList_HyperTrainingStats),
+    [MULTI_HYPER_TRAINING_BP_SHOP] = MULTICHOICE(MultichoiceList_HyperTrainingBPShop),
 };
 
 const u8 *const gStdStrings[] =
