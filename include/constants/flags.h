@@ -73,7 +73,7 @@
 #define FLAG_HIDE_MT_CHIMNEY_COURTNEY_HIDEOUT       0x3C //
 #define FLAG_HIDE_MT_CHIMNEY_HEAT_WAVE_BALL			0x3D //
 #define FLAG_HIDE_SLATEPORT_CITY_DRIFLOON_DRIFBLIM 0x3E // Visible after first visit to Pacifidlog Town
-#define FLAG_UNUSED_0x03F	 0x3F // Unused Flag
+#define FLAG_RECEIVED_MAUVILLE_GENTLEMAN_BOTTLE_CAP 0x3F // Reward for optional Mauville City trainer battle
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
