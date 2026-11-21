@@ -99,12 +99,13 @@ MauvilleCity_HyperTrainingCenter_EventScript_Exit::
 	end
 
 MauvilleCity_HyperTrainingCenter_Text_Intro:
-	.string "Welcome to HYPER TRAINING!\p"
-	.string "A BOTTLE CAP maximizes one stat's\l"
-	.string "IV to 31. A GOLD BOTTLE CAP\l"
-	.string "maximizes all six!\p"
-	.string "The IVs are permanently raised.\p"
-	.string "Would you like to train?$"
+	.string "Welcome! Ready to bring out\l"
+	.string "your POKéMON's full potential?\p"
+	.string "With a BOTTLE CAP, I can raise\l"
+	.string "one IV to 31.\p"
+	.string "A GOLD BOTTLE CAP raises all six!\l"
+	.string "Those improvements are permanent.\p"
+	.string "Shall we get started?$"
 
 MauvilleCity_HyperTrainingCenter_Text_NoCaps:
 	.string "You need a BOTTLE CAP or a\l"
@@ -134,8 +135,8 @@ MauvilleCity_HyperTrainingCenter_Text_ChooseStat:
 	.string "Which stat should I maximize?$"
 
 MauvilleCity_HyperTrainingCenter_Text_StatPerfect:
-	.string "{STR_VAR_1}'s {STR_VAR_2} is already\l"
-	.string "already at 31 IV.$"
+	.string "{STR_VAR_1}'s {STR_VAR_2} IV is\l"
+	.string "already 31. No CAP needed!$"
 
 MauvilleCity_HyperTrainingCenter_Text_ConfirmStat:
 	.string "Use one BOTTLE CAP to maximize\l"
@@ -156,3 +157,48 @@ MauvilleCity_HyperTrainingCenter_Text_TrainedAll:
 MauvilleCity_HyperTrainingCenter_Text_AskAgain:
 	.string "Would you like to train another\l"
 	.string "POKéMON?$"
+
+// Visitors explain how Hyper Training works without changing the training service.
+MauvilleCity_HyperTrainingCenter_EventScript_Woman::
+	msgbox MauvilleCity_HyperTrainingCenter_Text_Woman, MSGBOX_NPC
+	end
+
+MauvilleCity_HyperTrainingCenter_EventScript_ManNearEntrance::
+	msgbox MauvilleCity_HyperTrainingCenter_Text_ManNearEntrance, MSGBOX_NPC
+	end
+
+MauvilleCity_HyperTrainingCenter_EventScript_ManByWall::
+	msgbox MauvilleCity_HyperTrainingCenter_Text_ManByWall, MSGBOX_NPC
+	end
+
+MauvilleCity_HyperTrainingCenter_EventScript_Cooltrainer::
+	msgbox MauvilleCity_HyperTrainingCenter_Text_Cooltrainer, MSGBOX_NPC
+	end
+
+MauvilleCity_HyperTrainingCenter_Text_Woman:
+	.string "Everyone trains their POKéMON to\l"
+	.string "higher levels, but there's more\l"
+	.string "to strength than experience.\p"
+	.string "Each POKéMON has hidden values\l"
+	.string "called IVs. 31 is the highest!$"
+
+MauvilleCity_HyperTrainingCenter_Text_ManNearEntrance:
+	.string "My POKéMON had a weak DEFENSE IV.\p"
+	.string "One BOTTLE CAP raised it to 31!\p"
+	.string "You have to pick the stat, though.\l"
+	.string "Each CAP only improves one.$"
+
+MauvilleCity_HyperTrainingCenter_Text_ManByWall:
+	.string "A GOLD BOTTLE CAP raises all six\l"
+	.string "IVs to 31 in one go!\p"
+	.string "But if only one stat needs help,\l"
+	.string "I'd save the gold one for later.$"
+
+MauvilleCity_HyperTrainingCenter_Text_Cooltrainer:
+	.string "I just finished HYPER TRAINING!\p"
+	.string "My POKéMON's IVs improved for\l"
+	.string "good, and its stats went up\l"
+	.string "right away!\p"
+	.string "EV training is different, though.\l"
+	.string "There's always more to work on!$"
+
