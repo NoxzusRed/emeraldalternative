@@ -828,7 +828,7 @@ static const struct MenuAction MultichoiceList_HyperTrainingStats[] =
 static const struct MenuAction MultichoiceList_HyperTrainingBPShop[] =
 {
     {COMPOUND_STRING("BOTTLE CAP - 10 BP")},
-    {COMPOUND_STRING("GOLD BOTTLE CAP - 50 BP")},
+    {COMPOUND_STRING("GOLD BOTTLE CAP - 40 BP")},
     {gText_Cancel2},
 };
 
