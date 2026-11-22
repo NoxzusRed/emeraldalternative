@@ -199,14 +199,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Mightyena
-Level: 40
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Golbat
-Level: 42
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 - Wing Attack
 - Crunch
 - Poison Fang
@@ -222,14 +222,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Sharpedo
-Level: 40
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 SPECIES_BASCULIN_WHITE_STRIPED
-Level: 42
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
 Name: GRUNT
@@ -241,18 +241,18 @@ Double Battle: No
 AI: Check Bad Move
 
 Golbat
-Level: 40
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 - Wing Attack
 - Crunch
 - Poison Fang
 - X-Scissor
 
 Skrelp
-Level: 42
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 === TRAINER_GABRIELLE_1 ===
 Name: GABRIELLE
@@ -375,7 +375,7 @@ AI: Check Bad Move
 Sharpedo
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 === TRAINER_DECLAN ===
 Name: DECLAN
@@ -531,14 +531,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Camerupt
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Houndoom
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 === TRAINER_GRUNT_MT_PYRE_1 ===
 Name: GRUNT
@@ -817,7 +817,7 @@ AI: Basic Trainer
 
 Sharpedo
 Modest Nature
-Level: 51
+Level: 52
 Ability: Speed Boost
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Spe / 126 SpA
@@ -855,7 +855,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Mightyena
-Level: 52
+Level: 53
 Ability: Strong Jaw
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 252 Spe
@@ -865,7 +865,7 @@ EVs: 252 HP / 252 Spe
 - Roar
 
 Crobat
-Level: 52
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 252 Atk / 126 Spe
 - Cross Poison
@@ -2021,12 +2021,12 @@ AI: Basic Trainer
 Toxtricity
 Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Overqwil
 Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_WILTON_1 ===
 Name: WILTON
@@ -2070,7 +2070,7 @@ AI: Basic Trainer
 Sceptile
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Dragon Pulse
 - Energy Ball
 - Sludge Bomb
@@ -2078,12 +2078,12 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Haxorus
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Florges
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_ALBERT ===
 Name: ALBERT
@@ -2098,12 +2098,12 @@ AI: Basic Trainer
 Magneton
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Swalot
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_SAMUEL ===
 Name: SAMUEL
@@ -2118,17 +2118,17 @@ AI: Basic Trainer
 Honchkrow
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Mawile
 Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Reuniclus
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_VITO ===
 Name: VITO
@@ -2143,17 +2143,17 @@ AI: Basic Trainer
 Noctowl
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Musharna
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Jolteon
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Leavanny
 Level: 49
@@ -2173,17 +2173,17 @@ AI: Basic Trainer
 Kecleon
 Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Boldore
 Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_WILTON_2 ===
 Name: WILTON
@@ -2198,17 +2198,17 @@ AI: Basic Trainer
 Manectric
 Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailmer
 Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Mienfoo
 Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Ice Punch
 - Drain Punch
 - Aerial Ace
@@ -2227,17 +2227,17 @@ AI: Basic Trainer
 Manectric
 Level: 30
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailmer
 Level: 30
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Mienfoo
 Level: 30
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Ice Punch
 - Aerial Ace
 - Drain Punch
@@ -2256,17 +2256,17 @@ AI: Basic Trainer
 Manectric
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailmer
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Mienfoo
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Ice Punch
 - U-turn
 - Drain Punch
@@ -2285,17 +2285,17 @@ AI: Basic Trainer
 Manectric
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailmer
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Mienfoo
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Ice Punch
 - Fire Punch
 - Thunder Punch
@@ -2421,17 +2421,17 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 Aggron
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Manectric
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Quagsire
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Aqua Tail
 - Earthquake
 - Rain Dance
@@ -2474,7 +2474,7 @@ AI: Basic Trainer
 Sableye
 Level: 37
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_HOPE ===
 Name: HOPE
@@ -2489,7 +2489,7 @@ AI: Basic Trainer
 Roserade
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_SHANNON ===
 Name: SHANNON
@@ -2504,7 +2504,7 @@ AI: Basic Trainer
 Claydol
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_MICHELLE ===
 Name: MICHELLE
@@ -2519,22 +2519,22 @@ AI: Basic Trainer
 Torkoal
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Toxicroak
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Jumpluff
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Donphan
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_CAROLINE ===
 Name: CAROLINE
@@ -2549,12 +2549,12 @@ AI: Basic Trainer
 Skarmory
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Sableye
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JULIE ===
 Name: JULIE
@@ -2569,17 +2569,17 @@ AI: Basic Trainer
 Excadrill
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 SPECIES_ZOROARK_HISUI
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Tropius
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_BROOKE_2 ===
 Name: BROOKE
@@ -2594,17 +2594,17 @@ AI: Basic Trainer
 Pelipper
 Level: 28
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Quilava
 Level: 28
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Roselia
 Level: 28
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_BROOKE_3 ===
 Name: BROOKE
@@ -2619,17 +2619,17 @@ AI: Basic Trainer
 Pelipper
 Level: 32
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Quilava
 Level: 32
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Roserade
 Level: 32
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_BROOKE_4 ===
 Name: BROOKE
@@ -2644,19 +2644,19 @@ AI: Basic Trainer
 Pelipper
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Typhlosion
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Lava Plume
 - Earth Power
 
 Roselia
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_BROOKE_5 ===
 Name: BROOKE
@@ -2671,19 +2671,19 @@ AI: Basic Trainer
 Pelipper
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Typhlosion
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Lava Plume
 - Earth Power
 
 Roserade
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_PATRICIA ===
 Name: PATRICIA
@@ -2697,12 +2697,12 @@ AI: Check Bad Move
 Banette
 Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Lunatone
 Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_KINDRA ===
 Name: KINDRA
@@ -2811,12 +2811,12 @@ AI: Check Bad Move
 Gothitelle
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Sableye
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_VALERIE_4 ===
 Name: VALERIE
@@ -2830,12 +2830,12 @@ AI: Check Bad Move
 Gothitelle
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Sableye
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_VALERIE_5 ===
 Name: VALERIE
@@ -2849,17 +2849,17 @@ AI: Check Bad Move
 Dusknoir
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Sableye
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Gothitelle
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_CINDY_1 ===
 Name: CINDY
@@ -2913,21 +2913,21 @@ Double Battle: No
 AI: Check Bad Move
 
 Mightyena
-Level: 38
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Typhlosion
-Level: 38
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 - Lava Plume
 - Dig
 
 Camerupt
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 === TRAINER_CINDY_2 ===
 Name: CINDY
@@ -2962,7 +2962,7 @@ AI: Check Bad Move
 Lumineon @ Nugget
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_NAOMI ===
 Name: NAOMI
@@ -3062,17 +3062,17 @@ AI: Check Bad Move
 Sylveon @ Nugget
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Espeon @ Nugget
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Glaceon @ Nugget
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_MELISSA ===
 Name: MELISSA
@@ -3346,7 +3346,7 @@ AI: Check Bad Move
 Quagsire
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Aqua Tail
 - Bulldoze
 - Slam
@@ -3355,7 +3355,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Medicham
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_GARRET ===
 Name: GARRET
@@ -3370,7 +3370,7 @@ AI: Check Bad Move
 Azumarill @ Nugget
 Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_WINSTON_2 ===
 Name: WINSTON
@@ -4360,12 +4360,12 @@ AI: Check Bad Move
 Mightyena
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Golbat
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 - Wing Attack
 - Crunch
 - Poison Fang
@@ -4383,7 +4383,7 @@ AI: Check Bad Move
 Sharpedo
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 SPECIES_BASCULIN_WHITE_STRIPED
 Level: 38
@@ -5122,7 +5122,7 @@ EVs: 126 HP / 252 Atk / 64 SpA / 64 Def / 64 SpD
 Mothim
 Level: 37
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Lunge
 - Aerial Ace
 - Roost
@@ -5130,7 +5130,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Masquerain
 Level: 37
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Air Slash
 - Giga Drain
 - Water Pulse
@@ -5156,7 +5156,7 @@ EVs: 126 HP / 252 Atk / 64 SpA / 64 Def / 64 SpD
 Mothim
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Lunge
 - Aerial Ace
 - Roost
@@ -5164,7 +5164,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Masquerain
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Air Slash
 - Giga Drain
 - Surf
@@ -5190,7 +5190,7 @@ EVs: 126 HP / 252 Atk / 64 SpA / 64 Def / 64 SpD
 Mothim
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Lunge
 - Aerial Ace
 - Roost
@@ -5198,7 +5198,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Masquerain
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Air Slash
 - Giga Drain
 - Surf
@@ -5207,7 +5207,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Frosmoth
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Ice Beam
 - Bug Buzz
 - Dazzling Gleam
@@ -5233,7 +5233,7 @@ EVs: 126 HP / 252 Atk / 64 SpA / 64 Def / 64 SpD
 Mothim
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Lunge
 - Aerial Ace
 - Roost
@@ -5241,7 +5241,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Masquerain
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Air Slash
 - Giga Drain
 - Surf
@@ -5250,7 +5250,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Frosmoth
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Ice Beam
 - Bug Buzz
 - Dazzling Gleam
@@ -5280,7 +5280,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Claydol
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -5293,13 +5293,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Gothorita
-Level: 36
+Gothitelle
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Duosion
-Level: 36
+Reuniclus
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -5313,9 +5313,9 @@ Double Battle: No
 AI: Check Bad Move
 
 Girafarig
-Level: 36
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+Level: 42
+IVs: 31 HP / 31 Atk / 18 Def / 31 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
 
 === TRAINER_WILLIAM ===
 Name: WILLIAM
@@ -5353,12 +5353,12 @@ AI: Check Bad Move
 Reuniclus
 Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Solrock
 Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_CAMERON_1 ===
 Name: CAMERON
@@ -5443,17 +5443,17 @@ AI: Check Bad Move
 Solrock
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Gardevoir
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Lunatone
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JACLYN ===
 Name: JACLYN
@@ -5478,8 +5478,8 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Gothorita
-Level: 36
+Gothitelle
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -5493,7 +5493,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -5507,7 +5507,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Gardevoir
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -5547,12 +5547,12 @@ AI: Check Bad Move
 Gothitelle
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Noctowl
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JACKI_1 ===
 Name: JACKI
@@ -5623,12 +5623,12 @@ AI: Check Bad Move
 Gothorita
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Lunatone
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JACKI_5 ===
 Name: JACKI
@@ -5642,17 +5642,17 @@ AI: Check Bad Move
 Lunatone
 Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Gothitelle
 Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Solrock
 Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_WALTER_1 ===
 Name: WALTER
@@ -5666,7 +5666,7 @@ AI: Check Bad Move
 Manectric
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_MICAH ===
 Name: MICAH
@@ -5680,12 +5680,12 @@ AI: Check Bad Move
 Manectric
 Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Manectric
 Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_THOMAS ===
 Name: THOMAS
@@ -5699,7 +5699,7 @@ AI: Check Bad Move
 Swalot
 Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_WALTER_2 ===
 Name: WALTER
@@ -5713,7 +5713,7 @@ AI: Check Bad Move
 Manectric
 Level: 39
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_WALTER_3 ===
 Name: WALTER
@@ -5727,7 +5727,7 @@ AI: Check Bad Move
 Linoone
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Headbutt
 - Sand Attack
 - Odor Sleuth
@@ -5736,7 +5736,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Manectric
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Extreme Speed
 - Spark
 
@@ -5752,7 +5752,7 @@ AI: Check Bad Move
 Linoone
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Headbutt
 - Sand Attack
 - Odor Sleuth
@@ -5761,7 +5761,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Manectric
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Extreme Speed
 - Spark
 
@@ -5777,7 +5777,7 @@ AI: Check Bad Move
 Linoone
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Headbutt
 - Sand Attack
 - Odor Sleuth
@@ -5786,7 +5786,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Jellicent
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Manectric
 Level: 48
@@ -6936,34 +6936,34 @@ Double Battle: No
 AI: Check Bad Move
 
 Phanpy @ Sitrus Berry
-Level: 54
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Phanpy @ Sitrus Berry
-Level: 54
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Phanpy @ Sitrus Berry
-Level: 54
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Phanpy @ Sitrus Berry
-Level: 54
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Phanpy @ Sitrus Berry
-Level: 54
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Donphan @ Life Orb
-Level: 56
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Earthquake
 - Body Slam
 - Iron Head
@@ -6994,7 +6994,7 @@ AI: Check Bad Move
 Donphan @ Oran Berry
 Level: 33
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_MIGUEL_4 ===
 Name: MIGUEL
@@ -7008,7 +7008,7 @@ AI: Check Bad Move
 Donphan @ Oran Berry
 Level: 37
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_MIGUEL_5 ===
 Name: MIGUEL
@@ -7022,7 +7022,7 @@ AI: Check Bad Move
 Donphan @ Sitrus Berry
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_VICTORIA ===
 Name: VICTORIA
@@ -7067,17 +7067,17 @@ AI: Check Bad Move
 Azumarill @ Oran Berry
 Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Azumarill @ Oran Berry
 Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Azumarill @ Oran Berry
 Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_ISABEL_1 ===
 Name: ISABEL
@@ -7184,7 +7184,7 @@ AI: Basic Trainer
 Machoke
 Level: 30
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_TIMOTHY_2 ===
 Name: TIMOTHY
@@ -7268,7 +7268,7 @@ EVs: 252 HP / 126 Def / 126 SpD
 Lunatone
 Level: 20
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Confusion
 - Rock Slide
 - Hypnosis
@@ -7285,7 +7285,7 @@ AI: Basic Trainer
 Riolu
 Level: 23
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Metal Claw
 - Force Palm
 - Quick Attack
@@ -7294,7 +7294,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Machop
 Level: 23
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_SHELBY_2 ===
 Name: SHELBY
@@ -7499,7 +7499,7 @@ AI: Basic Trainer
 Kangaskhan
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Take Down
 - Crunch
 - Dynamic Punch
@@ -7508,7 +7508,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Dusclops
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Skill Swap
 - Protect
 - Will O Wisp
@@ -7527,7 +7527,7 @@ AI: Basic Trainer
 Gothitelle
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Skill Swap
 - Psychic
 - Thunderbolt
@@ -7536,7 +7536,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Aggron
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Earthquake
 - Rock Slide
 - Shadow Claw
@@ -8234,7 +8234,7 @@ AI: Check Bad Move
 Magnezone
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_ABIGAIL_1 ===
 Name: ABIGAIL
@@ -8325,7 +8325,7 @@ AI: Check Bad Move
 Magnezone
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_DYLAN_1 ===
 Name: DYLAN
@@ -8395,7 +8395,7 @@ AI: Check Bad Move
 Honchkrow
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_MARIA_1 ===
 Name: MARIA
@@ -8465,7 +8465,7 @@ AI: Check Bad Move
 Honchkrow
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_CAMDEN ===
 Name: CAMDEN
@@ -8479,17 +8479,17 @@ AI: Check Bad Move
 Shellder
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Shellder
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Seadra
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_DEMETRIUS ===
 Name: DEMETRIUS
@@ -8799,17 +8799,17 @@ AI: Check Bad Move
 Cloyster
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Basculegion (F)
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_KATELYN_4 ===
 Name: KATELYN
@@ -8823,17 +8823,17 @@ AI: Check Bad Move
 Cloyster
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Basculegion (F)
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_KATELYN_5 ===
 Name: KATELYN
@@ -8847,17 +8847,17 @@ AI: Check Bad Move
 Cloyster
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Basculegion (F)
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_NICOLAS_1 ===
 Name: NICOLAS
@@ -8871,17 +8871,17 @@ AI: Check Bad Move
 Noibat
 Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Gabite
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Altaria
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_NICOLAS_2 ===
 Name: NICOLAS
@@ -8895,17 +8895,17 @@ AI: Check Bad Move
 Altaria
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Garchomp
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Noivern
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_NICOLAS_3 ===
 Name: NICOLAS
@@ -8919,17 +8919,17 @@ AI: Check Bad Move
 Altaria
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Garchomp
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Noivern
 Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_NICOLAS_4 ===
 Name: NICOLAS
@@ -8943,22 +8943,22 @@ AI: Check Bad Move
 Salamence
 Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Altaria
 Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Garchomp
 Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Noivern
 Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_NICOLAS_5 ===
 Name: NICOLAS
@@ -8972,27 +8972,27 @@ AI: Check Bad Move
 Salamence @ Dragon Fang
 Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Altaria
 Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Flygon
 Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Garchomp
 Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Noivern
 Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_AARON ===
 Name: AARON
@@ -9068,17 +9068,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Fletchinder
-Level: 33
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Skarmory
-Level: 33
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Tropius
-Level: 33
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9092,7 +9092,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Skarmory
-Level: 35
+Level: 36
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_PRESLEY ===
@@ -9124,12 +9124,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Murkrow
-Level: 34
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Pelipper
-Level: 34
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9288,17 +9288,17 @@ AI: Check Bad Move
 Altaria
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Honchkrow
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Skarmory
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_ALEX ===
 Name: ALEX
@@ -9389,14 +9389,14 @@ Double Battle: No
 Claydol
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Skill Swap
 - Earthquake
 
 Lanturn
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Thunderbolt
 - Earthquake
 
@@ -9579,7 +9579,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Cofagrigus @ Smoke Ball
 Level: 39
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JOCELYN ===
 Name: JOCELYN
@@ -9811,7 +9811,7 @@ AI: Check Bad Move
 Castform
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Rain Dance
 - Weather Ball
 - Thunder
@@ -10359,12 +10359,12 @@ AI: Check Bad Move
 Cloyster
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JENNY_4 ===
 Name: JENNY
@@ -10378,12 +10378,12 @@ AI: Check Bad Move
 Cloyster
 Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
 Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JENNY_5 ===
 Name: JENNY
@@ -10675,7 +10675,7 @@ AI: Check Bad Move
 SPECIES_LILLIGANT_HISUI
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Petal Blizzard
 - Victory Dance
 - Brick Break
@@ -10683,7 +10683,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Whimsicott
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Moonblast
 - Giga Drain
 - Growth
@@ -10692,12 +10692,12 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Altaria
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Leafeon
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_AMY_AND_LIV_1 ===
 Name: AMY & LIV
@@ -10969,14 +10969,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Overqwil
-Level: 55
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
-Level: 55
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_LEONARD ===
 Name: LEONARD
@@ -10988,19 +10988,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Grapploct
-Level: 54
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Pelipper
-Level: 54
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
-Level: 54
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_DUNCAN ===
 Name: DUNCAN
@@ -11057,17 +11057,17 @@ AI: Check Bad Move
 Pelipper
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Overqwil
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_ERNEST_4 ===
 Name: ERNEST
@@ -11081,17 +11081,17 @@ AI: Check Bad Move
 Pelipper
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Overqwil
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_ERNEST_5 ===
 Name: ERNEST
@@ -11105,17 +11105,17 @@ AI: Check Bad Move
 Pelipper
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Overqwil
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_ELI ===
 Name: ELI
@@ -11312,7 +11312,7 @@ AI: Check Bad Move
 Wailord
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_CONOR ===
 Name: CONOR
@@ -13160,7 +13160,7 @@ AI: Basic Trainer
 Jumpluff
 Level: 35
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_LORENZO ===
 Name: LORENZO
@@ -13204,7 +13204,7 @@ AI: Basic Trainer
 Cacturne
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JACKSON_2 ===
 Name: JACKSON
@@ -13219,7 +13219,7 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 Jumpluff
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JACKSON_3 ===
 Name: JACKSON
@@ -13234,7 +13234,7 @@ AI: Basic Trainer
 Jumpluff
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JACKSON_4 ===
 Name: JACKSON
@@ -13249,7 +13249,7 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 Jumpluff
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JACKSON_5 ===
 Name: JACKSON
@@ -13264,12 +13264,12 @@ AI: Basic Trainer
 Kecleon
 Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Jumpluff
 Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_CATHERINE_1 ===
 Name: CATHERINE
@@ -13411,7 +13411,7 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 SPECIES_LILLIGANT_HISUI
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Petal Blizzard
 - Victory Dance
 - Brick Break
@@ -13419,12 +13419,12 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Roserade
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Leafeon
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_CATHERINE_5 ===
 Name: CATHERINE
@@ -13439,7 +13439,7 @@ AI: Basic Trainer
 SPECIES_LILLIGANT_HISUI
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Petal Blizzard
 - Victory Dance
 - Brick Break
@@ -13447,12 +13447,12 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 Roserade
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Leafeon
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JULIO ===
 Name: JULIO
@@ -13480,12 +13480,12 @@ AI: Check Bad Move
 Mightyena
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Crobat
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 - Aerial Ace
 - Crunch
 - Poison Fang
@@ -13626,13 +13626,13 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Gothorita
-Level: 36
+Gothitelle
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Cofagrigus
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -13744,7 +13744,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Arbok
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -13758,7 +13758,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Cofagrigus
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -13772,9 +13772,9 @@ Double Battle: No
 AI: Check Bad Move
 
 Girafarig
-Level: 36
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+Level: 42
+IVs: 31 HP / 31 Atk / 18 Def / 31 SpA / 18 SpD / 18 Spe
+EVs: 252 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
 
 === TRAINER_NICHOLAS ===
 Name: NICHOLAS
@@ -13786,12 +13786,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Gardevoir
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Musharna
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -13805,21 +13805,21 @@ Double Battle: No
 AI: Check Bad Move
 
 Typhlosion
-Level: 38
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 - Lava Plume
 - Dig
 
 Mightyena
-Level: 38
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Coalossal
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 === TRAINER_GRUNT_SPACE_CENTER_4 ===
 Name: GRUNT
@@ -13831,14 +13831,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Claydol
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Houndoom
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 === TRAINER_GRUNT_SPACE_CENTER_5 ===
 Name: GRUNT
@@ -13850,18 +13850,18 @@ Double Battle: No
 AI: Check Bad Move
 
 Golbat
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 - Wing Attack
 - Crunch
 - Poison Fang
 - X-Scissor
 
 Mightyena
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 === TRAINER_GRUNT_SPACE_CENTER_6 ===
 Name: GRUNT
@@ -13873,14 +13873,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Mightyena
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Typhlosion
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 - Lava Plume
 - Dig
 
@@ -13894,14 +13894,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Claydol
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Coalossal
-Level: 40
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA
+EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 === TRAINER_MACEY ===
 Name: MACEY
@@ -13913,12 +13913,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Chimecho
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Musharna
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -14384,12 +14384,12 @@ AI: Check Bad Move
 Lumineon
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_RICK ===
 Name: RICK
@@ -15013,12 +15013,12 @@ AI: Check Bad Move
 Espeon
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Umbreon
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_KIRA_AND_DAN_5 ===
 Name: KIRA & DAN
@@ -15032,12 +15032,12 @@ AI: Check Bad Move
 Espeon
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Umbreon
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_JOHANNA ===
 Name: JOHANNA
@@ -15174,11 +15174,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 34
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Murkrow
-Level: 34
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_ASHLEY ===
@@ -15191,17 +15191,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Swablu
-Level: 33
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Emolga
-Level: 33
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Drifblim
-Level: 33
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -19118,17 +19118,17 @@ AI: Basic Trainer
 Tropius
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Skarmory
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Murkrow
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_STEVEN ===
 Name: WALLACE
@@ -19449,17 +19449,17 @@ AI: Check Bad Move
 Pelipper
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Overqwil
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_CORY_5 ===
 Name: CORY
@@ -19473,17 +19473,17 @@ AI: Check Bad Move
 Pelipper
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Overqwil
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_PABLO_2 ===
 Name: PABLO
@@ -19516,17 +19516,17 @@ AI: Check Bad Move
 Kingdra
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Dhelmise
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Dhelmise
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_PABLO_4 ===
 Name: PABLO
@@ -19540,17 +19540,17 @@ AI: Check Bad Move
 Kingdra
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Dhelmise
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Dhelmise
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_PABLO_5 ===
 Name: PABLO
@@ -19564,17 +19564,17 @@ AI: Check Bad Move
 Kingdra
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Dhelmise
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Dhelmise
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_KOJI_2 ===
 Name: KOJI
@@ -19607,17 +19607,17 @@ AI: Check Bad Move
 Grapploct
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Lucario
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_KOJI_4 ===
 Name: KOJI
@@ -19631,17 +19631,17 @@ AI: Check Bad Move
 Grapploct
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Lucario
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_KOJI_5 ===
 Name: KOJI
@@ -19655,17 +19655,17 @@ AI: Check Bad Move
 Grapploct
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Lucario
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_CRISTIN_2 ===
 Name: CRISTIN
@@ -20214,7 +20214,7 @@ Double Battle: No
 Chimecho
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_ALVARO ===
 Name: ALVARO
@@ -20227,12 +20227,12 @@ Double Battle: No
 Musharna
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Reuniclus
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_EVERETT ===
 Name: EVERETT
@@ -20245,7 +20245,7 @@ Double Battle: No
 Arcanine
 Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 === TRAINER_RED ===
 Name: RED

@@ -738,10 +738,29 @@ EverGrandeCity_Text_Zebstrika:
 EverGrandeCity_Text_Flygon:
 	.string "Kryyy-rrrr...$"
 
-
-@ Temporary dialogue; replace the text here when Cynthia's full dialogue is written.
 EverGrandeCity_Text_Cynthia:
-    .string "Cynthia: {PLAYER}, there you are!$"
+    .string "Oh? A Trainer...\p"
+	.string "Tell me, have you come all this way to\n"
+	.string "challenge the Pokémon League? Or are\l"
+	.string "you simply here to admire the view?\p"
+	.string "Hehe... Either way, I suppose every\n"
+	.string "journey has its own purpose.\p"
+	.string "Have you heard of the Pokémon World\n"
+	.string "Tournament?\p"
+	.string "It's held at the Battle Frontier, where\n"
+	.string "remarkable Trainers from all over the\l"
+	.string "world gather to test their strength.\p"
+	.string "Each of them has a different story, a\n"
+	.string "different philosophy... and a unique\l"
+	.string "bond with their Pokémon.\p"
+	.string "I find that rather fascinating, don't\n"
+	.string "you?\p"
+	.string "Whether you're seeking the title of\n"
+	.string "Champion or simply enjoying your\l"
+	.string "adventure, I'd love for you to take\l"
+	.string "part.\p"
+	.string "Who knows? Perhaps our paths will cross\n"
+	.string "again there.$"
 
 EverGrandeCity_Text_EnteringVictoryRoad:
 	.string "ENTERING VICTORY ROAD$"
