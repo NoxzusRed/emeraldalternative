@@ -5294,6 +5294,7 @@ static bool32 TryStartBattleLevelEvolution(u32 partyId)
     sBattleEvolutionSavedCallback1 = gMain.callback1;
     gMain.callback1 = NULL;
     gCB2_AfterEvolution = CB2_ReturnFromBattleEvolution;
+    SetEvolutionSceneInBattle(TRUE);
     EvolutionScene(mon, targetSpecies, canStopEvo, partyId);
     return TRUE;
 }

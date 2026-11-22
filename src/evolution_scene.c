@@ -49,6 +49,15 @@ static EWRAM_DATA u16 *sBgAnimPal = NULL;
 
 COMMON_DATA void (*gCB2_AfterEvolution)(void) = NULL;
 
+// Only mid-battle evolutions must return to the battle BGM. Other evolution
+// scenes still restore the overworld music normally.
+static bool8 sEvolvingDuringBattle = FALSE;
+
+void SetEvolutionSceneInBattle(bool8 inBattle)
+{
+    sEvolvingDuringBattle = inBattle;
+}
+
 #define sEvoCursorPos           gBattleCommunication[1] // when learning a new move
 #define sEvoGraphicsTaskId      gBattleCommunication[2]
 
@@ -799,8 +808,10 @@ static void Task_EvolutionScene(u8 taskId)
             if (var != MOVE_NONE && !gTasks[taskId].tEvoWasStopped)
             {
                 u8 nickname[POKEMON_NAME_BUFFER_SIZE];
-                if (!(gTasks[taskId].tBits & TASK_BIT_LEARN_MOVE))
+                if (!(gTasks[taskId].tBits & TASK_BIT_LEARN_MOVE) && !sEvolvingDuringBattle)
                 {
+                    // A battle evolution must not queue the map music. The
+                    // battle's saved M4A song will resume at its old position.
                     StopMapMusic();
                     Overworld_PlaySpecialMapMusic();
                 }
@@ -828,11 +839,10 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_END:
         if (!gPaletteFade.active)
         {
-            if (!(gTasks[taskId].tBits & TASK_BIT_LEARN_MOVE))
+            if (!(gTasks[taskId].tBits & TASK_BIT_LEARN_MOVE) && !sEvolvingDuringBattle)
             {
                 StopMapMusic();
                 Overworld_PlaySpecialMapMusic();
-
             }
 
             if (!gTasks[taskId].tEvoWasStopped)
@@ -842,6 +852,8 @@ static void Task_EvolutionScene(u8 taskId)
             FreeMonSpritesGfx();
             FREE_AND_SET_NULL(sEvoStructPtr);
             FreeAllWindowBuffers();
+            // Restore the default music behavior for future evolutions.
+            sEvolvingDuringBattle = FALSE;
             SetMainCallback2(gCB2_AfterEvolution);
         }
         break;

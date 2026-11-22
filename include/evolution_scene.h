@@ -3,6 +3,7 @@
 
 void BeginEvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, bool8 canStopEvo, u8 partyId);
 void EvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, bool8 canStopEvo, u8 partyId);
+void SetEvolutionSceneInBattle(bool8 inBattle);
 void TradeEvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, u8 preEvoSpriteId, u8 partyId);
 
 extern void (*gCB2_AfterEvolution)(void);
