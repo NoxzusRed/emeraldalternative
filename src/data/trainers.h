@@ -15089,11 +15089,11 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LOUDRED,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6230
-            .ev = TRAINER_PARTY_EVS(252, 252, 126, 0, 0, 126),
+            .ev = TRAINER_PARTY_EVS(252, 252, 180, 0, 0, 180),
 #line 6229
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
 #line 6228
-            .lvl = 34,
+            .lvl = 33,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
@@ -15109,7 +15109,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_KANGASKHAN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6239
-            .ev = TRAINER_PARTY_EVS(64, 0, 0, 0, 0, 0),
+            .ev = TRAINER_PARTY_EVS(64, 0, 64, 0, 0, 64),
 #line 6238
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
 #line 6237
@@ -15157,7 +15157,7 @@ F_TRAINER_FEMALE |
 #line 6259
             .ev = TRAINER_PARTY_EVS(64, 0, 0, 0, 0, 0),
 #line 6258
-            .iv = TRAINER_PARTY_IVS(24, 8, 24, 24, 24, 24),
+            .iv = TRAINER_PARTY_IVS(24, 0, 24, 24, 24, 24),
 #line 6257
             .ability = ABILITY_GUTS,
 #line 6256
@@ -15181,7 +15181,7 @@ F_TRAINER_FEMALE |
 #line 6268
             .ev = TRAINER_PARTY_EVS(252, 0, 126, 0, 0, 126),
 #line 6267
-            .iv = TRAINER_PARTY_IVS(30, 0, 30, 12, 24, 30),
+            .iv = TRAINER_PARTY_IVS(30, 0, 30, 0, 24, 30),
 #line 6266
             .lvl = 35,
             .nature = NATURE_HARDY,

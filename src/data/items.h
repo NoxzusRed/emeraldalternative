@@ -860,7 +860,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ENERGY_ROOT] =
     {
         .name = _("Energy Root"),
-        .price = (I_PRICE >= GEN_7) ? 1200 : 800,
+        .price = (I_PRICE >= GEN_7) ? 800 : 800,
         .description = COMPOUND_STRING(
             "A bitter root\n"
             "that restores HP\n"

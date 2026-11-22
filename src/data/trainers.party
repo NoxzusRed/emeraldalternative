@@ -6225,9 +6225,9 @@ Double Battle: No
 AI: Basic Trainer
 
 Loudred
-Level: 34
+Level: 33
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Atk / 126 Def / 126 SpD
+EVs: 252 HP / 252 Atk / 180 Def / 180 SpD
 - Uproar
 - Bite
 - Rest
@@ -6236,7 +6236,7 @@ EVs: 252 HP / 252 Atk / 126 Def / 126 SpD
 Kangaskhan
 Level: 33
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 64 HP
+EVs: 64 HP / 64 Def / 64 SpD
 - Headbutt
 - Roar
 - Bulldoze
@@ -6255,7 +6255,7 @@ EVs: 252 HP / 252 Spe / 50 Def / 50 SpD
 Ursaring @ Flame Orb
 Level: 35
 Ability: Guts
-IVs: 24 HP / 8 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 24 HP / 0 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP
 - Facade
 - Lick
@@ -6264,7 +6264,7 @@ EVs: 64 HP
 
 Exploud @ Sitrus Berry
 Level: 35
-IVs: 30 HP / 0 Atk / 30 Def / 24 SpA / 30 SpD / 12 Spe
+IVs: 30 HP / 0 Atk / 30 Def / 24 SpA / 30 SpD / 0 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Hyper Voice
 - Crunch
