@@ -553,6 +553,7 @@
 #define MUS_VS_CYNTHIA              614
 #define MUS_VS_RED                  615
 #define MUS_VS_ALDER                616
+#define MUS_VS_IRIS                 617
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
