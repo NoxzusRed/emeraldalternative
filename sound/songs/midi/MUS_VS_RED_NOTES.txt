@@ -13,3 +13,12 @@ Tempo: approximately 92 BPM, identical to reference MIDI. Fast note subdivisions
 Loop markers: [ tick 1920 and ] tick 36960 (PPQ 120). Intro 4 bars, full sequence 77 bars; loop length 73 bars.
 The reference's original MIDI tempo, notes and phrases are retained, but M4A samples and track merges change timbre/voice balance. Test in emulator, especially possible voice stealing.
 The music is registered but not assigned to a specific trainer/event.
+
+
+Mix revision — 2026-11-22
+- RED-only MIDI mix: slightly lower melodic layers and bass volume, keeping pitches, original timing and instruments.
+- Kick (note 35): 698 hits reduced to 61% of velocity, capped at 78; its private bank sample now uses the less heavy SC88Pro round kick.
+- Timpani: 309 hit velocities scaled to 72%, and track volume reduced from 88 to 70.
+- Brass hits after the intro: 279 velocities reduced to 84%; cymbal/impact accents: 239 velocities to 82% capped at 100.
+- 7,205 notes, 92 BPM tempo, 10 music channels and the loop remain unchanged. No other songs altered.
+- Needs in-emulator audition to verify balance and possible simultaneous voice clipping.
