@@ -55,7 +55,7 @@ voice_keysplit_all voicegroup198
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 85, 0, 154, 165
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 255, 0, 255
+	voice_directsound 72, 0, DirectSoundWaveData_sc88pro_trumpet_72, 255, 0, 235, 180
 	voice_keysplit voicegroup007, KeySplitTable3
 	voice_keysplit voicegroup008, KeySplitTable4
 	voice_keysplit voicegroup008, KeySplitTable4

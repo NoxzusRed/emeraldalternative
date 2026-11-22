@@ -1,14 +1,15 @@
 MUS_VS_RED — Pokémon Emerald T
 
-MIDI arrangement for Lance/Red's Champion battle theme, styled after Pokémon HeartGold/SoulSilver using existing Pokémon Emerald sound samples.
+This song now uses the complete multi-part HeartGold/SoulSilver Champion Battle MIDI transcription rather than the earlier simplified Gold/Silver/Crystal-derived reconstruction.
+Reference MIDI: broad-well/moonboost/midi/nintendo-ds/PKM_HGSS_Champion_Battle_Theme_V2.mid (original SMF 15 tracks, 120 PPQ, approximately 92 BPM).
+All 7,205 original note-on/off events and their timing are preserved. Fourteen musical source parts are combined into ten MIDI channels by merging non-overlapping or compatible instruments; harp shares a channel with brass hits after the intro, while synth layers share another channel.
 
-Note source: Pokémon Gold/Silver/Crystal Champion battle MIDI from Mosberg/pokemon, pokeconfluence/sound/songs/midi/mus_c_vs_champion_lance.mid. This arrangement preserves the original three melodic sequences and adds brass, strings, overdrive guitar, bass, horns, PSG wave/square, harp, timpani and drums. It is NOT an exact transcription of the audio in the linked HeartGold/SoulSilver video.
-
-Identifier: MUS_VS_RED = 615
+Constant: MUS_VS_RED (ID 615)
 MIDI: sound/songs/midi/mus_vs_red.mid
-Music bank: voicegroup197
-Drum kit: voicegroup198
-Conversion: -E -R50 -G197 -V085 -P1
-Loop markers: [ at tick 34560 (after 18 bars), ] at tick 99840 (52 bars total), PPQ 480.
-
-Sound test in emulator recommended: 10 tracks, five available direct-sound channels, subject to voice stealing. The song is declared but not assigned to any encounter or event.
+Voicebank: voicegroup197 (Emerald samples)
+Percussion: voicegroup198 (corrected note 35 bass drum, note 51 ride bell, closed/open hi-hats)
+Build conversion: -E -R50 -G197 -V085 -P1
+Tempo: approximately 92 BPM, identical to reference MIDI. Fast note subdivisions missing from the prior version are now present.
+Loop markers: [ tick 1920 and ] tick 36960 (PPQ 120). Intro 4 bars, full sequence 77 bars; loop length 73 bars.
+The reference's original MIDI tempo, notes and phrases are retained, but M4A samples and track merges change timbre/voice balance. Test in emulator, especially possible voice stealing.
+The music is registered but not assigned to a specific trainer/event.
