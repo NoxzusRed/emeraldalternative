@@ -539,6 +539,8 @@ Houndoom
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
+- Dark Pulse
+- Flamethrower
 
 === TRAINER_GRUNT_MT_PYRE_1 ===
 Name: GRUNT
@@ -2020,8 +2022,12 @@ AI: Basic Trainer
 
 Toxtricity
 Level: 54
+Ability: Punk Rock
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Overdrive
+- Boomburst
+- Sludge Bomb
 
 Overqwil
 Level: 54
@@ -2914,8 +2920,12 @@ AI: Check Bad Move
 
 Mightyena
 Level: 42
+Ability: Strong Jaw
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
+- Crunch
+- Fire Fang
+- Poison Fang
 
 Typhlosion
 Level: 42
@@ -10876,8 +10886,13 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
 Level: 43
+Ability: Strong Jaw
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Crunch
+- Fire Fang
+- Thunder Fang
+- Ice Fang
 
 Rapidash
 Level: 43
@@ -11385,7 +11400,7 @@ AI: Check Bad Move
 Camerupt
 Level: 49
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+EVs: 126 HP / 126 Def / 126 SpD
 - Earth Power
 - Flamethrower
 - Rock Slide
@@ -11393,6 +11408,7 @@ EVs: 252 HP / 126 Def / 126 SpD
 
 Mightyena
 Level: 51
+Ability: Strong Jaw
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 126 Spe
 - Crunch
@@ -11403,7 +11419,7 @@ EVs: 252 HP / 126 Spe
 Crobat
 Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+EVs: 126 HP / 126 Def / 126 SpD
 - Cross Poison
 - Brave Bird
 - X-Scissor
@@ -13479,8 +13495,11 @@ AI: Check Bad Move
 
 Mightyena
 Level: 48
+Ability: Strong Jaw
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
+- Crunch
+- Fire Fang
 
 Crobat
 Level: 48
@@ -13813,8 +13832,12 @@ EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Mightyena
 Level: 42
+Ability: Strong Jaw
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
+- Crunch
+- Fire Fang
+- Poison Fang
 
 Coalossal
 Level: 42
@@ -13839,6 +13862,8 @@ Houndoom
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
+- Dark Pulse
+- Flamethrower
 
 === TRAINER_GRUNT_SPACE_CENTER_5 ===
 Name: GRUNT
@@ -13860,8 +13885,12 @@ EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Mightyena
 Level: 42
+Ability: Strong Jaw
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
+- Crunch
+- Fire Fang
+- Poison Fang
 
 === TRAINER_GRUNT_SPACE_CENTER_6 ===
 Name: GRUNT
@@ -13874,8 +13903,12 @@ AI: Check Bad Move
 
 Mightyena
 Level: 42
+Ability: Strong Jaw
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
+- Crunch
+- Fire Fang
+- Poison Fang
 
 Typhlosion
 Level: 42
@@ -16511,7 +16544,7 @@ AI: Basic Trainer
 Houndoom
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Atk / 126 Spe
+EVs: 126 HP / 252 Atk / 126 Spe
 - Crunch
 - Thunder Fang
 - Fire Fang
@@ -16521,7 +16554,7 @@ Coalossal
 Sassy Nature
 Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 SpA
+EVs: 126 HP / 252 Def / 252 SpD / 126 SpA
 - Ancient Power
 - Fire Punch
 - Aerial Ace
@@ -16530,7 +16563,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 126 SpA
 Camerupt
 Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+EVs: 126 HP / 180 Def / 180 SpD
 - Earth Power
 - Flamethrower
 - Rock Slide
@@ -17011,8 +17044,12 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Toxtricity
 Level: 34
+Ability: Punk Rock
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Discharge
+- Acid Spray
+- Snarl
 
 === TRAINER_DAYTON ===
 Name: DAYTON
@@ -17813,6 +17850,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Atk
 
 Toxtricity
 Level: 71
+Ability: Punk Rock
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA
 - Overdrive
@@ -19792,8 +19830,12 @@ AI: Check Bad Move
 
 Toxtricity
 Level: 40
+Ability: Punk Rock
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Discharge
+- Sludge Bomb
+- Snarl
 
 Manectric
 Level: 40
@@ -19816,8 +19858,12 @@ AI: Check Bad Move
 
 Toxtricity
 Level: 44
+Ability: Punk Rock
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Discharge
+- Sludge Bomb
+- Snarl
 
 Manectric
 Level: 44
@@ -19840,8 +19886,12 @@ AI: Check Bad Move
 
 Toxtricity
 Level: 48
+Ability: Punk Rock
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Overdrive
+- Sludge Bomb
+- Boomburst
 
 Manectric
 Level: 48
@@ -19960,6 +20010,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
 Level: 38
+Ability: Strong Jaw
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -19999,8 +20050,13 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
 Level: 43
+Ability: Strong Jaw
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Crunch
+- Fire Fang
+- Thunder Fang
+- Ice Fang
 
 Linoone
 Level: 43
@@ -20042,8 +20098,13 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
 Level: 48
+Ability: Strong Jaw
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Crunch
+- Fire Fang
+- Thunder Fang
+- Ice Fang
 
 Linoone
 Level: 48
@@ -20085,8 +20146,13 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
 Level: 53
+Ability: Strong Jaw
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Crunch
+- Fire Fang
+- Thunder Fang
+- Ice Fang
 
 Linoone
 Level: 53
