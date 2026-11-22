@@ -18,6 +18,7 @@
 #include "recorded_battle.h"
 #include "window.h"
 #include "reshow_battle_screen.h"
+#include "evolution_scene.h"
 #include "main.h"
 #include "palette.h"
 #include "money.h"
@@ -90,6 +91,14 @@ EWRAM_DATA static bool8 sClearMultiHitCritAfterAnimation;
 #define MULTI_STAT_MESSAGE_MIN_FRAMES 48
 
 extern const u16 gStatDownStringIds[];
+
+// A level-up evolution uses the normal evolution scene but returns to the
+// paused battle instead of resetting the battle engine.
+EWRAM_DATA static u8 sBattleEvolutionPartyId;
+EWRAM_DATA static u16 sBattleEvolutionOldSpecies;
+
+static void CB2_ReturnFromBattleEvolution(void);
+static bool32 TryStartBattleLevelEvolution(u32 partyId);
 
 const u16 gParallelDrainHealMarker = 0;
 const u16 gParallelDroughtSunAnimMarker = 0;
@@ -5144,6 +5153,119 @@ static u32 GetMonHoldEffect(struct Pokemon *mon)
     return holdEffect;
 }
 
+// Called after the normal evolution scene, including if B canceled it.
+// The evolution scene owns its sprites; reshow reconstructs the battle sprites
+// from the saved Pokemon and gBattleMons without restarting the battle.
+static void CB2_ReturnFromBattleEvolution(void)
+{
+    struct Pokemon *mon = &gPlayerParty[sBattleEvolutionPartyId];
+    u16 newSpecies = GetMonData(mon, MON_DATA_SPECIES);
+    u32 battler, i;
+
+    if (newSpecies != sBattleEvolutionOldSpecies)
+    {
+        for (battler = 0; battler < gBattlersCount; battler++)
+        {
+            u16 temp;
+
+            if (!IsOnPlayerSide(battler)
+             || gBattlerPartyIndexes[battler] != sBattleEvolutionPartyId
+             || !IsBattlerAlive(battler))
+                continue;
+
+            // Leave in-battle boosts, status, timers, and field effects intact.
+            gBattleMons[battler].species = newSpecies;
+            gBattleMons[battler].abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
+            CopyMonLevelAndBaseStatsToBattleMon(battler, mon);
+            CopyMonAbilityAndTypesToBattleMon(battler, mon);
+            if (gStatuses3[battler] & STATUS3_POWER_TRICK)
+                SWAP(gBattleMons[battler].attack, gBattleMons[battler].defense, temp);
+
+            // The evolution scene may teach or replace moves. Keep the
+            // active battle mon synchronized with the party's move slots.
+            for (i = 0; i < MAX_MON_MOVES; i++)
+            {
+                gBattleMons[battler].moves[i] = GetMonData(mon, MON_DATA_MOVE1 + i);
+                gBattleMons[battler].pp[i] = GetMonData(mon, MON_DATA_PP1 + i);
+            }
+            gBattleMons[battler].ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES);
+
+            if (gBattleStruct->choicedMove[battler] != MOVE_NONE)
+            {
+                for (i = 0; i < MAX_MON_MOVES; i++)
+                    if (gBattleMons[battler].moves[i] == gBattleStruct->choicedMove[battler])
+                        break;
+                if (i == MAX_MON_MOVES)
+                    gBattleStruct->choicedMove[battler] = MOVE_NONE;
+            }
+        }
+    }
+
+    // EvolutionScene freed its own graphics allocation. The battle's sprite
+    // buffer must be restored before ReshowBattleScreenAfterMenu uses it.
+    AllocateMonSpritesGfx();
+    ReshowBattleScreenAfterMenu();
+    PlayMapChosenOrBattleBGM(0);
+}
+
+// Called after all EXP and level-up move prompts for this party member.
+// Do not interrupt restricted battles or a Pokemon using a battle gimmick.
+static bool32 TryStartBattleLevelEvolution(u32 partyId)
+{
+    struct Pokemon *mon;
+    u32 battler;
+    u32 targetSpecies;
+    bool32 canStopEvo = TRUE;
+
+    if (partyId >= PARTY_SIZE
+     || !(gLeveledUpInBattle & (1u << partyId))
+     || (gBattleTypeFlags & (BATTLE_TYPE_LINK
+                          | BATTLE_TYPE_RECORDED_LINK
+                          | BATTLE_TYPE_RECORDED
+                          | BATTLE_TYPE_FIRST_BATTLE
+                          | BATTLE_TYPE_SAFARI
+                          | BATTLE_TYPE_FRONTIER
+                          | BATTLE_TYPE_EREADER_TRAINER
+                          | BATTLE_TYPE_WALLY_TUTORIAL)))
+        return FALSE;
+
+    mon = &gPlayerParty[partyId];
+    if (GetMonData(mon, MON_DATA_IS_EGG))
+        return FALSE;
+
+    for (battler = 0; battler < gBattlersCount; battler++)
+    {
+        if (!IsOnPlayerSide(battler)
+         || gBattlerPartyIndexes[battler] != partyId
+         || !IsBattlerAlive(battler))
+            continue;
+        // A transformed or gimmick-altered battler can evolve after the
+        // fight instead of corrupting its active form or sprite.
+        if ((gBattleMons[battler].status2 & STATUS2_TRANSFORMED)
+         || GetActiveGimmick(battler) != GIMMICK_NONE)
+            return FALSE;
+    }
+
+    targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_BATTLE_ONLY, 0, NULL, &canStopEvo, CHECK_EVO);
+    if (targetSpecies == SPECIES_NONE)
+        return FALSE;
+
+    // Consume this level-up evolution opportunity before switching scenes,
+    // so canceling with B does not make the same evolution repeat after battle.
+    gLeveledUpInBattle &= ~(1u << partyId);
+    sBattleEvolutionPartyId = partyId;
+    sBattleEvolutionOldSpecies = GetMonData(mon, MON_DATA_SPECIES);
+    GetEvolutionTargetSpecies(mon, EVO_MODE_BATTLE_ONLY, 0, NULL, &canStopEvo, DO_EVO);
+
+    // The evolution scene resets sprite data and tasks, so release the old
+    // battle sprite buffer now. Battle resources and turn state remain intact.
+    FreeAllWindowBuffers();
+    FreeMonSpritesGfx();
+    gCB2_AfterEvolution = CB2_ReturnFromBattleEvolution;
+    EvolutionScene(mon, targetSpecies, canStopEvo, partyId);
+    return TRUE;
+}
+
 static void Cmd_getexp(void)
 {
     CMD_ARGS(u8 battler);
@@ -5426,6 +5548,10 @@ static void Cmd_getexp(void)
         }
         break;
     case 5: // looper increment
+        if (gBattleStruct->battlerExpReward == 0
+         && TryStartBattleLevelEvolution(*expMonId))
+            return;
+
         if (gBattleStruct->battlerExpReward) // there is exp to give, goto case 3 that gives exp
         {
             gBattleScripting.getexpState = 3;
