@@ -5225,7 +5225,10 @@ static void CB2_ReturnFromBattleEvolution(void)
     AllocateMonSpritesGfx();
     ReshowBattleScreenAfterEvolution();
     gMain.callback1 = CB1_WaitForBattleEvolutionRestore;
-    PlayMapChosenOrBattleBGM(0);
+    // Use the saved M4A sequencer position; fall back to the normal BGM
+    // selection only if no valid song was playing before evolution.
+    if (!ResumeBattleBgmAfterEvolution())
+        PlayMapChosenOrBattleBGM(0);
 }
 
 // Called after all EXP and level-up move prompts for this party member.
@@ -5287,6 +5290,7 @@ static bool32 TryStartBattleLevelEvolution(u32 partyId)
     // battle sprite buffer now. Battle resources and turn state remain intact.
     FreeAllWindowBuffers();
     FreeMonSpritesGfx();
+    SaveBattleBgmForEvolution();
     sBattleEvolutionSavedCallback1 = gMain.callback1;
     gMain.callback1 = NULL;
     gCB2_AfterEvolution = CB2_ReturnFromBattleEvolution;

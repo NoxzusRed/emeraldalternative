@@ -34,6 +34,95 @@ static void Task_Fanfare(u8 taskId);
 static void CreateFanfareTask(void);
 static void RestoreBGMVolumeAfterPokemonCry(void);
 
+// Pause and resume the precise musical sequence for an in-battle evolution.
+// The evolution scene uses the BGM music player for its own music, so simply
+// stopping it and calling PlayBattleBGM would start the battle song over.
+// Save the sequencer (including each track's command pointer, wait counter,
+// pattern stack, tempo, instruments and controller values) before the scene.
+struct SavedBattleBgm
+{
+    bool8 valid;
+    struct MusicPlayerInfo player;
+    struct MusicPlayerTrack tracks[MAX_MUSICPLAYER_TRACKS];
+    u8 memAcc[16]; // The M4A engine's gMPlayMemAccArea contains 0x10 bytes.
+    u16 mapMusic;
+};
+
+EWRAM_DATA static struct SavedBattleBgm sSavedBattleBgm;
+
+void SaveBattleBgmForEvolution(void)
+{
+    struct MusicPlayerInfo *player = &gMPlayInfo_BGM;
+
+    sSavedBattleBgm.valid = FALSE;
+
+    if (gDisableMusic
+     || player->ident != ID_NUMBER
+     || player->songHeader == NULL
+     || (player->status & MUSICPLAYER_STATUS_TRACK) == 0
+     || player->tracks == NULL
+     || player->trackCount == 0
+     || player->trackCount > MAX_MUSICPLAYER_TRACKS)
+        return;
+
+    // The battle's music can be paused briefly by a level-up fanfare.
+    // Its sequencer is still valid; resume it when returning to battle.
+    sSavedBattleBgm.player = *player;
+    memcpy(sSavedBattleBgm.tracks, player->tracks,
+           player->trackCount * sizeof(struct MusicPlayerTrack));
+    memcpy(sSavedBattleBgm.memAcc, gMPlayMemAccArea,
+           sizeof(sSavedBattleBgm.memAcc));
+    sSavedBattleBgm.mapMusic = sCurrentMapMusic;
+    sSavedBattleBgm.valid = TRUE;
+}
+
+bool8 ResumeBattleBgmAfterEvolution(void)
+{
+    struct MusicPlayerInfo *player = &gMPlayInfo_BGM;
+    u32 i;
+
+    if (!sSavedBattleBgm.valid)
+        return FALSE;
+
+    // Silence the evolution cue and detach all its active note channels
+    // before restoring the BGM track data. No battle song is restarted.
+    m4aMPlayAllStop();
+    *player = sSavedBattleBgm.player;
+    memcpy(player->tracks, sSavedBattleBgm.tracks,
+           player->trackCount * sizeof(struct MusicPlayerTrack));
+
+    for (i = 0; i < player->trackCount; i++)
+    {
+        // Voice channels were detached by the evolution scene/stop call.
+        // Recreate notes at their next sequencer event rather than following
+        // stale pointers into the old audio channel chains.
+        player->tracks[i].chan = NULL;
+        if (player->tracks[i].flags & MPT_FLG_EXIST)
+            player->tracks[i].flags |= MPT_FLG_VOLCHG | MPT_FLG_PITCHG;
+    }
+
+    memcpy(gMPlayMemAccArea, sSavedBattleBgm.memAcc,
+           sizeof(sSavedBattleBgm.memAcc));
+
+    // Evolution may queue overworld music through StopMapMusic.
+    // Clear that queue so it cannot overwrite the restored battle BGM.
+    sCurrentMapMusic = sSavedBattleBgm.mapMusic;
+    sNextMapMusic = MUS_NONE;
+    sMapMusicState = 2;
+    sMapMusicFadeInSpeed = 0;
+
+    if (player->songHeader->reverb & SOUND_MODE_REVERB_SET)
+        m4aSoundMode(player->songHeader->reverb);
+
+    // Preserve its saved position, not the pause bit from a fanfare.
+    player->status |= MUSICPLAYER_STATUS_PAUSE;
+    m4aMPlayContinue(player);
+
+    sSavedBattleBgm.valid = FALSE;
+    return TRUE;
+}
+
+
 static const struct Fanfare sFanfares[] = {
     [FANFARE_LEVEL_UP]            = { MUS_LEVEL_UP,             80 },
     [FANFARE_OBTAIN_ITEM]         = { MUS_OBTAIN_ITEM,         160 },
