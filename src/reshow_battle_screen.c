@@ -61,7 +61,20 @@ static void CB2_ReshowBattleScreenAfterMenu(void)
     case 0:
         ScanlineEffect_Clear();
         if (sReshowBattleFromEvolution)
+        {
             InitBattleBgsVideo();
+
+            // EvolutionScene left WININ and WINOUT set to zero. The battle
+            // enables WIN0/OBJWIN again, which hides every BG and sprite
+            // unless both window masks are restored as well.
+            // Match the fully visible state after BattleIntroSlideEnd.
+            SetGpuReg(REG_OFFSET_WININ,
+                      WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR
+                    | WININ_WIN1_BG_ALL | WININ_WIN1_OBJ | WININ_WIN1_CLR);
+            SetGpuReg(REG_OFFSET_WINOUT,
+                      WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR
+                    | WINOUT_WINOBJ_BG_ALL | WINOUT_WINOBJ_OBJ | WINOUT_WINOBJ_CLR);
+        }
         else
             BattleInitBgsAndWindows();
         SetBgAttribute(1, BG_ATTR_CHARBASEINDEX, 0);
