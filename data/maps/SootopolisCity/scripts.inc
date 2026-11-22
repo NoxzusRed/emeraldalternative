@@ -1714,3 +1714,46 @@ SootopolisCity_Text_DazzledByMentor:
 
 SootopolisCity_Text_OrbShopSign:
 	.string "ORB SHOP$"
+
+@ Pelipper offers a ride out of Sootopolis to Route 126.
+@ The party needs a Pokemon compatible with Surf so the player can continue.
+SootopolisCity_EventScript_Pelipper::
+    lock
+    faceplayer
+    playmoncry SPECIES_PELIPPER, CRY_MODE_NORMAL
+    msgbox SootopolisCity_Text_PelipperGreeting, MSGBOX_DEFAULT
+    msgbox SootopolisCity_Text_PelipperTravel, MSGBOX_YESNO
+    goto_if_ne VAR_RESULT, YES, SootopolisCity_EventScript_PelipperDecline
+    checkpartymove MOVE_SURF
+    goto_if_eq VAR_RESULT, PARTY_SIZE, SootopolisCity_EventScript_PelipperNeedSurf
+    closemessage
+    waitmoncry
+    warp MAP_ROUTE126, 75, 60
+    waitstate
+    release
+    end
+
+SootopolisCity_EventScript_PelipperNeedSurf::
+    msgbox SootopolisCity_Text_PelipperNeedSurf, MSGBOX_DEFAULT
+    release
+    end
+
+SootopolisCity_EventScript_PelipperDecline::
+    closemessage
+    release
+    end
+
+SootopolisCity_Text_PelipperGreeting:
+    .string "Peli! Peli!\p"
+    .string "Pelipper spreads its wings and\l"
+    .string "looks out toward Route 126.$"
+
+SootopolisCity_Text_PelipperTravel:
+    .string "Let Pelipper carry you to\l"
+    .string "Route 126?$"
+
+SootopolisCity_Text_PelipperNeedSurf:
+    .string "Pelipper folds its wings.\p"
+    .string "You'll need a Pokémon that can\l"
+    .string "use Surf to travel from there.$"
+
