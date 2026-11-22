@@ -5232,6 +5232,8 @@ static bool32 TryStartBattleLevelEvolution(u32 partyId)
                           | BATTLE_TYPE_FIRST_BATTLE
                           | BATTLE_TYPE_SAFARI
                           | BATTLE_TYPE_FRONTIER
+                          | BATTLE_TYPE_TRAINER_HILL
+                          | BATTLE_TYPE_INGAME_PARTNER
                           | BATTLE_TYPE_EREADER_TRAINER
                           | BATTLE_TYPE_WALLY_TUTORIAL)))
         return FALSE;
