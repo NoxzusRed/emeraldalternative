@@ -4794,10 +4794,10 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 #if P_FAMILY_PHANTUMP
     [SPECIES_PHANTUMP] =
     {
-        .baseHP        = 43,
+        .baseHP        = 45,
         .baseAttack    = 70,
-        .baseDefense   = 48,
-        .baseSpeed     = 38,
+        .baseDefense   = 50,
+        .baseSpeed     = 40,
         .baseSpAttack  = 50,
         .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_GHOST, TYPE_GRASS),
@@ -4865,12 +4865,12 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
     [SPECIES_TREVENANT] =
     {
-        .baseHP        = 85,
+        .baseHP        = 90,
         .baseAttack    = 110,
-        .baseDefense   = 76,
-        .baseSpeed     = 56,
+        .baseDefense   = 80,
+        .baseSpeed     = 60,
         .baseSpAttack  = 65,
-        .baseSpDefense = 82,
+        .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_GHOST, TYPE_GRASS),
         .catchRate = 60,
         .expYield = 166,
