@@ -1,0 +1,5 @@
+@ Pokémon Champion Cynthia battle arrangement (MIDI).
+@ Imported from celias-stupid-team/celias-stupid-repository, mus_cynthia_battle.mid
+@ Adapted to existing Emerald T instrument samples, using dedicated voicegroups 195-196.
+@ G196 bank samples mostly available in current project. One missing orchestral hit sample was replaced with existing SC-88Pro timpani.
+@ This music is not assigned to any trainer or event yet. Use MUS_CYNTHIA_BATTLE.
