@@ -616,7 +616,7 @@ gSongTable::
     song mus_mossdeep, 0, 0
     song mus_rayquaza_menu, 0, 0
     song mus_vs_wally, 0, 0
-    song mus_cynthia_battle, 0, 0
+    song mus_vs_cynthia, 0, 0
     song mus_vs_red, 0, 0
 
 	.align 2
