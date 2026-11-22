@@ -618,6 +618,7 @@ gSongTable::
     song mus_vs_wally, 0, 0
     song mus_vs_cynthia, 0, 0
     song mus_vs_red, 0, 0
+    song mus_vs_alder, 0, 0
 
 	.align 2
 dummy_song_header:
