@@ -99,6 +99,7 @@ EverGrandeCity_EventScript_CynthiaDisableTriggers::
 EverGrandeCity_EventScript_CynthiaTrigger::
     goto_if_set FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE, EverGrandeCity_EventScript_CynthiaTriggerAlreadyDone
     lockall
+    playbgm MUS_ENCOUNTER_CYNTHIA, FALSE
     setvar VAR_TEMP_0, 1
     setobjectxyperm LOCALID_EVER_GRANDE_CITY_CYNTHIA, 18, 5
     clearflag FLAG_TEMP_F
@@ -162,6 +163,8 @@ EverGrandeCity_EventScript_CynthiaFinish::
     removeobject LOCALID_EVER_GRANDE_CITY_CYNTHIA
     setflag FLAG_TEMP_F
     setflag FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE
+    savebgm MUS_DUMMY
+    fadedefaultbgm
     releaseall
     end
 
