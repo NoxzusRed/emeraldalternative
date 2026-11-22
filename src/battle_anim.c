@@ -922,6 +922,34 @@ static void Cmd_playse(void)
 #define t2_InBg2     data[5]
 #define t2_BattlerId data[6]
 
+// Single-target moves should not turn an unrelated partner into a background
+// sprite. In doubles, doing so can overlap/distort battler graphics when the
+// attack also blends or changes the animation background.
+static bool8 ShouldMovePartnerToMonBg(u8 animBattler)
+{
+    u32 targetType;
+
+    // Explicit partner commands and general/side-wide animations keep the
+    // original behavior (both battlers may need to share the BG effects).
+    if (animBattler == ANIM_ATK_PARTNER || animBattler == ANIM_DEF_PARTNER
+     || !IsDoubleBattle() || gAnimMoveIndex == MOVE_NONE)
+        return TRUE;
+
+    targetType = GetBattlerMoveTargetType(gBattleAnimAttacker, gAnimMoveIndex);
+
+    switch (targetType)
+    {
+    case MOVE_TARGET_SELECTED:
+    case MOVE_TARGET_DEPENDS:
+    case MOVE_TARGET_OPPONENT:
+    case MOVE_TARGET_RANDOM:
+    case MOVE_TARGET_ALLY:
+        return FALSE;
+    default:
+        return TRUE;
+    }
+}
+
 static void Task_InitUpdateMonBg(u8 taskId)
 {
     u8 updateTaskId;
@@ -992,9 +1020,9 @@ static void Cmd_monbg(void)
 
     }
 
-    // Move battler's partner to background
+    // Only move the partner if the animation can actually affect them.
     battler ^= BIT_FLANK;
-    if (IsBattlerSpriteVisible(battler))
+    if (ShouldMovePartnerToMonBg(animBattler) && IsBattlerSpriteVisible(battler))
     {
         u8 position = GetBattlerPosition(battler);
         if (position == B_POSITION_OPPONENT_LEFT || position == B_POSITION_PLAYER_RIGHT || IsContest())
@@ -1304,10 +1332,12 @@ static void Cmd_monbg_static(void)
     bool8 toBG_2;
     u8 battler;
     u8 animBattlerId;
+    bool8 includePartner;
 
     sBattleAnimScriptPtr++;
 
     animBattlerId = sBattleAnimScriptPtr[0];
+    includePartner = ShouldMovePartnerToMonBg(animBattlerId);
 
     if (animBattlerId == ANIM_ATTACKER)
         animBattlerId = ANIM_ATK_PARTNER;
@@ -1331,7 +1361,7 @@ static void Cmd_monbg_static(void)
     }
 
     battler ^= BIT_FLANK;
-    if (animBattlerId > 1 && IsBattlerSpriteVisible(battler))
+    if (includePartner && animBattlerId > 1 && IsBattlerSpriteVisible(battler))
     {
         u8 position = GetBattlerPosition(battler);
         if (position == B_POSITION_OPPONENT_LEFT || position == B_POSITION_PLAYER_RIGHT || IsContest())
@@ -1350,9 +1380,11 @@ static void Cmd_clearmonbg_static(void)
     u8 animBattlerId;
     u8 battler;
     u8 taskId;
+    bool8 includePartner;
 
     sBattleAnimScriptPtr++;
     animBattlerId = sBattleAnimScriptPtr[0];
+    includePartner = ShouldMovePartnerToMonBg(animBattlerId);
 
     if (animBattlerId == ANIM_ATTACKER)
         animBattlerId = ANIM_ATK_PARTNER;
@@ -1366,7 +1398,7 @@ static void Cmd_clearmonbg_static(void)
 
     if (IsBattlerSpriteVisible(battler))
         gSprites[gBattlerSpriteIds[battler]].invisible = FALSE;
-    if (animBattlerId > 1 && IsBattlerSpriteVisible(BATTLE_PARTNER(battler)))
+    if (includePartner && animBattlerId > 1 && IsBattlerSpriteVisible(BATTLE_PARTNER(battler)))
         gSprites[gBattlerSpriteIds[BATTLE_PARTNER(battler)]].invisible = FALSE;
     else
         animBattlerId = 0;
