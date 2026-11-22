@@ -98,7 +98,11 @@ EWRAM_DATA static u8 sBattleEvolutionPartyId;
 EWRAM_DATA static u16 sBattleEvolutionOldSpecies;
 EWRAM_DATA static u8 sBattleEvolutionEnvironment;
 EWRAM_DATA static u8 sBattleEvolutionCommunication[BATTLE_COMMUNICATION_ENTRIES_COUNT];
+// The evolution scene runs through callback2; the normal battle's callback1
+// must be paused so it cannot issue switch prompts or overwrite strings.
+EWRAM_DATA static MainCallback sBattleEvolutionSavedCallback1;
 
+static void CB1_WaitForBattleEvolutionRestore(void);
 static void CB2_ReturnFromBattleEvolution(void);
 static bool32 TryStartBattleLevelEvolution(u32 partyId);
 
@@ -5155,6 +5159,14 @@ static u32 GetMonHoldEffect(struct Pokemon *mon)
     return holdEffect;
 }
 
+// Callback1 is invoked before callback2 each frame. Resume battle logic only
+// after the evolution screen has been rebuilt and its fade has finished.
+static void CB1_WaitForBattleEvolutionRestore(void)
+{
+    if (gMain.callback2 == BattleMainCB2 && !gPaletteFade.active)
+        gMain.callback1 = sBattleEvolutionSavedCallback1;
+}
+
 // Called after the normal evolution scene, including if B canceled it.
 // The evolution scene owns its sprites; reshow reconstructs the battle sprites
 // from the saved Pokemon and gBattleMons without restarting the battle.
@@ -5211,7 +5223,8 @@ static void CB2_ReturnFromBattleEvolution(void)
     // EvolutionScene freed its own graphics allocation. The battle's sprite
     // buffer must be restored before ReshowBattleScreenAfterMenu uses it.
     AllocateMonSpritesGfx();
-    ReshowBattleScreenAfterMenu();
+    ReshowBattleScreenAfterEvolution();
+    gMain.callback1 = CB1_WaitForBattleEvolutionRestore;
     PlayMapChosenOrBattleBGM(0);
 }
 
@@ -5274,6 +5287,8 @@ static bool32 TryStartBattleLevelEvolution(u32 partyId)
     // battle sprite buffer now. Battle resources and turn state remain intact.
     FreeAllWindowBuffers();
     FreeMonSpritesGfx();
+    sBattleEvolutionSavedCallback1 = gMain.callback1;
+    gMain.callback1 = NULL;
     gCB2_AfterEvolution = CB2_ReturnFromBattleEvolution;
     EvolutionScene(mon, targetSpecies, canStopEvo, partyId);
     return TRUE;

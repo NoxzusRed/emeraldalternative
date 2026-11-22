@@ -11,6 +11,7 @@
 #include "battle_controllers.h"
 #include "link.h"
 #include "sprite.h"
+#include "task.h"
 #include "constants/trainers.h"
 #include "battle_interface.h"
 #include "battle_anim.h"
@@ -23,6 +24,9 @@ static bool8 LoadBattlerSpriteGfx(u32 battler);
 static void CreateHealthboxSprite(u32 battler);
 static void ClearBattleBgCntBaseBlocks(void);
 static void CreateCaughtMonSprite(void);
+// EvolutionScene resets hardware and tasks. Track this special restoration
+// separately so normal mid-battle menus keep their existing behavior.
+static bool8 sReshowBattleFromEvolution;
 
 void ReshowBattleScreenDummy(void)
 {
@@ -31,6 +35,7 @@ void ReshowBattleScreenDummy(void)
 
 void ReshowBattleScreenAfterMenu(void)
 {
+    sReshowBattleFromEvolution = FALSE;
     gPaletteFade.bufferTransferDisabled = 1;
     SetHBlankCallback(NULL);
     SetVBlankCallback(NULL);
@@ -40,13 +45,25 @@ void ReshowBattleScreenAfterMenu(void)
     SetMainCallback2(CB2_ReshowBattleScreenAfterMenu);
 }
 
+// Discard remaining evolution scene tasks and reload the battle graphics
+// from scratch before the battle controller is allowed to resume.
+void ReshowBattleScreenAfterEvolution(void)
+{
+    ResetTasks();
+    ReshowBattleScreenAfterMenu();
+    sReshowBattleFromEvolution = TRUE;
+}
+
 static void CB2_ReshowBattleScreenAfterMenu(void)
 {
     switch (gBattleScripting.reshowMainState)
     {
     case 0:
         ScanlineEffect_Clear();
-        BattleInitBgsAndWindows();
+        if (sReshowBattleFromEvolution)
+            InitBattleBgsVideo();
+        else
+            BattleInitBgsAndWindows();
         SetBgAttribute(1, BG_ATTR_CHARBASEINDEX, 0);
         SetBgAttribute(2, BG_ATTR_CHARBASEINDEX, 0);
         ShowBg(0);
@@ -148,7 +165,10 @@ static void CB2_ReshowBattleScreenAfterMenu(void)
                 SetBattlerShadowSpriteCallback(opponentBattler, species);
             }
 
-            ActionSelectionCreateCursorAt(gActionSelectionCursor[gBattlerInMenuId], 0);
+            // This can be in the middle of the EXP script, not at the action
+            // menu, so omit its cursor while restoring after an evolution.
+            if (!sReshowBattleFromEvolution)
+                ActionSelectionCreateCursorAt(gActionSelectionCursor[gBattlerInMenuId], 0);
 
             if (gWirelessCommType != 0 && gReceivedRemoteLinkPlayers)
             {
@@ -164,6 +184,7 @@ static void CB2_ReshowBattleScreenAfterMenu(void)
         gPaletteFade.bufferTransferDisabled = 0;
         SetMainCallback2(BattleMainCB2);
         FillAroundBattleWindows();
+        sReshowBattleFromEvolution = FALSE;
         break;
     }
 

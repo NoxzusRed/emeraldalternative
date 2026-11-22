@@ -771,7 +771,14 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_SET_MON_EVOLVED:
         if (IsCryFinished())
         {
+            u8 nickname[POKEMON_NAME_BUFFER_SIZE];
             u32 zero = 0;
+
+            // Rebuild evolution names from the Pokemon and evolution target,
+            // not from shared battle string buffers.
+            GetMonData(mon, MON_DATA_NICKNAME, nickname);
+            StringCopy_Nickname(gStringVar1, nickname);
+            StringCopy(gStringVar2, GetSpeciesName(gTasks[taskId].tPostEvoSpecies));
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             BattlePutTextOnWindow(gStringVar4, B_WIN_MSG);
             PlayBGM(MUS_EVOLVED);

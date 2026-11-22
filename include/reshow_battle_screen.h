@@ -3,6 +3,7 @@
 
 void ReshowBattleScreenDummy(void);
 void ReshowBattleScreenAfterMenu(void);
+void ReshowBattleScreenAfterEvolution(void);
 void ReshowBlankBattleScreenAfterMenu(void);
 void CreateBattlerSprite(u32 battler);
 
