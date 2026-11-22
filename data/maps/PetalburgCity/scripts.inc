@@ -759,8 +759,8 @@ PetalburgCity_Text_VaPurr:
 	.string "Vaa-purr!$"
 
 PetalburgCity_Text_WhereIsWally:
-	.string "Where has our WALLY gone?\p"
-	.string "We have to leave for VERDANTURF TOWN\n"
+	.string "Where has our Wally gone?\p"
+	.string "We have to leave for Verdanturf Town\n"
 	.string "very soon…$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
@@ -772,7 +772,7 @@ PetalburgCity_Text_AreYouRookieTrainer:
 	.string "is in the town.$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "See? This is PETALBURG CITY's GYM.$"
+	.string "See? This is Petalburg City's GYM.$"
 
 PetalburgCity_Text_ThisIsGymSign:
 	.string "This is the GYM's sign. Look for it\n"
@@ -792,16 +792,16 @@ PetalburgCity_Text_FullPartyExplanation:
 	.string "BOX over a PC connection.$"
 
 PetalburgCity_Text_GymSign:
-	.string "PETALBURG CITY POKéMON GYM\n"
-	.string "LEADER: NORMAN\l"
+	.string "Petalburg City Pokémon Gym\n"
+	.string "LEADER: Norman\l"
 	.string "“A man in pursuit of power!”$"
 
 PetalburgCity_Text_CitySign:
-	.string "PETALBURG CITY\n"
+	.string "Petalburg City\n"
 	.string "“Where people mingle with nature.”$"
 
 PetalburgCity_Text_WallyHouseSign:
-	.string "WALLY'S HOUSE$"
+	.string "Wally'S HOUSE$"
 
 PetalburgCity_Text_AreYouATrainer:
 	.string "Excuse me!\p"

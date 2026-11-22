@@ -630,7 +630,7 @@ Route111_Text_ToughToKeepWinningUpTheRanks:
 	.string "If you don't raise your POKéMON some\n"
 	.string "more, it could be tough to keep winning\l"
 	.string "up through the ranks.\p"
-	.string "I've heard the POKéMON LEAGUE's\n"
+	.string "I've heard the Pokémon League's\n"
 	.string "ELITE FOUR are far stronger than\l"
 	.string "any GYM LEADER.$"
 
@@ -640,23 +640,23 @@ Route111_Text_WinstrateFamilyDestroyedMe:
 	.string "going… They destroyed me.$"
 
 Route111_Text_RouteSignMauville:
-	.string "ROUTE 111\n"
-	.string "{DOWN_ARROW} MAUVILLE CITY$"
+	.string "Route 111\n"
+	.string "{DOWN_ARROW} Mauville City$"
 
 Route111_Text_WinstrateHouseSign:
 	.string "“Our family's hearts beat as one!”\n"
 	.string "THE WINSTRATE'S HOUSE$"
 
 Route111_Text_RouteSign112:
-	.string "ROUTE 111\n"
-	.string "{LEFT_ARROW} ROUTE 112$"
+	.string "Route 111\n"
+	.string "{LEFT_ARROW} Route 112$"
 
 Route111_Text_RouteSign113:
-	.string "ROUTE 111\n"
-	.string "{LEFT_ARROW} ROUTE 113$"
+	.string "Route 111\n"
+	.string "{LEFT_ARROW} Route 113$"
 
 Route111_Text_OldLadysRestStopSign:
-	.string "OLD LADY'S REST STOP\n"
+	.string "OLD LADY'S Rest STOP\n"
 	.string "“Come in and rest your tired bones.”$"
 
 Route111_Text_TrainerTipsSpAtkSpDef:
@@ -699,20 +699,20 @@ Route111_Text_MirageTowerHasntBeenSeenSince:
 	.string "the MIRAGE TOWER…$"
 
 Route111_Text_ClawFossilDisappeared:
-	.string "The CLAW FOSSIL disappeared into\n"
+	.string "The Claw Fossil disappeared into\n"
 	.string "the sand…$"
 
 Route111_Text_RootFossilDisappeared:
-	.string "The ROOT FOSSIL disappeared into\n"
+	.string "The Root Fossil disappeared into\n"
 	.string "the sand…$"
 
 Route111_Text_MauvilleUncleToldMeToTakeRockSmash:
 	.string "Oh, no!\p"
-	.string "My uncle in MAUVILLE told me to take\n"
+	.string "My uncle in Mauville told me to take\n"
 	.string "ROCK SMASH with me if I was going to\l"
 	.string "ROUTE 111!\p"
 	.string "My uncle? He lives across from\n"
-	.string "the bike shop in MAUVILLE.$"
+	.string "the bike shop in Mauville.$"
 
 Route111_Text_TrainerHillSign:
 	.string "{RIGHT_ARROW} TRAINER HILL ENTRANCE\p"
