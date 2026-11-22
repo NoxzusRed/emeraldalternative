@@ -96,6 +96,8 @@ extern const u16 gStatDownStringIds[];
 // paused battle instead of resetting the battle engine.
 EWRAM_DATA static u8 sBattleEvolutionPartyId;
 EWRAM_DATA static u16 sBattleEvolutionOldSpecies;
+EWRAM_DATA static u8 sBattleEvolutionEnvironment;
+EWRAM_DATA static u8 sBattleEvolutionCommunication[BATTLE_COMMUNICATION_ENTRIES_COUNT];
 
 static void CB2_ReturnFromBattleEvolution(void);
 static bool32 TryStartBattleLevelEvolution(u32 partyId);
@@ -5201,6 +5203,11 @@ static void CB2_ReturnFromBattleEvolution(void)
         }
     }
 
+    // EvolutionScene reuses the environment and battle communication globals.
+    // Restore them before resuming the interrupted battle script.
+    gBattleEnvironment = sBattleEvolutionEnvironment;
+    memcpy(gBattleCommunication, sBattleEvolutionCommunication, sizeof(gBattleCommunication));
+
     // EvolutionScene freed its own graphics allocation. The battle's sprite
     // buffer must be restored before ReshowBattleScreenAfterMenu uses it.
     AllocateMonSpritesGfx();
@@ -5256,6 +5263,10 @@ static bool32 TryStartBattleLevelEvolution(u32 partyId)
     sBattleEvolutionPartyId = partyId;
     sBattleEvolutionOldSpecies = GetMonData(mon, MON_DATA_SPECIES);
     GetEvolutionTargetSpecies(mon, EVO_MODE_BATTLE_ONLY, 0, NULL, &canStopEvo, DO_EVO);
+
+    // EvolutionScene reuses these globals; restore them when returning.
+    sBattleEvolutionEnvironment = gBattleEnvironment;
+    memcpy(sBattleEvolutionCommunication, gBattleCommunication, sizeof(gBattleCommunication));
 
     // The evolution scene resets sprite data and tasks, so release the old
     // battle sprite buffer now. Battle resources and turn state remain intact.
