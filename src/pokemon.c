@@ -4585,6 +4585,9 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
     u16 upperPersonality = personality >> 16;
     u32 weather = GetCurrentWeather();
     u32 nature = GetNature(mon);
+    // Mints change the effective nature used for stat growth. In Emerald T,
+    // that effective nature also chooses Toxel's Amped or Low Key evolution.
+    u32 effectiveNature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
     bool32 removeHoldItem = FALSE;
     u32 removeBagItem = ITEM_NONE;
     u32 removeBagItemCount = 0;
@@ -4781,7 +4784,7 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
                 currentCondition = TRUE;
             break;
         case IF_AMPED_NATURE:
-            switch (nature)
+            switch (effectiveNature)
             {
             case NATURE_HARDY:
             case NATURE_BRAVE:
@@ -4801,7 +4804,7 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             }
             break;
         case IF_LOW_KEY_NATURE:
-            switch (nature)
+            switch (effectiveNature)
             {
             case NATURE_LONELY:
             case NATURE_BOLD:
