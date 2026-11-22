@@ -4,7 +4,9 @@
 // Pokemon World Tournament - editable teams for the ten Champions.
 //
 // Each array below is a separate team. Add up to six struct TrainerMon
-// entries to each array; gPwtTrainerParties automatically tracks its size.
+// entries to each array; party sizes are calculated automatically.
+// Blue has three different team arrays, planned for Venusaur, Charizard and
+// Blastoise. Blue still counts as ONE opponent per tournament.
 //
 // Fields available on struct TrainerMon include:
 //   .species, .lvl, .moves, .heldItem, .ability, .nature,
@@ -16,8 +18,38 @@
 // All teams currently contain only one Litwick at level 5 as a placeholder.
 // No PWT battles or facility logic are connected yet.
 
-// Blue
-static const struct TrainerMon sPwtTeamBlue[] =
+// Blue - Venusaur starter variant (Litwick placeholder until team is edited)
+static const struct TrainerMon sPwtTeamBlueVenusaur[] =
+{
+    {
+        .species = SPECIES_LITWICK,
+        .lvl = 5,
+        .moves = {MOVE_EMBER, MOVE_ASTONISH, MOVE_NONE, MOVE_NONE},
+        .heldItem = ITEM_NONE,
+        .ability = ABILITY_FLASH_FIRE,
+        .nature = NATURE_HARDY,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
+    },
+};
+
+// Blue - Charizard starter variant (Litwick placeholder until team is edited)
+static const struct TrainerMon sPwtTeamBlueCharizard[] =
+{
+    {
+        .species = SPECIES_LITWICK,
+        .lvl = 5,
+        .moves = {MOVE_EMBER, MOVE_ASTONISH, MOVE_NONE, MOVE_NONE},
+        .heldItem = ITEM_NONE,
+        .ability = ABILITY_FLASH_FIRE,
+        .nature = NATURE_HARDY,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
+    },
+};
+
+// Blue - Blastoise starter variant (Litwick placeholder until team is edited)
+static const struct TrainerMon sPwtTeamBlueBlastoise[] =
 {
     {
         .species = SPECIES_LITWICK,
