@@ -254,8 +254,7 @@
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define OBJ_EVENT_GFX_CYNTHIA                    247
-#define NUM_OBJ_EVENT_GFX                        248
+#define NUM_OBJ_EVENT_GFX                        247
 
 
 // These are dynamic object gfx ids.
@@ -387,7 +386,6 @@
 #define OBJ_EVENT_PAL_TAG_NPC_5_REFLECTION        0x1127
 #define OBJ_EVENT_PAL_TAG_COOLTRAINER_M           0x1128
 #define OBJ_EVENT_PAL_TAG_COOLTRAINER_M_REFLECTION 0x1129
-#define OBJ_EVENT_PAL_TAG_CYNTHIA                 0x112A
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

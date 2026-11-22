@@ -602,12 +602,6 @@ static const struct SpriteFrameImage sPicTable_Flannery[] = {
 };
 
 
-// Nine 16x32 frames: facing down (0-2), up (3-5), right (6-8).
-// Standard animations mirror the last three frames when facing left.
-static const struct SpriteFrameImage sPicTable_Cynthia[] = {
-    overworld_ascending_frames(gObjectEventPic_Cynthia, 2, 4),
-};
-
 static const struct SpriteFrameImage sPicTable_RedTrainerF[] = {
     overworld_frame(gObjectEventPic_RedTrainerF, 2, 4, 0),
     overworld_frame(gObjectEventPic_RedTrainerF, 2, 4, 1),

@@ -1745,15 +1745,15 @@ SootopolisCity_EventScript_PelipperDecline::
 
 SootopolisCity_Text_PelipperGreeting:
     .string "Peli! Peli!\p"
-    .string "Pelipper spreads its wings and\l"
+    .string "Pelipper spreads its wings and\n"
     .string "looks out toward Route 126.$"
 
 SootopolisCity_Text_PelipperTravel:
-    .string "Let Pelipper carry you to\l"
+    .string "Let Pelipper carry you to\n"
     .string "Route 126?$"
 
 SootopolisCity_Text_PelipperNeedSurf:
-    .string "Pelipper folds its wings.\p"
+    .string "Pelipper folds its wings.\n"
     .string "You'll need a Pokémon that can\l"
     .string "use Surf to travel from there.$"
 

@@ -1199,14 +1199,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Drilbur
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Dig
 - Slash
 
 Dwebble
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Rock Tomb
@@ -1609,7 +1609,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Azumarill
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -1623,9 +1623,13 @@ Double Battle: No
 AI: Check Bad Move
 
 Quagsire
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_LOLA_2 ===
 Name: LOLA
@@ -1645,6 +1649,10 @@ Quagsire
 Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_LOLA_3 ===
 Name: LOLA
@@ -1664,6 +1672,10 @@ Quagsire
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_LOLA_4 ===
 Name: LOLA
@@ -1683,6 +1695,10 @@ Quagsire
 Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_LOLA_5 ===
 Name: LOLA
@@ -1702,6 +1718,10 @@ Quagsire
 Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_RICKY_1 ===
 Name: RICKY
@@ -1747,9 +1767,13 @@ Double Battle: No
 AI: Check Bad Move
 
 Quagsire
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_RICKY_2 ===
 Name: RICKY
@@ -2408,6 +2432,9 @@ Quagsire
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Earthquake
+- Rain Dance
 
 === TRAINER_BROOKE_1 ===
 Name: BROOKE
@@ -3320,6 +3347,10 @@ Quagsire
 Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 Medicham
 Level: 38
@@ -3460,12 +3491,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Wailmer
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Horsea
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3583,7 +3614,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Carvanha
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3597,7 +3628,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Finneon
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3611,12 +3642,12 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_QWILFISH_HISUI
-Level: 24
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Brionne
-Level: 24
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3630,12 +3661,12 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_BASCULIN_WHITE_STRIPED
-Level: 24
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Pelipper
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 200 SpA / 64 Def / 64 SpD
 - Water Pulse
@@ -3643,7 +3674,7 @@ EVs: 126 HP / 64 Atk / 200 SpA / 64 Def / 64 SpD
 - Roost
 
 Finneon
-Level: 24
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3657,7 +3688,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Carvanha
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3671,7 +3702,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Overqwil
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3685,7 +3716,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Carvanha
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3699,12 +3730,12 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_QWILFISH_HISUI
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Dhelmise
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -7954,12 +7985,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Wailmer
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 SPECIES_QWILFISH_HISUI
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8470,12 +8501,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Linoone
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Manectric
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9378,7 +9409,7 @@ Music: Girl
 Double Battle: No
 
 Azumarill
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9886,12 +9917,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Wailmer
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9905,9 +9936,13 @@ Double Battle: No
 AI: Check Bad Move
 
 Quagsire
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_KYLA ===
 Name: KYLA
@@ -9919,7 +9954,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Wailmer
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9933,12 +9968,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Finneon
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9952,7 +9987,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Finneon
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9966,12 +10001,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Horsea
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Azumarill
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9985,7 +10020,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Brionne
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9999,17 +10034,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Finneon
-Level: 24
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Pelipper
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Brionne
-Level: 24
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -10045,6 +10080,10 @@ Quagsire
 Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_TANYA ===
 Name: TANYA
@@ -10092,6 +10131,10 @@ Quagsire
 Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 Sealeo
 Level: 36
@@ -10969,12 +11012,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Spheal
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Machoke
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -12939,12 +12982,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Drilbur
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Skorupi
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -13138,6 +13181,10 @@ Quagsire
 Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 Mightyena
 Level: 33
@@ -13271,6 +13318,10 @@ Quagsire
 Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 Linoone
 Level: 33
@@ -14190,6 +14241,10 @@ Quagsire
 Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_HALEY_3 ===
 Name: HALEY
@@ -14201,14 +14256,18 @@ Double Battle: No
 AI: Check Bad Move
 
 Jumpluff
-Level: 29
+Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Quagsire
-Level: 29
+Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_HALEY_4 ===
 Name: HALEY
@@ -14220,14 +14279,18 @@ Double Battle: No
 AI: Check Bad Move
 
 Jumpluff
-Level: 32
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Quagsire
-Level: 32
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_HALEY_5 ===
 Name: HALEY
@@ -14239,19 +14302,23 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 35
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Jumpluff
-Level: 35
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Quagsire
-Level: 35
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Earthquake
+- Slam
+- Rain Dance
 
 === TRAINER_SALLY ===
 Name: SALLY
@@ -14887,12 +14954,12 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Espeon
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Umbreon
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -15423,12 +15490,12 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Mothim
-Level: 27
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 SPECIES_VIVILLON_MEADOW
-Level: 27
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -15651,12 +15718,12 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Finneon
-Level: 27
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 SPECIES_QWILFISH_HISUI
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -16005,6 +16072,10 @@ Quagsire
 Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_KAI ===
 Name: KAI
@@ -16475,12 +16546,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Finneon
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Brionne
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -16494,9 +16565,13 @@ Double Battle: No
 AI: Check Bad Move
 
 Quagsire
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 === TRAINER_ANDRES_1 ===
 Name: ANDRES
@@ -16508,12 +16583,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Drilbur
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Yamask
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -16527,12 +16602,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Murkrow
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Pelipper
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -16546,7 +16621,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Shellder
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -16560,17 +16635,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Machop
-Level: 24
+Machoke
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 SPECIES_QWILFISH_HISUI
-Level: 26
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -16585,17 +16660,17 @@ Double Battle: No
 AI: Basic Trainer
 
 Manectric
-Level: 24
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Noctowl
-Level: 24
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Manectric
-Level: 24
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -16609,12 +16684,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Skarmory
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Skarmory
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -17041,6 +17116,10 @@ Quagsire
 Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Aqua Tail
+- Bulldoze
+- Slam
+- Rain Dance
 
 Pelipper
 Level: 32
