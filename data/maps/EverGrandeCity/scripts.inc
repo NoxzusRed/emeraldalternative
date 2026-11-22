@@ -15,6 +15,10 @@ EverGrandeCity_OnTransition:
     setflag FLAG_TEMP_B
     setflag FLAG_TEMP_C
     setflag FLAG_TEMP_D
+    @ Cynthia must be hidden when the map loads, including from old saves.
+    setflag FLAG_TEMP_F
+    setvar VAR_TEMP_0, 0
+    call_if_set FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE, EverGrandeCity_EventScript_CynthiaDisableTriggers
     goto_if_ne VAR_EVER_GRANDE_ARENA_OPPONENT, 0, EverGrandeCity_OnTransition_ArenaChallenge
     goto_if_unset FLAG_DEFEATED_METEOR_FALLS_STEVEN, EverGrandeCity_OnTransition_End
     clearflag FLAG_TEMP_5
@@ -84,6 +88,119 @@ EverGrandeCity_EventScript_ArenaWallaceAtRed::
     setobjectxyperm LOCALID_EVER_GRANDE_CITY_ARENA_WALLACE, 38, 52
     setobjectmovementtype LOCALID_EVER_GRANDE_CITY_ARENA_WALLACE, MOVEMENT_TYPE_FACE_DOWN
     return
+
+
+@ Cynthia exits the Pokemon League when the player reaches one of the
+@ five tiles (16..20, 8). This is a one-time event.
+EverGrandeCity_EventScript_CynthiaDisableTriggers::
+    setvar VAR_TEMP_0, 1
+    return
+
+EverGrandeCity_EventScript_CynthiaTrigger::
+    goto_if_set FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE, EverGrandeCity_EventScript_CynthiaTriggerAlreadyDone
+    lockall
+    setvar VAR_TEMP_0, 1
+    setobjectxyperm LOCALID_EVER_GRANDE_CITY_CYNTHIA, 18, 5
+    clearflag FLAG_TEMP_F
+    addobject LOCALID_EVER_GRANDE_CITY_CYNTHIA
+    getplayerxy VAR_TEMP_2, VAR_TEMP_3
+    goto_if_eq VAR_TEMP_2, 18, EverGrandeCity_EventScript_CynthiaApproachMiddle
+    goto_if_le VAR_TEMP_2, 17, EverGrandeCity_EventScript_CynthiaApproachFromLeft
+    goto EverGrandeCity_EventScript_CynthiaApproachFromRight
+
+EverGrandeCity_EventScript_CynthiaTriggerAlreadyDone::
+    setvar VAR_TEMP_0, 1
+    end
+
+EverGrandeCity_EventScript_CynthiaApproachFromLeft::
+    applymovement LOCALID_EVER_GRANDE_CITY_CYNTHIA, EverGrandeCity_Movement_CynthiaApproachSides
+    waitmovement 0
+    call EverGrandeCity_EventScript_CynthiaExclamation
+    turnobject LOCALID_EVER_GRANDE_CITY_CYNTHIA, DIR_WEST
+    turnobject LOCALID_PLAYER, DIR_EAST
+    goto EverGrandeCity_EventScript_CynthiaDialogueAndExitSides
+
+EverGrandeCity_EventScript_CynthiaApproachFromRight::
+    applymovement LOCALID_EVER_GRANDE_CITY_CYNTHIA, EverGrandeCity_Movement_CynthiaApproachSides
+    waitmovement 0
+    call EverGrandeCity_EventScript_CynthiaExclamation
+    turnobject LOCALID_EVER_GRANDE_CITY_CYNTHIA, DIR_EAST
+    turnobject LOCALID_PLAYER, DIR_WEST
+    goto EverGrandeCity_EventScript_CynthiaDialogueAndExitSides
+
+EverGrandeCity_EventScript_CynthiaApproachMiddle::
+    applymovement LOCALID_EVER_GRANDE_CITY_CYNTHIA, EverGrandeCity_Movement_CynthiaApproachMiddle
+    waitmovement 0
+    call EverGrandeCity_EventScript_CynthiaExclamation
+    turnobject LOCALID_EVER_GRANDE_CITY_CYNTHIA, DIR_SOUTH
+    turnobject LOCALID_PLAYER, DIR_NORTH
+    call EverGrandeCity_EventScript_CynthiaDialogue
+    @ The player occupies (18,8); move right before heading south.
+    applymovement LOCALID_EVER_GRANDE_CITY_CYNTHIA, EverGrandeCity_Movement_CynthiaExitMiddle
+    waitmovement 0
+    goto EverGrandeCity_EventScript_CynthiaFinish
+
+EverGrandeCity_EventScript_CynthiaExclamation::
+    playse SE_PIN
+    applymovement LOCALID_EVER_GRANDE_CITY_CYNTHIA, Common_Movement_ExclamationMark
+    waitmovement 0
+    waitfieldeffect FLDEFF_EXCLAMATION_MARK_ICON
+    return
+
+EverGrandeCity_EventScript_CynthiaDialogueAndExitSides::
+    call EverGrandeCity_EventScript_CynthiaDialogue
+    applymovement LOCALID_EVER_GRANDE_CITY_CYNTHIA, EverGrandeCity_Movement_CynthiaExitSides
+    waitmovement 0
+    goto EverGrandeCity_EventScript_CynthiaFinish
+
+EverGrandeCity_EventScript_CynthiaDialogue::
+    msgbox EverGrandeCity_Text_Cynthia, MSGBOX_DEFAULT
+    closemessage
+    return
+
+EverGrandeCity_EventScript_CynthiaFinish::
+    removeobject LOCALID_EVER_GRANDE_CITY_CYNTHIA
+    setflag FLAG_TEMP_F
+    setflag FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE
+    releaseall
+    end
+
+EverGrandeCity_Movement_CynthiaApproachSides:
+    walk_down
+    walk_down
+    walk_down
+    step_end
+
+EverGrandeCity_Movement_CynthiaApproachMiddle:
+    walk_down
+    walk_down
+    step_end
+
+EverGrandeCity_Movement_CynthiaExitSides:
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+
+EverGrandeCity_Movement_CynthiaExitMiddle:
+    walk_right
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
 
 EverGrandeCity_EventScript_ArenaIntro::
     goto_if_unset FLAG_DEFEATED_METEOR_FALLS_STEVEN, EverGrandeCity_EventScript_ArenaIntroEnd
@@ -617,6 +734,11 @@ EverGrandeCity_Text_Zebstrika:
 
 EverGrandeCity_Text_Flygon:
 	.string "Kryyy-rrrr...$"
+
+
+@ Temporary dialogue; replace the text here when Cynthia's full dialogue is written.
+EverGrandeCity_Text_Cynthia:
+    .string "Cynthia: {PLAYER}, there you are!$"
 
 EverGrandeCity_Text_EnteringVictoryRoad:
 	.string "ENTERING VICTORY ROAD$"
