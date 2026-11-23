@@ -32,11 +32,11 @@ MossdeepCity_Gym_EventScript_CheckSwitch4::
 	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_4, MossdeepCity_Gym_EventScript_SetSwitch4Metatiles
 	end
 
-@ The right-hand entrance warp unlocks after reaching Tate and Liza's room.
+@ The entrance return pad also warps to the leaders' room once unlocked.
 @ Also enables it for saves that already have the Mind Badge.
 MossdeepCity_Gym_EventScript_EnableShortcutWarp:
 	setflag FLAG_MOSSDEEP_GYM_SHORTCUT_UNLOCKED
-	setmetatile 8, 33, METATILE_MossdeepGym_WarpPad, FALSE
+	setmetatile 7, 30, METATILE_MossdeepGym_WarpPad, FALSE
 	goto MossdeepCity_Gym_EventScript_CheckSwitch1
 
 @ All the below set metatile scripts are leftover from RS and are functionally unused
@@ -222,7 +222,7 @@ MossdeepCity_Gym_EventScript_WarpToEntrance::
 MossdeepCity_Gym_EventScript_UnlockShortcutWarp::
 	goto_if_set FLAG_MOSSDEEP_GYM_SHORTCUT_UNLOCKED, MossdeepCity_Gym_EventScript_ShortcutAlreadyUnlocked
 	setflag FLAG_MOSSDEEP_GYM_SHORTCUT_UNLOCKED
-	setmetatile 8, 33, METATILE_MossdeepGym_WarpPad, FALSE
+	setmetatile 7, 30, METATILE_MossdeepGym_WarpPad, FALSE
 MossdeepCity_Gym_EventScript_ShortcutAlreadyUnlocked:
 	end
 
