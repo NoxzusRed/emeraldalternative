@@ -271,6 +271,12 @@ const u16 gTrainerPalette_PikeQueenLucy[] = INCBIN_U16("graphics/trainers/front_
 const u32 gTrainerFrontPic_PyramidKingBrandon[] = INCBIN_U32("graphics/trainers/front_pics/pyramid_king_brandon.4bpp.lz");
 const u16 gTrainerPalette_PyramidKingBrandon[] = INCBIN_U16("graphics/trainers/front_pics/pyramid_king_brandon.gbapal");
 
+const u32 gTrainerFrontPic_Diantha[] = INCBIN_U32("graphics/trainers/front_pics/diantha.4bpp.lz");
+const u16 gTrainerPalette_Diantha[] = INCBIN_U16("graphics/trainers/palettes/diantha.gbapal");
+
+const u32 gTrainerFrontPic_Leon[] = INCBIN_U32("graphics/trainers/front_pics/leon.4bpp.lz");
+const u16 gTrainerPalette_Leon[] = INCBIN_U16("graphics/trainers/palettes/leon.gbapal");
+
 const u32 gTrainerFrontPic_Cynthia[] = INCBIN_U32("graphics/trainers/front_pics/cynthia.4bpp.lz");
 const u16 gTrainerPalette_Cynthia[] = INCBIN_U16("graphics/trainers/palettes/cynthia.gbapal");
 
@@ -415,6 +421,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FACTORY_HEAD_NOLAND, gTrainerFrontPic_FactoryHeadNoland, gTrainerPalette_FactoryHeadNoland),
     TRAINER_SPRITE(TRAINER_PIC_PIKE_QUEEN_LUCY, gTrainerFrontPic_PikeQueenLucy, gTrainerPalette_PikeQueenLucy),
     TRAINER_SPRITE(TRAINER_PIC_PYRAMID_KING_BRANDON, gTrainerFrontPic_PyramidKingBrandon, gTrainerPalette_PyramidKingBrandon),
+    TRAINER_SPRITE(TRAINER_PIC_DIANTHA, gTrainerFrontPic_Diantha, gTrainerPalette_Diantha),
+    TRAINER_SPRITE(TRAINER_PIC_LEON, gTrainerFrontPic_Leon, gTrainerPalette_Leon),
     TRAINER_SPRITE(TRAINER_PIC_CYNTHIA, gTrainerFrontPic_Cynthia, gTrainerPalette_Cynthia),
     TRAINER_SPRITE(TRAINER_PIC_IRIS, gTrainerFrontPic_Iris, gTrainerPalette_Iris),
     TRAINER_SPRITE(TRAINER_PIC_ALDER, gTrainerFrontPic_Alder, gTrainerPalette_Alder),
