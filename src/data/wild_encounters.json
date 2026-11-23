@@ -9470,27 +9470,27 @@
             "encounter_rate": 100,
             "mons": [
               {
-                "min_level": 5,
+                "min_level": 25,
                 "max_level": 35,
                 "species": "SPECIES_BERGMITE"
               },
               {
-                "min_level": 5,
+                "min_level": 25,
                 "max_level": 35,
                 "species": "SPECIES_BERGMITE"
               },
               {
-                "min_level": 5,
+                "min_level": 25,
                 "max_level": 35,
                 "species": "SPECIES_BERGMITE"
               },
               {
-                "min_level": 5,
+                "min_level": 25,
                 "max_level": 35,
                 "species": "SPECIES_BERGMITE"
               },
               {
-                "min_level": 5,
+                "min_level": 25,
                 "max_level": 35,
                 "species": "SPECIES_BERGMITE"
               }
