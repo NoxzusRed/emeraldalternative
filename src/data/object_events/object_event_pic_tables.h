@@ -292,6 +292,20 @@ static const struct SpriteFrameImage sPicTable_Alder[] = {
     overworld_frame(gObjectEventPic_Alder, 2, 4, 2),
 };
 
+// Leon has three original 16x32 images. Repeat the original images to
+// provide the nine slots expected by standard NPC animations.
+static const struct SpriteFrameImage sPicTable_Leon[] = {
+    overworld_frame(gObjectEventPic_Leon, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Leon, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Leon, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Leon, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Leon, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Leon, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Leon, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Leon, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Leon, 2, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Lance[] = {
     overworld_frame(gObjectEventPic_Lance, 2, 4, 0),
     overworld_frame(gObjectEventPic_Lance, 2, 4, 1),
