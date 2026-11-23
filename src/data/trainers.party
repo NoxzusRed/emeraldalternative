@@ -10136,11 +10136,17 @@ Luvdisc
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Luvdisc
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 === TRAINER_SHARON ===
 Name: SHARON
@@ -10225,11 +10231,17 @@ Luvdisc
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Luvdisc
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 === TRAINER_KARA ===
 Name: KARA
@@ -10272,11 +10284,17 @@ Luvdisc
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Luvdisc
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Lumineon
 Level: 36
@@ -10348,11 +10366,17 @@ Luvdisc
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Luvdisc
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 === TRAINER_CARLEE ===
 Name: CARLEE
@@ -10438,6 +10462,9 @@ Luvdisc
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Wailmer
 Level: 45
@@ -14434,6 +14461,9 @@ Luvdisc
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 === TRAINER_CRISSY ===
 Name: CRISSY
@@ -15001,11 +15031,17 @@ Luvdisc
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 SpA / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Luvdisc
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 SpA / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 === TRAINER_KIRA_AND_DAN_1 ===
 Name: KIRA & DAN
@@ -18914,6 +18950,7 @@ Level: 86
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
+- Ice Beam
 - Draining Kiss
 
 Primarina
@@ -18978,6 +19015,7 @@ Level: 96
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
+- Ice Beam
 - Draining Kiss
 
 Sharpedo
@@ -19042,6 +19080,7 @@ Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
+- Ice Beam
 - Draining Kiss
 
 Primarina @ Sitrus Berry
@@ -20259,6 +20298,9 @@ Luvdisc
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Wailmer
 Level: 38
@@ -20283,6 +20325,9 @@ Luvdisc
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Wailmer
 Level: 42
@@ -20307,6 +20352,9 @@ Luvdisc
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Surf
+- Ice Beam
+- Draining Kiss
 
 Wailord
 Level: 46
