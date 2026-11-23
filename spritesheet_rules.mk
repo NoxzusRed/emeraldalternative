@@ -237,6 +237,9 @@ $(OBJEVENTGFXDIR)/people/cooltrainer_f.4bpp: %.4bpp: %.png spritesheet_rules.mk
 $(OBJEVENTGFXDIR)/people/kindler.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/ruin_maniac.4bpp: %.4bpp: %.png spritesheet_rules.mk
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/cynthia.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

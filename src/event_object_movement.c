@@ -496,6 +496,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Npc4,                  OBJ_EVENT_PAL_TAG_NPC_4},
     {gObjectEventPal_Npc5,                  OBJ_EVENT_PAL_TAG_NPC_5},
     {gObjectEventPal_CooltrainerM,           OBJ_EVENT_PAL_TAG_COOLTRAINER_M},
+    {gObjectEventPal_RuinManiac,             OBJ_EVENT_PAL_TAG_RUIN_MANIAC},
     {gObjectEventPal_Cynthia,                OBJ_EVENT_PAL_TAG_CYNTHIA},
     {gObjectEventPal_Blue,                   OBJ_EVENT_PAL_TAG_BLUE},
     {gObjectEventPal_Lance,                  OBJ_EVENT_PAL_TAG_LANCE},
@@ -507,6 +508,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Npc4Reflection,        OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION},
     {gObjectEventPal_Npc5Reflection,        OBJ_EVENT_PAL_TAG_NPC_5_REFLECTION},
     {gObjectEventPal_CooltrainerMReflection, OBJ_EVENT_PAL_TAG_COOLTRAINER_M_REFLECTION},
+    {gObjectEventPal_RuinManiacReflection,   OBJ_EVENT_PAL_TAG_RUIN_MANIAC_REFLECTION},
     {gObjectEventPal_Brendan,               OBJ_EVENT_PAL_TAG_BRENDAN},
     {gObjectEventPal_BrendanReflection,     OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION},
     {gObjectEventPal_BridgeReflection,      OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION},
@@ -692,6 +694,13 @@ static const u16 sReflectionPaletteTags_CooltrainerM[] = {
     OBJ_EVENT_PAL_TAG_COOLTRAINER_M_REFLECTION,
 };
 
+static const u16 sReflectionPaletteTags_RuinManiac[] = {
+    OBJ_EVENT_PAL_TAG_RUIN_MANIAC_REFLECTION,
+    OBJ_EVENT_PAL_TAG_RUIN_MANIAC_REFLECTION,
+    OBJ_EVENT_PAL_TAG_RUIN_MANIAC_REFLECTION,
+    OBJ_EVENT_PAL_TAG_RUIN_MANIAC_REFLECTION,
+};
+
 static const u16 sReflectionPaletteTags_RedLeaf[] = {
     OBJ_EVENT_PAL_TAG_RED_LEAF,
     OBJ_EVENT_PAL_TAG_RED_LEAF,
@@ -713,6 +722,7 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_NPC_3,            sReflectionPaletteTags_Npc3},
     {OBJ_EVENT_PAL_TAG_NPC_5,            sReflectionPaletteTags_Npc5},
     {OBJ_EVENT_PAL_TAG_COOLTRAINER_M,    sReflectionPaletteTags_CooltrainerM},
+    {OBJ_EVENT_PAL_TAG_RUIN_MANIAC,      sReflectionPaletteTags_RuinManiac},
     {OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW, sReflectionPaletteTags_SubmarineShadow},
     {OBJ_EVENT_PAL_TAG_RED_LEAF,         sReflectionPaletteTags_RedLeaf},
     {OBJ_EVENT_PAL_TAG_NONE,             NULL},
