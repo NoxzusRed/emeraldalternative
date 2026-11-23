@@ -2474,6 +2474,10 @@ static const struct SpriteTemplate sSpriteTemplate_AbilityPopUp =
     .callback = SpriteCb_AbilityPopUp
 };
 
+// CreateSprite stores the template pointer. Keep the per-battler tile tags
+// in persistent templates instead of passing an address on the stack.
+static struct SpriteTemplate sSpriteTemplates_AbilityPopUp[MAX_BATTLERS_COUNT];
+
 #define ABILITY_POP_UP_POS_X_DIFF (64 - 7) // Hide second sprite underneath to gain proper letter spacing
 #define ABILITY_POP_UP_POS_X_SLIDE 68
 
@@ -2752,13 +2756,26 @@ static inline bool32 IsAnyAbilityPopUpActive(void)
     return FALSE;
 }
 
+// Ability popups, the last-ball shortcut and the move info window all
+// use this OBJ palette. Freeing it while another user is still visible
+// leaves that sprite with an invalid (often black) palette.
+static void TryFreeSharedBattleWindowPalette(void)
+{
+    if (!IsAnyAbilityPopUpActive()
+     && gBattleStruct->ballSpriteIds[1] == MAX_SPRITES
+     && gBattleStruct->moveInfoSpriteId == MAX_SPRITES)
+        FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
+}
+
+#define FRAMES_TO_WAIT 48
+
 void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
 {
     const s16 (*coords)[2];
     u8 spriteId1, spriteId2, battlerPosition, taskId;
     u16 gfxTag = ABILITY_POP_UP_GFX_TAG_BASE + battler;
     struct SpriteSheet gfxSheet = sSpriteSheet_AbilityPopUp;
-    struct SpriteTemplate popupTemplate = sSpriteTemplate_AbilityPopUp;
+    bool8 allocatedTiles = FALSE;
 
     if (B_ABILITY_POP_UP == FALSE)
         return;
@@ -2773,16 +2790,47 @@ void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
             return;
     }
 
-    if (!IsAnyAbilityPopUpActive())
-        LoadSpritePalette(&sSpritePalette_AbilityPopUp);
+    // A new popup for the same battler may arrive before the old one exits
+    // (e.g. several Ground-type attacks stopped by Levitate). Reuse its
+    // sprites and graphic sheet instead of overwriting an active popup.
+    if (gBattleStruct->battlerState[battler].activeAbilityPopUps)
+    {
+        spriteId1 = gBattleStruct->abilityPopUpSpriteIds[battler][0];
+        spriteId2 = gBattleStruct->abilityPopUpSpriteIds[battler][1];
+        if (spriteId1 < MAX_SPRITES && spriteId2 < MAX_SPRITES
+         && gSprites[spriteId1].inUse && gSprites[spriteId2].inUse)
+        {
+            PrintAbilityOnAbilityPopUp(ability, spriteId1, spriteId2);
+            RestoreOverwrittenPixels((void *)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
+            gSprites[spriteId1].tHide = FALSE;
+            gSprites[spriteId2].tHide = FALSE;
+            gSprites[spriteId1].tFrames = 0;
+            gSprites[spriteId2].tFrames = 0;
+            return;
+        }
+    }
 
-    // Make a separate copy of the popup tiles for each battler.
-    // Both sprites in this popup still share the same dedicated sheet.
+    // LoadSpritePalette already reuses the existing tag if it is present.
+    // In particular, do not rely on other battlers' popup flags to infer
+    // whether an unrelated UI component released the shared palette.
+    if (LoadSpritePalette(&sSpritePalette_AbilityPopUp) == 0xFF)
+        return;
+
     gfxSheet.tag = gfxTag;
-    LoadSpriteSheet(&gfxSheet);
-    popupTemplate.tileTag = gfxTag;
+    if (GetSpriteTileStartByTag(gfxTag) == 0xFFFF)
+    {
+        LoadSpriteSheet(&gfxSheet);
+        if (GetSpriteTileStartByTag(gfxTag) == 0xFFFF)
+        {
+            // No free OBJ tiles: don't display an uninitialized black panel.
+            TryFreeSharedBattleWindowPalette();
+            return;
+        }
+        allocatedTiles = TRUE;
+    }
 
-    gBattleStruct->battlerState[battler].activeAbilityPopUps = TRUE;
+    sSpriteTemplates_AbilityPopUp[battler] = sSpriteTemplate_AbilityPopUp;
+    sSpriteTemplates_AbilityPopUp[battler].tileTag = gfxTag;
     battlerPosition = GetBattlerPosition(battler);
 
     if (isDoubleBattle)
@@ -2792,37 +2840,66 @@ void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
 
     if ((battlerPosition & BIT_SIDE) == B_SIDE_PLAYER)
     {
-        spriteId1 = CreateSprite(&popupTemplate,
+        spriteId1 = CreateSprite(&sSpriteTemplates_AbilityPopUp[battler],
                                 coords[battlerPosition][0] - ABILITY_POP_UP_POS_X_SLIDE,
                                 coords[battlerPosition][1], 0);
-        spriteId2 = CreateSprite(&popupTemplate,
+        spriteId2 = CreateSprite(&sSpriteTemplates_AbilityPopUp[battler],
                                 coords[battlerPosition][0] - ABILITY_POP_UP_POS_X_SLIDE + ABILITY_POP_UP_POS_X_DIFF,
-                                coords[battlerPosition][1], 1); //Appears below
+                                coords[battlerPosition][1], 1);
 
-        gSprites[spriteId1].tRightToLeft = TRUE;
-        gSprites[spriteId2].tRightToLeft = TRUE;
+        if (spriteId1 != MAX_SPRITES && spriteId2 != MAX_SPRITES)
+        {
+            gSprites[spriteId1].tRightToLeft = TRUE;
+            gSprites[spriteId2].tRightToLeft = TRUE;
+        }
     }
     else
     {
-        spriteId1 = CreateSprite(&popupTemplate,
+        spriteId1 = CreateSprite(&sSpriteTemplates_AbilityPopUp[battler],
                                 coords[battlerPosition][0] + ABILITY_POP_UP_POS_X_SLIDE,
                                 coords[battlerPosition][1], 0);
-        spriteId2 = CreateSprite(&popupTemplate,
+        spriteId2 = CreateSprite(&sSpriteTemplates_AbilityPopUp[battler],
                                 coords[battlerPosition][0] + ABILITY_POP_UP_POS_X_SLIDE + ABILITY_POP_UP_POS_X_DIFF,
-                                coords[battlerPosition][1], 1); //Appears below
+                                coords[battlerPosition][1], 1);
 
-        gSprites[spriteId1].tRightToLeft = FALSE;
-        gSprites[spriteId2].tRightToLeft = FALSE;
+        if (spriteId1 != MAX_SPRITES && spriteId2 != MAX_SPRITES)
+        {
+            gSprites[spriteId1].tRightToLeft = FALSE;
+            gSprites[spriteId2].tRightToLeft = FALSE;
+        }
     }
 
+    if (spriteId1 == MAX_SPRITES || spriteId2 == MAX_SPRITES)
+    {
+        if (spriteId1 != MAX_SPRITES)
+            DestroySprite(&gSprites[spriteId1]);
+        if (spriteId2 != MAX_SPRITES)
+            DestroySprite(&gSprites[spriteId2]);
+        if (allocatedTiles)
+            FreeSpriteTilesByTag(gfxTag);
+        TryFreeSharedBattleWindowPalette();
+        return;
+    }
+
+    taskId = CreateTask(Task_FreeAbilityPopUpGfx, 5);
+    if (taskId == TASK_NONE)
+    {
+        DestroySprite(&gSprites[spriteId1]);
+        DestroySprite(&gSprites[spriteId2]);
+        if (allocatedTiles)
+            FreeSpriteTilesByTag(gfxTag);
+        TryFreeSharedBattleWindowPalette();
+        return;
+    }
+
+    gBattleStruct->battlerState[battler].activeAbilityPopUps = TRUE;
     gSprites[spriteId1].tOriginalX = coords[battlerPosition][0];
     gSprites[spriteId2].tOriginalX = coords[battlerPosition][0] + ABILITY_POP_UP_POS_X_DIFF;
-    gSprites[spriteId2].oam.tileNum += (8 * 4); //Second half of pop up
+    gSprites[spriteId2].oam.tileNum += (8 * 4); // Second half of popup
 
     gBattleStruct->abilityPopUpSpriteIds[battler][0] = spriteId1;
     gBattleStruct->abilityPopUpSpriteIds[battler][1] = spriteId2;
 
-    taskId = CreateTask(Task_FreeAbilityPopUpGfx, 5);
     gTasks[taskId].tAbilityPopUpBattler = battler;
     gTasks[taskId].tSpriteId1 = spriteId1;
     gTasks[taskId].tSpriteId2 = spriteId2;
@@ -2836,7 +2913,7 @@ void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
 
     PrintBattlerOnAbilityPopUp(battler, spriteId1, spriteId2);
     PrintAbilityOnAbilityPopUp(ability, spriteId1, spriteId2);
-    RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
+    RestoreOverwrittenPixels((void *)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
 }
 
 void UpdateAbilityPopup(u8 battler)
@@ -2848,8 +2925,6 @@ void UpdateAbilityPopup(u8 battler)
     PrintAbilityOnAbilityPopUp(ability, spriteId1, spriteId2);
     RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
 }
-
-#define FRAMES_TO_WAIT 48
 
 static void SpriteCb_AbilityPopUp(struct Sprite *sprite)
 {
@@ -2901,11 +2976,11 @@ static void Task_FreeAbilityPopUpGfx(u8 taskId)
     if (!gSprites[gTasks[taskId].tSpriteId1].inUse
         && !gSprites[gTasks[taskId].tSpriteId2].inUse)
     {
-        // Free only this popup's tiles; other battlers may still have
-        // different ability names visible at the same time.
-        FreeSpriteTilesByTag(ABILITY_POP_UP_GFX_TAG_BASE + gTasks[taskId].tAbilityPopUpBattler);
-        if (!IsAnyAbilityPopUpActive())
-            FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
+        // A new popup may have reused these per-battler tiles already.
+        // Its own cleanup task is then responsible for freeing them.
+        if (!gBattleStruct->battlerState[gTasks[taskId].tAbilityPopUpBattler].activeAbilityPopUps)
+            FreeSpriteTilesByTag(ABILITY_POP_UP_GFX_TAG_BASE + gTasks[taskId].tAbilityPopUpBattler);
+        TryFreeSharedBattleWindowPalette();
         DestroyTask(taskId);
     }
 }
@@ -3083,9 +3158,9 @@ void TryAddLastUsedBallItemSprites(void)
 static void DestroyLastUsedBallWinGfx(struct Sprite *sprite)
 {
     FreeSpriteTilesByTag(LAST_BALL_WINDOW_TAG);
-    FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
     DestroySprite(sprite);
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
+    TryFreeSharedBattleWindowPalette();
 }
 
 static void DestroyLastUsedBallGfx(struct Sprite *sprite)
@@ -3120,9 +3195,9 @@ void TryToHideMoveInfoWindow(void)
 static void DestroyMoveInfoWinGfx(struct Sprite *sprite)
 {
     FreeSpriteTilesByTag(MOVE_INFO_WINDOW_TAG);
-    FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
     DestroySprite(sprite);
     gBattleStruct->moveInfoSpriteId = MAX_SPRITES;
+    TryFreeSharedBattleWindowPalette();
 }
 
 static void SpriteCB_LastUsedBallWin(struct Sprite *sprite)
