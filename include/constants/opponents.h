@@ -885,11 +885,24 @@
 #define TRAINER_MARCELO					    877
 #define TRAINER_STERLING					878
 
+// Temporary PWT opponents share the real PWT variant-1 teams.
+// They deliberately do NOT set normal trainer flags (see battle_setup.c).
+#define TRAINER_PWT_TEST_BLUE           879 // Mt Chimney North: repeatable PWT battle test
+#define TRAINER_PWT_TEST_RED            880 // Mt Chimney North: repeatable PWT battle test
+#define TRAINER_PWT_TEST_LANCE          881 // Mt Chimney North: repeatable PWT battle test
+#define TRAINER_PWT_TEST_STEVEN         882 // Mt Chimney North: repeatable PWT battle test
+#define TRAINER_PWT_TEST_WALLACE        883 // Mt Chimney North: repeatable PWT battle test
+#define TRAINER_PWT_TEST_CYNTHIA        884 // Mt Chimney North: repeatable PWT battle test
+#define TRAINER_PWT_TEST_ALDER          885 // Mt Chimney North: repeatable PWT battle test
+#define TRAINER_PWT_TEST_IRIS           886 // Mt Chimney North: repeatable PWT battle test
+#define TRAINER_PWT_TEST_DIANTHA        887 // Mt Chimney North: repeatable PWT battle test
+#define TRAINER_PWT_TEST_LEON           888 // Mt Chimney North: repeatable PWT battle test
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      879
+#define TRAINERS_COUNT                      889
 #define MAX_TRAINERS_COUNT                  900
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

@@ -1365,7 +1365,11 @@ static void CB2_EndTrainerBattle(void)
     {
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         DowngradeBadPoison();
-        if (!InBattlePyramid() && !InTrainerHillChallenge())
+        // PWT test opponents can be rematched by speaking to them again.
+        // Do not register them or consume permanent trainer-defeat flags.
+        if (!InBattlePyramid() && !InTrainerHillChallenge()
+         && (TRAINER_BATTLE_PARAM.opponentA < TRAINER_PWT_TEST_BLUE
+          || TRAINER_BATTLE_PARAM.opponentA > TRAINER_PWT_TEST_LEON))
         {
             RegisterTrainerInMatchCall();
             SetBattledTrainersFlags();

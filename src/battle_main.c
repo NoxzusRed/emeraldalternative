@@ -42,6 +42,7 @@
 #include "pokeball.h"
 #include "pokedex.h"
 #include "pokemon.h"
+#include "pwt.h"
 #include "pokemon_animation.h"
 #include "random.h"
 #include "recorded_battle.h"
@@ -2085,6 +2086,28 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
+
+    // Mt. Chimney North PWT battle tests: use the actual variant-1 teams,
+    // rather than the Litwick trainerproc entries that reserve four slots.
+    // All custom IVs, EVs, moves, natures and held items are preserved.
+    if (trainerNum >= TRAINER_PWT_TEST_BLUE && trainerNum <= TRAINER_PWT_TEST_LEON)
+    {
+        struct PwtOpponent opponent =
+        {
+            .trainerId = trainerNum - TRAINER_PWT_TEST_BLUE,
+            .variantId = PWT_VARIANT_1,
+        };
+        const struct PwtTrainerParty *pwtParty = GetPwtOpponentParty(&opponent);
+        struct Trainer testTrainer = *GetTrainerStructFromId(trainerNum);
+
+        if (pwtParty != NULL)
+        {
+            testTrainer.party = pwtParty->mons;
+            testTrainer.partySize = pwtParty->partySize;
+            return CreateNPCTrainerPartyFromTrainer(party, &testTrainer, firstTrainer, gBattleTypeFlags);
+        }
+    }
+
     retVal = CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum), firstTrainer, gBattleTypeFlags);
     return retVal;
 }
