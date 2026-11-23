@@ -245,6 +245,21 @@ static const struct SpriteFrameImage sPicTable_Blue[] = {
     overworld_ascending_frames(gObjectEventPic_Blue, 2, 4),
 };
 
+// FireRed Lance provides three original 16x32 frames.
+// Match FireRed's nine animation-image indices by reusing those frames;
+// do not read six missing frames or generate new poses.
+static const struct SpriteFrameImage sPicTable_Lance[] = {
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Scientist1[] = {
     overworld_ascending_frames(gObjectEventPic_Scientist1, 2, 4),
 };
