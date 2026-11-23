@@ -581,6 +581,13 @@
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_GYM",
       "dest_warp_id": "12"
+    },
+    {
+      "x": 8,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_MOSSDEEP_CITY_GYM",
+      "dest_warp_id": "13"
     }
   ],
   "coord_events": [
@@ -664,6 +671,15 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "MossdeepCity_Gym_EventScript_YellowFloorSwitch"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "MossdeepCity_Gym_EventScript_UnlockShortcutWarp"
     }
   ],
   "bg_events": [
