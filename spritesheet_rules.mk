@@ -249,6 +249,9 @@ $(OBJEVENTGFXDIR)/people/lance.4bpp: %.4bpp: %.png spritesheet_rules.mk
 $(OBJEVENTGFXDIR)/people/alder.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/iris.4bpp: %.4bpp: %.png spritesheet_rules.mk
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/black_belt.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

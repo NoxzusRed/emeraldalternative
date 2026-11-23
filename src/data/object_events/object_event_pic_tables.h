@@ -253,6 +253,21 @@ static const struct SpriteFrameImage sPicTable_Blue[] = {
 // Keep nine image-table entries for the standard NPC animation scripts,
 // reusing the three available frames exactly as in FireRed's Lance table.
 // Do not reference any frames beyond 2.
+// Iris: use the first three original 32x32 facing frames.
+// Standard NPC animations expect nine image entries; reuse 0, 1 and 2
+// for down, up and sideways (east is horizontally mirrored).
+static const struct SpriteFrameImage sPicTable_Iris[] = {
+    overworld_frame(gObjectEventPic_Iris, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Iris, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Iris, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Iris, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Iris, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Iris, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Iris, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Iris, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Iris, 4, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Alder[] = {
     overworld_frame(gObjectEventPic_Alder, 4, 4, 0),
     overworld_frame(gObjectEventPic_Alder, 4, 4, 1),
