@@ -1,0 +1,24 @@
+CHAMPION DIANTHA — EMERALD T
+
+Song constant: MUS_VS_DIANTHA (619)
+MIDI: sound/songs/midi/mus_vs_diantha.mid
+Sound bank: voicegroup202 (exclusive)
+MIDI config: -E -R50 -G202 -V090 -P1
+
+IMPORTANT: this file is an ORIGINAL PROVISIONAL battle composition, not
+an exact transcription of the copyrighted Pokémon X/Y Diantha theme.
+
+A fan-transcribed version exists here:
+https://www.vgmusic.com/new-files/ChampionXY.mid
+Its metadata explicitly says Copyright 2013 All Rights Reserved.
+It was not copied into this public repository.
+
+This original provisional theme uses a B minor center, 176 BPM, 4/4,
+a 4-bar intro and a 48-bar looping form (MIDI markers [ and ]).
+10 tracks (including tempo): square-wave lead, glockenspiel,
+Steinway piano, strings, synth bass, pizzicato, flute/choir, harp
+and percussion. It uses existing samples.
+
+If you obtain permission to use a faithful Diantha MIDI, replace this
+MIDI while retaining the song name and registration. You may need to
+remap instrument programs and loop points for the GBA sound engine.
