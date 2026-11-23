@@ -3474,15 +3474,18 @@ void SetNonVolatileStatusCondition(u32 effectBattler, enum MoveEffects effect)
 
     gBattleScripting.moveEffect = MOVE_EFFECT_NONE;
 
-    // for synchronize
-    if (effect == MOVE_EFFECT_POISON
-     || effect == MOVE_EFFECT_TOXIC
-     || effect == MOVE_EFFECT_PARALYSIS
-     || effect == MOVE_EFFECT_BURN)
-     {
+    // Only the battler that was actually inflicted with the status can
+    // activate Synchronize. Otherwise the attacker's Synchronize can trigger
+    // after it paralyzes/burns/poisons a non-Synchronize target.
+    if ((effect == MOVE_EFFECT_POISON
+      || effect == MOVE_EFFECT_TOXIC
+      || effect == MOVE_EFFECT_PARALYSIS
+      || effect == MOVE_EFFECT_BURN)
+     && GetBattlerAbility(effectBattler) == ABILITY_SYNCHRONIZE)
+    {
         gBattleStruct->synchronizeMoveEffect = effect;
         gHitMarker |= HITMARKER_SYNCHRONIZE_EFFECT;
-     }
+    }
 
     if (effect == MOVE_EFFECT_POISON || effect == MOVE_EFFECT_TOXIC)
         gBattleStruct->poisonPuppeteerConfusion = TRUE;
