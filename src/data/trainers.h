@@ -15521,8 +15521,10 @@ F_TRAINER_FEMALE |
 #line 6423
             .species = SPECIES_FARIGIRAF,
             .gender = TRAINER_MON_RANDOM_GENDER,
+#line 6423
+            .heldItem = ITEM_ORAN_BERRY,
 #line 6426
-            .ev = TRAINER_PARTY_EVS(126, 0, 80, 252, 0, 80),
+            .ev = TRAINER_PARTY_EVS(180, 0, 80, 252, 0, 80),
 #line 6425
             .iv = TRAINER_PARTY_IVS(24, 30, 31, 30, 30, 31),
 #line 6424
@@ -15542,7 +15544,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GOTHITELLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6436
-            .ev = TRAINER_PARTY_EVS(126, 0, 252, 0, 0, 252),
+            .ev = TRAINER_PARTY_EVS(180, 0, 252, 0, 0, 252),
 #line 6435
             .iv = TRAINER_PARTY_IVS(24, 30, 31, 30, 30, 31),
 #line 6434
@@ -15563,7 +15565,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_REUNICLUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6445
-            .ev = TRAINER_PARTY_EVS(126, 126, 0, 252, 0, 0),
+            .ev = TRAINER_PARTY_EVS(180, 126, 0, 252, 0, 0),
 #line 6444
             .iv = TRAINER_PARTY_IVS(24, 30, 30, 31, 30, 30),
 #line 6443
@@ -15585,9 +15587,9 @@ F_TRAINER_FEMALE |
 #line 6451
             .heldItem = ITEM_SITRUS_BERRY,
 #line 6455
-            .ev = TRAINER_PARTY_EVS(126, 0, 150, 0, 0, 150),
+            .ev = TRAINER_PARTY_EVS(180, 0, 150, 0, 0, 150),
 #line 6454
-            .iv = TRAINER_PARTY_IVS(24, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(24, 30, 30, 15, 30, 30),
 #line 6453
             .lvl = 54,
 #line 6452
@@ -15608,9 +15610,9 @@ F_TRAINER_FEMALE |
 #line 6461
             .heldItem = ITEM_SITRUS_BERRY,
 #line 6465
-            .ev = TRAINER_PARTY_EVS(126, 0, 150, 0, 0, 150),
+            .ev = TRAINER_PARTY_EVS(180, 0, 150, 0, 0, 150),
 #line 6464
-            .iv = TRAINER_PARTY_IVS(24, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(24, 30, 30, 15, 30, 30),
 #line 6463
             .lvl = 54,
 #line 6462

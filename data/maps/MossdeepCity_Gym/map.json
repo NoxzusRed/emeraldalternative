@@ -585,7 +585,7 @@
     {
       "x": 7,
       "y": 30,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_GYM",
       "dest_warp_id": "15"
     },

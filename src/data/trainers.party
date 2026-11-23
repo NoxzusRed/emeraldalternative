@@ -6420,10 +6420,10 @@ EVs: 126 HP / 252 Def / 252 SpD
 - Psychic
 - Light Screen
 
-Farigiraf
+Farigiraf @ Oran Berry
 Level: 51
 IVs: 24 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 126 HP / 252 Spe / 80 Def / 80 SpD
+EVs: 180 HP / 252 Spe / 80 Def / 80 SpD
 - Twin Beam
 - Thunderbolt
 - Dazzling Gleam
@@ -6433,7 +6433,7 @@ Gothitelle
 Bold Nature
 Level: 52
 IVs: 24 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 126 HP / 252 Def / 252 SpD
+EVs: 180 HP / 252 Def / 252 SpD
 - Psychic
 - Calm Mind
 - Fake Tears
@@ -6442,7 +6442,7 @@ EVs: 126 HP / 252 Def / 252 SpD
 Reuniclus
 Level: 52
 IVs: 24 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 31 Spe
-EVs: 126 HP / 252 Spe / 126 Atk
+EVs: 180 HP / 252 Spe / 126 Atk
 - Psychic
 - Hammer Arm
 - Confuse Ray
@@ -6451,8 +6451,8 @@ EVs: 126 HP / 252 Spe / 126 Atk
 Lunatone @ Sitrus Berry
 Bold Nature
 Level: 54
-IVs: 24 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 126 HP / 150 Def / 150 SpD
+IVs: 24 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 15 Spe
+EVs: 180 HP / 150 Def / 150 SpD
 - Psychic
 - Moonblast
 - Power Gem
@@ -6461,8 +6461,8 @@ EVs: 126 HP / 150 Def / 150 SpD
 Solrock @ Sitrus Berry
 Impish Nature
 Level: 54
-IVs: 24 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 126 HP / 150 Def / 150 SpD
+IVs: 24 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 15 Spe
+EVs: 180 HP / 150 Def / 150 SpD
 - Zen Headbutt
 - Rock Slide
 - Flare Blitz
