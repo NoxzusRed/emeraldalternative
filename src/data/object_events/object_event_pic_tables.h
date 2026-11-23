@@ -248,36 +248,36 @@ static const struct SpriteFrameImage sPicTable_Blue[] = {
 // FireRed Lance provides three original 16x32 frames.
 // Match FireRed's nine animation-image indices by reusing those frames;
 // do not read six missing frames or generate new poses.
-// Alder's overworld now uses three original 32x32 frames:
+// Alder's overworld now uses three original 16x32 frames:
 // 0 = south, 1 = north, 2 = west (mirrored by the standard east animations).
 // Keep nine image-table entries for the standard NPC animation scripts,
 // reusing the three available frames exactly as in FireRed's Lance table.
 // Do not reference any frames beyond 2.
-// Iris: use the first three original 32x32 facing frames.
+// Iris: use the three original 16x32 facing frames.
 // Standard NPC animations expect nine image entries; reuse 0, 1 and 2
 // for down, up and sideways (east is horizontally mirrored).
 static const struct SpriteFrameImage sPicTable_Iris[] = {
-    overworld_frame(gObjectEventPic_Iris, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Iris, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Iris, 4, 4, 2),
-    overworld_frame(gObjectEventPic_Iris, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Iris, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Iris, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Iris, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Iris, 4, 4, 2),
-    overworld_frame(gObjectEventPic_Iris, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Iris, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Iris, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Iris, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Iris, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Iris, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Iris, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Iris, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Iris, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Iris, 2, 4, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_Alder[] = {
-    overworld_frame(gObjectEventPic_Alder, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Alder, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Alder, 4, 4, 2),
-    overworld_frame(gObjectEventPic_Alder, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Alder, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Alder, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Alder, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Alder, 4, 4, 2),
-    overworld_frame(gObjectEventPic_Alder, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Alder, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Alder, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Alder, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Alder, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Alder, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Alder, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Alder, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Alder, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Alder, 2, 4, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_Lance[] = {
