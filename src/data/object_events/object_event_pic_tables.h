@@ -248,6 +248,30 @@ static const struct SpriteFrameImage sPicTable_Blue[] = {
 // FireRed Lance provides three original 16x32 frames.
 // Match FireRed's nine animation-image indices by reusing those frames;
 // do not read six missing frames or generate new poses.
+// Alder's original 18-frame 32x32 overworld, unchanged.
+// The standard NPC animation uses frames 0-8; the remaining original frames
+// are preserved in this table for future animations.
+static const struct SpriteFrameImage sPicTable_Alder[] = {
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 5),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 6),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 7),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 8),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 9),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 10),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 11),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 12),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 13),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 14),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 15),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 16),
+    overworld_frame(gObjectEventPic_Alder, 4, 4, 17),
+};
+
 static const struct SpriteFrameImage sPicTable_Lance[] = {
     overworld_frame(gObjectEventPic_Lance, 2, 4, 0),
     overworld_frame(gObjectEventPic_Lance, 2, 4, 1),

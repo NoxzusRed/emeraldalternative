@@ -111,7 +111,8 @@
 #define TRAINER_PIC_MAGMA_ADMIN_F         93
 #define TRAINER_PIC_BLUE                  94
 #define TRAINER_PIC_LANCE                 95
-#define TRAINER_PIC_COUNT                 96
+#define TRAINER_PIC_ALDER                 96
+#define TRAINER_PIC_COUNT                 97
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

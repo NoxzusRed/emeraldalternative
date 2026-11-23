@@ -499,6 +499,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Cynthia,                OBJ_EVENT_PAL_TAG_CYNTHIA},
     {gObjectEventPal_Blue,                   OBJ_EVENT_PAL_TAG_BLUE},
     {gObjectEventPal_Lance,                  OBJ_EVENT_PAL_TAG_LANCE},
+    {gObjectEventPal_Alder,                  OBJ_EVENT_PAL_TAG_ALDER},
     {gObjectEventPal_Npc1Reflection,        OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION},
     {gObjectEventPal_Npc2Reflection,        OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION},
     {gObjectEventPal_Npc3Reflection,        OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION},
