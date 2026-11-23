@@ -136,6 +136,9 @@ const u32 gObjectEventPic_DragonTamer[] = INCBIN_U32("graphics/object_events/pic
 const u32 gObjectEventPic_RuinManiac[] = INCBIN_U32("graphics/object_events/pics/people/ruin_maniac.4bpp");
 const u32 gObjectEventPic_Cynthia[] = INCBIN_U32("graphics/object_events/pics/people/cynthia.4bpp");
 const u32 gObjectEventPic_Blue[] = INCBIN_U32("graphics/object_events/pics/people/blue.4bpp");
+const u32 gObjectEventPic_Diantha[] = INCBIN_U32("graphics/object_events/pics/people/diantha.4bpp");
+// Reuse the exact 16-color palette uploaded to graphics/trainers/palettes.
+const u16 gObjectEventPal_Diantha[] = INCBIN_U16("graphics/trainers/palettes/diantha.gbapal");
 const u32 gObjectEventPic_Leon[] = INCBIN_U32("graphics/object_events/pics/people/leon.4bpp");
 const u16 gObjectEventPal_Leon[] = INCBIN_U16("graphics/object_events/palettes/leon.gbapal");
 const u32 gObjectEventPic_Iris[] = INCBIN_U32("graphics/object_events/pics/people/iris.4bpp");

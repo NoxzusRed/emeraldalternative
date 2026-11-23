@@ -294,6 +294,20 @@ static const struct SpriteFrameImage sPicTable_Alder[] = {
 
 // Leon has three original 16x32 images. Repeat the original images to
 // provide the nine slots expected by standard NPC animations.
+// Diantha has three original 16x32 facing images (south, north, west).
+// Mirror the side pose for east and reuse the existing frames for NPC motion.
+static const struct SpriteFrameImage sPicTable_Diantha[] = {
+    overworld_frame(gObjectEventPic_Diantha, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Diantha, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Diantha, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Diantha, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Diantha, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Diantha, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Diantha, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Diantha, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Diantha, 2, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Leon[] = {
     overworld_frame(gObjectEventPic_Leon, 2, 4, 0),
     overworld_frame(gObjectEventPic_Leon, 2, 4, 1),

@@ -57,6 +57,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lance;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Alder;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Iris;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Diantha;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gentleman;
@@ -323,6 +324,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ALDER] =                    &gObjectEventGraphicsInfo_Alder,
     [OBJ_EVENT_GFX_IRIS] =                     &gObjectEventGraphicsInfo_Iris,
     [OBJ_EVENT_GFX_LEON] =                     &gObjectEventGraphicsInfo_Leon,
+    [OBJ_EVENT_GFX_DIANTHA] =                  &gObjectEventGraphicsInfo_Diantha,
     [OBJ_EVENT_GFX_SCIENTIST_1] =              &gObjectEventGraphicsInfo_Scientist1,
     [OBJ_EVENT_GFX_LASS] =                     &gObjectEventGraphicsInfo_Lass,
     [OBJ_EVENT_GFX_GENTLEMAN] =                &gObjectEventGraphicsInfo_Gentleman,
