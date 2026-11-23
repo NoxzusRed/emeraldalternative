@@ -15502,9 +15502,9 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CLAYDOL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6417
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 252),
+            .ev = TRAINER_PARTY_EVS(126, 0, 252, 0, 0, 252),
 #line 6416
-            .iv = TRAINER_PARTY_IVS(30, 30, 31, 30, 30, 31),
+            .iv = TRAINER_PARTY_IVS(24, 30, 31, 30, 30, 31),
 #line 6415
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -15522,9 +15522,9 @@ F_TRAINER_FEMALE |
             .species = SPECIES_FARIGIRAF,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6426
-            .ev = TRAINER_PARTY_EVS(252, 0, 80, 252, 0, 80),
+            .ev = TRAINER_PARTY_EVS(126, 0, 80, 252, 0, 80),
 #line 6425
-            .iv = TRAINER_PARTY_IVS(30, 30, 31, 30, 30, 31),
+            .iv = TRAINER_PARTY_IVS(24, 30, 31, 30, 30, 31),
 #line 6424
             .lvl = 51,
             .nature = NATURE_HARDY,
@@ -15542,9 +15542,9 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GOTHITELLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6436
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 252),
+            .ev = TRAINER_PARTY_EVS(126, 0, 252, 0, 0, 252),
 #line 6435
-            .iv = TRAINER_PARTY_IVS(30, 30, 31, 30, 30, 31),
+            .iv = TRAINER_PARTY_IVS(24, 30, 31, 30, 30, 31),
 #line 6434
             .lvl = 52,
 #line 6433
@@ -15563,9 +15563,9 @@ F_TRAINER_FEMALE |
             .species = SPECIES_REUNICLUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6445
-            .ev = TRAINER_PARTY_EVS(252, 126, 0, 252, 0, 0),
+            .ev = TRAINER_PARTY_EVS(126, 126, 0, 252, 0, 0),
 #line 6444
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 31, 30, 30),
+            .iv = TRAINER_PARTY_IVS(24, 30, 30, 31, 30, 30),
 #line 6443
             .lvl = 52,
             .nature = NATURE_HARDY,
@@ -15585,9 +15585,9 @@ F_TRAINER_FEMALE |
 #line 6451
             .heldItem = ITEM_SITRUS_BERRY,
 #line 6455
-            .ev = TRAINER_PARTY_EVS(252, 0, 150, 0, 0, 150),
+            .ev = TRAINER_PARTY_EVS(126, 0, 150, 0, 0, 150),
 #line 6454
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(24, 30, 30, 30, 30, 30),
 #line 6453
             .lvl = 54,
 #line 6452
@@ -15608,9 +15608,9 @@ F_TRAINER_FEMALE |
 #line 6461
             .heldItem = ITEM_SITRUS_BERRY,
 #line 6465
-            .ev = TRAINER_PARTY_EVS(252, 0, 150, 0, 0, 150),
+            .ev = TRAINER_PARTY_EVS(126, 0, 150, 0, 0, 150),
 #line 6464
-            .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+            .iv = TRAINER_PARTY_IVS(24, 30, 30, 30, 30, 30),
 #line 6463
             .lvl = 54,
 #line 6462
@@ -15652,7 +15652,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_PRIMARINA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6485
-            .ev = TRAINER_PARTY_EVS(252, 0, 126, 252, 0, 0),
+            .ev = TRAINER_PARTY_EVS(180, 0, 126, 252, 0, 0),
 #line 6484
             .iv = TRAINER_PARTY_IVS(31, 24, 24, 31, 24, 24),
 #line 6483
@@ -15695,7 +15695,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_JELLICENT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6503
-            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 126, 0),
+            .ev = TRAINER_PARTY_EVS(180, 0, 0, 0, 126, 0),
 #line 6502
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
 #line 6501
@@ -15717,7 +15717,7 @@ F_TRAINER_FEMALE |
 #line 6509
             .heldItem = ITEM_CHESTO_BERRY,
 #line 6513
-            .ev = TRAINER_PARTY_EVS(252, 126, 126, 0, 0, 252),
+            .ev = TRAINER_PARTY_EVS(180, 126, 126, 0, 0, 252),
 #line 6512
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 31),
 #line 6511
@@ -15738,7 +15738,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LUMINEON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6522
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 0, 252, 252),
+            .ev = TRAINER_PARTY_EVS(180, 252, 252, 0, 252, 252),
 #line 6521
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
 #line 6520
@@ -15760,7 +15760,7 @@ F_TRAINER_FEMALE |
 #line 6528
             .heldItem = ITEM_CHESTO_BERRY,
 #line 6531
-            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 126, 0),
+            .ev = TRAINER_PARTY_EVS(180, 0, 0, 0, 126, 0),
 #line 6530
             .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
 #line 6529
@@ -20445,7 +20445,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 8403
-            .species = SPECIES_MURKROW,
+            .species = SPECIES_HONCHKROW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 8406
             .ev = TRAINER_PARTY_EVS(126, 64, 64, 0, 64, 64),
@@ -20621,7 +20621,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 8473
-            .species = SPECIES_MURKROW,
+            .species = SPECIES_HONCHKROW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 8476
             .ev = TRAINER_PARTY_EVS(126, 64, 64, 0, 64, 64),
@@ -22361,7 +22361,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9164
-            .species = SPECIES_MURKROW,
+            .species = SPECIES_HONCHKROW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9167
             .ev = TRAINER_PARTY_EVS(126, 64, 64, 0, 64, 64),
@@ -22455,7 +22455,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9202
-            .species = SPECIES_MURKROW,
+            .species = SPECIES_HONCHKROW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9205
             .ev = TRAINER_PARTY_EVS(126, 64, 64, 0, 64, 64),
@@ -22622,7 +22622,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9269
-            .species = SPECIES_MURKROW,
+            .species = SPECIES_HONCHKROW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9272
             .ev = TRAINER_PARTY_EVS(126, 64, 64, 0, 64, 64),
@@ -22669,7 +22669,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9288
-            .species = SPECIES_MURKROW,
+            .species = SPECIES_HONCHKROW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9291
             .ev = TRAINER_PARTY_EVS(126, 64, 64, 0, 64, 64),
@@ -37473,7 +37473,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 15243
-            .species = SPECIES_MURKROW,
+            .species = SPECIES_HONCHKROW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15245
             .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
@@ -47005,7 +47005,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 19201
-            .species = SPECIES_MURKROW,
+            .species = SPECIES_HONCHKROW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19204
             .ev = TRAINER_PARTY_EVS(126, 100, 100, 0, 100, 100),

@@ -6413,8 +6413,8 @@ AI: Basic Trainer
 
 Claydol
 Level: 51
-IVs: 30 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+IVs: 24 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
+EVs: 126 HP / 252 Def / 252 SpD
 - Earthquake
 - Ancient Power
 - Psychic
@@ -6422,8 +6422,8 @@ EVs: 252 HP / 252 Def / 252 SpD
 
 Farigiraf
 Level: 51
-IVs: 30 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 252 HP / 252 Spe / 80 Def / 80 SpD
+IVs: 24 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
+EVs: 126 HP / 252 Spe / 80 Def / 80 SpD
 - Twin Beam
 - Thunderbolt
 - Dazzling Gleam
@@ -6432,8 +6432,8 @@ EVs: 252 HP / 252 Spe / 80 Def / 80 SpD
 Gothitelle
 Bold Nature
 Level: 52
-IVs: 30 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+IVs: 24 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
+EVs: 126 HP / 252 Def / 252 SpD
 - Psychic
 - Calm Mind
 - Fake Tears
@@ -6441,8 +6441,8 @@ EVs: 252 HP / 252 Def / 252 SpD
 
 Reuniclus
 Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 126 Atk
+IVs: 24 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 31 Spe
+EVs: 126 HP / 252 Spe / 126 Atk
 - Psychic
 - Hammer Arm
 - Confuse Ray
@@ -6451,8 +6451,8 @@ EVs: 252 HP / 252 Spe / 126 Atk
 Lunatone @ Sitrus Berry
 Bold Nature
 Level: 54
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 150 Def / 150 SpD
+IVs: 24 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 126 HP / 150 Def / 150 SpD
 - Psychic
 - Moonblast
 - Power Gem
@@ -6461,8 +6461,8 @@ EVs: 252 HP / 150 Def / 150 SpD
 Solrock @ Sitrus Berry
 Impish Nature
 Level: 54
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 150 Def / 150 SpD
+IVs: 24 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 126 HP / 150 Def / 150 SpD
 - Zen Headbutt
 - Rock Slide
 - Flare Blitz
@@ -6482,7 +6482,7 @@ Primarina
 Jolly Nature
 Level: 54
 IVs: 31 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 126 Def
+EVs: 180 HP / 252 Spe / 126 Def
 - Rain Dance
 - Scald
 - Moonblast
@@ -6500,7 +6500,7 @@ EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Jellicent
 Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpA
+EVs: 180 HP / 126 SpA
 - Rain Dance
 - Brine
 - Shadow Ball
@@ -6510,7 +6510,7 @@ Relicanth @ Chesto Berry
 Careful Nature
 Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 31 SpD / 24 Spe
-EVs: 252 HP / 126 Atk / 126 Def / 252 SpD
+EVs: 180 HP / 126 Atk / 126 Def / 252 SpD
 - Protect
 - Rest
 - Rock Slide
@@ -6519,7 +6519,7 @@ EVs: 252 HP / 126 Atk / 126 Def / 252 SpD
 Lumineon
 Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
+EVs: 180 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
 - Water Pulse
 - Bounce
 - Alluring Voice
@@ -6528,7 +6528,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
 Kingdra @ Chesto Berry
 Level: 57
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 126 SpA
+EVs: 180 HP / 126 SpA
 - Water Pulse
 - Double Team
 - Ice Beam
