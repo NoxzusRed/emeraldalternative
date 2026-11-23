@@ -583,9 +583,9 @@
       "dest_warp_id": "12"
     },
     {
-      "x": 8,
-      "y": 33,
-      "elevation": 0,
+      "x": 7,
+      "y": 30,
+      "elevation": 3,
       "dest_map": "MAP_MOSSDEEP_CITY_GYM",
       "dest_warp_id": "13"
     }
