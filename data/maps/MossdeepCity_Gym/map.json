@@ -587,7 +587,14 @@
       "y": 30,
       "elevation": 3,
       "dest_map": "MAP_MOSSDEEP_CITY_GYM",
-      "dest_warp_id": "13"
+      "dest_warp_id": "15"
+    },
+    {
+      "x": 21,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_MOSSDEEP_CITY_GYM",
+      "dest_warp_id": "14"
     }
   ],
   "coord_events": [
