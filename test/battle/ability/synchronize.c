@@ -67,3 +67,40 @@ SINGLE_BATTLE_TEST("Synchronize will mirror back static activation")
         STATUS_ICON(player, paralysis: TRUE);
     }
 }
+
+SINGLE_BATTLE_TEST("Synchronize does not activate when its user paralyzes an opponent with Thunderbolt")
+{
+    GIVEN {
+        ASSUME(MoveHasAdditionalEffect(MOVE_THUNDERBOLT, MOVE_EFFECT_PARALYSIS) == TRUE);
+        PLAYER(SPECIES_GARDEVOIR) { Ability(ABILITY_SYNCHRONIZE); Level(5); }
+        OPPONENT(SPECIES_LUVDISC) { Level(100); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_THUNDERBOLT); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_THUNDERBOLT, player);
+        ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PRZ, opponent);
+        STATUS_ICON(opponent, paralysis: TRUE);
+        NONE_OF {
+            ABILITY_POPUP(player, ABILITY_SYNCHRONIZE);
+            ABILITY_POPUP(opponent, ABILITY_SYNCHRONIZE);
+            STATUS_ICON(player, paralysis: TRUE);
+        }
+    }
+}
+
+SINGLE_BATTLE_TEST("Synchronize still reflects paralysis when its user receives Thunderbolt")
+{
+    GIVEN {
+        ASSUME(MoveHasAdditionalEffect(MOVE_THUNDERBOLT, MOVE_EFFECT_PARALYSIS) == TRUE);
+        PLAYER(SPECIES_LUVDISC) { Level(5); }
+        OPPONENT(SPECIES_GARDEVOIR) { Ability(ABILITY_SYNCHRONIZE); Level(100); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_THUNDERBOLT); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PRZ, opponent);
+        STATUS_ICON(opponent, paralysis: TRUE);
+        ABILITY_POPUP(opponent, ABILITY_SYNCHRONIZE);
+        ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PRZ, player);
+        STATUS_ICON(player, paralysis: TRUE);
+    }
+}
