@@ -34,7 +34,7 @@ Underwater_Route124_Cave_EventScript_Wailord::
 	playmoncry SPECIES_WAILORD, CRY_MODE_ENCOUNTER
 	delay 20
 	waitmoncry
-	setwildbattle SPECIES_WAILORD, 50
+	setwildbattle SPECIES_WAILORD, 60
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
