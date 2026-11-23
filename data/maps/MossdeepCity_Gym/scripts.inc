@@ -11,6 +11,9 @@ MossdeepCity_Gym_OnTransition:
 
 @ All the below checks are leftover from RS. FLAG_MOSSDEEP_GYM_SWITCH_X is never set
 MossdeepCity_Gym_OnLoad:
+	goto_if_set FLAG_DEFEATED_MOSSDEEP_GYM, MossdeepCity_Gym_EventScript_EnableShortcutWarp
+	goto_if_set FLAG_MOSSDEEP_GYM_SHORTCUT_UNLOCKED, MossdeepCity_Gym_EventScript_EnableShortcutWarp
+MossdeepCity_Gym_EventScript_CheckSwitch1:
 	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_1, MossdeepCity_Gym_EventScript_SetSwitch1Metatiles
 	goto MossdeepCity_Gym_EventScript_CheckSwitch2
 	end
@@ -28,6 +31,13 @@ MossdeepCity_Gym_EventScript_CheckSwitch3::
 MossdeepCity_Gym_EventScript_CheckSwitch4::
 	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_4, MossdeepCity_Gym_EventScript_SetSwitch4Metatiles
 	end
+
+@ The right-hand entrance warp unlocks after reaching Tate and Liza's room.
+@ Also enables it for saves that already have the Mind Badge.
+MossdeepCity_Gym_EventScript_EnableShortcutWarp:
+	setflag FLAG_MOSSDEEP_GYM_SHORTCUT_UNLOCKED
+	setmetatile 8, 33, METATILE_MossdeepGym_WarpPad, FALSE
+	goto MossdeepCity_Gym_EventScript_CheckSwitch1
 
 @ All the below set metatile scripts are leftover from RS and are functionally unused
 MossdeepCity_Gym_EventScript_SetSwitch1Metatiles::
@@ -206,6 +216,14 @@ MossdeepCity_Gym_EventScript_WarpToEntrance::
 	warpmossdeepgym MAP_MOSSDEEP_CITY_GYM, 7, 30
 	waitstate
 	releaseall
+	end
+
+@ Reaching the leaders' room unlocks the direct warp by the gym entrance.
+MossdeepCity_Gym_EventScript_UnlockShortcutWarp::
+	goto_if_set FLAG_MOSSDEEP_GYM_SHORTCUT_UNLOCKED, MossdeepCity_Gym_EventScript_ShortcutAlreadyUnlocked
+	setflag FLAG_MOSSDEEP_GYM_SHORTCUT_UNLOCKED
+	setmetatile 8, 33, METATILE_MossdeepGym_WarpPad, FALSE
+MossdeepCity_Gym_EventScript_ShortcutAlreadyUnlocked:
 	end
 
 MossdeepCity_Gym_EventScript_Preston::
