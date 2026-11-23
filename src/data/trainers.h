@@ -52159,10 +52159,8 @@ F_TRAINER_FEMALE |
 #line 21318
             .species = SPECIES_HOUNDOOM,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 21318
-            .heldItem = ITEM_LEFTOVERS,
 #line 21322
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 126, 0, 252),
+            .ev = TRAINER_PARTY_EVS(252, 0, 180, 126, 0, 180),
 #line 21321
             .iv = TRAINER_PARTY_IVS(31, 24, 31, 31, 24, 31),
 #line 21320

@@ -21315,11 +21315,11 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Houndoom @ Leftovers
+Houndoom
 Level: 47
 Ability: Solar Power
 IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 Spe / 252 Def / 252 SpD
+EVs: 252 HP / 126 Spe / 180 Def / 180 SpD
 - Flamethrower
 - Dark Pulse
 - Shadow Ball
