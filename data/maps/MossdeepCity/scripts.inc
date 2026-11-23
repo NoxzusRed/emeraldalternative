@@ -395,15 +395,15 @@ MossdeepCity_EventScript_RegionalFerryCancel::
     end
 
 MossdeepCity_Text_RegionalFerryDestinations:
-    .string "Regional ferry - ¥200 per trip.\p"
+    .string "Regional ferry!\n"
     .string "Where would you like to go?$"
 
 MossdeepCity_Text_RegionalFerrySlateport:
-    .string "Ferry to SLATEPORT CITY: ¥200.\p"
+    .string "Ferry to SLATEPORT CITY: ¥200.\n"
     .string "Would you like to travel?$"
 
 MossdeepCity_Text_RegionalFerryLilycove:
-    .string "Ferry to LILYCOVE CITY: ¥200.\p"
+    .string "Ferry to LILYCOVE CITY: ¥200.\n"
     .string "Would you like to travel?$"
 
 MossdeepCity_Text_RegionalFerryNoMoney:

@@ -3914,15 +3914,41 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Overqwil
-Level: 36
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+Pelipper
+Level: 44
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 126 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
+- Hurricane
+- Surf
 
-Wailmer
-Level: 36
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+Kingdra
+Level: 44
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 126 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
+- Dragon Pulse
+- Surf
+- Thunderbolt
+
+Sharpedo
+Level: 44
+Nature: Adamant
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 126 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
+- Crunch
+- Ice Fang
+- Waterfall
+
+Lanturn @ Wide Lens
+Level: 44
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 126 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
+- Hydro Pump
+- Thunder
+- Rain Dance
 
 === TRAINER_GILBERT ===
 Name: GILBERT
@@ -8557,6 +8583,8 @@ Dhelmise
 Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Power Whip
+- Phantom Force
 
 Seadra
 Level: 36
@@ -10339,6 +10367,8 @@ Dhelmise
 Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Power Whip
+- Phantom Force
 
 === TRAINER_JENNY_2 ===
 Name: JENNY
@@ -15280,6 +15310,8 @@ Dhelmise
 Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Power Whip
+- Phantom Force
 
 === TRAINER_ROGER ===
 Name: ROGER
@@ -15379,6 +15411,9 @@ Dhelmise
 Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Power Whip
+- Phantom Force
+- Waterfall
 
 Overqwil
 Level: 36
@@ -19536,6 +19571,8 @@ Dhelmise
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Power Whip
+- Phantom Force
 
 Kingdra
 Level: 39
@@ -19560,11 +19597,15 @@ Dhelmise
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Power Whip
+- Phantom Force
 
 Dhelmise
 Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Power Whip
+- Phantom Force
 
 === TRAINER_PABLO_4 ===
 Name: PABLO
@@ -19584,11 +19625,15 @@ Dhelmise
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Power Whip
+- Phantom Force
 
 Dhelmise
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Power Whip
+- Phantom Force
 
 === TRAINER_PABLO_5 ===
 Name: PABLO
@@ -19608,11 +19653,15 @@ Dhelmise
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Power Whip
+- Phantom Force
 
 Dhelmise
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Power Whip
+- Phantom Force
 
 === TRAINER_KOJI_2 ===
 Name: KOJI

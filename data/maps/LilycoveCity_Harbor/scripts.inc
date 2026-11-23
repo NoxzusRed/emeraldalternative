@@ -660,15 +660,15 @@ LilycoveCity_Harbor_EventScript_RegionalFerryNoMoney::
     end
 
 LilycoveCity_Harbor_Text_RegionalFerryDestinations:
-    .string "Regional ferry - ¥200 per trip.\p"
+    .string "Regional ferry!\n"
     .string "Where would you like to go?$"
 
 LilycoveCity_Harbor_Text_RegionalFerryMossdeep:
-    .string "Ferry to MOSSDEEP CITY: ¥200.\p"
+    .string "Ferry to MOSSDEEP CITY: ¥200.\n"
     .string "Would you like to travel?$"
 
 LilycoveCity_Harbor_Text_RegionalFerry:
-    .string "Ferry to SLATEPORT CITY: ¥200.\p"
+    .string "Ferry to SLATEPORT CITY: ¥200.\n"
     .string "Would you like to travel?$"
 
 LilycoveCity_Harbor_Text_RegionalFerryNoMoney:
