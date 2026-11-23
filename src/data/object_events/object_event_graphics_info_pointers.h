@@ -48,6 +48,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Birdkeeper;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kindler;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BattleGirl;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
@@ -311,6 +312,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_COOLTRAINER_M] =            &gObjectEventGraphicsInfo_CooltrainerM,
     [OBJ_EVENT_GFX_COOLTRAINER_F] =            &gObjectEventGraphicsInfo_CooltrainerF,
     [OBJ_EVENT_GFX_KINDLER] =                  &gObjectEventGraphicsInfo_Kindler,
+    [OBJ_EVENT_GFX_BATTLE_GIRL] =              &gObjectEventGraphicsInfo_BattleGirl,
     [OBJ_EVENT_GFX_RUIN_MANIAC] =              &gObjectEventGraphicsInfo_RuinManiac,
     [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia,
     [OBJ_EVENT_GFX_BLUE] =                     &gObjectEventGraphicsInfo_Blue,
