@@ -368,6 +368,7 @@
 #define METATILE_MossdeepGameCorner_CounterOpen_Top       0x22C
 
 // gTileset_MossdeepGym
+#define METATILE_MossdeepGym_WarpPad            0x210
 #define METATILE_MossdeepGym_YellowArrow_Right  0x250
 
 // gTileset_Pacifidlog
