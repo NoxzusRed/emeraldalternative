@@ -80,6 +80,10 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 - [larryturbo](https://www.deviantart.com/larryturbo)
 - [kidkatt](https://www.deviantart.com/kidkatt)
 
+
+### Overworld trainer sprite remasters
+- **hyo** — reworked FireRed/LeafGreen-style Hoenn overworld trainer sprites, character palettes and region-map icons. Assets sourced from [Team Aqua's Asset Repo](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/tree/main/Overworld%20Trainer%20Sprites/hyo). Credit to hyo as requested by the creator.
+
 ## Resources
 - [Sugimori Palettes and Sprites](https://www.pokecommunity.com/showthread.php?t=336945)
 - [DS Style Gen VI Sprites](https://www.pokecommunity.com/showthread.php?t=314422)
