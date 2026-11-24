@@ -50,6 +50,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cooltrainer
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kindler;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BattleGirl;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DragonTamer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemaniac;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
@@ -317,6 +318,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KINDLER] =                  &gObjectEventGraphicsInfo_Kindler,
     [OBJ_EVENT_GFX_BATTLE_GIRL] =              &gObjectEventGraphicsInfo_BattleGirl,
     [OBJ_EVENT_GFX_DRAGON_TAMER] =             &gObjectEventGraphicsInfo_DragonTamer,
+    [OBJ_EVENT_GFX_POKEMANIAC] =               &gObjectEventGraphicsInfo_Pokemaniac,
     [OBJ_EVENT_GFX_RUIN_MANIAC] =              &gObjectEventGraphicsInfo_RuinManiac,
     [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia,
     [OBJ_EVENT_GFX_BLUE] =                     &gObjectEventGraphicsInfo_Blue,

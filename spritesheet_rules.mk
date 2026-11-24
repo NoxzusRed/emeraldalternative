@@ -243,6 +243,9 @@ $(OBJEVENTGFXDIR)/people/battle_girl.4bpp: %.4bpp: %.png spritesheet_rules.mk
 $(OBJEVENTGFXDIR)/people/dragon_tamer.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/pokemaniac.4bpp: %.4bpp: %.png spritesheet_rules.mk
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/ruin_maniac.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
