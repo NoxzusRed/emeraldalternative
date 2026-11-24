@@ -16,7 +16,7 @@ voice_keysplit_all voicegroup198
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_low, 255, 249, 0, 165
 	voice_square_2_alt 60, 0, 2, 0, 0, 15, 6
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 165, 90, 216
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 216, 90, 242
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_french_horn_60, 255, 0, 255, 178
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 0, 255, 190
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 37, 165, 103, 127
