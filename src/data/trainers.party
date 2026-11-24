@@ -979,12 +979,14 @@ Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Claydol
+Gliscor
 Level: 49
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-- Skill Swap
+IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 180 Def / 180 SpD
 - Earthquake
+- Aerial Ace
+- Swords Dance
+- Ice Fang
 
 Cacturne
 Level: 49
@@ -1992,10 +1994,14 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Sableye
+Gliscor
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+- Earthquake
+- Aerial Ace
+- Ice Fang
+- Thunder Fang
 
 Machamp
 Level: 52
@@ -2181,7 +2187,7 @@ Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
-Boldore
+Gigalith
 Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
@@ -2317,7 +2323,7 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Boldore
+Gigalith
 Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
@@ -2969,10 +2975,13 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Lumineon @ Nugget
+Huntail @ Nugget
 Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Crunch
+- Waterfall
+- Psychic Fangs
 
 === TRAINER_NAOMI ===
 Name: NAOMI
@@ -3165,6 +3174,7 @@ AI: Check Bad Move
 Lumineon
 Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 === TRAINER_BRIDGET ===
 Name: BRIDGET
@@ -3178,6 +3188,7 @@ AI: Check Bad Move
 Azumarill
 Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 === TRAINER_OLIVIA ===
 Name: OLIVIA
@@ -3188,21 +3199,20 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Clamperl
+Gorebyss
 Level: 46
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Iron Defense
-- Whirlpool
-- Rain Dance
-- Water Pulse
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Lumineon
 Level: 46
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Jumpluff
 Level: 46
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 === TRAINER_TIFFANY ===
 Name: TIFFANY
@@ -3216,12 +3226,14 @@ AI: Check Bad Move
 Basculegion (F)
 Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Scald
 - Shadow Ball
 
 Sharpedo
 Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Waterfall
 - Crunch
 - Ice Fang
@@ -3292,6 +3304,7 @@ AI: Check Bad Move
 Kecleon
 Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Bind
 - Lick
 - Fury Swipes
@@ -3300,6 +3313,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Arbok
 Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Poison Jab
 - Screech
 - Glare
@@ -3317,6 +3331,7 @@ AI: Check Bad Move
 Kecleon
 Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Bind
 - Lick
 - Fury Swipes
@@ -3325,6 +3340,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Arbok
 Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Poison Jab
 - Screech
 - Glare
@@ -6490,7 +6506,7 @@ EVs: 180 HP / 252 Spe / 126 Def
 
 Luvdisc @ Assault Vest
 Modest Nature
-Level: 70
+Level: 80
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
@@ -6500,7 +6516,7 @@ EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Jellicent
 Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 180 HP / 126 SpA
+EVs: 252 HP / 126 SpA / 126 Def / 126 SpD
 - Rain Dance
 - Brine
 - Shadow Ball
@@ -6518,8 +6534,8 @@ EVs: 180 HP / 126 Atk / 126 Def / 252 SpD
 
 Lumineon
 Level: 55
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 180 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
+IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
 - Water Pulse
 - Bounce
 - Alluring Voice
@@ -6528,7 +6544,7 @@ EVs: 180 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
 Kingdra @ Chesto Berry
 Level: 57
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 180 HP / 126 SpA
+EVs: 252 HP / 252 SpA
 - Water Pulse
 - Double Team
 - Ice Beam
@@ -7102,18 +7118,27 @@ AI: Check Bad Move
 
 Azumarill @ Oran Berry
 Level: 46
+Ability: Huge Power
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Aqua Tail
+- Play Rough
+- Iron Tail
 
-Azumarill @ Oran Berry
+Relicanth @ Oran Berry
 Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Iron Head
+- Zen Headbutt
+- Head Smash
 
-Azumarill @ Oran Berry
+Gorebyss @ Oran Berry
 Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Psychic
+- Water Pulse
 
 === TRAINER_ISABEL_1 ===
 Name: ISABEL
@@ -7541,7 +7566,7 @@ EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Dynamic Punch
 - Outrage
 
-Dusclops
+Dusclops @ Eviolite
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
@@ -19011,7 +19036,7 @@ AI: Basic Trainer
 
 Luvdisc @ Assault Vest
 Modest Nature
-Level: 96
+Level: 92
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
@@ -19076,7 +19101,7 @@ AI: Basic Trainer
 
 Luvdisc @ Assault Vest
 Modest Nature
-Level: 100
+Level: 98
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Surf
@@ -20053,7 +20078,7 @@ Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Boldore
+Gigalith
 Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
