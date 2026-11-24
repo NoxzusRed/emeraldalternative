@@ -1,4 +1,5 @@
-const u32 gObjectEventPic_RubyBrendanNormal[] = INCBIN_U32("graphics/object_events/pics/people/ruby_brendan/normal.4bpp");
+// The RS Brendan normal set has 18 frames: 9 walking frames followed by 9 running frames.
+const u32 gObjectEventPic_RubyBrendanNormal[] = INCBIN_U32("graphics/object_events/pics/people/ruby_brendan/normal.4bpp", "graphics/object_events/pics/people/ruby_sapphire_brendan/running.4bpp");
 const u32 gObjectEventPic_RubyBrendanMachBike[] = INCBIN_U32("graphics/object_events/pics/people/ruby_brendan/mach_bike.4bpp");
 const u32 gObjectEventPic_RubyBrendanAcroBike[] = INCBIN_U32("graphics/object_events/pics/people/ruby_brendan/acro_bike.4bpp");
 const u32 gObjectEventPic_RubyBrendanSurfing[] = INCBIN_U32("graphics/object_events/pics/people/ruby_brendan/surfing.4bpp");
