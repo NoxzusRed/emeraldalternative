@@ -3144,8 +3144,8 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId)
     if (graphicsId >= NUM_OBJ_EVENT_GFX)
         graphicsId = OBJ_EVENT_GFX_NINJA_BOY;
 
-    // The save option controls graphics for Brendan/May without changing
-    // any existing IDs, movement actions, or object-event save data.
+    // Only player-avatar graphics use the Ruby/Emerald option.
+    // Rival graphics IDs always use their original graphics and palettes.
     if (gSaveBlock2Ptr != NULL && gSaveBlock2Ptr->optionsRubyPlayerSprites)
     {
         switch (graphicsId)
@@ -3168,16 +3168,6 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId)
         case OBJ_EVENT_GFX_MAY_FISHING: return &gObjectEventGraphicsInfo_RubyMayFishing;
         case OBJ_EVENT_GFX_MAY_WATERING: return &gObjectEventGraphicsInfo_RubyMayWatering;
         case OBJ_EVENT_GFX_MAY_DECORATING: return &gObjectEventGraphicsInfo_RubyMayDecorating;
-        case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL: return &gObjectEventGraphicsInfo_RubyRivalBrendanNormal;
-        case OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE: return &gObjectEventGraphicsInfo_RubyRivalBrendanMachBike;
-        case OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE: return &gObjectEventGraphicsInfo_RubyRivalBrendanAcroBike;
-        case OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING: return &gObjectEventGraphicsInfo_RubyRivalBrendanSurfing;
-        case OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE: return &gObjectEventGraphicsInfo_RubyRivalBrendanFieldMove;
-        case OBJ_EVENT_GFX_RIVAL_MAY_NORMAL: return &gObjectEventGraphicsInfo_RubyRivalMayNormal;
-        case OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE: return &gObjectEventGraphicsInfo_RubyRivalMayMachBike;
-        case OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE: return &gObjectEventGraphicsInfo_RubyRivalMayAcroBike;
-        case OBJ_EVENT_GFX_RIVAL_MAY_SURFING: return &gObjectEventGraphicsInfo_RubyRivalMaySurfing;
-        case OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE: return &gObjectEventGraphicsInfo_RubyRivalMayFieldMove;
         }
     }
 
