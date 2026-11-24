@@ -326,8 +326,8 @@ u16 CreateTrainerCardMonIconSprite(u16 species, bool8 isShiny, u32 personality, 
     return CreateTrainerCardSprite(species, isShiny, personality, isFrontPic, destX, destY, paletteSlot, windowId, FALSE);
 }
 
-// Apply the same player sprite option to both Brendan and May, including
-// whichever one appears as the rival. Keep the original trainer IDs intact.
+// Resolve the local player's front picture only. Never remap the rival's
+// configured picture or another trainer's explicit Ruby/Emerald picture.
 u16 GetBrendanMayTrainerPicByStyle(u16 trainerPicId)
 {
     if (gSaveBlock2Ptr == NULL)
@@ -337,9 +337,13 @@ u16 GetBrendanMayTrainerPicByStyle(u16 trainerPicId)
     {
     case TRAINER_PIC_BRENDAN:
     case TRAINER_PIC_RS_BRENDAN:
+        if (gSaveBlock2Ptr->playerGender != MALE)
+            return trainerPicId;
         return gSaveBlock2Ptr->optionsRubyPlayerSprites ? TRAINER_PIC_RS_BRENDAN : TRAINER_PIC_BRENDAN;
     case TRAINER_PIC_MAY:
     case TRAINER_PIC_RS_MAY:
+        if (gSaveBlock2Ptr->playerGender != FEMALE)
+            return trainerPicId;
         return gSaveBlock2Ptr->optionsRubyPlayerSprites ? TRAINER_PIC_RS_MAY : TRAINER_PIC_MAY;
     default:
         return trainerPicId;
