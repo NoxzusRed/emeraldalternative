@@ -502,6 +502,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_DragonTamer,            OBJ_EVENT_PAL_TAG_DRAGON_TAMER},
     {gObjectEventPal_Pokemaniac,             OBJ_EVENT_PAL_TAG_POKEMANIAC},
     {gObjectEventPal_Breeder,                OBJ_EVENT_PAL_TAG_BREEDER},
+    {gObjectEventPal_Beauty2,                OBJ_EVENT_PAL_TAG_BEAUTY_2},
     {gObjectEventPal_Cynthia,                OBJ_EVENT_PAL_TAG_CYNTHIA},
     {gObjectEventPal_Blue,                   OBJ_EVENT_PAL_TAG_BLUE},
     {gObjectEventPal_Lance,                  OBJ_EVENT_PAL_TAG_LANCE},
@@ -521,6 +522,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_DragonTamerReflection,  OBJ_EVENT_PAL_TAG_DRAGON_TAMER_REFLECTION},
     {gObjectEventPal_PokemaniacReflection,   OBJ_EVENT_PAL_TAG_POKEMANIAC_REFLECTION},
     {gObjectEventPal_BreederReflection,      OBJ_EVENT_PAL_TAG_BREEDER_REFLECTION},
+    {gObjectEventPal_Beauty2Reflection,      OBJ_EVENT_PAL_TAG_BEAUTY_2_REFLECTION},
     {gObjectEventPal_Brendan,               OBJ_EVENT_PAL_TAG_BRENDAN},
     {gObjectEventPal_BrendanReflection,     OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION},
     {gObjectEventPal_BridgeReflection,      OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION},
@@ -748,6 +750,13 @@ static const u16 sReflectionPaletteTags_Breeder[] = {
     OBJ_EVENT_PAL_TAG_BREEDER_REFLECTION,
 };
 
+static const u16 sReflectionPaletteTags_Beauty2[] = {
+    OBJ_EVENT_PAL_TAG_BEAUTY_2_REFLECTION,
+    OBJ_EVENT_PAL_TAG_BEAUTY_2_REFLECTION,
+    OBJ_EVENT_PAL_TAG_BEAUTY_2_REFLECTION,
+    OBJ_EVENT_PAL_TAG_BEAUTY_2_REFLECTION,
+};
+
 static const u16 sReflectionPaletteTags_RedLeaf[] = {
     OBJ_EVENT_PAL_TAG_RED_LEAF,
     OBJ_EVENT_PAL_TAG_RED_LEAF,
@@ -775,6 +784,7 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_DRAGON_TAMER,     sReflectionPaletteTags_DragonTamer},
     {OBJ_EVENT_PAL_TAG_POKEMANIAC,       sReflectionPaletteTags_Pokemaniac},
     {OBJ_EVENT_PAL_TAG_BREEDER,          sReflectionPaletteTags_Breeder},
+    {OBJ_EVENT_PAL_TAG_BEAUTY_2,         sReflectionPaletteTags_Beauty2},
     {OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW, sReflectionPaletteTags_SubmarineShadow},
     {OBJ_EVENT_PAL_TAG_RED_LEAF,         sReflectionPaletteTags_RedLeaf},
     {OBJ_EVENT_PAL_TAG_NONE,             NULL},
