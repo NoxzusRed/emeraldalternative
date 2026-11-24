@@ -434,6 +434,11 @@ static void DoTrainerBattle(void)
      || ((gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
       && IsWallyBattleTrainer(TRAINER_BATTLE_PARAM.opponentB)))
         song = MUS_VS_WALLY;
+    // Diantha's PWT test battle uses her dedicated battle theme.
+    else if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_PWT_TEST_DIANTHA
+          || ((gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+              && TRAINER_BATTLE_PARAM.opponentB == TRAINER_PWT_TEST_DIANTHA))
+        song = MUS_VS_DIANTHA;
 
     CreateBattleStartTask(GetTrainerBattleTransition(), song);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
