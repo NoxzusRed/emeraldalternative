@@ -709,9 +709,8 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     }
 }
 
-// Player and rival graphics use the same saved Ruby/Emerald selector,
-// regardless of the gender chosen at the start of the game.
-static bool8 IsBrendanMayObjectGraphics(u16 graphicsId)
+// Only the playable Brendan/May avatar uses the saved sprite option.
+static bool8 IsPlayerAvatarGraphics(u16 graphicsId)
 {
     switch (graphicsId)
     {
@@ -733,16 +732,6 @@ static bool8 IsBrendanMayObjectGraphics(u16 graphicsId)
     case OBJ_EVENT_GFX_MAY_FISHING:
     case OBJ_EVENT_GFX_MAY_WATERING:
     case OBJ_EVENT_GFX_MAY_DECORATING:
-    case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL:
-    case OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE:
-    case OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE:
-    case OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING:
-    case OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE:
-    case OBJ_EVENT_GFX_RIVAL_MAY_NORMAL:
-    case OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE:
-    case OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE:
-    case OBJ_EVENT_GFX_RIVAL_MAY_SURFING:
-    case OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE:
         return TRUE;
     default:
         return FALSE;
@@ -761,8 +750,7 @@ static void Task_OptionMenuSave(u8 taskId)
     if (gSaveBlock2Ptr->optionsRubyPlayerSprites != gTasks[taskId].tPlayerSpriteStyle)
     {
         gSaveBlock2Ptr->optionsRubyPlayerSprites = gTasks[taskId].tPlayerSpriteStyle;
-        // Refresh both protagonists on the current map: the playable
-        // character and the other one appearing as the rival/NPC.
+        // Refresh only the local playable character, leaving all NPCs alone.
         if (sOptionMenuOnOverworld)
         {
             u8 i;
@@ -774,7 +762,7 @@ static void Task_OptionMenuSave(u8 taskId)
                 s16 frame;
                 u8 animCmdIndex;
 
-                if (!obj->active || !IsBrendanMayObjectGraphics(obj->graphicsId))
+                if (!obj->active || !obj->isPlayer || !IsPlayerAvatarGraphics(obj->graphicsId))
                     continue;
                 if (obj->spriteId >= MAX_SPRITES)
                     continue;
