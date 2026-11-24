@@ -322,7 +322,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DRAGON_TAMER] =             &gObjectEventGraphicsInfo_DragonTamer,
     [OBJ_EVENT_GFX_POKEMANIAC] =               &gObjectEventGraphicsInfo_Pokemaniac,
     [OBJ_EVENT_GFX_BREEDER_F] =                &gObjectEventGraphicsInfo_BreederF,
-    [OBJ_EVENT_GFX_BREEDER_M] =                &gObjectEventGraphicsInfo_BreederM;
+    [OBJ_EVENT_GFX_BREEDER_M] =                &gObjectEventGraphicsInfo_BreederM,
     [OBJ_EVENT_GFX_RUIN_MANIAC] =              &gObjectEventGraphicsInfo_RuinManiac,
     [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia,
     [OBJ_EVENT_GFX_BLUE] =                     &gObjectEventGraphicsInfo_Blue,
