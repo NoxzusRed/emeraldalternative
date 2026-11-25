@@ -505,6 +505,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Beauty2,                OBJ_EVENT_PAL_TAG_BEAUTY_2},
     {gObjectEventPal_Guitarist,              OBJ_EVENT_PAL_TAG_GUITARIST},
     {gObjectEventPal_Lady,                   OBJ_EVENT_PAL_TAG_LADY},
+    {gObjectEventPal_ParasolLady,            OBJ_EVENT_PAL_TAG_PARASOL_LADY},
     {gObjectEventPal_RichBoy2,              OBJ_EVENT_PAL_TAG_RICH_BOY_2},
     {gObjectEventPal_Steven,                 OBJ_EVENT_PAL_TAG_STEVEN},
     {gObjectEventPal_Cynthia,                OBJ_EVENT_PAL_TAG_CYNTHIA},
@@ -529,6 +530,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Beauty2Reflection,      OBJ_EVENT_PAL_TAG_BEAUTY_2_REFLECTION},
     {gObjectEventPal_GuitaristReflection,    OBJ_EVENT_PAL_TAG_GUITARIST_REFLECTION},
     {gObjectEventPal_LadyReflection,         OBJ_EVENT_PAL_TAG_LADY_REFLECTION},
+    {gObjectEventPal_ParasolLadyReflection,  OBJ_EVENT_PAL_TAG_PARASOL_LADY_REFLECTION},
     {gObjectEventPal_RichBoy2Reflection,    OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION},
     {gObjectEventPal_StevenReflection,       OBJ_EVENT_PAL_TAG_STEVEN_REFLECTION},
     {gObjectEventPal_Brendan,               OBJ_EVENT_PAL_TAG_BRENDAN},
@@ -786,6 +788,13 @@ static const u16 sReflectionPaletteTags_Lady[] = {
     OBJ_EVENT_PAL_TAG_LADY_REFLECTION,
 };
 
+static const u16 sReflectionPaletteTags_ParasolLady[] = {
+    OBJ_EVENT_PAL_TAG_PARASOL_LADY_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PARASOL_LADY_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PARASOL_LADY_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PARASOL_LADY_REFLECTION,
+};
+
 static const u16 sReflectionPaletteTags_RichBoy2[] = {
     OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION,
     OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION,
@@ -824,6 +833,7 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_STEVEN,           sReflectionPaletteTags_Steven},
     {OBJ_EVENT_PAL_TAG_GUITARIST,        sReflectionPaletteTags_Guitarist},
     {OBJ_EVENT_PAL_TAG_LADY,             sReflectionPaletteTags_Lady},
+    {OBJ_EVENT_PAL_TAG_PARASOL_LADY,     sReflectionPaletteTags_ParasolLady},
     {OBJ_EVENT_PAL_TAG_RICH_BOY_2,       sReflectionPaletteTags_RichBoy2},
     {OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW, sReflectionPaletteTags_SubmarineShadow},
     {OBJ_EVENT_PAL_TAG_RED_LEAF,         sReflectionPaletteTags_RedLeaf},
