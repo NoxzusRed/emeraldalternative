@@ -255,6 +255,9 @@ $(OBJEVENTGFXDIR)/people/breeder_m.4bpp: %.4bpp: %.png spritesheet_rules.mk
 $(OBJEVENTGFXDIR)/people/beauty_2.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/guitarist.4bpp: %.4bpp: %.png spritesheet_rules.mk
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/ruin_maniac.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
