@@ -504,6 +504,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Breeder,                OBJ_EVENT_PAL_TAG_BREEDER},
     {gObjectEventPal_Beauty2,                OBJ_EVENT_PAL_TAG_BEAUTY_2},
     {gObjectEventPal_Guitarist,              OBJ_EVENT_PAL_TAG_GUITARIST},
+    {gObjectEventPal_RichBoy2,              OBJ_EVENT_PAL_TAG_RICH_BOY_2},
     {gObjectEventPal_Steven,                 OBJ_EVENT_PAL_TAG_STEVEN},
     {gObjectEventPal_Cynthia,                OBJ_EVENT_PAL_TAG_CYNTHIA},
     {gObjectEventPal_Blue,                   OBJ_EVENT_PAL_TAG_BLUE},
@@ -526,6 +527,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_BreederReflection,      OBJ_EVENT_PAL_TAG_BREEDER_REFLECTION},
     {gObjectEventPal_Beauty2Reflection,      OBJ_EVENT_PAL_TAG_BEAUTY_2_REFLECTION},
     {gObjectEventPal_GuitaristReflection,    OBJ_EVENT_PAL_TAG_GUITARIST_REFLECTION},
+    {gObjectEventPal_RichBoy2Reflection,    OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION},
     {gObjectEventPal_StevenReflection,       OBJ_EVENT_PAL_TAG_STEVEN_REFLECTION},
     {gObjectEventPal_Brendan,               OBJ_EVENT_PAL_TAG_BRENDAN},
     {gObjectEventPal_BrendanReflection,     OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION},
@@ -775,6 +777,13 @@ static const u16 sReflectionPaletteTags_Guitarist[] = {
     OBJ_EVENT_PAL_TAG_GUITARIST_REFLECTION,
 };
 
+static const u16 sReflectionPaletteTags_RichBoy2[] = {
+    OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION,
+    OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION,
+    OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION,
+    OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION,
+};
+
 static const u16 sReflectionPaletteTags_RedLeaf[] = {
     OBJ_EVENT_PAL_TAG_RED_LEAF,
     OBJ_EVENT_PAL_TAG_RED_LEAF,
@@ -805,6 +814,7 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_BEAUTY_2,         sReflectionPaletteTags_Beauty2},
     {OBJ_EVENT_PAL_TAG_STEVEN,           sReflectionPaletteTags_Steven},
     {OBJ_EVENT_PAL_TAG_GUITARIST,        sReflectionPaletteTags_Guitarist},
+    {OBJ_EVENT_PAL_TAG_RICH_BOY_2,       sReflectionPaletteTags_RichBoy2},
     {OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW, sReflectionPaletteTags_SubmarineShadow},
     {OBJ_EVENT_PAL_TAG_RED_LEAF,         sReflectionPaletteTags_RedLeaf},
     {OBJ_EVENT_PAL_TAG_NONE,             NULL},
