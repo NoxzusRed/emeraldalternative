@@ -76,8 +76,8 @@
 #define FLAG_RECEIVED_MAUVILLE_GENTLEMAN_BOTTLE_CAP 0x3F //
 #define FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE 		0x40 //
 #define FLAG_RECEIVED_TM_HYPER_VOICE 				0x41 //
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
+#define FLAG_HIDE_PETALBURG_CITY_BEFORE_SCOTT_EEVEE_SCENE 0x42 // Hide Eevee and Girl_2 after Scott
+#define FLAG_HIDE_PETALBURG_CITY_AFTER_SCOTT_SYLVEON_SCENE 0x43 // Hide Sylveon and Girl_2 before Scott
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag

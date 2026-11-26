@@ -9,7 +9,20 @@ PetalburgCity_OnTransition:
 	call_if_eq VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_DisableMapNameAndMusic
 	call_if_eq VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_DisableMapNameAndMusic
 	call_if_eq VAR_PETALBURG_GYM_STATE, 8, PetalburgCity_EventScript_SetGymDoorsUnlocked
+	@ Switch between Eevee and Sylveon scenes after Scott's post-Wally encounter.
+	call_if_eq VAR_SCOTT_PETALBURG_ENCOUNTER, 0, PetalburgCity_EventScript_ShowEeveeBeforeScott
+	call_if_ne VAR_SCOTT_PETALBURG_ENCOUNTER, 0, PetalburgCity_EventScript_ShowSylveonAfterScott
 	end
+
+PetalburgCity_EventScript_ShowEeveeBeforeScott::
+	setflag FLAG_HIDE_PETALBURG_CITY_AFTER_SCOTT_SYLVEON_SCENE
+	clearflag FLAG_HIDE_PETALBURG_CITY_BEFORE_SCOTT_EEVEE_SCENE
+	return
+
+PetalburgCity_EventScript_ShowSylveonAfterScott::
+	setflag FLAG_HIDE_PETALBURG_CITY_BEFORE_SCOTT_EEVEE_SCENE
+	clearflag FLAG_HIDE_PETALBURG_CITY_AFTER_SCOTT_SYLVEON_SCENE
+	return
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
 	setobjectxyperm LOCALID_GYM_BOY, 13, 11
@@ -562,6 +575,12 @@ PetalburgCity_EventScript_Scott::
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_ScottExit2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_ScottExit3
 	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
+	@ Swap the nearby Eevee scene as soon as Scott's encounter ends.
+	removeobject LOCALID_PETALBURG_GIRL_BEFORE_SCOTT
+	removeobject LOCALID_PETALBURG_EEVEE_BEFORE_SCOTT
+	call PetalburgCity_EventScript_ShowSylveonAfterScott
+	addobject LOCALID_PETALBURG_SYLVEON
+	addobject LOCALID_PETALBURG_GIRL_AFTER_SCOTT
 	removeobject LOCALID_PETALBURG_SCOTT
 	releaseall
 	end
@@ -721,6 +740,23 @@ PetalburgCity_Clerk:
 	.2byte ITEM_SCOPE_LENS
 	pokemartlistend
 
+PetalburgCity_EventScript_GirlBeforeScott::
+	lock
+	faceplayer
+	msgbox PetalburgCity_Text_EeveeIsEvolving, MSGBOX_DEFAULT
+	applymovement LOCALID_PETALBURG_GIRL_BEFORE_SCOTT, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+PetalburgCity_EventScript_EeveeBeforeScott::
+	lock
+	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
+	msgbox PetalburgCity_Text_EeveeCry, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 PetalburgCity_EventScript_Sylveon::
 	lock
 	playmoncry SPECIES_SYLVEON, CRY_MODE_NORMAL
@@ -761,6 +797,13 @@ PetalburgCity_Text_Hoppip:
 
 PetalburgCity_Text_Zigzagoon:
 	.string "Zig-zag!$"
+
+PetalburgCity_Text_EeveeIsEvolving:
+	.string "Mi Eevee está evolucionando.\n"
+	.string "Busca otro camino, por favor.$"
+
+PetalburgCity_Text_EeveeCry:
+	.string "Eevui!$"
 
 PetalburgCity_Text_Piiriii:
 	.string "Pii-riii!$"
