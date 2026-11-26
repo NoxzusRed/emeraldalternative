@@ -88,9 +88,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM60",
+      "trainer_sight_or_berry_tree_id": "ITEM_FULL_RESTORE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_CRUNCH"
+      "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_FULL_RESTORE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",

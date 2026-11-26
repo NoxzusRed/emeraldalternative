@@ -190,7 +190,7 @@
 #define FLAG_RECEIVED_TM_FACADE              0xA9
 #define FLAG_RECEIVED_TM_AERIAL_ACE          0xAA
 #define FLAG_RECEIVED_TM_CALM_MIND           0xAB
-#define FLAG_RECEIVED_TM_WATER_PULSE         0xAC
+#define FLAG_RECEIVED_TM_SCALD		         0xAC
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
 #define FLAG_DECORATION_2                    0xAF
@@ -655,28 +655,28 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 //Custom Hidden Items
-#define FLAG_NO_COLLISION  0x264 // NO COLLISION DEBUG
-#define FLAG_HIDDEN_ITEM_PETALBURG_CITY_ADAMANT_MINT  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
+#define FLAG_NO_COLLISION  								0x264 // NO COLLISION DEBUG
+#define FLAG_HIDDEN_ITEM_PETALBURG_CITY_ADAMANT_MINT  	0x265 //
+#define FLAG_HIDDEN_ITEM_ROUTE_103_POTION  				0x266 //
+#define FLAG_UNUSED_0x267  								0x267 // Unused Flag
+#define FLAG_UNUSED_0x268  								0x268 // Unused Flag
+#define FLAG_UNUSED_0x269  								0x269 // Unused Flag
+#define FLAG_UNUSED_0x26A    							0x26A // Unused Flag
+#define FLAG_UNUSED_0x26B    							0x26B // Unused Flag
+#define FLAG_UNUSED_0x26C    							0x26C // Unused Flag
+#define FLAG_UNUSED_0x26D    							0x26D // Unused Flag
+#define FLAG_UNUSED_0x26E    							0x26E // Unused Flag
+#define FLAG_UNUSED_0x26F    							0x26F // Unused Flag
+#define FLAG_UNUSED_0x270    							0x270 // Unused Flag
+#define FLAG_UNUSED_0x271    							0x271 // Unused Flag
+#define FLAG_UNUSED_0x272    							0x272 // Unused Flag
+#define FLAG_UNUSED_0x273    							0x273 // Unused Flag
+#define FLAG_UNUSED_0x274    							0x274 // Unused Flag
+#define FLAG_UNUSED_0x275    							0x275 // Unused Flag
+#define FLAG_UNUSED_0x276    							0x276 // Unused Flag
+#define FLAG_UNUSED_0x277    							0x277 // Unused Flag
+#define FLAG_UNUSED_0x278    							0x278 // Unused Flag
+#define FLAG_UNUSED_0x279    							0x279 // Unused Flag
 #define FLAG_UNUSED_0x27A  0x27A // Unused Flag
 #define FLAG_UNUSED_0x27B  0x27B // Unused Flag
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag
@@ -1024,7 +1024,7 @@
 #define FLAG_ITEM_NEW_MAUVILLE_MAX_REPEL                            0x3CE //Used to be FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1 
 #define FLAG_ITEM_NEW_MAUVILLE_METAL_COAT                           0x3CF //Used to be FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2 
 #define FLAG_ITEM_NEW_MAUVILLE_LINKING_CORD                         0x3D0 //Used to be FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3 
-#define FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_CRUNCH                        0x3D1 //Used to be FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1
+#define FLAG_ITEM_AQUA_HIDEOUT_B1F_FULL_RESTORE                     0x3D1 //Used to be FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_DARK_PULSE                    0x3D2 //Used to be FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2
 #define FLAG_HIDE_OLDALE_TOWN_RIVAL                                 0x3D3
 #define FLAG_HIDE_UNDERWATER_SEA_FLOOR_CAVERN_STOLEN_SUBMARINE      0x3D4
@@ -1234,7 +1234,7 @@
 #define FLAG_ITEM_ROUTE_121_TM_CROSS_POISON                         0x49D //
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_TM_ENERGY_BALL             0x49E //
 #define FLAG_ITEM_MAGMA_HIDEOUT_1F_TM_EARTH_POWER                   0x49F // 
-#define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_7_TM_SCALD                   0x4A0 //
+#define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_7_TM_CRUNCH                  0x4A0 //
 #define FLAG_ITEM_VICTORY_ROAD_1F_TM_NASTY_PLOT                     0x4A1 //
 #define FLAG_ITEM_VICTORY_ROAD_2F_TM_FLASH_CANNON                   0x4A2 //
 #define FLAG_ITEM_OLDALE_RUINS_UNDERWATER_NUGGET_1                  0x4A3 //
@@ -1269,7 +1269,7 @@
 #define FLAG_ITEM_ROUTE_120_HERACROSS_NEST_BOTTLE_CAP               0x4C0 //
 #define FLAG_ITEM_ROUTE_128_BOTTLE_CAP                              0x4C1 //
 #define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_BOTTLE_CAP         0x4C2 //
-#define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
+#define FLAG_ITEM_ROUTE_103_TM_WATER_PULSE               		    0x4C3 //
 #define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
 #define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
 #define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag

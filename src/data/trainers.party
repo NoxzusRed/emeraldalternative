@@ -6152,7 +6152,7 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Potion / Potion
+Items: Super Potion / Super Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -6235,7 +6235,7 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -6335,7 +6335,7 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Max Potion / Max Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -6392,7 +6392,7 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Hyper Potion / Hyper Potion
+Items: Max Potion / Max Potion
 Double Battle: No
 AI: Basic Trainer / Risky
 
@@ -6455,7 +6455,7 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
+Items: Max Potion / Max Potion
 Double Battle: Yes
 AI: Basic Trainer
 
@@ -6522,7 +6522,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Max Potion / Max Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -6547,8 +6547,8 @@ EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
 
 Jellicent
 Level: 56
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 SpA / 126 Def / 126 SpD
+IVs: 24 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
+EVs: 252 HP / 126 SpA / 252 Def / 252 SpD
 - Rain Dance
 - Brine
 - Shadow Ball
@@ -6557,6 +6557,7 @@ EVs: 252 HP / 126 SpA / 126 Def / 126 SpD
 Relicanth @ Chesto Berry
 Careful Nature
 Level: 56
+Ability: Swift Swim
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 31 SpD / 24 Spe
 EVs: 180 HP / 126 Atk / 126 Def / 252 SpD
 - Protect
@@ -6568,7 +6569,7 @@ Lumineon
 Level: 55
 IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
-- Water Pulse
+- Scald
 - Bounce
 - Alluring Voice
 - Rain Dance
@@ -6576,11 +6577,11 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Atk
 Kingdra @ Chesto Berry
 Level: 57
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 252 SpA
-- Water Pulse
-- Double Team
+EVs: 252 HP / 252 SpA / 252 Atk
+- Scald
+- Waterfall
 - Ice Beam
-- Rest
+- Scale Shot
 
 === TRAINER_JERRY_1 ===
 Name: JERRY

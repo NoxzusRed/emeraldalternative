@@ -31,7 +31,7 @@ void InitDefaultWallClock(void)
 {
     if (!FlagGet(FLAG_SYS_CLOCK_SET))
     {
-        RtcInitLocalTimeOffset(8, 0);
+        RtcInitLocalTimeOffset(12, 0);
         InitTimeBasedEvents();
     }
     FlagSet(FLAG_SET_WALL_CLOCK);
