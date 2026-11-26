@@ -289,6 +289,42 @@ LittlerootTown_EventScript_GoodLuck::
 	release
 	end
 
+LittlerootTown_EventScript_NeedPokemonTriggerLeftx::
+	lockall
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerLeftx
+	waitmovement 0
+	call LittlerootTown_EventScript_DangerousWithoutPokemon
+	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinReturnLeftx
+	waitmovement 0
+	releaseall
+	end
+
+LittlerootTown_Movement_TwinApproachPlayerLeftx:
+	face_right
+	delay_8
+	disable_jump_landing_ground_effect
+	jump_in_place_right
+	delay_8
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	face_down
+	step_end
+
+LittlerootTown_Movement_TwinReturnLeftx:
+	walk_right
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_in_place_faster_down
+	step_end
+
 LittlerootTown_EventScript_NeedPokemonTriggerLeft::
 	lockall
 	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerLeft
@@ -381,7 +417,22 @@ LittlerootTown_Movement_TwinReturnRight:
 	walk_in_place_faster_down
 	step_end
 
-LittlerootTown_EventScript_GoSaveBirchTrigger::
+LittlerootTown_EventScript_GoSaveBirchTriggerLeft::
+	lockall
+	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	special GetPlayerBigGuyGirlString
+	msgbox LittlerootTown_Text_CanYouGoSeeWhatsHappening, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	setvar VAR_LITTLEROOT_TOWN_STATE, 2
+	releaseall
+	end
+
+LittlerootTown_EventScript_GoSaveBirchTriggerRight::
 	lockall
 	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
@@ -471,6 +522,13 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger4::
 LittlerootTown_EventScript_GiveRunningShoesTrigger5::
 	lockall
 	setvar VAR_0x8008, 5
+	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
+	end
+
+LittlerootTown_EventScript_GiveRunningShoesTrigger6::
+	lockall
+	setvar VAR_0x8008, 0
+	setobjectxy LOCALID_LITTLEROOT_MOM, 17, 9
 	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
 
