@@ -1917,8 +1917,8 @@ static void CreateFlyDestIcons(void)
     {
         GetMapSecDimensions(mapSecId, &x, &y, &width, &height);
         x = (x + MAPCURSOR_X_MIN) * 8 + 4;
-        // Align the foreground pink/gray destination icons one pixel lower.
-        y = (y + MAPCURSOR_Y_MIN) * 8 + 5;
+        // Center the Fly destination icon on the same 8px map grid as the cursor.
+        y = (y + MAPCURSOR_Y_MIN) * 8 + 4;
 
         if (width == 2)
             shape = SPRITE_SHAPE(16x8);
