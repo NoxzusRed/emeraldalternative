@@ -28,13 +28,23 @@ Route127_Cave_2_EventScript_NotReady::
 Route127_Cave_2_EventScript_Reward::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM_HYPER_VOICE, Route127_Cave_2_EventScript_DragonAfter
+	@ A save may have the reward flag set without the TM in the Bag.
+	@ Check actual possession so an already-defeated Dragon Tamer can
+	@ still give the missing TM102, without duplicating one in the PC.
+	checkitem ITEM_TM102
+	goto_if_eq VAR_RESULT, TRUE, Route127_Cave_2_EventScript_RewardAlreadyOwned
+	checkpcitem ITEM_TM102
+	goto_if_eq VAR_RESULT, TRUE, Route127_Cave_2_EventScript_RewardAlreadyOwned
 	msgbox Route127_Cave_2_Text_Reward, MSGBOX_DEFAULT
 	giveitem ITEM_TM102
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_HYPER_VOICE
 	release
 	end
+
+Route127_Cave_2_EventScript_RewardAlreadyOwned::
+	setflag FLAG_RECEIVED_TM_HYPER_VOICE
+	goto Route127_Cave_2_EventScript_DragonAfter
 
 Route127_Cave_2_EventScript_DragonAfter::
 	msgbox Route127_Cave_2_Text_DragonAfter, MSGBOX_DEFAULT
