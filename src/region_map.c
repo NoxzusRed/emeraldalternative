@@ -1917,9 +1917,7 @@ static void CreateFlyDestIcons(void)
     {
         GetMapSecDimensions(mapSecId, &x, &y, &width, &height);
         x = (x + MAPCURSOR_X_MIN) * 8 + 4;
-        // Keep sprites on the map grid (+4); the icon artwork's bottom shadow
-        // compensates for the underlying town markers' odd-pixel outline.
-        // Do not offset the entire sprite by one pixel (+5).
+        // Center the Fly destination icon on the same 8px map grid as the cursor.
         y = (y + MAPCURSOR_Y_MIN) * 8 + 4;
 
         if (width == 2)
