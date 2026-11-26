@@ -1265,3 +1265,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MauvilleCity_HyperTrainingCenter/scripts.inc"
 
 	.include "data/maps/Route127_Cave_2/scripts.inc"
+
+	.include "data/maps/PetalburgCity_House4/scripts.inc"
+
+	.include "data/maps/PetalburgCity_House3/scripts.inc"

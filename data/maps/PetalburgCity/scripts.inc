@@ -103,6 +103,14 @@ PetalburgCity_EventScript_Boy::
 	release
 	end
 
+PetalburgCity_EventScript_AromaLady::
+	lock
+	faceplayer
+	msgbox PetalburgCity_Text_Garden, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 PetalburgCity_EventScript_WallysMom::
 	msgbox PetalburgCity_Text_WhereIsWally, MSGBOX_NPC
 	end
@@ -749,6 +757,13 @@ PetalburgCity_EventScript_GirlBeforeScott::
 	release
 	end
 
+PetalburgCity_EventScript_GirlAfterScott::
+	lock
+	faceplayer
+	msgbox PetalburgCity_Text_EeveeEvolved, MSGBOX_DEFAULT
+	release
+	end
+
 PetalburgCity_EventScript_EeveeBeforeScott::
 	lock
 	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
@@ -789,6 +804,10 @@ PetalburgCity_EventScript_Kangaskhan::
 	release
     end
 
+PetalburgCity_Text_Garden:
+	.string "My garden is so overgrown that wild\n"
+	.string "Pokémon have shown up!$"
+
 PetalburgCity_Text_Kangaskhan:
 	.string "Gwaaa-rooor!$"
 
@@ -799,11 +818,15 @@ PetalburgCity_Text_Zigzagoon:
 	.string "Zig-zag!$"
 
 PetalburgCity_Text_EeveeIsEvolving:
-	.string "Mi Eevee está evolucionando.\n"
-	.string "Busca otro camino, por favor.$"
+	.string "My Eevee is evolving!.\n"
+	.string "Sorry, you will have to wait.$"
 
 PetalburgCity_Text_EeveeCry:
 	.string "Eevui!$"
+
+PetalburgCity_Text_EeveeEvolved:
+	.string "My Eevee evolved!.\n"
+	.string "Look how beautiful it is.$"
 
 PetalburgCity_Text_Piiriii:
 	.string "Pii-riii!$"

@@ -4810,6 +4810,26 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route127_Cave_2/border.bin",
       "blockdata_filepath": "data/layouts/Route127_Cave_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CITY_HOUSE4",
+      "name": "PetalburgCity_House4_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PetalburgCity_House4/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity_House4/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CITY_HOUSE3",
+      "name": "PetalburgCity_House3_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PetalburgCity_House3/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity_House3/map.bin"
     }
   ]
 }

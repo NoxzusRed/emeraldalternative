@@ -8965,18 +8965,18 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Noibat
-Level: 46
+Noivern
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
-Gabite
-Level: 44
+Garchomp
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Altaria
-Level: 44
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -8990,17 +8990,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Altaria
-Level: 48
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Garchomp
-Level: 48
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Noivern
-Level: 50
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -9014,17 +9014,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Altaria
-Level: 52
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Garchomp
-Level: 52
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Noivern
-Level: 54
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -9038,22 +9038,22 @@ Double Battle: No
 AI: Check Bad Move
 
 Salamence
-Level: 56
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Altaria
-Level: 56
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Garchomp
-Level: 56
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Noivern
-Level: 58
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -9067,27 +9067,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Salamence @ Dragon Fang
-Level: 60
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Altaria
-Level: 60
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Flygon
-Level: 60
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Garchomp
-Level: 60
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Noivern
-Level: 62
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -15672,12 +15672,12 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Rapidash
-Level: 44
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Zebstrika
-Level: 44
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -15691,12 +15691,12 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Rapidash
-Level: 48
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Zebstrika
-Level: 48
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -15710,12 +15710,12 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Rapidash
-Level: 52
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Zebstrika
-Level: 52
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -15729,12 +15729,12 @@ Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Rapidash
-Level: 56
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Zebstrika
-Level: 56
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -15748,12 +15748,12 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Rapidash
-Level: 60
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Zebstrika
-Level: 60
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
