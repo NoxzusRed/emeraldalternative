@@ -11,6 +11,7 @@
 #include "event_scripts.h"
 #include "fieldmap.h"
 #include "field_control_avatar.h"
+#include "field_effect.h"
 #include "field_message_box.h"
 #include "field_player_avatar.h"
 #include "field_poison.h"
@@ -25,6 +26,7 @@
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokemon.h"
+#include "pokemon_storage_system.h"
 #include "region_map.h"
 #include "safari_zone.h"
 #include "script.h"
@@ -172,14 +174,16 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
 // Keep the League, location and follower checks used by the normal Fly action.
 static bool8 TryOpenFlyMapShortcut(void)
 {
-    u8 i;
+    u8 i, boxId;
 
     if (!FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE)
      || !Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType)
      || !CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_LEAVE_ROUTE))
         return FALSE;
 
-    // The ROM permits Fly when a Pokemon can learn the move or already knows it.
+    SetFlyBoxMon(NULL);
+
+    // Prefer a party Pokemon that can learn Fly or already knows it.
     for (i = 0; i < PARTY_SIZE; i++)
     {
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
@@ -194,6 +198,31 @@ static bool8 TryOpenFlyMapShortcut(void)
             gPartyMenu.slotId = i;
             OpenFlyMapFromField();
             return TRUE;
+        }
+    }
+
+    // The party need not contain a flyer: search the saved PC boxes as well.
+    // Only read boxed Pokemon, never withdraw, replace or modify a party member.
+    for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+    {
+        for (i = 0; i < IN_BOX_COUNT; i++)
+        {
+            struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, i);
+            u16 species;
+
+            if (boxMon == NULL || !GetBoxMonData(boxMon, MON_DATA_SANITY_HAS_SPECIES))
+                continue;
+
+            species = GetBoxMonData(boxMon, MON_DATA_SPECIES_OR_EGG);
+            if (species == SPECIES_NONE || species == SPECIES_EGG)
+                continue;
+
+            if (CanLearnTeachableMove(species, MOVE_FLY) || BoxMonKnowsMove(boxMon, MOVE_FLY))
+            {
+                SetFlyBoxMon(boxMon);
+                OpenFlyMapFromField();
+                return TRUE;
+            }
         }
     }
 

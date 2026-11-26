@@ -1699,6 +1699,8 @@ void CB2_OpenFlyMap(void)
         }
         else
         {
+            // Normal party-menu Fly must not reuse a previously selected boxed mon.
+            SetFlyBoxMon(NULL);
             SetVBlankCallback(NULL);
         }
         SetGpuReg(REG_OFFSET_DISPCNT, 0);
@@ -1713,6 +1715,7 @@ void CB2_OpenFlyMap(void)
         sFlyMap = Alloc(sizeof(*sFlyMap));
         if (sFlyMap == NULL)
         {
+            SetFlyBoxMon(NULL);
             if (sFlyMapOpenedWithL)
             {
                 sFlyMapOpenedWithL = FALSE;
@@ -2078,6 +2081,7 @@ static void CB_ExitFlyMap(void)
             }
             else if (sFlyMapOpenedWithL)
             {
+                SetFlyBoxMon(NULL);
                 sFlyMapOpenedWithL = FALSE;
                 gFieldCallback = FieldCB_ReturnToFieldNoScriptCheckMusic;
                 SetMainCallback2(CB2_ReturnToField);

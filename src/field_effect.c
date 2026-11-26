@@ -45,6 +45,12 @@
 EWRAM_DATA s32 gFieldEffectArguments[8] = {0};
 EWRAM_DATA bool8 gSkipShowMonAnim = FALSE;
 
+// Snapshot of the selected boxed flyer for the field-move animation.
+// No party slot or pointer into save storage needs to survive the Fly map.
+static EWRAM_DATA u16 sFlyBoxMonSpecies = SPECIES_NONE;
+static EWRAM_DATA bool8 sFlyBoxMonShiny = FALSE;
+static EWRAM_DATA u32 sFlyBoxMonPersonality = 0;
+
 // Static type declarations
 
 static void Task_PokecenterHeal(u8 taskId);
@@ -1367,6 +1373,22 @@ static void SpriteCB_HallOfFameMonitor(struct Sprite *sprite)
 #undef sSpriteId
 #undef sEffectSpriteId
 
+void SetFlyBoxMon(struct BoxPokemon *boxMon)
+{
+    if (boxMon == NULL)
+    {
+        sFlyBoxMonSpecies = SPECIES_NONE;
+        sFlyBoxMonShiny = FALSE;
+        sFlyBoxMonPersonality = 0;
+    }
+    else
+    {
+        sFlyBoxMonSpecies = GetBoxMonData(boxMon, MON_DATA_SPECIES);
+        sFlyBoxMonShiny = GetBoxMonData(boxMon, MON_DATA_IS_SHINY);
+        sFlyBoxMonPersonality = GetBoxMonData(boxMon, MON_DATA_PERSONALITY);
+    }
+}
+
 void ReturnToFieldFromFlyMapSelect(void)
 {
     SetMainCallback2(CB2_ReturnToField);
@@ -1417,7 +1439,8 @@ static void Task_UseFly(u8 taskId)
             if (!IsWeatherNotFadingIn())
                 return;
 
-            gFieldEffectArguments[0] = GetCursorSelectionMonId();
+            // The boxed flyer has its own sprite data; do not index the party for it.
+            gFieldEffectArguments[0] = sFlyBoxMonSpecies != SPECIES_NONE ? 0 : GetCursorSelectionMonId();
             if ((int)gFieldEffectArguments[0] > PARTY_SIZE - 1)
                 gFieldEffectArguments[0] = 0;
 
@@ -3441,7 +3464,22 @@ static void FlyOutFieldEffect_ShowMon(struct Task *task)
         task->tState++;
         gFieldEffectArguments[0] = task->tMonId;
         if (!gSkipShowMonAnim)
-            FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        {
+            if (sFlyBoxMonSpecies != SPECIES_NONE)
+            {
+                // Show the actual boxed Pokemon, including shininess and personality.
+                // Bypass SHOW_MON_INIT, which assumes a party index.
+                gFieldEffectArguments[0] = sFlyBoxMonSpecies;
+                gFieldEffectArguments[1] = sFlyBoxMonShiny;
+                gFieldEffectArguments[2] = sFlyBoxMonPersonality;
+                FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON);
+            }
+            else
+            {
+                FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+            }
+        }
+        SetFlyBoxMon(NULL);
     }
 }
 

@@ -12,6 +12,8 @@ extern bool8 (*gFieldCallback2)(void);
 u32 FieldEffectStart(u8 id);
 bool8 FieldEffectActiveListContains(u8 id);
 void FieldEffectActiveListClear(void);
+struct BoxPokemon;
+void SetFlyBoxMon(struct BoxPokemon *boxMon);
 void ReturnToFieldFromFlyMapSelect(void);
 void FieldCallback_UseFly(void);
 u8 AddNewGameBirchObject(s16 x, s16 y, u8 subpriority);
