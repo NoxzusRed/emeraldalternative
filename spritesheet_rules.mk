@@ -6,6 +6,9 @@ MISCGFXDIR := graphics/misc
 $(OBJEVENTGFXDIR)/people/brendan/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/brendan/decorating.4bpp: %.4bpp: %.png spritesheet_rules.mk
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/brendan/running.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
@@ -98,6 +101,9 @@ $(OBJEVENTGFXDIR)/people/gym_leaders/winona.4bpp: %.4bpp: %.png
 
 
 $(OBJEVENTGFXDIR)/people/may/walking.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/may/decorating.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/may/running.4bpp: %.4bpp: %.png
@@ -264,6 +270,18 @@ $(OBJEVENTGFXDIR)/people/lady.4bpp: %.4bpp: %.png spritesheet_rules.mk
 $(OBJEVENTGFXDIR)/people/parasol_lady.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+# These NPC sheets contain nine consecutive 16x32 frames (not loose 8x8 tiles).
+# Keep the rules file as a dependency so previously generated .4bpp files
+# are rebuilt with the correct frame layout.
+$(OBJEVENTGFXDIR)/people/ranger_m.4bpp: %.4bpp: %.png spritesheet_rules.mk
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/ranger_f.4bpp: %.4bpp: %.png spritesheet_rules.mk
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/aroma_lady.4bpp: %.4bpp: %.png spritesheet_rules.mk
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/ruin_maniac.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
@@ -301,6 +319,9 @@ $(OBJEVENTGFXDIR)/people/boy_3.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/rich_boy.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/rich_boy_2.4bpp: %.4bpp: %.png spritesheet_rules.mk
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/gameboy_kid.4bpp: %.4bpp: %.png
