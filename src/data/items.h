@@ -14305,4 +14305,19 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_VACUUM_WAVE,
     },
+
+    [ITEM_TM102] =
+    {
+        .name = _("TM102"),
+        .price = 3000,
+        .description = COMPOUND_STRING(
+            "A loud attack that\n"
+            "uses sound waves\n"
+            "to hit all foes."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_HYPER_VOICE,
+    },
 };

@@ -959,8 +959,8 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
         }
         else
         {
-            // All TMs are displayed with three digits: TM001 - TM100.
-            ConvertIntToDecimalStringN(gStringVar1, itemId == ITEM_TM101 ? 101 : itemId - ITEM_TM01 + 1,
+            // Display original and extra TMs with the same three-digit numbering.
+            ConvertIntToDecimalStringN(gStringVar1, (itemId >= ITEM_TM101 && itemId <= ITEM_TM102) ? itemId - ITEM_TM101 + 101 : itemId - ITEM_TM01 + 1,
                                        STR_CONV_MODE_LEADING_ZEROS, 3);
             StringExpandPlaceholders(dest, sText_NumberItem_TM);
         }

@@ -597,13 +597,13 @@ void CompactItemsInBagPocket(struct BagPocket *bagPocket)
     }
 }
 
-// Show TM101 immediately after TM100, despite its item ID following the other items.
+// Extra TMs follow TM100 and precede HMs without changing item IDs.
 static u16 GetTMHMSortKey(u16 itemId)
 {
-    if (itemId == ITEM_TM101)
-        return ITEM_HM01;
+    if (itemId >= ITEM_TM101 && itemId <= ITEM_TM102)
+        return ITEM_HM01 + itemId - ITEM_TM101;
     if (itemId >= ITEM_HM01 && itemId <= ITEM_HM08)
-        return itemId + 1;
+        return itemId + ITEM_TM102 - ITEM_TM101 + 1;
     return itemId;
 }
 

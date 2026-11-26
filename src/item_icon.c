@@ -166,8 +166,8 @@ const void *GetItemIconPic(u16 itemId)
         return gItemIcon_ReturnToFieldArrow; // Use last icon, the "return to field" arrow
     if (itemId >= ITEMS_COUNT)
         return gItemsInfo[0].iconPic;
-    // The new TM is outside the original contiguous TM/HM range.
-    if ((itemId >= ITEM_TM01 && itemId <= ITEM_TM100) || itemId == ITEM_TM101)
+    // Extra TMs are outside the original contiguous TM/HM range.
+    if ((itemId >= ITEM_TM01 && itemId <= ITEM_TM100) || (itemId >= ITEM_TM101 && itemId <= ITEM_TM102))
         return gItemIcon_TM;
     if (itemId >= ITEM_HM01 && itemId <= ITEM_HM08)
         return gItemIcon_HM;
@@ -181,7 +181,7 @@ const u16 *GetItemIconPalette(u16 itemId)
         return gItemIconPalette_ReturnToFieldArrow;
     if (itemId >= ITEMS_COUNT)
         return gItemsInfo[0].iconPalette;
-    if ((itemId >= ITEM_TM01 && itemId <= ITEM_HM08) || itemId == ITEM_TM101)
+    if ((itemId >= ITEM_TM01 && itemId <= ITEM_HM08) || (itemId >= ITEM_TM101 && itemId <= ITEM_TM102))
         return gTypesInfo[GetMoveType(gItemsInfo[itemId].secondaryId)].paletteTMHM;
 
     return gItemsInfo[itemId].iconPalette;

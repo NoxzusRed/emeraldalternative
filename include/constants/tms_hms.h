@@ -106,7 +106,8 @@
 // Extra TMs have IDs beyond the original contiguous TM/HM block.
 #define FOREACH_TM(F) \
     FOREACH_TM_ORIGINAL(F) \
-    F(VACUUM_WAVE)
+    F(VACUUM_WAVE) \
+    F(HYPER_VOICE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

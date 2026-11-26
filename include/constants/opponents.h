@@ -902,7 +902,11 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      889
+#define TRAINER_RANGER_ROUTE127_CAVE_2       889
+#define TRAINER_AROMA_LADY_ROUTE127_CAVE_2   890
+#define TRAINER_DRAGON_TAMER_ROUTE127_CAVE_2 891
+
+#define TRAINERS_COUNT                      892
 #define MAX_TRAINERS_COUNT                  900
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 
