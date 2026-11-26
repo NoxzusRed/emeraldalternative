@@ -25,6 +25,18 @@ void InitTimeBasedEvents(void)
     VarSet(VAR_DAYS, gLocalTime.days);
 }
 
+// Initialize new games (and unfinished clock tutorials from older saves).
+// Never reset the time when an already initialized clock is inspected.
+void InitDefaultWallClock(void)
+{
+    if (!FlagGet(FLAG_SYS_CLOCK_SET))
+    {
+        RtcInitLocalTimeOffset(8, 0);
+        InitTimeBasedEvents();
+    }
+    FlagSet(FLAG_SET_WALL_CLOCK);
+}
+
 void DoTimeBasedEvents(void)
 {
     if (FlagGet(FLAG_SYS_CLOCK_SET) && !InPokemonCenter())

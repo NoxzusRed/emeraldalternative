@@ -14,9 +14,9 @@ LittlerootTown_MapScripts::
 	@ 1: In truck male
 	@ 2: In truck female
 	@ 3: Entered house
-	@ 4: Told to go set clock
-	@ 5: Entered 2F to set clock
-	@ 6: Set clock
+	@ 4: Told to go see bedroom
+	@ 5: Legacy state, bedroom visited before clock was set
+	@ 6: Bedroom visit complete, ready for the TV report
 	@ 7: Told to go meet rival
 
 	@ State descriptions for VAR_LITTLEROOT_HOUSES_STATE_MAY

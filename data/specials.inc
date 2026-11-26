@@ -567,3 +567,4 @@ gSpecials::
 	def_special HyperTraining_CheckMon
 	def_special HyperTraining_CanTrainStat
 	def_special HyperTraining_ApplyCap
+	def_special InitDefaultWallClock

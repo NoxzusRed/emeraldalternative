@@ -15,6 +15,7 @@
 #include "dewford_trend.h"
 #include "berry.h"
 #include "rtc.h"
+#include "clock.h"
 #include "easy_chat.h"
 #include "event_data.h"
 #include "money.h"
@@ -216,6 +217,8 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
+    // Start each new adventure at 8:00 AM without opening the wall clock UI.
+    InitDefaultWallClock();
 }
 
 static void ResetMiniGamesRecords(void)
