@@ -1263,3 +1263,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route123_North/scripts.inc"
 
 	.include "data/maps/MauvilleCity_HyperTrainingCenter/scripts.inc"
+
+	.include "data/maps/Route127_Cave_2/scripts.inc"

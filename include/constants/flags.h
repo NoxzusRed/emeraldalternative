@@ -1270,7 +1270,7 @@
 #define FLAG_ITEM_ROUTE_128_BOTTLE_CAP                              0x4C1 //
 #define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_BOTTLE_CAP         0x4C2 //
 #define FLAG_ITEM_ROUTE_103_TM_WATER_PULSE               		    0x4C3 //
-#define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
+#define FLAG_ITEM_ROUTE_114_FULL_HEAL                               0x4C4 //
 #define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
 #define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag
 #define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag

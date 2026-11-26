@@ -4800,6 +4800,16 @@
       "secondary_tileset": "gTileset_BattleFrontier",
       "border_filepath": "data/layouts/MauvilleCity_HyperTrainingCenter/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_HyperTrainingCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE127_CAVE_2",
+      "name": "Route127_Cave_2_Layout",
+      "width": 11,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route127_Cave_2/border.bin",
+      "blockdata_filepath": "data/layouts/Route127_Cave_2/map.bin"
     }
   ]
 }
