@@ -11269,23 +11269,20 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Feebas @ Oran Berry
+Relicanth
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-- Flail
-- Water Pulse
-- Return
-- Attract
+EVs: 252 HP / 252 SpD / 252 Spe
+- Rock Tomb
+- Waterfall
 
-Feebas @ Oran Berry
+Basculegion
 Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-- Flail
-- Water Pulse
-- Return
-- Attract
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Spe
+- Wave Crash
+- Phantom Force
+- Crunch
 
 === TRAINER_JAZMYN ===
 Name: JAZMYN
