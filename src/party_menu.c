@@ -4012,13 +4012,13 @@ static void CursorCb_FieldMove(u8 taskId)
     }
     else
     {
-        // FLY requiere haber ganado la Liga Pokemon.
+        // FLY se habilita al entrar por primera vez a la Liga Pokemon.
         if (fieldMove == FIELD_MOVE_FLY &&
-            !FlagGet(FLAG_SYS_GAME_CLEAR))
+            !FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE))
         {
             static const u8 sText_FlyRequiresLeague[] =
                 _("You can't use FLY until you\n"
-                  "beat the POKéMON LEAGUE.{PAUSE_UNTIL_PRESS}");
+                  "reach the POKéMON LEAGUE.{PAUSE_UNTIL_PRESS}");
 
             DisplayPartyMenuMessage(sText_FlyRequiresLeague, TRUE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;

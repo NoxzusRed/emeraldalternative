@@ -174,7 +174,7 @@ static bool8 TryOpenFlyMapShortcut(void)
 {
     u8 i;
 
-    if (!FlagGet(FLAG_SYS_GAME_CLEAR)
+    if (!FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE)
      || !Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType)
      || !CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_LEAVE_ROUTE))
         return FALSE;

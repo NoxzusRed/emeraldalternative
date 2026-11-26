@@ -1,12 +1,32 @@
 EverGrandeCity_PokemonLeague_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_PokemonLeague_1F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, EverGrandeCity_PokemonLeague_1F_OnFrame
 	.byte 0
 
 EverGrandeCity_PokemonLeague_1F_OnTransition:
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE
+	@ The existing landmark flag also unlocks Fly. Queue the notice only on the first visit.
+	setvar VAR_TEMP_0, 0
+	call_if_unset FLAG_LANDMARK_POKEMON_LEAGUE, EverGrandeCity_PokemonLeague_1F_EventScript_QueueFlyNotice
 	setflag FLAG_LANDMARK_POKEMON_LEAGUE
 	call_if_unset FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_1F_EventScript_GuardsBlockDoor
+	end
+
+EverGrandeCity_PokemonLeague_1F_EventScript_QueueFlyNotice::
+	setvar VAR_TEMP_0, 1
+	return
+
+EverGrandeCity_PokemonLeague_1F_OnFrame:
+	map_script_2 VAR_TEMP_0, 1, EverGrandeCity_PokemonLeague_1F_EventScript_FlyUnlocked
+	.2byte 0
+
+EverGrandeCity_PokemonLeague_1F_EventScript_FlyUnlocked::
+	lockall
+	setvar VAR_TEMP_0, 0
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_FlyUnlocked, MSGBOX_DEFAULT
+	closemessage
+	releaseall
 	end
 
 EverGrandeCity_PokemonLeague_1F_EventScript_GuardsBlockDoor::
@@ -123,6 +143,12 @@ EverGrandeCity_PokemonLeague_1F_Movement_RightGuardOutOfWay:
 	walk_right
 	walk_in_place_faster_down
 	step_end
+
+EverGrandeCity_PokemonLeague_1F_Text_FlyUnlocked:
+	.string "You have reached the\n"
+	.string "POKéMON LEAGUE!\p"
+	.string "You can now use FLY outside of\n"
+	.string "battle!$"
 
 EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges:
 	.string "Beyond this point, only those TRAINERS\n"
