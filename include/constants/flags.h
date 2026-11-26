@@ -75,7 +75,7 @@
 #define FLAG_HIDE_SLATEPORT_CITY_DRIFLOON_DRIFBLIM  0x3E //
 #define FLAG_RECEIVED_MAUVILLE_GENTLEMAN_BOTTLE_CAP 0x3F //
 #define FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE 		0x40 //
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
+#define FLAG_EVER_GRANDE_VICTORY_ROAD_CROSSED 0x41 // Reached the League side of Victory Road
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
