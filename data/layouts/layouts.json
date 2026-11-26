@@ -4804,7 +4804,7 @@
     {
       "id": "LAYOUT_ROUTE127_CAVE_2",
       "name": "Route127_Cave_2_Layout",
-      "width": 11,
+      "width": 12,
       "height": 16,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
