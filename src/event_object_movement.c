@@ -507,6 +507,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lady,                   OBJ_EVENT_PAL_TAG_LADY},
     {gObjectEventPal_ParasolLady,            OBJ_EVENT_PAL_TAG_PARASOL_LADY},
     {gObjectEventPal_Ranger,            OBJ_EVENT_PAL_TAG_RANGER},
+    {gObjectEventPal_AromaLady,              OBJ_EVENT_PAL_TAG_AROMA_LADY},
     {gObjectEventPal_RichBoy2,              OBJ_EVENT_PAL_TAG_RICH_BOY_2},
     {gObjectEventPal_Steven,                 OBJ_EVENT_PAL_TAG_STEVEN},
     {gObjectEventPal_Cynthia,                OBJ_EVENT_PAL_TAG_CYNTHIA},
@@ -533,6 +534,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_LadyReflection,         OBJ_EVENT_PAL_TAG_LADY_REFLECTION},
     {gObjectEventPal_ParasolLadyReflection,  OBJ_EVENT_PAL_TAG_PARASOL_LADY_REFLECTION},
     {gObjectEventPal_RangerReflection,  OBJ_EVENT_PAL_TAG_RANGER_REFLECTION},
+    {gObjectEventPal_AromaLadyReflection,    OBJ_EVENT_PAL_TAG_AROMA_LADY_REFLECTION},
     {gObjectEventPal_RichBoy2Reflection,    OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION},
     {gObjectEventPal_StevenReflection,       OBJ_EVENT_PAL_TAG_STEVEN_REFLECTION},
     {gObjectEventPal_Brendan,               OBJ_EVENT_PAL_TAG_BRENDAN},
@@ -804,6 +806,13 @@ static const u16 sReflectionPaletteTags_Ranger[] = {
     OBJ_EVENT_PAL_TAG_RANGER_REFLECTION,
 };
 
+static const u16 sReflectionPaletteTags_AromaLady[] = {
+    OBJ_EVENT_PAL_TAG_AROMA_LADY_REFLECTION,
+    OBJ_EVENT_PAL_TAG_AROMA_LADY_REFLECTION,
+    OBJ_EVENT_PAL_TAG_AROMA_LADY_REFLECTION,
+    OBJ_EVENT_PAL_TAG_AROMA_LADY_REFLECTION,
+};
+
 static const u16 sReflectionPaletteTags_RichBoy2[] = {
     OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION,
     OBJ_EVENT_PAL_TAG_RICH_BOY_2_REFLECTION,
@@ -844,6 +853,7 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_LADY,             sReflectionPaletteTags_Lady},
     {OBJ_EVENT_PAL_TAG_PARASOL_LADY,     sReflectionPaletteTags_ParasolLady},
     {OBJ_EVENT_PAL_TAG_RANGER,     sReflectionPaletteTags_Ranger},
+    {OBJ_EVENT_PAL_TAG_AROMA_LADY,      sReflectionPaletteTags_AromaLady},
     {OBJ_EVENT_PAL_TAG_RICH_BOY_2,       sReflectionPaletteTags_RichBoy2},
     {OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW, sReflectionPaletteTags_SubmarineShadow},
     {OBJ_EVENT_PAL_TAG_RED_LEAF,         sReflectionPaletteTags_RedLeaf},
