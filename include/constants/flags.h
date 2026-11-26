@@ -75,7 +75,7 @@
 #define FLAG_HIDE_SLATEPORT_CITY_DRIFLOON_DRIFBLIM  0x3E //
 #define FLAG_RECEIVED_MAUVILLE_GENTLEMAN_BOTTLE_CAP 0x3F //
 #define FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE 		0x40 //
-#define FLAG_RECEIVED_TM_HYPER_VOICE 0x41 // Route127_Cave_2 reward
+#define FLAG_RECEIVED_TM_HYPER_VOICE 				0x41 //
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
@@ -655,28 +655,28 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 //Custom Hidden Items
-#define FLAG_NO_COLLISION  								0x264 // NO COLLISION DEBUG
-#define FLAG_HIDDEN_ITEM_PETALBURG_CITY_ADAMANT_MINT  	0x265 //
-#define FLAG_HIDDEN_ITEM_ROUTE_103_POTION  				0x266 //
-#define FLAG_UNUSED_0x267  								0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  								0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  								0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A    							0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B    							0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C    							0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D    							0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E    							0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F    							0x26F // Unused Flag
-#define FLAG_UNUSED_0x270    							0x270 // Unused Flag
-#define FLAG_UNUSED_0x271    							0x271 // Unused Flag
-#define FLAG_UNUSED_0x272    							0x272 // Unused Flag
-#define FLAG_UNUSED_0x273    							0x273 // Unused Flag
-#define FLAG_UNUSED_0x274    							0x274 // Unused Flag
-#define FLAG_UNUSED_0x275    							0x275 // Unused Flag
-#define FLAG_UNUSED_0x276    							0x276 // Unused Flag
-#define FLAG_UNUSED_0x277    							0x277 // Unused Flag
-#define FLAG_UNUSED_0x278    							0x278 // Unused Flag
-#define FLAG_UNUSED_0x279    							0x279 // Unused Flag
+#define FLAG_NO_COLLISION  									0x264 // NO COLLISION DEBUG
+#define FLAG_HIDDEN_ITEM_PETALBURG_CITY_ADAMANT_MINT  		0x265 //
+#define FLAG_HIDDEN_ITEM_ROUTE_103_POTION  					0x266 //
+#define FLAG_HIDDEN_ITEM_ROUTE_102_TINY_MUSHROOM  			0x267 //
+#define FLAG_UNUSED_0x268  									0x268 // Unused Flag
+#define FLAG_UNUSED_0x269  									0x269 // Unused Flag
+#define FLAG_UNUSED_0x26A    								0x26A // Unused Flag
+#define FLAG_UNUSED_0x26B    								0x26B // Unused Flag
+#define FLAG_UNUSED_0x26C    								0x26C // Unused Flag
+#define FLAG_UNUSED_0x26D    								0x26D // Unused Flag
+#define FLAG_UNUSED_0x26E    								0x26E // Unused Flag
+#define FLAG_UNUSED_0x26F    								0x26F // Unused Flag
+#define FLAG_UNUSED_0x270    								0x270 // Unused Flag
+#define FLAG_UNUSED_0x271    								0x271 // Unused Flag
+#define FLAG_UNUSED_0x272    								0x272 // Unused Flag
+#define FLAG_UNUSED_0x273    								0x273 // Unused Flag
+#define FLAG_UNUSED_0x274    								0x274 // Unused Flag
+#define FLAG_UNUSED_0x275    								0x275 // Unused Flag
+#define FLAG_UNUSED_0x276    								0x276 // Unused Flag
+#define FLAG_UNUSED_0x277    								0x277 // Unused Flag
+#define FLAG_UNUSED_0x278    								0x278 // Unused Flag
+#define FLAG_UNUSED_0x279    								0x279 // Unused Flag
 #define FLAG_UNUSED_0x27A  0x27A // Unused Flag
 #define FLAG_UNUSED_0x27B  0x27B // Unused Flag
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag
@@ -1271,7 +1271,7 @@
 #define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_BOTTLE_CAP         0x4C2 //
 #define FLAG_ITEM_ROUTE_103_TM_WATER_PULSE               		    0x4C3 //
 #define FLAG_ITEM_ROUTE_114_FULL_HEAL                               0x4C4 //
-#define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
+#define FLAG_ITEM_ROUTE_102_ANTIDOTE                                0x4C5 //
 #define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag
 #define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
 #define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag

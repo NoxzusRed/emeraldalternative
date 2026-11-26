@@ -1049,7 +1049,7 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_LILLIGANT_HISUI
-Level: 30
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Petal Blizzard
@@ -1057,7 +1057,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Brick Break
 
 Whimsicott
-Level: 30
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Moonblast
@@ -1066,7 +1066,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Cotton Guard
 
 Roserade
-Level: 30
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -1080,7 +1080,7 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_LILLIGANT_HISUI
-Level: 34
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Petal Blizzard
@@ -1088,7 +1088,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Brick Break
 
 Whimsicott
-Level: 34
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Moonblast
@@ -1097,7 +1097,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Cotton Guard
 
 Roserade
-Level: 34
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -1111,7 +1111,7 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_LILLIGANT_HISUI
-Level: 38
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Petal Blizzard
@@ -1119,7 +1119,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Brick Break
 
 Whimsicott
-Level: 38
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Moonblast
@@ -1128,7 +1128,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Cotton Guard
 
 Roserade
-Level: 38
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -1256,7 +1256,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Excadrill
-Level: 33
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Dig
@@ -1264,7 +1264,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Metal Claw
 
 Skorupi
-Level: 33
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Dig
@@ -1272,7 +1272,7 @@ EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Cross Poison
 
 Krokorok
-Level: 33
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Dig
@@ -1288,7 +1288,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Excadrill
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Dig
@@ -1296,7 +1296,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Metal Claw
 
 Skorupi
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Dig
@@ -1305,7 +1305,7 @@ EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Crunch
 
 Krokorok
-Level: 36
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Dig
@@ -1321,7 +1321,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Excadrill
-Level: 40
+Level: 48
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 EVs: 252 HP / 126 Spe
 - Earthquake
@@ -1330,7 +1330,7 @@ EVs: 252 HP / 126 Spe
 - X-Scissor
 
 Drapion
-Level: 40
+Level: 48
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 EVs: 252 HP / 126 Spe
 - Earthquake
@@ -1339,7 +1339,7 @@ EVs: 252 HP / 126 Spe
 - Crunch
 
 Krookodile
-Level: 40
+Level: 48
 Ability: Moxie
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 EVs: 252 HP / 126 Spe
@@ -1668,12 +1668,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Azumarill
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Quagsire
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Aqua Tail
@@ -1691,12 +1691,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Azumarill
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Quagsire
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Aqua Tail
@@ -1714,12 +1714,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Azumarill
-Level: 35
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Quagsire
-Level: 35
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Aqua Tail
@@ -1807,7 +1807,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Linoone
-Level: 30
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Sand Attack
@@ -1825,7 +1825,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Linoone
-Level: 33
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Sand Attack
@@ -1834,7 +1834,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Surf
 
 Emolga
-Level: 33
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -1848,7 +1848,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Linoone
-Level: 36
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Sand Attack
@@ -1857,7 +1857,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Surf
 
 Emolga
-Level: 36
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -2257,17 +2257,17 @@ Double Battle: No
 AI: Basic Trainer
 
 Manectric
-Level: 30
+Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailmer
-Level: 30
+Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Mienfoo
-Level: 30
+Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Ice Punch
@@ -2286,17 +2286,17 @@ Double Battle: No
 AI: Basic Trainer
 
 Manectric
-Level: 34
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailmer
-Level: 34
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Mienfoo
-Level: 34
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Ice Punch
@@ -2315,17 +2315,17 @@ Double Battle: No
 AI: Basic Trainer
 
 Manectric
-Level: 38
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
-Wailmer
-Level: 38
+Wailord
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Mienfoo
-Level: 38
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Ice Punch
@@ -3061,17 +3061,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Sylveon @ Nugget
-Level: 32
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Espeon @ Nugget
-Level: 32
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Eevee @ Nugget
-Level: 32
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3086,17 +3086,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Sylveon @ Nugget
-Level: 36
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Espeon @ Nugget
-Level: 36
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Glaceon @ Nugget
-Level: 36
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3111,17 +3111,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Sylveon @ Nugget
-Level: 42
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Espeon @ Nugget
-Level: 42
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Glaceon @ Nugget
-Level: 42
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -3307,7 +3307,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Kecleon
-Level: 39
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Bind
@@ -3316,7 +3316,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Feint Attack
 
 Arbok
-Level: 39
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Poison Jab
@@ -3334,7 +3334,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Kecleon
-Level: 42
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Bind
@@ -3343,7 +3343,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Feint Attack
 
 Arbok
-Level: 42
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Poison Jab
@@ -3361,7 +3361,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Kecleon
-Level: 45
+Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Bind
@@ -3370,7 +3370,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Feint Attack
 
 Arbok
-Level: 45
+Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Poison Jab
@@ -3461,17 +3461,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Flareon @ Nugget
-Level: 30
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Umbreon @ Nugget
-Level: 30
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Eevee @ Nugget
-Level: 30
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3486,17 +3486,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Flareon @ Nugget
-Level: 33
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Umbreon @ Nugget
-Level: 33
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Jolteon @ Nugget
-Level: 33
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3511,17 +3511,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Flareon @ Nugget
-Level: 36
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Umbreon @ Nugget
-Level: 36
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Jolteon @ Nugget
-Level: 36
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3615,12 +3615,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Lairon
-Level: 29
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Kangaskhan
-Level: 29
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3633,13 +3633,13 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Lairon
-Level: 32
+Aggron
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Kangaskhan
-Level: 32
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -3653,12 +3653,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Aggron
-Level: 35
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Kangaskhan
-Level: 35
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4116,7 +4116,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Sharpedo
-Level: 33
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4129,13 +4129,13 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Clamperl
-Level: 34
+Gorebyss
+Level: 46
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Sharpedo
-Level: 36
+Level: 46
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4149,12 +4149,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Gorebyss
-Level: 37
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Sharpedo
-Level: 39
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4266,12 +4266,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Machoke
-Level: 31
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Machoke
-Level: 31
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4285,17 +4285,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Machoke
-Level: 35
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Machoke
-Level: 35
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Machamp @ Black Belt
-Level: 35
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4309,22 +4309,22 @@ Double Battle: No
 AI: Check Bad Move
 
 Machoke
-Level: 39
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Machoke
-Level: 39
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Machamp @ Black Belt
-Level: 39
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Machamp @ Black Belt
-Level: 39
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4541,7 +4541,7 @@ Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Whismur
+Loudred
 Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
@@ -4561,17 +4561,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Magneton
-Level: 32
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Loudred
-Level: 32
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Magneton
-Level: 32
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4585,17 +4585,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Magneton
-Level: 36
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Loudred
-Level: 36
+Exploud
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Magneton
-Level: 36
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4608,18 +4608,18 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
-Level: 40
+Magnezone
+Level: 52
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Exploud
-Level: 40
+Level: 52
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Magneton
-Level: 40
+Magnezone
+Level: 52
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4758,13 +4758,13 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Carkol
-Level: 29
+Coalossal
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Pelipper
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4777,13 +4777,13 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Carkol
-Level: 32
+Coalossal
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Pelipper
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4797,12 +4797,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Coalossal
-Level: 35
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Pelipper
-Level: 35
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -5010,14 +5010,14 @@ Double Battle: No
 AI: Check Bad Move
 
 Linoone
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Surf
 - Slash
 
 Noctowl
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -5031,17 +5031,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Excadrill
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Noctowl
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Linoone
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Surf
@@ -5057,21 +5057,22 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 35
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Excadrill
-Level: 35
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Linoone
-Level: 35
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-- Surf
+- Belly Drum
 - Slash
+- Extreme Speed
 
 === TRAINER_BRENT ===
 Name: BRENT
@@ -5506,12 +5507,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Gardevoir
-Level: 41
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Solrock
-Level: 41
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -5525,17 +5526,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Solrock
-Level: 45
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Gardevoir
-Level: 45
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Lunatone
-Level: 45
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -5686,12 +5687,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Gothorita
-Level: 37
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Lunatone
-Level: 37
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -5704,13 +5705,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Gothorita
-Level: 40
+Gothitelle
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Lunatone
-Level: 40
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -5724,17 +5725,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Lunatone
-Level: 43
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Gothitelle
-Level: 43
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Solrock
-Level: 43
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -5809,7 +5810,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Linoone
-Level: 42
+Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Headbutt
@@ -5818,7 +5819,7 @@ EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Fury Swipes
 
 Manectric
-Level: 42
+Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Extreme Speed
@@ -5834,7 +5835,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Linoone
-Level: 45
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Headbutt
@@ -5843,7 +5844,7 @@ EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Fury Swipes
 
 Manectric
-Level: 45
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Extreme Speed
@@ -5859,7 +5860,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Linoone
-Level: 48
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Headbutt
@@ -5868,12 +5869,12 @@ EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Fury Swipes
 
 Jellicent
-Level: 48
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Manectric
-Level: 48
+Level: 51
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 126 Atk / 64 SpA / 64 Def / 64 SpD
@@ -6665,12 +6666,12 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_VIVILLON_MEADOW
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Gothita @ Eviolite
-Level: 29
+Gothorita @ Eviolite
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -6684,11 +6685,11 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_VIVILLON_MEADOW
-Level: 32
+Level: 42
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-Gothorita @ Eviolite
-Level: 32
+Gothitelle
+Level: 42
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JERRY_5 ===
@@ -6701,15 +6702,15 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_VIVILLON_MEADOW
-Level: 36
+Level: 50
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
 Banette
-Level: 36
+Level: 50
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
 Gothitelle
-Level: 36
+Level: 50
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_KAREN_1 ===
@@ -6773,12 +6774,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Wormadam (F)
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Loudred @ Eviolite
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -6792,12 +6793,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Wormadam (F)
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Loudred @ Eviolite
-Level: 32
+Exploud @ Eviolite
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -6811,11 +6812,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Wormadam (F)
-Level: 36
+Level: 50
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
 Exploud
-Level: 36
+Level: 50
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
 === TRAINER_KATE_AND_JOY ===
@@ -6905,7 +6906,7 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Linoone
-Level: 31
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Pin Missile
@@ -6914,7 +6915,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Night Slash
 
 Mienfoo
-Level: 33
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Aerial Ace
@@ -6932,7 +6933,7 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Linoone
-Level: 34
+Level: 44
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Pin Missile
 - Growl
@@ -6940,7 +6941,7 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Night Slash
 
 Mienfoo
-Level: 36
+Level: 46
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Aerial Ace
 - Focus Energy
@@ -6957,7 +6958,7 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Linoone
-Level: 36
+Level: 52
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Pin Missile
 - Growl
@@ -6965,7 +6966,7 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Night Slash
 
 Mienshao
-Level: 38
+Level: 54
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Aerial Ace
 - Thunder Punch
@@ -7062,7 +7063,7 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Phanpy @ Oran Berry
+Donphan @ Oran Berry
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
@@ -7077,7 +7078,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Donphan @ Oran Berry
-Level: 33
+Level: 37
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -7091,7 +7092,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Donphan @ Oran Berry
-Level: 37
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -7105,7 +7106,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Donphan @ Sitrus Berry
-Level: 41
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -7219,12 +7220,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Espeon @ Oran Berry
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Umbreon @ Oran Berry
-Level: 29
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -7238,12 +7239,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Espeon @ Oran Berry
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Umbreon @ Oran Berry
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -7257,12 +7258,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Espeon @ Sitrus Berry
-Level: 35
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Umbreon @ Sitrus Berry
-Level: 35
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -7303,7 +7304,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Machamp
-Level: 36
+Level: 40
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 === TRAINER_TIMOTHY_4 ===
@@ -7316,7 +7317,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Machamp
-Level: 39
+Level: 46
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 
 === TRAINER_TIMOTHY_5 ===
@@ -7329,7 +7330,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Machamp
-Level: 42
+Level: 52
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 === TRAINER_VICKY ===
@@ -7421,7 +7422,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Lucario
-Level: 32
+Level: 36
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Meteor Mash
 - Force Palm
@@ -7429,7 +7430,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Detect
 
 Machoke
-Level: 32
+Level: 36
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 === TRAINER_SHELBY_4 ===
@@ -7442,7 +7443,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Lucario
-Level: 36
+Level: 44
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - Meteor Mash
 - Force Palm
@@ -7450,7 +7451,7 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - Detect
 
 Machamp
-Level: 36
+Level: 44
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 
 === TRAINER_SHELBY_5 ===
@@ -7463,7 +7464,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Lucario
-Level: 40
+Level: 52
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - Meteor Mash
 - Force Palm
@@ -7471,11 +7472,11 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - Detect
 
 Mienshao
-Level: 40
+Level: 52
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 Machamp
-Level: 40
+Level: 52
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 === TRAINER_CALVIN_1 ===
@@ -7690,12 +7691,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 28
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 30
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -7709,17 +7710,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 31
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Linoone
-Level: 29
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 33
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -7733,17 +7734,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Noctowl
-Level: 34
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Linoone
-Level: 32
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 36
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8122,22 +8123,22 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_BASCULIN_WHITE_STRIPED
-Level: 29
+Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Carvanha
-Level: 26
+Sharpedo
+Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-SPECIES_QWILFISH_HISUI
-Level: 26
+Overqwil
+Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 SPECIES_BASCULIN_WHITE_STRIPED
-Level: 29
+Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8150,23 +8151,23 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_BASCULIN_WHITE_STRIPED
-Level: 31
+Basculegion (M)
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Sharpedo
-Level: 30
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Overqwil
-Level: 30
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Basculegion (F)
-Level: 31
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8180,22 +8181,22 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint
 
 Basculegion (M)
-Level: 33
+Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Sharpedo
-Level: 33
+Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Basculegion (F)
-Level: 33
+Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Overqwil
-Level: 35
+Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8298,7 +8299,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Magneton
-Level: 34
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8312,7 +8313,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Magneton
-Level: 38
+Level: 46
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8326,7 +8327,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Magnezone
-Level: 42
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -8389,7 +8390,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Magneton
-Level: 34
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8403,7 +8404,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Magneton
-Level: 38
+Level: 46
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8417,7 +8418,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Magnezone
-Level: 42
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -8459,7 +8460,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Honchkrow
-Level: 32
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8473,7 +8474,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Honchkrow
-Level: 36
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8487,7 +8488,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Honchkrow
-Level: 40
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -8529,7 +8530,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Honchkrow
-Level: 32
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8543,7 +8544,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Honchkrow
-Level: 36
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8557,7 +8558,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Honchkrow
-Level: 40
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -8677,7 +8678,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Shellder
+Cloyster
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
@@ -8702,45 +8703,21 @@ Double Battle: No
 AI: Check Bad Move
 
 Cloyster
-Level: 42
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Skrelp
-Level: 42
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Sharpedo
-Level: 42
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 === TRAINER_ISAIAH_4 ===
-Name: ISAIAH
-Class: Triathlete
-Pic: Swimming Triathlete M
-Gender: Male
-Music: Swimmer
-Double Battle: No
-AI: Check Bad Move
-
-Cloyster
-Level: 45
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-
-Skrelp
-Level: 45
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-
-Sharpedo
-Level: 45
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-
-=== TRAINER_ISAIAH_5 ===
 Name: ISAIAH
 Class: Triathlete
 Pic: Swimming Triathlete M
@@ -8761,6 +8738,30 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Sharpedo
 Level: 48
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+
+=== TRAINER_ISAIAH_5 ===
+Name: ISAIAH
+Class: Triathlete
+Pic: Swimming Triathlete M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Check Bad Move
+
+Cloyster
+Level: 52
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+
+Dragalge
+Level: 52
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+
+Sharpedo
+Level: 52
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8868,12 +8869,12 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Shellder
+Cloyster
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-SPECIES_BASCULIN_WHITE_STRIPED
+Basculegion (F)
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
@@ -8893,17 +8894,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Cloyster
-Level: 42
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Basculegion (F)
-Level: 42
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
-Level: 42
+Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -8917,17 +8918,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Cloyster
-Level: 45
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Basculegion (F)
-Level: 45
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
-Level: 45
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -8941,17 +8942,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Cloyster
-Level: 48
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Basculegion (F)
-Level: 48
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
-Level: 48
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -9344,12 +9345,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Honchkrow
-Level: 35
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Altaria
-Level: 35
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9363,12 +9364,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Honchkrow
-Level: 38
+Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Altaria
-Level: 38
+Level: 48
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -9382,17 +9383,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Altaria
-Level: 41
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Honchkrow
-Level: 41
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Skarmory
-Level: 41
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -9586,39 +9587,6 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-SPECIES_ZORUA_HISUI
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-
-Skorupi
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-
-Croagunk
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-
-Joltik
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-
-Yamask
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-
-=== TRAINER_LAO_4 ===
-Name: LAO
-Class: Ninja Boy
-Pic: Ninja Boy
-Gender: Male
-Music: Suspicious
-Double Battle: No
-
 SPECIES_ZOROARK_HISUI
 Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
@@ -9644,6 +9612,39 @@ Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
+=== TRAINER_LAO_4 ===
+Name: LAO
+Class: Ninja Boy
+Pic: Ninja Boy
+Gender: Male
+Music: Suspicious
+Double Battle: No
+
+SPECIES_ZOROARK_HISUI
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+
+Drapion
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+
+Toxicroak
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+
+Galvantula
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+
+Cofagrigus
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
+
 === TRAINER_LAO_5 ===
 Name: LAO
 Class: Ninja Boy
@@ -9653,27 +9654,27 @@ Music: Suspicious
 Double Battle: No
 
 SPECIES_ZOROARK_HISUI
-Level: 37
+Level: 49
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Drapion
-Level: 37
+Level: 49
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Toxicroak
-Level: 37
+Level: 49
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Galvantula
-Level: 37
+Level: 49
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Cofagrigus @ Smoke Ball
-Level: 39
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -9797,15 +9798,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Mienfoo
-Level: 29
+Level: 34
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 - Drain Punch
 - Aerial Ace
 - Bulk Up
 - Fake Out
 
-Croagunk
-Level: 29
+Toxicroak
+Level: 34
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_CYNDY_4 ===
@@ -9818,15 +9819,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Mienfoo
-Level: 32
+Level: 42
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Croagunk
-Level: 32
+Toxicroak
+Level: 42
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Petilil
-Level: 32
+SPECIES_LILLIGANT_HISUI
+Level: 42
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_CYNDY_5 ===
@@ -9839,15 +9840,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Mienshao
-Level: 35
+Level: 50
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 Toxicroak
-Level: 35
+Level: 50
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 SPECIES_LILLIGANT_HISUI
-Level: 35
+Level: 50
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 - Petal Blizzard
 - Victory Dance
@@ -9940,8 +9941,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 32
+Camerupt
+Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Ember
@@ -9959,7 +9960,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Roserade
-Level: 34
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Leech Seed
@@ -9968,7 +9969,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Sunny Day
 
 Camerupt
-Level: 34
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Flamethrower
@@ -9986,7 +9987,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Roserade
-Level: 37
+Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Leech Seed
@@ -9995,7 +9996,7 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Sunny Day
 
 Camerupt
-Level: 37
+Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Flamethrower
@@ -10461,7 +10462,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Shellder
+Cloyster
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10479,12 +10480,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Cloyster
-Level: 41
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
-Level: 41
+Level: 42
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -10498,12 +10499,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Cloyster
-Level: 43
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Wailord
-Level: 43
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -10524,13 +10525,13 @@ EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 - Ice Beam
 - Draining Kiss
 
-Wailmer
-Level: 45
+Wailord
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Cloyster
-Level: 45
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -10740,18 +10741,18 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Petilil
-Level: 28
+SPECIES_LILLIGANT_HISUI
+Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Cottonee
-Level: 28
+Whimsicott
+Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Swablu
-Level: 28
+Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -10764,13 +10765,13 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Petilil
-Level: 31
+SPECIES_LILLIGANT_HISUI
+Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Whimsicott
-Level: 31
+Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Moonblast
@@ -10778,13 +10779,13 @@ EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 - Growth
 - Cotton Guard
 
-Swablu
-Level: 31
+Altaria
+Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Eevee
-Level: 31
+Leafeon
+Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -10798,7 +10799,7 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_LILLIGANT_HISUI
-Level: 40
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Petal Blizzard
@@ -10806,7 +10807,7 @@ EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Brick Break
 
 Whimsicott
-Level: 40
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Moonblast
@@ -10815,12 +10816,12 @@ EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Cotton Guard
 
 Altaria
-Level: 40
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Leafeon
-Level: 40
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -10907,12 +10908,12 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Houndoom
-Level: 31
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 31
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -10947,12 +10948,12 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Houndoom
-Level: 35
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 35
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -10966,22 +10967,22 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Houndoom
-Level: 39
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 39
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Ponyta
-Level: 39
+Rapidash
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Zebstrika
-Level: 39
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -10995,27 +10996,22 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Houndoom
-Level: 43
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 43
-Ability: Strong Jaw
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
-- Crunch
-- Fire Fang
-- Thunder Fang
-- Ice Fang
 
 Rapidash
-Level: 43
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Zebstrika
-Level: 43
+Level: 51
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -11170,7 +11166,7 @@ Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Machoke
+Machamp
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
@@ -11185,17 +11181,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 42
+Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Overqwil
-Level: 42
+Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
-Level: 42
+Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -11209,17 +11205,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 45
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Overqwil
-Level: 45
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
-Level: 45
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -11233,17 +11229,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 48
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Machamp
-Level: 48
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Overqwil
-Level: 48
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -11571,17 +11567,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Chimecho
-Level: 30
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Glaceon
-Level: 30
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Breloom
-Level: 30
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -11595,17 +11591,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Chimecho
-Level: 34
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Glaceon
-Level: 34
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Breloom
-Level: 34
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -11619,17 +11615,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Chimecho
-Level: 38
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Glaceon
-Level: 38
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Breloom
-Level: 38
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -12893,33 +12889,33 @@ Double Battle: No
 AI: Check Bad Move
 
 Loudred
-Level: 22
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Linoone
-Level: 22
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Aron
-Level: 22
+Level: 26
 Ability: Rock Head
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 22
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Noctowl
-Level: 22
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Machop
-Level: 22
+Machoke
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -12933,33 +12929,33 @@ Double Battle: No
 AI: Check Bad Move
 
 Loudred
-Level: 27
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Linoone
-Level: 27
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Aron
-Level: 27
+Lairon
+Level: 34
 Ability: Rock Head
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 27
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Noctowl
-Level: 27
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Machop
-Level: 27
+Machoke
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -12972,34 +12968,34 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Loudred
-Level: 32
+Exploud
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Linoone
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Lairon
-Level: 32
+Aggron
+Level: 42
 Ability: Rock Head
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Noctowl
-Level: 32
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Machoke
-Level: 32
+Machamp
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -13012,34 +13008,34 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Loudred
-Level: 37
+Exploud
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Linoone
-Level: 37
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Lairon
-Level: 37
+Aggron
+Level: 50
 Ability: Rock Head
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Mightyena
-Level: 37
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Noctowl
-Level: 37
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Machamp
-Level: 37
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
