@@ -226,7 +226,7 @@ Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
-SPECIES_BASCULIN_WHITE_STRIPED
+Basculegion
 Level: 44
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
@@ -827,20 +827,20 @@ EVs: 252 HP / 126 Spe / 126 SpA
 - Scald
 - Ice Beam
 
-Basculegion (F)
+Basculegion (F) @ Wide Lens
 Modest Nature
 Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD
 - Muddy Water
 - Shadow Ball
-- Mud Shot
+- Blizzard
 
 Mightyena
 Modest Nature
 Level: 54
-IVs: 24 HP / 24 Atk / 24 Def / 31 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 SpA / 252 Spe
+IVs: 24 HP / 24 Atk / 31 Def / 31 SpA / 31 SpD / 24 Spe
+EVs: 252 HP / 252 SpA / 252 Spe / 80 Def / 80 SpD
 - Dark Pulse
 - Shadow Ball
 - Hyper Voice
@@ -852,7 +852,7 @@ Class: Aqua Leader
 Pic: Aqua Leader Archie
 Gender: Male
 Music: Aqua
-Items: Hyper Potion / Hyper Potion
+Items: Max Potion / Max Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -975,12 +975,12 @@ Double Battle: No
 AI: Basic Trainer
 
 Grapploct
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Gliscor
-Level: 49
+Level: 52
 IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 0 Spe
 EVs: 252 HP / 180 Def / 180 SpD
 - Earthquake
@@ -989,7 +989,7 @@ EVs: 252 HP / 180 Def / 180 SpD
 - Ice Fang
 
 Cacturne
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -2107,7 +2107,7 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Magneton
+Magnezone
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
@@ -2128,19 +2128,29 @@ Double Battle: No
 AI: Basic Trainer
 
 Honchkrow
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Night Slash
+- Aerial Ace
+- Fly
 
 Mawile
-Level: 51
+Level: 52
+Ability: Sheer Force
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Iron Head
+- Play Rough
+- Crunch
 
 Reuniclus
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Psychic
+- Flash Cannon
+- Energy Ball
 
 === TRAINER_VITO ===
 Name: VITO
@@ -2153,22 +2163,22 @@ Double Battle: No
 AI: Basic Trainer
 
 Noctowl
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Musharna
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Jolteon
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Leavanny
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP
 
@@ -2183,19 +2193,29 @@ Double Battle: No
 AI: Basic Trainer
 
 Kecleon
-Level: 51
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+EVs: 252 HP / 100 Atk / 100 SpA / 180 Def / 180 SpD
+- Iron Head
+- Zen Headbutt
+- Flamethrower
+- Slash
 
 Gigalith
-Level: 51
+Level: 52
+Ability: Sand Stream
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Stone Edge
+- Earthquake
 
 Wailord
-Level: 49
+Level: 52
+Ability: Reckless
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Wave Crash
+- Double Edge
 
 === TRAINER_WILTON_2 ===
 Name: WILTON
@@ -2499,7 +2519,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Roserade
-Level: 52
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -2517,6 +2537,8 @@ Claydol
 Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Earthquake
+- Zen Headbutt
 
 === TRAINER_MICHELLE ===
 Name: MICHELLE
@@ -2529,22 +2551,22 @@ Double Battle: No
 AI: Basic Trainer
 
 Torkoal
-Level: 50
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Toxicroak
-Level: 50
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Jumpluff
-Level: 50
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Donphan
-Level: 50
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -2559,12 +2581,12 @@ Double Battle: No
 AI: Basic Trainer
 
 Skarmory
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
 Sableye
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 
@@ -2579,19 +2601,29 @@ Double Battle: No
 AI: Basic Trainer
 
 Excadrill
-Level: 49
+Level: 52
+Nature: Impish
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 252 Def / 100 SpD
+- Dig
+- Iron Head
+- Slash
 
 SPECIES_ZOROARK_HISUI
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Bitter Malice
+- Hyper Voice
+- Flamethrower
 
 Tropius
-Level: 49
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+Level: 52
+IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
+EVs: 252 HP / 100 Atk / 100 SpA / 126 Def / 126 SpD
+- Sunny Day
+- Solar Beam
+- Fly
 
 === TRAINER_BROOKE_2 ===
 Name: BROOKE
@@ -4505,17 +4537,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Magnemite
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Whismur
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Magnemite
-Level: 25
+Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4528,18 +4560,18 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 28
+Magneton
+Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Loudred
-Level: 28
+Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Magnemite
-Level: 28
+Magneton
+Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4553,17 +4585,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Magneton
-Level: 31
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Loudred
-Level: 31
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Magneton
-Level: 31
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -4577,17 +4609,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Magneton
-Level: 34
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
 Exploud
-Level: 34
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
-Magnezone
-Level: 34
+Magneton
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
 
@@ -8278,7 +8310,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnezone
+Magneton
 Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
@@ -8369,7 +8401,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnezone
+Magneton
 Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 126 HP / 64 Atk / 64 SpA / 64 Def / 64 SpD
@@ -9450,14 +9482,14 @@ Items: Full Restore
 Double Battle: No
 
 Claydol
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Skill Swap
 - Earthquake
 
 Lanturn
-Level: 49
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 - Thunderbolt
@@ -11655,7 +11687,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
 - Aerial Ace
 - Safeguard
-- Dragon Pulse
+- Dragon Claw
 - Dragon Dance
 
 Ursaluna @ Chesto Berry
@@ -12836,18 +12868,18 @@ Double Battle: No
 AI: Basic Trainer
 
 Lunatone
-Level: 50
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 SpA / 252 Spe
+EVs: 126 HP / 252 Def / 252 SpD / 252 SpA
 - Explosion
 - Reflect
 - Light Screen
 - Psychic
 
 Solrock
-Level: 50
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 252 Atk / 252 Spe
+EVs: 126 HP / 252 Def / 252 SpD / 252 Atk
 - Explosion
 - Reflect
 - Light Screen
@@ -13060,15 +13092,19 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Sableye
-Level: 51
+Heracross
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP
+EVs: 252 HP / 80 Def / 80 SpD
 
 Absol
-Level: 51
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP
+EVs: 252 HP / 80 Def / 80 SpD
+- Swords Dance
+- Night Slash
+- Slash
+- Psycho Cut
 
 === TRAINER_GARRISON ===
 Name: GARRISON
@@ -13594,8 +13630,8 @@ EVs: 126 HP / 100 Atk / 100 SpA / 64 Def / 64 SpD
 
 Dragalge
 Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 252 HP / 126 Atk / 126 SpA
+IVs: 24 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
+EVs: 252 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
 
 === TRAINER_GRUNT_MT_PYRE_4 ===
 Name: GRUNT
