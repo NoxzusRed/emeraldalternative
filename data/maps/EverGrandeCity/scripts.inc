@@ -1,6 +1,5 @@
 EverGrandeCity_MapScripts::
     map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_OnTransition
-    map_script MAP_SCRIPT_ON_LOAD, EverGrandeCity_OnLoad
     map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EverGrandeCity_OnWarp
     map_script MAP_SCRIPT_ON_FRAME_TABLE, EverGrandeCity_OnFrame
     .byte 0
@@ -26,22 +25,6 @@ EverGrandeCity_OnTransition:
     call_if_eq VAR_EVER_GRANDE_CITY_STATE, 1, EverGrandeCity_EventScript_ArenaWallaceAtRed
 
 EverGrandeCity_OnTransition_End:
-    end
-
-@ The northern and southern parts of Ever Grande are separated by Victory Road.
-@ The northern area ends at y=31. Also recognize existing saves that reached the League.
-EverGrandeCity_OnLoad:
-    goto_if_set FLAG_EVER_GRANDE_VICTORY_ROAD_CROSSED, EverGrandeCity_OnLoad_End
-    goto_if_set FLAG_LANDMARK_POKEMON_LEAGUE, EverGrandeCity_OnLoad_UnlockLeagueTravel
-    goto_if_set FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE, EverGrandeCity_OnLoad_UnlockLeagueTravel
-    goto_if_set FLAG_DEFEATED_METEOR_FALLS_STEVEN, EverGrandeCity_OnLoad_UnlockLeagueTravel
-    getplayerxy VAR_TEMP_2, VAR_TEMP_3
-    goto_if_le VAR_TEMP_3, 31, EverGrandeCity_OnLoad_UnlockLeagueTravel
-EverGrandeCity_OnLoad_End:
-    end
-
-EverGrandeCity_OnLoad_UnlockLeagueTravel:
-    setflag FLAG_EVER_GRANDE_VICTORY_ROAD_CROSSED
     end
 
 EverGrandeCity_OnWarp:
@@ -438,39 +421,9 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 	end
 
 EverGrandeCity_EventScript_Flygon::
-    @ The Expert offers the trip until his existing hide flag is set.
-    goto_if_unset FLAG_DEFEATED_METEOR_FALLS_STEVEN, EverGrandeCity_EventScript_FlygonCry
-    goto_if_unset FLAG_EVER_GRANDE_VICTORY_ROAD_CROSSED, EverGrandeCity_EventScript_FlygonCry
-    lock
-    faceplayer
-    playmoncry SPECIES_FLYGON, CRY_MODE_NORMAL
-    msgbox EverGrandeCity_Text_Flygon, MSGBOX_DEFAULT
-    msgbox EverGrandeCity_Text_FlygonTravel, MSGBOX_YESNO
-    goto_if_ne VAR_RESULT, YES, EverGrandeCity_EventScript_TravelDecline
-    goto EverGrandeCity_EventScript_FlyToLeague
-
-EverGrandeCity_EventScript_FlygonCry::
-    playmoncry SPECIES_FLYGON, CRY_MODE_NORMAL
-    msgbox EverGrandeCity_Text_Flygon, MSGBOX_SIGN
-    end
-
-EverGrandeCity_EventScript_Salamence::
-    playmoncry SPECIES_SALAMENCE, CRY_MODE_NORMAL
-    msgbox EverGrandeCity_Text_Salamence, MSGBOX_SIGN
-    end
-
-EverGrandeCity_EventScript_DragonTamer::
-    lock
-    faceplayer
-    msgbox EverGrandeCity_Text_DragonTamerTravel, MSGBOX_YESNO
-    goto_if_ne VAR_RESULT, YES, EverGrandeCity_EventScript_TravelDecline
-    closemessage
-    playmoncry SPECIES_SALAMENCE, CRY_MODE_NORMAL
-    waitmoncry
-    warp MAP_EVER_GRANDE_CITY, 27, 49
-    waitstate
-    release
-    end
+	playmoncry SPECIES_FLYGON, CRY_MODE_NORMAL
+	msgbox EverGrandeCity_Text_Flygon, MSGBOX_SIGN
+	end
 
 EverGrandeCity_EventScript_Zebstrika::
 	playmoncry SPECIES_ZEBSTRIKA, CRY_MODE_NORMAL
@@ -492,39 +445,8 @@ EverGrandeCity_EventScript_CoolTrainerF::
 	end
 
 EverGrandeCity_EventScript_Expert::
-    goto_if_unset FLAG_EVER_GRANDE_VICTORY_ROAD_CROSSED, EverGrandeCity_EventScript_ExpertOriginal
-    lock
-    faceplayer
-    msgbox EverGrandeCity_Text_ExpertTravel, MSGBOX_YESNO
-    goto_if_ne VAR_RESULT, YES, EverGrandeCity_EventScript_TravelDecline
-    closemessage
-    playmoncry SPECIES_FLYGON, CRY_MODE_NORMAL
-    waitmoncry
-    goto EverGrandeCity_EventScript_FlyToLeague
-
-EverGrandeCity_EventScript_ExpertOriginal::
-    msgbox EverGrandeCity_Text_Expert, MSGBOX_NPC
-    end
-
-EverGrandeCity_EventScript_TravelDecline::
-    closemessage
-    release
-    end
-
-EverGrandeCity_EventScript_FlyToLeague::
-    closemessage
-    @ Preserve Cynthia's first encounter: land south of her trigger row until it is done.
-    goto_if_unset FLAG_EVER_GRANDE_CYNTHIA_SCENE_DONE, EverGrandeCity_EventScript_FlyToLeagueBeforeCynthia
-    warp MAP_EVER_GRANDE_CITY, 18, 6
-    waitstate
-    release
-    end
-
-EverGrandeCity_EventScript_FlyToLeagueBeforeCynthia::
-    warp MAP_EVER_GRANDE_CITY, 18, 9
-    waitstate
-    release
-    end
+	msgbox EverGrandeCity_Text_Expert, MSGBOX_NPC
+	end
 
 EverGrandeCity_EventScript_Scientist::
 	msgbox EverGrandeCity_Text_Scientist, MSGBOX_NPC
@@ -815,23 +737,6 @@ EverGrandeCity_Text_Zebstrika:
 
 EverGrandeCity_Text_Flygon:
 	.string "Kryyy-rrrr...$"
-
-EverGrandeCity_Text_Salamence:
-    .string "Graaaah!$"
-
-EverGrandeCity_Text_DragonTamerTravel:
-    .string "Need to heal your POKéMON?\p"
-    .string "Want SALAMENCE to fly you back\n"
-    .string "to the POKéMON CENTER?$"
-
-EverGrandeCity_Text_ExpertTravel:
-    .string "My FLYGON knows the way to the\n"
-    .string "POKéMON LEAGUE.\p"
-    .string "Would you like a lift?$"
-
-EverGrandeCity_Text_FlygonTravel:
-    .string "Ride FLYGON to the POKéMON\n"
-    .string "LEAGUE?$"
 
 EverGrandeCity_Text_Cynthia:
     .string "Oh? A Trainer...\p"
