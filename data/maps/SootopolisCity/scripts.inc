@@ -25,6 +25,7 @@ SootopolisCity_EventScript_LockHouseDoors::
 	setmetatile 45, 6, METATILE_Sootopolis_Door_Closed, TRUE
 	setmetatile 48, 25, METATILE_Sootopolis_Door_Closed, TRUE
 	setmetatile 51, 36, METATILE_Sootopolis_Door_Closed, TRUE
+	setmetatile 28, 4, METATILE_Sootopolis_Door_Closed, TRUE
 	return
 
 SootopolisCity_EventScript_LockGymDoor::
