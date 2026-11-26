@@ -21845,8 +21845,8 @@ Level: 50
 Litwick
 Level: 50
 
-=== TRAINER_RANGER_ROUTE127_CAVE_2 ===
-Name: MATEO
+=== TRAINER_CARLOS ===
+Name: CARLOS
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
 Gender: Male
@@ -21855,16 +21855,34 @@ Double Battle: No
 AI: Check Bad Move
 
 Manectric
-Level: 36
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 44
+Nature: Bold
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
+EVs: 126 HP / 126 SpA / 126 Spe
+- Thunderbolt
+- Dazzling Gleam
+- Flash Cannon
 
-Exploud
-Level: 38
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Hyper Voice
-- Bite
+Gliscor @ Toxic Orb
+Level: 44
+Nature: Impish
+Ability: Poison Heal
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 31 SpD / 24 Spe
+EVs: 126 HP / 126 Def / 126 SpD
+- Earthquake
+- Aerial Ace
+- Ice Fang
 
-=== TRAINER_AROMA_LADY_ROUTE127_CAVE_2 ===
+Rapidash
+Level: 46
+IVs: 31 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 Def / 126 SpD / 126 Atk
+- Stomping Tantrum
+- Flare Blitz
+- Stomp
+
+=== TRAINER_LILIA ===
 Name: LILIA
 Class: Aroma Lady
 Pic: Aroma Lady
@@ -21873,18 +21891,33 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Roserade
-Level: 36
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Florges
+Level: 44
+Ability: Natural Cure
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Spe
+- Moonblast
+- Energy Ball
+
+Ampharos
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD
+- Dragon Pulse
+- Thunderbolt
+- Dazzling Gleam
 
 Altaria
-Level: 38
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 46
+Ability: Pixilate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 80 SpA
 - Hyper Voice
 - Dragon Pulse
+- Cotton Guard
 
-=== TRAINER_DRAGON_TAMER_ROUTE127_CAVE_2 ===
-Name: MATEUS
+=== TRAINER_ORNSTEIN ===
+Name: ORNSTEIN
 Class: Dragon Tamer
 Pic: Dragon Tamer
 Gender: Male
@@ -21892,19 +21925,29 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Flygon
-Level: 40
+Dragonite
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 126 HP / 126 Spe / 126 Def / 126 SpD
+- Dragon Claw
+- Earthquake
+- Aerial Ace
+- Dragon Dance
 
-Altaria
-Level: 40
+Dragalge
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 126 Def / 126 SpD / 126 Spe
 - Hyper Voice
 - Dragon Pulse
+- Scald
 
-Noivern
-Level: 42
+Haxorus
+Level: 48
+Ability: Rilvary
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Hyper Voice
-- Air Slash
-- Dragon Pulse
+EVs: 252 HP / 126 Atk / 80 Def / 80 SpD
+- Outrage
+- Swords Dance
+- Shadow Claw
+- Iron Head

@@ -49,33 +49,30 @@ Route127_Cave_2_Text_RangerDefeat:
 	.string "What a powerful Trainer!$"
 
 Route127_Cave_2_Text_RangerAfter:
-	.string "The Dragon Tamer is waiting for\n"
-	.string "someone who can beat us both.$"
+	.string "You did great!$"
 
 Route127_Cave_2_Text_AromaIntro:
-	.string "Listen closely to the echoes here.\p"
+	.string "Listen closely to the echoes here.\n"
 	.string "Can your POKéMON match mine?$"
 
 Route127_Cave_2_Text_AromaDefeat:
 	.string "Your strength resonates!$"
 
 Route127_Cave_2_Text_AromaAfter:
-	.string "Defeat the Ranger, too, and you can\n"
-	.string "challenge our Dragon Tamer.$"
+	.string "Such a great smell your Pokémon have!$"
 
 Route127_Cave_2_Text_NotReady:
-	.string "Defeat the Ranger and the Aroma Lady\n"
-	.string "before you challenge me.$"
+	.string "You are not worthy.$"
 
 Route127_Cave_2_Text_DragonIntro:
-	.string "You've defeated both my companions!\p"
+	.string "You've defeated both my companions!\n"
 	.string "Now hear the roar of my dragons!$"
 
 Route127_Cave_2_Text_DragonDefeat:
 	.string "Even my dragons fell silent!$"
 
 Route127_Cave_2_Text_Reward:
-	.string "Your strength deserves a reward.\p"
+	.string "Your strength deserves a reward.\n"
 	.string "Take this TM. It contains HYPER VOICE!$"
 
 Route127_Cave_2_Text_DragonAfter:
