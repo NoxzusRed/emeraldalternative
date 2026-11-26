@@ -12,7 +12,7 @@ PetalburgCity_OnTransition:
 	end
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
-	setobjectxyperm LOCALID_GYM_BOY, 5, 11
+	setobjectxyperm LOCALID_GYM_BOY, 13, 11
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
@@ -232,6 +232,10 @@ PetalburgCity_EventScript_Gentleman::
 
 PetalburgCity_EventScript_WallyHouseSign::
 	msgbox PetalburgCity_Text_WallyHouseSign, MSGBOX_SIGN
+	end
+
+PetalburgCity_EventScript_VarietyShopSign::
+	msgbox PetalburgCity_Text_VarietyShopSign, MSGBOX_SIGN
 	end
 
 PetalburgCity_EventScript_ShowGymToPlayer0::
@@ -500,7 +504,7 @@ PetalburgCity_EventScript_Scott0::
 	lockall
 	addobject LOCALID_PETALBURG_SCOTT
 	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 10
+	setobjectxy LOCALID_PETALBURG_SCOTT, 21, 10
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -508,7 +512,7 @@ PetalburgCity_EventScript_Scott1::
 	lockall
 	addobject LOCALID_PETALBURG_SCOTT
 	setvar VAR_0x8008, 1
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 11
+	setobjectxy LOCALID_PETALBURG_SCOTT, 21, 11
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -516,7 +520,7 @@ PetalburgCity_EventScript_Scott2::
 	lockall
 	addobject LOCALID_PETALBURG_SCOTT
 	setvar VAR_0x8008, 2
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 12
+	setobjectxy LOCALID_PETALBURG_SCOTT, 21, 12
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -524,7 +528,7 @@ PetalburgCity_EventScript_Scott3::
 	lockall
 	addobject LOCALID_PETALBURG_SCOTT
 	setvar VAR_0x8008, 3
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 13
+	setobjectxy LOCALID_PETALBURG_SCOTT, 21, 13
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -717,9 +721,12 @@ PetalburgCity_Clerk:
 	.2byte ITEM_SCOPE_LENS
 	pokemartlistend
 
-PetalburgCity_EventScript_Vaporeon::
-	playmoncry SPECIES_VAPOREON, CRY_MODE_NORMAL
-	msgbox PetalburgCity_Text_VaPurr, MSGBOX_SIGN
+PetalburgCity_EventScript_Sylveon::
+	lock
+	playmoncry SPECIES_SYLVEON, CRY_MODE_NORMAL
+	msgbox PetalburgCity_Text_Piiriii, MSGBOX_DEFAULT
+	waitmoncry
+	release
 	end
 
 PetalburgCity_EventScript_Zigzagoon::
@@ -755,8 +762,8 @@ PetalburgCity_Text_Hoppip:
 PetalburgCity_Text_Zigzagoon:
 	.string "Zig-zag!$"
 
-PetalburgCity_Text_VaPurr:
-	.string "Vaa-purr!$"
+PetalburgCity_Text_Piiriii:
+	.string "Pii-riii!$"
 
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
@@ -802,6 +809,9 @@ PetalburgCity_Text_CitySign:
 
 PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"
+
+PetalburgCity_Text_VarietyShopSign:
+	.string "VARIETY SHOP$"
 
 PetalburgCity_Text_AreYouATrainer:
 	.string "Excuse me!\p"
