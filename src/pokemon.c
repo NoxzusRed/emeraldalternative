@@ -5947,33 +5947,6 @@ u16 GetBattleBGM(void)
     {
         u8 trainerClass;
 
-        // PWT test battles on Mt. Chimney North use their Champions' own
-        // battle music, independently of the general Champion theme.
-        // Diantha currently has no imported custom track; use Hoenn Champion.
-        if (TRAINER_BATTLE_PARAM.opponentA >= TRAINER_PWT_TEST_BLUE
-         && TRAINER_BATTLE_PARAM.opponentA <= TRAINER_PWT_TEST_LEON)
-        {
-            switch (TRAINER_BATTLE_PARAM.opponentA)
-            {
-            case TRAINER_PWT_TEST_BLUE:
-            case TRAINER_PWT_TEST_LEON:
-                return MUS_RG_VS_CHAMPION;
-            case TRAINER_PWT_TEST_RED:
-            case TRAINER_PWT_TEST_LANCE:
-                return MUS_VS_RED;
-            case TRAINER_PWT_TEST_STEVEN:
-            case TRAINER_PWT_TEST_WALLACE:
-            case TRAINER_PWT_TEST_DIANTHA:
-                return MUS_VS_CHAMPION;
-            case TRAINER_PWT_TEST_CYNTHIA:
-                return MUS_VS_CYNTHIA;
-            case TRAINER_PWT_TEST_ALDER:
-                return MUS_VS_ALDER;
-            case TRAINER_PWT_TEST_IRIS:
-                return MUS_VS_IRIS;
-            }
-        }
-
         if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
             trainerClass = GetFrontierOpponentClass(TRAINER_BATTLE_PARAM.opponentA);
         else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
