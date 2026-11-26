@@ -1269,3 +1269,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PetalburgCity_House4/scripts.inc"
 
 	.include "data/maps/PetalburgCity_House3/scripts.inc"
+
+	.include "data/maps/PetalburgCity_VarietyShop/scripts.inc"

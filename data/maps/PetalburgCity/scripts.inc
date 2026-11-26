@@ -788,6 +788,14 @@ PetalburgCity_EventScript_Zigzagoon::
 	release
     end
 
+PetalburgCity_EventScript_Spewpa::
+	lock
+	playmoncry SPECIES_SPEWPA, CRY_MODE_NORMAL
+    msgbox PetalburgCity_Text_Spewpa, MSGBOX_DEFAULT
+	waitmoncry
+	release
+    end
+
 PetalburgCity_EventScript_Hoppip::
 	lock
 	playmoncry SPECIES_HOPPIP, CRY_MODE_NORMAL
@@ -803,6 +811,9 @@ PetalburgCity_EventScript_Kangaskhan::
 	waitmoncry
 	release
     end
+
+PetalburgCity_Text_Spewpa:
+	.string "Paaaa!$"
 
 PetalburgCity_Text_Garden:
 	.string "My garden is so overgrown that wild\n"

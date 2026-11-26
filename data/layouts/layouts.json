@@ -4830,6 +4830,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/PetalburgCity_House3/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCity_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CITY_VARIETY_SHOP",
+      "name": "PetalburgCity_VarietyShop_Layout",
+      "width": 7,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/PetalburgCity_VarietyShop/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity_VarietyShop/map.bin"
     }
   ]
 }
