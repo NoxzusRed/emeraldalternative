@@ -306,6 +306,28 @@ const u16 gTilesetPalettes_BattleFrontierOutsideWest[][16] =
     INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_west/palettes/15.gbapal"),
 };
 
+const u32 gTilesetTiles_BattleFrontierOutsideNorth[] = INCBIN_U32("data/tilesets/secondary/battle_frontier_outside_north/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_BattleFrontierOutsideNorth[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/palettes/15.gbapal"),
+};
+
 const u32 gTilesetTiles_BattleFrontierOutsideEast[] = INCBIN_U32("data/tilesets/secondary/battle_frontier_outside_east/tiles.4bpp.lz");
 
 const u16 gTilesetPalettes_BattleFrontierOutsideEast[][16] =

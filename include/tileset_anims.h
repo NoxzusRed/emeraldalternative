@@ -21,6 +21,7 @@ void InitTilesetAnim_EverGrande(void);
 void InitTilesetAnim_Pacifidlog(void);
 void InitTilesetAnim_Sootopolis(void);
 void InitTilesetAnim_BattleFrontierOutsideWest(void);
+void InitTilesetAnim_BattleFrontierOutsideNorth(void);
 void InitTilesetAnim_BattleFrontierOutsideEast(void);
 void InitTilesetAnim_Building(void);
 void InitTilesetAnim_Cave(void);

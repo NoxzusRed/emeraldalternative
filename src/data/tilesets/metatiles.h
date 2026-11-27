@@ -43,6 +43,9 @@ const u16 gMetatileAttributes_Sootopolis[] = INCBIN_U16("data/tilesets/secondary
 const u16 gMetatiles_BattleFrontierOutsideWest[] = INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_west/metatiles.bin");
 const u16 gMetatileAttributes_BattleFrontierOutsideWest[] = INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_west/metatile_attributes.bin");
 
+const u16 gMetatiles_BattleFrontierOutsideNorth[] = INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/metatiles.bin");
+const u16 gMetatileAttributes_BattleFrontierOutsideNorth[] = INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_north/metatile_attributes.bin");
+
 const u16 gMetatiles_BattleFrontierOutsideEast[] = INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_east/metatiles.bin");
 const u16 gMetatileAttributes_BattleFrontierOutsideEast[] = INCBIN_U16("data/tilesets/secondary/battle_frontier_outside_east/metatile_attributes.bin");
 

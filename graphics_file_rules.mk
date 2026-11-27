@@ -58,6 +58,9 @@ $(TILESETGFXDIR)/secondary/sootopolis/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/battle_frontier_outside_west/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 508 -Wnum_tiles
 
+$(TILESETGFXDIR)/secondary/battle_frontier_outside_north/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 508 -Wnum_tiles
+
 $(TILESETGFXDIR)/secondary/battle_frontier_outside_east/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 508 -Wnum_tiles
 

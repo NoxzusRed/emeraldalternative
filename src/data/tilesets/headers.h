@@ -168,6 +168,17 @@ const struct Tileset gTileset_BattleFrontierOutsideWest =
     .callback = InitTilesetAnim_BattleFrontierOutsideWest,
 };
 
+const struct Tileset gTileset_BattleFrontierOutsideNorth =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_BattleFrontierOutsideNorth,
+    .palettes = gTilesetPalettes_BattleFrontierOutsideNorth,
+    .metatiles = gMetatiles_BattleFrontierOutsideNorth,
+    .metatileAttributes = gMetatileAttributes_BattleFrontierOutsideNorth,
+    .callback = InitTilesetAnim_BattleFrontierOutsideNorth,
+};
+
 const struct Tileset gTileset_BattleFrontierOutsideEast =
 {
     .isCompressed = TRUE,

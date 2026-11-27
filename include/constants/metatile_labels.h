@@ -36,6 +36,12 @@
 #define METATILE_BattleFrontierOutsideWest_Door_BattleFactory  0x263
 #define METATILE_BattleFrontierOutsideWest_Door_Sliding        0x396
 
+// gTileset_BattleFrontierOutsideNorth
+#define METATILE_BattleFrontierOutsideNorth_Door                0x3FC
+#define METATILE_BattleFrontierOutsideNorth_Door_BattleDome     0x28A
+#define METATILE_BattleFrontierOutsideNorth_Door_BattleFactory  0x263
+#define METATILE_BattleFrontierOutsideNorth_Door_Sliding        0x396
+
 // gTileset_BattlePalace
 #define METATILE_BattlePalace_Door  0x219
 
