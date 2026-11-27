@@ -116,7 +116,7 @@ LittlerootTown_StartersHouse_EventScript_MudkipPartyFull::
     end
 
 LittlerootTown_StartersHouse_Text_OfferSnivyEgg:
-    .string "SNIVY are such graceful POKéMON!"
+    .string "SNIVY are such graceful POKéMON!\n"
     .string "I've cared for this EGG myself.\p"
     .string "It deserves a thoughtful TRAINER.\n"
     .string "Would you like to raise it?$"
@@ -156,7 +156,7 @@ LittlerootTown_StartersHouse_Text_MudkipAlreadyChoseThisStarter:
 
 LittlerootTown_StartersHouse_Text_SnivyAlreadyReceivedEgg:
     .string "How is your SNIVY EGG doing?\n"
-    .string "A little patience goes a\n"
+    .string "A little patience goes a\l"
     .string "long way, you know.$"
 
 LittlerootTown_StartersHouse_Text_FennekinAlreadyReceivedEgg:
@@ -174,7 +174,7 @@ LittlerootTown_StartersHouse_Text_SnivyDeclineEgg:
 
 LittlerootTown_StartersHouse_Text_FennekinDeclineEgg:
     .string "Aw, really? Okay!\n"
-    .string "I'll be here if you\n"
+    .string "I'll be here if you\l"
     .string "change your mind!$"
 
 LittlerootTown_StartersHouse_Text_MudkipDeclineEgg:
@@ -193,5 +193,5 @@ LittlerootTown_StartersHouse_Text_FennekinPartyFull:
 
 LittlerootTown_StartersHouse_Text_MudkipPartyFull:
     .string "You have six POKéMON with you.\n"
-    .string "Please come back with room\n"
+    .string "Please come back with room\l"
     .string "for this EGG.$"

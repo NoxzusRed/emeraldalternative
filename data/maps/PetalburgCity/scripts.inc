@@ -746,6 +746,7 @@ PetalburgCity_Clerk:
 	.2byte ITEM_SAFETY_GOGGLES
 	.2byte ITEM_TWISTED_SPOON
 	.2byte ITEM_SCOPE_LENS
+	.2byte ITEM_ASSAULT_VEST
 	pokemartlistend
 
 PetalburgCity_EventScript_GirlBeforeScott::

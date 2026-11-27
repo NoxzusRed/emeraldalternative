@@ -4840,6 +4840,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/PetalburgCity_VarietyShop/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCity_VarietyShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_OUTSIDE_NORTH",
+      "name": "BattleFrontier_OutsideNorth_Layout",
+      "width": 50,
+      "height": 45,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattleFrontierOutsideNorth",
+      "border_filepath": "data/layouts/BattleFrontier_OutsideNorth/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_OutsideNorth/map.bin"
     }
   ]
 }

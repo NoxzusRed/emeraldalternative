@@ -2115,7 +2115,7 @@ EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
 Swalot
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+EVs: 252 HP / 100 Atk / 100 SpA / 252 Def / 252 SpD
 
 === TRAINER_SAMUEL ===
 Name: SAMUEL
@@ -5894,56 +5894,57 @@ Mugshot: Purple
 
 Mightyena
 Adamant Nature
-Level: 57
+Level: 56
 Ability: Strong Jaw
-IVs: 30 HP / 31 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 252 Def / 252 SpD
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 252 HP / 180 Def / 180 SpD
 - Psychic Fangs
 - Fire Fang
 - Thunder Fang
 - Crunch
 
 Honchkrow
-Level: 58
+Level: 57
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Spe / 64 Atk
+EVs: 252 HP / 126 Def / 126 SpD / 64 Atk
 - Night Slash
 - Double Team
 - Brave Bird
 - Swagger
 
 Cacturne
-Level: 58
-IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 252 HP / 252 Atk / 252 SpA / 126 Def / 126 SpD
+Level: 57
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 180 HP / 252 Atk / 126 SpA / 126 Def / 126 SpD
 - Leech Seed
 - Sucker Punch
 - Energy Ball
 - Spiky Shield
 
 Sharpedo
-Level: 58
+Level: 57
 Ability: Speed Boost
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 126 Spe / 252 Def / 252 SpD
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 Spe
 - Liquidation
 - Waterfall
 - Crunch
 - Aqua Jet
 
 Houndoom
-Level: 58
+Level: 57
 Nature: Bold
-IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 252 HP / 126 Spe / 252 Def / 252 SpD / 126 SpA
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 252 HP / 252 Def / 252 SpD / 126 SpA
 - Flamethrower
 - Dark Pulse
 - Nasty Plot
 
 Absol @ Sitrus Berry
-Level: 60
+Level: 59
+Ability: Sharpness
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Spe
+EVs: 252 HP / 145 Def / 145 SpD / 126 Spe
 - Aerial Ace
 - Night Slash
 - Swords Dance
@@ -5961,7 +5962,7 @@ AI: Basic Trainer
 Mugshot: Green
 
 Trevenant
-Level: 57
+Level: 56
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 252 HP / 126 Atk / 252 Def / 252 SpD
 - Shadow Claw
@@ -5970,7 +5971,8 @@ EVs: 252 HP / 126 Atk / 252 Def / 252 SpD
 - Protect
 
 Banette
-Level: 58
+Level: 57
+Nature: Careful
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 252 HP / 126 Atk / 252 Def / 252 SpD
 - Shadow Claw
@@ -5979,38 +5981,39 @@ EVs: 252 HP / 126 Atk / 252 Def / 252 SpD
 - Gunk Shot
 
 Sableye
-Level: 58
+Level: 57
 Nature: Modest
-IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 252 HP / 126 SpA / 126 Def / 126 SpD
+Ability: Magic Bounce
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 252 HP / 180 SpA / 180 Def / 180 SpD
 - Shadow Ball
 - Double Team
 - Dark Pulse
 - Power Gem
 
 SPECIES_ZOROARK_HISUI
-Level: 58
-IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 Def / 126 SpD / 126 Spe
+Level: 57
+IVs: 30 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
+EVs: 252 HP / 140 Def / 140 SpD / 126 Spe
 - Shadow Ball
-- Dark Pulse
+- Flamethrower
 - Hyper Voice
 - Nasty Plot
 
 Chandelure @ Sitrus Berry
-Level: 60
+Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 126 Spe / 252 SpD
+EVs: 252 HP / 252 Def / 252 SpD
 - Shadow Ball
 - Flamethrower
 - Energy Ball
 - Confuse Ray
 
 Dusknoir @ Sitrus Berry
-Level: 60
+Level: 59
 Nature: Impish
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 Def / 126 SpD
+EVs: 252 HP / 180 Def / 180 SpD / 60 Atk
 - Shadow Punch
 - Ice Punch
 - Thunder Punch
@@ -6029,8 +6032,8 @@ Mugshot: Pink
 
 Avalugg
 Careful Nature
-Level: 58
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 31 SpD / 30 Spe
+Level: 57
+IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
 EVs: 252 SpD / 252 HP
 - Icicle Crash
 - Heavy Slam
@@ -6038,24 +6041,25 @@ EVs: 252 SpD / 252 HP
 - Amnesia
 
 Glalie
-Level: 59
+Level: 58
 Ability: Refrigerate
 IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
 EVs: 126 Atk / 252 Spe / 252 HP
 - Giga Impact
+- Crunch
 - Protect
 
 Glaceon (F)
-Level: 59
+Level: 58
 IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 252 HP / 252 SpD
+EVs: 252 HP / 252 SpD / 126 Def
 - Attract
 - Ice Beam
 - Hail
 - Alluring Voice
 
 Froslass
-Level: 59
+Level: 58
 IVs: 30 HP / 30 Atk / 30 Def / 31 SpA / 30 SpD / 31 Spe
 EVs: 252 HP / 252 SpA / 252 Spe
 - Shadow Ball
@@ -6064,7 +6068,7 @@ EVs: 252 HP / 252 SpA / 252 Spe
 - Draining Kiss
 
 Cetitan @ Sitrus Berry
-Level: 61
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
 - Ice Spinner
@@ -6073,7 +6077,7 @@ EVs: 252 HP / 252 Def / 252 SpD
 - Earthquake
 
 Walrein @ Sitrus Berry
-Level: 61
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD / 126 SpA / 252 Atk
 - Surf
@@ -6092,8 +6096,8 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Blue
 
-Noivern
-Level: 60
+Noivern @ Wide Lens
+Level: 59
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 31 Spe
 EVs: 252 HP / 126 SpA / 252 Spe
 - Hurricane
@@ -6102,26 +6106,26 @@ EVs: 252 HP / 126 SpA / 252 Spe
 - Super Fang
 
 Altaria
-Level: 61
+Level: 60
 IVs: 30 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
-EVs: 252 HP / 126 Atk / 126 SpA / 126 Def / 126 SpD
+EVs: 252 HP / 180 Atk / 126 SpA / 180 Def / 180 SpD
 - Dragon Pulse
 - Moonblast
-- Dragon Dance
+- Earthquake
 - Dual Wingbeat
 
 Garchomp
-Level: 61
-Ability: Sand Veil
+Level: 60
+Ability: Rough Skin
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-EVs: 252 HP / 126 SpD / 126 Def / 64 Atk
+EVs: 252 HP / 126 SpD / 126 Def / 80 Atk / 80 Spe
 - Earthquake
 - Dragon Claw
 - Crunch
-- Sandstorm
+- Dragon Dance
 
 Dragalge
-Level: 61
+Level: 60
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 252 HP / 252 Def / 126 SpD
 - Sludge Bomb
@@ -6130,16 +6134,16 @@ EVs: 252 HP / 252 Def / 126 SpD
 - Smokescreen
 
 Flygon @ Sitrus Berry
-Level: 63
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 126 SpD / 252 SpA / 64 Spe
+EVs: 252 HP / 126 SpD / 252 SpA / 64 Spe / 80 Atk
 - Flamethrower
 - Dragon Claw
 - Rock Slide
 - Earthquake
 
 Salamence @ Sitrus Berry
-Level: 63
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 126 SpA / 126 Spe
 - Flamethrower
@@ -7825,7 +7829,7 @@ Mugshot: Yellow
 
 Skarmory
 Careful Nature
-Level: 63
+Level: 62
 Ability: Weak Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 126 Atk / 252 SpD
@@ -7836,7 +7840,7 @@ EVs: 252 HP / 126 Atk / 252 SpD
 
 Claydol
 Relaxed Nature
-Level: 63
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 126 Atk / 252 Def / 252 SpA
 - Reflect
@@ -7846,7 +7850,7 @@ EVs: 252 HP / 126 Atk / 252 Def / 252 SpA
 
 Aggron @ Leftovers
 Careful Nature
-Level: 64
+Level: 63
 Ability: Filter
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 252 SpD
@@ -7857,7 +7861,7 @@ EVs: 252 HP / 252 Def / 252 SpD
 
 Cradily
 Bold Nature
-Level: 64
+Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 126 SpA / 252 Def / 252 SpD
 - Giga Drain
@@ -7867,7 +7871,7 @@ EVs: 252 HP / 126 SpA / 252 Def / 252 SpD
 
 Armaldo
 Careful Nature
-Level: 66
+Level: 65
 Ability: Battle Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD
 EVs: 252 HP / 252 Def / 252 SpD
@@ -7878,7 +7882,7 @@ EVs: 252 HP / 252 Def / 252 SpD
 
 Metagross @ Sitrus Berry
 Adamant Nature
-Level: 68
+Level: 67
 Ability: Clear Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 68 Def / 252 SpD / 252 Spe
@@ -8969,16 +8973,28 @@ Noivern
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Boomburst
+- Dragon Pulse
+- Hurricane
 
 Garchomp
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+- Crunch
+- Earthquake
+- Dragon Claw
+- Dragon Dance
 
 Altaria
 Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 100 SpD
+EVs: 126 HP / 100 Atk / 100 SpA / 100 Def / 252 SpD
+- Cotton Guard
+- Earthquake
+- Dragon Pulse
+- Aerial Ace
+
 
 === TRAINER_NICOLAS_2 ===
 Name: NICOLAS
@@ -11680,7 +11696,7 @@ Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
 - Aerial Ace
-- Safeguard
+- Earthquake
 - Dragon Claw
 - Dragon Dance
 
@@ -11744,8 +11760,8 @@ Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
 - Aerial Ace
-- Safeguard
-- Dragon Pulse
+- Earthquake
+- Dragon Claw
 - Dragon Dance
 
 Ursaluna @ Chesto Berry
@@ -11808,8 +11824,8 @@ Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
 - Aerial Ace
-- Safeguard
-- Dragon Pulse
+- Earthquake
+- Dragon Claw
 - Dragon Dance
 
 Ursaluna @ Chesto Berry
@@ -11872,8 +11888,8 @@ Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
 - Aerial Ace
-- Safeguard
-- Dragon Pulse
+- Earthquake
+- Dragon Claw
 - Dragon Dance
 
 Ursaluna @ Chesto Berry
@@ -11936,8 +11952,8 @@ Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 252 HP / 126 Def / 126 SpD / 126 Atk
 - Aerial Ace
-- Safeguard
-- Dragon Pulse
+- Earthquake
+- Dragon Claw
 - Dragon Dance
 
 Ursaluna @ Chesto Berry
@@ -21133,10 +21149,10 @@ Level: 77
 Nature: Relaxed
 Ability: Pixilate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP / 252 Def / 252 SpD / 126 Atk / 126 SpA
+EVs: 252 HP / 252 Def / 252 SpD / 126 Atk
 - Aerial Ace
-- Body Slam
-- Dragon Pulse
+- Earthquake
+- Dragon Claw
 - Dragon Dance
 
 Ursaluna @ Flame Orb
@@ -21168,7 +21184,7 @@ EVs: 252 HP / 252 Def / 252 SpD / 252 Spe
 - Stone Edge
 - Amnesia
 - Iron Defense
-- Protect
+- Earthquake
 
 Magnezone @ Wide Lens
 Level: 79
