@@ -108,3 +108,85 @@ BattleFrontier_OutsideNorth_Text_Triathlete:
 	.string "gathered in one spot!\p"
 	.string "Now that's a finish line worth\n"
 	.string "running toward!$"
+
+BattleFrontier_OutsideNorth_EventScript_Woman5::
+	msgbox BattleFrontier_OutsideNorth_Text_Woman5, MSGBOX_NPC
+	end
+
+BattleFrontier_OutsideNorth_EventScript_Man1::
+	msgbox BattleFrontier_OutsideNorth_Text_Man1, MSGBOX_NPC
+	end
+
+BattleFrontier_OutsideNorth_EventScript_SchoolKid::
+	msgbox BattleFrontier_OutsideNorth_Text_SchoolKid, MSGBOX_NPC
+	end
+
+BattleFrontier_OutsideNorth_EventScript_AromaLady::
+	msgbox BattleFrontier_OutsideNorth_Text_AromaLady, MSGBOX_NPC
+	end
+
+BattleFrontier_OutsideNorth_EventScript_Lady::
+	msgbox BattleFrontier_OutsideNorth_Text_Lady, MSGBOX_NPC
+	end
+
+BattleFrontier_OutsideNorth_EventScript_Pokemaniac::
+	msgbox BattleFrontier_OutsideNorth_Text_Pokemaniac, MSGBOX_NPC
+	end
+
+BattleFrontier_OutsideNorth_EventScript_PokefanF::
+	msgbox BattleFrontier_OutsideNorth_Text_PokefanF, MSGBOX_NPC
+	end
+
+BattleFrontier_OutsideNorth_EventScript_Grovyle::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_GROVYLE, CRY_MODE_NORMAL
+	msgbox BattleFrontier_OutsideNorth_Text_Grovyle, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+BattleFrontier_OutsideNorth_Text_Woman5:
+	.string "I came here just to watch the\n"
+	.string "tournament.\p"
+	.string "Seeing Champions from so many\n"
+	.string "regions in one place is amazing!$"
+
+BattleFrontier_OutsideNorth_Text_Man1:
+	.string "See how the Champions battle?\n"
+	.string "Every move has a purpose.\p"
+	.string "You can learn a lot just by\n"
+	.string "watching a good match.$"
+
+BattleFrontier_OutsideNorth_Text_SchoolKid:
+	.string "I'm taking notes on every battle!\n"
+	.string "My teacher will be so impressed!\p"
+	.string "Someday, I'll be a Champion too!$"
+
+BattleFrontier_OutsideNorth_Text_AromaLady:
+	.string "The flowers here smell wonderful.\n"
+	.string "Even my Pokemon seem relaxed.\p"
+	.string "A little peace before a big\n"
+	.string "battle can do wonders, you know.$"
+
+BattleFrontier_OutsideNorth_Text_Lady:
+	.string "Diantha is so elegant, isn't she?\n"
+	.string "Even when she's battling!\p"
+	.string "I'd love to see her Gardevoir\n"
+	.string "in action at the tournament.$"
+
+BattleFrontier_OutsideNorth_Text_Pokemaniac:
+	.string "Oh! That was Red's Pikachu!\n"
+	.string "And Diantha's Gardevoir!\p"
+	.string "So many rare sights in one place!\n"
+	.string "I don't know where to look next!$"
+
+BattleFrontier_OutsideNorth_Text_PokefanF:
+	.string "My Grovyle gets so excited when\n"
+	.string "it sees other strong Pokemon.\p"
+	.string "Maybe one day we'll enter the\n"
+	.string "tournament together!$"
+
+BattleFrontier_OutsideNorth_Text_Grovyle:
+	.string "Grovyle: Groo-vyle!$"
