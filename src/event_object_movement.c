@@ -3204,6 +3204,11 @@ static void SetBerryTreeGraphicsById(struct ObjectEvent *objectEvent, u8 berryId
     sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
     sprite->x += 8;
     sprite->y += 16 + sprite->centerToCornerVecY;
+    // The mature 16x32 berry-tree frames leave two transparent pixels below
+    // the roots. Lower only these frames so they sit on their soil patch.
+    // Dirt piles and early 16x16 sprouts retain their original alignment.
+    if (graphicsInfo->height == 32)
+        sprite->y += 2;
     if (objectEvent->trackedByCamera)
         CameraObjectReset();
 }
