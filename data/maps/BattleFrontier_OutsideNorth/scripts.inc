@@ -51,7 +51,7 @@ BattleFrontier_OutsideNorth_EventScript_Triathlete::
 
 BattleFrontier_OutsideNorth_Text_Blue:
 	.string "Blue: So, Red, ready to find out\n"
-	.string "who's the strongest this time?\p"
+	.string "who's the strongest this time?\l"
 	.string "I hope you haven't gotten rusty!$"
 
 BattleFrontier_OutsideNorth_Text_Red:
