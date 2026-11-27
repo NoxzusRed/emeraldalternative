@@ -6386,8 +6386,11 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
 
     // Animaciones de curacion en paralelo a la barra de PS.
     // Ingrain conserva sus orbes y espera a los brillos para curar.
+    // Shell Bell usa el efecto rapido sin las tres rotaciones.
+    // Los tests de Shell Bell conservan la ruta normal del controlador.
     if ((animId == B_ANIM_SIMPLE_HEAL ||
-         animId == B_ANIM_INGRAIN_HEAL) &&
+         animId == B_ANIM_INGRAIN_HEAL ||
+         (animId == B_ANIM_FAST_HELD_ITEM_EFFECT && !gTestRunnerEnabled)) &&
         argPtr == &gParallelDrainHealMarker)
     {
         // No mostrar curacion si el efecto inflige
@@ -6410,6 +6413,10 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
             gBattlescriptCurrInstr = nextInstr;
             return;
         }
+
+        // No sobrescribir un comando del controlador pendiente de Shell Bell.
+        if (animId == B_ANIM_FAST_HELD_ITEM_EFFECT && gBattleControllerExecFlags)
+            return;
 
         // En combates link o grabados, mantener
         // el sistema secuencial para evitar

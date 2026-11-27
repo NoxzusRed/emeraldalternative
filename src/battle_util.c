@@ -7151,7 +7151,7 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                 if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
                     gBattleStruct->moveDamage[gBattlerAttacker] = -1;
                 BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_ItemHealHP_Ret;
+                gBattlescriptCurrInstr = BattleScript_ShellBellHeal;
                 effect = ITEM_HP_CHANGE;
             }
             break;

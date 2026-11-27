@@ -43,6 +43,7 @@ SINGLE_BATTLE_TEST("Shell Bell recovers no HP if the move did no damage")
         HP_BAR(opponent);
         NONE_OF {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FAST_HELD_ITEM_EFFECT, player);
             HP_BAR(player);
         }
     }
@@ -59,7 +60,7 @@ SINGLE_BATTLE_TEST("Shell Bell activates if it hits a Substitute")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SUBSTITUTE, opponent);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         // HP_BAR(opponent); // When you hit a sub the hp bar check doesn't work. Not sure if this is a bug
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FAST_HELD_ITEM_EFFECT, player);
         HP_BAR(player);
     }
 }
@@ -75,7 +76,7 @@ SINGLE_BATTLE_TEST("Shell Bell activates after Absorb")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ABSORB, player);
         HP_BAR(opponent);
         HP_BAR(player);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FAST_HELD_ITEM_EFFECT, player);
         HP_BAR(player);
     }
 }
@@ -91,7 +92,7 @@ SINGLE_BATTLE_TEST("Shell Bell activates after Rough Skin")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         HP_BAR(opponent);
         HP_BAR(player);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FAST_HELD_ITEM_EFFECT, player);
         HP_BAR(player);
     }
 }
@@ -111,6 +112,7 @@ SINGLE_BATTLE_TEST("Shell Bell does not activate on Future Sight if the original
         HP_BAR(opponent);
         NONE_OF {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FAST_HELD_ITEM_EFFECT, player);
             HP_BAR(player);
         }
     }
@@ -126,7 +128,17 @@ SINGLE_BATTLE_TEST("Shell Bell restores 1/8 HP of damage dealt")
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SEISMIC_TOSS, player);
         HP_BAR(opponent);
+        NONE_OF {
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+            MESSAGE("Wobbuffet restored a little HP using its Shell Bell!");
+        }
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FAST_HELD_ITEM_EFFECT, player);
+        NOT MESSAGE("Wobbuffet restored a little HP using its Shell Bell!");
         HP_BAR(player, damage: -2);
+        NONE_OF {
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+            MESSAGE("Wobbuffet restored a little HP using its Shell Bell!");
+        }
     }
 }
 
@@ -166,6 +178,7 @@ SINGLE_BATTLE_TEST("Shell Bell does not activate on Future Sight if the original
         HP_BAR(opponent);
         NONE_OF {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FAST_HELD_ITEM_EFFECT, player);
             HP_BAR(player);
         }
     }
@@ -191,7 +204,7 @@ SINGLE_BATTLE_TEST("Shell Bell does not activate on Future Sight if the original
         HP_BAR(opponent);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, player);
         HP_BAR(opponent, captureDamage: &damage);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FAST_HELD_ITEM_EFFECT, player);
         HP_BAR(player, captureDamage: &healed);
     } THEN {
         EXPECT_MUL_EQ(damage, Q_4_12(-0.25), healed);
@@ -281,7 +294,7 @@ SINGLE_BATTLE_TEST("Shell Bell recovers only 1 damage if the move only did 1 dam
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, player);
         HP_BAR(opponent);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FAST_HELD_ITEM_EFFECT, player);
         HP_BAR(player);
 
     } THEN {

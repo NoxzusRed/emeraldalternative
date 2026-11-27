@@ -8826,6 +8826,15 @@ BattleScript_ItemHealHP_Ret::
 	datahpupdate BS_ATTACKER
 	return
 
+BattleScript_ShellBellHeal::
+	playanimation BS_ATTACKER, B_ANIM_FAST_HELD_ITEM_EFFECT, gParallelDrainHealMarker
+	orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE | HITMARKER_PASSIVE_DAMAGE
+	@ Update only the holder's HP, including after a spread move.
+	absorbhealthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	waitanimation
+	return
+
 BattleScript_SelectingNotAllowedMoveChoiceItem::
 	printselectionstring STRINGID_ITEMALLOWSONLYYMOVE
 	endselectionscript
