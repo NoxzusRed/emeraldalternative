@@ -56,7 +56,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleFrontier_OutsideNorth_EventScript_LanceIrisTalk",
       "flag": "0"
     },
     {
@@ -69,7 +69,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleFrontier_OutsideNorth_EventScript_LanceIrisTalk",
       "flag": "0"
     },
     {
@@ -82,7 +82,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleFrontier_OutsideNorth_EventScript_Alder",
       "flag": "0"
     },
     {
@@ -90,12 +90,12 @@
       "x": 14,
       "y": 28,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleFrontier_OutsideNorth_EventScript_BlueRedTalk",
       "flag": "0"
     },
     {
@@ -103,12 +103,12 @@
       "x": 16,
       "y": 28,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleFrontier_OutsideNorth_EventScript_BlueRedTalk",
       "flag": "0"
     },
     {
@@ -121,7 +121,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleFrontier_OutsideNorth_EventScript_Triathlete",
       "flag": "0"
     },
     {
@@ -160,7 +160,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleFrontier_OutsideNorth_EventScript_Diantha",
       "flag": "0"
     },
     {
@@ -177,7 +177,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GARDEVOIR)",
       "x": 12,
       "y": 16,
       "elevation": 0,
@@ -186,7 +186,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleFrontier_OutsideNorth_EventScript_Gardevoir",
       "flag": "0"
     },
     {
@@ -199,7 +199,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleFrontier_OutsideNorth_EventScript_Pikachu",
       "flag": "0"
     },
     {
